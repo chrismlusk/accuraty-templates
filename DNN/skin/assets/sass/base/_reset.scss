@@ -1,0 +1,262 @@
+// ============================================================================
+//
+//   Reset
+// 
+//   This file is to reset opinionated styles and common conflicts created 
+//   by using DNN and Bootstrap together. The purpose of this reset is to give
+//   us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
+//
+//   Updated: 12/13/2016 by Chris Lusk
+//
+// ============================================================================
+
+
+
+// ----------------------------------------------------------------------------
+//
+//  1. Quick, specific fixes
+//
+// ----------------------------------------------------------------------------
+
+.DnnModule {
+    clear: both;
+    position: relative;
+
+    & + .DnnModule {
+        margin-top: 2em;
+    }
+}
+
+#Form.showControlBar {
+  margin-top: 53px !important;
+}
+
+.form-group .dnnLabel {
+    text-align: left;
+    width: auto;
+}
+
+.dnnLabel + span {
+    white-space: normal;
+}
+
+#ControlBar, #ControlBar::before, #ControlBar::after, 
+#ControlBar li, #ControlBar li::before, #ControlBar li::after,
+#ControlBar a, #ControlBar a::before, #ControlBar a::after,
+.dnn_mact, .dnn_mact::before, .dnn_mact::after, 
+.dnn_mact li, .dnn_mact li::before, .dnn_mact li::after {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.dnnDropDownList .selected-item,
+.dnnDropDownList .selected-item a { 
+    height: 40px !important;
+}
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//
+//  2. Reset DNN styles from `_default.css`
+//
+// ----------------------------------------------------------------------------
+
+
+
+//== Modules
+//
+//## Reference: _default.css:22
+
+//## Used for module titles.
+.Head {
+  margin: 0;
+}
+
+//## Used for text inside modules.
+.Normal, 
+.NormalDisabled, 
+.NormalDeleted {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.NormalDisabled,
+.NormalDeleted {
+  color: $text-muted;
+}
+
+//## Used for help text rendered by modules.
+.Help {
+  background-color: $state-warning-bg;
+  border: $border-width solid darken($state-warning-bg, 5%);
+  color: $state-warning-text;
+}
+
+//## Used for rendered text that requires emphasis.
+.NormalBold {
+  font-weight: $weight-bold;
+  color: inherit;
+}
+
+//## Used for error messages
+.NormalRed {
+  font-weight: $weight-bold;
+  color: $brand-danger;
+}
+
+
+
+//== Message
+//
+//## Bring these messages into alignment with Bootstrap alerts.
+//## Reference: _default.css:100 (DNN 8)
+.dnnFormMessage {
+  background-color: $alert-info-bg;
+  border: $alert-border-width solid $alert-info-border;
+  -webkit-border-radius: $alert-border-radius;
+  border-radius: $alert-border-radius;
+  color: $alert-info-text;
+  margin-bottom: $spacer-y;
+  max-width: none;
+  padding: $alert-padding-y $alert-padding-x;
+
+  &.dnnFormError,
+  &.dnnFormValidationSummary {
+    background-color: $alert-danger-bg;
+    border-color: $alert-danger-border;
+  }
+
+  &.dnnFormWarning {
+    background-color: $alert-warning-bg;
+    border-color: $alert-warning-border;
+  }
+
+  &.dnnFormSuccess {
+    background-color: $alert-success-bg;
+    border-color: $alert-success-border;
+  }
+}
+
+
+
+//== Tables
+//
+//## DNN uses `.dnnTableHeader` and `.dnnTableDisplay`. Skipping this.
+//## Reference: _default.css:130 (DNN 8)
+
+
+
+//== Pagination
+//
+//## DNN uses `.dnnPagination`. Skipping this.
+//## Reference: _default:css:285 (DNN 8)
+
+
+
+//== Forms
+//
+//## Reference: _default:css:321 (DNN 8)
+
+//######### Leaving this for later.......
+
+// .dnnFormItem input[type="text"],
+// .dnnFormItem select,
+// .dnnFormItem textarea,
+// .dnnFormItem input[type="email"],
+// .dnnFormItem input[type="search"],
+// .dnnFormItem input[type="password"] {
+//   background-color: $input-bg;
+//   // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+//   background-image: none;
+//   background-clip: padding-box;
+//   border: $input-btn-border-width solid $input-border-color;
+//   color: $input-color;
+//   display: block;
+//   font-size: $font-size-base;
+//   line-height: $input-line-height;
+//   padding: $input-padding-y $input-padding-x;
+//   width: 100%;
+
+//   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+//   @if $enable-rounded {
+//     // Manually use the if/else instead of the mixin to account for iOS override
+//     border-radius: $input-border-radius;
+//   } @else {
+//     // Otherwise undo the iOS default
+//     border-radius: 0;
+//   }
+// }
+
+// .dnnFormItem input.aspNetDisabled,
+// .dnnFormItem textarea.aspNetDisabled {
+//   background: #ebebeb;
+//   -moz-box-shadow: none;
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+//   border-color: #a7a7a7;
+//   border-width: 1px;
+// }
+
+// .aspNetDisabled, a.aspNetDisabled,
+// .dnnDisabled, a.dnnDisabled {
+//   color: #ccc;
+//   cursor: not-allowed;
+//   text-decoration: none;
+// }
+
+// //## Active and focus states
+// .dnnFormItem input[type="text"]:active, .dnnFormItem input[type="text"]:focus,
+// .dnnFormItem input[type="password"]:focus, .dnnFormItem input[type="password"]:active,
+// .dnnFormItem input[type="email"]:active, .dnnFormItem input[type="email"]:focus,
+// .dnnFormItem select:active, .dnnFormItem select:focus,
+// .dnnFormItem textarea:active, .dnnFormItem textarea:focus,
+// .dnnFormItem input[type="search"]:active, .dnnFormItem input[type="search"]:focus {
+//     background: #fff;
+//     border: 1px solid rgba(2,139,255,0.5); /* blue */
+//     -webkit-box-shadow: 0px 0px 3px 0px rgba(2, 139, 255, 0.4);
+//     box-shadow: 0px 0px 3px 0px rgba(2, 139, 255, 0.4);
+//     color: #333;
+// }
+
+// //## Required fields
+// .required label:after,
+// legend.required:after {
+//     display: inline-block;
+//     margin-top: -2px;
+//     margin-left: 9px;
+//     padding: 1px 9px;
+//     border: 1px solid rgba(0,0,0,0.1);
+//     border-radius: 3px;
+//     -webkit-border-radius: 3px;
+//     background: rgba(0,0,0,0.03);
+//     content: 'Required';
+//     font-weight: $weight-normal;
+//     font-family: $font-family-base;
+//     font-size: 11px;
+//     font-style: italic;
+//     color: #777;
+// }
+
+// //## Error styles
+// .error label, legend.error {
+//     color: rgba(255,0,0,0.9);
+// }
+
+// .error input[type="text"],
+// .error select, .error textarea,
+// .error input[type="email"],
+// .error input[type="search"] {
+//     border: 1px solid rgba(255,0,0,0.6);
+//     color: rgba(255,0,0,0.7);
+// }
+

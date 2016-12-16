@@ -1,0 +1,24 @@
+<ul class="nav navbar-nav">
+  [*>NODE-TOP]
+</ul>
+
+
+[>NODE-TOP]
+  <li class="nav-item[?NODE] dropdown[/?][?SELECTED] active[/?]" id="tab-[=ID]">
+    [?ENABLED]
+      <a href="[=URL]" class="nav-link[?NODE] dropdown-toggle[/?]"[?NODE] id="tab-[=ID]-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[/?]>[=TEXT]</a>
+    [?ELSE]
+      <a href="#" class="nav-link[?NODE] dropdown-toggle[/?]"[?NODE] id="tab-[=ID]-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[/?]>[=TEXT]</a>
+    [/?]
+    [?NODE]
+      <div class="dropdown-menu" aria-labelledby="tab-[=ID]-dropdown">
+        [*>NODE-SUB]
+      </div>
+    [/?]
+  </li>
+[/>]
+
+
+[>NODE-SUB]
+    <a href="[=URL]" class="dropdown-item">[=TEXT]</a>
+[/>]

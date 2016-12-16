@@ -1,0 +1,17 @@
+<ul class="nav navbar-nav">
+[*>NODE]
+</ul>
+[>NODE]
+  <li class="[?NODE]dropdown [/?][?SELECTED]active[/?]">
+  [?ENABLED]
+    <a href="[=URL]" [?NODE]class="dropdown-toggle" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"[/?]>[=TEXT] [?NODE]<span class="caret"></span>[/?]</a>
+  [?ELSE]
+    <a href="#" [?NODE]class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"[/?]>[=TEXT] [?NODE]<span class="caret"></span>[/?]</a>
+  [/?]
+  [?NODE]
+      <ul class="dropdown-menu">
+      [*>NODE]
+      </ul>
+  [/?]
+  </li>
+[/>]
