@@ -1,0 +1,12 @@
+//
+// Wrapper and base class
+// ======================
+
+.main {
+  margin-top: $navbar-height;
+
+  // Move `.header` down below the DNN Control Bar when it's visible
+  #Form.showControlBar & {
+    margin-top: $dnn-control-bar-height + $navbar-height;
+  }
+}

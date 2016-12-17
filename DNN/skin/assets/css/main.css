@@ -312,7 +312,7 @@ ul ol {
   margin-bottom: 0; }
 
 dt {
-  font-weight: bold; }
+  font-weight: 700; }
 
 dd {
   margin-bottom: .5rem;
@@ -583,7 +583,7 @@ kbd {
   kbd kbd {
     padding: 0;
     font-size: 100%;
-    font-weight: bold; }
+    font-weight: 700; }
 
 pre {
   display: block;
@@ -1873,7 +1873,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn {
   display: inline-block;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 1.25;
   text-align: center;
   white-space: nowrap;
@@ -3963,7 +3963,7 @@ button.list-group-item-danger {
 .close {
   float: right;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
@@ -4986,6 +4986,13 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 #Form.showControlBar {
   margin-top: 53px !important; }
 
+.form-group .dnnLabel {
+  text-align: left;
+  width: auto; }
+
+.dnnLabel + span {
+  white-space: normal; }
+
 #ControlBar, #ControlBar::before, #ControlBar::after,
 #ControlBar li, #ControlBar li::before, #ControlBar li::after,
 #ControlBar a, #ControlBar a::before, #ControlBar a::after,
@@ -5045,5 +5052,67 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .dnnFormMessage.dnnFormSuccess {
     background-color: #dff0d8;
     border-color: #d0e9c6; }
+
+.header.fixed-to-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9; }
+  #Form.showControlBar .header.fixed-to-top {
+    top: 53px !important; }
+
+.main {
+  margin-top: 50px; }
+
+.navbar.is-flex {
+  align-items: stretch;
+  display: flex;
+  min-height: 50px; }
+  .navbar.is-flex .nav-item {
+    align-items: center;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: 0; }
+    .navbar.is-flex .nav-item .nav-link {
+      flex-grow: 1;
+      flex-shrink: 0;
+      padding: 1.5rem; }
+    @media (max-width: 991px) {
+      .navbar.is-flex .nav-item {
+        justify-content: flex-start; } }
+  .navbar.is-flex a.nav-item {
+    padding: 1.5rem; }
+    .navbar.is-flex a.nav-item.is-brand {
+      padding-top: 0;
+      padding-bottom: 0; }
+  .navbar.is-flex .nav-left {
+    align-items: stretch;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    white-space: nowrap; }
+  .navbar.is-flex .nav-center {
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; }
+  @media (min-width: 768px) {
+    .navbar.is-flex .nav-right {
+      align-items: stretch;
+      display: flex;
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 0;
+      justify-content: flex-end; } }
+  .navbar.is-flex .navbar-nav .nav-link + .nav-link {
+    margin-left: 0; }
+  .navbar.is-flex .navbar-nav .nav-item + .nav-item {
+    margin-left: 0; }
 
 /*# sourceMappingURL=main.css.map */

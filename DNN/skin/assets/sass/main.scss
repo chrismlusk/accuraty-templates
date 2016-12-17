@@ -17,11 +17,12 @@
 
 @import
   'layout/header',
-  'layout/navigation',
+  'layout/main',
   'layout/footer';
 
 @import
-  'components/buttons';
+  'components/buttons',
+  'components/navbar';
 
 @import
   'pages/home';
