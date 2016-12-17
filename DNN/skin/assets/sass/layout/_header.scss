@@ -1,0 +1,19 @@
+//
+// Wrapper and base class
+// ======================
+
+.header {
+
+  &.fixed-to-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+
+    // Move `.header` down below the DNN Control Bar when it's visible
+    #Form.showControlBar & {
+      top: $dnn-control-bar-height;
+    }
+  }
+}

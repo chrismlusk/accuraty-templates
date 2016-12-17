@@ -8,3 +8,21 @@
     </div>
   </nav>
 </header>
+
+
+<!--
+
+NOTE: This is for a navbar that uses flexbox. Replace the above code with this.
+
+<header class="header  fixed-to-top">
+  <nav class="navbar  is-flex">
+    <div class="nav navbar-nav  nav-left">
+      <a class="nav-item is-brand" href="#">Brand</a>
+      <dnn:MENU runat="server" MenuStyle="menus/nav-flex" IncludeNodes=""></dnn:MENU>
+    </div>
+    <div class="nav navbar-nav  nav-right">
+      <dnn:MENU runat="server" MenuStyle="menus/nav-flex" IncludeNodes=""></dnn:MENU>
+    </div>
+  </nav>
+</header>
+-->
