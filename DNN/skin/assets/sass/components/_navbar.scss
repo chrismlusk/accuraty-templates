@@ -1,0 +1,146 @@
+//
+// Wrapper and base class
+// ======================
+
+// .navbar {
+//   background-color: $white;
+// }
+
+
+
+
+//
+// Brand/project name
+// ==================
+
+// .navbar-brand {}
+
+
+
+
+//
+// Navigation
+// ==========
+//
+// Custom navbar navigation built on the base `.nav` styles.
+
+// .navbar-nav {
+//   .nav-item {
+
+//   }
+
+//   .nav-link {
+
+//     & + .nav-link {
+
+//     }
+//   }
+
+//   .nav-item + .nav-item {
+
+//   }
+// }
+
+
+
+
+//
+// Flex Navbar
+// ===========
+//
+// Bootstrap doesn't have an option for a navbar built with flexbox,
+// so add `.is-flex` as a sibling of `.navbar` to enable these styles.
+//
+// [1]  Because `.nav-item` can be applied to an `<a>`, `<div>`, or 
+//      `<span>` tag, we want to make sure the padding is applied to
+//      the link and not the link wrapper, so we start by zeroing this.
+//
+// [2]  Then, we assign a padding value to `.nav-link` and instances of 
+//      the `.nav-item` class that are specifically applied to `<a>` tags.
+//
+// [3]  Then, because our brand identity goes inside a link with the
+//      `.nav-item` and `.is-brand` classes applied, we target this to
+//      eliminate the top and bottom paddings to improve the spacing.
+//
+// [4]  Since flexbox takes care of spacing/alignment, zero out the margin
+//      Bootstrap applies to adjacent `.nav-link` and '.nav-item' classes.
+//
+// @author Chris Lusk
+// @date 12/17/2016
+
+.navbar.is-flex {
+  align-items: stretch;
+  display: flex;
+  min-height: $navbar-height;
+
+  .nav-item {
+    align-items: center;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: 0; // [1]
+
+    .nav-link {
+      flex-grow: 1;
+      flex-shrink: 0;
+      padding: 1.5rem; // [2]
+    }
+
+    @include media-breakpoint-down(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  a.nav-item {
+    padding: 1.5rem; // [2]
+
+    &.is-brand {
+      padding-top: 0; // [3]
+      padding-bottom: 0; // [3]
+    }
+  }
+
+  .nav-left {
+    align-items: stretch;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    // overflow: hidden;
+    // overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .nav-center {
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-right {
+
+    @include media-breakpoint-up(md) {
+      align-items: stretch;
+      display: flex;
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  .navbar-nav {
+
+    .nav-link + .nav-link {
+        margin-left: 0; // [4]
+      }
+
+    .nav-item + .nav-item {
+      margin-left: 0; // [4]
+    }
+  }
+}
