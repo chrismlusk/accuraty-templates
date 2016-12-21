@@ -6,7 +6,7 @@
 //   by using DNN and Bootstrap together. The purpose of this reset is to give
 //   us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//   Updated: 12/13/2016 by Chris Lusk
+//   Updated: 12/21/2016 by Chris Lusk
 //
 // ============================================================================
 
@@ -23,13 +23,13 @@
     position: relative;
 
     & + .DnnModule {
-        margin-top: 2em;
+        margin-top: 2rem;
     }
 }
 
-#Form.showControlBar {
-  margin-top: $dnn-control-bar-height;
-}
+// #Form.showControlBar {
+//   margin-top: $dnn-control-bar-height;
+// }
 
 .form-group .dnnLabel {
     text-align: left;
@@ -112,6 +112,40 @@
 .NormalRed {
   font-weight: $weight-bold;
   color: $brand-danger;
+}
+
+
+
+//== Blockquote
+//
+//## Reference: _default.css:260 (DNN 7)
+blockquote {
+  border: 0;
+  padding: 0;
+  
+  &,
+  p {
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    line-height: inherit;
+  }
+
+  cite {
+    color: inherit;
+    display: initial;
+    font-size: inherit;
+
+    &::before {
+      content: '';
+      display: none;
+    }
+
+    a,
+    a:visited {
+      color: inherit;
+    }
+  }
 }
 
 

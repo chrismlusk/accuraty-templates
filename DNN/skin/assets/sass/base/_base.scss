@@ -1,0 +1,23 @@
+//
+// Inline
+// ======
+
+a {
+
+  &,
+  &:visited {
+    color: $link-color;
+    transition: all $speed $easing;
+  }
+
+  @include hover-focus {
+    color: $link-hover-color;
+  }
+}
+
+
+
+//
+// Block
+// =====
+

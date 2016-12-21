@@ -2,7 +2,7 @@
 //
 //   Variables
 //
-//   Updated: 12/17/2016 by Chris Lusk
+//   Updated: 12/21/2016 by Chris Lusk
 //   
 //   --
 //  
@@ -71,8 +71,8 @@
 
 //== Colors
 
-$black: #000;
-$white: #fff;
+$black:   #000;
+$white:   #fff;
 $gray-1:  #111;
 $gray-2:  #222;
 $gray-3:  #333;
@@ -140,6 +140,7 @@ $weight-light:  300;
 $weight-normal: 400;
 $weight-medium: 500;
 $weight-bold:   700;
+$weight-black:  900;
 $weight-title-normal: 500;
 $weight-title-bold:   700;
 
@@ -233,6 +234,8 @@ $gray-lighter:              $gray-e;
 $gray-lightest:             $gray-f6;
 
 $brand-primary:             $blue;
+$brand-secondary:           $blue;
+
 $brand-success:             $green;
 $brand-info:                $blue-light;
 $brand-warning:             $yellow;
@@ -278,10 +281,12 @@ $body-color:  $gray-dark;
 //
 //## Style anchor elements.
 
-$link-color:            $brand-primary;
-$link-decoration:       none;
-$link-hover-color:      darken($link-color, 15%);
-$link-hover-decoration: underline;
+$link-color:              $brand-primary;
+$link-decoration:         none;
+$link-border-color:       lighten($link-color, 40%);
+$link-hover-color:        darken($link-color, 15%);
+$link-hover-decoration:   underline;
+$link-hover-border-color: $link-color;
 
 
 
@@ -371,10 +376,12 @@ $text-muted: $gray-light;
 
 $abbr-border-color: $gray-light;
 
-$blockquote-small-color:  $gray-light;
-$blockquote-font-size:    ($font-size-base * 1.25);
-$blockquote-border-color: $gray-lighter;
-$blockquote-border-width: .25rem;
+$blockquote-font-size:        ($font-size-base * 1.25);
+$blockquote-bg-color:         $gray-lightest;
+$blockquote-border-color:     $gray-lighter;
+$blockquote-border-width:     $border-width-thick;
+$blockquote-small-font-size:  $size-8;
+$blockquote-small-color:      $gray-light;
 
 $hr-border-color: rgba(0,0,0,.1);
 $hr-border-width: $border-width;
