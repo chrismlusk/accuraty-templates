@@ -1,6 +1,20 @@
+// ============================================================================
 //
-// Content inside DNN modules
-// ==========================
+// This file contains all styles for content that appears inside DNN modules.
+// 
+// For consistency, all skin and theme objects created by DNN use the same
+// pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
+//
+// Reference: `Containers/{Client}/README.md`
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
 
 .DnnModule {
   color: $body-color;
@@ -83,12 +97,20 @@
 
 
 
+
+//
+// Module title/heading
+// ====================
+
 .DnnModule__title {
   margin-top: 0;
 }
 
 
 
+
+//
+// Module content section
+// ======================
+
 .DnnModule__content {}
-
-
