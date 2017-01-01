@@ -15,6 +15,24 @@
 //
 // Wrapper and base class
 // ======================
+//
+// 1. By default these elements have no bottom margin (per `_base.scss`), but
+//    we want them to have margin in the flow of module content. So add spacing
+//    as long as they aren't the last child, which avoids excess bottom margin.
+//
+// 2. List items are too close together compared to all other body text
+//    elements, so add a little margin between siblings.
+//
+// 3. For better spacing of body text sections introduced by headings, we add
+//    double the default spacing as the top margin for these tags as long as 
+//    they aren't the first child inside the parent.
+//
+// 4. However, because DNN injects an achor tag as the first child of each
+//    module — and since we use `<h2>` tags as default module titles — we
+//    use the more specific `:first-of-type` pseudo class to ensure all 
+//    subsequent occurrences of this tag receive the extra top margin.
+// 
+// ----------------------------------------------------------------------------
 
 .DnnModule {
   color: $body-color;
@@ -28,24 +46,24 @@
     }
   }
 
-  li + li {
-    margin-top: ($spacer / 4);
-  }
-
   blockquote,
   p,
   ol,
   ul {
     &:not(:last-child) {
-      margin-bottom: $spacer;
+      margin-bottom: $spacer; // 1
     }
+  }
+
+  li + li {
+    margin-top: ($spacer / 4); // 2
   }
 
   h2, .h2,
   h3, .h3,
   h4, .h4 {
     &:not(:first-child) {
-      margin-top: ($spacer * 2);
+      margin-top: ($spacer * 2); // 3
     }
   }
 
@@ -101,9 +119,16 @@
 //
 // Module title/heading
 // ====================
+//
+// 1. Yes, `!important` is generally a bad idea, but we want to override the
+//    specificity introduced by the `:not(:first-child)` pseudo class used on 
+//    headings inside the base class for this one title class. This is helpful
+//    because modules can use various heading tags as their titles, not just
+//    `<h2>` tags, so we need to account for this.
+// ----------------------------------------------------------------------------
 
 .DnnModule__title {
-  margin-top: 0;
+  margin-top: 0 !important; // 1
 }
 
 
