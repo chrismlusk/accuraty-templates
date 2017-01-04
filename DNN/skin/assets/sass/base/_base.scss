@@ -13,6 +13,14 @@ a {
   @include hover-focus {
     color: $link-hover-color;
   }
+
+  &.is-inverse {
+    color: $white;
+
+    @include hover-focus {
+      color: rgba($white, 0.5);
+    }
+  }
 }
 
 

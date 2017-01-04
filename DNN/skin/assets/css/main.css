@@ -512,7 +512,7 @@ mark,
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
-  border-left: 0.25rem solid #eee; }
+  border-left: 3px solid #eee; }
 
 .blockquote-footer {
   display: block;
@@ -525,7 +525,7 @@ mark,
   padding-right: 1rem;
   padding-left: 0;
   text-align: right;
-  border-right: 0.25rem solid #eee;
+  border-right: 3px solid #eee;
   border-left: 0; }
 
 .blockquote-reverse .blockquote-footer::before {
@@ -4981,10 +4981,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   clear: both;
   position: relative; }
   .DnnModule + .DnnModule {
-    margin-top: 2em; }
-
-#Form.showControlBar {
-  margin-top: 53px !important; }
+    margin-top: 2rem; }
 
 .form-group .dnnLabel {
   text-align: left;
@@ -5034,6 +5031,26 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   font-weight: 700;
   color: #d9534f; }
 
+blockquote {
+  border: 0;
+  padding: 0; }
+  blockquote,
+  blockquote p {
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    line-height: inherit; }
+  blockquote cite {
+    color: inherit;
+    display: initial;
+    font-size: inherit; }
+    blockquote cite::before {
+      content: '';
+      display: none; }
+    blockquote cite a,
+    blockquote cite a:visited {
+      color: inherit; }
+
 .dnnFormMessage {
   background-color: #d9edf7;
   border: 1px solid #bcdff1;
@@ -5053,6 +5070,18 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     background-color: #dff0d8;
     border-color: #d0e9c6; }
 
+a, a:visited {
+  color: #0275d8;
+  transition: all 86ms ease-out; }
+a:focus, a:hover {
+  color: #014c8c; }
+
+blockquote,
+p,
+ol,
+ul {
+  margin-bottom: 0; }
+
 .header.fixed-to-top {
   position: fixed;
   top: 0;
@@ -5060,10 +5089,66 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   left: 0;
   z-index: 9; }
   #Form.showControlBar .header.fixed-to-top {
-    top: 53px !important; }
+    top: 53px; }
 
 .main {
   margin-top: 50px; }
+  #Form.showControlBar .main {
+    margin-top: 103px; }
+
+.section {
+  padding: 40px 20px; }
+
+.DnnModule {
+  color: #333; }
+  .DnnModule a:not(.btn) {
+    border-bottom: 1px solid #a8d6fe;
+    font-weight: 700; }
+    .DnnModule a:not(.btn):focus, .DnnModule a:not(.btn):hover {
+      border-bottom-color: #0275d8; }
+  .DnnModule blockquote:not(:last-child),
+  .DnnModule p:not(:last-child),
+  .DnnModule ol:not(:last-child),
+  .DnnModule ul:not(:last-child) {
+    margin-bottom: 1rem; }
+  .DnnModule li + li {
+    margin-top: 0.25rem; }
+  .DnnModule h2:not(:first-child), .DnnModule .h2:not(:first-child),
+  .DnnModule h3:not(:first-child), .DnnModule .h3:not(:first-child),
+  .DnnModule h4:not(:first-child), .DnnModule .h4:not(:first-child) {
+    margin-top: 2rem; }
+  .DnnModule blockquote {
+    background-color: #f6f6f6;
+    border-left: 3px solid #eee;
+    font-size: 1.25rem;
+    padding: 1.5rem; }
+    .DnnModule blockquote footer {
+      color: #888;
+      font-size: 0.75rem; }
+      .DnnModule blockquote footer::before {
+        content: "\2014 \00A0"; }
+      .DnnModule blockquote footer a {
+        color: #888; }
+        .DnnModule blockquote footer a:focus, .DnnModule blockquote footer a:hover {
+          color: #014c8c;
+          border-bottom-color: #0275d8; }
+  .DnnModule ol {
+    list-style: decimal outside;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem; }
+  .DnnModule ul {
+    list-style: disc outside;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem; }
+    .DnnModule ul ul {
+      list-style-type: circle;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem; }
+
+.DnnModule__title {
+  margin-top: 0 !important; }
 
 .navbar.is-flex {
   align-items: stretch;

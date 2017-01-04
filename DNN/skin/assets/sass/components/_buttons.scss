@@ -1,0 +1,36 @@
+//
+// Base class
+// ==========
+
+.btn {
+
+  &.is-inverse {
+    border-color: $white;
+    color: $white;
+
+    @include hover-focus {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+
+
+//
+// Button varieties
+// ================
+
+.btn-primary {}
+
+.btn-secondary {}
+
+.btn-success {}
+
+.btn-info {}
+
+.btn-warning {}
+
+.btn-danger {}
+
+.btn-link {}
