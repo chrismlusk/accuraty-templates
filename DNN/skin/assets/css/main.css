@@ -5075,6 +5075,10 @@ a, a:visited {
   transition: all 86ms ease-out; }
 a:focus, a:hover {
   color: #014c8c; }
+a.is-inverse {
+  color: #fff; }
+  a.is-inverse:focus, a.is-inverse:hover {
+    color: rgba(255, 255, 255, 0.5); }
 
 blockquote,
 p,
@@ -5099,13 +5103,25 @@ ul {
 .section {
   padding: 40px 20px; }
 
+.btn.is-inverse {
+  border-color: #fff;
+  color: #fff; }
+  .btn.is-inverse:focus, .btn.is-inverse:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5); }
+
 .DnnModule {
   color: #333; }
-  .DnnModule a:not(.btn) {
-    border-bottom: 1px solid #a8d6fe;
+  .DnnModule a {
     font-weight: 700; }
-    .DnnModule a:not(.btn):focus, .DnnModule a:not(.btn):hover {
-      border-bottom-color: #0275d8; }
+    .DnnModule a:not(.btn):not(.is-inverse) {
+      border-bottom: 1px solid #a8d6fe; }
+      .DnnModule a:not(.btn):not(.is-inverse):focus, .DnnModule a:not(.btn):not(.is-inverse):hover {
+        border-bottom-color: #0275d8; }
+    .DnnModule a.is-inverse {
+      border-bottom: 1px solid #fff; }
+      .DnnModule a.is-inverse:focus, .DnnModule a.is-inverse:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.5); }
   .DnnModule blockquote:not(:last-child),
   .DnnModule p:not(:last-child),
   .DnnModule ol:not(:last-child),

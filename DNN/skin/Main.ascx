@@ -5,7 +5,7 @@
   <section class="section">
     <div class="container">
       <div class="row">
-        <div id="ContentPane" class="col-sm-12" runat="server"></div>
+        <div id="ContentPane" class="col-sm-12  pane pane-content" runat="server"></div>
       </div>
     </div>
   </section>
