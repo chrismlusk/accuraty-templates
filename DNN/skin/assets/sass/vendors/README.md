@@ -42,4 +42,6 @@ We will still import our own variable file in the main stylesheet so we have acc
 
 **For this reason, it is critical we use Boostrap's variable names as our own.**
 
+---
+
 Reference: [Bootstrap's Sass variables on GitHub](http://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss)
