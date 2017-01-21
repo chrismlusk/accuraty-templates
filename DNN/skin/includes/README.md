@@ -14,7 +14,7 @@ The `#include` directive instructs the server to insert the contents of a file i
 
 ## Standard and common includes
 
-### _preheader
+### Preheader
 
 `_preheader.inc` starts off with the control and register directives. 
 
@@ -42,19 +42,19 @@ The `_preheader.inc` files is also where we add stylesheets and scripts using th
 
 *Note: Everything in this file should be code that is included inside the `<head>` tag, except for script files that are explicitly added to the bottom of the `<body>` tag via the ForceProvided property.*
 
-### _header
+### Header
 
 `_header.inc` contains the global header. This should generally be limited to code that appears inside the `<header>` tag.
 
-### _footer
+### Footer
 
 `_footer.inc` contains the global footer. This should generally be limited to code that appears inside the `<footer>` tag.
 
-### _breadcrumb
+### Breadcrumb
 
 `_breadcrumb.inc` is for the breadcrumb section.
 
-### _logo
+### Logo
 
 `_logo.inc` is especially useful for SVG logos that are being inserted inline.
 

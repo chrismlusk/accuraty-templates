@@ -8,7 +8,7 @@ Bootstrap is the default framework for our projects, so inside the `vendors/` fo
 
 To replace these files once a newer version is available, go to the Bootstrap [download page](http://v4-alpha.getbootstrap.com/getting-started/download/) and download the source files. Unzip the file, copy everything inside the `scss/` folder, and paste into our `vendors/bootstrap/` folder.
 
-On 12/12/2016, Chris Lusk updated Bootstrap to v4.0.0-apha.5.
+On 1/20/2017, Chris Lusk updated Bootstrap to v4.0.0-apha.6.
 
 *Note: If you update these files, please update this file to reflect the date and version, and please include your name.*
 

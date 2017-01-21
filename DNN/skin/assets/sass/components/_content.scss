@@ -1,11 +1,19 @@
 // ============================================================================
 //
-// This file contains all styles for content that appears inside DNN modules.
+//  This file contains all styles for content that appears inside DNN modules.
 // 
-// For consistency, all skin and theme objects created by DNN use the same
-// pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
+//  For consistency, all skin and theme objects created by DNN use the same
+//  pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
 //
-// Reference: `Containers/{Client}/README.md`
+//  Reference: `Containers/{Client}/README.md`
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  1. Wrapper and base class
+//  2. Module title
+//  3. Module content
 //
 // ============================================================================
 
@@ -132,8 +140,8 @@
 
 
 //
-// Module title/heading
-// ====================
+// Module title
+// ============
 //
 // 1. Yes, `!important` is generally a bad idea, but we want to override the
 //    specificity introduced by the `:not(:first-child)` pseudo class used on 
