@@ -6,7 +6,7 @@
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//  Updated: 12/21/2016 by Chris Lusk
+//  Updated: 1/23/2017 by Chris Lusk
 //
 // ============================================================================
 
@@ -59,6 +59,7 @@
 
 
 
+
 // ----------------------------------------------------------------------------
 //
 //  2. Reset DNN styles from `_default.css`
@@ -67,19 +68,26 @@
 
 
 
-//== Modules
 //
-//## Reference: _default.css:22
+// Modules
+// =======
+//
+// Reference: _default.css:22 (DNN 8)
+//
+// 1. Module titles.
+// 2. Text inside modules.
+// 3. Help text rendered by modules.
+// 4. Rendered text that requires emphasis.
+// 5. Used for error messages.
+// ----------------------------------------------------------------------------
 
-//## Used for module titles.
-.Head {
+.Head { // 1
   margin: 0;
 }
 
-//## Used for text inside modules.
 .Normal, 
 .NormalDisabled, 
-.NormalDeleted {
+.NormalDeleted { // 2
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -91,30 +99,30 @@
   color: $text-muted;
 }
 
-//## Used for help text rendered by modules.
-.Help {
+.Help { // 3
   background-color: $state-warning-bg;
   border: $border-width solid darken($state-warning-bg, 5%);
   color: $state-warning-text;
 }
 
-//## Used for rendered text that requires emphasis.
-.NormalBold {
+.NormalBold { // 4
   font-weight: $weight-bold;
   color: inherit;
 }
 
-//## Used for error messages
-.NormalRed {
+.NormalRed { // 5
   font-weight: $weight-bold;
   color: $brand-danger;
 }
 
 
 
-//== Blockquote
 //
-//## Reference: _default.css:260 (DNN 7)
+// Blockquote
+// ==========
+//
+// Reference: _default.css:260 (DNN 7)
+// ----------------------------------------------------------------------------
 blockquote {
   border: 0;
   padding: 0;
@@ -146,10 +154,64 @@ blockquote {
 
 
 
-//== Message
 //
-//## Bring these messages into alignment with Bootstrap alerts.
-//## Reference: _default.css:100 (DNN 8)
+// Anchor styles
+// =============
+//
+// Reference: _default.css:297 (DNN 7)
+// ----------------------------------------------------------------------------
+
+a {
+
+  &, a:visited {
+    color: inherit;
+    text-decoration: inherit;
+    outline: inherit;
+  }
+
+  @include hover-focus-active {
+    color: inherit;
+    outline: inherit;
+  }
+}
+
+
+
+
+//
+// Image styles
+// ============
+//
+// Reference: _default.css:315 (DNN 7)
+// ----------------------------------------------------------------------------
+
+// img {}
+
+
+
+
+//
+// List styles
+// ===========
+//
+// Reference: _default.css:333 (DNN 7)
+// ----------------------------------------------------------------------------
+
+ul, ol {
+  margin: 0;
+}
+
+
+
+//
+// Message
+// =======
+//
+// Bring these messages into alignment with Bootstrap alerts.
+// 
+// Reference: _default.css:100 (DNN 8)
+// ----------------------------------------------------------------------------
+
 .dnnFormMessage {
   background-color: $alert-info-bg;
   border: $alert-border-width solid $alert-info-border;
@@ -179,23 +241,36 @@ blockquote {
 
 
 
-//== Tables
 //
-//## DNN uses `.dnnTableHeader` and `.dnnTableDisplay`. Skipping this.
-//## Reference: _default.css:130 (DNN 8)
-
-
-
-//== Pagination
+// Tables
+// ======
 //
-//## DNN uses `.dnnPagination`. Skipping this.
-//## Reference: _default:css:285 (DNN 8)
+// DNN uses `.dnnTableHeader` and `.dnnTableDisplay`. Skipping this.
+// 
+// Reference: _default.css:130 (DNN 8)
+// ----------------------------------------------------------------------------
 
 
 
-//== Forms
+
 //
-//## Reference: _default:css:321 (DNN 8)
+// Pagination
+// ==========
+//
+// DNN uses `.dnnPagination`. Skipping this.
+//
+// Reference: _default:css:285 (DNN 8)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Forms
+// =====
+//
+// Reference: _default:css:321 (DNN 8)
+// ----------------------------------------------------------------------------
 
 //######### Leaving this for later.......
 

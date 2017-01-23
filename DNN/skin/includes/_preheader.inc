@@ -12,7 +12,6 @@
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="MENU" src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<%@ Register TagPrefix="dnn" TagName="jQuery" Src="~/Admin/Skins/jQuery.ascx" %>
 
 
 <%-- add meta tags --%>
@@ -24,7 +23,7 @@
 
 
 <%-- add scripts --%>
-<dnn:JQUERY runat="server" />
-<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" ForceProvider="DnnFormBottomProvider" Priority="100" />
-<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="110" />
-<dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="120" />
+<dnn:DnnJsInclude runat="server" FilePath="https://code.jquery.com/jquery-3.1.1.slim.min.js" ForceProvider="DnnFormBottomProvider" Priority="100" />
+<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" ForceProvider="DnnFormBottomProvider" Priority="110" />
+<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="120" />
+<dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="130" />

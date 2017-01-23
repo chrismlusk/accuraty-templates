@@ -10,7 +10,7 @@ To replace these files once a newer version is available, go to the Bootstrap [d
 
 On 1/20/2017, Chris Lusk updated Bootstrap to v4.0.0-apha.6.
 
-*Note: If you update these files, please update this file to reflect the date and version, and please include your name.*
+*Note: If you update these files, please update the above line to reflect the date and version, and please include your name.*
 
 ### Modifying Bootstrap
 

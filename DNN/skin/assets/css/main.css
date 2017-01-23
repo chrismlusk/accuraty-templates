@@ -6843,6 +6843,18 @@ blockquote {
     blockquote cite a:visited {
       color: inherit; }
 
+a, a a:visited {
+  color: inherit;
+  text-decoration: inherit;
+  outline: inherit; }
+
+a:focus, a:active, a:hover {
+  color: inherit;
+  outline: inherit; }
+
+ul, ol {
+  margin: 0; }
+
 .dnnFormMessage {
   background-color: #d9edf7;
   border: 1px solid #bcdff1;
