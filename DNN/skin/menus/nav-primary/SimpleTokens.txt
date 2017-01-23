@@ -1,4 +1,4 @@
-<ul class="nav navbar-nav">
+<ul class="navbar-nav mr-auto">
   [*>NODE-TOP]
 </ul>
 
