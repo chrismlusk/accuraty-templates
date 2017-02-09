@@ -38,7 +38,7 @@ The **register directives** inform ASP.NET which user controls will be active, a
 <dnn:Breadcrumb runat="server" />
 ```
 
-The `_preheader.inc` files is also where we add stylesheets and scripts using the (Client Resource Manager)[http://www.dnnsoftware.com/wiki/client-resource-management-api].
+The `_preheader.inc` files is also where we add stylesheets and scripts using the [Client Resource Manager](http://www.dnnsoftware.com/wiki/client-resource-management-api).
 
 *Note: Everything in this file should be code that is included inside the `<head>` tag, except for script files that are explicitly added to the bottom of the `<body>` tag via the ForceProvided property.*
 
