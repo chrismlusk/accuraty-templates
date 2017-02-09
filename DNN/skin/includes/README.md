@@ -1,6 +1,6 @@
 # Includes
 
-The `includes/` folder contains code/markup that should be included in multiple theme files. This avoids duplicating work when you have elements that need to appear consistently throughout the site.
+The `includes/` folder contains code/markup that should be included in multiple layout template files. This avoids duplicating work when you have elements that need to appear consistently throughout the site.
 
 Included files should be named with a preceding underscore (which is a helpful way to mark a file as a partial, similar to our Sass naming convention) and have the file name extension `.inc`. For example: `_header.inc`.
 

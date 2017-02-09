@@ -1,3 +1,48 @@
 # Skin
 
-...
+A theme is known as a skin in DNN, and it defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS). 
+
+## Layouts and Panes
+
+A **pane** is a section of a webpage that displays static content, dynamic content, or a standard theme object.
+
+A **layout template** defines where panes are located on the webpage and what each pane contains.
+
+### Requirements:
+
+* A layout template must have at least one pane.
+* Exactly one of the panes must be called `ContentPane` (this is case-insensitive, but Accuraty style is capital case).
+* Each pane must have a name that is unique within the page.
+* All panes must have `runat="server"` added to the element.
+* A pane can only be a `<div>`, `<p>`, `<span>`, or `<td>`. 
+
+## Accuraty standards
+
+The `skin/` folder includes:
+
+* `assets/`
+* `includes/`
+* `menus/`
+* layout templates
+
+### Assets
+
+All stylesheets, fonts, images, and scripts needed in order to create the skin.
+
+### Includes
+
+Files that contain code/markup that should be included in multiple layout template files.
+
+### Menus
+
+Code necessary to build custom menus using DDRMenu.
+
+### Layout templates
+
+Start with `Main.ascx` as the default template, and add more as needed. These files should contain the core markup necessary to create pages. The ASP.NET control and register directives should be included via `_preheader.inc`, and global elements like the site header and footer are also included via an include directive.
+
+*Note: For more information about these directives, see the README.md file in the `includes/` folder.*
+
+---
+
+Reference: [DNN Documentation Center](http://www.dnnsoftware.com/docs) > [About Themes](http://www.dnnsoftware.com/docs/designers/about-themes.html)
