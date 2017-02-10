@@ -60,4 +60,4 @@ The `_preheader.inc` files is also where we add stylesheets and scripts using th
 
 ---
 
-Reference: [Microsoft Developer Network documentation](https://msdn.microsoft.com/en-us/library/ms525940.aspx)
+Reference: [Microsoft Developer Network](https://msdn.microsoft.com/en-us) > [Library](https://msdn.microsoft.com/library) > [Include Directives](https://msdn.microsoft.com/en-us/library/ms525940.aspx)

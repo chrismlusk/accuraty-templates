@@ -1,12 +1,12 @@
 # Accuraty Templates
 
-A set of templates for building fast and effective websites. This is an attempt to create a set of standards and best practices for Accuraty projects.
+This is an attempt to create a set of standards and best practices for Accuraty projects in a way that is easy to deploy using modern web technologies and up-to-date frameworks.
 
 ## Overview
 
-Accuraty primarily works with two content management systems: DNN and WordPress. The files included in each folder are designed to be a start template for each platform.
+Accuraty primarily works with two content management systems: DNN and WordPress. The files included in each folder are designed to be a starter template for each platform.
 
-The template includes the source Sass files from Bootstrap v4.0.0-apha.6 (Updated 1/20/2017).
+The template includes the source Sass files from Bootstrap v4.0.0-apha.6 (Updated 1/20/2017) nested and integrated with our custom styles codebase.
 
 ## DNN
 
