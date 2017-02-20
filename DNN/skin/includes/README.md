@@ -56,7 +56,13 @@ The `_preheader.inc` files is also where we add stylesheets and scripts using th
 
 ### Logo
 
-`_logo.inc` is especially useful for SVG logos that are being inserted inline.
+`_logo.inc` is useful when you need to implement SVG logos inline.
+
+#### Why inline?
+
+Putting your SVG code inline allows you to manipulate the logo via CSS and JavaScript, and it also saves an HTTP request. But since maintaining inline SVG code can be messy, we suggest you separate it into an include file.
+
+To learn more about SVG implementation, check out this handy guide at [SVG On The Web](https://svgontheweb.com).
 
 ---
 

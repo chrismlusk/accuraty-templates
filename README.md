@@ -20,6 +20,6 @@ To use this template, navigated to the `Portals/_default/Containers` and the `Po
 
 **Accuraty Solutions** is a full-service website firm that provides a wide range of web services: design, development, applications, hosting, e-commerce, and more. We deliver creative, effective results and have extensive experience in building useful online presences for businesses, organizations, and communities.
 
---
+---
 
 Reference: [Accuraty Solutions](http://www.accuraty.com/)

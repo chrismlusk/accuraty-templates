@@ -3,7 +3,7 @@
 
   $(function () {
     
-    // Add code here
+    // DOM is ready. Code away!
 
   });
 
