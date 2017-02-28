@@ -1,5 +1,5 @@
-<!--#include file="includes/_preheader.ascx"-->
-<!--#include file="includes/_header.ascx"-->
+<!--#include file="includes/_preheader.inc"-->
+<!--#include file="includes/_header.inc"-->
 
 <main class="main">
   <section class="section">
@@ -11,4 +11,4 @@
   </section>
 </main>
 
-<!--#include file="includes/_footer.ascx"-->
+<!--#include file="includes/_footer.inc"-->
