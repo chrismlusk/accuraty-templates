@@ -2,21 +2,21 @@
 //
 //   Variables
 //
-//   Updated: 1/20/2017 by Chris Lusk
+//   Updated: 2/28/2017 by Chris Lusk
 //
 //   For convenience, you can search for a section by preceeding the title
 //   with a pound sign and a space. Example: `# Colors`
-//   
+//
 //   --
-//  
+//
 //   [Table of Contents]
-//  
+//
 //   1. Initial variables
 //      - Colors
 //      - Typography
 //      - Borders
 //      - Miscellaneous
-//  
+//
 //   2. Applied variables
 //      - Colors
 //      - Options
@@ -72,7 +72,7 @@
 //
 // # Colors
 // ========
-// 
+//
 // Grayscale, site colors, and third-party brand colors.
 // ----------------------------------------------------------------------------
 
@@ -206,7 +206,7 @@ $gutter: 30px;
 //  Assigned with the values set in the first section.
 //
 //  This is also where we override Bootstrap variables. Commented-out variables
-//  don't depend on the variables defined in the first section and contain the 
+//  don't depend on the variables defined in the first section and contain the
 //  default values from Bootstrap. To override these, uncomment and modify.
 //
 //  Note: These variables are also used in your custom stylesheets.
@@ -220,7 +220,7 @@ $gutter: 30px;
 // ================
 //
 // Required for grid breakpoints and grid columns.
-// 
+//
 // Reference: vendors/bootstrap/_variables.scss:44
 // ----------------------------------------------------------------------------
 
@@ -347,7 +347,7 @@ $sizes: (
 //
 // # Body
 // ======
-// 
+//
 // Settings for the `<body>` element.
 //
 // Reference: vendors/bootstrap/_variables.scss:180
@@ -372,7 +372,7 @@ $inverse-color: $gray-lighter;
 $link-color:              $brand-primary;
 $link-decoration:         none;
 $link-hover-color:        darken($link-color, 15%);
-$link-hover-decoration:   underline;
+$link-hover-decoration:   none;
 
 //## Custom variables added by Accuraty
 $link-border-color:       lighten($link-color, 40%);
@@ -426,7 +426,7 @@ $container-max-widths: (
 // ==============
 //
 // Set the number of columns and specifiy the width of the gutters.
-// 
+//
 // Reference: vendors/bootstrap/_variables.scss:229
 // ----------------------------------------------------------------------------
 

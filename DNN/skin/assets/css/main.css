@@ -322,7 +322,7 @@ a {
   text-decoration: none; }
   a:focus, a:hover {
     color: #014c8c;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -2216,7 +2216,7 @@ fieldset[disabled] a.btn {
     border-color: transparent; }
   .btn-link:focus, .btn-link:hover {
     color: #014c8c;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent; }
   .btn-link:disabled {
     color: #888; }
@@ -6971,5 +6971,3 @@ ul {
 
 .DnnModule__title {
   margin-top: 0 !important; }
-
-/*# sourceMappingURL=main.css.map */
