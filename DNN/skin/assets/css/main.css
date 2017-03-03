@@ -6909,6 +6909,9 @@ ul {
 .section {
   padding: 40px 20px; }
 
+.footer-brand {
+  display: block; }
+
 .btn.is-inverse {
   border-color: #fff;
   color: #fff; }
