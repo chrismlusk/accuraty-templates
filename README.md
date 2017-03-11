@@ -14,7 +14,7 @@ To use this template, navigated to the `Portals/_default/Containers` and the `Po
 
 ### WordPress
 
-(Nothing currently created.)
+[UNDER CONSTRUCTION]
 
 ## About Accuraty
 

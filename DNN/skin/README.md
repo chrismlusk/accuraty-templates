@@ -1,6 +1,8 @@
 # Skin
 
-A theme is known as a skin in DNN, and it defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS). 
+This folder is where we save starter files to build a custom DNN skin. When copying these files for use in a project, be sure they are added to `/Portals/_default/Skins/{CLIENT ABBREVIATION}/`.
+
+A skin defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS). 
 
 ## Layouts and Panes
 
