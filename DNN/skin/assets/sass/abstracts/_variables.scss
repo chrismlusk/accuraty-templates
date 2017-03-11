@@ -189,15 +189,19 @@ $border-radius-large:   .3rem;
 
 $easing: ease-out;
 $speed: 86ms;
-$dnn-control-bar-height: 53px;
 $box-shadow: 0 2px 4px -1px rgba($black,.06), 0 4px 5px 0 rgba($black,.06), 0 1px 10px 0 rgba($black,.08);
 
-//## Number of columns in the grid
 //## Used for Bootstrap's `$grid-columns` variable
 $columns: 12;
 
 //## Used for Bootstrap's `$grid-gutter-width-base` variable
 $gutter: 30px;
+
+//## `Control Bar` is what's used in DNN 8 and below
+$dnn-control-bar-height: 53px;
+
+//## Persona Bar is what's used in DNN 9
+$dnn-persona-bar-width: 80px;
 
 
 

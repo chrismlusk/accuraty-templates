@@ -6750,14 +6750,13 @@ ul {
   z-index: 9; }
   #Form.showControlBar .header.fixed-to-top {
     top: 53px; }
+  .hasDnnPersonaBar .header.fixed-to-top {
+    left: 80px; }
 
 .main {
   margin-top: 50px; }
   #Form.showControlBar .main {
     margin-top: 103px; }
-
-.section {
-  padding: 40px 20px; }
 
 .footer-brand {
   display: block; }
