@@ -5,29 +5,21 @@
 
         <a class="footer-brand" href="/">LOGO</a>
 
-        <address class="footer-address">
-          <div itemscope itemtype="http://schema.org/PostalAddress">
-              <span itemprop="name" class="sr-only">CLIENT NAME</span><br>
-              <span itemprop="streetAddress">STREET ADDRESS</span><br>
-              <span itemprop="addressLocality">CITY</span>,&nbsp;
-              <span itemprop="addressRegion">STATE</span>&nbsp;
-              <span itemprop="postalCode">ZIP CODE</span><br>
-              <span itemprop="addressCountry">United States</span>
-          </div>
+        <address class="footer-address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="name" class="sr-only">CLIENT NAME</span><br>
+          <span itemprop="streetAddress">STREET ADDRESS</span><br>
+          <span itemprop="addressLocality">CITY</span>,
+          <span itemprop="addressRegion">STATE</span>
+          <span itemprop="postalCode">ZIP CODE</span>
+          <span itemprop="addressCountry" class="sr-only">United States</span>
         </address>
 
-        <div itemscope itemtype="http://schema.org/Organization">
+        <nav class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
           <link itemprop="url" href="<%=PortalSettings.PortalAlias.HTTPAlias%>">
-          <a itemprop="sameAs" href="#" class="">
-            Facebook
-          </a>
-          <a itemprop="sameAs" href="#" class="">
-            Twitter
-          </a>
-          <a itemprop="sameAs" href="#" class="">
-            YouTube
-          </a>
-        </div>
+          <a class="nav-link" href="#" target="_blank" itemprop="sameAs">Facebook</a>
+          <a class="nav-link" href="#" target="_blank" itemprop="sameAs">Twitter</a>
+          <a class="nav-link" href="#" target="_blank" itemprop="sameAs">YouTube</a>
+        </nav>
 
       </div>
     </div>

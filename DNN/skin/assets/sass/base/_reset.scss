@@ -1,8 +1,8 @@
 // ============================================================================
 //
 //  Reset
-// 
-//  This file is to reset opinionated styles and common conflicts created 
+//
+//  This file is to reset opinionated styles and common conflicts created
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
@@ -36,10 +36,10 @@
     white-space: normal;
 }
 
-#ControlBar, #ControlBar::before, #ControlBar::after, 
+#ControlBar, #ControlBar::before, #ControlBar::after,
 #ControlBar li, #ControlBar li::before, #ControlBar li::after,
 #ControlBar a, #ControlBar a::before, #ControlBar a::after,
-.dnn_mact, .dnn_mact::before, .dnn_mact::after, 
+.dnn_mact, .dnn_mact::before, .dnn_mact::after,
 .dnn_mact li, .dnn_mact li::before, .dnn_mact li::after {
     -webkit-box-sizing: content-box !important;
     -moz-box-sizing: content-box !important;
@@ -47,7 +47,7 @@
 }
 
 .dnnDropDownList .selected-item,
-.dnnDropDownList .selected-item a { 
+.dnnDropDownList .selected-item a {
     height: auto !important;
 }
 
@@ -85,8 +85,8 @@
   margin: 0;
 }
 
-.Normal, 
-.NormalDisabled, 
+.Normal,
+.NormalDisabled,
 .NormalDeleted { // 2
   color: inherit;
   font-size: inherit;
@@ -126,7 +126,7 @@
 blockquote {
   border: 0;
   padding: 0;
-  
+
   &,
   p {
     color: inherit;
@@ -208,7 +208,7 @@ ul, ol {
 // =======
 //
 // Bring these messages into alignment with Bootstrap alerts.
-// 
+//
 // Reference: _default.css:100 (DNN 8)
 // ----------------------------------------------------------------------------
 
@@ -218,7 +218,7 @@ ul, ol {
   -webkit-border-radius: $alert-border-radius;
   border-radius: $alert-border-radius;
   color: $alert-info-text;
-  margin-bottom: $spacer-y;
+  margin-bottom: $spacer;
   max-width: none;
   padding: $alert-padding-y $alert-padding-x;
 
@@ -246,7 +246,7 @@ ul, ol {
 // ======
 //
 // DNN uses `.dnnTableHeader` and `.dnnTableDisplay`. Skipping this.
-// 
+//
 // Reference: _default.css:130 (DNN 8)
 // ----------------------------------------------------------------------------
 
