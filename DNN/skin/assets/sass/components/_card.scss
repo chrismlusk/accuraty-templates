@@ -1,0 +1,103 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  1. Wrapper and base class
+//  2. Card typography
+//  3. Card sections
+//  4. Card navs
+//  5. Card image
+//  6. Card layouts
+//     - Deck
+//     - Groups
+//     - Columns
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.card {}
+
+.card-block {}
+
+
+
+
+//
+// Card typography
+// ===============
+
+.card-title {}
+
+.card-subtitle {}
+
+.card-text {}
+
+.card-link {}
+
+
+
+
+//
+// Card sections
+// =============
+
+.card-header {}
+
+.card-footer {}
+
+
+
+
+//
+// Card navs
+// =========
+
+.card-header-tabs {}
+
+.card-header-pills {}
+
+
+
+
+//
+// Card image
+// ==========
+
+.card-img {}
+
+
+
+
+//
+// Card layouts
+// ============
+//
+// Each class is wrapped in a media query since the styles only apply > 768px.
+// ----------------------------------------------------------------------------
+
+@include media-breakpoint-up('sm') {
+
+  // Deck
+  .card-deck {
+
+    .card {}
+  }
+
+  // Groups
+  .card-group {
+
+    .card {}
+  }
+
+  // Columns
+  .card-columns {
+
+    .card {}
+  }
+}
