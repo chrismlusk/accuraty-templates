@@ -1,5 +1,5 @@
 // ============================================================================
-// 
+//
 //  [Table of Contents]
 //
 //  1. Base styles
@@ -21,7 +21,10 @@
 
   &.is-inverse {
     border-color: $white;
-    color: $white;
+
+    @include plain-visited {
+      color: $white;
+    }
 
     @include hover-focus {
       border-color: rgba(255, 255, 255, 0.5);

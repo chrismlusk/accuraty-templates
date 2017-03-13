@@ -3,8 +3,12 @@
 //  [Table of Contents]
 //
 //  1. Footer
-//  2. Footer brand
-//  3. Footer address
+//  2. Footer link
+//  3. Footer brand
+//  4. Footer address
+//  5. Footer nav
+//  6. Footer credits
+//  7. Footer sections
 //
 // ============================================================================
 
@@ -16,6 +20,15 @@
 // ======================
 
 .footer {}
+
+
+
+
+//
+// Footer link
+// ===========
+
+.footer-link {}
 
 
 
@@ -39,3 +52,54 @@
 // ==============
 
 .footer-address {}
+
+
+
+
+//
+// Footer nav
+// ==========
+//
+// 1. Custom `.nav` component to create a label above `.nav-link` items.
+// ----------------------------------------------------------------------------
+
+.footer {
+
+  .nav-label { // 1
+
+  }
+
+  .nav-link {
+
+      @include plain-visited {}
+
+      @include hover-focus {}
+   }
+}
+
+
+
+
+//
+// Footer credits
+// ==============
+//
+// Copyright, Accuraty credit, etc.
+// ----------------------------------------------------------------------------
+
+.footer-credits {}
+
+
+
+
+//
+// Footer sections
+// ===============
+//
+// Used to organize the footer. These are used in the markup as siblings to
+// `.container-fluid`, so be mindful of margin and spacing style overrides.
+// ----------------------------------------------------------------------------
+
+.footer-upper {}
+
+.footer-lower {}

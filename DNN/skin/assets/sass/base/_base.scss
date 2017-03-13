@@ -1,11 +1,30 @@
 // ============================================================================
-// 
+//
 //  [Table of Contents]
 //
-//  1. Inline
-//  2. Block
+//  1. Body
+//  2. Inline
+//  3. Block
 //
 // ============================================================================
+
+
+
+
+//
+// Body
+// ====
+
+body {
+
+  //
+  // [if DNN = v9]
+  //
+  // Reposition to avoid screwy animation when Persona Bar slides on screen
+  &.hasDnnPersonaBar {
+    margin-left: $dnn-persona-bar-width;
+  }
+}
 
 
 
@@ -16,8 +35,7 @@
 
 a {
 
-  &,
-  &:visited {
+  @include plain-visited {
     color: $link-color;
     transition: all $speed $easing;
   }

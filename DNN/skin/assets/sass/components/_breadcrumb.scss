@@ -1,5 +1,5 @@
 // ============================================================================
-// 
+//
 //  For consistency, all skin and theme objects created by DNN use the same
 //  pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
 //
@@ -59,7 +59,7 @@
 
 // .DnnBreadcrumb span[itemprop="itemListElement"] { // 1
 //   $separator-space: ($spacer / 2); // 2
-  
+
 //   &:not(:first-child) { // 3
 //     margin-left: $separator-space;
 
@@ -82,14 +82,14 @@
 // This class is added to the object via its ASCX token's `CssClass` attribute.
 // Example: `<dnn:Breadcrumb CssClass="DnnBreadcrumb__item">`
 //
-// 1. Because DNN's `default.css` explicitly sets anchor styles to match their 
+// 1. Because DNN's `default.css` explicitly sets anchor styles to match their
 //    visited state, which means we have to explicitly override this, we have
 //    to set the color to both the class and its visited state.
 // ----------------------------------------------------------------------------
 
 // .DnnBreadcrumb__item {
 
-//   &, &:visited { // 1
+//   @include plain-visited { // 1
 //     color: inherit;
 //   }
 // }

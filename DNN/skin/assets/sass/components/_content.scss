@@ -1,7 +1,7 @@
 // ============================================================================
 //
 //  This file contains all styles for content that appears inside DNN modules.
-// 
+//
 //  For consistency, all skin and theme objects created by DNN use the same
 //  pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
 //
@@ -24,70 +24,49 @@
 // Wrapper and base class
 // ======================
 //
-// 1. Links that appear inside a module with a background color should be given
-//    the `.is-inverse` modifier, and need their border color altered. Normal
-//    state is a white border, and we use `$link-hover-color` for hover/focus.
-//
-// 2. By default these elements have no bottom margin (per `_base.scss`), but
+// 1. By default these elements have no bottom margin (per `_base.scss`), but
 //    we want them to have margin in the flow of module content. So add spacing
 //    as long as they aren't the last child, which avoids excess bottom margin.
 //
-// 3. List items are too close together compared to all other body text
+// 2. List items are too close together compared to all other body text
 //    elements, so add a little margin between siblings.
 //
-// 4. For better spacing of body text sections introduced by headings, we add
-//    double the default spacing as the top margin for these tags as long as 
+// 3. For better spacing of body text sections introduced by headings, we add
+//    double the default spacing as the top margin for these tags as long as
 //    they aren't the first child inside the parent.
 //
-// 5. However, because DNN injects an achor tag as the first child of each
-//    module — and since we use `<h2>` tags as default module titles — we
-//    use the more specific `:first-of-type` pseudo class to ensure all 
-//    subsequent occurrences of this tag receive the extra top margin.
-// 
+// 4. But when two headings are next to each other, we don't want this excess
+//    top space. So we reset the top margin to the default spacing for `<h3>`
+//    and `<h4>` tags — and we use the `!important` declaration to force this.
 // ----------------------------------------------------------------------------
 
 .DnnModule {
   color: $body-color;
-
-  a {
-    font-weight: $weight-bold;
-
-    &:not(.btn):not(.is-inverse) {
-      border-bottom: $border-width solid $link-border-color;
-
-      @include hover-focus {
-        border-bottom-color: $link-hover-border-color;
-      }
-    }
-
-    &.is-inverse { // 1
-      border-bottom: $border-width solid $white;
-
-      @include hover-focus {
-        border-bottom-color: rgba(255, 255, 255, 0.5);
-      }
-    }
-  }
 
   blockquote,
   p,
   ol,
   ul {
     &:not(:last-child) {
-      margin-bottom: $spacer; // 2
+      margin-bottom: $spacer; // 1
     }
   }
 
   li + li {
-    margin-top: ($spacer / 4); // 3
+    margin-top: ($spacer / 4); // 2
   }
 
   h2, .h2,
   h3, .h3,
   h4, .h4 {
     &:not(:first-child) {
-      margin-top: ($spacer * 2); // 4
+      margin-top: ($spacer * 2); // 3
     }
+  }
+
+  h2 + h3,
+  h3 + h4 {
+    margin-top: $spacer !important; // 4
   }
 
   blockquote {
@@ -105,7 +84,10 @@
       }
 
       a {
-        color: $blockquote-small-color;
+
+        @include plain-visited {
+          color: $blockquote-small-color;
+        }
 
         @include hover-focus {
           color: $link-hover-color;
@@ -144,7 +126,7 @@
 // ============
 //
 // 1. Yes, `!important` is generally a bad idea, but we want to override the
-//    specificity introduced by the `:not(:first-child)` pseudo class used on 
+//    specificity introduced by the `:not(:first-child)` pseudo class used on
 //    headings inside the base class for this one title class. This is helpful
 //    because modules can use various heading tags as their titles, not just
 //    `<h2>` tags, so we need to account for this.
@@ -160,5 +142,53 @@
 //
 // Module content section
 // ======================
+//
+// 1. Increase the size of body text. 1.125rem is ~18px on a 16px base.
+//    {{ OVERRIDE THIS VALUE AS NEEDED }}
+//
+// 2. Add custom bottom border to links to replace standard `text-decoration`
+//    for better styling and control.
+//
+// 3. On `:active` and `:focus` add a slight background color to introduce
+//    sufficient variation for each link state. This is a big benefit for
+//    accessibility issues (i.e. clear changes beyond just color change).
+//
+// 4. Links that appear inside a module with a background color should be given
+//    the `.is-inverse` modifier, and need their border color altered. Normal
+//    state is a white border, and we use `$link-hover-color` for hover/focus.
+// ----------------------------------------------------------------------------
 
-.DnnModule__content {}
+.DnnModule__content {
+
+  blockquote,
+  p,
+  ol,
+  ul {
+    // font-size: 1.125rem; // 1
+  }
+
+  a {
+    font-weight: $weight-bold;
+
+    &:not(.btn):not(.is-inverse) {
+      border-bottom: $border-width solid $link-border-color; // 2
+
+      @include hover-focus-active {
+        border-bottom-color: transparent;
+      }
+
+      &:active,
+      &:focus {
+        background-color: rgba($gray-dark, .1); // 3
+      }
+    }
+
+    &.is-inverse { // 4
+      border-bottom: $border-width solid $white;
+
+      @include hover-focus {
+        border-bottom-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}

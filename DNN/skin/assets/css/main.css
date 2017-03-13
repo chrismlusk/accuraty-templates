@@ -3083,7 +3083,7 @@ tbody.collapse.show {
   border-color: rgba(0, 0, 0, 0.1); }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+  background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23"); }
 
 .navbar-light .navbar-text {
   color: rgba(0, 0, 0, 0.5); }
@@ -3113,7 +3113,7 @@ tbody.collapse.show {
   border-color: rgba(255, 255, 255, 0.1); }
 
 .navbar-inverse .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+  background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23"); }
 
 .navbar-inverse .navbar-text {
   color: rgba(255, 255, 255, 0.5); }
@@ -4246,10 +4246,10 @@ button.close {
   background-size: 100% 100%; }
 
 .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"); }
+  background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23"); }
 
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"); }
+  background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#fff' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23"); }
 
 .carousel-indicators {
   position: absolute;
@@ -6689,11 +6689,10 @@ blockquote {
     blockquote cite::before {
       content: '';
       display: none; }
-    blockquote cite a,
-    blockquote cite a:visited {
+    blockquote cite a, blockquote cite a:visited {
       color: inherit; }
 
-a, a a:visited {
+a, a:visited {
   color: inherit;
   text-decoration: inherit;
   outline: inherit; }
@@ -6702,8 +6701,19 @@ a:focus, a:active, a:hover {
   color: inherit;
   outline: inherit; }
 
-ul, ol {
+ul,
+ol {
+  list-style: initial;
   margin: 0; }
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    list-style: initial;
+    margin: 0; }
+
+li p {
+  line-height: inherit; }
 
 .dnnFormMessage {
   background-color: #d9edf7;
@@ -6723,6 +6733,9 @@ ul, ol {
   .dnnFormMessage.dnnFormSuccess {
     background-color: #dff0d8;
     border-color: #d0e9c6; }
+
+body.hasDnnPersonaBar {
+  margin-left: 80px; }
 
 a, a:visited {
   color: #0275d8;
@@ -6762,24 +6775,15 @@ ul {
   display: block; }
 
 .btn.is-inverse {
-  border-color: #fff;
-  color: #fff; }
+  border-color: #fff; }
+  .btn.is-inverse, .btn.is-inverse:visited {
+    color: #fff; }
   .btn.is-inverse:focus, .btn.is-inverse:hover {
     border-color: rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.5); }
 
 .DnnModule {
   color: #222; }
-  .DnnModule a {
-    font-weight: 700; }
-    .DnnModule a:not(.btn):not(.is-inverse) {
-      border-bottom: 1px solid #a8d6fe; }
-      .DnnModule a:not(.btn):not(.is-inverse):focus, .DnnModule a:not(.btn):not(.is-inverse):hover {
-        border-bottom-color: #0275d8; }
-    .DnnModule a.is-inverse {
-      border-bottom: 1px solid #fff; }
-      .DnnModule a.is-inverse:focus, .DnnModule a.is-inverse:hover {
-        border-bottom-color: rgba(255, 255, 255, 0.5); }
   .DnnModule blockquote:not(:last-child),
   .DnnModule p:not(:last-child),
   .DnnModule ol:not(:last-child),
@@ -6791,6 +6795,9 @@ ul {
   .DnnModule h3:not(:first-child), .DnnModule .h3:not(:first-child),
   .DnnModule h4:not(:first-child), .DnnModule .h4:not(:first-child) {
     margin-top: 2rem; }
+  .DnnModule h2 + h3,
+  .DnnModule h3 + h4 {
+    margin-top: 1rem !important; }
   .DnnModule blockquote {
     background-color: #f6f6f6;
     border-left: 3px solid #eee;
@@ -6801,11 +6808,11 @@ ul {
       font-size: 0.75rem; }
       .DnnModule blockquote footer::before {
         content: "\2014 \00A0"; }
-      .DnnModule blockquote footer a {
+      .DnnModule blockquote footer a, .DnnModule blockquote footer a:visited {
         color: #777; }
-        .DnnModule blockquote footer a:focus, .DnnModule blockquote footer a:hover {
-          color: #014c8c;
-          border-bottom-color: #0275d8; }
+      .DnnModule blockquote footer a:focus, .DnnModule blockquote footer a:hover {
+        color: #014c8c;
+        border-bottom-color: #0275d8; }
   .DnnModule ol {
     list-style: decimal outside;
     margin-left: 2rem;
@@ -6823,3 +6830,16 @@ ul {
 
 .DnnModule__title {
   margin-top: 0 !important; }
+
+.DnnModule__content a {
+  font-weight: 700; }
+  .DnnModule__content a:not(.btn):not(.is-inverse) {
+    border-bottom: 1px solid #a8d6fe; }
+    .DnnModule__content a:not(.btn):not(.is-inverse):focus, .DnnModule__content a:not(.btn):not(.is-inverse):active, .DnnModule__content a:not(.btn):not(.is-inverse):hover {
+      border-bottom-color: transparent; }
+    .DnnModule__content a:not(.btn):not(.is-inverse):active, .DnnModule__content a:not(.btn):not(.is-inverse):focus {
+      background-color: rgba(34, 34, 34, 0.1); }
+  .DnnModule__content a.is-inverse {
+    border-bottom: 1px solid #fff; }
+    .DnnModule__content a.is-inverse:focus, .DnnModule__content a.is-inverse:hover {
+      border-bottom-color: rgba(255, 255, 255, 0.5); }
