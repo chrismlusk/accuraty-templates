@@ -335,7 +335,7 @@ $spacers: (
   5: ($spacer * 3)
 );
 
-//## This variable affects the `.h-*` and `.w-*` classes.
+//## This variable affects the `.h-*` classes.
 $sizes: (
   25: 25%,
   50: 50%,
@@ -590,16 +590,16 @@ $table-inverse-color:           $body-bg;
 // Reference: vendors/bootstrap/_variables.scss:334
 // ----------------------------------------------------------------------------
 
-$input-btn-padding-x:       1rem;
 $input-btn-padding-y:       .5rem;
+$input-btn-padding-x:       1rem;
 $input-btn-line-height:     1.25;
 
-$input-btn-padding-x-sm:    .5rem;
 $input-btn-padding-y-sm:    .25rem;
+$input-btn-padding-x-sm:    .5rem;
 $input-btn-line-height-sm:  1.5;
 
-$input-btn-padding-x-lg:    1rem;
 $input-btn-padding-y-lg:    .5rem;
+$input-btn-padding-x-lg:    1rem;
 $input-btn-line-height-lg:  1.5;
 
 $btn-font-weight:                $font-weight-normal;
@@ -779,8 +779,8 @@ $dropdown-header-color:          $gray-light;
 
 $nav-item-margin:               .2rem;
 $nav-item-inline-spacer:        1rem;
-$nav-link-padding-x:            1rem;
 $nav-link-padding-y:            .5rem;
+$nav-link-padding-x:            1rem;
 $nav-link-hover-bg:             $gray-lighter;
 $nav-disabled-link-color:       $gray-light;
 
@@ -807,8 +807,8 @@ $nav-pills-active-link-bg:    $component-active-bg;
 // Reference: vendors/bootstrap/_variables.scss:592
 // ----------------------------------------------------------------------------
 
-$navbar-padding-x:              $spacer;
 $navbar-padding-y:              ($spacer / 2);
+$navbar-padding-x:              $spacer;
 
 $navbar-brand-font-size:        $font-size-lg;
 
@@ -818,8 +818,8 @@ $nav-link-height:               $navbar-brand-font-size * $line-height-base;
 $navbar-brand-height:           ($font-size-base * $line-height-base + $nav-link-padding-y * 2);
 $navbar-brand-padding-y:        ($navbar-brand-height - $nav-link-height) / 2;
 
-$navbar-toggler-padding-x:           .75rem;
 $navbar-toggler-padding-y:           .25rem;
+$navbar-toggler-padding-x:           .75rem;
 $navbar-toggler-font-size:           $font-size-lg;
 $navbar-toggler-border-radius:       $btn-border-radius;
 
@@ -850,12 +850,12 @@ $navbar-height:                     50px;
 // Reference: vendors/bootstrap/_variables.scss:622
 // ----------------------------------------------------------------------------
 
-$pagination-padding-x:                .75rem;
 $pagination-padding-y:                .5rem;
-$pagination-padding-x-sm:             .5rem;
+$pagination-padding-x:                .75rem;
 $pagination-padding-y-sm:             .25rem;
-$pagination-padding-x-lg:             1.5rem;
+$pagination-padding-x-sm:             .5rem;
 $pagination-padding-y-lg:             .75rem;
+$pagination-padding-x-lg:             1.5rem;
 $pagination-line-height:              1.25;
 
 $pagination-color:                     $link-color;
@@ -925,8 +925,8 @@ $state-danger-border:            darken($state-danger-bg, 5%);
 // Reference: vendors/bootstrap/_variables.scss:678
 // ----------------------------------------------------------------------------
 
-$card-spacer-x:            1.25rem;
 $card-spacer-y:            .75rem;
+$card-spacer-x:            1.25rem;
 $card-border-width:        $border-width;
 $card-border-radius:       $border-radius;
 $card-border-color:        rgba($black,.125);
@@ -982,12 +982,12 @@ $popover-box-shadow:                  0 5px 10px rgba($black,.2);
 
 $popover-title-bg:                    darken($popover-bg, 3%);
 $popover-title-color:                 $headings-color;
-$popover-title-padding-x:             14px;
 $popover-title-padding-y:             8px;
+$popover-title-padding-x:             14px;
 
 $popover-content-color:               $body-color;
-$popover-content-padding-x:           14px;
 $popover-content-padding-y:           9px;
+$popover-content-padding-x:           14px;
 
 $popover-arrow-width:                 10px;
 $popover-arrow-color:                 $popover-bg;
@@ -1015,8 +1015,8 @@ $badge-color:                 $white;
 $badge-link-hover-color:      $white;
 $badge-font-size:             75%;
 $badge-font-weight:           $font-weight-bold;
-$badge-padding-x:             .4em;
 $badge-padding-y:             .25em;
+$badge-padding-x:             .4em;
 
 $badge-pill-padding-x:        .6em;
 
@@ -1072,8 +1072,8 @@ $modal-transition:                transform .3s ease-out;
 // Reference: vendors/bootstrap/_variables.scss:792
 // ----------------------------------------------------------------------------
 
-$alert-padding-x:             1.25rem;
 $alert-padding-y:             .75rem;
+$alert-padding-x:             1.25rem;
 $alert-margin-bottom:         1rem;
 $alert-border-radius:         $border-radius;
 $alert-link-font-weight:      $font-weight-bold;
@@ -1128,8 +1128,8 @@ $list-group-border-color:        rgba($black,.125);
 $list-group-border-width:        $border-width;
 $list-group-border-radius:       $border-radius;
 
-$list-group-item-padding-x:      1.25rem;
 $list-group-item-padding-y:      .75rem;
+$list-group-item-padding-x:      1.25rem;
 
 $list-group-hover-bg:            $gray-lightest;
 $list-group-active-color:        $component-active-color;
@@ -1182,8 +1182,8 @@ $figure-caption-color:     $gray-light;
 //
 // Reference: vendors/bootstrap/_variables.scss:874
 // ----------------------------------------------------------------------------
-
 $breadcrumb-padding-y:          .75rem;
+
 $breadcrumb-padding-x:          1rem;
 $breadcrumb-item-padding:       .5rem;
 
@@ -1218,7 +1218,7 @@ $carousel-control-icon-width:                 20px;
 $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23");
 $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23");
 
-$carousel-transition:           transform .6s ease-in-out;
+$carousel-transition:           transform .6s ease;
 
 
 
@@ -1244,8 +1244,8 @@ $close-text-shadow:           0 1px 0 $white;
 // ----------------------------------------------------------------------------
 
 $code-font-size:              90%;
-$code-padding-x:              .4rem;
 $code-padding-y:              .2rem;
+$code-padding-x:              .4rem;
 $code-color:                  #bd4147;
 $code-bg:                     $gray-lightest;
 
