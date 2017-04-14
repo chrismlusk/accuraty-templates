@@ -262,9 +262,6 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0; }
-  input[type="radio"]:disabled,
-  input[type="checkbox"]:disabled {
-    cursor: not-allowed; }
 
 input[type="date"],
 input[type="time"],
@@ -540,6 +537,7 @@ pre {
       max-width: 100%; } }
 
 .container-fluid {
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -1423,8 +1421,6 @@ pre {
   .form-control:disabled, .form-control[readonly] {
     background-color: #eee;
     opacity: 1; }
-  .form-control:disabled {
-    cursor: not-allowed; }
 
 select.form-control:not([size]):not([multiple]) {
   height: calc(2.25rem + 2px); }
@@ -1511,8 +1507,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   display: block;
   margin-bottom: 0.5rem; }
   .form-check.disabled .form-check-label {
-    color: #777;
-    cursor: not-allowed; }
+    color: #777; }
 
 .form-check-label {
   padding-left: 1.25rem;
@@ -1712,7 +1707,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     outline: 0;
     box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25); }
   .btn.disabled, .btn:disabled {
-    cursor: not-allowed;
     opacity: .65; }
   .btn:active, .btn.active {
     background-image: none; }
@@ -2093,7 +2087,6 @@ tbody.collapse.show {
     background-color: #0275d8; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #777;
-    cursor: not-allowed;
     background-color: transparent; }
 
 .show > .dropdown-menu {
@@ -2117,14 +2110,6 @@ tbody.collapse.show {
   font-size: 0.875rem;
   color: #777;
   white-space: nowrap; }
-
-.dropdown-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 990; }
 
 .dropup .dropdown-menu {
   top: auto;
@@ -2407,11 +2392,9 @@ tbody.collapse.show {
     color: #fff;
     background-color: #8fcafe; }
   .custom-control-input:disabled ~ .custom-control-indicator {
-    cursor: not-allowed;
     background-color: #eee; }
   .custom-control-input:disabled ~ .custom-control-description {
-    color: #777;
-    cursor: not-allowed; }
+    color: #777; }
 
 .custom-control-indicator {
   position: absolute;
@@ -2481,7 +2464,6 @@ tbody.collapse.show {
       background-color: #fff; }
   .custom-select:disabled {
     color: #777;
-    cursor: not-allowed;
     background-color: #eee; }
   .custom-select::-ms-expand {
     opacity: 0; }
@@ -2559,13 +2541,15 @@ tbody.collapse.show {
   .nav-link:focus, .nav-link:hover {
     text-decoration: none; }
   .nav-link.disabled {
-    color: #777;
-    cursor: not-allowed; }
+    color: #777; }
 
 .nav-tabs {
   border-bottom: 1px solid #ddd; }
-  .nav-tabs .nav-item {
+  .nav-tabs .nav-item,
+  .nav-tabs .nav-link {
     margin-bottom: -1px; }
+  .nav-tabs .nav-item .nav-link {
+    margin-bottom: 0; }
   .nav-tabs .nav-link {
     border: 1px solid transparent;
     border-top-left-radius: 0.25rem;
@@ -3283,7 +3267,6 @@ tbody.collapse.show {
 .page-item.disabled .page-link {
   color: #777;
   pointer-events: none;
-  cursor: not-allowed;
   background-color: #fff;
   border-color: #ddd; }
 
@@ -3542,7 +3525,6 @@ a.badge:focus, a.badge:hover {
     text-decoration: none; }
   .list-group-item.disabled, .list-group-item:disabled {
     color: #777;
-    cursor: not-allowed;
     background-color: #fff; }
   .list-group-item.active {
     z-index: 2;

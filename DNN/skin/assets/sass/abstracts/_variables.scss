@@ -131,9 +131,23 @@ $youtube-primary:     #cd201f;
 // ----------------------------------------------------------------------------
 
 //## Leaving off `font-` prefix so they don't conflict with Bootstrap's.
-$family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$family-serif:      Georgia, "Times New Roman", Times, serif;
-$family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$family-sans-serif:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome >= 56 for OS X (San Francisco), Windows, Linux, and Andriod
+  system-ui,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // Basic web fallback
+  "Helvetica Neue",  Arial, sans-serif;
+$family-serif:
+  Georgia, "Times New Roman", Times, serif;
+$family-monospace:
+  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 //## The px values shown below are based on a 16px root
 $size-1: 2.5rem;    // 40px
@@ -691,8 +705,6 @@ $form-group-margin-bottom:       1rem;
 $input-group-addon-bg:           $gray-lighter;
 $input-group-addon-border-color: $input-border-color;
 
-$cursor-disabled:                not-allowed;
-
 
 
 //
@@ -759,7 +771,6 @@ $dropdown-header-color:          $gray-light;
 // Reference: vendors/bootstrap/_variables.scss:555
 // ----------------------------------------------------------------------------
 
-// $zindex-dropdown-backdrop:  990;
 // $zindex-dropdown:           1000;
 // $zindex-sticky:             1020;
 // $zindex-fixed:              1030;
