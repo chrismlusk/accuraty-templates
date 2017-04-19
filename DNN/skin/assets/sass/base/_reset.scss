@@ -6,7 +6,7 @@
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//  Updated: 3/13/2017 by Chris Lusk
+//  Updated: 4/18/2017 by Chris Lusk
 //
 // ============================================================================
 
@@ -272,7 +272,7 @@ li {
 // Pagination
 // ==========
 //
-// DNN uses `.dnnPagination`. Skipping this.
+// DNN uses `.dnnResults` and `.dnnPagination`. Skipping this.
 //
 // Reference: _default:css:285 (DNN 8)
 // ----------------------------------------------------------------------------
@@ -286,8 +286,6 @@ li {
 //
 // Reference: _default:css:321 (DNN 8)
 // ----------------------------------------------------------------------------
-
-//######### Leaving this for later.......
 
 // .dnnFormItem input[type="text"],
 // .dnnFormItem select,
@@ -367,16 +365,441 @@ li {
 //     color: #777;
 // }
 
-// //## Error styles
-// .error label, legend.error {
-//     color: rgba(255,0,0,0.9);
+//## Error styles
+.error label, legend.error {
+  color: rgba($red,.9);
+}
+
+.error input[type="text"],
+.error select, .error textarea,
+.error input[type="email"],
+.error input[type="search"] {
+    border: 1px solid rgba($red,.6);
+    color: rgba($red,.7);
+}
+
+
+
+
+//
+// Buttons
+// =======
+//
+// Reference: _default.css:410 (DNN 8)
+// ----------------------------------------------------------------------------
+
+// .dnnFormItem button, .dnnFormItem input[type="button"],
+// .dnnFormItem input[type="reset"],
+// .dnnFormItem input[type="submit"],
+// .dnnPrimaryAction,
+// .dnnSecondaryAction,
+// .dnnTertiaryAction,
+// ul.dnnAdminTabNav li a,
+// .dnnLogin .LoginTabGroup span {
+//     display: inline-block;
+//     padding: 9px 9px;
+//     margin-bottom: 9px;
+//     cursor: pointer;
+//     min-width: 75px;
+//     *overflow: visible;
+//     border: 1px solid $gray-c;
+//     background-color: $gray-e;
+//     border-radius: $border-radius-normal;
+//     color: $gray-3;
+//     font-weight: $font-weight-bold;
+//     text-decoration: none;
+//     text-align: center;
 // }
 
-// .error input[type="text"],
-// .error select, .error textarea,
-// .error input[type="email"],
-// .error input[type="search"] {
-//     border: 1px solid rgba(255,0,0,0.6);
-//     color: rgba(255,0,0,0.7);
+// .dnnFormItem button, .dnnFormItem input[type="button"],
+// .dnnFormItem input[type="reset"],
+// .dnnFormItem input[type="submit"],
+// .dnnPrimaryAction,
+// .dnnSecondaryAction,
+// .dnnTertiaryAction {
+//     padding: 6px 6px;
 // }
 
+
+// //## Primary Action
+
+// .dnnPrimaryAction,
+// .dnnFormItem input[type="submit"],
+// a.dnnPrimaryAction {
+//   border-color: #0D569E; /*dark blue*/
+//   background: #3792ED;
+//   background: linear-gradient(top, #358eea 0%,#2170cd 100%);
+//   box-shadow: 0 1px 0 0 rgba($black,.6), inset 0 1px 0 0 rgba($white,.4);
+//   color: #efefef;
+//   text-shadow: 0px -1px 0px #185B93;
+// }
+
+// .dnnPrimaryAction:hover,
+// .dnnFormItem input[type="submit"]:hover,
+// a.dnnPrimaryAction:hover {
+//   border-color: #0D569E;
+//   background: #6cb6f3;
+//   background: linear-gradient(top, #6cb6f3 0%,#4387d2 100%);
+//   color: $white;
+// }
+
+// .dnnPrimaryAction:active,
+// .dnnFormItem input[type="submit"]:active,
+// a.dnnPrimaryAction:active {
+//   border-color: #0D569E;
+//   background: #1f66be;
+//   background: linear-gradient(top, #1f66be 0%,#3085e0 100%);
+//   box-shadow: inset 0 1px 5px 0 rgba($black, .4);
+//   color: $white;
+// }
+
+// .dnnPrimaryAction[disabled],
+// .dnnPrimaryAction[disabled]:hover,
+// .dnnPrimaryAction[disabled]:active {
+//   background: #ccc !important;
+//   border: none !important;
+//   box-shadow: none !important;
+//   color: #aaa !important;
+//   text-shadow: none;
+// }
+
+// //## Secondary Action
+
+// .dnnFormItem button, .dnnFormItem input[type="button"],
+// .dnnFormItem input[type="reset"],
+// .dnnSecondaryAction,
+// a.dnnSecondaryAction,
+// ul.dnnAdminTabNav li a,
+// .dnnLogin .LoginTabGroup span {
+//   background: #f5f5f5;
+//   background: linear-gradient(top, #f5f5f5 0%,#dfdfdf 100%);
+//   box-shadow: 0 1px 0 0 rgba($black,.4), inset 0 1px 0 0 rgba($white, 1);
+//   text-shadow: 0px 1px 0px #ffffff;
+//   color: #333;
+
+//   @include hover-focus {
+//     background: #fefefe;
+//     background: linear-gradient(top, #fefefe 0%,#e8e8e8 100%);
+//     color: #555;
+//   }
+
+//   &:active {
+//     border-color: #999;
+//     background: #c6c6c6;
+//     background: linear-gradient(top, #c6c6c6 0%,#f3f3f3 100%);
+//     box-shadow: inset 0 1px 5px 0 rgba($black,.4);
+//   }
+// }
+
+// //## Tertiary Action
+// .dnnTertiaryAction,
+// a.dnnTertiaryAction {
+//   padding: 10px 10px;
+//   border: none;
+//   background-color: $gray-e;
+//   color: $gray-3;
+
+//   @include hover-focus {
+//     background-color: $gray-f3;
+//   }
+
+//   &:active {
+//     background-color: $gray-d;
+//   }
+// }
+
+
+// //## Action Button behind input
+
+// .dnnFormItem input[type="text"] {
+
+//   & + a.dnnPrimaryAction,
+//   & + a.dnnSecondaryAction,
+//   & + a.dnnTertiaryAction {
+//     margin-left: 5px;
+//   }
+// }
+
+// .dnnFormItem input[type="checkbox"] + span,
+// .dnnFormItem input[type="radio"] + span {
+//   margin: 5px;
+// }
+
+
+// //## Buttons and link buttons used in the portal admin pages
+
+// .StandardButton {
+//   border: 1px solid $blue;
+// }
+
+// /* Re-set default cursor for disabled elements */
+// .dnnFormItem button[disabled],
+// .dnnFormItem input[disabled] {
+//     cursor: default;
+//     opacity: 0.5;
+// }
+
+// /* Consistent box sizing and appearance */
+// .dnnFormItem input[type="checkbox"],
+// .dnnFormItem input[type="radio"] {
+//     *width: 13px;
+//     *height: 13px; /*why are we using hacks here*/
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+
+// .dnnFormItem input[type="search"] {
+//     -webkit-appearance: textfield;
+//     -moz-box-sizing: content-box;
+//     -webkit-box-sizing: content-box;
+//     box-sizing: content-box;
+// }
+
+//     .dnnFormItem input[type="search"]::-webkit-search-decoration,
+//     .dnnFormItem input[type="search"]::-webkit-search-cancel-button {
+//         -webkit-appearance: none;
+//     }
+
+// .dnnFormItem textarea {
+//     overflow: auto;
+//     vertical-align: top;
+//     resize: vertical;
+// }
+
+//     /* Colors for form validity */
+//     .dnnFormItem input:valid, .dnnFormItem textarea:valid {
+//     }
+
+//     .dnnFormItem input:invalid, .dnnFormItem textarea:invalid {
+//         background-color: #f0dddd;
+//     }
+
+
+//
+// Taxonomy
+// ========
+//
+// DNN uses `.horizontal` and `.vertical` as parent classes before it uses
+// `ul.categories` and `ul.tags` for taxonomy. Skipping this.
+//
+// Reference: _default.css:651 (DNN 8)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Tabs : jQuery UI tabs 1.8.14
+// ============================
+//
+// DNN uses `.dnnAdminTabNav`. Skipping this.
+//
+// Reference: _default.css:698 (DNN 8)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Login Tab Group
+// ===============
+//
+// Skipping, for now.
+//
+// Reference: _default.css:744 (DNN 8)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Tabs : jQuery UI Resizable 1.8.14
+// =================================
+//
+// Skipping this.
+//
+// Reference: _default.css:770 (DNN 8)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Form Items
+// ==========
+//
+// Reference: _default.css:854 (DNN 8)
+//
+// 1.
+// ----------------------------------------------------------------------------
+
+.dnnForm {
+  width: initial;
+
+  fieldset {
+    clear: initial;
+    position: initial;
+    margin: 0;
+    text-align: initial;
+    border: initial;
+
+    fieldset {}
+  }
+
+  .dnnFormItem {}
+}
+
+
+//## Label
+
+.dnnTooltip {}
+
+.dnnHelperTip {}
+
+.dnnDragdropTip {}
+
+span.dnnFormRequired:after,
+div.dnnFormItem.dnnFormRequired > div.dnnLabel span:after {
+  color: $red;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  margin: 0 0 0 .25rem;
+}
+
+.dnnFormItem input[type="checkbox"] + span,
+.dnnFormItem input[type="radio"] + span {}
+
+
+//## Help label
+
+a.dnnFormHelp,
+.dnnForm .dnnFormItem a.dnnFormHelp,
+.dnnTooltip label a.dnnFormHelp {}
+
+a.dnnFormHelp {}
+
+.dnnLabel {
+  display: initial;
+  float: initial;
+  margin: 0;
+  overflow: initial;
+  padding: 0;
+  position: initial;
+  text-align: initial;
+  width: initial;
+}
+
+.dnnFormItem > .dnnLabel {
+  margin-top: 0;
+}
+
+.dnnLabel > span {
+  text-align: initial;
+}
+
+.dnnForm .dnnFormItem a.dnnFormHelp span {}
+
+.dnnForm .dnnFormItem a.dnnFormHelp img {}
+
+.dnnLabel + span {
+  display: inline-block;
+  margin: 0;
+}
+
+
+//## Help tooltip
+
+.dnnTooltip .dnnFormHelpContent,
+.dnnHelperTip .dnnFormHelpContent {}
+
+.dnnFormHelpContent span {}
+
+.bottomArrow::after {}
+
+.topArrow::before {}
+
+a.pinHelp {}
+
+
+//## Error tooltip
+
+.dnnFormItem span.dnnFormMessage.dnnFormError {
+  background-color: rgba($red,.75);
+  border-radius: $border-radius-normal;
+  color: $white;
+  font-size: $size-8;
+
+  &::after {
+    border-top-color: $red;
+  }
+}
+
+
+//## Input types
+
+.dnnFormItem input[type="text"],
+.dnnFormItem input[type="password"],
+.dnnFormItem input[type="email"],
+.dnnFormItem input[type="tel"],
+.dnnFormItem select,
+.dnnFormItem textarea {}
+
+.dnnFormItem select {
+  //width: initial;
+
+  option {
+    color: $gray-3;
+  }
+}
+
+
+//## Input customized checkbox
+
+.dnnCheckbox {
+
+  .mark {}
+
+  img {}
+}
+
+
+//## Input customized radiobutton
+
+.dnnRadiobutton {
+
+  .mark {}
+
+  img {}
+}
+
+
+//## General group
+
+div.dnnFormGroup {}
+
+
+//## Input customized spinner
+
+.dnnSpinner {
+  background-color: $white;
+  background: linear-gradient(top, #fff 0%,#f0f2f1 100%);
+  border-color: $gray-c;
+  box-shadow: 0 1 0 0 $gray-b;
+  color: $gray-3;
+
+  .dnnFormItem & {}
+}
+
+.dnnSpinnerDisplay {
+  color: $gray-9;
+}
+
+
+//## Input customized tags
+
+div.dnnTagsInput {}
+
+
+//## DNN auto complete
+
+.dn_acResults {}
