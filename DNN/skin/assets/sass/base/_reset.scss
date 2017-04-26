@@ -634,14 +634,14 @@ li {
 // ----------------------------------------------------------------------------
 
 .dnnForm {
-  width: initial;
+  // width: initial;
 
   fieldset {
-    clear: initial;
-    position: initial;
-    margin: 0;
-    text-align: initial;
-    border: initial;
+    // clear: initial;
+    // position: initial;
+    // margin: 0;
+    // text-align: initial;
+    // border: initial;
 
     fieldset {}
   }
@@ -679,22 +679,22 @@ a.dnnFormHelp,
 a.dnnFormHelp {}
 
 .dnnLabel {
-  display: initial;
-  float: initial;
-  margin: 0;
-  overflow: initial;
-  padding: 0;
-  position: initial;
-  text-align: initial;
-  width: initial;
+  // display: initial;
+  // float: initial;
+  // margin: 0;
+  // overflow: initial;
+  // padding: 0;
+  // position: initial;
+  // text-align: initial;
+  // width: initial;
 }
 
 .dnnFormItem > .dnnLabel {
-  margin-top: 0;
+  // margin-top: 0;
 }
 
 .dnnLabel > span {
-  text-align: initial;
+  // text-align: initial;
 }
 
 .dnnForm .dnnFormItem a.dnnFormHelp span {}
