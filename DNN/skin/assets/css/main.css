@@ -6573,37 +6573,12 @@ li p {
   border: 1px solid rgba(217, 83, 79, 0.6);
   color: rgba(217, 83, 79, 0.7); }
 
-.dnnForm {
-  width: initial; }
-  .dnnForm fieldset {
-    clear: initial;
-    position: initial;
-    margin: 0;
-    text-align: initial;
-    border: initial; }
-
 span.dnnFormRequired:after,
 div.dnnFormItem.dnnFormRequired > div.dnnLabel span:after {
   color: #d9534f;
   font-size: 1rem;
   font-weight: 700;
   margin: 0 0 0 .25rem; }
-
-.dnnLabel {
-  display: initial;
-  float: initial;
-  margin: 0;
-  overflow: initial;
-  padding: 0;
-  position: initial;
-  text-align: initial;
-  width: initial; }
-
-.dnnFormItem > .dnnLabel {
-  margin-top: 0; }
-
-.dnnLabel > span {
-  text-align: initial; }
 
 .dnnLabel + span {
   display: inline-block;
@@ -6685,8 +6660,6 @@ ul {
   .DnnModule ol:not(:last-child),
   .DnnModule ul:not(:last-child) {
     margin-bottom: 1rem; }
-  .DnnModule li + li {
-    margin-top: 0.25rem; }
   .DnnModule h2:not(:first-child), .DnnModule .h2:not(:first-child),
   .DnnModule h3:not(:first-child), .DnnModule .h3:not(:first-child),
   .DnnModule h4:not(:first-child), .DnnModule .h4:not(:first-child) {
@@ -6726,6 +6699,9 @@ ul {
 
 .DnnModule__title {
   margin-top: 0 !important; }
+
+.DnnModule__content li + li {
+  margin-top: 0.25rem; }
 
 .DnnModule__content a {
   font-weight: 700; }
