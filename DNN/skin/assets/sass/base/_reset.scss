@@ -6,7 +6,7 @@
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//  Updated: 4/18/2017 by Chris Lusk
+//  Updated: 5/22/2017 by Chris Lusk
 //
 // ============================================================================
 
@@ -229,7 +229,7 @@ li {
 
 .dnnFormMessage {
   background-color: $alert-info-bg;
-  border: $alert-border-width solid $alert-info-border;
+  border: $alert-border-width solid $alert-info-border-color;
   -webkit-border-radius: $alert-border-radius;
   border-radius: $alert-border-radius;
   color: $alert-info-text;
@@ -240,17 +240,17 @@ li {
   &.dnnFormError,
   &.dnnFormValidationSummary {
     background-color: $alert-danger-bg;
-    border-color: $alert-danger-border;
+    border-color: $alert-danger-border-color;
   }
 
   &.dnnFormWarning {
     background-color: $alert-warning-bg;
-    border-color: $alert-warning-border;
+    border-color: $alert-warning-border-color;
   }
 
   &.dnnFormSuccess {
     background-color: $alert-success-bg;
-    border-color: $alert-success-border;
+    border-color: $alert-success-border-color;
   }
 }
 

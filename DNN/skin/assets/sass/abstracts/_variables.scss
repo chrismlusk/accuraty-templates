@@ -2,7 +2,7 @@
 //
 //   Variables
 //
-//   Updated: 3/30/2017 by Chris Lusk
+//   Updated: 5/22/2017 by Chris Lusk
 //
 //   For convenience, you can search for a section by preceeding the title
 //   with a pound sign and a space. Example: `# Colors`
@@ -134,8 +134,6 @@ $youtube-primary:     #cd201f;
 $family-sans-serif:
   // Safari for OS X and iOS (San Francisco)
   -apple-system,
-  // Chrome >= 56 for OS X (San Francisco), Windows, Linux, and Andriod
-  system-ui,
   // Chrome < 56 for OS X (San Francisco)
   BlinkMacSystemFont,
   // Windows
@@ -464,7 +462,7 @@ $grid-gutter-widths: (
 // Reference: vendors/bootstrap/_variables.scss:220
 // ----------------------------------------------------------------------------
 
-$line-height-lg:          $line-height-tight;
+$line-height-lg:          $line-height-normal;
 $line-height-sm:          $line-height-normal;
 
 $border-width:            $border-width-normal;
@@ -503,11 +501,11 @@ $font-size-lg:    $size-5;
 $font-size-sm:    $size-7;
 $font-size-xs:    $size-8;
 
-$font-weight-normal: $weight-normal;
-$font-weight-bold: $weight-bold;
+$font-weight-normal:  $weight-normal;
+$font-weight-bold:    $weight-bold;
 
-$font-weight-base: $font-weight-normal;
-$line-height-base: $line-height-normal;
+$font-weight-base:    $font-weight-normal;
+$line-height-base:    $line-height-normal;
 
 $font-size-h1:    $size-1;
 $font-size-h2:    $size-2;
@@ -527,10 +525,10 @@ $display2-size:   $size-xl-2;
 $display3-size:   $size-xl-3;
 $display4-size:   $size-xl-4;
 
-$display1-weight: $weight-light;
-$display2-weight: $weight-light;
-$display3-weight: $weight-light;
-$display4-weight: $weight-light;
+$display1-weight:     $weight-light;
+$display2-weight:     $weight-light;
+$display3-weight:     $weight-light;
+$display4-weight:     $weight-light;
 $display-line-height: $headings-line-height;
 
 $lead-font-size:    $size-5;
@@ -589,7 +587,6 @@ $table-head-color:              $gray;
 $table-inverse-bg:              $gray-dark;
 $table-inverse-bg-accent:       rgba($white, .05);
 $table-inverse-bg-hover:        rgba($white, .075);
-$table-inverse-bg-active:       $table-inverse-bg-hover;
 $table-inverse-border:          lighten($gray-dark, 7.5%);
 $table-inverse-color:           $body-bg;
 
@@ -623,27 +620,27 @@ $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
 
 $btn-primary-color:          $white;
 $btn-primary-bg:             $brand-primary;
-$btn-primary-border:         $btn-primary-bg;
+$btn-primary-border-color:   $btn-primary-bg;
 
 $btn-secondary-color:        $gray-dark;
 $btn-secondary-bg:           $white;
-$btn-secondary-border:       $gray-c;
+$btn-secondary-border-color: $gray-c;
 
 $btn-info-color:             $white;
 $btn-info-bg:                $brand-info;
-$btn-info-border:            $btn-info-bg;
+$btn-info-border-color:      $btn-info-bg;
 
 $btn-success-color:          $white;
 $btn-success-bg:             $brand-success;
-$btn-success-border:         $btn-success-bg;
+$btn-success-border-color:   $btn-success-bg;
 
 $btn-warning-color:          $white;
 $btn-warning-bg:             $brand-warning;
-$btn-warning-border:         $btn-warning-bg;
+$btn-warning-border-color:   $btn-warning-bg;
 
 $btn-danger-color:           $white;
 $btn-danger-bg:              $brand-danger;
-$btn-danger-border:          $btn-danger-bg;
+$btn-danger-border-color:    $btn-danger-bg;
 
 $btn-link-disabled-color:    $gray-light;
 
@@ -662,7 +659,7 @@ $btn-transition:             all .2s ease-in-out;
 // # Forms
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:388
+// Reference: vendors/bootstrap/_variables.scss:393
 // ----------------------------------------------------------------------------
 
 $input-bg:                       $white;
@@ -678,8 +675,8 @@ $input-border-radius-lg:         $border-radius-lg;
 $input-border-radius-sm:         $border-radius-sm;
 
 $input-bg-focus:                 $input-bg;
-$input-border-focus:             lighten($brand-primary, 25%);
-$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
+$input-border-color-focus:       lighten($brand-primary, 25%);
+$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-color-focus, .6);
 $input-color-focus:              $input-color;
 
 $input-color-placeholder:        $gray-light;
@@ -713,7 +710,7 @@ $input-group-addon-border-color: $input-border-color;
 //
 // [Skipping this section in Bootstrap's variables]
 //
-// Reference: vendors/bootstrap/_variables.scss:442
+// Reference: vendors/bootstrap/_variables.scss:435
 // ----------------------------------------------------------------------------
 
 
@@ -724,7 +721,7 @@ $input-group-addon-border-color: $input-border-color;
 //
 // [Skipping this section in Bootstrap's variables]
 //
-// Reference: vendors/bootstrap/_variables.scss:521
+// Reference: vendors/bootstrap/_variables.scss:513
 // ----------------------------------------------------------------------------
 
 
@@ -735,7 +732,7 @@ $input-group-addon-border-color: $input-border-color;
 //
 // Dropdown menu container and contents.
 //
-// Reference: vendors/bootstrap/_variables.scss:528
+// Reference: vendors/bootstrap/_variables.scss:524
 // ----------------------------------------------------------------------------
 
 $dropdown-min-width:             10rem;
@@ -756,6 +753,7 @@ $dropdown-link-active-bg:        $component-active-bg;
 
 $dropdown-link-disabled-color:   $gray-light;
 
+$dropdown-item-padding-y:        .25rem;
 $dropdown-item-padding-x:        1.5rem;
 
 $dropdown-header-color:          $gray-light;
@@ -768,7 +766,7 @@ $dropdown-header-color:          $gray-light;
 //
 // Warning! Avoid customizing these values. They are designed to work together.
 //
-// Reference: vendors/bootstrap/_variables.scss:555
+// Reference: vendors/bootstrap/_variables.scss:552
 // ----------------------------------------------------------------------------
 
 // $zindex-dropdown:           1000;
@@ -785,14 +783,11 @@ $dropdown-header-color:          $gray-light;
 // # Navs
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:569
+// Reference: vendors/bootstrap/_variables.scss:565
 // ----------------------------------------------------------------------------
 
-$nav-item-margin:               .2rem;
-$nav-item-inline-spacer:        1rem;
 $nav-link-padding-y:            .5rem;
 $nav-link-padding-x:            1rem;
-$nav-link-hover-bg:             $gray-lighter;
 $nav-disabled-link-color:       $gray-light;
 
 $nav-tabs-border-color:                       $gray-d;
@@ -802,8 +797,6 @@ $nav-tabs-link-hover-border-color:            $gray-lighter;
 $nav-tabs-active-link-color:                  $gray;
 $nav-tabs-active-link-bg:                     $body-bg;
 $nav-tabs-active-link-border-color:           $gray-d;
-$nav-tabs-justified-link-border-color:        $gray-d;
-$nav-tabs-justified-active-link-border-color: $body-bg;
 
 $nav-pills-border-radius:     $border-radius;
 $nav-pills-active-link-color: $component-active-color;
@@ -815,7 +808,7 @@ $nav-pills-active-link-bg:    $component-active-bg;
 // # Navbar
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:592
+// Reference: vendors/bootstrap/_variables.scss:583
 // ----------------------------------------------------------------------------
 
 $navbar-padding-y:              ($spacer / 2);
@@ -839,14 +832,14 @@ $navbar-inverse-hover-color:           rgba($white,.75);
 $navbar-inverse-active-color:          rgba($white,1);
 $navbar-inverse-disabled-color:        rgba($white,.25);
 //$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-inverse-toggler-border:        rgba($white,.1);
+$navbar-inverse-toggler-border-color:  rgba($white,.1);
 
 $navbar-light-color:                rgba($black,.5);
 $navbar-light-hover-color:          rgba($black,.7);
 $navbar-light-active-color:         rgba($black,.9);
 $navbar-light-disabled-color:       rgba($black,.3);
 //$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-light-toggler-border:       rgba($black,.1);
+$navbar-light-toggler-border-color: rgba($black,.1);
 
 //## Custom variable added by Accuraty.
 //## Used to set height and spacing on various components.
@@ -858,7 +851,7 @@ $navbar-height:                     50px;
 // # Pagination
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:622
+// Reference: vendors/bootstrap/_variables.scss:613
 // ----------------------------------------------------------------------------
 
 $pagination-padding-y:                .5rem;
@@ -876,15 +869,15 @@ $pagination-border-color:              $gray-d;
 
 $pagination-hover-color:               $link-hover-color;
 $pagination-hover-bg:                  $gray-lighter;
-$pagination-hover-border:              $gray-d;
+$pagination-hover-border-color:        $gray-d;
 
 $pagination-active-color:              $white;
 $pagination-active-bg:                 $brand-primary;
-$pagination-active-border:             $brand-primary;
+$pagination-active-border-color:       $brand-primary;
 
 $pagination-disabled-color:            $gray-light;
 $pagination-disabled-bg:               $white;
-$pagination-disabled-border:           $gray-d;
+$pagination-disabled-border-color:     $gray-d;
 
 
 
@@ -892,7 +885,7 @@ $pagination-disabled-border:           $gray-d;
 // # Jumbotron
 // ===========
 //
-// Reference: vendors/bootstrap/_variables.scss:650
+// Reference: vendors/bootstrap/_variables.scss:641
 // ----------------------------------------------------------------------------
 
 $jumbotron-padding:              2rem;
@@ -907,25 +900,25 @@ $jumbotron-bg:                   $gray-lighter;
 // Define colors for form feedback states and, by default, alerts.
 // Important: Leave these variables uncommented. They're used in `_reset.scss`.
 //
-// Reference: vendors/bootstrap/_variables.scss:656
+// Reference: vendors/bootstrap/_variables.scss:647
 // ----------------------------------------------------------------------------
 
 $state-success-text:             #3c763d;
 $state-success-bg:               #dff0d8;
-$state-success-border:           darken($state-success-bg, 5%);
+$state-success-border-color:     darken($state-success-bg, 5%);
 
 $state-info-text:                #31708f;
 $state-info-bg:                  #d9edf7;
-$state-info-border:              darken($state-info-bg, 7%);
+$state-info-border-color:        darken($state-info-bg, 7%);
 
 $state-warning-text:             #8a6d3b;
 $state-warning-bg:               #fcf8e3;
 $mark-bg:                        $state-warning-bg;
-$state-warning-border:           darken($state-warning-bg, 5%);
+$state-warning-border-color:     darken($state-warning-bg, 5%);
 
 $state-danger-text:              #a94442;
 $state-danger-bg:                #f2dede;
-$state-danger-border:            darken($state-danger-bg, 5%);
+$state-danger-border-color:      darken($state-danger-bg, 5%);
 
 
 
@@ -933,7 +926,7 @@ $state-danger-border:            darken($state-danger-bg, 5%);
 // # Cards
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:678
+// Reference: vendors/bootstrap/_variables.scss:669
 // ----------------------------------------------------------------------------
 
 $card-spacer-y:            .75rem;
@@ -970,7 +963,7 @@ $tooltip-bg:                  $black;
 $tooltip-opacity:             .9;
 $tooltip-padding-y:           3px;
 $tooltip-padding-x:           8px;
-$tooltip-margin:              3px;
+$tooltip-margin:              0;
 
 $tooltip-arrow-width:         5px;
 $tooltip-arrow-color:         $tooltip-bg;
@@ -981,7 +974,7 @@ $tooltip-arrow-color:         $tooltip-bg;
 // # Popovers
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:714
+// Reference: vendors/bootstrap/_variables.scss:705
 // ----------------------------------------------------------------------------
 
 $popover-inner-padding:               1px;
@@ -1012,7 +1005,7 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 // # Badges
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:739
+// Reference: vendors/bootstrap/_variables.scss:730
 // ----------------------------------------------------------------------------
 
 $badge-default-bg:            $gray-light;
@@ -1041,7 +1034,7 @@ $badge-pill-border-radius:    10rem;
 // # Modals
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:761
+// Reference: vendors/bootstrap/_variables.scss:752
 // ----------------------------------------------------------------------------
 
 $modal-inner-padding:             15px; // applied to the modal body
@@ -1080,7 +1073,7 @@ $modal-transition:                transform .3s ease-out;
 // Define alert colors, border radius, and padding.
 // Important! Keep these variables uncommented. They're used in `_reset.scss`.
 //
-// Reference: vendors/bootstrap/_variables.scss:792
+// Reference: vendors/bootstrap/_variables.scss:783
 // ----------------------------------------------------------------------------
 
 $alert-padding-y:             .75rem;
@@ -1092,19 +1085,19 @@ $alert-border-width:          $border-width;
 
 $alert-success-bg:            $state-success-bg;
 $alert-success-text:          $state-success-text;
-$alert-success-border:        $state-success-border;
+$alert-success-border-color:  $state-success-border-color;
 
 $alert-info-bg:               $state-info-bg;
 $alert-info-text:             $state-info-text;
-$alert-info-border:           $state-info-border;
+$alert-info-border-color:     $state-info-border-color;
 
 $alert-warning-bg:            $state-warning-bg;
 $alert-warning-text:          $state-warning-text;
-$alert-warning-border:        $state-warning-border;
+$alert-warning-border-color:  $state-warning-border-color;
 
 $alert-danger-bg:             $state-danger-bg;
 $alert-danger-text:           $state-danger-text;
-$alert-danger-border:         $state-danger-border;
+$alert-danger-border-color:   $state-danger-border-color;
 
 
 
@@ -1112,7 +1105,7 @@ $alert-danger-border:         $state-danger-border;
 // # Progress bars
 // ===============
 //
-// Reference: vendors/bootstrap/_variables.scss:820
+// Reference: vendors/bootstrap/_variables.scss:811
 // ----------------------------------------------------------------------------
 
 $progress-height:               1rem;
@@ -1123,6 +1116,7 @@ $progress-box-shadow:           inset 0 .1rem .1rem rgba($black,.1);
 $progress-bar-color:            $white;
 $progress-bar-bg:               $brand-primary;
 $progress-bar-animation-timing: 1s linear infinite;
+$progress-bar-transition:       width .6s ease;
 
 
 
@@ -1130,7 +1124,7 @@ $progress-bar-animation-timing: 1s linear infinite;
 // # List group
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:831
+// Reference: vendors/bootstrap/_variables.scss:823
 // ----------------------------------------------------------------------------
 
 $list-group-color:               $body-color;
@@ -1145,7 +1139,7 @@ $list-group-item-padding-x:      1.25rem;
 $list-group-hover-bg:            $gray-lightest;
 $list-group-active-color:        $component-active-color;
 $list-group-active-bg:           $component-active-bg;
-$list-group-active-border:       $list-group-active-bg;
+$list-group-active-border-color: $list-group-active-bg;
 
 $list-group-disabled-color:      $gray-light;
 $list-group-disabled-bg:         $list-group-bg;
@@ -1162,7 +1156,7 @@ $list-group-link-active-bg:      $gray-lighter;
 // # Image thumbnails
 // ==================
 //
-// Reference: vendors/bootstrap/_variables.scss:857
+// Reference: vendors/bootstrap/_variables.scss:849
 // ----------------------------------------------------------------------------
 
 $thumbnail-padding:           .25rem;
@@ -1179,7 +1173,7 @@ $thumbnail-transition:        all .2s ease-in-out;
 // # Figures
 // =========
 //
-// Reference: vendors/bootstrap/_variables.scss:868
+// Reference: vendors/bootstrap/_variables.scss:860
 // ----------------------------------------------------------------------------
 
 $figure-caption-font-size: 90%;
@@ -1191,7 +1185,7 @@ $figure-caption-color:     $gray-light;
 // # Breadcrumbs
 // =============
 //
-// Reference: vendors/bootstrap/_variables.scss:874
+// Reference: vendors/bootstrap/_variables.scss:866
 // ----------------------------------------------------------------------------
 $breadcrumb-padding-y:          .75rem;
 
@@ -1209,7 +1203,7 @@ $breadcrumb-divider:            "/";
 // # Carousel
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:886
+// Reference: vendors/bootstrap/_variables.scss:878
 // ----------------------------------------------------------------------------
 
 $carousel-control-color:                      $white;
@@ -1237,7 +1231,7 @@ $carousel-transition:           transform .6s ease;
 // # Close
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:908
+// Reference: vendors/bootstrap/_variables.scss:900
 // ----------------------------------------------------------------------------
 
 $close-font-size:             $font-size-base * 1.5;
@@ -1251,7 +1245,7 @@ $close-text-shadow:           0 1px 0 $white;
 // # Code
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:915
+// Reference: vendors/bootstrap/_variables.scss:907
 // ----------------------------------------------------------------------------
 
 $code-font-size:              90%;
