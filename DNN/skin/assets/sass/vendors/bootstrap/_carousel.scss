@@ -12,6 +12,7 @@
 .carousel-item {
   position: relative;
   display: none;
+  align-items: center;
   width: 100%;
   @include transition($carousel-transition);
   backface-visibility: hidden;
