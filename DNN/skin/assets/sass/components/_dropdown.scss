@@ -1,0 +1,51 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  1. Wrapper and base class
+//  2. Dropdown toggle
+//  3. Dropdown menu
+//  4. Dropdown item
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+// .dropdown {}
+
+
+
+
+//
+// Dropdown toggle
+// ===============
+
+// .dropdown-toggle {}
+
+
+
+
+//
+// Dropdown menu
+// =============
+
+.dropdown-menu {
+
+  .show & {
+    display: block;
+  }
+}
+
+
+
+
+//
+// Dropdown item
+// =============
+
+// .dropdown-item {}

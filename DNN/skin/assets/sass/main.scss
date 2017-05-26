@@ -17,21 +17,25 @@
   'base/grid';
 
 @import
+  // Core components first (content, image, code, tables, forms, buttons)
+  'components/content',
+  'components/buttons',
+
+  // Then follow the order found in `bootstrap.scss` as much as possible
+  'components/dropdown',
+  'components/nav',
+  'components/navbar',
+  'components/card',
+  'components/breadcrumb',
+  'components/panes';
+
+@import
   'layout/header',
   'layout/main',
   'layout/section',
   'layout/hero',
   'layout/aside',
   'layout/footer';
-
-@import
-  'components/breadcrumb',
-  'components/buttons',
-  'components/card',
-  'components/content',
-  'components/nav',
-  'components/navbar',
-  'components/panes';
 
 @import
   'pages/home';

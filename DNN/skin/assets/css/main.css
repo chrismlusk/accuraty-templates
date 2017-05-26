@@ -6611,33 +6611,6 @@ ol,
 ul {
   margin-bottom: 0; }
 
-.header.fixed-to-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 9; }
-  #Form.showControlBar .header.fixed-to-top {
-    top: 53px; }
-  .hasDnnPersonaBar .header.fixed-to-top {
-    left: 80px; }
-
-.main {
-  margin-top: 50px; }
-  #Form.showControlBar .main {
-    margin-top: 103px; }
-
-.footer-brand {
-  display: block; }
-
-.btn.is-inverse {
-  border-color: #fff; }
-  .btn.is-inverse, .btn.is-inverse:visited {
-    color: #fff; }
-  .btn.is-inverse:focus, .btn.is-inverse:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    color: rgba(255, 255, 255, 0.5); }
-
 .DnnModule {
   color: #222; }
   .DnnModule blockquote:not(:last-child),
@@ -6700,3 +6673,33 @@ ul {
     border-bottom: 1px solid #fff; }
     .DnnModule__content a.is-inverse:focus, .DnnModule__content a.is-inverse:hover {
       border-bottom-color: rgba(255, 255, 255, 0.5); }
+
+.btn.is-inverse {
+  border-color: #fff; }
+  .btn.is-inverse, .btn.is-inverse:visited {
+    color: #fff; }
+  .btn.is-inverse:focus, .btn.is-inverse:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5); }
+
+.show .dropdown-menu {
+  display: block; }
+
+.header.fixed-to-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9; }
+  #Form.showControlBar .header.fixed-to-top {
+    top: 53px; }
+  .hasDnnPersonaBar .header.fixed-to-top {
+    left: 80px; }
+
+.main {
+  margin-top: 50px; }
+  #Form.showControlBar .main {
+    margin-top: 103px; }
+
+.footer-brand {
+  display: block; }
