@@ -8,7 +8,7 @@ The `sass/` folder includes the **main file** and sets of **partials** that are 
 
 ## Main file
 
-The main file (`main.scss`) should be the only Sass file from the whole code base not to begin with an underscore. This file should not contain anything but `@import` directives and comments.
+The main file (`main.scss`) does not begin with an underscore. This file should not contain anything but `@import` directives and comments.
 
 *Note: Before the code is deployed to the server, this file is compiled into the CSS file that is used for this project's skin.*
 

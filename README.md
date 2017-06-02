@@ -10,7 +10,7 @@ The template includes the source Sass files from Bootstrap v4.0.0-apha.6 (Update
 
 ### DNN
 
-To use this template, navigated to the `Portals/_default/Containers` and the `Portals/_default/Skins` folders in your DNN project and create a new folder in each place (use the client abbreviation Accuraty uses elsewhere as the name). Copy the contents of this template's `containers/` and `skin/` folders into these newly created directories.
+To use this template, navigate to the `Portals/_default/Containers` and the `Portals/_default/Skins` folders in your DNN project and create a new folder in each place (use the client abbreviation Accuraty uses elsewhere as the name). Copy the contents of this template's `containers/` and `skin/` folders into these newly created directories.
 
 ### WordPress
 

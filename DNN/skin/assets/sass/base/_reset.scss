@@ -19,21 +19,25 @@
 // ----------------------------------------------------------------------------
 
 .DnnModule {
-    clear: both;
-    position: relative;
+  clear: both;
+  position: relative;
 
-    & + .DnnModule {
-        margin-top: 2rem;
-    }
+  & + .DnnModule {
+    margin-top: 2rem;
+  }
+}
+
+.DNNEmptyPane {
+  display: none;
 }
 
 .form-group .dnnLabel {
-    text-align: left;
-    width: auto;
+  text-align: left;
+  width: auto;
 }
 
 .dnnLabel + span {
-    white-space: normal;
+  white-space: normal;
 }
 
 #ControlBar, #ControlBar::before, #ControlBar::after,
@@ -41,14 +45,12 @@
 #ControlBar a, #ControlBar a::before, #ControlBar a::after,
 .dnn_mact, .dnn_mact::before, .dnn_mact::after,
 .dnn_mact li, .dnn_mact li::before, .dnn_mact li::after {
-    -webkit-box-sizing: content-box !important;
-    -moz-box-sizing: content-box !important;
-    box-sizing: content-box !important;
+  box-sizing: content-box !important;
 }
 
 .dnnDropDownList .selected-item,
 .dnnDropDownList .selected-item a {
-    height: auto !important;
+  height: auto !important;
 }
 
 
@@ -224,13 +226,12 @@ li {
 //
 // Bring these messages into alignment with Bootstrap alerts.
 //
-// Reference: _default.css:100 (DNN 8)
+// Reference: _default.css:100 (DNN 8) / _default.css:364 (DNN 7)
 // ----------------------------------------------------------------------------
 
 .dnnFormMessage {
   background-color: $alert-info-bg;
   border: $alert-border-width solid $alert-info-border-color;
-  -webkit-border-radius: $alert-border-radius;
   border-radius: $alert-border-radius;
   color: $alert-info-text;
   margin-bottom: $spacer;
@@ -262,7 +263,7 @@ li {
 //
 // DNN uses `.dnnTableHeader` and `.dnnTableDisplay`. Skipping this.
 //
-// Reference: _default.css:130 (DNN 8)
+// Reference: _default.css:130 (DNN 8) / _default.css:394 (DNN 7)
 // ----------------------------------------------------------------------------
 
 
@@ -274,7 +275,7 @@ li {
 //
 // DNN uses `.dnnResults` and `.dnnPagination`. Skipping this.
 //
-// Reference: _default:css:285 (DNN 8)
+// Reference: _default:css:285 (DNN 8) / _default.css:549 (DNN 7)
 // ----------------------------------------------------------------------------
 
 
@@ -284,42 +285,38 @@ li {
 // Forms
 // =====
 //
-// Reference: _default:css:321 (DNN 8)
+// Reference: _default:css:321 (DNN 8) / _default.css:585 (DNN 7)
 // ----------------------------------------------------------------------------
 
-// .dnnFormItem input[type="text"],
-// .dnnFormItem select,
-// .dnnFormItem textarea,
-// .dnnFormItem input[type="email"],
-// .dnnFormItem input[type="search"],
-// .dnnFormItem input[type="password"] {
-//   background-color: $input-bg;
-//   // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
-//   background-image: none;
-//   background-clip: padding-box;
-//   border: $input-btn-border-width solid $input-border-color;
-//   color: $input-color;
-//   display: block;
-//   font-size: $font-size-base;
-//   line-height: $input-line-height;
-//   padding: $input-padding-y $input-padding-x;
-//   width: 100%;
+.dnnFormItem input[type="text"],
+.dnnFormItem select,
+.dnnFormItem textarea,
+.dnnFormItem input[type="email"],
+.dnnFormItem input[type="search"],
+.dnnFormItem input[type="password"] {
+  background-color: $input-bg;
+  background-image: none;
+  background-clip: padding-box;
+  border: $input-btn-border-width solid $input-border-color;
+  color: $input-color;
+  font-size: $font-size-base;
+  line-height: $input-btn-line-height;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  width: 100%;
 
-//   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
-//   @if $enable-rounded {
-//     // Manually use the if/else instead of the mixin to account for iOS override
-//     border-radius: $input-border-radius;
-//   } @else {
-//     // Otherwise undo the iOS default
-//     border-radius: 0;
-//   }
-// }
+  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  @if $enable-rounded {
+    // Manually use the if/else instead of the mixin to account for iOS override
+    border-radius: $input-border-radius;
+  } @else {
+    // Otherwise undo the iOS default
+    border-radius: 0;
+  }
+}
 
 // .dnnFormItem input.aspNetDisabled,
 // .dnnFormItem textarea.aspNetDisabled {
 //   background: #ebebeb;
-//   -moz-box-shadow: none;
-//   -webkit-box-shadow: none;
 //   box-shadow: none;
 //   border-color: #a7a7a7;
 //   border-width: 1px;
@@ -385,128 +382,144 @@ li {
 // Buttons
 // =======
 //
-// Reference: _default.css:410 (DNN 8)
+// Reference: _default.css:410 (DNN 8) / _default.css:674 (DNN 7)
 // ----------------------------------------------------------------------------
 
-// .dnnFormItem button, .dnnFormItem input[type="button"],
-// .dnnFormItem input[type="reset"],
-// .dnnFormItem input[type="submit"],
-// .dnnPrimaryAction,
-// .dnnSecondaryAction,
-// .dnnTertiaryAction,
-// ul.dnnAdminTabNav li a,
-// .dnnLogin .LoginTabGroup span {
-//     display: inline-block;
-//     padding: 9px 9px;
-//     margin-bottom: 9px;
-//     cursor: pointer;
-//     min-width: 75px;
-//     *overflow: visible;
-//     border: 1px solid $gray-c;
-//     background-color: $gray-e;
-//     border-radius: $border-radius-normal;
-//     color: $gray-3;
-//     font-weight: $font-weight-bold;
-//     text-decoration: none;
-//     text-align: center;
-// }
+.dnnFormItem button, .dnnFormItem input[type="button"],
+.dnnFormItem input[type="reset"],
+.dnnFormItem input[type="submit"],
+.dnnPrimaryAction,
+.dnnSecondaryAction,
+.dnnTertiaryAction {
+    background-color: $gray-e;
+    border-radius: $border-radius-normal;
+    border: 1px solid $gray-c;
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    margin-bottom: 9px;
+    font-weight: $font-weight-bold;
 
-// .dnnFormItem button, .dnnFormItem input[type="button"],
-// .dnnFormItem input[type="reset"],
-// .dnnFormItem input[type="submit"],
-// .dnnPrimaryAction,
-// .dnnSecondaryAction,
-// .dnnTertiaryAction {
-//     padding: 6px 6px;
-// }
+    @include plain-visited {
+      color: $gray-3;
+    }
+}
+
+.dnnFormItem button, .dnnFormItem input[type="button"],
+.dnnFormItem input[type="reset"],
+.dnnFormItem input[type="submit"],
+.dnnPrimaryAction,
+.dnnSecondaryAction,
+.dnnTertiaryAction {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+}
 
 
-// //## Primary Action
+//## Primary Action
 
-// .dnnPrimaryAction,
-// .dnnFormItem input[type="submit"],
-// a.dnnPrimaryAction {
-//   border-color: #0D569E; /*dark blue*/
-//   background: #3792ED;
-//   background: linear-gradient(top, #358eea 0%,#2170cd 100%);
-//   box-shadow: 0 1px 0 0 rgba($black,.6), inset 0 1px 0 0 rgba($white,.4);
-//   color: #efefef;
-//   text-shadow: 0px -1px 0px #185B93;
-// }
+.dnnPrimaryAction,
+.dnnFormItem input[type="submit"],
+a.dnnPrimaryAction {
+  border-color: #0D569E; /*dark blue*/
+  background: #3792ED;
+  background: -webkit-linear-gradient(top, #358eea 0%, #2170cd 100%);
+  background: -o-linear-gradient(top, #358eea 0%, #2170cd 100%);
+  background: -moz-linear-gradient(top, #358eea 0%, #2170cd 100%);
+  background: linear-gradient(top, #358eea 0%, #2170cd 100%);
+  box-shadow: 0 1px 0 0 rgba($black,.6), inset 0 1px 0 0 rgba($white,.4);
+  text-shadow: 0px -1px 0px #185B93;
 
-// .dnnPrimaryAction:hover,
-// .dnnFormItem input[type="submit"]:hover,
-// a.dnnPrimaryAction:hover {
-//   border-color: #0D569E;
-//   background: #6cb6f3;
-//   background: linear-gradient(top, #6cb6f3 0%,#4387d2 100%);
-//   color: $white;
-// }
+  @include plain-visited {
+    color: #efefef;
+  }
 
-// .dnnPrimaryAction:active,
-// .dnnFormItem input[type="submit"]:active,
-// a.dnnPrimaryAction:active {
-//   border-color: #0D569E;
-//   background: #1f66be;
-//   background: linear-gradient(top, #1f66be 0%,#3085e0 100%);
-//   box-shadow: inset 0 1px 5px 0 rgba($black, .4);
-//   color: $white;
-// }
+  @include hover-focus {
+    border-color: #0D569E;
+    background: #6cb6f3;
+    background: -webkit-linear-gradient(top, #6cb6f3 0%, #4387d2 100%);
+    background: -o-linear-gradient(top, #6cb6f3 0%, #4387d2 100%);
+    background: -moz-linear-gradient(top, #6cb6f3 0%, #4387d2 100%);
+    background: linear-gradient(top, #6cb6f3 0%, #4387d2 100%);
+    color: $white;
+  }
 
-// .dnnPrimaryAction[disabled],
-// .dnnPrimaryAction[disabled]:hover,
-// .dnnPrimaryAction[disabled]:active {
-//   background: #ccc !important;
-//   border: none !important;
-//   box-shadow: none !important;
-//   color: #aaa !important;
-//   text-shadow: none;
-// }
+  &:active {
+    border-color: #0D569E;
+    background: #1f66be;
+    background: -webkit-linear-gradient(top, #1f66be 0%, #3085e0 100%);
+    background: -o-linear-gradient(top, #1f66be 0%, #3085e0 100%);
+    background: -moz-linear-gradient(top, #1f66be 0%, #3085e0 100%);
+    background: linear-gradient(top, #1f66be 0%, #3085e0 100%);
+    box-shadow: inset 0 1px 5px 0 rgba($black, .4);
+    color: $white;
+  }
+}
 
-// //## Secondary Action
+.dnnPrimaryAction[disabled],
+.dnnPrimaryAction[disabled]:hover,
+.dnnPrimaryAction[disabled]:active {
+  background: #ccc !important;
+  border: none !important;
+  color: #aaa !important;
+}
 
-// .dnnFormItem button, .dnnFormItem input[type="button"],
-// .dnnFormItem input[type="reset"],
-// .dnnSecondaryAction,
-// a.dnnSecondaryAction,
-// ul.dnnAdminTabNav li a,
-// .dnnLogin .LoginTabGroup span {
-//   background: #f5f5f5;
-//   background: linear-gradient(top, #f5f5f5 0%,#dfdfdf 100%);
-//   box-shadow: 0 1px 0 0 rgba($black,.4), inset 0 1px 0 0 rgba($white, 1);
-//   text-shadow: 0px 1px 0px #ffffff;
-//   color: #333;
 
-//   @include hover-focus {
-//     background: #fefefe;
-//     background: linear-gradient(top, #fefefe 0%,#e8e8e8 100%);
-//     color: #555;
-//   }
+//## Secondary Action
 
-//   &:active {
-//     border-color: #999;
-//     background: #c6c6c6;
-//     background: linear-gradient(top, #c6c6c6 0%,#f3f3f3 100%);
-//     box-shadow: inset 0 1px 5px 0 rgba($black,.4);
-//   }
-// }
+.dnnFormItem button,
+.dnnFormItem input[type="button"],
+.dnnFormItem input[type="reset"],
+.dnnSecondaryAction,
+a.dnnSecondaryAction {
+  background: #f5f5f5;
+  background: -webkit-linear-gradient(top, #f5f5f5 0%, #dfdfdf 100%);
+  background: -o-linear-gradient(top, #f5f5f5 0%, #dfdfdf 100%);
+  background: -moz-linear-gradient(top, #f5f5f5 0%, #dfdfdf 100%);
+  background: linear-gradient(top, #f5f5f5 0%, #dfdfdf 100%);
+  box-shadow: 0 1px 0 0 rgba($black,.4), inset 0 1px 0 0 rgba($white, 1);
+  text-shadow: 0px 1px 0px $white;
 
-// //## Tertiary Action
-// .dnnTertiaryAction,
-// a.dnnTertiaryAction {
-//   padding: 10px 10px;
-//   border: none;
-//   background-color: $gray-e;
-//   color: $gray-3;
+  @include plain-visited {
+    color: #333;
+  }
 
-//   @include hover-focus {
-//     background-color: $gray-f3;
-//   }
+  @include hover-focus {
+    background: #fefefe;
+    background: -webkit-linear-gradient(top, #fefefe 0%, #e8e8e8 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #e8e8e8 100%);
+    background: -moz-linear-gradient(top, #fefefe 0%, #e8e8e8 100%);
+    background: linear-gradient(top, #fefefe 0%, #e8e8e8 100%);
+    color: #555;
+  }
 
-//   &:active {
-//     background-color: $gray-d;
-//   }
-// }
+  &:active {
+    background: #c6c6c6;
+    background: -webkit-linear-gradient(top, #c6c6c6 0%, #f3f3f3 100%);
+    background: -o-linear-gradient(top, #c6c6c6 0%, #f3f3f3 100%);
+    background: -moz-linear-gradient(top, #c6c6c6 0%, #f3f3f3 100%);
+    background: linear-gradient(top, #c6c6c6 0%, #f3f3f3 100%);
+    border-color: #999;
+    box-shadow: inset 0 1px 5px 0 rgba($black,.4);
+  }
+}
+
+//## Tertiary Action
+.dnnTertiaryAction,
+a.dnnTertiaryAction {
+  background-color: $gray-e;
+  border: none;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+
+  @include plain-visited {
+    color: $gray-3;
+  }
+
+  @include hover-focus {
+    background-color: $gray-f3;
+  }
+
+  &:active {
+    background-color: $gray-d;
+  }
+}
 
 
 // //## Action Button behind input
@@ -526,11 +539,11 @@ li {
 // }
 
 
-// //## Buttons and link buttons used in the portal admin pages
+//## Buttons and link buttons used in the portal admin pages
 
-// .StandardButton {
-//   border: 1px solid $blue;
-// }
+.StandardButton {
+  border: 1px solid $blue;
+}
 
 // /* Re-set default cursor for disabled elements */
 // .dnnFormItem button[disabled],
@@ -550,8 +563,6 @@ li {
 
 // .dnnFormItem input[type="search"] {
 //     -webkit-appearance: textfield;
-//     -moz-box-sizing: content-box;
-//     -webkit-box-sizing: content-box;
 //     box-sizing: content-box;
 // }
 
@@ -582,7 +593,7 @@ li {
 // DNN uses `.horizontal` and `.vertical` as parent classes before it uses
 // `ul.categories` and `ul.tags` for taxonomy. Skipping this.
 //
-// Reference: _default.css:651 (DNN 8)
+// Reference: _default.css:651 (DNN 8) / _default.css:915 (DNN 7)
 // ----------------------------------------------------------------------------
 
 
@@ -594,7 +605,7 @@ li {
 //
 // DNN uses `.dnnAdminTabNav`. Skipping this.
 //
-// Reference: _default.css:698 (DNN 8)
+// Reference: _default.css:698 (DNN 8) / _default.css:962 (DNN 7)
 // ----------------------------------------------------------------------------
 
 
@@ -606,7 +617,7 @@ li {
 //
 // Skipping, for now.
 //
-// Reference: _default.css:744 (DNN 8)
+// Reference: _default.css:744 (DNN 8) / _default.css:1007 (DNN 7)
 // ----------------------------------------------------------------------------
 
 
@@ -618,7 +629,7 @@ li {
 //
 // Skipping this.
 //
-// Reference: _default.css:770 (DNN 8)
+// Reference: _default.css:770 (DNN 8) / _default.css:1033 (DNN 7)
 // ----------------------------------------------------------------------------
 
 
@@ -646,7 +657,9 @@ li {
     fieldset {}
   }
 
-  .dnnFormItem {}
+  .dnnFormItem {
+    margin-bottom: $form-group-margin-bottom;
+  }
 }
 
 
@@ -782,7 +795,10 @@ div.dnnFormGroup {}
 
 .dnnSpinner {
   background-color: $white;
-  background: linear-gradient(top, #fff 0%,#f0f2f1 100%);
+  background: -webkit-linear-gradient(top, #fff 0%, #f0f2f1 100%);
+  background: -o-linear-gradient(top, #fff 0%, #f0f2f1 100%);
+  background: -moz-linear-gradient(top, #fff 0%, #f0f2f1 100%);
+  background: linear-gradient(top, #fff 0%, #f0f2f1 100%);
   border-color: $gray-c;
   box-shadow: 0 1 0 0 $gray-b;
   color: $gray-3;

@@ -831,15 +831,15 @@ $navbar-inverse-color:                 rgba($white,.5);
 $navbar-inverse-hover-color:           rgba($white,.75);
 $navbar-inverse-active-color:          rgba($white,1);
 $navbar-inverse-disabled-color:        rgba($white,.25);
-//$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-inverse-toggler-border-color:  rgba($white,.1);
+//$navbar-inverse-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+ $navbar-inverse-toggler-border-color:  rgba($white,.1);
 
 $navbar-light-color:                rgba($black,.5);
 $navbar-light-hover-color:          rgba($black,.7);
 $navbar-light-active-color:         rgba($black,.9);
 $navbar-light-disabled-color:       rgba($black,.3);
-//$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-light-toggler-border-color: rgba($black,.1);
+//$navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+ $navbar-light-toggler-border-color: rgba($black,.1);
 
 //## Custom variable added by Accuraty.
 //## Used to set height and spacing on various components.
@@ -938,7 +938,7 @@ $card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width});
 $card-cap-bg:              $gray-lightest;
 $card-bg:                  $white;
 
-$card-link-hover-color:    $white;
+$card-inverse-link-hover-color:    $white;
 
 $card-img-overlay-padding: 1.25rem;
 
@@ -966,6 +966,7 @@ $tooltip-padding-x:           8px;
 $tooltip-margin:              0;
 
 $tooltip-arrow-width:         5px;
+$tooltip-arrow-height:        5px;
 $tooltip-arrow-color:         $tooltip-bg;
 
 
@@ -994,6 +995,7 @@ $popover-content-padding-y:           9px;
 $popover-content-padding-x:           14px;
 
 $popover-arrow-width:                 10px;
+$popover-arrow-height:                5px;
 $popover-arrow-color:                 $popover-bg;
 
 $popover-arrow-outer-width:           ($popover-arrow-width + 1px);
