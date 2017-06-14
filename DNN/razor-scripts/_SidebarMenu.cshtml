@@ -1,0 +1,73 @@
+@{
+  //
+  // Sidebar Menu
+  // ============
+  //
+  // Build a multi-level navigation menu by getting the children of the current
+  // tab and displaying information for each child (and grandchild) page.
+  // --------------------------------------------------------------------------
+}
+
+
+@using DotNetNuke.Entities.Tabs
+@using DotNetNuke.Security.Permissions
+
+
+@{
+  TabInfo activeTab = Dnn.Tab;
+  TabInfo activeTabParent = new TabInfo();
+
+  int activeTabLevel = activeTab.Level;
+  int activeTabId = activeTab.TabID;
+
+  switch( activeTabLevel )
+  {
+    case 0:
+      // `activeTabId` is properly assigned
+      break;
+    case 1:
+      activeTabId = activeTab.ParentId;
+      break;
+    case 2:
+      activeTabParent = TabController.Instance.GetTab( activeTab.ParentId, Dnn.Portal.PortalId );
+      activeTabId = activeTabParent.ParentId;
+      break;
+  }
+
+  List<TabInfo> myTabs = TabController.GetTabsByParent( activeTabId, Dnn.Portal.PortalId );
+}
+
+
+<nav class="nav nav-pills  flex-column">
+  @foreach ( TabInfo myTabInfo in myTabs )
+  {
+
+    // Convert user roles and tab permissions to lists for comparison.
+    List<string> userRoles = Dnn.User.Roles.ToList();
+    IEnumerable<string> tabRoles = myTabInfo.TabPermissions.ToList().Select(p => p.RoleName);
+
+    // Only include tabs in the menu if they meet these conditions.
+    if ( !myTabInfo.IsDeleted && myTabInfo.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser) )
+    {
+      <a href='@myTabInfo.FullUrl' class='nav-link  @(myTabInfo.TabID == Dnn.Tab.TabID ? "active" : "")' data-value='@myTabInfo.TabName'>@myTabInfo.TabName</a>
+
+      // If the tab is the parent, create a list of children and include them.
+      if ( myTabInfo.TabID == Dnn.Tab.TabID || myTabInfo.TabID == Dnn.Tab.ParentId || myTabInfo.TabID == activeTabParent.ParentId )
+      {
+        List<TabInfo> myChildTabs = TabController.GetTabsByParent(myTabInfo.TabID, Dnn.Portal.PortalId);
+
+        foreach ( TabInfo myChildTabInfo in myChildTabs )
+        {
+          // Convert tab permissions to a list for comparison.
+          IEnumerable<string> childTabRoles = myChildTabInfo.TabPermissions.ToList().Select(p => p.RoleName);
+
+          // Only include tabs in the menu if they meet these conditions.
+          if ( !myChildTabInfo.IsDeleted && myChildTabInfo.IsVisible && (userRoles.Any(r => childTabRoles.Contains(r)) || childTabRoles.Contains("All Users") || Dnn.User.IsSuperUser) )
+          {
+            <a href='@myChildTabInfo.FullUrl' class='nav-link  is-child  @(myChildTabInfo.TabID == Dnn.Tab.TabID ? "active" : "")' data-value='@myChildTabInfo.TabName'>@myChildTabInfo.TabName</a>
+          }
+        }
+      }
+    }
+  }
+</nav>

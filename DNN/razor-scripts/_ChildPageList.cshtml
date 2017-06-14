@@ -1,0 +1,68 @@
+@{
+  //
+  // Child Page List
+  // ===============
+  //
+  // Get the children of the current tab and display them in a list.
+  // Including code to mark each item as odd or even, if needed.
+  // --------------------------------------------------------------------------
+}
+
+
+@using DotNetNuke.Entities.Tabs
+@using DotNetNuke.Security.Permissions
+
+
+@{
+
+  //
+  // Get children of the current tab.
+  // Note: The "d" in the `TabID` and `PortalId` shortcuts are not consistent.
+  //
+  List<TabInfo> myTabList = TabController.GetTabsByParent(Dnn.Tab.TabID, Dnn.Portal.PortalId);
+
+  //
+  // Use `counter` variable to determine odd and even children.
+  //
+  int counter = 1;
+}
+
+
+@**
+ * Note: Use single quotes with HTML attributes to avoid later conflict with
+ *       C# requirement for double quotes with string literals.
+ *@
+<div class=''>
+
+  @foreach (TabInfo myTab in myTabList)
+  {
+    //
+    // Convert tab permissions and user roles into lists for comparison.
+    //
+    List<string> userRoles = Dnn.User.Roles.ToList();
+    IEnumerable<string> tabRoles = myTab.TabPermissions.ToList().Select(p => p.RoleName);
+
+    //
+    // Only show if tab is not deleted, is visible, and has proper user roles.
+    //
+    if (!myTab.IsDeleted && myTab.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser))
+    {
+      <article class='child-page  row  @(counter % 2 != 0 ? "is-odd" : "is-even")'>
+        <figure class='child-page__figure  col-md-4'>
+          <a href='@myTab.FullUrl'>
+            <img class='child-page__image' src='@(myTab.IconFile != null ? myTab.IconFile : "http://placehold.it/800x540")'>
+          </a>
+        </figure>
+        <header class='child-page__header  col-md-8'>
+          <h2 class='child-page__title'>
+            <a href='@myTab.FullUrl'>@myTab.TabName</a>
+          </h2>
+          <p class='child-page__description'>@(string.IsNullOrEmpty(myTab.Description) ? "No description provided. Please add one to Page Settings > Page Details > Description" : myTab.Description)</p>
+          <p><a class='child-page__link' href='@myTab.FullUrl'>Read More</a></p>
+        </header>
+      </article>
+
+      counter++;
+    }
+  }
+</div>
