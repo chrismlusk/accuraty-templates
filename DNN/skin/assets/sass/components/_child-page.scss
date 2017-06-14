@@ -1,0 +1,72 @@
+// ============================================================================
+//
+//
+//  Uses the following DNN elements: tab name, icon, url, and description.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  1. Wrapper and base class
+//  2. Figure
+//  3. Image
+//  4. Header
+//  5. Title
+//  6. Description
+//  7. Link
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.child-page {}
+
+
+
+
+//
+// Figure
+// ======
+
+.child-page__figure {}
+
+
+
+
+//
+// Image
+// =====
+
+.child-page__image {
+  max-width: 100%;
+}
+
+
+
+
+//
+// Header
+// ======
+
+.child-page__header {}
+
+
+
+
+//
+// Details
+// =======
+//
+// Contains the page title, description, and link.
+// ----------------------------------------------------------------------------
+
+.child-page__title {}
+
+.child-page__description {}
+
+.child-page__link {}

@@ -57,6 +57,7 @@
 
 
 
+
 // ----------------------------------------------------------------------------
 //
 //  1. Initial variables
@@ -67,6 +68,7 @@
 //  Note: These variables generally should not be used in your stylesheets.
 //
 // ----------------------------------------------------------------------------
+
 
 
 
@@ -120,6 +122,7 @@ $pinterest-primary:   #bd081c;
 $snapchat-primary:    #fffc00;
 $twitter-primary:     #1da1f2;
 $youtube-primary:     #cd201f;
+
 
 
 
@@ -178,6 +181,7 @@ $line-height-normal:    1.5;
 
 
 
+
 //
 // # Borders
 // =========
@@ -191,6 +195,7 @@ $border-width-thick:  3px;
 $border-radius-small:   .2rem;
 $border-radius-normal:  .25rem;
 $border-radius-large:   .3rem;
+
 
 
 
@@ -242,6 +247,7 @@ $dnn-persona-bar-width: 80px;
 
 
 
+
 //
 // # Mixin for maps
 // ================
@@ -287,6 +293,7 @@ $dnn-persona-bar-width: 80px;
 
 
 
+
 //
 // # Colors
 // ========
@@ -311,6 +318,7 @@ $brand-secondary:           $gray;
 
 
 
+
 //
 // # Options
 // =========
@@ -327,6 +335,7 @@ $enable-transitions:        false;  // predefined transitions
 $enable-hover-media-query:  false;  // [no description provided by Bootstrap]
 $enable-grid-classes:       true;   // generates classes for grid system
 $enable-print-styles:       true;   // sets up a print stylesheet
+
 
 
 
@@ -360,6 +369,7 @@ $sizes: (
 
 
 
+
 //
 // # Body
 // ======
@@ -371,6 +381,7 @@ $sizes: (
 
 $body-bg:       $white;
 $body-color:    $gray-dark;
+
 
 
 
@@ -391,6 +402,7 @@ $link-hover-decoration:   none;
 //## Custom variables added by Accuraty
 $link-border-color:       lighten($link-color, 40%);
 $link-hover-border-color: $link-color;
+
 
 
 
@@ -416,6 +428,7 @@ $grid-breakpoints: (
 
 
 
+
 //
 // # Grid containers
 // =================
@@ -432,6 +445,7 @@ $container-max-widths: (
   xl: 1140px
 );
 @include _assert-ascending($container-max-widths, "$container-max-widths");
+
 
 
 
@@ -453,6 +467,7 @@ $grid-gutter-widths: (
   lg: $grid-gutter-width-base,
   xl: $grid-gutter-width-base
 );
+
 
 
 
@@ -482,6 +497,7 @@ $caret-width:             .3em;
 $transition-base:        all .2s ease-in-out;
 $transition-fade:        opacity .15s linear;
 $transition-collapse:    height .35s ease;
+
 
 
 
@@ -564,6 +580,7 @@ $list-inline-padding: 5px;
 
 
 
+
 //
 // # Tables
 // ========
@@ -592,6 +609,7 @@ $table-inverse-accent-bg:       rgba($white, .05);
 $table-inverse-hover-bg:        rgba($white, .075);
 $table-inverse-border-color:    lighten($gray-dark, 7.5%);
 $table-inverse-color:           $body-bg;
+
 
 
 
@@ -658,6 +676,7 @@ $btn-transition:             all .2s ease-in-out;
 
 
 
+
 //
 // # Forms
 // =======
@@ -707,6 +726,7 @@ $input-group-addon-border-color: $input-border-color;
 
 
 
+
 //
 // # Custom forms
 // ==============
@@ -718,6 +738,7 @@ $input-group-addon-border-color: $input-border-color;
 
 
 
+
 //
 // # Form validation icons
 // =======================
@@ -726,6 +747,7 @@ $input-group-addon-border-color: $input-border-color;
 //
 // Reference: vendors/bootstrap/_variables.scss:517
 // ----------------------------------------------------------------------------
+
 
 
 
@@ -763,6 +785,7 @@ $dropdown-header-color:          $gray-light;
 
 
 
+
 //
 // # Z-index master list
 // =====================
@@ -779,6 +802,7 @@ $dropdown-header-color:          $gray-light;
 // $zindex-modal:              1050;
 // $zindex-popover:            1060;
 // $zindex-tooltip:            1070;
+
 
 
 
@@ -804,6 +828,7 @@ $nav-tabs-link-active-border-color:           $gray-d;
 $nav-pills-border-radius:     $border-radius;
 $nav-pills-link-active-color: $component-active-color;
 $nav-pills-link-active-bg:    $component-active-bg;
+
 
 
 
@@ -850,6 +875,7 @@ $navbar-height:                     50px;
 
 
 
+
 //
 // # Pagination
 // ============
@@ -884,6 +910,7 @@ $pagination-disabled-border-color:     $gray-d;
 
 
 
+
 //
 // # Jumbotron
 // ===========
@@ -893,6 +920,7 @@ $pagination-disabled-border-color:     $gray-d;
 
 $jumbotron-padding:              2rem;
 $jumbotron-bg:                   $gray-lighter;
+
 
 
 
@@ -925,6 +953,7 @@ $state-danger-border-color:      darken($state-danger-bg, 5%);
 
 
 
+
 //
 // # Cards
 // =======
@@ -953,6 +982,7 @@ $card-columns-margin:       $card-spacer-y;
 
 
 
+
 //
 // # Tooltips
 // ==========
@@ -971,6 +1001,7 @@ $tooltip-margin:              0;
 $tooltip-arrow-width:         5px;
 $tooltip-arrow-height:        5px;
 $tooltip-arrow-color:         $tooltip-bg;
+
 
 
 
@@ -1006,6 +1037,7 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 
 
 
+
 //
 // # Badges
 // ========
@@ -1032,6 +1064,7 @@ $badge-pill-padding-x:        .6em;
 //## Use a higher than normal value to ensure completely rounded edges when
 //## customizing padding or font-size on labels.
 $badge-pill-border-radius:    10rem;
+
 
 
 
@@ -1071,6 +1104,7 @@ $modal-transition:                transform .3s ease-out;
 
 
 
+
 //
 // # Alerts
 // ========
@@ -1106,6 +1140,7 @@ $alert-danger-border-color:   $state-danger-border-color;
 
 
 
+
 //
 // # Progress bars
 // ===============
@@ -1122,6 +1157,7 @@ $progress-bar-color:            $white;
 $progress-bar-bg:               $brand-primary;
 $progress-bar-animation-timing: 1s linear infinite;
 $progress-bar-transition:       width .6s ease;
+
 
 
 
@@ -1157,6 +1193,7 @@ $list-group-link-active-bg:      $gray-lighter;
 
 
 
+
 //
 // # Image thumbnails
 // ==================
@@ -1174,6 +1211,7 @@ $thumbnail-transition:        all .2s ease-in-out;
 
 
 
+
 //
 // # Figures
 // =========
@@ -1183,6 +1221,7 @@ $thumbnail-transition:        all .2s ease-in-out;
 
 $figure-caption-font-size: 90%;
 $figure-caption-color:     $gray-light;
+
 
 
 
@@ -1201,6 +1240,7 @@ $breadcrumb-bg:                 $gray-lighter;
 $breadcrumb-divider-color:      $gray-light;
 $breadcrumb-active-color:       $gray-light;
 $breadcrumb-divider:            "/";
+
 
 
 
@@ -1232,6 +1272,7 @@ $carousel-transition:           transform .6s ease;
 
 
 
+
 //
 // # Close
 // =======
@@ -1243,6 +1284,7 @@ $close-font-size:             $font-size-base * 1.5;
 $close-font-weight:           $font-weight-bold;
 $close-color:                 $black;
 $close-text-shadow:           0 1px 0 $white;
+
 
 
 

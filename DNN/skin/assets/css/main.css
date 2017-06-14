@@ -7375,6 +7375,9 @@ ul {
 .show .dropdown-menu {
   display: block; }
 
+.child-page__image {
+  max-width: 100%; }
+
 .header.fixed-to-top {
   position: fixed;
   top: 0;
