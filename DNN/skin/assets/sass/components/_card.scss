@@ -5,6 +5,9 @@
 //  1. Wrapper and base class
 //  2. Card typography
 //  3. Card sections
+//     - Header
+//     - Body
+//     - Footer
 //  4. Card navs
 //  5. Card image
 //  6. Card layouts
@@ -22,8 +25,6 @@
 // ======================
 
 .card {}
-
-.card-block {}
 
 
 
@@ -48,6 +49,8 @@
 // =============
 
 .card-header {}
+
+.card-body {}
 
 .card-footer {}
 

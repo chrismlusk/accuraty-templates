@@ -5,8 +5,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-// Core variables and mixins
+
+// Custom additions
 @import "custom";
+
+// Core variables and mixins
+@import "functions";
 @import "variables";
 @import "mixins";
 

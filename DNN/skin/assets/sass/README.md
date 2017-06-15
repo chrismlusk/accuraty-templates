@@ -32,7 +32,6 @@ Our pattern is to split the codebase into partials that are organized into meani
 4. `layout/`
 5. `components/`
 6. `pages/`
-7. `themes/`
 
 To preserve readability in `main.scss`, the contents of each folder is grouped into one import statement, with a linebreak and each file on its own line. File extensions and leading underscores are not necessary and are therefore omitted.
 
