@@ -1,5 +1,5 @@
 <%@ Control AutoEventWireup="false" Explicit="True" Inherits="DotNetNuke.UI.Containers.Container" %>
 <%@ Register TagPrefix="dnn" TagName="TITLE" Src="~/Admin/Containers/Title.ascx" %>
 
-<h2><dnn:Title runat="server" id="dnnTitle" class="DnnModule__title" /></h2>
+<h2 class="DnnModule__title"><dnn:Title runat="server" id="dnnTitle" /></h2>
 <div runat="server" id="ContentPane" class="DnnModule__content"></div>

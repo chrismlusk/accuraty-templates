@@ -24,10 +24,17 @@
 //
 // 1. Set the color on the wrapper so the other elements will inherit it and
 //    ensure links, text, and separators are all the same color.
+//
+// 2. Remove extra space in between `<span>` tags, which occurs when manually
+//    creating the breadcrumb structure (not using the `<dnn:Breadcrumb>` tag).
 // ----------------------------------------------------------------------------
 
 // .DnnBreadcrumb {
 //   color: $link-color; // 1
+
+//   span {
+//     display: inline-flex; // 2
+//   }
 // }
 
 
