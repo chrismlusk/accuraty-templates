@@ -7656,6 +7656,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   height: auto !important; }
 
 .Head {
+  display: initial;
   margin: 0; }
 
 .Normal,
