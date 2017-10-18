@@ -63,7 +63,8 @@
 //  1. Initial variables
 //
 //  These are base variables defined with a direct value. In general, variable
-//  format should follow the `$component-modifier-state-property` order.
+//  format should follow the `$component-state-property-size` formula for
+//  consistent naming (e.g., `$card-hover-bg` or `$modal-border-radius-xl`).
 //
 //  Note: These variables generally should not be used in your stylesheets.
 //
