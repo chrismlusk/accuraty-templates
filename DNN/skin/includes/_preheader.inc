@@ -25,7 +25,7 @@
 
 
 <%-- add scripts --%>
-<dnn:JQUERY ID="dnnjQuery" runat="server" ForceProvider="DnnFormBottomProvider" Priority="100" />
+<dnn:JQUERY runat="server" Priority="100" />
 <dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" ForceProvider="DnnFormBottomProvider" Priority="110" />
 <dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="120" />
 <dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="130" />
