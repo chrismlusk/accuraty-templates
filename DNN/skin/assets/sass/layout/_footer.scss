@@ -96,7 +96,8 @@
 // Footer sections
 // ===============
 //
-// Organize the footer. These are added in the markup as `<section>` tags.
+// Used to organize the footer. These are used in the markup as siblings to
+// `.container-fluid`, so be mindful of margin and spacing style overrides.
 // ----------------------------------------------------------------------------
 
 .footer-upper {}
