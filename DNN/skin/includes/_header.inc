@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header  fixed-to-top">
   <nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand" href="/" aria-label="{WEBSITE NAME}">LOGO</a>
 
