@@ -2,10 +2,10 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Dropdown toggle
-//  3. Dropdown menu
-//  4. Dropdown item
+//  - Wrapper and base class
+//  - Alert heading
+//  - Alert link
+//  - Dismissible alert
 //
 // ============================================================================
 
@@ -16,31 +16,33 @@
 // Wrapper and base class
 // ======================
 
-// .dropdown {}
+// .alert {}
 
 
 
 
 //
-// Dropdown toggle
-// ===============
-
-// .dropdown-toggle {}
-
-
-
-
-//
-// Dropdown menu
+// Alert heading
 // =============
 
-.dropdown-menu {}
+// .alert-heading {}
 
 
 
 
 //
-// Dropdown item
+// Alert link
 // =============
 
-// .dropdown-item {}
+// .alert-link {}
+
+
+
+
+//
+// Dismissible alert
+// =================
+
+// .alert-dismissible {
+//   .close {}
+// }

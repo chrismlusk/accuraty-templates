@@ -1,8 +1,8 @@
 // ============================================================================
-// 
+//
 //  [Table of Contents]
 //
-//  1. Navbar
+//  1. Wrapper and base class
 //  2. Navbar brand
 //  3. Navbar text
 //  4. Responsive navbar
@@ -13,11 +13,8 @@
 
 
 //
-// Navbar
-// ======
-//
-// Wrapper and base class from which we expand to create other variations.
-// ----------------------------------------------------------------------------
+// Wrapper and base class
+// ======================
 
 // .navbar {}
 
@@ -74,14 +71,8 @@
 //
 // 2. This element is separated so we can easily override it with another icon
 //    or image file as needed.
-//
-// 3. These use `position` to prevent from being auto placed as a flex item.
 // ----------------------------------------------------------------------------
 
 // .navbar-toggler {} // 1
 
 // .navbar-toggler-icon {} // 2
-
-// .navbar-toggler-left {} // 3
-
-// .navbar-toggler-right {} // 3

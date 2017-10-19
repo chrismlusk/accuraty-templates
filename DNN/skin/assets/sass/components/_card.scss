@@ -2,7 +2,7 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
+//  1. Base styles
 //  2. Card typography
 //  3. Card sections
 //     - Header
@@ -21,8 +21,8 @@
 
 
 //
-// Wrapper and base class
-// ======================
+// Base styles
+// ===========
 
 .card {}
 
@@ -84,7 +84,7 @@
 // Each class is wrapped in a media query since the styles only apply > 768px.
 // ----------------------------------------------------------------------------
 
-@include media-breakpoint-up('sm') {
+@include media-breakpoint-up(sm) {
 
   // Deck
   .card-deck {

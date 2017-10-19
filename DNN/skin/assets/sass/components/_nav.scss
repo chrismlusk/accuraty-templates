@@ -2,7 +2,7 @@
 //
 //  [Table of Contents]
 //
-//  1. Nav
+//  1. Wrapper and base class
 //  2. Nav tabs
 //  3. Nav pills
 //
@@ -12,10 +12,10 @@
 
 
 //
-// Nav
-// ===
+// Wrapper and base class
+// ======================
 //
-// Base class for any navigation component. Works with `<nav>` or `<ul>`.
+// Kickstart any navigation component. Works with `<nav>` or `<ul>`.
 //
 // 1. These are separated so `.navbar-nav` can take advantage of `.nav-link`.
 // ----------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 // .nav {}
 
 // .nav-link { // 1
-  
+
 // }
 
 

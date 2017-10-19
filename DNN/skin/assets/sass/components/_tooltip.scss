@@ -2,10 +2,8 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Dropdown toggle
-//  3. Dropdown menu
-//  4. Dropdown item
+//  - Wrapper and base class
+//  - Tooltip inner
 //
 // ============================================================================
 
@@ -16,31 +14,16 @@
 // Wrapper and base class
 // ======================
 
-// .dropdown {}
+// .tooltip {}
 
 
 
 
 //
-// Dropdown toggle
-// ===============
-
-// .dropdown-toggle {}
-
-
-
-
-//
-// Dropdown menu
+// Tooltip inner
 // =============
-
-.dropdown-menu {}
-
-
-
-
 //
-// Dropdown item
-// =============
+// Wrapper for the tooltip content.
+// ----------------------------------------------------------------------------
 
-// .dropdown-item {}
+// .tooltip-inner {}

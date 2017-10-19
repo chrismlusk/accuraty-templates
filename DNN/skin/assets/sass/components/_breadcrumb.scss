@@ -27,13 +27,17 @@
 //
 // 2. Remove extra space in between `<span>` tags, which occurs when manually
 //    creating the breadcrumb structure (not using the `<dnn:Breadcrumb>` tag).
+//
+// 3. Have items wrap to the next line so long words don't break into columns.
 // ----------------------------------------------------------------------------
 
 // .DnnBreadcrumb {
 //   color: $link-color; // 1
+//   margin-bottom: 1rem;
 
 //   span {
 //     display: inline-flex; // 2
+//     flex-wrap: wrap; // 3
 //   }
 // }
 
@@ -98,5 +102,16 @@
 
 //   @include plain-visited { // 1
 //     color: inherit;
+//     font-weight: $font-weight-bold;
+//   }
+//
+//   &.active {
+//     color: $breadcrumb-active-color;
+//   }
+// }
+//
+// a.DnnBreadcrumb__item {
+//   @include hover-focus-active {
+//     color: $link-color;
 //   }
 // }

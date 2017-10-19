@@ -32,10 +32,9 @@
 // Imports
 // =======
 
-@import
-  'abstracts/variables',
-  'abstracts/mixins',
-  'vendors/bootstrap/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'vendors/bootstrap/mixins';
 
 
 
@@ -114,7 +113,7 @@ a {
 
 .docs-callout {
   background-color: transparent;
-  border: 1px solid $gray-e;
+  border: 1px solid $gray-200;
   border-left-width: .25rem;
   border-radius: .25rem;
   font-size: .925em;

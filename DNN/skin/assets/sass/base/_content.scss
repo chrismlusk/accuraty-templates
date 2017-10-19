@@ -137,7 +137,6 @@
 // ======================
 //
 // 1. Increase the size of body text. 1.125rem is ~18px on a 16px base.
-//    {{ OVERRIDE THIS VALUE AS NEEDED }}
 //
 // 2. List items are too close together compared to all other body text
 //    elements, so add a little margin between siblings.
@@ -160,7 +159,9 @@
   p,
   ol,
   ul {
-    // font-size: 1.125rem; // 1
+    @include media-breakpoint-up(md) {
+      font-size: 1.125rem; //1
+    }
   }
 
   li + li {
@@ -168,26 +169,25 @@
   }
 
   a {
-    font-weight: $weight-bold;
+    font-weight: $font-weight-bold;
 
     &:not(.btn):not(.is-inverse) {
       border-bottom: $border-width solid $link-border-color; // 3
 
       @include hover-focus-active {
-        border-bottom-color: transparent;
+        border-bottom-color: $link-hover-border-color;
       }
 
-      &:active,
-      &:focus {
-        background-color: rgba($gray-dark, .1); // 4
+      &:active {
+        background-color: $link-active-bg; // 4
       }
     }
 
     &.is-inverse { // 5
-      border-bottom: $border-width solid $white;
+      border-bottom: $border-width solid $link-inverse-border-color;
 
       @include hover-focus {
-        border-bottom-color: rgba(255, 255, 255, 0.5);
+        border-bottom-color: $link-inverse-hover-border-color;
       }
     }
   }

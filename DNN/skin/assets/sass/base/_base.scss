@@ -4,9 +4,9 @@
 //
 //  [Table of Contents]
 //
-//  1. Body
-//  2. Inline
-//  3. Block
+//  - Body
+//  - Inline
+//  - Block
 //
 // ============================================================================
 
@@ -39,18 +39,22 @@ a {
 
   @include plain-visited {
     color: $link-color;
-    transition: all $speed $easing;
+    transition: all $transition-speed $transition-easing;
   }
 
   @include hover-focus {
     color: $link-hover-color;
   }
 
+  &:focus {
+    outline: $link-focus-outline-width $link-focus-outline-style $link-focus-outline-color;
+  }
+
   &.is-inverse {
-    color: $white;
+    color: $link-inverse-color;
 
     @include hover-focus {
-      color: rgba($white, 0.5);
+      color: $link-inverse-hover-color;
     }
   }
 }
