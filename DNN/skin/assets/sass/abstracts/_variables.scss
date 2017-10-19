@@ -894,7 +894,8 @@ $navbar-light-disabled-color:       rgba($black, 0.3) ;
 $navbar-light-toggler-border-color: rgba($black, 0.1) ;
 
 //## Custom variable added by Accuraty.
-//## Used to set height and spacing on various components.
+//## Used to set height and spacing on various components (e.g., to add top
+//## margin to the `<main>` whenever the navbar is fixed to the top).
 $navbar-height:                     50px;
 
 
