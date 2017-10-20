@@ -45,7 +45,7 @@
   ol,
   ul {
     &:not(:last-child) {
-      margin-bottom: $spacer; // 1
+      margin-bottom: $paragraph-margin-bottom; // 1
     }
   }
 
@@ -53,61 +53,13 @@
   h3, .h3,
   h4, .h4 {
     &:not(:first-child) {
-      margin-top: ($spacer * 2); // 2
+      margin-top: ($paragraph-margin-bottom * 2); // 2
     }
   }
 
   h2 + h3,
   h3 + h4 {
-    margin-top: $spacer !important; // 3
-  }
-
-  blockquote {
-    background-color: $blockquote-bg-color;
-    border-left: $blockquote-border-width solid $blockquote-border-color;
-    font-size: $blockquote-font-size;
-    padding: 1.5rem;
-
-    footer {
-      color: $blockquote-small-color;
-      font-size: $blockquote-small-font-size;
-
-      &::before {
-        content: "\2014 \00A0"; // em dash, nbspreb
-      }
-
-      a {
-
-        @include plain-visited {
-          color: $blockquote-small-color;
-        }
-
-        @include hover-focus {
-          color: $link-hover-color;
-          border-bottom-color: $link-hover-border-color;
-        }
-      }
-    }
-  }
-
-  ol {
-    list-style: decimal outside;
-    margin-left: ($spacer * 2);
-    margin-right: ($spacer * 2);
-    margin-top: $spacer;
-  }
-
-  ul {
-    list-style: disc outside;
-    margin-left: ($spacer * 2);
-    margin-right: ($spacer * 2);
-    margin-top: $spacer;
-
-    ul {
-      list-style-type: circle;
-      margin-top: ($spacer / 2);
-      margin-bottom: ($spacer / 2);
-    }
+    margin-top: $paragraph-margin-bottom !important; // 3
   }
 }
 
@@ -164,23 +116,71 @@
     }
   }
 
-  li + li {
-    margin-top: ($spacer / 4); // 2
+  blockquote {
+    background-color: $blockquote-bg-color;
+    border-left: $blockquote-border-width solid $blockquote-border-color;
+    font-size: $blockquote-font-size;
+    padding: 1.5rem;
+
+    footer {
+      color: $blockquote-small-color;
+      font-size: $blockquote-small-font-size;
+
+      &::before {
+        content: "\2014 \00A0"; // em dash, nbspreb
+      }
+
+      a {
+
+        @include plain-visited {
+          color: $blockquote-small-color;
+        }
+
+        @include hover-focus {
+          color: $link-hover-color;
+          border-bottom-color: $link-hover-border-color;
+        }
+      }
+    }
   }
 
-  a {
+  ol {
+    list-style: decimal outside;
+    margin-left: ($paragraph-margin-bottom * 2);
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-top: $paragraph-margin-bottom;
+  }
+
+  ul {
+    list-style: disc outside;
+    margin-left: ($paragraph-margin-bottom * 2);
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-top: $paragraph-margin-bottom;
+
+    ul {
+      list-style-type: circle;
+      margin-top: ($paragraph-margin-bottom / 2);
+      margin-bottom: ($paragraph-margin-bottom / 2);
+    }
+  }
+
+  ul:not(.list-group) {
+
+    li + li {
+      margin-top: ($paragraph-margin-bottom / 4); // 2
+    }
+  }
+
+  a:not(.btn):not(.badge):not(.dropdown-item) {
+    border-bottom: $border-width solid $link-border-color; // 3
     font-weight: $font-weight-bold;
 
-    &:not(.btn):not(.is-inverse) {
-      border-bottom: $border-width solid $link-border-color; // 3
+    @include hover-focus-active {
+      border-bottom-color: $link-hover-border-color;
+    }
 
-      @include hover-focus-active {
-        border-bottom-color: $link-hover-border-color;
-      }
-
-      &:active {
-        background-color: $link-active-bg; // 4
-      }
+    &:active {
+      background-color: $link-active-bg; // 4
     }
 
     &.is-inverse { // 5
