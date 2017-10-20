@@ -582,9 +582,15 @@ $font-size-xs:                $asl--size-8;
 $font-weight-light:           $asl--font-weight-light;
 $font-weight-normal:          $asl--font-weight-normal;
 $font-weight-bold:            $asl--font-weight-bold;
+//## Custom variables added by Accuraty
+$font-weight-medium:          $asl--font-weight-medium;
+$font-weight-black:           $asl--font-weight-black;
 
 $font-weight-base:            $asl--font-weight-normal;
 $line-height-base:            $asl--line-height-normal;
+//## Custom variables added by Accuraty
+$line-height-tight:           $asl--line-height-tight;
+$line-height-tightest:        $asl--line-height-tightest;
 
 $h1-font-size:                $asl--size-1;
 $h2-font-size:                $asl--size-2;
