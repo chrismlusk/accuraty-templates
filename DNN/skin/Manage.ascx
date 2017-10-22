@@ -1,10 +1,7 @@
 <!--#include file="includes/_preheader.inc"-->
-
-<dnn:DnnCssInclude runat="server" FilePath="assets/css/docs.css" PathNameAlias="SkinPath" Priority="50" />
-
 <!--#include file="includes/_header.inc"-->
 
-<main class="main">
+<main class="main" id="manage">
   <div class="container-fluid">
     <!--#include file="includes/_breadcrumb.inc"-->
     <div class="row">

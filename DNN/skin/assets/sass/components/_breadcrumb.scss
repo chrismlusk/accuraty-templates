@@ -33,7 +33,7 @@
 
 .DnnBreadcrumb {
   color: $breadcrumb-color; // 1
-  margin-bottom: 1rem;
+  margin-bottom: $breadcrumb-margin-bottom;
 
   span {
     display: inline-flex; // 2
