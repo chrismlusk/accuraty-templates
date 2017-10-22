@@ -190,11 +190,10 @@ $asl--border-radius-sm:     0.2rem;
 // Transition properities, shadows, columns, DNN components, etc.
 // ----------------------------------------------------------------------------
 
-$asl--easing: ease-out;
-$asl--speed: 220ms;
-$asl--box-shadow:       0 2px 4px rgba($asl--black, 0.1);
-$asl--box-shadow-hover: 0 12px 28px -2px rgba($asl--black, 0.21),
-                        0 6px 14px -1px rgba($asl--black, 0.14);
+$asl--transition-easing:  ease-in-out;
+$asl--transition-speed:   118ms;
+$asl--box-shadow:         0 2px 4px rgba($asl--black, 0.1);
+$asl--box-shadow-hover:   0 12px 28px -2px rgba($asl--black, 0.21), 0 6px 14px -1px rgba($asl--black, 0.14);
 
 //## Used for Bootstrap's `$grid-columns` variable
 $asl--grid-columns: 12;
@@ -527,12 +526,12 @@ $component-active-bg:         theme-color("primary");
 $caret-width:                 0.3em;
 
 //## Custom variables added by Accuraty
-$transition-speed:            $asl--speed;
-$transition-easing:           $asl--easing;
+$transition-speed:            $asl--transition-speed;
+$transition-easing:           $asl--transition-easing;
 
 $transition-base:             all $transition-speed $transition-easing;
-$transition-fade:             opacity ($transition-speed * 0.75) linear;
-$transition-collapse:         height ($transition-speed * 1.75) ease;
+$transition-fade:             opacity 140ms linear;
+$transition-collapse:         height 335ms ease;
 
 
 
@@ -698,7 +697,7 @@ $btn-border-radius:             $border-radius;
 $btn-border-radius-lg:          $border-radius-lg;
 $btn-border-radius-sm:          $border-radius-sm;
 
-$btn-transition:                background-color $transition-speed ease-in-out, border-color $transition-speed ease-in-out, box-shadow $transition-speed ease-in-out;
+$btn-transition:                background-color $transition-speed $transition-easing, border-color $transition-speed $transition-easing, box-shadow $transition-speed $transition-easing;
 
 
 
@@ -739,7 +738,7 @@ $input-height-sm:                       calc(#{$input-height-inner-sm} + #{$inpu
 $input-height-inner-lg:                 ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
 $input-height-lg:                       calc(#{$input-height-inner-lg} + #{$input-height-border});
 
-$input-transition:                      border-color $transition-speed ease-in-out, box-shadow $transition-speed ease-in-out;
+$input-transition:                      border-color $transition-speed $transition-easing, box-shadow $transition-speed $transition-easing;
 
 $form-text-margin-top:                  0.25rem;
 
@@ -1093,7 +1092,7 @@ $modal-lg:                          800px;
 $modal-md:                          500px;
 $modal-sm:                          300px;
 
-$modal-transition:                  transform ($transition-speed * 1.5) $transition-easing;
+$modal-transition:                  transform .3s ease-out;
 
 
 
@@ -1132,7 +1131,7 @@ $progress-box-shadow:               inset 0 0.1rem 0.1rem rgba($black, 0.1);
 $progress-bar-color:                $white;
 $progress-bar-bg:                   theme-color("primary");
 $progress-bar-animation-timing:     1s linear infinite;
-$progress-bar-transition:           width ($transition-speed * 2.75) ease;
+$progress-bar-transition:           width 580ms ease;
 
 
 
@@ -1249,7 +1248,7 @@ $carousel-control-icon-width:       20px;
 // $carousel-control-prev-icon-bg:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23");
 // $carousel-control-next-icon-bg:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23");
 
-$carousel-transition:               transform ($transition-speed * 2.75) ease;
+$carousel-transition:               transform 580ms ease;
 
 
 
