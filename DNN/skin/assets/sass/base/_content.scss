@@ -11,9 +11,9 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Module title
-//  3. Module content
+//  - Wrapper and base class
+//  - Module title
+//  - Module content
 //
 // ============================================================================
 
@@ -53,13 +53,13 @@
   h3, .h3,
   h4, .h4 {
     &:not(:first-child) {
-      margin-top: ($paragraph-margin-bottom * 2); // 2
+      margin-top: ($spacer * 2); // 2
     }
   }
 
   h2 + h3,
   h3 + h4 {
-    margin-top: $paragraph-margin-bottom !important; // 3
+    margin-top: $spacer !important; // 3
   }
 }
 
@@ -106,6 +106,19 @@
 // ----------------------------------------------------------------------------
 
 .DnnModule__content {
+  font-size: 1.08rem; // 1
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.125rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.175rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.225rem;
+  }
 
   blockquote,
   p,
