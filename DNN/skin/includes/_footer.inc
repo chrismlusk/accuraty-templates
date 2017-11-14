@@ -1,7 +1,7 @@
 <footer class="footer">
   <section class="footer-upper  container-fluid">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
 
         <a class="footer-brand" href="/">LOGO</a>
 
@@ -14,7 +14,7 @@
           <span itemprop="addressCountry" class="sr-only">United States</span>
         </address>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <nav class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
           <link itemprop="url" href="<%=PortalSettings.PortalAlias.HTTPAlias%>">
           <a class="nav-link" href="#" target="_blank" itemprop="sameAs">Facebook</a>
@@ -26,12 +26,12 @@
   </section>
   <section class="footer-lower  container-fluid">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <p class="text-center text-md-left">
           <span><dnn:COPYRIGHT runat="server" id="dnnCopyright" /></span>
         </p>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <p class="text-center text-md-right">
           Design, development, and hosting by <a class="footer-link" href="http://accuraty.com" target="_blank">Accuraty Solutions</a>.
         </p>

@@ -201,6 +201,10 @@ $asl--grid-columns: 12;
 //## Used for Bootstrap's `$grid-gutter-width` variable
 $asl--grid-gutter-width: 2rem;
 
+//## Used to set height and spacing on various components (e.g., to add top
+//## margin to the `<main>` whenever the navbar is fixed to the top).
+$asl--navbar-height: 50px;
+
 //## `Control Bar` is what's used in DNN 8 and below
 $dnn-control-bar-height: 53px;
 
@@ -902,9 +906,7 @@ $navbar-light-disabled-color:       rgba($black, 0.3);
 $navbar-light-toggler-border-color: rgba($black, 0.1);
 
 //## Custom variable added by Accuraty.
-//## Used to set height and spacing on various components (e.g., to add top
-//## margin to the `<main>` whenever the navbar is fixed to the top).
-$navbar-height:                     50px;
+$navbar-height:                     $asl--navbar-height;
 
 
 

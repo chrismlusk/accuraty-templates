@@ -2,10 +2,11 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Navbar brand
-//  3. Navbar text
-//  4. Responsive navbar
+//  - Wrapper and base class
+//  - Navbar brand
+//  - Navbar text
+//  - Responsive navbar
+//  - Admin menu
 //
 // ============================================================================
 
@@ -16,7 +17,7 @@
 // Wrapper and base class
 // ======================
 
-// .navbar {}
+.navbar {}
 
 
 
@@ -28,7 +29,7 @@
 // Used for brand, project, or site name.
 // ----------------------------------------------------------------------------
 
-// .navbar-brand {}
+.navbar-brand {}
 
 
 
@@ -40,10 +41,10 @@
 // Custom navbar navigation. Doesn't require `.nav`, but does use `.nav-link`.
 // ----------------------------------------------------------------------------
 
-// .navbar-nav {
+.navbar-nav {
 
-//   .nav-link {}
-// }
+  .nav-link {}
+}
 
 
 
@@ -76,3 +77,24 @@
 // .navbar-toggler {} // 1
 
 // .navbar-toggler-icon {} // 2
+
+
+
+
+//
+// Admin menu
+// ==========
+//
+// Used to add a Manage menu to the navbar independent of the primary nav.
+// ----------------------------------------------------------------------------
+
+#admin-menu {
+  .nav-link {
+    background-color: $link-color;
+    color: $white;
+
+    @include hover-focus {
+      background-color: $link-hover-color;
+    }
+  }
+}
