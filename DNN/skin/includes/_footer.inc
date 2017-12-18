@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6">
 
-        <a class="footer-brand" href="/">LOGO</a>
+        <a class="footer-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>">LOGO</a>
 
         <address class="footer-address" itemscope itemtype="http://schema.org/PostalAddress">
           <span itemprop="name" class="sr-only">CLIENT NAME</span><br>
