@@ -1,6 +1,6 @@
 # Skin
 
-This folder is where we save starter files to build a custom DNN skin. When copying these files for use in a project, be sure they are added to `/Portals/_default/Skins/{CLIENT ABBREVIATION}/`.
+This folder is where we save starter files to build a custom DNN skin. When copying these files for use in a project, be sure they are added to `/Portals/_default/Skins/{CLIENT_ABBREVIATION}/`.
 
 A skin defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS). 
 

@@ -1,6 +1,6 @@
 # Containers
 
-This folder is where we save containers used for our project. When copying these files for use in a project, be sure they are added to `/Portals/_default/Containers/{CLIENT ABBREVIATION}/`.
+This folder is where we save containers used for our project. When copying these files for use in a project, be sure they are added to `/Portals/_default/Containers/{CLIENT_ABBREVIATION}/`.
 
 ## What is a Container?
 
