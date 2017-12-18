@@ -1,0 +1,41 @@
+// ============================================================================
+//
+//  PLEASE READ!
+//
+//  The `.eds_news_*` and `.eds_subCollection_*` selectors are necessary for
+//  the EasyDNNnews layout. We have no control over these in the markup.
+//
+//  Note: Please replace the {TEMPLATE_NAME} in the base class below.
+//
+//  Everything within `.eds_subCollection_*` is custom. The naming convention
+//  begins with "EDN" and divide the prefix and component with "__" (double
+//  underscore). A selector name with multiple words uses a single "-" (dash).
+//  Modifiers are separate classes using the "is-*" or "has-*" format.
+//
+//  For example, articles are given the `.EDN__article` class. Articles might
+//  appear in a list or in a grid, so these selectors would be written as
+//  `.EDN__article.is-list` or `.EDN__article.is-grid` using these rules.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//     -
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+//
+// 1. Mandatory classes added via EasyDNNnews. We do not control these.
+//    Do not add a closing brace or move the selector.
+// ----------------------------------------------------------------------------
+
+.eds_news_{TEMPLATE_NAME}.eds_subCollection_categoryMenu { // 1
+
+} // Important! This brace closes `.eds_news_*` and must come at the very end.

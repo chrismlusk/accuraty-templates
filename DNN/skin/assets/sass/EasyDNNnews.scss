@@ -1,0 +1,21 @@
+// ============================================================================
+//
+//  Project: {BE KIND TO OTHERS. UPDATE THIS.}
+//  Description: Custom EasyDNNnews theme for {BE KIND TO OTHERS. UPDATE THIS.}
+//  Version: 1.0
+//  Author: Accuraty Solutions
+//  Author URI: www.accuraty.com
+//  Updated: {BE KIND TO OTHERS. UPDATE THIS.
+//
+//  --
+//
+//  DO NOT WRITE DIRECTLY IN THE `.CSS` FILE! Compile via this Sass file.
+//
+// ============================================================================
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'EasyDNNnews/edn-base';
+@import 'EasyDNNnews/edn-news';
+@import 'EasyDNNnews/edn-category-menu';
