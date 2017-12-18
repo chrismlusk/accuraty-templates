@@ -39,7 +39,7 @@ a {
 
   @include plain-visited {
     color: $link-color;
-    transition: all $transition-speed $transition-easing;
+    transition: $transition-base;
   }
 
   @include hover-focus {
@@ -71,4 +71,9 @@ p,
 ol,
 ul {
   margin-bottom: 0;
+}
+
+ol,
+ul {
+  list-style: none;
 }

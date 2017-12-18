@@ -164,7 +164,7 @@
     margin-top: $paragraph-margin-bottom;
   }
 
-  ul {
+  ul:not(.nav) {
     list-style: disc outside;
     margin-left: ($paragraph-margin-bottom * 2);
     margin-right: ($paragraph-margin-bottom * 2);
@@ -177,7 +177,8 @@
     }
   }
 
-  ul:not(.list-group) {
+  ul:not(.list-group):not(.nav),
+  ol:not(.list-group) {
 
     li + li {
       margin-top: ($paragraph-margin-bottom / 4); // 2
