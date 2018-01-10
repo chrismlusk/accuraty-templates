@@ -43,4 +43,9 @@
 // Dropdown item
 // =============
 
-// .dropdown-item {}
+.dropdown-item {
+
+  @include plain-visited {
+    color: $dropdown-link-color;
+  }
+}
