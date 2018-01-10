@@ -32,9 +32,8 @@
 //    double the default spacing as the top margin for these tags as long as
 //    they aren't the first child inside the parent.
 //
-// 3. But when two headings are next to each other, we don't want this excess
-//    top space. So we reset the top margin to the default spacing for `<h3>`
-//    and `<h4>` tags — and we use the `!important` declaration to force this.
+// 3. But when headings are next to each other, we don't want excess space. So
+//    reset the top margin to the default spacing for `<h3>` and `<h4>` tags.
 // ----------------------------------------------------------------------------
 
 .DnnModule {
@@ -52,14 +51,16 @@
   h2, .h2,
   h3, .h3,
   h4, .h4 {
-    &:not(:first-child) {
-      margin-top: ($spacer * 2); // 2
+    margin-top: ($spacer * 2); // 2
+
+    &:first-child {
+      margin-top: 0; // 2
     }
   }
 
   h2 + h3,
   h3 + h4 {
-    margin-top: $spacer !important; // 3
+    margin-top: 0; // 3
   }
 }
 
@@ -164,7 +165,7 @@
     margin-top: $paragraph-margin-bottom;
   }
 
-  ul:not(.nav) {
+  ul:not(.nav):not(.list-unstyled) {
     list-style: disc outside;
     margin-left: ($paragraph-margin-bottom * 2);
     margin-right: ($paragraph-margin-bottom * 2);
