@@ -18,21 +18,58 @@
 
 
 
-<%-- add meta tags --%>
+
+<%-- Add meta tags
+================================================== --%>
 <dnn:META runat="server" Name="viewport" Content="width=device-width,initial-scale=1,shrink-to-fit=no" />
 
 
 
-<%-- add stylesheets --%>
-<dnn:DnnCssInclude runat="server" FilePath="assets/css/main.css" PathNameAlias="SkinPath" />
+
+<%-- Add stylesheets
+
+CSS priorities and suggested order (note that * denotes a core DNN file):
+
+  1.    Font API links (e.g., Google Fonts)
+  5.    Default CSS*
+  6-9.  Vendor CSS (e.g., Bootstrap)
+  10.   Module CSS*
+  15.   Skin CSS*
+  16.   Custom CSS: `assets/css/main.css`
+  20.   Specific Skin CSS
+  25.   Container CSS*
+  30.   Specific Container CSS*
+  35.   Portal CSS*
+
+Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
+========================================================================== --%>
+<dnn:DnnCssInclude runat="server" FilePath="assets/css/main.css" PathNameAlias="SkinPath" Priority="16" />
 
 
 
-<%-- add scripts --%>
-<%-- jQuery first, then Popper.js, then Bootstrap, then custom JS --%>
-<dnn:JQUERY runat="server" Priority="100" />
-<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="110" />
-<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="120" />
-<dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="130" />
+
+<%-- Add scripts
+
+JS priorities and suggested order (note that * denotes a core DNN file):
+
+  5.    jQuery*
+  10.   jQuery UI*
+  100.  Default*
+  101.  Vendor JS: Popper.js (for Bootstrap v4)
+  102.  Vendor JS: Bootstrap
+  105.  Custom JS: `scripts.js`
+
+Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
+
+--
+
+For Bootstrap v4: jQuery first, then Popper.js, then Bootstrap.
+
+Other vendor scripts and custom JS come next.
+========================================================================== --%>
+<dnn:JQUERY runat="server" ForceProvider="DnnFormBottomProvider" />
+<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="101" />
+<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
+<dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="105" />
 <%-- IE10 viewport hack for Surface/desktop Windows 8 bug --%>
 <dnn:DnnJsInclude runat="server" FilePath="assets/js/ie10-viewport-bug-workaround.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="999" />
