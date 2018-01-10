@@ -1,0 +1,497 @@
+// ============================================================================
+//
+//  DataTables is a jQuery plugin that adds advanced interaction to any table.
+//
+//  These styles ensure the plugin does not destroy your project's table design
+//  by overriding any possible conflicts from `dataTables.css` and resetting
+//  the table items to match Bootstrap's tables using the same variables found
+//  in Bootstrap source files.
+//
+//  When using DataTables and these styles, however, it's best to not include
+//  the `jquery.dataTables.min.css` file DataTables provides , as this file
+//  will cover all styling necessary after DataTables enhances your tables.
+//
+//  Plugin: DataTables
+//  Version: 1.10.16
+//  Plugin URL: https://datatables.net
+//  Updated: {BE KIND TO OTHERS. UPDATE THIS.}
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Base class
+//  - Sorting styles
+//  - Table versions
+//     - Bordered
+//     - Striped
+//     - Hover
+//  - Wrapper + Components
+//  - Input + Select
+//
+// ============================================================================
+
+
+
+
+//
+// Base class and styles
+// =====================
+//
+// Note: All uses of `!important` declaration are to ensure these custom styles
+//       override possible inclusion of `dataTables.css` styles.
+// ----------------------------------------------------------------------------
+
+.dataTable {
+  // `dataTables.css` line 4
+  margin-top: 0 !important;
+  margin-bottom: $spacer !important;
+  clear: none !important;
+  border-collapse: collapse !important;
+  border-spacing: initial !important;
+
+  &,
+  & th,
+  & td {
+    // `dataTables.css` lines 260, 261, 262
+    box-sizing: border-box !important;
+  }
+
+  th,
+  td {
+    // `dataTables.css` line 21, 22, 30, 31
+    border-top: $table-border-width solid $table-border-color !important;
+    border-bottom: 0 !important;
+  }
+
+  thead,
+  tfoot,
+  tbody {
+    th,
+    td {
+      padding: $table-cell-padding !important;
+    }
+  }
+
+  &.compact,
+  &.table-sm {
+    thead,
+    tfoot,
+    tbody {
+      th,
+      td {
+        padding: $table-cell-padding-sm !important;
+      }
+    }
+  }
+
+  thead {
+
+    th {
+      border-bottom: (2 * $table-border-width) solid $table-border-color !important;
+    }
+
+    th:active,
+    td:active {
+      outline: none;
+    }
+  }
+
+  tbody {
+
+    tr {
+
+      background-color: $table-bg !important; // `dataTables.css` line 60
+
+      &.selected {
+        background: $table-active-bg !important; // `dataTables.css` line 63
+      }
+    }
+  }
+
+  &.no-footer {
+    border-bottom: 0 !important; // `dataTables.css` line 170
+  }
+}
+
+
+
+
+//
+// Sorting styles
+// ==============
+
+.dataTable thead {
+
+  .sorting,
+  .sorting_asc,
+  .sorting_desc,
+  .sorting_asc_disabled,
+  .sorting_desc_disabled {
+    cursor: pointer;
+    background: none !important; // `dataTables.css` lines 27-50
+    padding-right: ($table-cell-padding * 2) !important;
+    position: relative;
+
+    &::before,
+    &::after {
+      color: $gray-300;
+      font-family: 'FontAwesome';
+      font-size: 1em;
+      position: absolute;
+        top: 50%;
+        right: 0.3em;
+      transition: color ($transition-speed / 2) $transition-easing;
+    }
+
+    &::before {
+      content: '\f0de';
+      transform: translateY(calc(-50% - 0.5px));
+    }
+
+    &::after {
+      content: '\f0dd';
+      transform: translateY(calc(-50% + 0.5px));
+    }
+  }
+
+  .sorting {
+    @include hover-focus {
+      &::before,
+      &::after {
+        color: $gray-500;
+      }
+    }
+  }
+
+  .sorting_asc {
+    &::before {
+      color: $link-color;
+    }
+  }
+
+  .sorting_desc {
+    &::after {
+      color: $link-color;
+    }
+  }
+
+  .sorting_asc_disabled {
+    &::before {}
+  }
+
+  .sorting_desc_disabled {
+    &::after {}
+  }
+}
+
+
+
+
+//
+// Bordered version
+// ================
+//
+// Reset Bootstrap styles canceled by overrides in the base class section that
+// use the `!important` declaration. Copied directly from Bootstrap source.
+// ----------------------------------------------------------------------------
+
+.dataTable.table-bordered {
+  border: $table-border-width solid $table-border-color !important;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color !important;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: (2 * $table-border-width) !important;
+    }
+  }
+}
+
+
+
+
+//
+// Striped version
+// ===============
+//
+// Reset Bootstrap styles canceled by overrides in the base class section that
+// use the `!important` declaration. Copied directly from Bootstrap source.
+// ----------------------------------------------------------------------------
+
+.dataTable.table-striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: $table-accent-bg !important;
+  }
+}
+
+
+
+
+//
+// Hover version
+// =============
+//
+// Reset Bootstrap styles canceled by overrides in the base class section that
+// use the `!important` declaration. Copied directly from Bootstrap source.
+// ----------------------------------------------------------------------------
+
+.dataTable.table-hover {
+  tbody tr {
+    @include hover {
+      background-color: $table-hover-bg !important;
+    }
+  }
+}
+
+
+
+
+//
+// Wrapper + Components
+// ====================
+//
+// DataTables automatically wraps the table in an extra `<div>` and can also
+// inject optional components: length, filter, info, paginate.
+//
+// - Length: A `<select>` to choose number of items to show. Top left.
+// - Filter: An `<input>` to search the data using AJAX. Top right.
+// - Info: A line of text stating the number of entries visible. Bottom left.
+// - Paginate: The pagination. Bottom right.
+//
+// We're resetting any styles that may inherit from `jQuery.dataTables.css`,
+// and then we are using code from Bootstrap source to style each component so
+// it displays as similar as possible to other Bootstrap components.
+//
+// --
+//
+// 1. DataTables uses floats to build the layout around the `<table>`.
+//    We override all of that and build the layout using flex.
+//
+// 2. The DataTables structure for these components is different than what
+//    Bootstrap would build, so we need to adjust the styles being applied.
+//
+// 3.
+// ----------------------------------------------------------------------------
+
+.dataTables_wrapper {
+  display: flex; // 1
+  flex-wrap: wrap; // 1
+
+  .dataTables_length,
+  .dataTables_filter,
+  .dataTables_info,
+  .dataTables_paginate {
+    align-items: center; // 1
+    display: flex; // 1
+    flex: 1 0 50%; // 1
+
+    // `dataTables.css` lines 272, 276, 285, 291, 380
+    color: $body-color !important;
+    float: none !important; // 1
+    text-align: initial !important;
+
+    label {
+      margin-bottom: 0 !important; // 2
+    }
+  }
+
+  .dataTables_length,
+  .dataTables_filter {
+    margin-bottom: ($spacer * 2);
+  }
+
+  .dataTables_length {
+    justify-content: flex-start; // 1
+  }
+
+  .dataTables_filter {
+    justify-content: flex-end; // 1
+
+    input {
+      margin-right: 0 !important; // `dataTables.css` line 282
+      margin-left: 0.5rem; // 2
+    }
+  }
+
+  .dataTables_info,
+  .dataTables_paginate {
+    font-size: $font-size-sm;
+    margin-top: $spacer;
+    padding-top: 0 !important; // `dataTables.css` lines 285, 291
+  }
+
+  .dataTables_info {
+    justify-content: flex-start; // 1
+  }
+
+  .dataTables_paginate {
+    justify-content: flex-end; // 1
+
+    // pagination numbers are nested inside a `<span>`; prev and next are not
+    & > span {
+      display: flex;
+    }
+
+    .paginate_button {
+      background-color: $pagination-bg !important;
+      border: $pagination-border-width solid $pagination-border-color !important;
+      color: $pagination-color !important;
+      display: block !important;
+      font-weight: $font-weight-base !important;
+      line-height: $pagination-line-height !important;
+      margin-left: -$pagination-border-width !important;
+      padding: $pagination-padding-y $pagination-padding-x !important;
+      position: relative !important;
+
+      @if $enable-rounded {
+        border-radius: $input-border-radius !important;
+      } @else {
+        border-radius: 0 !important;
+      }
+
+      &:not(.disabled) {
+        cursor: pointer;
+      }
+
+      @include hover-focus-active {
+        background: none !important;
+        background-color: $pagination-hover-bg !important;
+        border-color: $pagination-hover-border-color !important;
+        color: $pagination-hover-color !important;
+        text-decoration: none;
+      }
+
+      &.current {
+        background: none !important; // `dataTables.css` line 321
+        background-color: $pagination-active-bg !important;
+        border-color: $pagination-active-border-color !important;
+        color: $pagination-active-color !important;
+        z-index: 1;
+
+        @include hover-focus {
+          color: $pagination-active-color !important;
+        }
+      }
+
+      &.disabled {
+        color: $pagination-disabled-color !important;
+        pointer-events: none !important;
+        cursor: auto !important;
+        background-color: $pagination-disabled-bg !important;
+        border-color: $pagination-disabled-border-color !important;
+      }
+    }
+
+    // only target direct descendants to avoid all items inside `<span>`
+    & > .paginate_button {
+
+      &:first-child {
+        margin-left: 0 !important;
+        @if $enable-rounded {
+          border-top-left-radius: $border-radius !important;
+          border-bottom-left-radius: $border-radius !important;
+        }
+      }
+
+      &:last-child {
+        @if $enable-rounded {
+          border-top-right-radius: $border-radius !important;
+          border-bottom-right-radius: $border-radius !important;
+        }
+      }
+    }
+
+    .ellipsis {}
+  }
+
+  .dataTables_processing {}
+
+  .dataTables_scroll {
+
+    div.dataTables_scrollBody {}
+  }
+
+  &.no-footer {
+    border-bottom: 0 !important; // `dataTables.css` line 404
+  }
+
+  @media screen and (max-width: 767px) { // `dataTables.css` line 420
+    .dataTables_info,
+    .dataTables_paginate {
+      float: none !important;
+      text-align: initial !important;
+    }
+    .dataTables_paginate {
+      margin: 0 !important;
+    }
+  }
+
+  @media screen and (max-width: 640px) { // `dataTables.css` line 431
+    .dataTables_length,
+    .dataTables_filter {
+      float: none !important;
+      text-align: initial !important;
+    }
+    .dataTables_filter {
+      margin: 0 !important;
+    }
+  }
+}
+
+
+
+
+//
+// Input + Select
+// ==============
+
+.dataTables_wrapper {
+
+  input[type="search"],
+  select {
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    color: $input-color;
+    font-size: $font-size-base;
+    line-height: $input-line-height;
+    padding: $input-padding-y $input-padding-x;
+
+    @if $enable-rounded {
+      border-radius: $input-border-radius;
+    } @else {
+      border-radius: 0;
+    }
+
+    @include box-shadow($input-box-shadow);
+    @include transition($input-transition);
+
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0;
+    }
+
+    @include form-control-focus();
+
+    &::placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+  }
+
+  select {
+    &:not([size]):not([multiple]) {
+      height: $input-height;
+    }
+
+    &:focus::-ms-value {
+      color: $input-color;
+      background-color: $input-bg;
+    }
+  }
+}
