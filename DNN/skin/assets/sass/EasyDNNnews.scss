@@ -5,7 +5,7 @@
 //  Version: 1.0
 //  Author: Accuraty Solutions
 //  Author URI: www.accuraty.com
-//  Updated: {BE KIND TO OTHERS. UPDATE THIS.
+//  Updated: {BE KIND TO OTHERS. UPDATE THIS.}
 //
 //  --
 //
@@ -13,8 +13,11 @@
 //
 // ============================================================================
 
+@import 'vendors/bootstrap/functions';
+@import 'vendors/bootstrap/mixins';
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
+@import 'vendors/bootstrap/variables';
 
 @import 'EasyDNNnews/edn-base';
 @import 'EasyDNNnews/edn-news';

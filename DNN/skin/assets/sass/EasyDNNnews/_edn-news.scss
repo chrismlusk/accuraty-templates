@@ -69,7 +69,22 @@
 
 .EDN__article__header {}
 
-.EDN__article__meta {}
+.EDN__article__title {}
+
+.EDN__article__subtitle {
+  margin-top: -0.5rem !important;
+}
+
+.EDN__article__meta {
+  display: flex;
+  font-size: $font-size-sm;
+
+  & > span + span::before {
+    content: '|';
+    color: $gray-600;
+    margin: 0 0.5rem;
+  }
+}
 
 .EDN__article__aside {}
 
