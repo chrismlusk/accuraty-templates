@@ -16,9 +16,27 @@
 //
 // Headings
 // ========
+//
+// 1. When a heading is used as a link, keep the style consistent with other
+//    headings. Why? Headings should separate and organize content. Using
+//    inline text or buttons for links is generally a better approach.
+// ----------------------------------------------------------------------------
 
-// h1, h2, h3, h4, h5, h6,
-// .h1, .h2, .h3, .h4, .h5, .h6 {}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+
+  a {
+    font-weight: $headings-font-weight !important; // 1
+
+    @include plain-visited {
+      color: inherit; // 1
+    }
+
+    @include hover-focus {
+      color: $link-color;
+    }
+  }
+}
 
 // h1, .h1 {}
 // h2, .h2 {}
