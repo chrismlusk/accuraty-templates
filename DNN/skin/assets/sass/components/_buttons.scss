@@ -2,11 +2,11 @@
 //
 //  [Table of Contents]
 //
-//  1. Base styles
-//  2. Button varieties
-//  3. Link buttons
-//  4. Button sizes
-//  5. Block buttons
+//  - Base styles
+//  - Button varieties
+//  - Link buttons
+//  - Button sizes
+//  - Block buttons
 //
 // ============================================================================
 
@@ -27,8 +27,8 @@
     }
 
     @include hover-focus {
-      border-color: rgba(255, 255, 255, 0.5);
-      color: rgba(255, 255, 255, 0.5);
+      border-color: rgba($white, 0.5);
+      color: rgba($white, 0.5);
     }
   }
 }
@@ -46,11 +46,15 @@
 
 // .btn-success {}
 
-// .btn-info {}
+// .btn-danger {}
 
 // .btn-warning {}
 
-// .btn-danger {}
+// .btn-info {}
+
+// .btn-light {}
+
+// .btn-dark {}
 
 
 

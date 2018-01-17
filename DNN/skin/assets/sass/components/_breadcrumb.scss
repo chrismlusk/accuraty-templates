@@ -9,9 +9,9 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Separator between breadcrumbs
-//  3. Individual links
+//  - Wrapper and base class
+//  - Separator between breadcrumbs
+//  - Individual links
 //
 // ============================================================================
 
@@ -27,15 +27,19 @@
 //
 // 2. Remove extra space in between `<span>` tags, which occurs when manually
 //    creating the breadcrumb structure (not using the `<dnn:Breadcrumb>` tag).
+//
+// 3. Have items wrap to the next line so long words don't break into columns.
 // ----------------------------------------------------------------------------
 
-// .DnnBreadcrumb {
-//   color: $link-color; // 1
+.DnnBreadcrumb {
+  color: $breadcrumb-color; // 1
+  margin-bottom: $breadcrumb-margin-bottom;
 
-//   span {
-//     display: inline-flex; // 2
-//   }
-// }
+  span {
+    display: inline-flex; // 2
+    flex-wrap: wrap; // 3
+  }
+}
 
 
 
@@ -59,25 +63,26 @@
 //
 // 4. Before each tag, we add a custom separator using the `content` property.
 //
-//    * Note: The code below uses the right angle icon from Font Awesome, so in
-//      order to use this, make sure you download the Font Awesome source
-//      files and uploaded them to `assets/sass/vendors/font-awesome/` first.
+//    * Note: The commented-out code below uses Font Awesome's right angle
+//      icon, so in order to use this, download the Font Awesome source files
+//      and uploaded them to `assets/sass/vendors/font-awesome/` first.
 // ----------------------------------------------------------------------------
 
-// .DnnBreadcrumb span[itemprop="itemListElement"] { // 1
-//   $separator-space: ($spacer / 2); // 2
+.DnnBreadcrumb span[itemprop="itemListElement"] { // 1
+  $separator-space: ($spacer / 2); // 2
 
-//   &:not(:first-child) { // 3
-//     margin-left: $separator-space;
+  &:not(:first-child) { // 3
+    margin-left: $separator-space;
 
-//     &::before { // 4
-//       color: inherit;
-//       content: '\f105'; // 4*
-//       font-family: 'FontAwesome'; // 4*
-//       margin-right: $separator-space;
-//     }
-//   }
-// }
+    &::before { // 4
+      color: $breadcrumb-divider-color;
+      content: $breadcrumb-divider; // 4
+      // content: '\f105'; // 4*
+      // font-family: 'FontAwesome'; // 4*
+      margin-right: $separator-space;
+    }
+  }
+}
 
 
 
@@ -92,11 +97,28 @@
 // 1. Because DNN's `default.css` explicitly sets anchor styles to match their
 //    visited state, which means we have to explicitly override this, we have
 //    to set the color to both the class and its visited state.
-// ----------------------------------------------------------------------------
+//
+// 2. Target all but the last `itemListElement` in the breadcrumb so we can
+//    control the link color.
+// --------------------------------------------------------------------------
 
-// .DnnBreadcrumb__item {
+.DnnBreadcrumb__item {
 
-//   @include plain-visited { // 1
-//     color: inherit;
-//   }
-// }
+  @include plain-visited { // 1
+    color: inherit;
+  }
+
+  &.active {
+    color: $breadcrumb-active-color;
+  }
+
+  span[itemprop="itemListElement"]:last-child & { // 2
+    color: $breadcrumb-active-color;
+  }
+}
+
+a.DnnBreadcrumb__item {
+  @include hover-focus-active {
+    color: $breadcrumb-hover-color;
+  }
+}

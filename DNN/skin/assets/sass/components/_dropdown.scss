@@ -2,10 +2,10 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Dropdown toggle
-//  3. Dropdown menu
-//  4. Dropdown item
+//  - Wrapper and base class
+//  - Dropdown toggle
+//  - Dropdown menu
+//  - Dropdown item
 //
 // ============================================================================
 
@@ -34,12 +34,7 @@
 // Dropdown menu
 // =============
 
-.dropdown-menu {
-
-  .show & {
-    display: block;
-  }
-}
+.dropdown-menu {}
 
 
 
@@ -48,4 +43,9 @@
 // Dropdown item
 // =============
 
-// .dropdown-item {}
+.dropdown-item {
+
+  @include plain-visited {
+    color: $dropdown-link-color;
+  }
+}

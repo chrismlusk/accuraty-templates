@@ -1,11 +1,12 @@
 // ============================================================================
-// 
+//
 //  [Table of Contents]
 //
-//  1. Navbar
-//  2. Navbar brand
-//  3. Navbar text
-//  4. Responsive navbar
+//  - Wrapper and base class
+//  - Navbar brand
+//  - Navbar text
+//  - Responsive navbar
+//  - Admin menu
 //
 // ============================================================================
 
@@ -13,13 +14,10 @@
 
 
 //
-// Navbar
-// ======
-//
-// Wrapper and base class from which we expand to create other variations.
-// ----------------------------------------------------------------------------
+// Wrapper and base class
+// ======================
 
-// .navbar {}
+.navbar {}
 
 
 
@@ -31,7 +29,7 @@
 // Used for brand, project, or site name.
 // ----------------------------------------------------------------------------
 
-// .navbar-brand {}
+.navbar-brand {}
 
 
 
@@ -43,10 +41,10 @@
 // Custom navbar navigation. Doesn't require `.nav`, but does use `.nav-link`.
 // ----------------------------------------------------------------------------
 
-// .navbar-nav {
+.navbar-nav {
 
-//   .nav-link {}
-// }
+  .nav-link {}
+}
 
 
 
@@ -74,14 +72,29 @@
 //
 // 2. This element is separated so we can easily override it with another icon
 //    or image file as needed.
-//
-// 3. These use `position` to prevent from being auto placed as a flex item.
 // ----------------------------------------------------------------------------
 
 // .navbar-toggler {} // 1
 
 // .navbar-toggler-icon {} // 2
 
-// .navbar-toggler-left {} // 3
 
-// .navbar-toggler-right {} // 3
+
+
+//
+// Admin menu
+// ==========
+//
+// Used to add a Manage menu to the navbar independent of the primary nav.
+// ----------------------------------------------------------------------------
+
+#admin-menu {
+  .nav-link {
+    background-color: $link-color;
+    color: $white;
+
+    @include hover-focus {
+      background-color: $link-hover-color;
+    }
+  }
+}

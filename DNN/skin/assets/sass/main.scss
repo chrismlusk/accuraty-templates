@@ -1,42 +1,61 @@
-// This file imports all Sass partials according to the folder they live in.
-// To preserve readability, each folder is grouped into one import, with a
-// linebreak and each file on its own line. File extensions and leading
-// underscores are not necessary and are therefore omitted.
+//
+// Integrate Bootstrap and custom code
+// ===================================
 
-@import
-  'abstracts/variables',
-  'abstracts/mixins';
+// core Bootstrap functions
+@import 'vendors/bootstrap/functions';
+@import 'vendors/bootstrap/mixins';
 
-@import
-  'vendors/bootstrap/bootstrap';
+// custom variable/mixin overrides
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/animations';
 
-@import
-  'base/reset',
-  'base/base',
-  'base/typography',
-  'base/grid';
+// full Bootstrap
+@import 'vendors/bootstrap/bootstrap';
 
-@import
-  // Core components first (content, image, code, tables, forms, buttons)
-  'components/content',
-  'components/buttons',
 
-  // Then follow the order found in `bootstrap.scss` as much as possible
-  'components/dropdown',
-  'components/nav',
-  'components/navbar',
-  'components/card',
-  'components/breadcrumb',
-  'components/panes',
-  'components/child-page';
 
-@import
-  'layout/header',
-  'layout/main',
-  'layout/section',
-  'layout/hero',
-  'layout/aside',
-  'layout/footer';
 
-@import
-  'pages/home';
+//
+// Add custom code base
+// ====================
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/type';
+@import 'base/images';
+@import 'base/code';
+@import 'base/grid';
+@import 'base/tables';
+@import 'base/content';
+
+// overrides for core Bootstrap components first ...
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/dropdown';
+@import 'components/nav';
+@import 'components/navbar';
+@import 'components/card';
+@import 'components/breadcrumb';
+@import 'components/pagination';
+@import 'components/badge';
+@import 'components/jumbotron';
+@import 'components/alert';
+@import 'components/progress';
+@import 'components/list-group';
+@import 'components/close';
+@import 'components/modal';
+@import 'components/tooltip';
+@import 'components/popover';
+@import 'components/carousel';
+
+// ... then add custom components
+@import 'components/panes';
+@import 'components/child-page';
+@import 'components/_data-tables';
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/aside';
+@import 'layout/footer';

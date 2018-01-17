@@ -6,9 +6,9 @@ There are two Sass syntaxes available: SCSS (Sassy CSS), which uses the `.scss` 
 
 The `sass/` folder includes the **main file** and sets of **partials** that are separated into a system of folders. (More information about this folder architecture below.)
 
-## Main file
+## Main files
 
-The main file (`main.scss`) does not begin with an underscore. This file should not contain anything but `@import` directives and comments.
+The main files (e.g., `main.scss`, `home.scss`, `manage.scss`) should be the only Sass files from the whole code base not to begin with an underscore. These files should generally not contain anything but `@import` directives and comments. The exception is page-specific files (e.g., `home.scss`), since these will compile into CSS files that are only loaded for specific pages.
 
 *Note: Before the code is deployed to the server, this file is compiled into the CSS file that is used for this project's skin.*
 
@@ -31,8 +31,7 @@ Our pattern is to split the codebase into partials that are organized into meani
 3. `base/`
 4. `layout/`
 5. `components/`
-6. `pages/`
 
-To preserve readability in `main.scss`, the contents of each folder is grouped into one import statement, with a linebreak and each file on its own line. File extensions and leading underscores are not necessary and are therefore omitted.
+To preserve readability in `main.scss`, file extensions and leading underscores are not necessary and are therefore omitted.
 
 *Note: If you add any partials to a folder, you will need to add it to the import statement in this file.*

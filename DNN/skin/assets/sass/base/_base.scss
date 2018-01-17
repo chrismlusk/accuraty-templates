@@ -4,9 +4,9 @@
 //
 //  [Table of Contents]
 //
-//  1. Body
-//  2. Inline
-//  3. Block
+//  - Body
+//  - Inline
+//  - Block
 //
 // ============================================================================
 
@@ -18,6 +18,14 @@
 // ====
 
 body {
+
+  //
+  // [if DNN = v8]
+  //
+  // Increase z-index so Control Bar dropdown menus remain above fixed items
+  & > form #ControlBar_ControlPanel {
+    z-index: ($zindex-fixed * 2) !important;
+  }
 
   //
   // [if DNN = v9]
@@ -39,18 +47,22 @@ a {
 
   @include plain-visited {
     color: $link-color;
-    transition: all $speed $easing;
+    transition: $transition-base;
   }
 
   @include hover-focus {
     color: $link-hover-color;
   }
 
+  &:focus {
+    outline: $link-focus-outline-width $link-focus-outline-style $link-focus-outline-color;
+  }
+
   &.is-inverse {
-    color: $white;
+    color: $link-inverse-color;
 
     @include hover-focus {
-      color: rgba($white, 0.5);
+      color: $link-inverse-hover-color;
     }
   }
 }
@@ -67,4 +79,9 @@ p,
 ol,
 ul {
   margin-bottom: 0;
+}
+
+ol,
+ul {
+  list-style: none;
 }

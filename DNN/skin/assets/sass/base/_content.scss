@@ -11,9 +11,9 @@
 //
 //  [Table of Contents]
 //
-//  1. Wrapper and base class
-//  2. Module title
-//  3. Module content
+//  - Wrapper and base class
+//  - Module title
+//  - Module content
 //
 // ============================================================================
 
@@ -32,9 +32,8 @@
 //    double the default spacing as the top margin for these tags as long as
 //    they aren't the first child inside the parent.
 //
-// 3. But when two headings are next to each other, we don't want this excess
-//    top space. So we reset the top margin to the default spacing for `<h3>`
-//    and `<h4>` tags — and we use the `!important` declaration to force this.
+// 3. But when headings are next to each other, we don't want excess space. So
+//    reset the top margin to the default spacing for `<h3>` and `<h4>` tags.
 // ----------------------------------------------------------------------------
 
 .DnnModule {
@@ -45,21 +44,90 @@
   ol,
   ul {
     &:not(:last-child) {
-      margin-bottom: $spacer; // 1
+      margin-bottom: $paragraph-margin-bottom; // 1
     }
   }
 
   h2, .h2,
   h3, .h3,
   h4, .h4 {
-    &:not(:first-child) {
-      margin-top: ($spacer * 2); // 2
+    margin-top: ($spacer * 2); // 2
+
+    &:first-child {
+      margin-top: 0; // 2
     }
   }
 
   h2 + h3,
   h3 + h4 {
-    margin-top: $spacer !important; // 3
+    margin-top: 0; // 3
+  }
+}
+
+
+
+
+//
+// Module title
+// ============
+//
+// 1. Yes, `!important` is generally a bad idea, but we want to override the
+//    specificity introduced by the `:not(:first-child)` pseudo class used on
+//    headings inside the base class for this one title class. This is helpful
+//    because modules can use various heading tags as their titles, not just
+//    `<h2>` tags, so we need to account for this.
+// ----------------------------------------------------------------------------
+
+.DnnModule__title {
+  margin-top: 0 !important; // 1
+}
+
+
+
+
+//
+// Module content section
+// ======================
+//
+// 1. Increase the size of body text. 1.125rem is ~18px on a 16px base.
+//
+// 2. List items are too close together compared to all other body text
+//    elements, so add a little margin between siblings.
+//
+// 3. Add custom bottom border to links to replace standard `text-decoration`
+//    for better styling and control.
+//
+// 4. On `:active` and `:focus` add a slight background color to introduce
+//    sufficient variation for each link state. This is a big benefit for
+//    accessibility issues (i.e. clear changes beyond just color change).
+//
+// 5. Links that appear inside a module with a background color should be given
+//    the `.is-inverse` modifier, and need their border color altered. Normal
+//    state is a white border, and we use `$link-hover-color` for hover/focus.
+// ----------------------------------------------------------------------------
+
+.DnnModule__content {
+  font-size: 1.08rem; // 1
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.125rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.175rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.225rem;
+  }
+
+  blockquote,
+  p,
+  ol,
+  ul {
+    @include media-breakpoint-up(md) {
+      font-size: 1.125rem; //1
+    }
   }
 
   blockquote {
@@ -92,102 +160,49 @@
 
   ol {
     list-style: decimal outside;
-    margin-left: ($spacer * 2);
-    margin-right: ($spacer * 2);
-    margin-top: $spacer;
+    margin-left: ($paragraph-margin-bottom * 2);
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-top: $paragraph-margin-bottom;
   }
 
-  ul {
+  ul:not(.nav):not(.list-unstyled) {
     list-style: disc outside;
-    margin-left: ($spacer * 2);
-    margin-right: ($spacer * 2);
-    margin-top: $spacer;
+    margin-left: ($paragraph-margin-bottom * 2);
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-top: $paragraph-margin-bottom;
 
     ul {
       list-style-type: circle;
-      margin-top: ($spacer / 2);
-      margin-bottom: ($spacer / 2);
+      margin-top: ($paragraph-margin-bottom / 2);
+      margin-bottom: ($paragraph-margin-bottom / 2);
     }
   }
-}
 
+  ul:not(.list-group):not(.nav),
+  ol:not(.list-group) {
 
-
-
-//
-// Module title
-// ============
-//
-// 1. Yes, `!important` is generally a bad idea, but we want to override the
-//    specificity introduced by the `:not(:first-child)` pseudo class used on
-//    headings inside the base class for this one title class. This is helpful
-//    because modules can use various heading tags as their titles, not just
-//    `<h2>` tags, so we need to account for this.
-// ----------------------------------------------------------------------------
-
-.DnnModule__title {
-  margin-top: 0 !important; // 1
-}
-
-
-
-
-//
-// Module content section
-// ======================
-//
-// 1. Increase the size of body text. 1.125rem is ~18px on a 16px base.
-//    {{ OVERRIDE THIS VALUE AS NEEDED }}
-//
-// 2. List items are too close together compared to all other body text
-//    elements, so add a little margin between siblings.
-//
-// 3. Add custom bottom border to links to replace standard `text-decoration`
-//    for better styling and control.
-//
-// 4. On `:active` and `:focus` add a slight background color to introduce
-//    sufficient variation for each link state. This is a big benefit for
-//    accessibility issues (i.e. clear changes beyond just color change).
-//
-// 5. Links that appear inside a module with a background color should be given
-//    the `.is-inverse` modifier, and need their border color altered. Normal
-//    state is a white border, and we use `$link-hover-color` for hover/focus.
-// ----------------------------------------------------------------------------
-
-.DnnModule__content {
-
-  blockquote,
-  p,
-  ol,
-  ul {
-    // font-size: 1.125rem; // 1
+    li + li {
+      margin-top: ($paragraph-margin-bottom / 4); // 2
+    }
   }
 
-  li + li {
-    margin-top: ($spacer / 4); // 2
-  }
+  a:not(.btn):not(.badge):not(.dropdown-item) {
+    border-bottom: $border-width solid $link-border-color; // 3
+    font-weight: $font-weight-bold;
 
-  a {
-    font-weight: $weight-bold;
+    @include hover-focus-active {
+      border-bottom-color: $link-hover-border-color;
+    }
 
-    &:not(.btn):not(.is-inverse) {
-      border-bottom: $border-width solid $link-border-color; // 3
-
-      @include hover-focus-active {
-        border-bottom-color: transparent;
-      }
-
-      &:active,
-      &:focus {
-        background-color: rgba($gray-dark, .1); // 4
-      }
+    &:active {
+      background-color: $link-active-bg; // 4
     }
 
     &.is-inverse { // 5
-      border-bottom: $border-width solid $white;
+      border-bottom: $border-width solid $link-inverse-border-color;
 
       @include hover-focus {
-        border-bottom-color: rgba(255, 255, 255, 0.5);
+        border-bottom-color: $link-inverse-hover-border-color;
       }
     }
   }

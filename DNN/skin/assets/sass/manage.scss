@@ -4,17 +4,19 @@
 //
 //  [Table of Contents]
 //
-//  1. Imports
-//  2. Variables
-//  3. General
-//  4. Button
-//  5. Callout
+//  - Mandatory imports
+//  - Variables
+//  - General
+//  - Button
+//  - Callout
+//  - Menu
+//  - Modal
 //
 //  --
 //
 //  Dev notes
 //
-//  - Accuraty's variables and mixins are included for easy reuse. Doing so
+//  - Accuraty and Bootstrap variables are included for easy reuse. Doing so
 //    gives us access to the same utilities used throughout this project.
 //
 //  - Accuraty's **docs variables** are prefixed with `$docs-`. These custom
@@ -29,13 +31,19 @@
 
 
 //
-// Imports
-// =======
+// Mandatory imports
+// =================
+//
+// 1. Core Bootstrap functions.
+// 2. Custom variables/mixins.
+// 3. Default Bootstrap variables.
+// ----------------------------------------------------------------------------
 
-@import
-  'abstracts/variables',
-  'abstracts/mixins',
-  'vendors/bootstrap/mixins';
+@import 'vendors/bootstrap/functions';  // 1
+@import 'vendors/bootstrap/mixins';     // 1
+@import 'abstracts/variables';          // 2
+@import 'abstracts/mixins';             // 2
+@import 'vendors/bootstrap/variables';  // 3
 
 
 
@@ -63,18 +71,18 @@ a {
   .pane-content & {
 
     @include plain-visited {
-      color: $docs-primary !important;
+      color: $docs-primary;
     }
 
     @include hover-focus {
-      color: darken($docs-primary, 15%) !important;
+      color: darken($docs-primary, 15%);
     }
 
     &:not(.btn) {
-      border-bottom-color: lighten($docs-primary, 47.5%) !important;
+      border-bottom-color: lighten($docs-primary, 47.5%);
 
       @include hover-focus-active {
-        border-bottom-color: transparent !important;
+        border-bottom-color: transparent;
       }
     }
   }
@@ -87,7 +95,8 @@ a {
 // Button
 // ======
 
-.docs-btn {
+.docs-btn,
+.btn-primary {
   background-color: transparent !important;
   border-color: $docs-primary !important;
   color: $docs-primary !important;
@@ -97,14 +106,19 @@ a {
     border-color: $docs-primary !important;
     color: $white !important;
   }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 2px rgba($docs-primary, 0.25);
+  }
 }
 
 
 
 
 //
-// Callouts
-// ========
+// Callout
+// =======
 //
 // Similar to alerts, but designed to call attention to key information with
 // out being as visually disruptive as an alert.
@@ -113,11 +127,11 @@ a {
 // ----------------------------------------------------------------------------
 
 .docs-callout {
-  background-color: transparent;
-  border: 1px solid $gray-e;
-  border-left-width: .25rem;
-  border-radius: .25rem;
-  font-size: .925em;
+  background-color: $gray-100;
+  border: $border-width solid $gray-200;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.925em;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
@@ -134,11 +148,11 @@ a {
   }
 
   code {
-    border-radius: .25rem;
+    border-radius: 0.25rem;
   }
 
   & + & {
-    margin-top: -.25rem;
+    margin-top: -0.25rem;
   }
 }
 
@@ -153,3 +167,70 @@ a {
 .docs-callout-info { @include docs-callout-variant($docs-info); }
 .docs-callout-success { @include docs-callout-variant($docs-success); }
 .docs-callout-warning { @include docs-callout-variant($docs-warning); }
+
+
+
+
+//
+// Menu
+// ====
+//
+// Used as the table of contents menu in the sidebar.
+// ----------------------------------------------------------------------------
+
+.docs-menu {
+  flex-direction: column;
+  font-size: $font-size-sm;
+  min-width: 160px;
+
+  .docs-menu-label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    padding: $nav-link-padding-y $nav-link-padding-x;
+  }
+
+  .nav-link {
+    border-radius: 0.25rem;
+    color: #666;
+    transition: all $transition-speed $transition-easing;
+
+    @include hover-focus {
+      color: $docs-primary;
+    }
+
+    &.active {
+      background-color: rgba(theme-color("dark"), 0.06);
+      color: $docs-primary;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+
+
+//
+// Modal
+// =====
+
+.docs-modal {
+
+  @include media-breakpoint-up(md) {
+    max-width: 640px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 800px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 960px;
+  }
+
+  img {
+    width: 100%;
+
+    + p {
+      margin-top: 1rem;
+    }
+  }
+}
