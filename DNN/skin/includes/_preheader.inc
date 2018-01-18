@@ -69,7 +69,5 @@ Other vendor scripts and custom JS come next.
 ========================================================================== --%>
 <dnn:JQUERY runat="server" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="101" />
-<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
+<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
 <dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="105" />
-<%-- IE10 viewport hack for Surface/desktop Windows 8 bug --%>
-<dnn:DnnJsInclude runat="server" FilePath="assets/js/ie10-viewport-bug-workaround.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="999" />
