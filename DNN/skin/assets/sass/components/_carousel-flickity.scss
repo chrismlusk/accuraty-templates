@@ -1,0 +1,105 @@
+// ============================================================================
+//
+//  HEADS UP!
+//
+//  This partial uses Flickity as the carousel instead of Boostrap's component,
+//  so the classes and styles are independent from what you'll see in the
+//  `_carousel.scss` partial. The one exception is the base class: `.carousel`.
+//
+//  If you are going to use Flickity, it should replace Bootstrap's carousel,
+//  so be sure to update the `@import` statement in `main.scss`.
+//
+//  Library: Flickity
+//  Version: 2.0.1
+//  Author: Metafizzy
+//  Author URI: https://flickity.metafizzy.co
+//  Updated: 1/18/2018 by Chris Lusk
+//  --
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Flickity-specific
+//     - Controls
+//     - Indicators
+//  - Carousel cell
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.carousel {}
+
+
+
+
+//
+// Flickity-specific styles
+// ========================
+//
+// These classes and the markup are only added when Flickity is initialized.
+//   * Controls (http://flickity.metafizzy.co/style.html#previous-next-buttons)
+//   * Indicators (http://flickity.metafizzy.co/style.html#page-dots)
+//
+// 1. The default `:active` style has opacity, so override that.
+// ----------------------------------------------------------------------------
+
+// Controls
+
+.flickity-prev-next-button {
+  background: rgba($white, 0.9);
+  transition: background $transition-speed $transition-easing;
+
+  @include hover-focus-active {
+    background: $white;
+    opacity: 1; // 1
+
+    .arrow {
+      fill: rgba($body-color, 1);
+    }
+  }
+
+  .arrow {
+    fill: rgba($body-color, 0.8);
+    transition: fill $transition-speed $transition-easing;
+  }
+
+  &.previous {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+}
+
+// Indicators
+
+.flickity-page-dots {
+
+  .dot {
+    background-color: $body-color;
+    margin: 0 0.5rem;
+    width: 0 75rem;
+    height: 0.75rem;
+
+    &.is-selected {}
+  }
+}
+
+
+
+
+//
+// Carousel cell
+// =============
+
+.carousel-cell {
+  height: auto;
+  width: 100%;
+}
