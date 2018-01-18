@@ -50,10 +50,13 @@
 @import 'components/popover';
 @import 'components/carousel';
 
-// ... then add custom components
-@import 'components/panes';
+// ... then add custom components ...
 @import 'components/child-page';
-@import 'components/_data-tables';
+@import 'components/panes';
+
+// ... and then add third-party vendor overrides
+@import 'components/carousel-flickity';
+@import 'components/data-tables';
 
 @import 'layout/header';
 @import 'layout/main';

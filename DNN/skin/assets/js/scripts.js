@@ -38,10 +38,10 @@
 
     setInterval(function() {
       if ( didScroll ) {
-        revealElementOnScroll(header, showElementAt, hideElementAt); // 3
+        hideElementOnScroll(header, showElementAt, hideElementAt); // 3
         didScroll = false;
       }
-    }, 250);
+    }, 200);
 
     function hideElementOnScroll(element, visiblePoint, hiddenPoint) {
       var st = $(window).scrollTop();
