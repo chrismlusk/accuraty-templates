@@ -12,7 +12,9 @@ The `assets/` folder includes all stylesheets, fonts, images, and scripts needed
 
 ### CSS
 
-Contains the compiled CSS files used for the project skin.
+Contains any compiled CSS files used globally in the project. 
+
+(Any template-specific files should be compiled directly into the `skin/` folder and must match the name of the `.ascx` file so DNN will automatically load that stylesheet whenever its template is in use.)
 
 ### Fonts
 

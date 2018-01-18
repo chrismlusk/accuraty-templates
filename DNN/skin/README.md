@@ -26,6 +26,7 @@ The `skin/` folder includes:
 * `includes/`
 * `menus/`
 * layout templates
+* layout stylesheets
 
 ### Assets
 
@@ -42,6 +43,12 @@ Code necessary to build custom menus using DDRMenu.
 ### Layout templates
 
 Start with `Main.ascx` as the default template, and add more as needed. These files should contain the core markup necessary to create pages. The ASP.NET control and register directives should be included via `_preheader.inc`, and global elements like the site header and footer are also included via an include directive.
+
+### Layout stylesheets
+
+When skin templates are applied to pages, DNN will automatically load that template's stylesheet. For example, if you have an `Events.ascx` file, there are likely events-specific styles. Rather than include those in the global stylesheet, separate those styles into their own template-specific file to reduce bloat. 
+
+In order for DNN to automatically load the file, though, it **must be named the exact same as the layout template and saved in the same directory**. So, continuing our example, you would have `Events.css`.
 
 *Note: For more information about these directives, see the README.md file in the `includes/` folder.*
 
