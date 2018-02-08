@@ -121,15 +121,6 @@
     font-size: 1.225rem;
   }
 
-  blockquote,
-  p,
-  ol,
-  ul {
-    @include media-breakpoint-up(md) {
-      font-size: 1.125rem; //1
-    }
-  }
-
   blockquote {
     background-color: $blockquote-bg-color;
     border-left: $blockquote-border-width solid $blockquote-border-color;
