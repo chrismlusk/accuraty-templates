@@ -120,6 +120,10 @@
 //
 // Sorting styles
 // ==============
+//
+// The icons used depend on Font Awesome 5. If you are not using that library,
+// you must override each pseudo-element and class with `-fa-` in the name.
+// ----------------------------------------------------------------------------
 
 .dataTable thead {
 
@@ -133,55 +137,55 @@
     padding-right: ($table-cell-padding * 2) !important;
     position: relative;
 
-    &::before,
-    &::after {
-      color: $gray-300;
-      font-family: 'FontAwesome';
-      font-size: 1em;
-      position: absolute;
-        top: 50%;
-        right: 0.3em;
-      transition: color ($transition-speed / 2) $transition-easing;
-    }
-
     &::before {
       content: '\f0de';
-      transform: translateY(calc(-50% - 0.5px));
+      font-family: 'Font Awesome 5 Solid';
+      display: none;
     }
 
     &::after {
       content: '\f0dd';
-      transform: translateY(calc(-50% + 0.5px));
+      font-family: 'Font Awesome 5 Solid';
+      display: none;
+    }
+
+    .svg-inline--fa {
+      color: $gray-300;
+      font-size: 1em;
+      position: absolute;
+        top: 50%;
+        right: 0.3em;
+      transform: translateY(-50%);
+      transition: color ($transition-speed / 2) $transition-easing;
     }
   }
 
   .sorting {
     @include hover-focus {
-      &::before,
-      &::after {
+      .svg-inline--fa {
         color: $gray-500;
       }
     }
   }
 
   .sorting_asc {
-    &::before {
+    .fa-sort-up {
       color: $link-color;
     }
   }
 
   .sorting_desc {
-    &::after {
+    .fa-sort-down {
       color: $link-color;
     }
   }
 
   .sorting_asc_disabled {
-    &::before {}
+    .fa-sort-up {}
   }
 
   .sorting_desc_disabled {
-    &::after {}
+    .fa-sort-down {}
   }
 }
 

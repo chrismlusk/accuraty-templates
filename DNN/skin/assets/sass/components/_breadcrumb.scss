@@ -64,8 +64,14 @@
 // 4. Before each tag, we add a custom separator using the `content` property.
 //
 //    * Note: The commented-out code below uses Font Awesome's right angle
-//      icon, so in order to use this, download the Font Awesome source files
-//      and uploaded them to `assets/sass/vendors/font-awesome/` first.
+//      icon, so don't use this unless Font Awesome is in this project.
+//
+// 5. Font Awesome v5 searches for pseudo-elements that use Font Awesome and
+//    injects the `<svg>` in the markup. However, it does not replace the
+//    pseudo-element, so we have to hide the `::before` and add styles for the
+//    `<svg>` tag that gets added.
+//
+//    Reference: https://fontawesome.com/how-to-use/svg-with-js#pseudo-elements
 // ----------------------------------------------------------------------------
 
 .DnnBreadcrumb span[itemprop="itemListElement"] { // 1
@@ -79,7 +85,15 @@
       content: $breadcrumb-divider; // 4
       // content: '\f105'; // 4*
       // font-family: 'FontAwesome'; // 4*
+      // font-family: 'Font Awesome 5 Regular'; // 5
       margin-right: $separator-space;
+
+      // display: none; // 5
+    }
+
+    .svg-inline--fa { // 5
+      // color: $breadcrumb-divider-color;
+      // margin-right: $separator-space;
     }
   }
 }
