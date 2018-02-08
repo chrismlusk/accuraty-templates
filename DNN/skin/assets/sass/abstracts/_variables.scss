@@ -169,8 +169,8 @@ $asl--size-3:               1.75rem;  // 28px
 $asl--size-4:               1.5rem;   // 24px
 $asl--size-5:               1.25rem;  // 20px
 $asl--size-6:               1rem;     // 16px -- It's best not to change this.
-$asl--size-7:               0.875rem; // 14px
-$asl--size-8:               0.75rem;  // 12px
+$asl--size-7:               .875rem; // 14px
+$asl--size-8:               .75rem;  // 12px
 
 $asl--size-xl-1:            6rem;     // 96px
 $asl--size-xl-2:            5.5rem;   // 88px
@@ -201,9 +201,9 @@ $asl--line-height-loose:    (5 / 3);
 $asl--border-width-normal:  1px;
 $asl--border-width-thick:   3px;
 
-$asl--border-radius:        0.25rem;
-$asl--border-radius-lg:     0.3rem;
-$asl--border-radius-sm:     0.2rem;
+$asl--border-radius:        .25rem;
+$asl--border-radius-lg:     .3rem;
+$asl--border-radius-sm:     .2rem;
 
 
 
@@ -217,8 +217,8 @@ $asl--border-radius-sm:     0.2rem;
 
 $asl--transition-easing:  ease-in-out;
 $asl--transition-speed:   118ms;
-$asl--box-shadow:         0 2px 4px rgba($asl--black, 0.1);
-$asl--box-shadow-hover:   0 12px 28px -2px rgba($asl--black, 0.21), 0 6px 14px -1px rgba($asl--black, 0.14);
+$asl--box-shadow:         0 2px 4px rgba($asl--black, .1);
+$asl--box-shadow-hover:   0 12px 28px -2px rgba($asl--black, .21), 0 6px 14px -1px rgba($asl--black, .14);
 
 // Used for Bootstrap's `$grid-columns` variable
 $asl--grid-columns:       12;
@@ -394,8 +394,8 @@ $spacer: 1rem;
 $spacers: ();
 $spacers: map-merge((
   0: 0,
-  1: ($spacer * 0.25),
-  2: ($spacer * 0.5),
+  1: ($spacer * .25),
+  2: ($spacer * .5),
   3: $spacer,
   4: ($spacer * 1.5),
   5: ($spacer * 3)
@@ -445,12 +445,12 @@ $link-hover-decoration:           none;
 // Custom variables added by Accuraty
 $link-border-color:               lighten($link-color, 42.5%);
 $link-hover-border-color:         transparent;
-$link-active-bg:                  rgba($gray-800, 0.08);
+$link-active-bg:                  rgba($gray-800, .08);
 
 // Custom variables added by Accuraty
 $link-inverse-color:              $white;
-$link-inverse-border-color:       rgba($white, 0.5);
-$link-inverse-hover-color:        rgba($white, 0.6);
+$link-inverse-border-color:       rgba($white, .5);
+$link-inverse-hover-color:        rgba($white, .6);
 $link-inverse-hover-border-color: transparent;
 
 // Custom variables added by Accuraty
@@ -561,7 +561,7 @@ $box-shadow-hover:            $asl--box-shadow-hover;
 $component-active-color:      $white;
 $component-active-bg:         theme-color("primary");
 
-$caret-width:                 0.3em;
+$caret-width:                 .3em;
 
 // Custom variables added by Accuraty
 $transition-speed:            $asl--transition-speed;
@@ -650,17 +650,17 @@ $blockquote-border-width:     $asl--border-width-thick;
 $blockquote-bg-color:         $gray-100;
 $blockquote-small-font-size:  $asl--size-8;
 
-$hr-border-color:             rgba($black, 0.1);
+$hr-border-color:             rgba($black, .1);
 $hr-border-width:             $border-width;
 
-$mark-padding:                0.2em;
+$mark-padding:                .2em;
 
 $dt-font-weight:              $font-weight-bold;
 
-$kbd-box-shadow:              inset 0 -0.1rem 0 rgba($black, 0.25);
+$kbd-box-shadow:              inset 0 -.1rem 0 rgba($black, .25);
 $nested-kbd-font-weight:      $font-weight-bold;
 
-$list-inline-padding:         0.5rem;
+$list-inline-padding:         .5rem;
 
 $mark-bg:                     #fcf8e3;
 
@@ -678,12 +678,12 @@ $hr-margin-y:                 $spacer;
 // Reference: vendors/bootstrap/_variables.scss:296
 // ----------------------------------------------------------------------------
 
-$table-cell-padding:            0.75rem;
-$table-cell-padding-sm:         0.3rem;
+$table-cell-padding:            .75rem;
+$table-cell-padding-sm:         .3rem;
 
 $table-bg:                      transparent;
-$table-accent-bg:               rgba($black, 0.05);
-$table-hover-bg:                rgba($black, 0.075);
+$table-accent-bg:               rgba($black, .05);
+$table-hover-bg:                rgba($black, .075);
 $table-active-bg:               $table-hover-bg;
 
 $table-border-width:            $border-width;
@@ -693,8 +693,8 @@ $table-head-bg:                 $gray-200;
 $table-head-color:              $gray-700;
 
 $table-dark-bg:                 $gray-900;
-$table-dark-accent-bg:          rgba($white, 0.05);
-$table-dark-hover-bg:           rgba($white, 0.075);
+$table-dark-accent-bg:          rgba($white, .05);
+$table-dark-hover-bg:           rgba($white, .075);
 $table-dark-border-color:       lighten($gray-900, 7.5%);
 $table-dark-color:              $body-bg;
 
@@ -710,19 +710,19 @@ $table-dark-color:              $body-bg;
 // Reference: vendors/bootstrap/_variables.scss:321
 // ----------------------------------------------------------------------------
 
-$input-btn-padding-y:           0.375rem;
-$input-btn-padding-x:           0.75rem;
+$input-btn-padding-y:           .375rem;
+$input-btn-padding-x:           .75rem;
 $input-btn-line-height:         $line-height-base;
 
-$input-btn-focus-width:         0.2rem;
-$input-btn-focus-color:         rgba($component-active-bg, 0.25);
+$input-btn-focus-width:         .2rem;
+$input-btn-focus-color:         rgba($component-active-bg, .25);
 $input-btn-focus-box-shadow:    0 0 0 $input-btn-focus-width $input-btn-focus-color;
 
-$input-btn-padding-y-sm:        0.25rem;
-$input-btn-padding-x-sm:        0.5rem;
+$input-btn-padding-y-sm:        .25rem;
+$input-btn-padding-x-sm:        .5rem;
 $input-btn-line-height-sm:      $line-height-sm;
 
-$input-btn-padding-y-lg:        0.5rem;
+$input-btn-padding-y-lg:        .5rem;
 $input-btn-padding-x-lg:        1rem;
 $input-btn-line-height-lg:      $line-height-lg;
 
@@ -755,15 +755,15 @@ $btn-line-height-lg:          $input-btn-line-height-lg;
 $btn-border-width:            $input-btn-border-width;
 
 $btn-font-weight:             $font-weight-normal;
-$btn-box-shadow:              inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075);
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
 $btn-focus-width:             $input-btn-focus-width;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow;
-$btn-disabled-opacity:        0.65;
-$btn-active-box-shadow:       inset 0 3px 5px rgba($black, 0.125);
+$btn-disabled-opacity:        .65;
+$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
 
 $btn-link-disabled-color:     $gray-600;
 
-$btn-block-spacing-y:         0.5rem;
+$btn-block-spacing-y:         .5rem;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:           $border-radius;
@@ -800,7 +800,7 @@ $input-disabled-bg:                     $gray-200;
 $input-color:                           $gray-700;
 $input-border-color:                    $gray-400;
 $input-border-width:                    $input-btn-border-width;
-$input-box-shadow:                      inset 0 1px 1px rgba($black, 0.075);
+$input-box-shadow:                      inset 0 1px 1px rgba($black, .075);
 
 $input-border-radius:                   $border-radius;
 $input-border-radius-lg:                $border-radius-lg;
@@ -827,14 +827,14 @@ $input-height-lg:                       calc(#{$input-height-inner-lg} + #{$inpu
 
 $input-transition:                      border-color $transition-speed $transition-easing, box-shadow $transition-speed $transition-easing;
 
-$form-text-margin-top:                  0.25rem;
+$form-text-margin-top:                  .25rem;
 
 $form-check-input-gutter:               1.25rem;
-$form-check-input-margin-y:             0.3rem;
-$form-check-input-margin-x:             0.25rem;
+$form-check-input-margin-y:             .3rem;
+$form-check-input-margin-x:             .25rem;
 
-$form-check-inline-margin-x:            0.75rem;
-$form-check-inline-input-margin-x:      0.3125rem;
+$form-check-inline-margin-x:            .75rem;
+$form-check-inline-input-margin-x:      .3125rem;
 
 $form-group-margin-bottom:              1rem;
 
@@ -858,14 +858,14 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-control-indicator-size:         1rem;
 // $custom-control-indicator-bg:           $gray-300;
 // $custom-control-indicator-bg-size:      50% 50%;
-// $custom-control-indicator-box-shadow:   inset 0 0.25rem 0.25rem rgba($black, 0.1);
+// $custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1);
 
 // $custom-control-indicator-disabled-bg:          $gray-200;
 // $custom-control-label-disabled-color:           $gray-600;
 
 // $custom-control-indicator-checked-color:        $component-active-color;
 // $custom-control-indicator-checked-bg:           $component-active-bg;
-// $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), 0.5);
+// $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5);
 // $custom-control-indicator-checked-box-shadow:   none;
 
 // $custom-control-indicator-focus-box-shadow:     0 0 0 1px $body-bg, $input-btn-focus-box-shadow;
@@ -885,8 +885,8 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-radio-indicator-border-radius:          50%;
 // $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23");
 
-// $custom-select-padding-y:           0.375rem;
-// $custom-select-padding-x:           0.75rem;
+// $custom-select-padding-y:           .375rem;
+// $custom-select-padding-x:           .75rem;
 // $custom-select-height:              $input-height;
 // $custom-select-indicator-padding:   1rem;
 // $custom-select-line-height:         $input-btn-line-height;
@@ -902,7 +902,7 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-select-border-radius:       $border-radius;
 
 // $custom-select-focus-border-color:  $input-focus-border-color;
-// $custom-select-focus-box-shadow:    inset 0 1px 2px rgba($black, 0.075), 0 0 5px rgba($custom-select-focus-border-color, 0.5);
+// $custom-select-focus-box-shadow:    inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5);
 
 // $custom-select-font-size-sm:        75%;
 // $custom-select-height-sm:           $input-height-sm;
@@ -957,14 +957,14 @@ $form-feedback-invalid-color:       theme-color("danger");
 // ----------------------------------------------------------------------------
 
 $dropdown-min-width:                10rem;
-$dropdown-padding-y:                0.5rem;
-$dropdown-spacer:                   0.125rem;
+$dropdown-padding-y:                .5rem;
+$dropdown-spacer:                   .125rem;
 $dropdown-bg:                       $white;
-$dropdown-border-color:             rgba($black, 0.15);
+$dropdown-border-color:             rgba($black, .15);
 $dropdown-border-radius:            $border-radius;
 $dropdown-border-width:             $border-width;
 $dropdown-divider-bg:               $gray-200;
-$dropdown-box-shadow:               0 0.5rem 1rem rgba($black, 0.175);
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175);
 
 $dropdown-link-color:               $gray-900;
 $dropdown-link-hover-color:         darken($gray-900, 5%);
@@ -975,7 +975,7 @@ $dropdown-link-active-bg:           $component-active-bg;
 
 $dropdown-link-disabled-color:      $gray-600;
 
-$dropdown-item-padding-y:           0.25rem;
+$dropdown-item-padding-y:           .25rem;
 $dropdown-item-padding-x:           1.5rem;
 
 $dropdown-header-color:             $gray-600;
@@ -1010,7 +1010,7 @@ $dropdown-header-color:             $gray-600;
 // Reference: vendors/bootstrap/_variables.scss:570
 // ----------------------------------------------------------------------------
 
-$nav-link-padding-y:                0.5rem;
+$nav-link-padding-y:                .5rem;
 $nav-link-padding-x:                1rem;
 $nav-link-disabled-color:           $gray-600;
 
@@ -1039,7 +1039,7 @@ $nav-pills-link-active-bg:          $component-active-bg;
 $navbar-padding-y:                  ($spacer / 2);
 $navbar-padding-x:                  $spacer;
 
-$navbar-nav-link-padding-x:         0.5rem;
+$navbar-nav-link-padding-x:         .5rem;
 
 $navbar-brand-font-size:            $font-size-lg;
 
@@ -1048,24 +1048,24 @@ $nav-link-height:                   ($font-size-base * $line-height-base + $nav-
 $navbar-brand-height:               $navbar-brand-font-size * $line-height-base;
 $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2;
 
-$navbar-toggler-padding-y:          0.25rem;
-$navbar-toggler-padding-x:          0.75rem;
+$navbar-toggler-padding-y:          .25rem;
+$navbar-toggler-padding-x:          .75rem;
 $navbar-toggler-font-size:          $font-size-lg;
 $navbar-toggler-border-radius:      $btn-border-radius;
 
-$navbar-dark-color:                 rgba($white, 0.5);
-$navbar-dark-hover-color:           rgba($white, 0.75);
+$navbar-dark-color:                 rgba($white, .5);
+$navbar-dark-hover-color:           rgba($white, .75);
 $navbar-dark-active-color:          $white;
-$navbar-dark-disabled-color:        rgba($white, 0.25);
+$navbar-dark-disabled-color:        rgba($white, .25);
 // $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-dark-toggler-border-color:  rgba($white, 0.1);
+$navbar-dark-toggler-border-color:  rgba($white, .1);
 
-$navbar-light-color:                rgba($black, 0.5);
-$navbar-light-hover-color:          rgba($black, 0.7);
-$navbar-light-active-color:         rgba($black, 0.9);
-$navbar-light-disabled-color:       rgba($black, 0.3);
+$navbar-light-color:                rgba($black, .5);
+$navbar-light-hover-color:          rgba($black, .7);
+$navbar-light-active-color:         rgba($black, .9);
+$navbar-light-disabled-color:       rgba($black, .3);
 // $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-light-toggler-border-color: rgba($black, 0.1);
+$navbar-light-toggler-border-color: rgba($black, .1);
 
 // Custom variables added by Accuraty
 $navbar-height-sm:                  $asl--navbar-height-sm;
@@ -1081,11 +1081,11 @@ $navbar-height-md:                  $asl--navbar-height-md;
 // Reference: vendors/bootstrap/_variables.scss:620
 // ----------------------------------------------------------------------------
 
-$pagination-padding-y:              0.5rem;
-$pagination-padding-x:              0.75rem;
-$pagination-padding-y-sm:           0.25rem;
-$pagination-padding-x-sm:           0.5rem;
-$pagination-padding-y-lg:           0.75rem;
+$pagination-padding-y:              .5rem;
+$pagination-padding-x:              .75rem;
+$pagination-padding-y-sm:           .25rem;
+$pagination-padding-x-sm:           .5rem;
+$pagination-padding-y-lg:           .75rem;
 $pagination-padding-x-lg:           1.5rem;
 $pagination-line-height:            1.25;
 
@@ -1131,13 +1131,13 @@ $jumbotron-bg:                      $gray-200;
 // Reference: vendors/bootstrap/_variables.scss:656
 // ----------------------------------------------------------------------------
 
-$card-spacer-y:                     0.75rem;
+$card-spacer-y:                     .75rem;
 $card-spacer-x:                     1.25rem;
 $card-border-width:                 $border-width;
 $card-border-radius:                $border-radius;
-$card-border-color:                 rgba($black, 0.125);
+$card-border-color:                 rgba($black, .125);
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width});
-$card-cap-bg:                       rgba($black, 0.03);
+$card-cap-bg:                       rgba($black, .03);
 $card-bg:                           $white;
 
 $card-img-overlay-padding:          1.25rem;
@@ -1164,13 +1164,13 @@ $tooltip-max-width:                 200px;
 $tooltip-color:                     $white;
 $tooltip-bg:                        $black;
 $tooltip-border-radius:             $border-radius;
-$tooltip-opacity:                   0.9;
-$tooltip-padding-y:                 0.25rem;
-$tooltip-padding-x:                 0.5rem;
+$tooltip-opacity:                   .9;
+$tooltip-padding-y:                 .25rem;
+$tooltip-padding-x:                 .5rem;
 $tooltip-margin:                    0;
 
-$tooltip-arrow-width:               0.8rem;
-$tooltip-arrow-height:              0.4rem;
+$tooltip-arrow-width:               .8rem;
+$tooltip-arrow-height:              .4rem;
 $tooltip-arrow-color:               $tooltip-bg;
 
 
@@ -1187,24 +1187,24 @@ $popover-font-size:                 $font-size-sm;
 $popover-bg:                        $white;
 $popover-max-width:                 276px;
 $popover-border-width:              $border-width;
-$popover-border-color:              rgba($black, 0.2);
+$popover-border-color:              rgba($black, .2);
 $popover-border-radius:             $border-radius-lg;
-$popover-box-shadow:                0 0.25rem 0.5rem rgba($black, 0.2);
+$popover-box-shadow:                0 .25rem .5rem rgba($black, .2);
 
 $popover-header-bg:                 darken($popover-bg, 3%);
 $popover-header-color:              $headings-color;
-$popover-header-padding-y:          0.5rem;
-$popover-header-padding-x:          0.75rem;
+$popover-header-padding-y:          .5rem;
+$popover-header-padding-x:          .75rem;
 
 $popover-body-color:                $body-color;
 $popover-body-padding-y:            $popover-header-padding-y;
 $popover-body-padding-x:            $popover-header-padding-x;
 
 $popover-arrow-width:               1rem;
-$popover-arrow-height:              0.5rem;
+$popover-arrow-height:              .5rem;
 $popover-arrow-color:               $popover-bg;
 
-$popover-arrow-outer-color:         fade-in($popover-border-color, 0.05);
+$popover-arrow-outer-color:         fade-in($popover-border-color, .05);
 
 
 
@@ -1218,11 +1218,11 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, 0.05);
 
 $badge-font-size:                   75%;
 $badge-font-weight:                 $font-weight-bold;
-$badge-padding-y:                   0.25em;
-$badge-padding-x:                   0.4em;
+$badge-padding-y:                   .25em;
+$badge-padding-x:                   .4em;
 $badge-border-radius:               $border-radius;
 
-$badge-pill-padding-x:              0.6em;
+$badge-pill-padding-x:              .6em;
 
 // Use a higher than normal value to ensure completely rounded edges when
 // customizing padding or font-size on labels.
@@ -1240,19 +1240,19 @@ $badge-pill-border-radius:          10rem;
 
 $modal-inner-padding:               1rem; // applied to the modal body
 
-$modal-dialog-margin:               0.5rem;
+$modal-dialog-margin:               .5rem;
 $modal-dialog-margin-y-sm-up:       1.75rem;
 
 $modal-title-line-height:           $line-height-base;
 
 $modal-content-bg:                  $white;
-$modal-content-border-color:        rgba($black, 0.2);
+$modal-content-border-color:        rgba($black, .2);
 $modal-content-border-width:        $border-width;
-$modal-content-box-shadow-xs:       0 0.25rem 0.5rem rgba($black, 0.5);
-$modal-content-box-shadow-sm-up:    0 0.5rem 1rem rgba($black, 0.5);
+$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5);
+$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5);
 
 $modal-backdrop-bg:                 $black;
-$modal-backdrop-opacity:            0.5;
+$modal-backdrop-opacity:            .5;
 $modal-header-border-color:         $gray-200;
 $modal-footer-border-color:         $modal-header-border-color;
 $modal-header-border-width:         $modal-content-border-width;
@@ -1263,7 +1263,7 @@ $modal-lg:                          800px;
 $modal-md:                          500px;
 $modal-sm:                          300px;
 
-$modal-transition:                  transform 0.3s ease-out;
+$modal-transition:                  transform .3s ease-out;
 
 
 
@@ -1277,7 +1277,7 @@ $modal-transition:                  transform 0.3s ease-out;
 // Reference: vendors/bootstrap/_variables.scss:765
 // ----------------------------------------------------------------------------
 
-$alert-padding-y:                   0.75rem;
+$alert-padding-y:                   .75rem;
 $alert-padding-x:                   1.25rem;
 $alert-margin-bottom:               1rem;
 $alert-border-radius:               $border-radius;
@@ -1299,10 +1299,10 @@ $alert-color-level:                 6;
 // ----------------------------------------------------------------------------
 
 $progress-height:                   1rem;
-$progress-font-size:                ($font-size-base * 0.75);
+$progress-font-size:                ($font-size-base * .75);
 $progress-bg:                       $gray-200;
 $progress-border-radius:            $border-radius;
-$progress-box-shadow:               inset 0 0.1rem 0.1rem rgba($black, 0.1);
+$progress-box-shadow:               inset 0 .1rem .1rem rgba($black, .1);
 $progress-bar-color:                $white;
 $progress-bar-bg:                   theme-color("primary");
 $progress-bar-animation-timing:     1s linear infinite;
@@ -1319,11 +1319,11 @@ $progress-bar-transition:           width 580ms ease;
 // ----------------------------------------------------------------------------
 
 $list-group-bg:                     $white;
-$list-group-border-color:           rgba($black, 0.125);
+$list-group-border-color:           rgba($black, .125);
 $list-group-border-width:           $border-width;
 $list-group-border-radius:          $border-radius;
 
-$list-group-item-padding-y:         0.75rem;
+$list-group-item-padding-y:         .75rem;
 $list-group-item-padding-x:         1.25rem;
 
 $list-group-hover-bg:               $gray-100;
@@ -1350,12 +1350,12 @@ $list-group-action-active-bg:       $gray-200;
 // Reference: vendors/bootstrap/_variables.scss:818
 // ----------------------------------------------------------------------------
 
-$thumbnail-padding:                 0.25rem;
+$thumbnail-padding:                 .25rem;
 $thumbnail-bg:                      $body-bg;
 $thumbnail-border-width:            $border-width;
 $thumbnail-border-color:            $gray-300;
 $thumbnail-border-radius:           $border-radius;
-$thumbnail-box-shadow:              0 1px 2px rgba($black, 0.075);
+$thumbnail-box-shadow:              0 1px 2px rgba($black, .075);
 
 
 
@@ -1380,9 +1380,9 @@ $figure-caption-color:              $gray-600;
 // Reference: vendors/bootstrap/_variables.scss:834
 // ----------------------------------------------------------------------------
 
-$breadcrumb-padding-y:              0.75rem;
+$breadcrumb-padding-y:              .75rem;
 $breadcrumb-padding-x:              1rem;
-$breadcrumb-item-padding:           0.5rem;
+$breadcrumb-item-padding:           .5rem;
 
 $breadcrumb-margin-bottom:          1rem;
 
@@ -1407,7 +1407,7 @@ $breadcrumb-hover-color:            $body-color;
 
 $carousel-control-color:            $white;
 $carousel-control-width:            15%;
-$carousel-control-opacity:          0.5;
+$carousel-control-opacity:          .5;
 
 $carousel-indicator-width:          30px;
 $carousel-indicator-height:         3px;
@@ -1452,8 +1452,8 @@ $close-text-shadow:                 0 1px 0 $white;
 $code-font-size:                    87.5%;
 $code-color:                        $pink;
 
-$kbd-padding-y:                     0.2rem;
-$kbd-padding-x:                     0.4rem;
+$kbd-padding-y:                     .2rem;
+$kbd-padding-x:                     .4rem;
 $kbd-font-size:                     $code-font-size;
 $kbd-color:                         $white;
 $kbd-bg:                            $gray-900;
