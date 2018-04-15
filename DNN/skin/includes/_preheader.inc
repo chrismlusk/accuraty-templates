@@ -30,12 +30,12 @@
 
 CSS priorities and suggested order (note that * denotes a core DNN file):
 
-  1.    Font API links (e.g., Google Fonts)
+  1.    Font API links (e.g., Google Fonts, Typekit)
   5.    Default CSS*
   6-9.  Vendor CSS (e.g., Bootstrap)
   10.   Module CSS*
   15.   Skin CSS*
-  16.   Custom CSS: `assets/css/main.css`
+  16.   Custom CSS: `assets/css/{YOUR_FILE_HERE}`
   20.   Specific Skin CSS
   25.   Container CSS*
   30.   Specific Container CSS*
@@ -43,7 +43,7 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
 
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
-<dnn:DnnCssInclude runat="server" FilePath="assets/css/main.css" PathNameAlias="SkinPath" Priority="16" />
+<!-- <dnn:DnnCssInclude runat="server" FilePath="assets/css/{YOUR_FILE_HERE}" PathNameAlias="SkinPath" Priority="16" /> -->
 
 
 
@@ -68,6 +68,6 @@ For Bootstrap v4: jQuery first, then Popper.js, then Bootstrap.
 Other vendor scripts and custom JS come next.
 ========================================================================== --%>
 <dnn:JQUERY runat="server" ForceProvider="DnnFormBottomProvider" />
-<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="101" />
-<dnn:DnnJsInclude runat="server" FilePath="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
+<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="101" />
+<dnn:DnnJsInclude runat="server" FilePath="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
 <dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="105" />
