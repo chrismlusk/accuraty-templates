@@ -1,0 +1,41 @@
+// ============================================================================
+//
+//  PLEASE READ!
+//
+//  The `.eds_mailChimpPlus_*` selector is necessary for the
+//  EasyDNNmailChimpPlus layout. We have no control over this in the markup.
+//
+//  Note: Please replace the {TEMPLATE_NAME} in the base class below.
+//
+//  Everything within `.eds_subCollection_*` is custom. The naming convention
+//  begins with "EDN" and divide the prefix and component with "__" (double
+//  underscore). A selector name with multiple words uses a single "-" (dash).
+//  Modifiers are separate classes using the "is-*" or "has-*" format.
+//
+//  For example, articles are given the `.EDN__article` class. Articles might
+//  appear in a list or in a grid, so these selectors would be written as
+//  `.EDN__article.is-list` or `.EDN__article.is-grid` using these rules.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  -
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+//
+// 1. Mandatory class added via EasyDNNmailChimpPlus. We do not control this
+//    wrapper. Do not add a closing brace or move the selector.
+// ----------------------------------------------------------------------------
+
+.eds_mailChimpPlus_{TEMPLATE_NAME} { // 1
+
+} // Important! This brace closes `.eds_mailChimpPlus_*` and must at the end.

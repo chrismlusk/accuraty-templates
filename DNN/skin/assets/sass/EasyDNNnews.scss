@@ -1,7 +1,6 @@
 // ============================================================================
 //
-//  Project: {BE_KIND_TO_OTHERS_AND_UPDATE_THIS}
-//  Description: Custom EasyDNNnews theme for {BE KIND TO OTHERS. UPDATE THIS.}
+//  Project: Custom {EDS_MODULE_NAME} theme for {PROJECT_NAME}
 //  Version: 1.0
 //  Author: Accuraty Solutions
 //  Author URI: www.accuraty.com
@@ -19,6 +18,6 @@
 @import 'abstracts/mixins';
 @import 'vendors/bootstrap/variables';
 
-@import 'EasyDNNnews/edn-base';
-@import 'EasyDNNnews/edn-news';
-@import 'EasyDNNnews/edn-category-menu';
+@import 'EasyDNNsolutions/eds-news--base';
+@import 'EasyDNNsolutions/eds-news--news';
+@import 'EasyDNNsolutions/eds-news--category-menu';
