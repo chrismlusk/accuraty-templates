@@ -2,7 +2,7 @@
 //
 //   Variables
 //
-//   Updated: 1/18/2018 by Chris Lusk
+//   Updated: 4/15/2018 by Chris Lusk
 //
 //   For convenience, you can search for a section by preceeding the title
 //   with a pound sign and a space. Example: `# Colors`
@@ -201,9 +201,9 @@ $asl--line-height-loose:    (5 / 3);
 $asl--border-width-normal:  1px;
 $asl--border-width-thick:   3px;
 
+$asl--border-radius-sm:     .2rem;
 $asl--border-radius:        .25rem;
 $asl--border-radius-lg:     .3rem;
-$asl--border-radius-sm:     .2rem;
 
 
 
@@ -217,8 +217,11 @@ $asl--border-radius-sm:     .2rem;
 
 $asl--transition-easing:  ease-in-out;
 $asl--transition-speed:   118ms;
-$asl--box-shadow:         0 2px 4px rgba($asl--black, .1);
-$asl--box-shadow-hover:   0 12px 28px -2px rgba($asl--black, .21), 0 6px 14px -1px rgba($asl--black, .14);
+
+$asl--box-shadow-sm:      0 .125rem .25rem rgba($asl--black, .075);
+$asl--box-shadow:         0 .5rem 1rem rgba($asl--black, .15);
+$asl--box-shadow-lg:      0 1rem 3rem rgba($asl--black, .175);
+$asl--box-shadow-hover:   0 .75rem 1.75rem -.125rem rgba($asl--black, .2), 0 .375rem .875rem -.0625rem rgba($asl--black, .15);
 
 // Used for Bootstrap's `$grid-columns` variable
 $asl--grid-columns:       12;
@@ -354,8 +357,8 @@ $theme-color-interval:      8%;
 $yiq-contrasted-threshold:  150;
 
 // Customize light/dark text colors for use in our YIQ color contrast function
-$yiq-text-dark:  $gray-900;
-$yiq-text-light: $white;
+$yiq-text-dark:             $gray-900;
+$yiq-text-light:            $white;
 
 
 
@@ -407,7 +410,8 @@ $sizes: map-merge((
   25: 25%,
   50: 50%,
   75: 75%,
-  100: 100%
+  100: 100%,
+  auto: auto
 ), $sizes);
 
 
@@ -419,11 +423,11 @@ $sizes: map-merge((
 //
 // Settings for the `<body>` element.
 //
-// Reference: vendors/bootstrap/_variables.scss:139
+// Reference: vendors/bootstrap/_variables.scss:140
 // ----------------------------------------------------------------------------
 
-$body-bg:       $white;
-$body-color:    $gray-900;
+$body-bg:                   $white;
+$body-color:                $gray-900;
 
 
 
@@ -434,7 +438,7 @@ $body-color:    $gray-900;
 //
 // Style anchor elements.
 //
-// Reference: vendors/bootstrap/_variables.scss:146
+// Reference: vendors/bootstrap/_variables.scss:147
 // ----------------------------------------------------------------------------
 
 $link-color:                      theme-color("primary");
@@ -445,7 +449,7 @@ $link-hover-decoration:           none;
 // Custom variables added by Accuraty
 $link-border-color:               lighten($link-color, 42.5%);
 $link-hover-border-color:         transparent;
-$link-active-bg:                  rgba($gray-800, .08);
+$link-active-bg:                  rgba($gray-800, .075);
 
 // Custom variables added by Accuraty
 $link-inverse-color:              $white;
@@ -467,10 +471,10 @@ $link-focus-outline-color:        -webkit-focus-ring-color;
 //
 // Style `<p>` element.
 //
-// Reference: vendors/bootstrap/_variables.scss:155
+// Reference: vendors/bootstrap/_variables.scss:156
 // ----------------------------------------------------------------------------
 
-$paragraph-margin-bottom:   1em;
+$paragraph-margin-bottom:         1em;
 
 
 
@@ -482,7 +486,7 @@ $paragraph-margin-bottom:   1em;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 //
-// Reference: vendors/bootstrap/_variables.scss:162
+// Reference: vendors/bootstrap/_variables.scss:163
 // ----------------------------------------------------------------------------
 
 $grid-breakpoints: (
@@ -505,7 +509,7 @@ $grid-breakpoints: (
 //
 // Define the maximum width of `.container` for different screen sizes.
 //
-// Reference: vendors/bootstrap/_variables.scss:179
+// Reference: vendors/bootstrap/_variables.scss:180
 // ----------------------------------------------------------------------------
 
 $container-max-widths: (
@@ -526,11 +530,11 @@ $container-max-widths: (
 //
 // Set the number of columns and specifiy the width of the gutters.
 //
-// Reference: vendors/bootstrap/_variables.scss:193
+// Reference: vendors/bootstrap/_variables.scss:194
 // ----------------------------------------------------------------------------
 
-$grid-columns:            $asl--grid-columns;
-$grid-gutter-width:       $asl--grid-gutter-width;
+$grid-columns:                $asl--grid-columns;
+$grid-gutter-width:           $asl--grid-gutter-width;
 
 
 
@@ -541,7 +545,7 @@ $grid-gutter-width:       $asl--grid-gutter-width;
 //
 // Define common padding and border radius sizes and more.
 //
-// Reference: vendors/bootstrap/_variables.scss:200
+// Reference: vendors/bootstrap/_variables.scss:201
 // ----------------------------------------------------------------------------
 
 $line-height-lg:              $asl--line-height-normal;
@@ -554,8 +558,11 @@ $border-radius:               $asl--border-radius;
 $border-radius-lg:            $asl--border-radius-lg;
 $border-radius-sm:            $asl--border-radius-sm;
 
-// Custom variables added by Accuraty
+$box-shadow-sm:               $asl--box-shadow-sm;
 $box-shadow:                  $asl--box-shadow;
+$box-shadow-lg:               $asl--box-shadow-lg;
+
+// Custom variable added by Accuraty
 $box-shadow-hover:            $asl--box-shadow-hover;
 
 $component-active-color:      $white;
@@ -580,7 +587,7 @@ $transition-collapse:         height 335ms ease;
 //
 // Font, line-height, and color for body text, headings, and more.
 //
-// Reference: vendors/bootstrap/_variables.scss:224
+// Reference: vendors/bootstrap/_variables.scss:229
 // ----------------------------------------------------------------------------
 
 $font-family-sans-serif:      $asl--font-family-sans-serif;
@@ -675,7 +682,7 @@ $hr-margin-y:                 $spacer;
 //
 // Customizes `.table` component with basic values used with all variations.
 //
-// Reference: vendors/bootstrap/_variables.scss:296
+// Reference: vendors/bootstrap/_variables.scss:301
 // ----------------------------------------------------------------------------
 
 $table-cell-padding:            .75rem;
@@ -698,6 +705,10 @@ $table-dark-hover-bg:           rgba($white, .075);
 $table-dark-border-color:       lighten($gray-900, 7.5%);
 $table-dark-color:              $body-bg;
 
+$table-striped-order:         odd;
+
+$table-caption-color:         $text-muted;
+
 
 
 
@@ -707,7 +718,7 @@ $table-dark-color:              $body-bg;
 //
 // Shared variables reassigned to `$input-` and `$btn-` specific variables.
 //
-// Reference: vendors/bootstrap/_variables.scss:321
+// Reference: vendors/bootstrap/_variables.scss:329
 // ----------------------------------------------------------------------------
 
 $input-btn-padding-y:           .375rem;
@@ -737,7 +748,7 @@ $input-btn-border-width:        $border-width;
 //
 // For ecah of Bootstrap's buttons, define text, background, and border color.
 //
-// Reference: vendors/bootstrap/_variables.scss:344
+// Reference: vendors/bootstrap/_variables.scss:352
 // ----------------------------------------------------------------------------
 
 $btn-padding-y:               $input-btn-padding-y;
@@ -779,8 +790,10 @@ $btn-transition:              color $transition-speed $transition-easing, backgr
 // # Forms
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:381
+// Reference: vendors/bootstrap/_variables.scss:389
 // ----------------------------------------------------------------------------
+
+$label-margin-bottom:                   .5rem;
 
 $input-padding-y:                       $input-btn-padding-y;
 $input-padding-x:                       $input-btn-padding-x;
@@ -813,6 +826,7 @@ $input-focus-width:                     $input-btn-focus-width;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow;
 
 $input-placeholder-color:               $gray-600;
+$input-plaintext-color:                 $body-color;
 
 $input-height-border:                   $input-border-width * 2;
 
@@ -849,7 +863,7 @@ $input-group-addon-border-color:        $input-border-color;
 // # Custom forms
 // ==============
 //
-// Reference: vendors/bootstrap/_variables.scss:443
+// Reference: vendors/bootstrap/_variables.scss:454
 // ----------------------------------------------------------------------------
 
 // $custom-control-gutter:                 1.5rem;
@@ -877,10 +891,10 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-checkbox-indicator-border-radius:       $border-radius;
 // $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23");
 
-// $custom-checkbox-indicator-indeterminate-bg:    $component-active-bg;
-// $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color;
-// $custom-checkbox-indicator-icon-indeterminate:  str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23");
-// $custom-checkbox-indicator-indeterminate-box-shadow: none;
+// $custom-checkbox-indicator-indeterminate-bg:          $component-active-bg;
+// $custom-checkbox-indicator-indeterminate-color:       $custom-control-indicator-checked-color;
+// $custom-checkbox-indicator-icon-indeterminate:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23");
+// $custom-checkbox-indicator-indeterminate-box-shadow:  none;
 
 // $custom-radio-indicator-border-radius:          50%;
 // $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23");
@@ -892,7 +906,7 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-select-line-height:         $input-btn-line-height;
 // $custom-select-color:               $input-color;
 // $custom-select-disabled-color:      $gray-600;
-// $custom-select-bg:                  $white;
+// $custom-select-bg:                  $input-bg;
 // $custom-select-disabled-bg:         $gray-200;
 // $custom-select-bg-size:             8px 10px; // pixels because img dimensions
 // $custom-select-indicator-color:     $gray-800;
@@ -909,6 +923,22 @@ $input-group-addon-border-color:        $input-border-color;
 
 // $custom-select-font-size-lg:        125%;
 // $custom-select-height-lg:           $input-height-lg;
+
+// $custom-range-track-width:          100%;
+// $custom-range-track-height:         .5rem;
+// $custom-range-track-cursor:         pointer;
+// $custom-range-track-bg:             $gray-300;
+// $custom-range-track-border-radius:  1rem;
+// $custom-range-track-box-shadow:     inset 0 .25rem .25rem rgba($black, .1);
+
+// $custom-range-thumb-width:            1rem;
+// $custom-range-thumb-height:           $custom-range-thumb-width;
+// $custom-range-thumb-bg:               $component-active-bg;
+// $custom-range-thumb-border:           0;
+// $custom-range-thumb-border-radius:    1rem;
+// $custom-range-thumb-box-shadow:       0 .1rem .25rem rgba($black, .1);
+// $custom-range-thumb-focus-box-shadow: 0 0 0 1px $body-bg, $input-btn-focus-box-shadow;
+// $custom-range-thumb-active-bg:        lighten($component-active-bg, 35%);
 
 // $custom-file-height:                $input-height;
 // $custom-file-focus-border-color:    $input-focus-border-color;
@@ -936,7 +966,7 @@ $input-group-addon-border-color:        $input-border-color;
 // # Form validation
 // =================
 //
-// Reference: vendors/bootstrap/_variables.scss:521
+// Reference: vendors/bootstrap/_variables.scss:548
 // ----------------------------------------------------------------------------
 
 $form-feedback-margin-top:          $form-text-margin-top;
@@ -953,7 +983,7 @@ $form-feedback-invalid-color:       theme-color("danger");
 //
 // Dropdown menu container and contents.
 //
-// Reference: vendors/bootstrap/_variables.scss:530
+// Reference: vendors/bootstrap/_variables.scss:555
 // ----------------------------------------------------------------------------
 
 $dropdown-min-width:                10rem;
@@ -989,7 +1019,7 @@ $dropdown-header-color:             $gray-600;
 //
 // Warning! Avoid customizing these values. They are designed to work together.
 //
-// Reference: vendors/bootstrap/_variables.scss:557
+// Reference: vendors/bootstrap/_variables.scss:584
 // ----------------------------------------------------------------------------
 
 // $zindex-dropdown:           1000;
@@ -1007,7 +1037,7 @@ $dropdown-header-color:             $gray-600;
 // # Navs
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:570
+// Reference: vendors/bootstrap/_variables.scss:597
 // ----------------------------------------------------------------------------
 
 $nav-link-padding-y:                .5rem;
@@ -1026,6 +1056,9 @@ $nav-pills-border-radius:           $border-radius;
 $nav-pills-link-active-color:       $component-active-color;
 $nav-pills-link-active-bg:          $component-active-bg;
 
+$nav-divider-color:                 $gray-200;
+$nav-divider-margin-y:              ($spacer / 2);
+
 
 
 
@@ -1033,7 +1066,7 @@ $nav-pills-link-active-bg:          $component-active-bg;
 // # Navbar
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:588
+// Reference: vendors/bootstrap/_variables.scss:618
 // ----------------------------------------------------------------------------
 
 $navbar-padding-y:                  ($spacer / 2);
@@ -1078,7 +1111,7 @@ $navbar-height-md:                  $asl--navbar-height-md;
 // # Pagination
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:620
+// Reference: vendors/bootstrap/_variables.scss:650
 // ----------------------------------------------------------------------------
 
 $pagination-padding-y:              .5rem;
@@ -1095,6 +1128,7 @@ $pagination-border-width:           $border-width;
 $pagination-border-color:           $gray-300;
 
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow;
+$pagination-focus-outline:          0;
 
 $pagination-hover-color:            $link-hover-color;
 $pagination-hover-bg:               $gray-200;
@@ -1115,7 +1149,7 @@ $pagination-disabled-border-color:  $gray-300;
 // # Jumbotron
 // ===========
 //
-// Reference: vendors/bootstrap/_variables.scss:650
+// Reference: vendors/bootstrap/_variables.scss:681
 // ----------------------------------------------------------------------------
 
 $jumbotron-padding:                 2rem;
@@ -1128,7 +1162,7 @@ $jumbotron-bg:                      $gray-200;
 // # Cards
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:656
+// Reference: vendors/bootstrap/_variables.scss:687
 // ----------------------------------------------------------------------------
 
 $card-spacer-y:                     .75rem;
@@ -1156,7 +1190,7 @@ $card-columns-margin:               $card-spacer-y;
 // # Tooltips
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:677
+// Reference: vendors/bootstrap/_variables.scss:708
 // ----------------------------------------------------------------------------
 
 $tooltip-font-size:                 $font-size-sm;
@@ -1180,7 +1214,7 @@ $tooltip-arrow-color:               $tooltip-bg;
 // # Popovers
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:694
+// Reference: vendors/bootstrap/_variables.scss:725
 // ----------------------------------------------------------------------------
 
 $popover-font-size:                 $font-size-sm;
@@ -1213,7 +1247,7 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05);
 // # Badges
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:720
+// Reference: vendors/bootstrap/_variables.scss:751
 // ----------------------------------------------------------------------------
 
 $badge-font-size:                   75%;
@@ -1235,7 +1269,7 @@ $badge-pill-border-radius:          10rem;
 // # Modals
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:734
+// Reference: vendors/bootstrap/_variables.scss:765
 // ----------------------------------------------------------------------------
 
 $modal-inner-padding:               1rem; // applied to the modal body
@@ -1248,6 +1282,7 @@ $modal-title-line-height:           $line-height-base;
 $modal-content-bg:                  $white;
 $modal-content-border-color:        rgba($black, .2);
 $modal-content-border-width:        $border-width;
+$modal-content-border-radius:       $border-radius-lg;
 $modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5);
 $modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5);
 
@@ -1274,7 +1309,7 @@ $modal-transition:                  transform .3s ease-out;
 //
 // Define alert colors, border radius, and padding.
 //
-// Reference: vendors/bootstrap/_variables.scss:765
+// Reference: vendors/bootstrap/_variables.scss:797
 // ----------------------------------------------------------------------------
 
 $alert-padding-y:                   .75rem;
@@ -1295,7 +1330,7 @@ $alert-color-level:                 6;
 // # Progress bars
 // ===============
 //
-// Reference: vendors/bootstrap/_variables.scss:781
+// Reference: vendors/bootstrap/_variables.scss:813
 // ----------------------------------------------------------------------------
 
 $progress-height:                   1rem;
@@ -1315,7 +1350,7 @@ $progress-bar-transition:           width 580ms ease;
 // # List group
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:793
+// Reference: vendors/bootstrap/_variables.scss:825
 // ----------------------------------------------------------------------------
 
 $list-group-bg:                     $white;
@@ -1347,7 +1382,7 @@ $list-group-action-active-bg:       $gray-200;
 // # Image thumbnails
 // ==================
 //
-// Reference: vendors/bootstrap/_variables.scss:818
+// Reference: vendors/bootstrap/_variables.scss:850
 // ----------------------------------------------------------------------------
 
 $thumbnail-padding:                 .25rem;
@@ -1364,7 +1399,7 @@ $thumbnail-box-shadow:              0 1px 2px rgba($black, .075);
 // # Figures
 // =========
 //
-// Reference: vendors/bootstrap/_variables.scss:828
+// Reference: vendors/bootstrap/_variables.scss:860
 // ----------------------------------------------------------------------------
 
 $figure-caption-font-size:          90%;
@@ -1377,7 +1412,7 @@ $figure-caption-color:              $gray-600;
 // # Breadcrumbs
 // =============
 //
-// Reference: vendors/bootstrap/_variables.scss:834
+// Reference: vendors/bootstrap/_variables.scss:866
 // ----------------------------------------------------------------------------
 
 $breadcrumb-padding-y:              .75rem;
@@ -1389,7 +1424,9 @@ $breadcrumb-margin-bottom:          1rem;
 $breadcrumb-bg:                     $gray-200;
 $breadcrumb-divider-color:          $gray-600;
 $breadcrumb-active-color:           $gray-600;
-$breadcrumb-divider:                "/";
+$breadcrumb-divider:                quote("/");
+
+$breadcrumb-border-radius:          $border-radius;
 
 // Custom variables added by Accuraty
 $breadcrumb-color:                  $link-color;
@@ -1402,7 +1439,7 @@ $breadcrumb-hover-color:            $body-color;
 // # Carousel
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:848
+// Reference: vendors/bootstrap/_variables.scss:882
 // ----------------------------------------------------------------------------
 
 $carousel-control-color:            $white;
@@ -1422,7 +1459,7 @@ $carousel-control-icon-width:       20px;
 // $carousel-control-prev-icon-bg:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23");
 // $carousel-control-next-icon-bg:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23");
 
-$carousel-transition:               transform 580ms ease;
+$carousel-transition:               transform 580ms ease; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
 
 
 
@@ -1431,7 +1468,7 @@ $carousel-transition:               transform 580ms ease;
 // # Close
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:870
+// Reference: vendors/bootstrap/_variables.scss:904
 // ----------------------------------------------------------------------------
 
 $close-font-size:                   $font-size-base * 1.5;
@@ -1446,7 +1483,7 @@ $close-text-shadow:                 0 1px 0 $white;
 // # Code
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:877
+// Reference: vendors/bootstrap/_variables.scss:911
 // ----------------------------------------------------------------------------
 
 $code-font-size:                    87.5%;
