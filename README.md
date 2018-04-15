@@ -6,7 +6,7 @@ This is an attempt to create a set of standards and best practices for Accuraty 
 
 Accuraty primarily works with two content management systems: DNN and WordPress. The files included in each folder are designed to be a starter template for each platform.
 
-The template includes the source Sass files from Bootstrap v4.0.0-apha.6 (Updated 1/20/2017) nested and integrated with our custom styles codebase.
+The template includes the source Sass files from Bootstrap v4.1.0 (Updated 4/15/2018) nested and integrated with our custom styles codebase.
 
 ### DNN
 

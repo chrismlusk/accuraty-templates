@@ -4,13 +4,13 @@ Sass is a popular language that extends CSS with syntax advancements and feature
 
 There are two Sass syntaxes available: SCSS (Sassy CSS), which uses the `.scss` extension, and SASS, which uses `.sass` as its extension. The default syntax in this template is SCSS, as it is closer to the existing CSS syntax — using brackets and semicolons, for example. Learn more about the difference [here](http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better).
 
-The `sass/` folder includes the **main file** and sets of **partials** that are separated into a system of folders. (More information about this folder architecture below.)
+The `sass/` folder includes the **skin file**, **page-specific files** and sets of **partials** that are separated into a system of folders. (More information about this folder architecture below.)
 
 ## Main files
 
-The primary files (e.g., `main.scss`, `home.scss`, `manage.scss`) should be the only Sass files from the whole code base not to begin with an underscore. These files should generally not contain anything but `@import` directives and comments. The exception is page-specific files (e.g., `home.scss`), since these will compile into CSS files that are only loaded for specific pages.
+The primary files (e.g., `skin.scss`, `home.scss`, `manage.scss`) should be the only Sass files from the whole code base not to begin with an underscore. These files should generally not contain anything but `@import` directives and comments. The exception is page-specific files (e.g., `home.scss`), since these will compile into CSS files that are only loaded for specific pages.
 
-*Note: Before the code is deployed to the server, this file is compiled into the CSS file that is used for this project's skin.*
+*Note: Before the code is deployed to the server, these files are compiled into the CSS files that are used for this project's skin.*
 
 ### Import
 
@@ -32,6 +32,6 @@ Our pattern is to split the codebase into partials that are organized into meani
 4. `layout/`
 5. `components/`
 
-To preserve readability in `main.scss`, file extensions and leading underscores are not necessary and are therefore omitted.
+To preserve readability in `skin.scss`, file extensions and leading underscores are not necessary and are therefore omitted.
 
 *Note: If you add any partials to a folder, you will need to add it to the import statement in this file.*
