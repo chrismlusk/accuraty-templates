@@ -341,7 +341,9 @@
       display: flex;
     }
 
-    .paginate_button {
+    // primary styles to both pagination links and the ellipsis `<span>`
+    .paginate_button,
+    span.ellipsis {
       background-color: $pagination-bg !important;
       border: $pagination-border-width solid $pagination-border-color !important;
       color: $pagination-color !important;
@@ -357,6 +359,10 @@
       } @else {
         border-radius: 0 !important;
       }
+    }
+
+    // hover, active, disabled styles for only pagination links
+    .paginate_button {
 
       &:not(.disabled) {
         cursor: pointer;
