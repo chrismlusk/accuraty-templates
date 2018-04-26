@@ -306,7 +306,12 @@
 
   .dataTables_length,
   .dataTables_filter {
+    flex-basis: 100%;
     margin-bottom: ($spacer * 2);
+
+    @include media-breakpoint-up(sm) {
+      flex-basis: auto;
+    }
   }
 
   .dataTables_length {
@@ -314,7 +319,10 @@
   }
 
   .dataTables_filter {
-    justify-content: flex-end; // 1
+
+    @include media-breakpoint-up(sm) {
+      justify-content: flex-end; // 1
+    }
 
     input {
       margin-right: 0 !important; // `dataTables.css` line 282
@@ -359,6 +367,15 @@
       } @else {
         border-radius: 0 !important;
       }
+    }
+
+    // additional ellipsis-only styles
+    span.ellipsis {
+      color: $pagination-disabled-color !important;
+      pointer-events: none !important;
+      cursor: auto !important;
+      background-color: $pagination-disabled-bg !important;
+      border-color: $pagination-disabled-border-color !important;
     }
 
     // hover, active, disabled styles for only pagination links
@@ -446,9 +463,6 @@
     .dataTables_filter {
       float: none !important;
       text-align: initial !important;
-    }
-    .dataTables_filter {
-      margin: 0 !important;
     }
   }
 }
