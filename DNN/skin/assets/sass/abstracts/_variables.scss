@@ -2,7 +2,7 @@
 //
 //   Variables
 //
-//   Updated: 4/15/2018 by Chris Lusk
+//   Updated: 5/1/2018 by Chris Lusk
 //
 //   For convenience, you can search for a section by preceeding the title
 //   with a pound sign and a space. Example: `# Colors`
@@ -941,6 +941,7 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-range-thumb-active-bg:        lighten($component-active-bg, 35%);
 
 // $custom-file-height:                $input-height;
+// $custom-file-height-inner:          $input-height-inner;
 // $custom-file-focus-border-color:    $input-focus-border-color;
 // $custom-file-focus-box-shadow:      $input-btn-focus-box-shadow;
 
@@ -966,7 +967,7 @@ $input-group-addon-border-color:        $input-border-color;
 // # Form validation
 // =================
 //
-// Reference: vendors/bootstrap/_variables.scss:548
+// Reference: vendors/bootstrap/_variables.scss:549
 // ----------------------------------------------------------------------------
 
 $form-feedback-margin-top:          $form-text-margin-top;
@@ -983,7 +984,7 @@ $form-feedback-invalid-color:       theme-color("danger");
 //
 // Dropdown menu container and contents.
 //
-// Reference: vendors/bootstrap/_variables.scss:555
+// Reference: vendors/bootstrap/_variables.scss:556
 // ----------------------------------------------------------------------------
 
 $dropdown-min-width:                10rem;
@@ -1019,7 +1020,7 @@ $dropdown-header-color:             $gray-600;
 //
 // Warning! Avoid customizing these values. They are designed to work together.
 //
-// Reference: vendors/bootstrap/_variables.scss:584
+// Reference: vendors/bootstrap/_variables.scss:585
 // ----------------------------------------------------------------------------
 
 // $zindex-dropdown:           1000;
@@ -1037,7 +1038,7 @@ $dropdown-header-color:             $gray-600;
 // # Navs
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:597
+// Reference: vendors/bootstrap/_variables.scss:598
 // ----------------------------------------------------------------------------
 
 $nav-link-padding-y:                .5rem;
@@ -1066,7 +1067,7 @@ $nav-divider-margin-y:              ($spacer / 2);
 // # Navbar
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:618
+// Reference: vendors/bootstrap/_variables.scss:619
 // ----------------------------------------------------------------------------
 
 $navbar-padding-y:                  ($spacer / 2);
@@ -1111,7 +1112,7 @@ $navbar-height-md:                  $asl--navbar-height-md;
 // # Pagination
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:650
+// Reference: vendors/bootstrap/_variables.scss:651
 // ----------------------------------------------------------------------------
 
 $pagination-padding-y:              .5rem;
@@ -1149,7 +1150,7 @@ $pagination-disabled-border-color:  $gray-300;
 // # Jumbotron
 // ===========
 //
-// Reference: vendors/bootstrap/_variables.scss:681
+// Reference: vendors/bootstrap/_variables.scss:682
 // ----------------------------------------------------------------------------
 
 $jumbotron-padding:                 2rem;
@@ -1162,7 +1163,7 @@ $jumbotron-bg:                      $gray-200;
 // # Cards
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:687
+// Reference: vendors/bootstrap/_variables.scss:688
 // ----------------------------------------------------------------------------
 
 $card-spacer-y:                     .75rem;
@@ -1190,7 +1191,7 @@ $card-columns-margin:               $card-spacer-y;
 // # Tooltips
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:708
+// Reference: vendors/bootstrap/_variables.scss:709
 // ----------------------------------------------------------------------------
 
 $tooltip-font-size:                 $font-size-sm;
@@ -1214,7 +1215,7 @@ $tooltip-arrow-color:               $tooltip-bg;
 // # Popovers
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:725
+// Reference: vendors/bootstrap/_variables.scss:726
 // ----------------------------------------------------------------------------
 
 $popover-font-size:                 $font-size-sm;
@@ -1247,7 +1248,7 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05);
 // # Badges
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:751
+// Reference: vendors/bootstrap/_variables.scss:752
 // ----------------------------------------------------------------------------
 
 $badge-font-size:                   75%;
@@ -1269,7 +1270,7 @@ $badge-pill-border-radius:          10rem;
 // # Modals
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:765
+// Reference: vendors/bootstrap/_variables.scss:766
 // ----------------------------------------------------------------------------
 
 $modal-inner-padding:               1rem; // applied to the modal body
@@ -1309,7 +1310,7 @@ $modal-transition:                  transform .3s ease-out;
 //
 // Define alert colors, border radius, and padding.
 //
-// Reference: vendors/bootstrap/_variables.scss:797
+// Reference: vendors/bootstrap/_variables.scss:798
 // ----------------------------------------------------------------------------
 
 $alert-padding-y:                   .75rem;
@@ -1330,7 +1331,7 @@ $alert-color-level:                 6;
 // # Progress bars
 // ===============
 //
-// Reference: vendors/bootstrap/_variables.scss:813
+// Reference: vendors/bootstrap/_variables.scss:814
 // ----------------------------------------------------------------------------
 
 $progress-height:                   1rem;
@@ -1350,7 +1351,7 @@ $progress-bar-transition:           width 580ms ease;
 // # List group
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:825
+// Reference: vendors/bootstrap/_variables.scss:826
 // ----------------------------------------------------------------------------
 
 $list-group-bg:                     $white;
@@ -1382,7 +1383,7 @@ $list-group-action-active-bg:       $gray-200;
 // # Image thumbnails
 // ==================
 //
-// Reference: vendors/bootstrap/_variables.scss:850
+// Reference: vendors/bootstrap/_variables.scss:851
 // ----------------------------------------------------------------------------
 
 $thumbnail-padding:                 .25rem;
@@ -1399,7 +1400,7 @@ $thumbnail-box-shadow:              0 1px 2px rgba($black, .075);
 // # Figures
 // =========
 //
-// Reference: vendors/bootstrap/_variables.scss:860
+// Reference: vendors/bootstrap/_variables.scss:861
 // ----------------------------------------------------------------------------
 
 $figure-caption-font-size:          90%;
@@ -1412,7 +1413,7 @@ $figure-caption-color:              $gray-600;
 // # Breadcrumbs
 // =============
 //
-// Reference: vendors/bootstrap/_variables.scss:866
+// Reference: vendors/bootstrap/_variables.scss:867
 // ----------------------------------------------------------------------------
 
 $breadcrumb-padding-y:              .75rem;
@@ -1439,7 +1440,7 @@ $breadcrumb-hover-color:            $body-color;
 // # Carousel
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:882
+// Reference: vendors/bootstrap/_variables.scss:883
 // ----------------------------------------------------------------------------
 
 $carousel-control-color:            $white;
@@ -1468,7 +1469,7 @@ $carousel-transition:               transform 580ms ease; // Define transform tr
 // # Close
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:904
+// Reference: vendors/bootstrap/_variables.scss:905
 // ----------------------------------------------------------------------------
 
 $close-font-size:                   $font-size-base * 1.5;
@@ -1483,7 +1484,7 @@ $close-text-shadow:                 0 1px 0 $white;
 // # Code
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:911
+// Reference: vendors/bootstrap/_variables.scss:912
 // ----------------------------------------------------------------------------
 
 $code-font-size:                    87.5%;

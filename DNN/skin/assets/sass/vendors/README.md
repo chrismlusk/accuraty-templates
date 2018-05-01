@@ -1,14 +1,14 @@
 # Vendors
 
-Most projects will have a `vendors/` folder containing the stylesheets from external libraries and frameworks. Code inside this folder is direct from the thid-party source and is not to be modified. 
+Most projects will have a `vendors/` folder containing the stylesheets from external libraries and frameworks. Code inside this folder is direct from the thid-party source and is not to be modified.
 
 ## Bootstrap
 
 Bootstrap is the default framework for our projects, so inside the `vendors/` folder we have a `bootstrap/` folder that contains the Bootstrap source files.
 
-To replace these files once a newer version is available, go to the Bootstrap [download page](https://getbootstrap.com/docs/4.0/getting-started/download) and download the source files. Unzip the file, copy everything inside the `scss/` folder, and paste into our `vendors/bootstrap/` folder.
+To replace these files once a newer version is available, go to the Bootstrap [website](https://getbootstrap.com) and download the source files. Unzip the file, copy everything inside the `scss/` folder, and paste into our `vendors/bootstrap/` folder.
 
-On 4/15/2018, Chris Lusk updated Bootstrap to v4.1.0.
+On 5/1/2018, Chris Lusk updated Bootstrap to v4.1.1.
 
 *Note: If you update these files, please update the above line to reflect the date and version, and please include your name for reference.*
 
@@ -30,11 +30,11 @@ If your `@import` statements in the main file are ordered properly, this new cod
 
 ### A Better Way
 
-By using Bootstrap's source Sass files, we can take advantage of its variables and the `!default` flag that is applied. From the [Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_default:
+By using Bootstrap's source Sass files, we can take advantage of its variables and the `!default` flag that is applied. From the [Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_default):
 
 > You can assign to variables if they aren't already assigned by adding the `!default` flag to the end of the value. This means that if the variable has already been assigned to, it won't be re-assigned, but if it doesn't have a value yet, it will be given one.
 
-Our custom `_variables.scss` uses the same variables as Bootstrap — except we drop the `!default` flag. Then, in `main.scss`, we import our custom file before importing the Bootstrap code. This means when the codebase compiles, the first occurance of a Bootstrap variable actually comes from our own `_variables.scss` file, so the assigned value is what we set it as. Then, when the Bootstrap variable is reached, that value is ignored because of the `!default` flag. 
+Our custom `_variables.scss` uses the same variables as Bootstrap — except we drop the `!default` flag. Then, in `main.scss`, we import our custom file before importing the Bootstrap code. This means when the codebase compiles, the first occurance of a Bootstrap variable actually comes from our own `_variables.scss` file, so the assigned value is what we set it as. Then, when the Bootstrap variable is reached, that value is ignored because of the `!default` flag.
 
 This approach lets us easily set Bootstrap's components without introducing any more code, and it keeps our styles and Bootstrap's styles consistent.
 
