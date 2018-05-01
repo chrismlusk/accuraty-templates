@@ -6,7 +6,7 @@
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//  Updated: 10/18/2017 by Chris Lusk
+//  Updated: 5/1/2018 by Chris Lusk
 //
 // ============================================================================
 
@@ -23,7 +23,7 @@
   position: relative;
 
   & + .DnnModule {
-    margin-top: 2rem;
+    margin-top: ($spacer * 2);
   }
 }
 
