@@ -75,7 +75,7 @@ a {
     }
 
     @include hover-focus {
-      color: darken($docs-primary, 15%);
+      color: darken($docs-primary, 16%);
     }
 
     &:not(.btn) {
