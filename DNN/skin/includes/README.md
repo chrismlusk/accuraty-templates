@@ -16,7 +16,7 @@ The `#include` directive instructs the server to insert the contents of a file i
 
 ### Preheader
 
-`_preheader.inc` starts off with the control and register directives. 
+`_preheader.inc` starts off with the control and register directives.
 
 The **control directive** defines attributes that tell ASP.NET how to handle the file. The attributes we commonly use are:
 

@@ -2,7 +2,7 @@
 
 This folder is where we save starter files to build a custom DNN skin. When copying these files for use in a project, be sure they are added to `/Portals/_default/Skins/{CLIENT_ABBREVIATION}/`.
 
-A skin defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS). 
+A skin defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS).
 
 ## Layouts and Panes
 
@@ -16,7 +16,7 @@ A **layout template** defines where panes are located on the webpage and what ea
 * Exactly one of the panes must be called `ContentPane` (this is case-insensitive, but Accuraty style is capital case).
 * Each pane must have a name that is unique within the page.
 * All panes must have `runat="server"` added to the element.
-* A pane can only be a `<div>`, `<p>`, `<span>`, or `<td>`. 
+* A pane can only be a `<div>`, `<p>`, `<span>`, or `<td>`.
 
 ## Accuraty standards
 
@@ -46,7 +46,7 @@ Start with `Main.ascx` as the default template, and add more as needed. These fi
 
 ### Layout stylesheets
 
-When skin templates are applied to pages, DNN will automatically load that template's stylesheet. For example, if you have an `Events.ascx` file, there are likely events-specific styles. Rather than include those in the global stylesheet, separate those styles into their own template-specific file to reduce bloat. 
+When skin templates are applied to pages, DNN will automatically load that template's stylesheet. For example, if you have an `Events.ascx` file, there are likely events-specific styles. Rather than include those in the global stylesheet, separate those styles into their own template-specific file to reduce bloat.
 
 In order for DNN to automatically load the file, though, it **must be named the exact same as the layout template and saved in the same directory**. So, continuing our example, you would have `Events.css`.
 
