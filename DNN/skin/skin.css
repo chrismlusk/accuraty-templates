@@ -8724,7 +8724,34 @@ a.badge {
       #Form.showControlBar .main {
         margin-top: 125px; } }
 
+.footer {
+  font-size: 0.875rem; }
+
+a.footer-link {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075); }
+  a.footer-link, a.footer-link:visited {
+    color: inherit; }
+  a.footer-link:hover, a.footer-link:focus {
+    border-color: transparent;
+    color: #fff; }
+
 .footer-brand {
   display: block; }
+
+.footer-credits {
+  color: inherit; }
+  .footer-credits span {
+    display: inline-block; }
+    .footer-credits span:not(:first-of-type) {
+      margin-left: .65rem; }
+
+.footer-lower {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem; }
+  .footer-lower a.footer-link, .footer-lower a.footer-link:visited {
+    color: inherit; }
+  .footer-lower a.footer-link:hover, .footer-lower a.footer-link:focus {
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.85); }
 
 /*# sourceMappingURL=skin.css.map */
