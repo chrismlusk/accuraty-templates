@@ -275,41 +275,41 @@ $dnn-persona-bar-width:   80px;
 // Reference: vendors/bootstrap/_variables.scss:8
 // ----------------------------------------------------------------------------
 
-$white:     $asl--white;
-$gray-100:  $asl--gray-100;
-$gray-200:  $asl--gray-200;
-$gray-300:  $asl--gray-300;
-$gray-400:  $asl--gray-400;
-$gray-500:  $asl--gray-500;
-$gray-600:  $asl--gray-600;
-$gray-700:  $asl--gray-700;
-$gray-800:  $asl--gray-800;
-$gray-900:  $asl--gray-900;
-$black:     $asl--black;
+$white:         $asl--white;
+$gray-100:      $asl--gray-100;
+$gray-200:      $asl--gray-200;
+$gray-300:      $asl--gray-300;
+$gray-400:      $asl--gray-400;
+$gray-500:      $asl--gray-500;
+$gray-600:      $asl--gray-600;
+$gray-700:      $asl--gray-700;
+$gray-800:      $asl--gray-800;
+$gray-900:      $asl--gray-900;
+$black:         $asl--black;
 
 $grays: ();
 $grays: map-merge((
-  "100":    $gray-100,
-  "200":    $gray-200,
-  "300":    $gray-300,
-  "400":    $gray-400,
-  "500":    $gray-500,
-  "600":    $gray-600,
-  "700":    $gray-700,
-  "800":    $gray-800,
-  "900":    $gray-900
+  "100":        $gray-100,
+  "200":        $gray-200,
+  "300":        $gray-300,
+  "400":        $gray-400,
+  "500":        $gray-500,
+  "600":        $gray-600,
+  "700":        $gray-700,
+  "800":        $gray-800,
+  "900":        $gray-900
 ), $grays);
 
-$blue:      $asl--blue;
-$indigo:    $asl--indigo;
-$purple:    $asl--purple;
-$pink:      $asl--pink;
-$red:       $asl--red;
-$orange:    $asl--orange;
-$yellow:    $asl--yellow;
-$green:     $asl--green;
-$teal:      $asl--teal;
-$cyan:      $asl--cyan;
+$blue:          $asl--blue;
+$indigo:        $asl--indigo;
+$purple:        $asl--purple;
+$pink:          $asl--pink;
+$red:           $asl--red;
+$orange:        $asl--orange;
+$yellow:        $asl--yellow;
+$green:         $asl--green;
+$teal:          $asl--teal;
+$cyan:          $asl--cyan;
 
 $colors: ();
 $colors: map-merge((
