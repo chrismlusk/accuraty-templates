@@ -29,6 +29,8 @@
       <div class="col-md-6">
         <p class="footer-credits  text-center text-md-left">
           <span><dnn:COPYRIGHT runat="server" id="dnnCopyright" /></span>
+          <span><dnn:TERMS runat="server" id="dnnTerms" /></span>
+          <span><dnn:PRIVACY runat="server" id="dnnPrivacy" /></span>
         </p>
       </div>
       <div class="col-md-6">
