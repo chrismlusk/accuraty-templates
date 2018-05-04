@@ -19,7 +19,9 @@
 // Wrapper and base class
 // ======================
 
-.footer {}
+.footer {
+  font-size: $font-size-sm;
+}
 
 
 
@@ -28,7 +30,18 @@
 // Footer link
 // ===========
 
-.footer-link {}
+a.footer-link {
+  border-bottom: $border-width solid rgba($white, .075);
+
+  @include plain-visited {
+    color: inherit;
+  }
+
+  @include hover-focus {
+    border-color: transparent;
+    color: $white;
+  }
+}
 
 
 
@@ -87,7 +100,17 @@
 // Copyright, Accuraty credit, etc.
 // ----------------------------------------------------------------------------
 
-.footer-credits {}
+.footer-credits {
+  color: inherit;
+
+  span {
+    display: inline-block;
+
+    &:not(:first-of-type) {
+      margin-left: .65rem;
+    }
+  }
+}
 
 
 
@@ -102,4 +125,19 @@
 
 .footer-upper {}
 
-.footer-lower {}
+.footer-lower {
+  color: rgba($white, .5);
+  font-size: $font-size-xs;
+
+  a.footer-link {
+
+    @include plain-visited {
+      color: inherit;
+    }
+
+    @include hover-focus {
+      border-color: transparent;
+      color: rgba($white, .85);
+    }
+  }
+}
