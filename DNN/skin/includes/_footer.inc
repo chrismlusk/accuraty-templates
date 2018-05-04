@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-md-6">
 
-        <a class="footer-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>">LOGO</a>
+        <a class="footer-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>">{SITE_BRAND}</a>
 
         <address class="footer-address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="name" class="sr-only">CLIENT NAME</span><br>
-          <span itemprop="streetAddress">STREET ADDRESS</span><br>
-          <span itemprop="addressLocality">CITY</span>,
-          <span itemprop="addressRegion">STATE</span>
-          <span itemprop="postalCode">ZIP CODE</span>
+          <span itemprop="name" class="sr-only">{CLIENT_NAME}</span><br>
+          <span itemprop="streetAddress">{STREET_ADDRESS}</span><br>
+          <span itemprop="addressLocality">{CITY}</span>,
+          <span itemprop="addressRegion">{STATE}</span>
+          <span itemprop="postalCode">{ZIP_CODE}</span>
           <span itemprop="addressCountry" class="sr-only">United States</span>
         </address>
       </div>
@@ -27,12 +27,12 @@
   <section class="footer-lower  container-fluid">
     <div class="row">
       <div class="col-md-6">
-        <p class="text-center text-md-left">
+        <p class="footer-credits  text-center text-md-left">
           <span><dnn:COPYRIGHT runat="server" id="dnnCopyright" /></span>
         </p>
       </div>
       <div class="col-md-6">
-        <p class="text-center text-md-right">
+        <p class="footer-credits  text-center text-md-right">
           Design, development, and hosting by <a class="footer-link" href="http://accuraty.com" target="_blank">Accuraty Solutions</a>.
         </p>
       </div>
