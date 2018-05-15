@@ -7874,6 +7874,22 @@ a.text-dark:hover, a.text-dark:focus {
 .dnnDropDownList .selected-item a {
   height: auto !important; }
 
+#dnnModuleDigitalAssetsMainToolbarTitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-size: 0.875rem !important;
+  padding: 1rem .5rem 0 !important; }
+
+#dnnModuleDigitalAssetsMainToolbar,
+#dnnModuleDigitalAssetsSelectionToolbar {
+  height: auto !important;
+  min-height: auto !important;
+  padding: .375rem .5rem !important; }
+  #dnnModuleDigitalAssetsMainToolbar::after,
+  #dnnModuleDigitalAssetsSelectionToolbar::after {
+    display: block;
+    clear: both;
+    content: ""; }
+
 .Head {
   display: initial;
   margin: 0; }

@@ -6,7 +6,7 @@
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//  Updated: 5/1/2018 by Chris Lusk
+//  Updated: 5/14/2018 by Chris Lusk
 //
 // ============================================================================
 
@@ -51,6 +51,20 @@
 .dnnDropDownList .selected-item,
 .dnnDropDownList .selected-item a {
   height: auto !important;
+}
+
+#dnnModuleDigitalAssetsMainToolbarTitle {
+  color: rgba($black, .6) !important;
+  font-size: $font-size-sm !important;
+  padding: 1rem .5rem 0 !important;
+}
+
+#dnnModuleDigitalAssetsMainToolbar,
+#dnnModuleDigitalAssetsSelectionToolbar {
+  height: auto !important;
+  min-height: auto !important;
+  padding: .375rem .5rem !important;
+  @include clearfix;
 }
 
 
