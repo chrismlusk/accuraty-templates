@@ -57,7 +57,7 @@ $docs-primary:        #0767b1; // Accuraty blue
 $docs-danger:         #d4231d;
 $docs-info:           #09addf;
 $docs-success:        #008b2f;
-$docs-warning:        #fda119;
+$docs-warning:        #fa9602;
 
 
 
@@ -109,7 +109,7 @@ a {
 
   &:focus,
   &.focus {
-    box-shadow: 0 0 0 2px rgba($docs-primary, 0.25);
+    box-shadow: 0 0 0 2px rgba($docs-primary, .25);
   }
 }
 
@@ -129,15 +129,15 @@ a {
 .docs-callout {
   background-color: $gray-100;
   border: $border-width solid $gray-200;
-  border-left-width: 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 0.925em;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  padding: 1.25rem;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+  font-size: .875em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1.25em;
 
   h4 {
-    font-size: 1.35em; // 1
+    font-size: 1.125em; // 1
     margin-top: 0;
   }
 
@@ -148,11 +148,11 @@ a {
   }
 
   code {
-    border-radius: 0.25rem;
+    border-radius: .25rem;
   }
 
   & + & {
-    margin-top: -0.25rem;
+    margin-top: -.25rem;
   }
 }
 
@@ -190,7 +190,7 @@ a {
   }
 
   .nav-link {
-    border-radius: 0.25rem;
+    border-radius: .25rem;
     color: #666;
     transition: all $transition-speed $transition-easing;
 
@@ -199,7 +199,7 @@ a {
     }
 
     &.active {
-      background-color: rgba(theme-color("dark"), 0.06);
+      background-color: rgba(theme-color("dark"), .06);
       color: $docs-primary;
       font-weight: $font-weight-medium;
     }
