@@ -1,0 +1,26 @@
+{
+  "name": "accuraty-templates",
+  "version": "1.1.0",
+  "description": "Skin scaffolding for Accuraty projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch skin/assets/sass -o skin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismlusk/accuraty-templates.git"
+  },
+  "author": "Chris Lusk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrismlusk/accuraty-templates/issues"
+  },
+  "homepage": "https://github.com/chrismlusk/accuraty-templates#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

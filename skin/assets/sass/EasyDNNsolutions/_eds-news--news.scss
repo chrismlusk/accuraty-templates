@@ -1,0 +1,178 @@
+// ============================================================================
+//
+//  PLEASE READ!
+//
+//  The `.eds_news_*` and `.eds_subCollection_*` selectors are necessary for
+//  the EasyDNNnews layout. We have no control over these in the markup.
+//
+//  Note: Update the $TEMPLATE_NAME variable in root `EasyDNNnews.scss` file.
+//
+//  Everything within `.eds_subCollection_*` is custom. The naming convention
+//  begins with "EDN" and divide the prefix and component with "__" (double
+//  underscore). A selector name with multiple words uses a single "-" (dash).
+//  Modifiers are separate classes using the "is-*" or "has-*" format.
+//
+//  For example, articles are given the `.EDN__article` class. Articles might
+//  appear in a list or in a grid, so these selectors would be written as
+//  `.EDN__article.is-list` or `.EDN__article.is-grid` using these rules.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//     - Category
+//     - Article
+//     - Admin toolbar
+//     - Article pager
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+//
+// 1. Mandatory classes added via EasyDNNnews. We do not control these.
+//    Do not add a closing brace or move the selector.
+// ----------------------------------------------------------------------------
+
+.eds_news_#{$TEMPLATE_NAME}.eds_subCollection_news { // 1
+
+
+
+
+//
+// Category
+// ========
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__category {}
+
+
+
+
+//
+// Article
+// =======
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__article {}
+
+.EDN__article__figure {}
+
+.EDN__article__header {}
+
+.EDN__article__title {}
+
+.EDN__article__subtitle {
+  margin-top: -0.5rem !important;
+}
+
+.EDN__article__meta {
+  display: flex;
+  font-size: $font-size-sm;
+
+  & > span + span::before {
+    content: '|';
+    color: $gray-600;
+    margin: 0 0.5rem;
+  }
+}
+
+.EDN__article__aside {}
+
+.EDN__article__content {}
+
+.EDN__article__footer {}
+
+
+
+
+//
+// User dashboard
+// ==============
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.user_dashboard {
+  background-color: $gray-200;
+  border: 1px solid $gray-300;
+  padding: 0 0.5rem;
+  margin: 0 0 1rem;
+  overflow: hidden;
+  border-radius: 0;
+
+  a {
+    background: transparent url('') no-repeat left center;
+    display: block;
+    float: left;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    padding: 0.5rem 0.75rem;
+
+    @include plain-visited {
+      color: $body-color;
+    }
+
+    &.add_article {
+      background-image: url('images/common/user_dashboard/green_plus.png');
+      padding-left: 25px;
+    }
+
+    &.approve_articles {
+      background-image: url('images/common/user_dashboard/approve_articles.png');
+      padding-left: 22px;
+    }
+
+    &.approve_comments {
+      background-image: url('images/common/user_dashboard/approve_comments.png');
+      padding-left: 22px;
+    }
+
+    &.article_manager {
+      background-image: url('images/common/user_dashboard/papers.png');
+      padding-left: 28px;
+    }
+
+    &.author_profile {
+      display: none;
+    }
+
+    &.category_manager {
+      background-image: url('images/common/user_dashboard/categories.png');
+      padding-left: 24px;
+    }
+
+    &.dashboard {
+      background-image: url('images/common/user_dashboard/monitor.png');
+      padding-left: 25px;
+    }
+
+    &.event_manager {
+      background-image: url('images/common/user_dashboard/event_manager.png');
+      padding-left: 35px;
+    }
+
+    &.settings {
+      background-image: url('images/common/user_dashboard/settings.png');
+      padding-left: 25px;
+    }
+
+    @include hover-focus {
+      color: $link-color;
+    }
+  }
+}
+
+
+
+
+} // Important! This brace closes `.eds_news_*` and must come at the very end.
