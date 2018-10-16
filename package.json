@@ -23,6 +23,8 @@
     "popper.js": "^1.14.4"
   },
   "devDependencies": {
-    "node-sass": "^4.9.4"
+    "autoprefixer": "^8.6.5",
+    "node-sass": "^4.9.4",
+    "uglify-js": "^3.4.3"
   }
 }
