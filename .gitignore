@@ -1,2 +1,5 @@
-prepros-6.config
 node_modules/
+.DS_Store
+*.log
+*.env
+prepros-6.config
