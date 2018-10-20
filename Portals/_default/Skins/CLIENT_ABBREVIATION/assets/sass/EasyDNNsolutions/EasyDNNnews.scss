@@ -20,10 +20,10 @@ $TEMPLATE_NAME: 'ASL01';
 
 @import '../../../node_modules/bootstrap/scss/functions';
 @import '../../../node_modules/bootstrap/scss/mixins';
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
 @import '../../../node_modules/bootstrap/scss/variables';
 
-@import 'EasyDNNsolutions/eds-news--base';
-@import 'EasyDNNsolutions/eds-news--news';
-@import 'EasyDNNsolutions/eds-news--category-menu';
+@import 'eds-news--base';
+@import 'eds-news--news';
+@import 'eds-news--category-menu';
