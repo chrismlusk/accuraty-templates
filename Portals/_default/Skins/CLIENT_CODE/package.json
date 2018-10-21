@@ -7,9 +7,10 @@
     "css-main": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
     "css-lint": "stylelint --syntax scss assets/sass/**/*.scss",
     "css-compile": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/ --output ./",
-    "css-prefix": "postcss --use autoprefixer --map false ./**/*.css --base ./ --dir ./",
+    "css-prefix": "postcss --config postcss.config.js ./**/*.css --base ./ --dir ./",
     "css-minify": "foreach --glob \"./*.css\" --execute \"cleancss --level 1 --source-map --source-map-inline-sources #{path} --output #{path}\"",
-    "build": "npm-run-all --parallel css-main"
+    "build": "npm-run-all --parallel css-main",
+    "start": "nodemon --watch assets/sass/ --ext scss --exec \"npm-run-all --parallel css-lint css-compile\""
   },
   "private": true,
   "repository": {
