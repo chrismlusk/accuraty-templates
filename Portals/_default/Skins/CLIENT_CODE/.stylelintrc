@@ -33,6 +33,7 @@
     ],
     "function-url-no-scheme-relative": true,
     "function-url-quotes": "always",
+    "indentation": null,
     "length-zero-no-unit": true,
     "max-empty-lines": 4,
     "max-line-length": null,

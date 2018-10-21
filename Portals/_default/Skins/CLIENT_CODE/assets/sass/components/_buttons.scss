@@ -27,8 +27,8 @@
     }
 
     @include hover-focus {
-      border-color: rgba($white, 0.5);
-      color: rgba($white, 0.5);
+      color: rgba($white, .5);
+      border-color: rgba($white, .5);
     }
   }
 }

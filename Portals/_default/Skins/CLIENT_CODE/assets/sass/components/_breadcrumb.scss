@@ -32,8 +32,8 @@
 // ----------------------------------------------------------------------------
 
 .DnnBreadcrumb {
-  color: $breadcrumb-color; // 1
   margin-bottom: $breadcrumb-margin-bottom;
+  color: $breadcrumb-color; // 1
 
   span {
     display: inline-flex; // 2
@@ -81,13 +81,13 @@
     margin-left: $separator-space;
 
     &::before { // 4
+      margin-right: $separator-space;
       color: $breadcrumb-divider-color;
       content: $breadcrumb-divider; // 4
-      // content: '\f105'; // 4*
-      // font-family: 'FontAwesome'; // 4*
-      // font-family: 'Font Awesome 5 Regular'; // 5
-      margin-right: $separator-space;
 
+      // font-family: "FontAwesome"; // 4*
+      // font-family: "Font Awesome 5 Regular"; // 5
+      // content: "\f105"; // 4*
       // display: none; // 5
     }
 

@@ -72,7 +72,7 @@
 .EDN__article__title {}
 
 .EDN__article__subtitle {
-  margin-top: -0.5rem !important;
+  margin-top: -.5rem !important;
 }
 
 .EDN__article__meta {
@@ -80,9 +80,9 @@
   font-size: $font-size-sm;
 
   & > span + span::before {
-    content: '|';
+    margin: 0 .5rem;
     color: $gray-600;
-    margin: 0 0.5rem;
+    content: "|";
   }
 }
 
@@ -103,43 +103,43 @@
 // ----------------------------------------------------------------------------
 
 .user_dashboard {
-  background-color: $gray-200;
-  border: 1px solid $gray-300;
-  padding: 0 0.5rem;
+  padding: 0 .5rem;
   margin: 0 0 1rem;
   overflow: hidden;
+  background-color: $gray-200;
+  border: 1px solid $gray-300;
   border-radius: 0;
 
   a {
-    background: transparent url('') no-repeat left center;
     display: block;
     float: left;
+    padding: .5rem .75rem;
     font-size: $font-size-sm;
     font-weight: $font-weight-bold;
-    padding: 0.5rem 0.75rem;
+    background: transparent url("") no-repeat left center;
 
     @include plain-visited {
       color: $body-color;
     }
 
     &.add_article {
-      background-image: url('images/common/user_dashboard/green_plus.png');
       padding-left: 25px;
+      background-image: url("images/common/user_dashboard/green_plus.png");
     }
 
     &.approve_articles {
-      background-image: url('images/common/user_dashboard/approve_articles.png');
       padding-left: 22px;
+      background-image: url("images/common/user_dashboard/approve_articles.png");
     }
 
     &.approve_comments {
-      background-image: url('images/common/user_dashboard/approve_comments.png');
       padding-left: 22px;
+      background-image: url("images/common/user_dashboard/approve_comments.png");
     }
 
     &.article_manager {
-      background-image: url('images/common/user_dashboard/papers.png');
       padding-left: 28px;
+      background-image: url("images/common/user_dashboard/papers.png");
     }
 
     &.author_profile {
@@ -147,23 +147,23 @@
     }
 
     &.category_manager {
-      background-image: url('images/common/user_dashboard/categories.png');
       padding-left: 24px;
+      background-image: url("images/common/user_dashboard/categories.png");
     }
 
     &.dashboard {
-      background-image: url('images/common/user_dashboard/monitor.png');
       padding-left: 25px;
+      background-image: url("images/common/user_dashboard/monitor.png");
     }
 
     &.event_manager {
-      background-image: url('images/common/user_dashboard/event_manager.png');
       padding-left: 35px;
+      background-image: url("images/common/user_dashboard/event_manager.png");
     }
 
     &.settings {
-      background-image: url('images/common/user_dashboard/settings.png');
       padding-left: 25px;
+      background-image: url("images/common/user_dashboard/settings.png");
     }
 
     @include hover-focus {

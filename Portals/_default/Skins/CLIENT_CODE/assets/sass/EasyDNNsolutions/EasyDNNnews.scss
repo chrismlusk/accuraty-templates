@@ -16,14 +16,14 @@
 //
 // ============================================================================
 
-$TEMPLATE_NAME: 'ASL01';
+$TEMPLATE_NAME: "ASL01";
 
-@import '../../../node_modules/bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/mixins';
-@import '../abstracts/variables';
-@import '../abstracts/mixins';
-@import '../../../node_modules/bootstrap/scss/variables';
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "../../../node_modules/bootstrap/scss/variables";
 
-@import 'eds-news--base';
-@import 'eds-news--news';
-@import 'eds-news--category-menu';
+@import "eds-news--base";
+@import "eds-news--news";
+@import "eds-news--category-menu";

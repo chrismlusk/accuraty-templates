@@ -23,6 +23,6 @@
 @mixin plain-visited {
   &,
   &:visited {
-    @content
+    @content;
   }
 }

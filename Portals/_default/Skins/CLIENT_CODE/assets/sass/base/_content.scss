@@ -48,9 +48,12 @@
     }
   }
 
-  h2, .h2,
-  h3, .h3,
-  h4, .h4 {
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4 {
     margin-top: ($spacer * 2); // 2
 
     &:first-child {
@@ -122,14 +125,14 @@
   }
 
   blockquote {
+    padding: 1.5rem;
+    font-size: $blockquote-font-size;
     background-color: $blockquote-bg-color;
     border-left: $blockquote-border-width solid $blockquote-border-color;
-    font-size: $blockquote-font-size;
-    padding: 1.5rem;
 
     footer {
-      color: $blockquote-small-color;
       font-size: $blockquote-small-font-size;
+      color: $blockquote-small-color;
 
       &::before {
         content: "\2014 \00A0"; // em dash, nbspreb
@@ -150,22 +153,22 @@
   }
 
   ol {
-    list-style: decimal outside;
-    margin-left: ($paragraph-margin-bottom * 2);
-    margin-right: ($paragraph-margin-bottom * 2);
     margin-top: $paragraph-margin-bottom;
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-left: ($paragraph-margin-bottom * 2);
+    list-style: decimal outside;
   }
 
   ul:not(.nav):not(.list-unstyled) {
-    list-style: disc outside;
-    margin-left: ($paragraph-margin-bottom * 2);
-    margin-right: ($paragraph-margin-bottom * 2);
     margin-top: $paragraph-margin-bottom;
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-left: ($paragraph-margin-bottom * 2);
+    list-style: disc outside;
 
     ul {
-      list-style-type: circle;
       margin-top: ($paragraph-margin-bottom / 2);
       margin-bottom: ($paragraph-margin-bottom / 2);
+      list-style-type: circle;
     }
   }
 
@@ -178,8 +181,8 @@
   }
 
   a:not(.btn):not(.badge):not(.dropdown-item) {
-    border-bottom: $border-width solid $link-border-color; // 3
     font-weight: $font-weight-bold;
+    border-bottom: $border-width solid $link-border-color; // 3
 
     @include hover-focus-active {
       border-bottom-color: $link-hover-border-color;

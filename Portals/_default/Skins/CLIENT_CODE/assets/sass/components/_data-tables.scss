@@ -1,3 +1,6 @@
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable order/properties-alphabetical-order */
+
 // ============================================================================
 //
 //  DataTables is a jQuery plugin that adds advanced interaction to any table.
@@ -47,8 +50,8 @@
   margin-top: 0 !important;
   margin-bottom: $spacer !important;
   clear: none !important;
-  border-collapse: collapse !important;
   border-spacing: initial !important;
+  border-collapse: collapse !important;
 
   &,
   & th,
@@ -132,31 +135,31 @@
   .sorting_desc,
   .sorting_asc_disabled,
   .sorting_desc_disabled {
+    position: relative;
+    padding-right: ($table-cell-padding * 2) !important;
     cursor: pointer;
     background: none !important; // `dataTables.css` lines 27-50
-    padding-right: ($table-cell-padding * 2) !important;
-    position: relative;
 
     &::before {
-      content: '\f0de';
-      font-family: 'Font Awesome 5 Solid';
       display: none;
+      font-family: "Font Awesome 5 Solid";
+      content: "\f0de";
     }
 
     &::after {
-      content: '\f0dd';
-      font-family: 'Font Awesome 5 Solid';
       display: none;
+      font-family: "Font Awesome 5 Solid";
+      content: "\f0dd";
     }
 
     .svg-inline--fa {
-      color: $gray-300;
-      font-size: 1em;
       position: absolute;
         top: 50%;
-        right: 0.3em;
-      transform: translateY(-50%);
+        right: .3em;
+      font-size: 1em;
+      color: $gray-300;
       transition: color ($transition-speed / 2) $transition-easing;
+      transform: translateY(-50%);
     }
   }
 
@@ -290,13 +293,13 @@
   .dataTables_filter,
   .dataTables_info,
   .dataTables_paginate {
-    align-items: center; // 1
     display: flex; // 1
     flex: 1 0 50%; // 1
+    align-items: center; // 1
 
     // `dataTables.css` lines 272, 276, 285, 291, 380
-    color: $body-color !important;
     float: none !important; // 1
+    color: $body-color !important;
     text-align: initial !important;
 
     label {
@@ -326,15 +329,15 @@
 
     input {
       margin-right: 0 !important; // `dataTables.css` line 282
-      margin-left: 0.5rem; // 2
+      margin-left: .5rem; // 2
     }
   }
 
   .dataTables_info,
   .dataTables_paginate {
-    font-size: $font-size-sm;
-    margin-top: $spacer;
     padding-top: 0 !important; // `dataTables.css` lines 285, 291
+    margin-top: $spacer;
+    font-size: $font-size-sm;
   }
 
   .dataTables_info {
@@ -352,15 +355,15 @@
     // primary styles to both pagination links and the ellipsis `<span>`
     .paginate_button,
     span.ellipsis {
-      background-color: $pagination-bg !important;
-      border: $pagination-border-width solid $pagination-border-color !important;
-      color: $pagination-color !important;
+      position: relative !important;
       display: block !important;
+      padding: $pagination-padding-y $pagination-padding-x !important;
+      margin-left: -$pagination-border-width !important;
       font-weight: $font-weight-base !important;
       line-height: $pagination-line-height !important;
-      margin-left: -$pagination-border-width !important;
-      padding: $pagination-padding-y $pagination-padding-x !important;
-      position: relative !important;
+      color: $pagination-color !important;
+      background-color: $pagination-bg !important;
+      border: $pagination-border-width solid $pagination-border-color !important;
 
       @if $enable-rounded {
         border-radius: $input-border-radius !important;
@@ -386,19 +389,19 @@
       }
 
       @include hover-focus-active {
+        color: $pagination-hover-color !important;
+        text-decoration: none;
         background: none !important;
         background-color: $pagination-hover-bg !important;
         border-color: $pagination-hover-border-color !important;
-        color: $pagination-hover-color !important;
-        text-decoration: none;
       }
 
       &.current {
+        z-index: 1;
+        color: $pagination-active-color !important;
         background: none !important; // `dataTables.css` line 321
         background-color: $pagination-active-bg !important;
         border-color: $pagination-active-border-color !important;
-        color: $pagination-active-color !important;
-        z-index: 1;
 
         @include hover-focus {
           color: $pagination-active-color !important;
@@ -478,13 +481,13 @@
 
   input[type="search"],
   select {
+    padding: $input-padding-y $input-padding-x;
+    font-size: $font-size-base;
+    line-height: $input-line-height;
+    color: $input-color;
     background-color: $input-bg;
     background-clip: padding-box;
     border: $input-border-width solid $input-border-color;
-    color: $input-color;
-    font-size: $font-size-base;
-    line-height: $input-line-height;
-    padding: $input-padding-y $input-padding-x;
 
     @if $enable-rounded {
       border-radius: $input-border-radius;

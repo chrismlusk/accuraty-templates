@@ -59,12 +59,6 @@
 
 
 
-
-
-
-
-
-
 // ----------------------------------------------------------------------------
 //
 //  1. Initial variables
@@ -158,9 +152,11 @@ $youtube-primary:       #cd201f;
 // easy recognition (e.g., `<h1>` is largest and `$asl--size-1` is too).
 // ----------------------------------------------------------------------------
 
+// stylelint-disable value-keyword-case
 $asl--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $asl--font-family-serif: Georgia, "Times New Roman", Times, serif;
 $asl--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// stylelint-enable value-keyword-case
 
 // The px values shown below are based on a 16px root
 $asl--size-1:               2.5rem;   // 40px
@@ -247,12 +243,6 @@ $dnn-persona-bar-width:   80px;
 
 
 
-
-
-
-
-
-
 // ----------------------------------------------------------------------------
 //
 //  2. Applied variables
@@ -290,17 +280,20 @@ $gray-900:      $asl--gray-900;
 $black:         $asl--black;
 
 $grays: ();
-$grays: map-merge((
-  "100":        $gray-100,
-  "200":        $gray-200,
-  "300":        $gray-300,
-  "400":        $gray-400,
-  "500":        $gray-500,
-  "600":        $gray-600,
-  "700":        $gray-700,
-  "800":        $gray-800,
-  "900":        $gray-900
-), $grays);
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
 
 $blue:          $asl--blue;
 $indigo:        $asl--indigo;
@@ -314,21 +307,24 @@ $teal:          $asl--teal;
 $cyan:          $asl--cyan;
 
 $colors: ();
-$colors: map-merge((
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "white":      $white,
-  "gray":       $gray-600,
-  "gray-dark":  $gray-800
-), $colors);
+$colors: map-merge(
+  (
+    "blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "gray": $gray-600,
+    "gray-dark": $gray-800
+  ),
+  $colors
+);
 
 $primary:       $blue;
 $secondary:     $gray-600;
@@ -340,16 +336,19 @@ $light:         $gray-100;
 $dark:          $gray-800;
 
 $theme-colors: ();
-$theme-colors: map-merge((
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-), $theme-colors);
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark
+  ),
+  $theme-colors
+);
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8%;
@@ -398,24 +397,30 @@ $enable-validation-icons:   true;
 
 $spacer: 1rem;
 $spacers: ();
-$spacers: map-merge((
-  0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
-), $spacers);
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3 )
+  ),
+  $spacers
+);
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: ();
-$sizes: map-merge((
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%,
-  auto: auto
-), $sizes);
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
 
 
 

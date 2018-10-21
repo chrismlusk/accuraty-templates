@@ -38,8 +38,8 @@ a.footer-link {
   }
 
   @include hover-focus {
-    border-color: transparent;
     color: $white;
+    border-color: transparent;
   }
 }
 
@@ -76,7 +76,7 @@ a.footer-link {
 // 1. Custom `.nav` component to create a label above `.nav-link` items.
 // ----------------------------------------------------------------------------
 
-.footer {
+.footer { // stylelint-disable no-duplicate-selectors
 
   .nav-label { // 1
 
@@ -126,8 +126,8 @@ a.footer-link {
 .footer-upper {}
 
 .footer-lower {
-  color: rgba($white, .5);
   font-size: $font-size-xs;
+  color: rgba($white, .5);
 
   a.footer-link {
 
@@ -136,8 +136,8 @@ a.footer-link {
     }
 
     @include hover-focus {
-      border-color: transparent;
       color: rgba($white, .85);
+      border-color: transparent;
     }
   }
 }

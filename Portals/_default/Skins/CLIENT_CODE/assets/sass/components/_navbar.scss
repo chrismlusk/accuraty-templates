@@ -90,8 +90,8 @@
 
 #admin-menu {
   .nav-link {
-    background-color: $link-color;
     color: $white;
+    background-color: $link-color;
 
     @include hover-focus {
       background-color: $link-hover-color;

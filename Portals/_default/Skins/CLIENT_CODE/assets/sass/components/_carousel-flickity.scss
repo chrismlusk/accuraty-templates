@@ -52,7 +52,7 @@
 // Controls
 
 .flickity-prev-next-button {
-  background: rgba($white, 0.9);
+  background: rgba($white, .9);
   transition: background $transition-speed $transition-easing;
 
   @include hover-focus-active {
@@ -65,8 +65,8 @@
   }
 
   .arrow {
-    fill: rgba($body-color, 0.8);
     transition: fill $transition-speed $transition-easing;
+    fill: rgba($body-color, .8);
   }
 
   &.previous {
@@ -83,10 +83,10 @@
 .flickity-page-dots {
 
   .dot {
-    background-color: $body-color;
-    margin: 0 0.5rem;
     width: 0 75rem;
-    height: 0.75rem;
+    height: .75rem;
+    margin: 0 .5rem;
+    background-color: $body-color;
 
     &.is-selected {}
   }
@@ -100,6 +100,6 @@
 // =============
 
 .carousel-cell {
-  height: auto;
   width: 100%;
+  height: auto;
 }
