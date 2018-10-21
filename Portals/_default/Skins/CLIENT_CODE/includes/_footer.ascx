@@ -35,7 +35,7 @@
       </div>
       <div class="col-md-6">
         <p class="footer-credits  text-center text-md-right">
-          Design, development, and hosting by <a class="footer-link" href="http://accuraty.com" target="_blank">Accuraty Solutions</a>.
+          Design, development, and hosting by <a href="http://accuraty.com" target="_blank">Accuraty Solutions</a>.
         </p>
       </div>
     </div>

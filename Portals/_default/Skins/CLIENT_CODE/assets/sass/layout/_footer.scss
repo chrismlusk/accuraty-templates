@@ -30,7 +30,7 @@
 // Footer link
 // ===========
 
-a.footer-link {
+.footer a {
   border-bottom: $border-width solid rgba($white, .075);
 
   @include plain-visited {
@@ -76,7 +76,7 @@ a.footer-link {
 // 1. Custom `.nav` component to create a label above `.nav-link` items.
 // ----------------------------------------------------------------------------
 
-.footer { // stylelint-disable no-duplicate-selectors
+.footer .nav {
 
   .nav-label { // 1
 
@@ -127,9 +127,10 @@ a.footer-link {
 
 .footer-lower {
   font-size: $font-size-xs;
-  color: rgba($white, .5);
+  color: rgba($white, .6);
 
-  a.footer-link {
+  a {
+    border-bottom: $border-width solid rgba($white, .075);
 
     @include plain-visited {
       color: inherit;
