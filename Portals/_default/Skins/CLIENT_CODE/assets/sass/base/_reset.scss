@@ -1,0 +1,818 @@
+// ============================================================================
+//
+//  Reset
+//
+//  This file is to reset opinionated styles and common conflicts created
+//  by using DNN and Bootstrap together. The purpose of this reset is to give
+//  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
+//
+//  Updated: 5/14/2018 by Chris Lusk
+//
+// ============================================================================
+
+
+
+// ----------------------------------------------------------------------------
+//
+//  1. Quick, specific fixes
+//
+// ----------------------------------------------------------------------------
+
+.DnnModule {
+  position: relative;
+  clear: both;
+
+  & + .DnnModule {
+    margin-top: ($spacer * 2);
+  }
+}
+
+.DNNEmptyPane {
+  display: none;
+}
+
+.form-group .dnnLabel {
+  width: auto;
+  text-align: left;
+}
+
+.dnnLabel + span {
+  white-space: normal;
+}
+
+#ControlBar,
+#ControlBar::before,
+#ControlBar::after,
+#ControlBar li,
+#ControlBar li::before,
+#ControlBar li::after,
+#ControlBar a,
+#ControlBar a::before,
+#ControlBar a::after,
+.dnn_mact,
+.dnn_mact::before,
+.dnn_mact::after,
+.dnn_mact li,
+.dnn_mact li::before,
+.dnn_mact li::after {
+  box-sizing: content-box !important;
+}
+
+.dnnDropDownList .selected-item,
+.dnnDropDownList .selected-item a {
+  height: auto !important;
+}
+
+#dnnModuleDigitalAssetsMainToolbarTitle {
+  padding: 1rem .5rem 0 !important;
+  font-size: $font-size-sm !important;
+  color: rgba($black, .6) !important;
+}
+
+#dnnModuleDigitalAssetsMainToolbar,
+#dnnModuleDigitalAssetsSelectionToolbar {
+  height: auto !important;
+  min-height: auto !important;
+  padding: .375rem .5rem !important;
+  @include clearfix;
+}
+
+
+
+
+// ----------------------------------------------------------------------------
+//
+//  2. Reset DNN styles from `_default.css`
+//
+// ----------------------------------------------------------------------------
+
+
+//
+// Modules
+// =======
+//
+// Reference: _default.css:22 (DNN 8)
+//
+// 1. Module titles.
+// 2. Text inside modules.
+// 3. Help text rendered by modules.
+// 4. Rendered text that requires emphasis.
+// 5. Used for error messages.
+// ----------------------------------------------------------------------------
+
+.Head { // 1
+  display: initial;
+  margin: 0;
+}
+
+.Normal,
+.NormalDisabled,
+.NormalDeleted { // 2
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.NormalDisabled,
+.NormalDeleted {
+  color: $text-muted;
+}
+
+.Help { // 3
+  color: theme-color-level("warning", 6);
+  background-color: theme-color-level("warning", -10);
+  border: $alert-border-width solid theme-color-level("warning", -9);
+}
+
+.NormalBold { // 4
+  font-weight: $font-weight-bold;
+  color: inherit;
+}
+
+.NormalRed { // 5
+  font-weight: $font-weight-bold;
+  color: theme-color("danger");
+}
+
+
+
+//
+// Blockquote
+// ==========
+//
+// Reference: _default.css:260 (DNN 7)
+// ----------------------------------------------------------------------------
+blockquote {
+  padding: 0;
+  border: 0;
+
+  &,
+  p {
+    font-size: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  cite {
+    display: initial;
+    font-size: inherit;
+    color: inherit;
+
+    &::before {
+      display: none;
+      content: "";
+    }
+
+    a {
+      @include plain-visited {
+        color: inherit;
+      }
+    }
+  }
+}
+
+
+
+//
+// Anchor styles
+// =============
+//
+// Reference: _default.css:297 (DNN 7)
+// ----------------------------------------------------------------------------
+
+a {
+
+  @include plain-visited {
+    color: inherit;
+    text-decoration: inherit;
+    outline: inherit;
+  }
+
+  @include hover-focus-active {
+    color: inherit;
+    outline: inherit;
+  }
+}
+
+
+
+
+//
+// Image styles
+// ============
+//
+// Reference: _default.css:315 (DNN 7)
+// ----------------------------------------------------------------------------
+
+// img {}
+
+
+
+
+//
+// List styles
+// ===========
+//
+// Reference: _default.css:333 (DNN 7)
+// ----------------------------------------------------------------------------
+
+ul,
+ol {
+  margin: 0;
+  list-style: initial;
+
+  ul,
+  ol {
+    margin: 0;
+    list-style: initial;
+  }
+}
+
+li {
+  p {
+    line-height: inherit;
+  }
+}
+
+
+
+//
+// Message
+// =======
+//
+// Bring these messages into alignment with Bootstrap alerts.
+//
+// Reference: _default.css:100 (DNN 8) / _default.css:364 (DNN 7)
+// ----------------------------------------------------------------------------
+
+.dnnFormMessage {
+  max-width: none;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  color: theme-color-level("info", 6);
+  background-color: theme-color-level("info", -10);
+  border: $alert-border-width solid theme-color-level("info", -9);
+  @include border-radius($alert-border-radius);
+
+  &.dnnFormError,
+  &.dnnFormValidationSummary {
+    color: theme-color-level("danger", 6);
+    background-color: theme-color-level("danger", -10);
+    border-color: theme-color-level("danger", -9);
+  }
+
+  &.dnnFormWarning {
+    color: theme-color-level("warning", 6);
+    background-color: theme-color-level("warning", -10);
+    border-color: theme-color-level("warning", -9);
+  }
+
+  &.dnnFormSuccess {
+    color: theme-color-level("success", 6);
+    background-color: theme-color-level("success", -10);
+    border-color: theme-color-level("success", -9);
+  }
+}
+
+
+
+//
+// Tables
+// ======
+//
+// DNN uses `.dnnTableHeader` and `.dnnTableDisplay`. Skipping this.
+//
+// Reference: _default.css:130 (DNN 8) / _default.css:394 (DNN 7)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Pagination
+// ==========
+//
+// DNN uses `.dnnResults` and `.dnnPagination`. Skipping this.
+//
+// Reference: _default:css:285 (DNN 8) / _default.css:549 (DNN 7)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Forms
+// =====
+//
+// Reference: _default:css:321 (DNN 8) / _default.css:585 (DNN 7)
+// ----------------------------------------------------------------------------
+
+.dnnFormItem input[type="text"],
+.dnnFormItem select,
+.dnnFormItem textarea,
+.dnnFormItem input[type="email"],
+.dnnFormItem input[type="search"],
+.dnnFormItem input[type="password"] {
+  width: 100%;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  font-size: $font-size-base;
+  line-height: $input-btn-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: none;
+  background-clip: padding-box;
+  border: $input-btn-border-width solid $input-border-color;
+
+  // Note: This has no effect on <select>s in some browsers,
+  // due to the limited stylability of `<select>`s in CSS.
+  @if $enable-rounded {
+    // Use if/else instead of the mixin to account for iOS override.
+    border-radius: $input-border-radius;
+  } @else {
+    // Otherwise undo the iOS default
+    border-radius: 0;
+  }
+}
+
+// .dnnFormItem input.aspNetDisabled,
+// .dnnFormItem textarea.aspNetDisabled {
+//   background: #ebebeb;
+//   box-shadow: none;
+//   border-color: #a7a7a7;
+//   border-width: 1px;
+// }
+
+// .aspNetDisabled, a.aspNetDisabled,
+// .dnnDisabled, a.dnnDisabled {
+//   color: $gray-400;
+//   cursor: not-allowed;
+//   text-decoration: none;
+// }
+
+// //## Active and focus states
+// .dnnFormItem input[type="text"]:active, .dnnFormItem input[type="text"]:focus,
+// .dnnFormItem input[type="password"]:focus, .dnnFormItem input[type="password"]:active,
+// .dnnFormItem input[type="email"]:active, .dnnFormItem input[type="email"]:focus,
+// .dnnFormItem select:active, .dnnFormItem select:focus,
+// .dnnFormItem textarea:active, .dnnFormItem textarea:focus,
+// .dnnFormItem input[type="search"]:active, .dnnFormItem input[type="search"]:focus {
+//     background: #fff;
+//     border: 1px solid rgba(2,139,255,.5); /* blue */
+//     -webkit-box-shadow: 0 0 3px 0 rgba(2, 139, 255, .4);
+//     box-shadow: 0 0 3px 0 rgba(2, 139, 255, .4);
+//     color: #333;
+// }
+
+// //## Required fields
+// .required label:after,
+// legend.required:after {
+//     display: inline-block;
+//     margin-top: -2px;
+//     margin-left: 9px;
+//     padding: 1px 9px;
+//     border: 1px solid rgba(0,0,0,.1);
+//     border-radius: 3px;
+//     -webkit-border-radius: 3px;
+//     background: rgba(0,0,0,.03);
+//     content: 'Required';
+//     font-weight: $font-weight-normal;
+//     font-family: $font-family-base;
+//     font-size: 11px;
+//     font-style: italic;
+//     color: #777;
+// }
+
+//## Error styles
+.error label,
+legend.error {
+  color: rgba(theme-color("danger"), .9);
+}
+
+.error select,
+.error textarea,
+.error input[type="text"],
+.error input[type="email"],
+.error input[type="search"] {
+    color: rgba(theme-color("danger"), .7);
+    border: 1px solid rgba(theme-color("danger"), .6);
+}
+
+
+
+
+//
+// Buttons
+// =======
+//
+// Reference: _default.css:410 (DNN 8) / _default.css:674 (DNN 7)
+// ----------------------------------------------------------------------------
+
+.dnnFormItem button,
+.dnnFormItem input[type="button"],
+.dnnFormItem input[type="reset"],
+.dnnFormItem input[type="submit"],
+.dnnPrimaryAction,
+.dnnSecondaryAction,
+.dnnTertiaryAction {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    margin-bottom: 9px;
+    font-weight: $font-weight-bold;
+    background-color: $gray-200;
+    border: 1px solid $gray-400;
+    border-radius: $border-radius;
+
+    @include plain-visited {
+      color: $gray-800;
+    }
+}
+
+
+//## Primary Action
+
+.dnnPrimaryAction,
+.dnnFormItem input[type="submit"],
+a.dnnPrimaryAction {
+  text-shadow: 0 -1px 0 #185b93;
+  background: #3792ed;
+  background: linear-gradient(to bottom, #358eea 0%, #2170cd 100%);
+  border-color: #0d569e; /* dark blue */
+  box-shadow: 0 1px 0 0 rgba($black, .6), inset 0 1px 0 0 rgba($white, .4);
+
+  @include plain-visited {
+    color: #efefef;
+  }
+
+  @include hover-focus {
+    color: $white;
+    background: #6cb6f3;
+    background: linear-gradient(to bottom, #6cb6f3 0%, #4387d2 100%);
+    border-color: #0d569e;
+  }
+
+  &:active {
+    color: $white;
+    background: #1f66be;
+    background: linear-gradient(to bottom, #1f66be 0%, #3085e0 100%);
+    border-color: #0d569e;
+    box-shadow: inset 0 1px 5px 0 rgba($black, .4);
+  }
+}
+
+.dnnPrimaryAction[disabled],
+.dnnPrimaryAction[disabled]:hover,
+.dnnPrimaryAction[disabled]:active {
+  color: $gray-500 !important;
+  background: $gray-400 !important;
+  border: none !important;
+}
+
+
+//## Secondary Action
+
+.dnnFormItem button,
+.dnnFormItem input[type="button"],
+.dnnFormItem input[type="reset"],
+.dnnSecondaryAction,
+a.dnnSecondaryAction {
+  text-shadow: 0 1px 0 $white;
+  background: #f5f5f5;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #dfdfdf 100%);
+  box-shadow: 0 1px 0 0 rgba($black, .4), inset 0 1px 0 0 rgba($white, 1);
+
+  @include plain-visited {
+    color: $gray-800;
+  }
+
+  @include hover-focus {
+    color: #555;
+    background: #fefefe;
+    background: linear-gradient(to bottom, #fefefe 0%, #e8e8e8 100%);
+  }
+
+  &:active {
+    background: #c6c6c6;
+    background: linear-gradient(to bottom, #c6c6c6 0%, #f3f3f3 100%);
+    border-color: #999;
+    box-shadow: inset 0 1px 5px 0 rgba($black, .4);
+  }
+}
+
+//## Tertiary Action
+.dnnTertiaryAction,
+a.dnnTertiaryAction {
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  background-color: $gray-200;
+  border: none;
+
+  @include plain-visited {
+    color: $gray-800;
+  }
+
+  @include hover-focus {
+    background-color: $gray-100;
+  }
+
+  &:active {
+    background-color: $gray-300;
+  }
+}
+
+
+// //## Action Button behind input
+
+// .dnnFormItem input[type="text"] {
+
+//   & + a.dnnPrimaryAction,
+//   & + a.dnnSecondaryAction,
+//   & + a.dnnTertiaryAction {
+//     margin-left: 5px;
+//   }
+// }
+
+// .dnnFormItem input[type="checkbox"] + span,
+// .dnnFormItem input[type="radio"] + span {
+//   margin: 5px;
+// }
+
+
+//## Buttons and link buttons used in the portal admin pages
+
+.StandardButton {
+  border: 1px solid color("blue");
+}
+
+// /* Re-set default cursor for disabled elements */
+// .dnnFormItem button[disabled],
+// .dnnFormItem input[disabled] {
+//     cursor: default;
+//     opacity: .5;
+// }
+
+// /* Consistent box sizing and appearance */
+// .dnnFormItem input[type="checkbox"],
+// .dnnFormItem input[type="radio"] {
+//     *width: 13px;
+//     *height: 13px; /*why are we using hacks here*/
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+
+// .dnnFormItem input[type="search"] {
+//     -webkit-appearance: textfield;
+//     box-sizing: content-box;
+// }
+
+//     .dnnFormItem input[type="search"]::-webkit-search-decoration,
+//     .dnnFormItem input[type="search"]::-webkit-search-cancel-button {
+//         -webkit-appearance: none;
+//     }
+
+// .dnnFormItem textarea {
+//     overflow: auto;
+//     vertical-align: top;
+//     resize: vertical;
+// }
+
+//     /* Colors for form validity */
+//     .dnnFormItem input:valid,
+//     .dnnFormItem textarea:valid {
+//     }
+
+//     .dnnFormItem input:invalid, .dnnFormItem textarea:invalid {
+//         background-color: #f0dddd;
+//     }
+
+
+//
+// Taxonomy
+// ========
+//
+// DNN uses `.horizontal` and `.vertical` as parent classes before it uses
+// `ul.categories` and `ul.tags` for taxonomy. Skipping this.
+//
+// Reference: _default.css:651 (DNN 8) / _default.css:915 (DNN 7)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Tabs : jQuery UI tabs 1.8.14
+// ============================
+//
+// DNN uses `.dnnAdminTabNav`. Skipping this.
+//
+// Reference: _default.css:698 (DNN 8) / _default.css:962 (DNN 7)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Login Tab Group
+// ===============
+//
+// Skipping, for now.
+//
+// Reference: _default.css:744 (DNN 8) / _default.css:1007 (DNN 7)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Tabs : jQuery UI Resizable 1.8.14
+// =================================
+//
+// Skipping this.
+//
+// Reference: _default.css:770 (DNN 8) / _default.css:1033 (DNN 7)
+// ----------------------------------------------------------------------------
+
+
+
+
+//
+// Form Items
+// ==========
+//
+// Reference: _default.css:854 (DNN 8)
+//
+// 1.
+// ----------------------------------------------------------------------------
+
+.dnnForm {
+  // width: initial;
+
+  fieldset {
+    // clear: initial;
+    // position: initial;
+    // margin: 0;
+    // text-align: initial;
+    // border: initial;
+
+    fieldset {}
+  }
+
+  .dnnFormItem {
+    margin-bottom: $form-group-margin-bottom;
+  }
+}
+
+
+//## Label
+
+.dnnTooltip {}
+
+.dnnHelperTip {}
+
+.dnnDragdropTip {}
+
+span.dnnFormRequired::after,
+div.dnnFormItem.dnnFormRequired > div.dnnLabel span::after {
+  margin: 0 0 0 .25rem;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: theme-color("danger");
+}
+
+.dnnFormItem input[type="checkbox"] + span,
+.dnnFormItem input[type="radio"] + span {}
+
+
+//## Help label
+
+a.dnnFormHelp,
+.dnnForm .dnnFormItem a.dnnFormHelp,
+.dnnTooltip label a.dnnFormHelp {}
+
+a.dnnFormHelp {}
+
+.dnnLabel {
+  // display: initial;
+  // float: initial;
+  // margin: 0;
+  // overflow: initial;
+  // padding: 0;
+  // position: initial;
+  // text-align: initial;
+  // width: initial;
+}
+
+.dnnFormItem > .dnnLabel {
+  // margin-top: 0;
+}
+
+.dnnLabel > span {
+  // text-align: initial;
+}
+
+.dnnForm .dnnFormItem a.dnnFormHelp span {}
+
+.dnnForm .dnnFormItem a.dnnFormHelp img {}
+
+// stylelint-disable-next-line no-duplicate-selectors
+.dnnLabel + span {
+  display: inline-block;
+  margin: 0;
+}
+
+
+//## Help tooltip
+
+.dnnTooltip .dnnFormHelpContent,
+.dnnHelperTip .dnnFormHelpContent {}
+
+.dnnFormHelpContent span {}
+
+.bottomArrow::after {}
+
+.topArrow::before {}
+
+a.pinHelp {}
+
+
+//## Error tooltip
+
+.dnnFormItem span.dnnFormMessage.dnnFormError {
+  font-size: $font-size-xs;
+  color: $white;
+  background-color: rgba(theme-color("danger"), .75);
+  border-radius: $border-radius;
+
+  &::after {
+    border-top-color: theme-color("danger");
+  }
+}
+
+
+//## Input types
+
+.dnnFormItem input[type="text"],
+.dnnFormItem input[type="password"],
+.dnnFormItem input[type="email"],
+.dnnFormItem input[type="tel"],
+.dnnFormItem select,
+.dnnFormItem textarea {}
+
+.dnnFormItem select {
+  // width: initial;
+
+  option {
+    color: $gray-800;
+  }
+}
+
+
+//## Input customized checkbox
+
+.dnnCheckbox {
+
+  .mark {}
+
+  img {}
+}
+
+
+//## Input customized radiobutton
+
+.dnnRadiobutton {
+
+  .mark {}
+
+  img {}
+}
+
+
+//## General group
+
+div.dnnFormGroup {}
+
+
+//## Input customized spinner
+
+.dnnSpinner {
+  color: $gray-800;
+  background: linear-gradient(to bottom, #fff 0%, #f0f2f1 100%);
+  background-color: $white;
+  border-color: $gray-400;
+  box-shadow: 0 1px 0 0 $gray-500;
+
+  .dnnFormItem & {}
+}
+
+.dnnSpinnerDisplay {
+  color: $gray-600;
+}
+
+
+//## Input customized tags
+
+div.dnnTagsInput {}
+
+
+//## DNN auto complete
+
+.dn_acResults {}

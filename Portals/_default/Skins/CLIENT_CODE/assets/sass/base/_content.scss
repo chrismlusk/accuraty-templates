@@ -1,0 +1,203 @@
+// ============================================================================
+//
+//  This file contains all styles for content that appears inside DNN modules.
+//
+//  For consistency, all skin and theme objects created by DNN use the same
+//  pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
+//
+//  Reference: `Containers/{Client}/README.md`
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Module title
+//  - Module content
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+//
+// 1. By default these elements have no bottom margin (per `_base.scss`), but
+//    we want them to have margin in the flow of module content. So add spacing
+//    as long as they aren't the last child, which avoids excess bottom margin.
+//
+// 2. For better spacing of body text sections introduced by headings, we add
+//    double the default spacing as the top margin for these tags as long as
+//    they aren't the first child inside the parent.
+//
+// 3. But when headings are next to each other, we don't want excess space. So
+//    reset the top margin to the default spacing for `<h3>` and `<h4>` tags.
+// ----------------------------------------------------------------------------
+
+.DnnModule {
+  color: $body-color;
+
+  blockquote,
+  p,
+  ol,
+  ul {
+    &:not(:last-child) {
+      margin-bottom: $paragraph-margin-bottom; // 1
+    }
+  }
+
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4 {
+    margin-top: ($spacer * 2); // 2
+
+    &:first-child {
+      margin-top: 0; // 2
+    }
+  }
+
+  h2 + h3,
+  h3 + h4 {
+    margin-top: 0; // 3
+  }
+}
+
+
+
+
+//
+// Module title
+// ============
+//
+// 1. Yes, `!important` is generally a bad idea, but we want to override the
+//    specificity introduced by the `:not(:first-child)` pseudo class used on
+//    headings inside the base class for this one title class. This is helpful
+//    because modules can use various heading tags as their titles, not just
+//    `<h2>` tags, so we need to account for this.
+// ----------------------------------------------------------------------------
+
+.DnnModule__title {
+  margin-top: 0 !important; // 1
+}
+
+
+
+
+//
+// Module content section
+// ======================
+//
+// 1. Increase the size of body text. 1.125rem is ~18px on a 16px base.
+//
+// 2. List items are too close together compared to all other body text
+//    elements, so add a little margin between siblings.
+//
+// 3. Add custom bottom border to links to replace standard `text-decoration`
+//    for better styling and control.
+//
+// 4. On `:active` and `:focus` add a slight background color to introduce
+//    sufficient variation for each link state. This is a big benefit for
+//    accessibility issues (i.e. clear changes beyond just color change).
+//
+// 5. Links that appear inside a module with a background color should be given
+//    the `.is-inverse` modifier, and need their border color altered. Normal
+//    state is a white border, and we use `$link-hover-color` for hover/focus.
+// ----------------------------------------------------------------------------
+
+.DnnModule__content {
+  font-size: 1.08rem; // 1
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.125rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.175rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.225rem;
+  }
+
+  blockquote {
+    padding: 1.5rem;
+    font-size: $blockquote-font-size;
+    background-color: $blockquote-bg-color;
+    border-left: $blockquote-border-width solid $blockquote-border-color;
+
+    footer {
+      font-size: $blockquote-small-font-size;
+      color: $blockquote-small-color;
+
+      &::before {
+        content: "\2014 \00A0"; // em dash, nbspreb
+      }
+
+      a {
+
+        @include plain-visited {
+          color: $blockquote-small-color;
+        }
+
+        @include hover-focus {
+          color: $link-hover-color;
+          border-bottom-color: $link-hover-border-color;
+        }
+      }
+    }
+  }
+
+  ol {
+    margin-top: $paragraph-margin-bottom;
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-left: ($paragraph-margin-bottom * 2);
+    list-style: decimal outside;
+  }
+
+  ul:not(.nav):not(.list-unstyled) {
+    margin-top: $paragraph-margin-bottom;
+    margin-right: ($paragraph-margin-bottom * 2);
+    margin-left: ($paragraph-margin-bottom * 2);
+    list-style: disc outside;
+
+    ul {
+      margin-top: ($paragraph-margin-bottom / 2);
+      margin-bottom: ($paragraph-margin-bottom / 2);
+      list-style-type: circle;
+    }
+  }
+
+  ul:not(.list-group):not(.nav),
+  ol:not(.list-group) {
+
+    li + li {
+      margin-top: ($paragraph-margin-bottom / 4); // 2
+    }
+  }
+
+  a:not(.btn):not(.badge):not(.dropdown-item) {
+    font-weight: $font-weight-bold;
+    border-bottom: $border-width solid $link-border-color; // 3
+
+    @include hover-focus-active {
+      border-bottom-color: $link-hover-border-color;
+    }
+
+    &:active {
+      background-color: $link-active-bg; // 4
+    }
+
+    &.is-inverse { // 5
+      border-bottom: $border-width solid $link-inverse-border-color;
+
+      @include hover-focus {
+        border-bottom-color: $link-inverse-hover-border-color;
+      }
+    }
+  }
+}
