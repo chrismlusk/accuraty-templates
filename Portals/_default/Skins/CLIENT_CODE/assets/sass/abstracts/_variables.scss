@@ -247,6 +247,12 @@ $dnn-control-bar-height:  53px;
 // No prefix because this is only used directly in your custom stylesheets.
 $dnn-persona-bar-width:   80px;
 
+// The skin path.
+$dnn-skin-path: "/Portals/_default/skins/{CLIENT_CODE}";
+
+// The path to the `assets/images/` folder for this skin.
+$dnn-skin-path-to-images: "/Portals/_default/Skins/{CLIENT_CODE}/assets/images/";
+
 
 
 
