@@ -159,7 +159,7 @@
     list-style: decimal outside;
   }
 
-  ul:not(.nav):not(.list-unstyled) {
+  ul:not(.nav):not(.list-unstyled):not(.pagination) {
     margin-top: $paragraph-margin-bottom;
     margin-right: ($paragraph-margin-bottom * 2);
     margin-left: ($paragraph-margin-bottom * 2);
@@ -172,7 +172,7 @@
     }
   }
 
-  ul:not(.list-group):not(.nav),
+  ul:not(.list-group):not(.nav):not(.pagination),
   ol:not(.list-group) {
 
     li + li {
@@ -180,7 +180,7 @@
     }
   }
 
-  a:not(.btn):not(.badge):not(.dropdown-item) {
+  a:not(.alert-link):not(.btn):not(.badge):not(.dropdown-item):not(.page-link) {
     font-weight: $font-weight-bold;
     border-bottom: $border-width solid $link-border-color; // 3
 
