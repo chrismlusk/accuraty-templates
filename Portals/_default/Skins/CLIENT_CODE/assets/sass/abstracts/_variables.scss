@@ -2,7 +2,7 @@
 //
 //   Variables
 //
-//   Updated: 10/21/2018 by Chris Lusk
+//   Updated: 10/23/2018 by Chris Lusk
 //
 //   For convenience, you can search for a section by preceeding the title
 //   with a pound sign and a space. Example: `# Colors`
@@ -468,15 +468,25 @@ $link-hover-color:                darken($link-color, 15%);
 $link-hover-decoration:           none;
 
 // Custom variables added by Accuraty
+$link-border-width:               1px;
 $link-border-color:               lighten($link-color, 42.5%);
+$link-hover-bg:                   transparent;
 $link-hover-border-color:         transparent;
+$link-active-color:               $link-hover-color;
 $link-active-bg:                  rgba($gray-800, .07);
+$link-active-border-color:        transparent;
 
 // Custom variables added by Accuraty
 $link-inverse-color:              $white;
+$link-inverse-bg:                 transparent;
+$link-inverse-border-width:       $link-border-width;
 $link-inverse-border-color:       rgba($white, .5);
 $link-inverse-hover-color:        rgba($white, .6);
+$link-inverse-hover-bg:           transparent;
 $link-inverse-hover-border-color: transparent;
+$link-inverse-active-color:       $link-inverse-hover-color;
+$link-inverse-active-bg:          transparent;
+$link-inverse-active-border-color: transparent;
 
 // Custom variables added by Accuraty
 $link-focus-outline-width:        5px;

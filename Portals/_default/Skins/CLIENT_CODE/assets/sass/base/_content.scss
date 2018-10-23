@@ -182,21 +182,34 @@
 
   a:not(.alert-link):not(.btn):not(.badge):not(.dropdown-item):not(.page-link) {
     font-weight: $font-weight-bold;
-    border-bottom: $border-width solid $link-border-color; // 3
+    border-bottom: $link-border-width solid $link-border-color; // 3
 
-    @include hover-focus-active {
+    @include hover-focus {
+      background-color: $link-hover-bg;
       border-bottom-color: $link-hover-border-color;
     }
 
     &:active {
+      color: $link-active-color;
       background-color: $link-active-bg; // 4
+      border-bottom-color: $link-active-border-color;
     }
 
     &.is-inverse { // 5
-      border-bottom: $border-width solid $link-inverse-border-color;
+      color: $link-inverse-color;
+      background-color: $link-inverse-bg;
+      border-bottom: $link-inverse-border-width solid $link-inverse-border-color;
 
       @include hover-focus {
+        color: $link-inverse-hover-color;
+        background-color: $link-inverse-hover-bg;
         border-bottom-color: $link-inverse-hover-border-color;
+      }
+
+      &:active {
+        color: $link-inverse-active-color;
+        background-color: $link-inverse-active-bg;
+        border-bottom-color: $link-inverse-active-border-color;
       }
     }
   }
