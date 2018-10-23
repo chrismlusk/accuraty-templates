@@ -7,13 +7,15 @@
 //  `_carousel.scss` partial. The one exception is the base class: `.carousel`.
 //
 //  If you are going to use Flickity, it should replace Bootstrap's carousel,
-//  so be sure to update the `@import` statement in `main.scss`.
+//  so be sure to update the `@import` statement in `Skin.scss`.
 //
 //  Library: Flickity
-//  Version: 2.0.1
+//  Version: 2.1.2
 //  Author: Metafizzy
 //  Author URI: https://flickity.metafizzy.co
-//  Updated: 1/18/2018 by Chris Lusk
+//
+//  This stylesheet was updated on 10/23/2018 by Chris Lusk
+//
 //  --
 //
 //  [Table of Contents]
@@ -45,29 +47,25 @@
 // These classes and the markup are only added when Flickity is initialized.
 //   * Controls (http://flickity.metafizzy.co/style.html#previous-next-buttons)
 //   * Indicators (http://flickity.metafizzy.co/style.html#page-dots)
-//
-// 1. The default `:active` style has opacity, so override that.
 // ----------------------------------------------------------------------------
 
 // Controls
 
-.flickity-prev-next-button {
-  background: rgba($white, .9);
+.flickity-button {
+  color: $body-color;
+  background-color: rgba($white, .75);
   transition: background $transition-speed $transition-easing;
 
-  @include hover-focus-active {
-    background: $white;
-    opacity: 1; // 1
-
-    .arrow {
-      fill: rgba($body-color, 1);
-    }
+  @include hover-focus {
+    background-color: $white;
   }
+}
 
-  .arrow {
-    transition: fill $transition-speed $transition-easing;
-    fill: rgba($body-color, .8);
-  }
+.flickity-button-icon {
+  fill: $body-color;
+}
+
+.flickity-prev-next-button {
 
   &.previous {
     left: 0;
@@ -81,9 +79,10 @@
 // Indicators
 
 .flickity-page-dots {
+  bottom: -1.25rem;
 
   .dot {
-    width: 0 75rem;
+    width: .75rem;
     height: .75rem;
     margin: 0 .5rem;
     background-color: $body-color;
