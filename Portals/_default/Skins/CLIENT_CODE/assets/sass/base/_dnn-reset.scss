@@ -6,8 +6,6 @@
 //  by using DNN and Bootstrap together. The purpose of this reset is to give
 //  us a clean(er) canvas to use Bootstrap without ugly hacks in the codebase.
 //
-//  Updated: 10/30/2018 by Chris Lusk
-//
 // ============================================================================
 
 
@@ -40,6 +38,7 @@
   white-space: normal;
 }
 
+#ControlBar_ControlPanel *,
 #ControlBar,
 #ControlBar::before,
 #ControlBar::after,
@@ -49,6 +48,7 @@
 #ControlBar a,
 #ControlBar a::before,
 #ControlBar a::after,
+.actionMenu *,
 .dnn_mact,
 .dnn_mact::before,
 .dnn_mact::after,
@@ -56,6 +56,16 @@
 .dnn_mact li::before,
 .dnn_mact li::after {
   box-sizing: content-box !important;
+}
+
+#ControlBar_ControlPanel .mark {
+  padding: 0;
+  background-color: transparent;
+}
+
+.ui-dialog {
+  font-family: Arial, sans-serif;
+  color: $black;
 }
 
 .dnnDropDownList .selected-item,
@@ -793,7 +803,10 @@ a.pinHelp {}
 
 .dnnCheckbox {
 
-  .mark {}
+  .mark {
+    padding: 0;
+    background: none;
+  }
 
   img {}
 }
