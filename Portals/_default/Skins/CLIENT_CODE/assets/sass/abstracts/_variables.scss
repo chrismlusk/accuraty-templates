@@ -40,6 +40,7 @@
 //      - Cards
 //      - Tooltips
 //      - Popovers
+//      - Toasts
 //      - Badges
 //      - Modals
 //      - Alerts
@@ -49,6 +50,7 @@
 //      - Figures
 //      - Breadcrumbs
 //      - Carousel
+//      - Spinners
 //      - Close
 //      - Code
 //      - Utilities
@@ -153,7 +155,7 @@ $youtube-primary:       #cd201f;
 // ----------------------------------------------------------------------------
 
 // stylelint-disable value-keyword-case
-$asl--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$asl--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $asl--font-family-serif: Georgia, "Times New Roman", Times, serif;
 $asl--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 // stylelint-enable value-keyword-case
@@ -275,7 +277,7 @@ $dnn-skin-path-to-images: "/Portals/_default/Skins/{CLIENT_CODE}/assets/images/"
 // # Color system
 // ==============
 //
-// Reference: vendors/bootstrap/_variables.scss:7
+// Reference: bootstrap/_variables.scss:6
 // ----------------------------------------------------------------------------
 
 $white:         $asl--white;
@@ -320,19 +322,19 @@ $cyan:          $asl--cyan;
 $colors: ();
 $colors: map-merge(
   (
-    "blue": $blue,
-    "indigo": $indigo,
-    "purple": $purple,
-    "pink": $pink,
-    "red": $red,
-    "orange": $orange,
-    "yellow": $yellow,
-    "green": $green,
-    "teal": $teal,
-    "cyan": $cyan,
-    "white": $white,
-    "gray": $gray-600,
-    "gray-dark": $gray-800
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
   ),
   $colors
 );
@@ -349,14 +351,14 @@ $dark:          $gray-800;
 $theme-colors: ();
 $theme-colors: map-merge(
   (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
   ),
   $theme-colors
 );
@@ -381,7 +383,7 @@ $yiq-text-light:            $white;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 //
-// Reference: vendors/bootstrap/_variables.scss:106
+// Reference: bootstrap/_variables.scss:105
 // ----------------------------------------------------------------------------
 
 $enable-caret:              true;
@@ -389,6 +391,7 @@ $enable-rounded:            true;   // predefined `border-radius`
 $enable-shadows:            false;  // predefined `box-shadow`
 $enable-gradients:          false;  // gradients via `background-image`
 $enable-transitions:        true;   // predefined transitions
+$enable-prefers-reduced-motion-media-query:   true;
 $enable-grid-classes:       true;   // generates classes for grid system
 $enable-print-styles:       true;   // sets up a print stylesheet
 $enable-validation-icons:   true;
@@ -403,7 +406,7 @@ $enable-validation-icons:   true;
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Add more entries to the `$spacers` map for more variation.
 //
-// Reference: vendors/bootstrap/_variables.scss:121
+// Reference: bootstrap/_variables.scss:121
 // ----------------------------------------------------------------------------
 
 $spacer: 1rem;
@@ -442,7 +445,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 //
-// Reference: vendors/bootstrap/_variables.scss:157
+// Reference: bootstrap/_variables.scss:157
 // ----------------------------------------------------------------------------
 
 $body-bg:                         $white;
@@ -457,13 +460,15 @@ $body-color:                      $gray-900;
 //
 // Style anchor elements.
 //
-// Reference: vendors/bootstrap/_variables.scss:165
+// Reference: bootstrap/_variables.scss:165
 // ----------------------------------------------------------------------------
 
 $link-color:                      $primary;
 $link-decoration:                 none;
 $link-hover-color:                darken($link-color, 15%);
 $link-hover-decoration:           none;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15%;
 
 // Custom variables added by Accuraty
 $link-border-width:               1px;
@@ -500,7 +505,7 @@ $link-focus-outline-color:        -webkit-focus-ring-color;
 //
 // Style `<p>` element.
 //
-// Reference: vendors/bootstrap/_variables.scss:175
+// Reference: bootstrap/_variables.scss:176
 // ----------------------------------------------------------------------------
 
 $paragraph-margin-bottom:         1em;
@@ -515,17 +520,22 @@ $paragraph-margin-bottom:         1em;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 //
-// Reference: vendors/bootstrap/_variables.scss:182
+// Reference: bootstrap/_variables.scss:183
 // ----------------------------------------------------------------------------
 
-$grid-breakpoints: (
-  xs:  0,
-  sm:  576px,
-  md:  768px,
-  lg:  992px,
-  xl:  1200px,
-  xxl: 1600px // custom size added by Accuraty
+$grid-breakpoints: ();
+$grid-breakpoints: map-merge(
+  (
+    xs:  0,
+    sm:  576px,
+    md:  768px,
+    lg:  992px,
+    xl:  1200px,
+    xxl: 1600px // custom size added by Accuraty
+  ),
+  $grid-breakpoints
 );
+
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
@@ -538,16 +548,21 @@ $grid-breakpoints: (
 //
 // Define the maximum width of `.container` for different screen sizes.
 //
-// Reference: vendors/bootstrap/_variables.scss:199
+// Reference: bootstrap/_variables.scss:205
 // ----------------------------------------------------------------------------
 
-$container-max-widths: (
-  sm:  540px,
-  md:  720px,
-  lg:  960px,
-  xl:  1140px,
-  xxl: 1520px // custom size added by Accuraty
+$container-max-widths: ();
+$container-max-widths: map-merge(
+  (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1520px // custom size added by Accuraty
+  ),
+  $container-max-widths
 );
+
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 
@@ -559,7 +574,7 @@ $container-max-widths: (
 //
 // Set the number of columns and specifiy the width of the gutters.
 //
-// Reference: vendors/bootstrap/_variables.scss:213
+// Reference: bootstrap/_variables.scss:224
 // ----------------------------------------------------------------------------
 
 $grid-columns:                $asl--grid-columns;
@@ -574,7 +589,7 @@ $grid-gutter-width:           $asl--grid-gutter-width;
 //
 // Define common padding and border radius sizes and more.
 //
-// Reference: vendors/bootstrap/_variables.scss:221
+// Reference: bootstrap/_variables.scss:232
 // ----------------------------------------------------------------------------
 
 $line-height-lg:              $asl--line-height-normal;
@@ -586,6 +601,8 @@ $border-color:                $asl--border-color;
 $border-radius:               $asl--border-radius;
 $border-radius-lg:            $asl--border-radius-lg;
 $border-radius-sm:            $asl--border-radius-sm;
+
+$rounded-pill:                50rem;
 
 $box-shadow-sm:               $asl--box-shadow-sm;
 $box-shadow:                  $asl--box-shadow;
@@ -607,6 +624,17 @@ $transition-base:             all $transition-speed $transition-easing;
 $transition-fade:             opacity 150ms linear;
 $transition-collapse:         height 350ms ease;
 
+$embed-responsive-aspect-ratios: ();
+$embed-responsive-aspect-ratios: join(
+  (
+    (21 9),
+    (16 9),
+    (3 4),
+    (1 1),
+  ),
+  $embed-responsive-aspect-ratios
+);
+
 
 
 
@@ -616,7 +644,7 @@ $transition-collapse:         height 350ms ease;
 //
 // Font, line-height, and color for body text, headings, and more.
 //
-// Reference: vendors/bootstrap/_variables.scss:249
+// Reference: bootstrap/_variables.scss:273
 // ----------------------------------------------------------------------------
 
 $font-family-sans-serif:      $asl--font-family-sans-serif;
@@ -713,35 +741,35 @@ $hr-margin-y:                 $spacer;
 //
 // Customizes `.table` component with basic values used with all variations.
 //
-// Reference: vendors/bootstrap/_variables.scss:324
+// Reference: bootstrap/_variables.scss:348
 // ----------------------------------------------------------------------------
 
-$table-cell-padding:            .75rem;
-$table-cell-padding-sm:         .3rem;
+$table-cell-padding:          .75rem;
+$table-cell-padding-sm:       .3rem;
 
-$table-bg:                      transparent;
-$table-accent-bg:               rgba($black, .05);
-$table-hover-bg:                rgba($black, .075);
-$table-active-bg:               $table-hover-bg;
+$table-bg:                    transparent;
+$table-accent-bg:             rgba($black, .05);
+$table-hover-bg:              rgba($black, .075);
+$table-active-bg:             $table-hover-bg;
 
-$table-border-width:            $border-width;
-$table-border-color:            $gray-300;
+$table-border-width:          $border-width;
+$table-border-color:          $gray-300;
 
-$table-head-bg:                 $gray-200;
-$table-head-color:              $gray-700;
+$table-head-bg:               $gray-200;
+$table-head-color:            $gray-700;
 
-$table-dark-bg:                 $gray-900;
-$table-dark-accent-bg:          rgba($white, .05);
-$table-dark-hover-bg:           rgba($white, .075);
-$table-dark-border-color:       lighten($gray-900, 7.5%);
-$table-dark-color:              $body-bg;
+$table-dark-bg:               $gray-900;
+$table-dark-accent-bg:        rgba($white, .05);
+$table-dark-hover-bg:         rgba($white, .075);
+$table-dark-border-color:     lighten($gray-900, 7.5%);
+$table-dark-color:            $white;
 
-$table-striped-order:           odd;
+$table-striped-order:         odd;
 
-$table-caption-color:           $text-muted;
+$table-caption-color:         $text-muted;
 
-$table-bg-level:                -9;
-$table-border-level:            -6;
+$table-bg-level:              -9;
+$table-border-level:          -6;
 
 
 
@@ -752,29 +780,29 @@ $table-border-level:            -6;
 //
 // Shared variables reassigned to `$input-` and `$btn-` specific variables.
 //
-// Reference: vendors/bootstrap/_variables.scss:356
+// Reference: bootstrap/_variables.scss:380
 // ----------------------------------------------------------------------------
 
-$input-btn-padding-y:           .375rem;
-$input-btn-padding-x:           .75rem;
-$input-btn-font-size:           $font-size-base;
-$input-btn-line-height:         $line-height-base;
+$input-btn-padding-y:         .375rem;
+$input-btn-padding-x:         .75rem;
+$input-btn-font-size:         $font-size-base;
+$input-btn-line-height:       $line-height-base;
 
-$input-btn-focus-width:         .2rem;
-$input-btn-focus-color:         rgba($component-active-bg, .25);
-$input-btn-focus-box-shadow:    0 0 0 $input-btn-focus-width $input-btn-focus-color;
+$input-btn-focus-width:       .2rem;
+$input-btn-focus-color:       rgba($component-active-bg, .25);
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color;
 
-$input-btn-padding-y-sm:        .25rem;
-$input-btn-padding-x-sm:        .5rem;
-$input-btn-font-size-sm:        $font-size-sm;
-$input-btn-line-height-sm:      $line-height-sm;
+$input-btn-padding-y-sm:      .25rem;
+$input-btn-padding-x-sm:      .5rem;
+$input-btn-font-size-sm:      $font-size-sm;
+$input-btn-line-height-sm:    $line-height-sm;
 
-$input-btn-padding-y-lg:        .5rem;
-$input-btn-padding-x-lg:        1rem;
-$input-btn-font-size-lg:        $font-size-lg;
-$input-btn-line-height-lg:      $line-height-lg;
+$input-btn-padding-y-lg:      .5rem;
+$input-btn-padding-x-lg:      1rem;
+$input-btn-font-size-lg:      $font-size-lg;
+$input-btn-line-height-lg:    $line-height-lg;
 
-$input-btn-border-width:        $border-width;
+$input-btn-border-width:      $border-width;
 
 
 
@@ -785,7 +813,7 @@ $input-btn-border-width:        $border-width;
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 //
-// Reference: vendors/bootstrap/_variables.scss:382
+// Reference: bootstrap/_variables.scss:406
 // ----------------------------------------------------------------------------
 
 $btn-padding-y:               $input-btn-padding-y;
@@ -830,7 +858,7 @@ $btn-transition:              color $transition-speed $transition-easing, backgr
 // # Forms
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:422
+// Reference: bootstrap/_variables.scss:446
 // ----------------------------------------------------------------------------
 
 $label-margin-bottom:                   .5rem;
@@ -894,6 +922,9 @@ $form-check-input-margin-x:             .25rem;
 $form-check-inline-margin-x:            .75rem;
 $form-check-inline-input-margin-x:      .3125rem;
 
+$form-grid-gutter-width:                10px;
+$form-group-margin-bottom:              1rem;
+
 $form-group-margin-bottom:              1rem;
 
 $input-group-addon-color:               $input-color;
@@ -907,12 +938,12 @@ $input-group-addon-border-color:        $input-border-color;
 // # Custom forms
 // ==============
 //
-// Reference: vendors/bootstrap/_variables.scss:491
+// Reference: bootstrap/_variables.scss:516
 // ----------------------------------------------------------------------------
 
 // $custom-forms-transition:               background-color $transition-speed $transition-easing, border-color $transition-speed $transition-easing, box-shadow $transition-speed $transition-easing;
 
-// $custom-control-gutter:                 1.5rem;
+// $custom-control-gutter:                 .5rem;
 // $custom-control-spacer-x:               1rem;
 
 // $custom-control-indicator-size:         1rem;
@@ -952,6 +983,10 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-radio-indicator-border-radius:          50%;
 // $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23");
 
+// $custom-switch-width:                           $custom-control-indicator-size * 1.75;
+// $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2;
+// $custom-switch-indicator-size:                  calc(#{$custom-control-indicator-size} - #{$custom-control-indicator-border-width * 4});
+
 // $custom-select-padding-y:           $input-btn-padding-y;
 // $custom-select-padding-x:           $input-btn-padding-x;
 // $custom-select-height:              $input-height;
@@ -966,6 +1001,10 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-select-indicator-color:     $gray-800;
 // $custom-select-indicator:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"), "#", "%23");
 // $custom-select-background:          $custom-select-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size; // Used so we can have multiple background elements (e.g., arrow and feedback icon)
+
+// $custom-select-feedback-icon-padding-right: $input-height-inner * 3 / 4 + $custom-select-padding-x + $custom-select-indicator-padding;
+// $custom-select-feedback-icon-position:      center right ($custom-select-padding-x + $custom-select-indicator-padding);
+// $custom-select-feedback-icon-size:          ($input-height-inner / 2) ($input-height-inner / 2);
 
 // $custom-select-border-width:        $input-border-width;
 // $custom-select-border-color:        $input-border-color;
@@ -1000,8 +1039,7 @@ $input-group-addon-border-color:        $input-border-color;
 // $custom-range-thumb-border-radius:           1rem;
 // $custom-range-thumb-box-shadow:              0 .1rem .25rem rgba($black, .1);
 // $custom-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow;
-// // For focus box shadow issue in IE/Edge
-// $custom-range-thumb-focus-box-shadow-width:  $input-focus-width;
+// $custom-range-thumb-focus-box-shadow-width:  $input-focus-width; // For focus box shadow issue in IE/Edge
 // $custom-range-thumb-active-bg:               lighten($component-active-bg, 35%);
 // $custom-range-thumb-disabled-bg:             $gray-500;
 
@@ -1034,7 +1072,7 @@ $input-group-addon-border-color:        $input-border-color;
 // # Form validation
 // =================
 //
-// Reference: vendors/bootstrap/_variables.scss:608
+// Reference: bootstrap/_variables.scss:641
 // ----------------------------------------------------------------------------
 
 $form-feedback-margin-top:          $form-text-margin-top;
@@ -1043,9 +1081,9 @@ $form-feedback-valid-color:         $success;
 $form-feedback-invalid-color:       $danger;
 
 $form-feedback-icon-valid-color:    $form-feedback-valid-color;
-$form-feedback-icon-valid:          str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E"), "#", "%23");
+$form-feedback-icon-valid:          str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e"), "#", "%23");
 $form-feedback-icon-invalid-color:  $form-feedback-invalid-color;
-$form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E"), "#", "%23");
+$form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E"), "#", "%23");
 
 
 
@@ -1056,7 +1094,7 @@ $form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml;charset=
 //
 // Dropdown menu container and contents.
 //
-// Reference: vendors/bootstrap/_variables.scss:621
+// Reference: bootstrap/_variables.scss:654
 // ----------------------------------------------------------------------------
 
 $dropdown-min-width:                10rem;
@@ -1066,6 +1104,7 @@ $dropdown-bg:                       $white;
 $dropdown-border-color:             rgba($black, .15);
 $dropdown-border-radius:            $border-radius;
 $dropdown-border-width:             $border-width;
+$dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width});
 $dropdown-divider-bg:               $gray-200;
 $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175);
 
@@ -1092,16 +1131,16 @@ $dropdown-header-color:             $gray-600;
 //
 // Warning! Avoid customizing these values. They are designed to work together.
 //
-// Reference: vendors/bootstrap/_variables.scss:650
+// Reference: bootstrap/_variables.scss:684
 // ----------------------------------------------------------------------------
 
-// $zindex-dropdown:           1000;
-// $zindex-sticky:             1020;
-// $zindex-fixed:              1030;
-// $zindex-modal-backdrop:     1040;
-// $zindex-modal:              1050;
-// $zindex-popover:            1060;
-// $zindex-tooltip:            1070;
+// $zindex-dropdown:                   1000;
+// $zindex-sticky:                     1020;
+// $zindex-fixed:                      1030;
+// $zindex-modal-backdrop:             1040;
+// $zindex-modal:                      1050;
+// $zindex-popover:                    1060;
+// $zindex-tooltip:                    1070;
 
 
 
@@ -1110,7 +1149,7 @@ $dropdown-header-color:             $gray-600;
 // # Navs
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:664
+// Reference: bootstrap/_variables.scss:698
 // ----------------------------------------------------------------------------
 
 $nav-link-padding-y:                .5rem;
@@ -1130,7 +1169,7 @@ $nav-pills-link-active-color:       $component-active-color;
 $nav-pills-link-active-bg:          $component-active-bg;
 
 $nav-divider-color:                 $gray-200;
-$nav-divider-margin-y:              ($spacer / 2);
+$nav-divider-margin-y:              $spacer / 2;
 
 
 
@@ -1139,7 +1178,7 @@ $nav-divider-margin-y:              ($spacer / 2);
 // # Navbar
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:686
+// Reference: bootstrap/_variables.scss:720
 // ----------------------------------------------------------------------------
 
 $navbar-padding-y:                  ($spacer / 2);
@@ -1174,6 +1213,11 @@ $navbar-light-disabled-color:       rgba($black, .3);
 $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23");
 $navbar-light-toggler-border-color: rgba($black, .1);
 
+$navbar-light-brand-color:          $navbar-light-active-color;
+$navbar-light-brand-hover-color:    $navbar-light-active-color;
+$navbar-dark-brand-color:           $navbar-dark-active-color;
+$navbar-dark-brand-hover-color:     $navbar-dark-active-color;
+
 // Custom variables added by Accuraty
 $navbar-height-sm:                  $asl--navbar-height-sm;
 $navbar-height-md:                  $asl--navbar-height-md;
@@ -1185,7 +1229,7 @@ $navbar-height-md:                  $asl--navbar-height-md;
 // # Pagination
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:724
+// Reference: bootstrap/_variables.scss:758
 // ----------------------------------------------------------------------------
 
 $pagination-padding-y:              .5rem;
@@ -1223,7 +1267,7 @@ $pagination-disabled-border-color:  $gray-300;
 // # Jumbotron
 // ===========
 //
-// Reference: vendors/bootstrap/_variables.scss:755
+// Reference: bootstrap/_variables.scss:789
 // ----------------------------------------------------------------------------
 
 $jumbotron-padding:                 2rem;
@@ -1236,7 +1280,7 @@ $jumbotron-bg:                      $gray-200;
 // # Cards
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:761
+// Reference: bootstrap/_variables.scss:795
 // ----------------------------------------------------------------------------
 
 $card-spacer-y:                     .75rem;
@@ -1246,12 +1290,12 @@ $card-border-radius:                $border-radius;
 $card-border-color:                 rgba($black, .125);
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width});
 $card-cap-bg:                       rgba($black, .03);
-$card-cap-color:                    $body-color;
+$card-cap-color:                    inherit;
 $card-bg:                           $white;
 
 $card-img-overlay-padding:          1.25rem;
 
-$card-group-margin:                 ($grid-gutter-width / 2);
+$card-group-margin:                 $grid-gutter-width / 2;
 $card-deck-margin:                  $card-group-margin;
 
 $card-columns-count:                3;
@@ -1265,7 +1309,7 @@ $card-columns-margin:               $card-spacer-y;
 // # Tooltips
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:783
+// Reference: bootstrap/_variables.scss:817
 // ----------------------------------------------------------------------------
 
 $tooltip-font-size:                 $font-size-sm;
@@ -1297,7 +1341,7 @@ $form-feedback-tooltip-border-radius: $tooltip-border-radius;
 // # Popovers
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:808
+// Reference: bootstrap/_variables.scss:842
 // ----------------------------------------------------------------------------
 
 $popover-font-size:                 $font-size-sm;
@@ -1327,10 +1371,34 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05);
 
 
 //
+// # Toasts
+// ========
+//
+// Reference: bootstrap/_variables.scss:868
+// ----------------------------------------------------------------------------
+
+$toast-max-width:                   350px;
+$toast-padding-x:                   .75rem;
+$toast-padding-y:                   .25rem;
+$toast-font-size:                   .875rem;
+$toast-background-color:            rgba($white, .85);
+$toast-border-width:                1px;
+$toast-border-color:                rgba(0, 0, 0, .1);
+$toast-border-radius:               .25rem;
+$toast-box-shadow:                  0 .25rem .75rem rgba($black, .1);
+
+$toast-header-color:                $gray-600;
+$toast-header-background-color:     rgba($white, .85);
+$toast-header-border-color:         rgba(0, 0, 0, .05);
+
+
+
+
+//
 // # Badges
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:834
+// Reference: bootstrap/_variables.scss:884
 // ----------------------------------------------------------------------------
 
 $badge-font-size:                   75%;
@@ -1352,7 +1420,7 @@ $badge-pill-border-radius:          10rem;
 // # Modals
 // ========
 //
-// Reference: vendors/bootstrap/_variables.scss:848
+// Reference: bootstrap/_variables.scss:898
 // ----------------------------------------------------------------------------
 
 $modal-inner-padding:               1rem; // applied to modal body
@@ -1397,7 +1465,7 @@ $modal-transition:                  transform .3s ease-out;
 //
 // Define alert colors, border radius, and padding.
 //
-// Reference: vendors/bootstrap/_variables.scss:885
+// Reference: bootstrap/_variables.scss:935
 // ----------------------------------------------------------------------------
 
 $alert-padding-y:                   .75rem;
@@ -1418,7 +1486,7 @@ $alert-color-level:                 6;
 // # Progress bars
 // ===============
 //
-// Reference: vendors/bootstrap/_variables.scss:901
+// Reference: bootstrap/_variables.scss:951
 // ----------------------------------------------------------------------------
 
 $progress-height:                   1rem;
@@ -1438,7 +1506,7 @@ $progress-bar-transition:           width 580ms ease;
 // # List group
 // ============
 //
-// Reference: vendors/bootstrap/_variables.scss:914
+// Reference: bootstrap/_variables.scss:964
 // ----------------------------------------------------------------------------
 
 $list-group-bg:                     $white;
@@ -1470,7 +1538,7 @@ $list-group-action-active-bg:       $gray-200;
 // # Image thumbnails
 // ==================
 //
-// Reference: vendors/bootstrap/_variables.scss:939
+// Reference: bootstrap/_variables.scss:989
 // ----------------------------------------------------------------------------
 
 $thumbnail-padding:                 .25rem;
@@ -1487,7 +1555,7 @@ $thumbnail-box-shadow:              0 1px 2px rgba($black, .075);
 // # Figures
 // =========
 //
-// Reference: vendors/bootstrap/_variables.scss:949
+// Reference: bootstrap/_variables.scss:999
 // ----------------------------------------------------------------------------
 
 $figure-caption-font-size:          90%;
@@ -1500,7 +1568,7 @@ $figure-caption-color:              $gray-600;
 // # Breadcrumbs
 // =============
 //
-// Reference: vendors/bootstrap/_variables.scss:955
+// Reference: bootstrap/_variables.scss:1005
 // ----------------------------------------------------------------------------
 
 $breadcrumb-padding-y:              .75rem;
@@ -1527,7 +1595,7 @@ $breadcrumb-hover-color:            $body-color;
 // # Carousel
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:971
+// Reference: bootstrap/_variables.scss:1021
 // ----------------------------------------------------------------------------
 
 $carousel-control-color:             $white;
@@ -1551,7 +1619,26 @@ $carousel-control-icon-width:        20px;
 $carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e"), "#", "%23");
 $carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e"), "#", "%23");
 
-$carousel-transition:               transform 580ms ease; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+$carousel-transition-duration:       .6s;
+$carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+
+
+
+
+//
+// # Spinners
+// ==========
+//
+// Reference: bootstrap/_variables.scss:1048
+// ----------------------------------------------------------------------------
+
+$spinner-width:                     2rem;
+$spinner-height:                    $spinner-width;
+$spinner-border-width:              .25em;
+
+$spinner-width-sm:                  1rem;
+$spinner-height-sm:                 $spinner-width-sm;
+$spinner-border-width-sm:           .2em;
 
 
 
@@ -1560,7 +1647,7 @@ $carousel-transition:               transform 580ms ease; // Define transform tr
 // # Close
 // =======
 //
-// Reference: vendors/bootstrap/_variables.scss:997
+// Reference: bootstrap/_variables.scss:1059
 // ----------------------------------------------------------------------------
 
 $close-font-size:                   $font-size-base * 1.5;
@@ -1575,7 +1662,7 @@ $close-text-shadow:                 0 1px 0 $white;
 // # Code
 // ======
 //
-// Reference: vendors/bootstrap/_variables.scss:1005
+// Reference: bootstrap/_variables.scss:1067
 // ----------------------------------------------------------------------------
 
 $code-font-size:                    87.5%;
@@ -1597,7 +1684,7 @@ $pre-scrollable-max-height:         340px;
 // # Utilities
 // ===========
 //
-// Reference: vendors/bootstrap/_variables.scss:1020
+// Reference: bootstrap/_variables.scss:1082
 // ----------------------------------------------------------------------------
 
 $overflows: auto, hidden;
@@ -1610,7 +1697,7 @@ $positions: static, relative, absolute, fixed, sticky;
 // # Printing
 // ==========
 //
-// Reference: vendors/bootstrap/_variables.scss:1026
+// Reference: bootstrap/_variables.scss:1088
 // ----------------------------------------------------------------------------
 
 $print-page-size:                   a3;
