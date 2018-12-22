@@ -19,9 +19,9 @@
       <div class="col-md-6">
         <nav class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
           <link itemprop="url" href="<%=PortalSettings.PortalAlias.HTTPAlias%>">
-          <a class="nav-link" href="#" target="_blank" itemprop="sameAs">Facebook</a>
-          <a class="nav-link" href="#" target="_blank" itemprop="sameAs">Twitter</a>
-          <a class="nav-link" href="#" target="_blank" itemprop="sameAs">YouTube</a>
+          <a class="nav-link" href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs">Facebook</a>
+          <a class="nav-link" href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs">Twitter</a>
+          <a class="nav-link" href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs">YouTube</a>
         </nav>
       </div>
     </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="col-md-6">
         <p class="footer-credits  text-center text-md-right">
-          Design, development, and hosting by <a href="http://accuraty.com" target="_blank">Accuraty Solutions</a>.
+          Design, development, and hosting by <a href="http://accuraty.com" target="_blank" rel="nofollow noopener noreferrer">Accuraty Solutions</a>.
         </p>
       </div>
     </div>
