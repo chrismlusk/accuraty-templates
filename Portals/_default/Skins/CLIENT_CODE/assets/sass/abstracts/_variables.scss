@@ -79,6 +79,15 @@
 
 
 //
+// # Client code
+// =============
+
+$asl--client-code: "CLIENT_CODE";
+
+
+
+
+//
 // # Colors
 // ========
 //
@@ -248,10 +257,10 @@ $dnn-control-bar-height:  53px;
 $dnn-persona-bar-width:   80px;
 
 // The skin path.
-$dnn-skin-path: "/Portals/_default/skins/{CLIENT_CODE}";
+$dnn-skin-path: "/Portals/_default/skins/#{$asl--client-code}";
 
 // The path to the `assets/images/` folder for this skin.
-$dnn-skin-path-to-images: "/Portals/_default/Skins/{CLIENT_CODE}/assets/images/";
+$dnn-image-path: "/Portals/_default/Skins/#{$asl--client-code}/assets/images";
 
 
 
