@@ -1,6 +1,8 @@
 <header class="header  fixed-to-top">
   <nav class="navbar navbar-expand-md navbar-light">
-    <a class="navbar-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___WEBSITE_NAME___xxx__">LOGO</a>
+    <a class="navbar-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___WEBSITE_NAME___xxx__">
+      <!--#include file="_logo.ascx"-->
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

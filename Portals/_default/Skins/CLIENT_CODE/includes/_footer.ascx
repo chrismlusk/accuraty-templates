@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-md-6">
 
-        <a class="footer-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>">{SITE_BRAND}</a>
+        <a class="footer-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___WEBSITE_NAME___xxx__">
+          <!--#include file="_logo.ascx"-->
+        </a>
 
         <address class="footer-address" itemscope itemtype="http://schema.org/PostalAddress">
           <span itemprop="name" class="sr-only">{CLIENT_NAME}</span><br>
