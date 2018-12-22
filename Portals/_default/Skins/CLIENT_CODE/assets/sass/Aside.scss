@@ -1,0 +1,44 @@
+// ============================================================================
+//
+//  Separate stylesheet for the `Aside.ascx` container.
+//
+//  This will be compiled as `Aside.css` into `/Containers/_CLIENT_CODE_`.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Mandatory imports
+//  - Wrapper and base class
+//  -
+//
+// ============================================================================
+
+
+
+
+//
+// Mandatory imports
+// =================
+//
+// 1. Core Bootstrap functions.
+// 2. Custom variables/mixins.
+// 3. Default Bootstrap variables.
+// ----------------------------------------------------------------------------
+
+@import "../../node_modules/bootstrap/scss/functions";  // 1
+@import "../../node_modules/bootstrap/scss/mixins";     // 1
+@import "abstracts/variables";                          // 2
+@import "abstracts/mixins";                             // 2
+@import "../../node_modules/bootstrap/scss/variables";  // 3
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.aside {
+  position: relative;
+}

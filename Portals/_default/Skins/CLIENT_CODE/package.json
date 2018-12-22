@@ -10,6 +10,7 @@
     "compile:Skin": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/Skin.scss ./Skin.css",
     "compile:Home": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/Home.scss ./Home.css",
     "compile:Manage": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/Manage.scss ./Manage.css",
+    "compile:Aside": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/Aside.scss ../../Containers/$npm_package_name/Aside.css",
     "css-prefix": "npm-run-all --parallel prefix:*",
     "prefix:assets": "postcss --config postcss.config.js \"./assets/css/*.css\" --base \"./assets/css/\" --dir \"./assets/css/\"",
     "prefix:Skin": "postcss --config postcss.config.js \"./*.css\" --base \"./\" --dir \"./\"",
