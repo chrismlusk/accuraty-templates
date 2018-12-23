@@ -87,27 +87,31 @@
   @include clearfix;
 }
 
-// THIS IS A HACK!
-// After DNN 9.3, this will no longer be necessary.
-// This makes Pane names visible in Edit mode.
-// https://github.com/dnnsoftware/Dnn.EditBar/issues/25
-.dnnEditState .dnnModuleManager::before {
-  position: absolute;
-    top: .5rem;
-    left: .5rem;
-  z-index: 1;
-  display: inline-block;
-  padding: $badge-pill-padding-x $badge-pill-padding-x;
-  font-size: $badge-font-size;
-  font-weight: $badge-font-weight;
-  line-height: 1;
-  color: $white;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  content: attr(data-name);
-  background-color: $gray-600;
-  @include border-radius($badge-pill-border-radius);
+.dnnEditState .dnnModuleManager {
+  width: 100%;
+
+  // THIS IS A HACK!
+  // After DNN 9.3, this will no longer be necessary.
+  // This makes Pane names visible in Edit mode.
+  // https://github.com/dnnsoftware/Dnn.EditBar/issues/25
+  &::before {
+    position: absolute;
+      top: .5rem;
+      left: .5rem;
+    z-index: 1;
+    display: inline-block;
+    padding: $badge-pill-padding-x $badge-pill-padding-x;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    line-height: 1;
+    color: $white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    content: attr(data-name);
+    background-color: $gray-600;
+    @include border-radius($badge-pill-border-radius);
+  }
 }
 
 
