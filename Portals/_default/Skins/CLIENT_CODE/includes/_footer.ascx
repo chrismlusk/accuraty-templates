@@ -43,3 +43,5 @@
     </div>
   </section>
 </footer>
+
+<!--#include file="__debug.ascx"-->
