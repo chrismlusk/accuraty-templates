@@ -69,5 +69,5 @@ Other vendor scripts and custom JS come next.
 ========================================================================== --%>
 <dnn:JQUERY runat="server" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="101" />
-<dnn:DnnJsInclude runat="server" FilePath="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
+<dnn:DnnJsInclude runat="server" FilePath="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
 <dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="105" />
