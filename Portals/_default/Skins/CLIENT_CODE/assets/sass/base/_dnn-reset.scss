@@ -25,7 +25,7 @@
   }
 }
 
-.DNNEmptyPane {
+body:not(.dnnEditState) .DNNEmptyPane {
   display: none;
 }
 
@@ -856,3 +856,7 @@ div.dnnTagsInput {}
 //## DNN auto complete
 
 .dn_acResults {}
+
+.dnnPlaceholder{
+  color: $gray-600;
+}
