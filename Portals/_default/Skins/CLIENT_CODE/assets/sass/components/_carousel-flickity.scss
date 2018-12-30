@@ -62,10 +62,21 @@
 }
 
 .flickity-button-icon {
-  fill: $body-color;
+  fill: currentColor;
 }
 
 .flickity-prev-next-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: .5rem;
+
+  .flickity-button-icon {
+    position: initial;
+      top: auto;
+      left: auto;
+    width: auto;
+    height: auto;
+  }
 
   &.previous {
     left: 0;
