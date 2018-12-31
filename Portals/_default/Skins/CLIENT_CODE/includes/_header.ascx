@@ -1,6 +1,6 @@
 <header class="header  fixed-to-top">
   <nav class="navbar navbar-expand-md navbar-light">
-    <a class="navbar-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___WEBSITE_NAME___xxx__">
+    <a class="navbar-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___CLIENT_NAME___xxx__">
       <!--#include file="_logo.ascx"-->
     </a>
 
