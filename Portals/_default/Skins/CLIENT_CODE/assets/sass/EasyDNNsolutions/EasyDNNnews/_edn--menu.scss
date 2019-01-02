@@ -1,0 +1,52 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//  - Title
+//  - Nav
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+
+.EDN__menu {}
+
+
+
+
+//
+// Title
+// =====
+
+.EDN__menu__title {}
+
+
+
+
+//
+// Nav
+// ===
+
+.EDN__menu .nav {}
+
+.EDN__menu .nav-item {
+
+  &.active {
+
+    .badge {
+      background-color: darken($primary, 10%) !important;
+    }
+  }
+}
+
+.EDN__menu .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

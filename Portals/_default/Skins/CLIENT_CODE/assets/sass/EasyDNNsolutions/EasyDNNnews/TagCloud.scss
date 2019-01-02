@@ -1,0 +1,12 @@
+// ============================================================================
+//
+//  The `.eds_news_*` and `.eds_subCollection_*` selectors are necessary for
+//  the EasyDNNnews layout. We have no control over these in the markup.
+//
+//  Place all import statements **inside** the class below.
+//
+// ============================================================================
+
+#{$EDN_SUB}_tagCloud {
+  position: relative;
+}

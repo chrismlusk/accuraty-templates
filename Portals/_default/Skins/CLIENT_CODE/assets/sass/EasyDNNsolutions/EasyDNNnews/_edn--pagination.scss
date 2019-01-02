@@ -1,0 +1,82 @@
+// ============================================================================
+//
+//  Heads up!
+//
+//  We don't control the markup that's output here, so the classes and HTML
+//  structure below is based on the EasyDNNnews template.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//  - Page link
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+
+.article_pager {
+  display: flex;
+  margin-top: 1rem;
+  @include list-unstyled();
+  @include border-radius();
+}
+
+
+
+
+//
+// Page link
+// =========
+
+.article_pager .page {
+  position: relative;
+  display: block;
+  padding: $pagination-padding-y $pagination-padding-x;
+  margin-left: -$pagination-border-width;
+  line-height: $pagination-line-height;
+  color: $pagination-color;
+  background-color: $pagination-bg;
+  border: $pagination-border-width solid $pagination-border-color;
+
+  &:hover {
+    z-index: 2;
+    color: $pagination-hover-color;
+    text-decoration: none;
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
+  }
+
+  &:focus {
+    z-index: 2;
+    outline: $pagination-focus-outline;
+    box-shadow: $pagination-focus-box-shadow;
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .page-link elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &.active {
+    z-index: 1;
+    color: $pagination-active-color;
+    background-color: $pagination-active-bg;
+    border-color: $pagination-active-border-color;
+  }
+
+  &.disabled {
+    color: $pagination-disabled-color;
+    pointer-events: none;
+    // Opinionated: remove the "hand" cursor set previously for .page-link
+    cursor: auto;
+    background-color: $pagination-disabled-bg;
+    border-color: $pagination-disabled-border-color;
+  }
+}

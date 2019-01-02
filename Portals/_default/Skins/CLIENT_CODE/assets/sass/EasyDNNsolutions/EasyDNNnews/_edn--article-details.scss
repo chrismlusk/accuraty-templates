@@ -1,0 +1,66 @@
+/* stylelint-disable no-duplicate-selectors */
+
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//  - Typography
+//  - Sections
+//     - Header
+//     - Body
+//     - Aside
+//     - Footer
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+//
+// Modifications and rules for elements inside an article in list view.
+//
+// 1. The article modifier must wrap around all other styles.
+// ----------------------------------------------------------------------------
+
+.EDN__article.is-details { // 1
+
+
+
+
+//
+// Typography
+// ==========
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__article__title {}
+
+.EDN__article__subtitle {}
+
+
+
+
+//
+// Sections
+// ========
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__article__header {}
+
+.EDN__article__body {}
+
+.EDN__article__aside {}
+
+.EDN__article__footer {}
+
+
+
+
+} // Important! This must remain at the very end of the file.

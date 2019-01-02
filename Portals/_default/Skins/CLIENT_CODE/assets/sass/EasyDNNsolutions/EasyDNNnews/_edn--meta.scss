@@ -1,0 +1,17 @@
+//
+// Meta
+// ====
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__meta {
+  display: flex;
+  font-size: $font-size-sm;
+
+  & > span + span::before {
+    margin: 0 .5rem;
+    color: $gray-600;
+    content: "|";
+  }
+}

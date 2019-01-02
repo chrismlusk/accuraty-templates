@@ -1,0 +1,55 @@
+// ============================================================================
+//
+//  Separate stylesheet for EasyDNNnews template `TPTK`.
+//
+//  This compiles into `/DesktopModules/EasyDNNnews/Templates/_default/TPTK`.
+//
+//  --
+//
+//  Everything within `.eds_subCollection_*` is custom. The naming convention
+//  begins with "EDN" and divide the prefix and component with "__" (double
+//  underscore). A selector name with multiple words uses a single "-" (dash).
+//  Modifiers are separate classes using the "is-*" or "has-*" format.
+//
+//  For example, articles are given the `.EDN__article` class. Articles might
+//  appear in a list or in a grid, so these selectors would be written as
+//  `.EDN__article.is-list` or `.EDN__article.is-grid` using these rules.
+//
+// ============================================================================
+
+
+
+
+//
+// Mandatory imports
+// =================
+//
+// 1. Core Bootstrap functions.
+// 2. Custom variables/mixins.
+// 3. Default Bootstrap variables.
+// ----------------------------------------------------------------------------
+
+@import "../../node_modules/bootstrap/scss/functions";  // 1
+@import "../../node_modules/bootstrap/scss/mixins";     // 1
+@import "abstracts/variables";                          // 2
+@import "abstracts/mixins";                             // 2
+@import "../../node_modules/bootstrap/scss/variables";  // 3
+
+
+
+
+//
+// EasyDNNnews imports
+// ===================
+
+$EDN_BASE: ".eds_news_#{$asl--client-code}";
+$EDN_SUB: "#{$EDN_BASE}.eds_subCollection";
+
+@import "EasyDNNsolutions/EasyDNNnews/Base";
+@import "EasyDNNsolutions/EasyDNNnews/News";
+@import "EasyDNNsolutions/EasyDNNnews/CategoryMenu";
+@import "EasyDNNsolutions/EasyDNNnews/Calendar";
+@import "EasyDNNsolutions/EasyDNNnews/Search";
+@import "EasyDNNsolutions/EasyDNNnews/ContentBlock";
+@import "EasyDNNsolutions/EasyDNNnews/RecentComments";
+@import "EasyDNNsolutions/EasyDNNnews/TagCloud";

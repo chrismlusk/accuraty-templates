@@ -1,0 +1,50 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//  - Image
+//  - Video
+//  - Caption
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+
+.EDN__media {}
+
+
+
+
+//
+// Image
+// =====
+
+.EDN__media img {
+  width: 100%;
+}
+
+
+
+
+//
+// Video
+// =====
+
+.EDN__media video {}
+
+
+
+
+//
+// Caption
+// =======
+
+.EDN__media figcaption {
+  font-size: $font-size-sm;
+}
