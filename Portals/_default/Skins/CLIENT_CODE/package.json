@@ -38,14 +38,14 @@
     "popper.js": "^1.14.6"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.3",
+    "autoprefixer": "^9.4.4",
     "clean-css-cli": "^4.2.1",
     "foreach-cli": "^1.8.1",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.7",
-    "postcss-cli": "^6.1.0",
+    "postcss-cli": "^6.1.1",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
