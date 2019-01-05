@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "css-main": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
-    "css-lint": "stylelint --syntax scss assets/sass/**/*.scss",
+    "css-lint": "stylelint assets/sass/**/*.scss",
     "css-compile": "npm-run-all --parallel compile:* --silent",
     "compile:Skin": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/Skin.scss ./Skin.css",
     "compile:Home": "node-sass --output-style nested --source-map true --source-map-contents true --precision 6 assets/sass/Home.scss ./Home.css",
