@@ -717,8 +717,8 @@ $small-font-size:             80%;
 $text-muted:                  $gray-600;
 
 $blockquote-small-color:      $gray-600;
-$blockquote-small-font-size:  $asl--font-size-8;
-$blockquote-font-size:        ($font-size-base * 1.25);
+$blockquote-small-font-size:  $font-size-xs;
+$blockquote-font-size:        1em;
 
 // Custom variables added by Accuraty
 $blockquote-border-color:     $gray-200;
