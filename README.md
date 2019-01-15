@@ -2,6 +2,12 @@
 
 This is an attempt to create a set of standards and best practices for Accuraty projects in a way that is easy to deploy using modern web technologies and up-to-date frameworks.
 
+## Getting Started
+
+git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
+git fetch accuraty
+git merge accuraty/master
+
 ## Overview
 
 Accuraty primarily works with the DNN content management system. The files included are designed to be a starter template for this platform.
