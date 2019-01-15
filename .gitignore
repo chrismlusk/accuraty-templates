@@ -37,3 +37,4 @@ sftp-config.json
 *.sass.map
 *.scss.map
 /**/*.css
+!TEST.css
