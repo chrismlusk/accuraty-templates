@@ -4,9 +4,11 @@ This is an attempt to create a set of standards and best practices for Accuraty 
 
 ## Getting Started
 
+```
 git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
 git fetch accuraty
 git merge accuraty/master
+```
 
 ## Overview
 
