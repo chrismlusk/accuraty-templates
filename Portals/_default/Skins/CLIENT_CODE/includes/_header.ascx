@@ -1,6 +1,10 @@
 <header class="header  fixed-to-top">
   <nav class="navbar navbar-expand-md navbar-light">
-    <a class="navbar-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___CLIENT_NAME___xxx__">
+    <a
+      class="navbar-brand"
+      href="<%= NavigateUrl(PortalSettings.HomeTabId) %>"
+      aria-label="__xxx___CLIENT_NAME___xxx__"
+    >
       <!--#include file="_logo.ascx"-->
     </a>
 
@@ -9,7 +13,12 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">
-      <dnn:MENU runat="server" MenuStyle="menus/nav-primary" IncludeNodes="" ExcludeNodes=""></dnn:MENU>
+      <dnn:MENU
+        MenuStyle="menus/nav-primary"
+        IncludeNodes=""
+        ExcludeNodes=""
+        runat="server"
+      ></dnn:MENU>
       <div class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

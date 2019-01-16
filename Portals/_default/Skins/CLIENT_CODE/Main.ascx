@@ -5,7 +5,12 @@
   <div class="container-fluid">
     <!--#include file="includes/_breadcrumb.ascx"-->
     <div class="row">
-      <div id="ContentPane" data-name="ContentPane" class="col-12  pane pane-content" runat="server"></div>
+      <div
+        id="ContentPane"
+        data-name="ContentPane"
+        class="col-12  pane pane-content"
+        runat="server"
+      ></div>
     </div>
   </div>
 </main>

@@ -3,7 +3,11 @@
     <div class="row">
       <div class="col-md-6">
 
-        <a class="footer-brand" href="<%= NavigateUrl(PortalSettings.HomeTabId) %>" aria-label="__xxx___WEBSITE_NAME___xxx__">
+        <a
+          class="footer-brand"
+          href="<%= NavigateUrl(PortalSettings.HomeTabId) %>"
+          aria-label="__xxx___WEBSITE_NAME___xxx__"
+        >
           <!--#include file="_logo.ascx"-->
         </a>
 
@@ -19,9 +23,9 @@
       <div class="col-md-6">
         <nav class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
           <link itemprop="url" href="<%=PortalSettings.PortalAlias.HTTPAlias%>">
-          <a class="nav-link" href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs">Facebook</a>
-          <a class="nav-link" href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs">Twitter</a>
-          <a class="nav-link" href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs">YouTube</a>
+          <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Facebook</a>
+          <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Twitter</a>
+          <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">YouTube</a>
         </nav>
       </div>
     </div>
@@ -30,9 +34,9 @@
     <div class="row">
       <div class="col-md-6">
         <p class="footer-credits  text-center text-md-left">
-          <span><dnn:COPYRIGHT runat="server" id="dnnCopyright" /></span>
-          <span><dnn:TERMS runat="server" id="dnnTerms" /></span>
-          <span><dnn:PRIVACY runat="server" id="dnnPrivacy" /></span>
+          <span><dnn:COPYRIGHT id="dnnCopyright" runat="server" /></span>
+          <span><dnn:TERMS id="dnnTerms" runat="server" /></span>
+          <span><dnn:PRIVACY id="dnnPrivacy" runat="server" /></span>
         </p>
       </div>
       <div class="col-md-6">
@@ -44,4 +48,4 @@
   </section>
 </footer>
 
-<!--#include file="__debug.ascx"-->
+<%--  <!--#include file="__debug.ascx"-->  --%>

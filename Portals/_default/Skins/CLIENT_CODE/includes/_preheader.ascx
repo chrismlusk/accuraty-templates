@@ -21,7 +21,12 @@
 
 <%-- Add meta tags
 ================================================== --%>
-<dnn:META runat="server" Name="viewport" Content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+
+<dnn:META
+  Name="viewport"
+  Content="width=device-width,initial-scale=1,shrink-to-fit=no"
+  runat="server"
+/>
 
 
 
@@ -43,7 +48,15 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
 
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
-<%-- <dnn:DnnCssInclude runat="server" FilePath="assets/css/{YOUR_FILE_HERE}" PathNameAlias="SkinPath" Priority="16" /> --%>
+
+<%--
+<dnn:DnnCssInclude
+  FilePath="assets/css/{YOUR_FILE_HERE}"
+  PathNameAlias="SkinPath"
+  Priority="16"
+  runat="server"
+/>
+--%>
 
 
 
@@ -67,7 +80,30 @@ For Bootstrap v4: jQuery first, then Popper.js, then Bootstrap.
 
 Other vendor scripts and custom JS come next.
 ========================================================================== --%>
-<dnn:JQUERY runat="server" ForceProvider="DnnFormBottomProvider" />
-<dnn:DnnJsInclude runat="server" FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" ForceProvider="DnnFormBottomProvider" Priority="101" />
-<dnn:DnnJsInclude runat="server" FilePath="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ForceProvider="DnnFormBottomProvider" Priority="102" />
-<dnn:DnnJsInclude runat="server" FilePath="assets/js/scripts.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" Priority="105" />
+
+<dnn:JQUERY
+  ForceProvider="DnnFormBottomProvider"
+  runat="server"
+/>
+
+<dnn:DnnJsInclude
+  FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+  ForceProvider="DnnFormBottomProvider"
+  Priority="101"
+  runat="server"
+/>
+
+<dnn:DnnJsInclude
+  FilePath="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  ForceProvider="DnnFormBottomProvider"
+  Priority="102"
+  runat="server"
+/>
+
+<dnn:DnnJsInclude
+  FilePath="assets/js/scripts.js"
+  PathNameAlias="SkinPath"
+  ForceProvider="DnnFormBottomProvider"
+  Priority="105"
+  runat="server"
+/>
