@@ -6,5 +6,5 @@
   --%>
 <img
   src="<%=PortalSettings.HomeDirectory %><%=PortalSettings.LogoFile %>"
-  alt="__xxx___CLIENT_NAME___xxx__"
+  alt="_xx___CLIENT_NAME___xx_"
 />

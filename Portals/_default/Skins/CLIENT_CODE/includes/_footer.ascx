@@ -6,17 +6,17 @@
         <a
           class="footer-brand"
           href="<%= NavigateUrl(PortalSettings.HomeTabId) %>"
-          aria-label="__xxx___WEBSITE_NAME___xxx__"
+          aria-label="_xx___WEBSITE_NAME___xx_"
         >
           <!--#include file="_logo.ascx"-->
         </a>
 
         <address class="footer-address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="name" class="sr-only">{CLIENT_NAME}</span><br>
-          <span itemprop="streetAddress">{STREET_ADDRESS}</span><br>
-          <span itemprop="addressLocality">{CITY}</span>,
-          <span itemprop="addressRegion">{STATE}</span>
-          <span itemprop="postalCode">{ZIP_CODE}</span>
+          <span itemprop="name" class="sr-only">_xx__CLIENT_NAME__xx_</span>
+          <span itemprop="streetAddress">_xx___STREET_ADDRESS___xx_</span><br>
+          <span itemprop="addressLocality">_xx___CITY___xx_</span>,
+          <span itemprop="addressRegion">_xx___STATE___xx_</span>
+          <span itemprop="postalCode">_xx___ZIP_CODE___xx_</span>
           <span itemprop="addressCountry" class="sr-only">United States</span>
         </address>
       </div>

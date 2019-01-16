@@ -3,7 +3,7 @@
     <a
       class="navbar-brand"
       href="<%= NavigateUrl(PortalSettings.HomeTabId) %>"
-      aria-label="__xxx___CLIENT_NAME___xxx__"
+      aria-label="_xx___CLIENT_NAME___xx_"
     >
       <!--#include file="_logo.ascx"-->
     </a>
