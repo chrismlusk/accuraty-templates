@@ -1,21 +1,32 @@
-<% If GetIpAddress() = "192.241.63.162" Or GetIpAddress() = "76.29.39.150" Then %>
-<div class="alert alert-warning  m-0" role="alert">
-  <p>DNN <%=DotNetNuke.Application.DotNetNukeContext.Current.Application.Version.ToString(3) %> / <%=System.Environment.Version.ToString() %> / <%=System.Net.Dns.GetHostName() %></p>
-  <p>Tab ID = <%=PortalSettings.ActiveTab.TabID %></p>
-  <p>Now = <%=DateTime.Now.ToString("F") %></p>
-  <p>WAN IP = <%=GetIpAddress() %></p>
-  <hr />
-  <p class="small font-weight-bold">Debug info only visible from ASL WAN IP address and being output from <code>includes/_footer.ascx</code> in Skin.</p>
-</div>
-<% End If %>
+<% if (UserCanViewDebug()) { %>
+  <div class="alert alert-warning  m-0" role="alert">
+    <p>DNN <%=DotNetNuke.Application.DotNetNukeContext.Current.Application.Version.ToString(3) %> / <%=System.Environment.Version.ToString() %> / <%=System.Net.Dns.GetHostName() %></p>
+    <p>Tab ID = <%=PortalSettings.ActiveTab.TabID %></p>
+    <p>Now = <%=DateTime.Now.ToString("F") %></p>
+    <p>WAN IP = <%=GetIpAddress() %></p>
+    <hr />
+    <p class="small font-weight-bold">Debug info only visible from ASL WAN IP address and being output from <code>includes/_footer.ascx</code> in Skin.</p>
+  </div>
+<% } %>
+
 
 <script runat="server">
-Public Function GetIpAddress() As String
-  Dim stringIpAddress As String
-  stringIpAddress = Request.ServerVariables("HTTP_X_FORWARDED_FOR")
-  if String.IsNullOrEmpty(stringIpAddress) then
-    stringIpAddress = Request.ServerVariables("REMOTE_ADDR")
-  end if
-  Return stringIpAddress
-End Function
+  public string GetIpAddress()
+  {
+      string stringIpAddress;
+      stringIpAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+      if (stringIpAddress == null)
+      {
+          stringIpAddress = Request.ServerVariables["REMOTE_ADDR"];
+      }
+      return stringIpAddress;
+  }
+  public bool UserCanViewDebug()
+  {
+    var list = new List<string> {
+      "192.241.63.162",
+      "76.29.39.150"
+    };
+    return list.Contains(GetIpAddress());
+  }
 </script>

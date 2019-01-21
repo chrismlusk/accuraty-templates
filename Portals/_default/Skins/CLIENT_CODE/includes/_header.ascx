@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-md navbar-light">
     <a
       class="navbar-brand"
-      href="<%= NavigateUrl(PortalSettings.HomeTabId) %>"
+      href="<%= DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId) %>"
       aria-label="_xx___CLIENT_NAME___xx_"
     >
       <!--#include file="_logo.ascx"-->

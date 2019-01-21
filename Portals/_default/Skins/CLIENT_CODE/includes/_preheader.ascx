@@ -1,37 +1,18 @@
-<%@ Control Language="vb" AutoEventWireup="true" Explicit="True" Inherits="DotNetNuke.UI.Skins.Skin" %>
-<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<%@ Register TagPrefix="dnn" TagName="STYLES" Src="~/Admin/Skins/Styles.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="CURRENTDATE" Src="~/Admin/Skins/CurrentDate.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="PRIVACY" Src="~/Admin/Skins/Privacy.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="LINKTOMOBILE" Src="~/Admin/Skins/LinkToMobileSite.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
+<!--#include file="_registers.ascx"-->
 
 
 
 
-<%-- Add meta tags
+<%-- Meta tags
 ================================================== --%>
 
-<dnn:META
-  Name="viewport"
-  Content="width=device-width,initial-scale=1,shrink-to-fit=no"
-  runat="server"
-/>
+<%@ Register TagPrefix="asl" TagName="MetaTags" src="../controls/meta.ascx" %>
+<asl:MetaTags runat="server" />
 
 
 
 
-<%-- Add stylesheets
+<%-- Stylesheets
 
 CSS priorities and suggested order (note that * denotes a core DNN file):
 
@@ -49,6 +30,16 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
+<%-- DON'T USE THIS YET
+
+  I'd love to remove the `default.css` stylesheet, but many of the styles are
+  used for DNN edit controls. Probably going to leave it as is (and continue
+  overriding these styles) instead of writing them from scratch. But keeping
+  this tag here for reference just in case.
+
+  <dnn:DnnCssExclude Name="dnndefault" runat="server" />
+--%>
+
 <%--
 <dnn:DnnCssInclude
   FilePath="assets/css/{YOUR_FILE_HERE}"
@@ -61,7 +52,7 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 
 
 
-<%-- Add scripts
+<%-- Scripts
 
 JS priorities and suggested order (note that * denotes a core DNN file):
 
