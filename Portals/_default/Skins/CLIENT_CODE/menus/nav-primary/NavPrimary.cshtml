@@ -1,0 +1,54 @@
+@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+@{ var root = Model.Source.root; }
+
+@helper RenderNodes(IList<MenuNode> nodes) {
+  if (nodes.Count > 0) {
+    <ul class='@(nodes[0].Depth == 0 ? "navbar-nav ml-auto" : "")'>
+      @foreach (var node in nodes) {
+        var navItemClasses = new List<string>();
+        navItemClasses.Add("nav-item");
+        navItemClasses.Add("tab-" + node.TabId);
+        if (node.Breadcrumb) { navItemClasses.Add("active"); }
+        if (node.HasChildren()) { navItemClasses.Add("dropdown"); }
+        var navItemCss = new HtmlString((navItemClasses.Count == 0) ? "" : ("class=\"" + String.Join(" ", navItemClasses.ToArray()) + "\""));
+        <li @navItemCss>
+          <a
+            href='@(node.Enabled ? node.Url : "#")'
+            class='nav-link@(node.HasChildren() ? " dropdown-toggle" : "")'
+            id="tab-@node.TabId-dropdown"
+            @{
+              if (node.HasChildren()) {
+                <text>data-toggle="dropdown"</text>
+                <text>aria-haspopup="true"</text>
+                <text>aria-expanded="false"</text>
+              }
+            }
+          >@node.Text</a>
+          @RenderChildren(node.Children)
+        </li>
+      }
+    </ul>
+  }
+}
+
+@helper RenderChildren(IList<MenuNode> children) {
+  if (children.Count > 0) {
+    <div class="dropdown-menu" aria-labelledby="">
+      @foreach (var child in children) {
+        var dropdownItemClasses = new List<string>();
+        dropdownItemClasses.Add("dropdown-item");
+        if (child.Breadcrumb) { dropdownItemClasses.Add("active"); }
+        var dropdownItemCss = new HtmlString((dropdownItemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dropdownItemClasses.ToArray()) + "\""));
+        <a
+          @dropdownItemCss
+          href="@child.Url"
+          target="@(child.Target)"
+        >@child.Text</a>
+      }
+    </div>
+  }
+}
+
+@RenderNodes(root.Children)
