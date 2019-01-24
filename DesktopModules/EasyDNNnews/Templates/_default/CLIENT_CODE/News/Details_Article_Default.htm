@@ -1,0 +1,161 @@
+<!--TemplateGroup:detailsArticleDefault-->
+<!--ArticleTemplate-->
+<EDNHeader>
+  <article class="EDN__article is-details">
+
+    <!-- EVENT HASN'T BEEN STYLED -->
+    [EasyDNNnews:IfExists:Event]
+    <div class="EDN__event__details">
+      [EasyDNNnews:IfExists:EventRegistration][EasyDNNnews:EventRegistration:RegisterButton][EasyDNNnews:EndIf:EventRegistration]
+      [EasyDNNnews:IfExists:Payment]<span class="EDN__event__price">[EasyDNNnews:Price]</span>[EasyDNNnews:EndIf:Payment]
+      [EasyDNNnewsLocalizedText:Eventdate]: <strong>[EasyDNNnews:EventDate]</strong> <a class="EDN__calendar__export EDN__tooltip"
+        href="[EasyDNNnews:iCalendar]"><span class="EDN__tooltip__content">[EasyDNNnewsLocalizedText:ExportEvent]</span></a>
+      [EasyDNNnews:IfExists:EventLocation]
+      <p class="EDN__event__location">[EasyDNNnewsLocalizedText:EventLocation]: <strong>[EasyDNNnews:EventLocation]</strong></p>
+      [EasyDNNnews:EndIf:EventLocation]
+      [EasyDNNnews:IfExists:EventRegistration]
+      <ul>
+        <li>[EasyDNNnewsLocalizedText:NumberOfAttendants]: <strong>[EasyDNNnews:EventRegistration:NumberOfAttendants]</strong></li>
+        <li>[EasyDNNnewsLocalizedText:MaxNumberOfTickets]: <strong>[EasyDNNnews:EventRegistration:MaxNumberOfTickets]</strong></li>
+        <li>[EasyDNNnewsLocalizedText:NotUsedTickets]: <strong>[EasyDNNnews:EventRegistration:NotUsedTickets]</strong></li>
+        [EasyDNNnews:IfExists:Payment]<li>[EasyDNNnewsLocalizedText:Price]: <strong>[EasyDNNnews:Price]</strong></li>[EasyDNNnews:EndIf:Payment]
+      </ul>
+      [EasyDNNnews:EventRegistration:InfoMessage]
+      [EasyDNNnews:EndIf:EventRegistration]
+      [EasyDNNnews:IfExists:EventSignUp]
+      <div class="eds_signUpActionBarWrapper">
+        <h4>[EasyDNNnewsLocalizedText:AreYouGoing]</h4>[EasyDNNnews:SignUpActionBar]
+      </div>
+      [EasyDNNnews:EndIf:EventSignUp]
+    </div>
+    [EasyDNNnews:EndIf:Event]
+    <!-- EVENT HASN'T BEEN STYLED -->
+
+    <header class="EDN__article__header">
+      <h1 class="EDN__article__title">[EasyDNNnews:Title]</h1>
+      [EasyDNNnews:IfExists:SubTitle]
+      <h2 class="EDN__article__subtitle">[EasyDNNnews:SubTitle]</h2>
+      [EasyDNNnews:EndIf:SubTitle]
+      <div class="EDN__meta">
+        <span class="EDN__meta__author">[EasyDNNnews:Author:Link]</span>
+        <span class="EDN__meta__date"><time>[EasyDNNnews:FormatedDate:MMM dd, yyyy][EasyDNNnews:EndIf:Event]</time></span>
+        <span class="EDN__article__categories">[EasyDNNnewsLocalizedText:Categories]: [EasyDNNnews:Categories]</span>
+      </div>
+    </header>
+
+</EDNHeader>
+<!--Gallery TOP position-->
+<EDNContentTop>
+
+  [EasyDNNnews:IfMediaType:Image]
+  <figure class="EDN__media">
+    <img alt="[EasyDNNnews:Title]" src="[EasyDNNnews:Image]" />
+    [EasyDNNnews:IfExists:GalleryBackLink]
+    <a href="[EasyDNNnews:GalleryBackLink]" class="EDN__gallery__link"><span>[EasyDNNnewsLocalizedText:ViewInGallery]</span></a>
+    [EasyDNNnews:EndIf:GalleryBackLink]
+  </figure>
+  [EasyDNNnews:EndIfMediaType]
+  [EasyDNNnews:IfMediaType:EmbedMedia]
+  <figure class="EDN__media" style="width:[EasyDNNnews:MainArticleImageWidth]">
+    [EasyDNNnews:MainMedia]
+    [EasyDNNnews:IfExists:GalleryBackLink]
+    <a href="[EasyDNNnews:GalleryBackLink]" class="EDN__gallery__link"><span>ViewInGallery</span></a>
+    [EasyDNNnews:EndIf:GalleryBackLink]
+  </figure>
+  [EasyDNNnews:EndIfMediaType]
+
+</EDNContentTop>
+<EDNContent>
+  <div class="EDN__article__body">
+    [EasyDNNnews:Article]
+  </div>
+</EDNContent>
+<EDNContentBottom>
+  [EasyDNNnews:IfExists:ArticlePreviousNext]
+  <div class="article_pager edn_articleScrolling">
+    [EasyDNNnews:IfExists:PreviousArticleLink]
+    <div class="EDN__tooltip EDN__tooltip--left">
+      <a class="edn_previusArticle" href="[EasyDNNnews:PreviousArticleLink]">[EasyDNNnewsLocalizedText:PreviusArticle]</a>
+      <span class="EDN__tooltip__content">[EasyDNNnews:PreviousArticleTitle]</span>
+    </div>
+    [EasyDNNnews:EndIf:PreviousArticleLink]
+    [EasyDNNnews:IfExists:NextArticleLink]
+    <div class="EDN__tooltip edn_tooltipRight">
+      <a class="edn_nextArticle" href="[EasyDNNnews:NextArticleLink]">[EasyDNNnewsLocalizedText:NextArticle]</a>
+      <span class="EDN__tooltip__content">[EasyDNNnews:NextArticleTitle]</span>
+    </div>
+    [EasyDNNnews:EndIf:NextArticleLink]
+  </div>
+  [EasyDNNnews:EndIf:ArticlePreviousNext]
+  <div class="edn_socialPrintWrapper">
+    [EasyDNNnews:SocialButtons:FBLike]
+    [EasyDNNnews:SocialButtons:AddThis]
+    [EasyDNNnews:Print:ArticleDetails]
+  </div>
+  <div class="EDN__meta">
+    <span class="EDN__meta__views">[EasyDNNnews:NumberOfViews]</span>
+    [EasyDNNnews:ArticleRating]
+    [EasyDNNnews:IfExists:ArticleVoting]
+    <div class="edn_ArticleVoting">
+      <span class="edn__voteArticleUp"><i class="fa fa-thumbs-o-up"></i><span class="eds__voteCount">[EasyDNNnews:ArticleGoodVotesCount]</span><span
+          class="edn_voteTooltip">[EasyDNNnewsLocalizedText:Upvote]</span></span>
+      <span class="edn__voteArticleDown"><i class="fa fa-thumbs-o-down"></i><span class="eds__voteCount">[EasyDNNnews:ArticleBadVotesCount]</span><span
+          class="edn_voteTooltip">[EasyDNNnewsLocalizedText:Downvote]</span></span>
+    </div>
+    [EasyDNNnews:EndIf:ArticleVoting]
+  </div>
+  [EasyDNNnews:IfExists:Tags]
+  <div class="EDN__article__tags">[EasyDNNnewsLocalizedText:Tags]: [EasyDNNnews:Tags separator=""]</div>
+  [EasyDNNnews:EndIf:Tags]
+  [EDNcf:ShowAll]
+  [EasyDNNnews:ArticleMaps]
+  [EasyDNNnews:EventRegistration:ListOfAttendants]
+  [EasyDNNnews:DocumentList]
+  [EasyDNNnews:Links]
+</EDNContentBottom>
+<!--Gallery BOTTOM position-->
+<EDNFooter>
+  [EasyDNNnews:GravityGallery]
+  [EasyDNNnews:IfExists:AuthorProfile]
+  <div class="edn_authorGroupDetails">
+    [EasyDNNnews:Author:Image:Width:85:Height:120:Resize:Crop]
+    <h4>[EasyDNNnews:Author:DisplayName][EasyDNNnews:Author:RSSURL]</h4>
+    [EasyDNNnews:Author:ShortInfo] <span class="edn_otherPostsBy">[EasyDNNnewsLocalizedText:Otherpostsby]
+      [EasyDNNnews:Author:Link]</span>
+    <div class="edn_connectWith">
+      [EasyDNNnews:Author:Contact]
+      [EasyDNNnews:Author:FullInfo]
+      [EasyDNNnews:Author:Facebook]
+      [EasyDNNnews:Author:Twitter]
+      [EasyDNNnews:Author:LinkedIn]
+      [EasyDNNnews:Author:GooglePlus]
+      [EasyDNNnews:Author:YouTube]
+      [EasyDNNnews:Author:Instagram]
+      [EasyDNNnews:Author:Website]
+    </div>
+  </div>
+  [EasyDNNnews:EndIf:AuthorProfile]
+  [EasyDNNnews:IfExists:AuthorGroup]
+  <div class="edn_authorGroupDetails edn_groupDetails">
+    [EasyDNNnews:Author:GroupImage:Width:85:Height:120:Resize:Crop]
+    <h4>[EasyDNNnews:Author:GroupName][EasyDNNnews:Author:GroupRSSURL]</h4>
+    [EasyDNNnews:Author:GroupInfo]
+    <div class="edn_connectWith">
+      [EasyDNNnews:Author:GroupContact]
+      [EasyDNNnews:Author:GroupFacebook]
+      [EasyDNNnews:Author:GroupTwitter]
+      [EasyDNNnews:Author:GroupLinkedIn]
+      [EasyDNNnews:Author:GroupGooglePlus]
+      [EasyDNNnews:Author:GroupYouTube]
+      [EasyDNNnews:Author:GroupInstagram]
+      [EasyDNNnews:Author:GroupWebsite]
+    </div>
+  </div>
+  [EasyDNNnews:EndIf:AuthorGroup]
+  [EasyDNNnews:RelatedArticles]
+</EDNFooter>
+<!--Comments position-->
+<EDNBottom>
+  </article>
+</EDNBottom>
+<!--ArticleEnd-->

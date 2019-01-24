@@ -1,0 +1,50 @@
+<!--TemplateGroup:listArticleDefault-->
+<!--ArticleRepeat:Before:-->
+<div class="[EasyDNNnews:ArticleListWrapperClass]">
+  <!--RepeatEnd:Before:-->
+  <!--ArticleTemplate-->
+  <article class="EDN__article is-list">
+
+    <header class="EDN__article__header[EasyDNNnews:IfNotExists:Image] has-no-media[EasyDNNnews:EndIf:Image]">
+
+      [EasyDNNnews:HasArticlePermissions]
+      <div class="EDN__admin__actions">
+        [EasyDNNnews:ArticlePermissions:Edit]
+        [EasyDNNnews:ArticlePermissions:Publish]
+        [EasyDNNnews:ArticlePermissions:Approve]
+      </div>
+      [EasyDNNnews:HasArticlePermissionsEnd]
+
+      <h2 class="EDN__article__title"><a href="[EasyDNNnews:Title:Link]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnews:Title]</a></h2>
+
+      <div class="EDN__article__summary">
+        [EasyDNNnews:IfNotExists:Summary]
+        [EasyDNNnews:IfExists:SubTitle]
+        <p>[EasyDNNnews:SubTitle]</p>
+        [EasyDNNnews:EndIf:SubTitle]
+        [EasyDNNnews:EndIf:Summary]
+
+        [EasyDNNnews:IfExists:Summary]
+        [EasyDNNnews:Summary:Limit:140]
+        [EasyDNNnews:EndIf:Summary]
+      </div>
+
+      <div class="EDN__meta">
+        <span class="EDN__meta__author">[EasyDNNnews:Author:Link]</span>
+        <span class="EDN__meta__date"><time>[EasyDNNnews:IfNotExists:Event][EasyDNNnews:FormatedDate:MMM dd,
+            yyyy][EasyDNNnews:EndIf:Event][EasyDNNnews:IfExists:Event][EasyDNNnews:EventDate][EasyDNNnews:EndIf:Event]</time></span>
+      </div>
+    </header>
+
+    [EasyDNNnews:IfExists:Image]
+    <figure class="EDN__media">
+      <a class="EDN__media__bgCoverImage" href="[EasyDNNnews:ReadMore]" target="[EasyDNNnews:DetailTarget]" style="background-image: url('[EasyDNNnews:Image]')"></a>
+    </figure>
+    [EasyDNNnews:EndIf:Image]
+
+  </article>
+  <!--ArticleEnd-->
+
+  <!--ArticleRepeat:After:-->
+</div>
+<!--RepeatEnd:After:-->

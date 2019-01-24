@@ -1,0 +1,32 @@
+<!--CategoriesTemplate-->
+<!--HeaderTemplate-->
+<div class="EDN__menu">
+  <ul class="nav flex-column">
+<!--HeaderEnd-->
+<!--CategoriesEnd-->
+
+<!--CategoriesTemplate-->
+<!--TemplateLevel:0:-->
+    <a href="[EasyDNNcategories:Link]" class="nav-link">
+      [EasyDNNcategories:Title]
+      <span class="badge badge-primary badge-pill">[EasyDNNcategories:ArticleCount]</span>
+    </a>
+
+<!--TemplateEnd-->
+<!--CategoriesEnd-->
+
+<!--CategoriesTemplate-->
+<!--FooterTemplate-->
+  </ul>
+</div>
+<script>
+    jQuery(function ($) {
+      var LIST_NODES = document.querySelectorAll('.EDN__menu li');
+      LIST_NODES.forEach(li => {
+        li.classList.add('nav-item');
+        li.classList.remove('node');
+      });
+    });
+  </script>
+<!--FooterEnd-->
+<!--CategoriesEnd-->

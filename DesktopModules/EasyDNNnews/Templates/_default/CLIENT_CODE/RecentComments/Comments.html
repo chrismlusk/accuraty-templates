@@ -1,0 +1,32 @@
+﻿<!--TemplateGroup:commentsDefault-->
+
+<!--CommentsTemplateBegin-->
+<!--CommentsSectionWrapperHeaderTemplateBegin-->
+[EasyDNNnews:IfExists:ModuleHeader]
+<div class="edn_recentCommentsHeader">
+	<h4>Recent comments</h4>
+</div>
+[EasyDNNnews:EndIf:ModuleHeader]
+<!--CommentsSectionWrapperHeaderTemplateEnd-->
+
+<!--CommentsListHeaderTemplateBegin-->
+<!--CommentsListHeaderTemplateEnd-->
+<!--SingleCommentInListTemplateBegin-->
+<div class="edn_recentCommentContainer">
+	[EasyDNNnews:Comments:CommentersAvatar]
+	<div class="edn_commentRight">
+		<a class="edn_commentAuthor" href="[EasyDNNnews:Comments:CommentersProfileUrl] ">[EasyDNNnews:Comments:CommentersName]:</a>
+		[EasyDNNnews:Comments:CommentFormatedText]
+		<time class="edn_commentDate">[EasyDNNnews:Comments:CommentDateAdded]</time>
+	</div>
+</div>
+<!--SingleCommentInListTemplateEnd-->
+<!--CommentsListFooterTemplateBegin-->
+<!--CommentsListFooterTemplateEnd-->
+<!--CommentsSectionWrapperFooterTemplateBegin-->
+<div class="edn_pagination">
+	<span class="edn__recentComments_previousPage">[EasyDNNnews:Comments:LocalizedText:PreviousPageText]</span>
+	<span class="edn__recentComments_nextPage">[EasyDNNnews:Comments:LocalizedText:NextPageText]</span>
+</div>
+<!--CommentsSectionWrapperFooterTemplateEnd-->
+<!--CommentsTemplateEnd-->

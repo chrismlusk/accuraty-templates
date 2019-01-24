@@ -1,0 +1,44 @@
+﻿<!--SingleArticleTemplate-->
+<div class="title [EasyDNNnews:CssClass:Article:Categories]">
+	<span>
+		<a href="[EasyDNNnews:Link:ArtDate:Article:PublishDate]">[EasyDNNnews:IfNotExists:Event][EasyDNNnews:PublishDateShort][EasyDNNnews:EndIf:Event][EasyDNNnews:IfExists:Event][EasyDNNnews:EventDate][EasyDNNnews:EndIf:Event]</a>
+	</span>
+</div>
+<div class="wrapper [EasyDNNnews:CssClass:Article:Categories]">
+	<div class="article [EasyDNNnews:CssClass:Article:Categories]">
+		[EasyDNNnews:IfExists:Image]
+		<img alt="[EasyDNNnews:Title]" src="[EasyDNNnews:Image]" />
+		[EasyDNNnews:EndIf:Image]
+		<p class="title"><a class="[EasyDNNnews:CssClass:Article:Categories:Last]" href="[EasyDNNnews:ReadMore]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnews:Title]</a></p>
+		<div class="content">[EasyDNNnews:Summary]</div>
+		[EasyDNNnews:IfExists:EventLocation]
+		<p class="location">[EasyDNNnewsLocalizedText:EventLocation]: <strong>[EasyDNNnews:EventLocation]</strong></p>
+		[EasyDNNnews:EndIf:EventLocation]
+		<a class="[EasyDNNnews:CssClass:Article:Categories:Last]" href="[EasyDNNnews:ReadMore]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnewsLocalizedText:Read]</a>
+	</div>
+</div>
+<!--SingleArticleEnd-->
+
+<!--MultiArticleTemplate-->
+<!--HeaderTemplate-->
+<div class="title [EasyDNNnews:CssClass:ArticleList:Categories]">
+	<span><a href="[EasyDNNnews:Link:ArtDate:Calendar:Date]">[EasyDNNnews:Calendar:Date:Fromat:d]</a></span>
+</div>
+<div class="wrapper [EasyDNNnews:CssClass:ArticleList:Categories]">
+	<ul class="article_list">
+<!--HeaderEnd-->
+
+<!--TemplateRepeat-->
+		<li[EasyDNNnews:IfExists:Event] class="event" [EasyDNNnews:EndIf:Event]>
+			<a class="[EasyDNNnews:CssClass:Article:Categories:Last]" href="[EasyDNNnews:ReadMore]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnews:Title]</a>
+			[EasyDNNnews:IfExists:Event]
+			<p>([EasyDNNnews:EventDate])</p>
+			[EasyDNNnews:EndIf:Event]
+		</li>
+<!--TemplateRepeatEnd-->
+
+<!--FooterTemplate-->
+	</ul>
+</div>
+<!--FooterEnd-->
+<!--MultiArticleEnd-->
