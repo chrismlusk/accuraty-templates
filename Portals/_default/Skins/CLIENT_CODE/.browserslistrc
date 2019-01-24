@@ -4,7 +4,7 @@
 last 1 major version
 not dead
 Chrome >= 45
-IE >= 10 # sorry
+IE >= 11
 Edge >= 12
 Explorer >= 10
 iOS >= 9
