@@ -21,7 +21,7 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
   6-9.  Vendor CSS (e.g., Bootstrap)
   10.   Module CSS*
   15.   Skin CSS*
-  16.   Custom CSS: `assets/css/{YOUR_FILE_HERE}`
+  16.   Custom CSS: `public/css/YOUR_FILE_HERE`
   20.   Specific Skin CSS
   25.   Container CSS*
   30.   Specific Container CSS*
@@ -42,7 +42,7 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 
 <%--
 <dnn:DnnCssInclude
-  FilePath="assets/css/{YOUR_FILE_HERE}"
+  FilePath="public/css/YOUR_FILE_HERE"
   PathNameAlias="SkinPath"
   Priority="16"
   runat="server"
@@ -91,8 +91,17 @@ Other vendor scripts and custom JS come next.
   runat="server"
 />
 
+<%-- DON'T USE LOCAL BUNDLE UNTIL BOOTSTRAP RELEASES v4.3
 <dnn:DnnJsInclude
-  FilePath="assets/js/scripts.js"
+  FilePath="public/js/bootstrap.bundle.min.js"
+  PathNameAlias="SkinPath"
+  ForceProvider="DnnFormBottomProvider"
+  Priority="102"
+  runat="server"
+/> --%>
+
+<dnn:DnnJsInclude
+  FilePath="public/js/main.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="105"
