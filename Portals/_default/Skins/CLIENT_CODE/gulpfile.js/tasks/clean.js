@@ -6,25 +6,21 @@ const del = require('del');
 const TASK_CONFIG = require('../task-config');
 
 const cleanTask = () => {
-  // Don't allow this task to delete anything if in production mode
-  if (TASK_CONFIG.production) return Promise.resolve();
+  const allCompiledFiles = [
+    '.tmp/',
+    './*.css',
+    './*.css.map',
+    `../../Containers/${project}/*.css`,
+    `../../Containers/${project}/*.css.map`,
+    `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/*.css`,
+    `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/*.css.map`,
+    'public/*',
+    '!public/.git'
+  ];
 
-  return del(
-    [
-      '.tmp/',
-      './*.css',
-      './*.css.map',
-      `../../Containers/${project}/*.css`,
-      `../../Containers/${project}/*.css.map`,
-      `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/*.css`,
-      `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/*.css.map`,
-      'public/*',
-      '!public/.git'
-    ],
-    {
-      force: true
-    }
-  );
+  return del(TASK_CONFIG.production ? ['.tmp/'] : allCompiledFiles, {
+    force: true
+  });
 };
 
 gulp.task('clean', cleanTask);
