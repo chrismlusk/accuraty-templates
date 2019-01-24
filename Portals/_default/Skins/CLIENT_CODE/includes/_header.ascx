@@ -14,7 +14,7 @@
 
     <div class="collapse navbar-collapse" id="navbarContent">
       <dnn:MENU
-        MenuStyle="menus/nav-primary"
+        MenuStyle="menus/NavPrimary"
         IncludeNodes=""
         ExcludeNodes=""
         runat="server"
