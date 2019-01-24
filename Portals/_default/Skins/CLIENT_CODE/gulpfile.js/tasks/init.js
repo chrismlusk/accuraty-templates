@@ -13,18 +13,30 @@ function getFonts() {
 function getBootstrapJs() {
   if (!TASK_CONFIG.vendors.bootstrap) return Promise.resolve();
   return gulp
-    .src(PATH_CONFIG.bootstrapJS.src)
-    .pipe(gulp.dest(PATH_CONFIG.bootstrapJS.dest));
+    .src(PATH_CONFIG.bootstrapJs.src)
+    .pipe(gulp.dest(PATH_CONFIG.bootstrapJs.dest));
+}
+
+function getFlickityCss() {
+  if (!TASK_CONFIG.vendors.flickity) return Promise.resolve();
+  return gulp
+    .src(PATH_CONFIG.flickityCss.src)
+    .pipe(gulp.dest(PATH_CONFIG.flickityCss.dest));
 }
 
 function getFlickityJs() {
   if (!TASK_CONFIG.vendors.flickity) return Promise.resolve();
   return gulp
-    .src(PATH_CONFIG.flickityJS.src)
-    .pipe(gulp.dest(PATH_CONFIG.flickityJS.dest));
+    .src(PATH_CONFIG.flickityJs.src)
+    .pipe(gulp.dest(PATH_CONFIG.flickityJs.dest));
 }
 
-const initTask = gulp.series(getFonts, getBootstrapJs, getFlickityJs);
+const initTask = gulp.series(
+  getFonts,
+  getBootstrapJs,
+  getFlickityCss,
+  getFlickityJs
+);
 
 gulp.task('init', initTask);
 module.exports = initTask;

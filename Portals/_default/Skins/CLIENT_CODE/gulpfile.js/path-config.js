@@ -2,11 +2,15 @@ const pkg = require('../package.json');
 const project = pkg.name;
 
 module.exports = {
-  bootstrapJS: {
+  bootstrapJs: {
     src: './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     dest: './public/js/'
   },
-  flickityJS: {
+  flickityCss: {
+    src: './node_modules/flickity/dist/flickity.min.css',
+    dest: './public/css/'
+  },
+  flickityJs: {
     src: './node_modules/flickity/dist/flickity.pkgd.min.js',
     dest: './public/js/'
   },
