@@ -7,7 +7,8 @@
     "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
-    "start": "nodemon --watch assets/sass/ --ext scss --exec \"npm-run-all --parallel css-lint css-compile\""
+    "start": "gulp init && gulp watch",
+    "clean": "gulp clean"
   },
   "private": true,
   "repository": {
