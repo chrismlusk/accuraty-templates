@@ -2,6 +2,7 @@ const project = require('../../package.json').name;
 
 const gulp = require('gulp');
 const newer = require('gulp-newer');
+const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
@@ -26,7 +27,9 @@ function compileSkinLayoutStyles() {
     .pipe(sass(PLUGIN_CONFIG.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(PLUGIN_CONFIG.autoprefixer.options)]))
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(cleanCss(PLUGIN_CONFIG.cleanCss.options))
+    .pipe(
+      gulpif(TASK_CONFIG.production, cleanCss(PLUGIN_CONFIG.cleanCss.options))
+    )
     .pipe(
       size({
         title: 'Skin layout css'
@@ -45,7 +48,9 @@ function compileContainerStyles() {
     .pipe(sourcemaps.init())
     .pipe(sass(PLUGIN_CONFIG.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(PLUGIN_CONFIG.autoprefixer.options)]))
-    .pipe(cleanCss(PLUGIN_CONFIG.cleanCss.options))
+    .pipe(
+      gulpif(TASK_CONFIG.production, cleanCss(PLUGIN_CONFIG.cleanCss.options))
+    )
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(
       size({
@@ -65,7 +70,9 @@ function compileEDNStyles() {
     .pipe(sourcemaps.init())
     .pipe(sass(PLUGIN_CONFIG.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(PLUGIN_CONFIG.autoprefixer.options)]))
-    .pipe(cleanCss(PLUGIN_CONFIG.cleanCss.options))
+    .pipe(
+      gulpif(TASK_CONFIG.production, cleanCss(PLUGIN_CONFIG.cleanCss.options))
+    )
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(
       size({

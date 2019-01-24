@@ -61,7 +61,7 @@ function compileScriptsPlain() {
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(uglify())
+    .pipe(gulpif(TASK_CONFIG.production, uglify()))
     .pipe(
       gulpif(
         ['*.js', '!*.min.js'],
