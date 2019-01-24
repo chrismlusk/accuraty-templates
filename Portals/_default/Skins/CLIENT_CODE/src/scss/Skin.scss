@@ -1,0 +1,97 @@
+//
+// Integrate Bootstrap and custom code
+// ===================================
+
+// core Bootstrap functions
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+// custom variable/mixin overrides
+@import '_abstracts/variables';
+@import '_abstracts/mixins';
+@import '_abstracts/animations';
+
+// use just what you need from Bootstrap
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/root';
+@import '../../node_modules/bootstrap/scss/reboot';
+@import '../../node_modules/bootstrap/scss/type';
+@import '../../node_modules/bootstrap/scss/images';
+@import '../../node_modules/bootstrap/scss/code';
+@import '../../node_modules/bootstrap/scss/grid';
+@import '../../node_modules/bootstrap/scss/tables';
+@import '../../node_modules/bootstrap/scss/forms';
+@import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/transitions';
+@import '../../node_modules/bootstrap/scss/dropdown';
+@import '../../node_modules/bootstrap/scss/button-group';
+@import '../../node_modules/bootstrap/scss/input-group';
+@import '../../node_modules/bootstrap/scss/custom-forms';
+@import '../../node_modules/bootstrap/scss/nav';
+@import '../../node_modules/bootstrap/scss/navbar';
+@import '../../node_modules/bootstrap/scss/card';
+@import '../../node_modules/bootstrap/scss/breadcrumb';
+@import '../../node_modules/bootstrap/scss/pagination';
+@import '../../node_modules/bootstrap/scss/badge';
+@import '../../node_modules/bootstrap/scss/jumbotron';
+@import '../../node_modules/bootstrap/scss/alert';
+@import '../../node_modules/bootstrap/scss/progress';
+@import '../../node_modules/bootstrap/scss/media';
+@import '../../node_modules/bootstrap/scss/list-group';
+@import '../../node_modules/bootstrap/scss/close';
+@import '../../node_modules/bootstrap/scss/toasts';
+@import '../../node_modules/bootstrap/scss/modal';
+@import '../../node_modules/bootstrap/scss/tooltip';
+@import '../../node_modules/bootstrap/scss/popover';
+@import '../../node_modules/bootstrap/scss/carousel';
+@import '../../node_modules/bootstrap/scss/spinners';
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/print';
+
+//
+// Add custom code base
+// ====================
+
+@import '_base/dnn-reset';
+@import '_base/base';
+@import '_base/type';
+@import '_base/images';
+@import '_base/code';
+@import '_base/grid';
+@import '_base/tables';
+@import '_base/content';
+
+// overrides for core Bootstrap components first ...
+@import '_components/forms';
+@import '_components/custom-forms';
+@import '_components/buttons';
+@import '_components/dropdown';
+@import '_components/nav';
+@import '_components/navbar';
+@import '_components/card';
+@import '_components/breadcrumb';
+@import '_components/pagination';
+@import '_components/badge';
+@import '_components/jumbotron';
+@import '_components/alert';
+@import '_components/progress';
+@import '_components/list-group';
+@import '_components/close';
+@import '_components/toasts';
+@import '_components/modal';
+@import '_components/tooltip';
+@import '_components/popover';
+@import '_components/carousel';
+@import '_components/spinners';
+
+// ... then add custom components ...
+@import '_components/child-page';
+@import '_components/panes';
+
+// ... and then add third-party vendor overrides
+@import '_components/carousel-flickity';
+@import '_components/data-tables';
+
+@import '_layout/header';
+@import '_layout/main';
+@import '_layout/footer';

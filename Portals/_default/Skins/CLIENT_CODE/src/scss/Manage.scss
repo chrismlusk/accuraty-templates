@@ -27,9 +27,6 @@
 //
 // ============================================================================
 
-
-
-
 //
 // Mandatory imports
 // =================
@@ -39,37 +36,29 @@
 // 3. Default Bootstrap variables.
 // ----------------------------------------------------------------------------
 
-@import "../../node_modules/bootstrap/scss/functions";  // 1
-@import "../../node_modules/bootstrap/scss/mixins";     // 1
-@import "abstracts/variables";                          // 2
-@import "abstracts/mixins";                             // 2
-@import "../../node_modules/bootstrap/scss/variables";  // 3
-
-
-
+@import '../../node_modules/bootstrap/scss/functions'; // 1
+@import '../../node_modules/bootstrap/scss/mixins'; // 1
+@import '_abstracts/variables'; // 2
+@import '_abstracts/mixins'; // 2
+@import '../../node_modules/bootstrap/scss/variables'; // 3
 
 //
 // Variables
 // =========
 
-$docs-primary:        #0767b1; // Accuraty blue
+$docs-primary: #0767b1; // Accuraty blue
 
-$docs-danger:         #d4231d;
-$docs-info:           #09addf;
-$docs-success:        #008b2f;
-$docs-warning:        #fa9602;
-
-
-
+$docs-danger: #d4231d;
+$docs-info: #09addf;
+$docs-success: #008b2f;
+$docs-warning: #fa9602;
 
 //
 // General
 // =======
 
 a {
-
   .pane-content & {
-
     @include plain-visited {
       color: $docs-primary;
     }
@@ -87,9 +76,6 @@ a {
     }
   }
 }
-
-
-
 
 //
 // Button
@@ -109,12 +95,9 @@ a {
 
   &:focus,
   &.focus {
-    box-shadow: 0 0 0 2px rgba($docs-primary, .25);
+    box-shadow: 0 0 0 2px rgba($docs-primary, 0.25);
   }
 }
-
-
-
 
 //
 // Callout
@@ -130,11 +113,11 @@ a {
   padding: 1.25em;
   margin-top: 1em;
   margin-bottom: 1em;
-  font-size: .875em;
+  font-size: 0.875em;
   background-color: $gray-100;
   border: $border-width solid $gray-200;
-  border-left-width: .25rem;
-  border-radius: .25rem;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
 
   h4 {
     margin-top: 0;
@@ -148,11 +131,11 @@ a {
   }
 
   code {
-    border-radius: .25rem;
+    border-radius: 0.25rem;
   }
 
   & + & {
-    margin-top: -.25rem;
+    margin-top: -0.25rem;
   }
 }
 
@@ -160,16 +143,23 @@ a {
 @mixin docs-callout-variant($color) {
   border-left-color: $color;
 
-  h4 { color: $color; }
+  h4 {
+    color: $color;
+  }
 }
 
-.docs-callout-danger { @include docs-callout-variant($docs-danger); }
-.docs-callout-info { @include docs-callout-variant($docs-info); }
-.docs-callout-success { @include docs-callout-variant($docs-success); }
-.docs-callout-warning { @include docs-callout-variant($docs-warning); }
-
-
-
+.docs-callout-danger {
+  @include docs-callout-variant($docs-danger);
+}
+.docs-callout-info {
+  @include docs-callout-variant($docs-info);
+}
+.docs-callout-success {
+  @include docs-callout-variant($docs-success);
+}
+.docs-callout-warning {
+  @include docs-callout-variant($docs-warning);
+}
 
 //
 // Menu
@@ -191,7 +181,7 @@ a {
 
   .nav-link {
     color: #666;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     transition: all $transition-speed $transition-easing;
 
     @include hover-focus {
@@ -201,19 +191,16 @@ a {
     &.active {
       font-weight: $font-weight-medium;
       color: $docs-primary;
-      background-color: rgba(theme-color("dark"), .06);
+      background-color: rgba(theme-color('dark'), 0.06);
     }
   }
 }
-
-
 
 //
 // Modal
 // =====
 
 .docs-modal {
-
   @include media-breakpoint-up(md) {
     max-width: 640px;
   }

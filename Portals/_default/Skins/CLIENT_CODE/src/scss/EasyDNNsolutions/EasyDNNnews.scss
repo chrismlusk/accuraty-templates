@@ -17,9 +17,6 @@
 //
 // ============================================================================
 
-
-
-
 //
 // Mandatory imports
 // =================
@@ -29,27 +26,24 @@
 // 3. Default Bootstrap variables.
 // ----------------------------------------------------------------------------
 
-@import "../../node_modules/bootstrap/scss/functions";  // 1
-@import "../../node_modules/bootstrap/scss/mixins";     // 1
-@import "abstracts/variables";                          // 2
-@import "abstracts/mixins";                             // 2
-@import "../../node_modules/bootstrap/scss/variables";  // 3
-
-
-
+@import '../../../node_modules/bootstrap/scss/functions'; // 1
+@import '../../../node_modules/bootstrap/scss/mixins'; // 1
+@import '../_abstracts/variables'; // 2
+@import '../_abstracts/mixins'; // 2
+@import '../../../node_modules/bootstrap/scss/variables'; // 3
 
 //
 // EasyDNNnews imports
 // ===================
 
-$EDN_BASE: ".eds_news_#{$asl--client-code}";
-$EDN_SUB: "#{$EDN_BASE}.eds_subCollection";
+$EDN_BASE: '.eds_news_#{$asl--client-code}';
+$EDN_SUB: '#{$EDN_BASE}.eds_subCollection';
 
-@import "EasyDNNsolutions/EasyDNNnews/Base";
-@import "EasyDNNsolutions/EasyDNNnews/News";
-@import "EasyDNNsolutions/EasyDNNnews/CategoryMenu";
-@import "EasyDNNsolutions/EasyDNNnews/Calendar";
-@import "EasyDNNsolutions/EasyDNNnews/Search";
-@import "EasyDNNsolutions/EasyDNNnews/ContentBlock";
-@import "EasyDNNsolutions/EasyDNNnews/RecentComments";
-@import "EasyDNNsolutions/EasyDNNnews/TagCloud";
+@import 'EasyDNNnews/Base';
+@import 'EasyDNNnews/News';
+@import 'EasyDNNnews/CategoryMenu';
+@import 'EasyDNNnews/Calendar';
+@import 'EasyDNNnews/Search';
+@import 'EasyDNNnews/ContentBlock';
+@import 'EasyDNNnews/RecentComments';
+@import 'EasyDNNnews/TagCloud';
