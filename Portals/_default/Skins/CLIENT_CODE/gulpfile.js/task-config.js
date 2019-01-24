@@ -4,8 +4,9 @@ module.exports = {
 
   // Configuration options. Are you using these items?
   vendors: {
+    // set as `true` if you want to get compiled asset from `node_modules`
     bootstrap: true,
-    flickity: true,
+    flickity: false,
     fontAwesome: false
   },
   fonts: true,
