@@ -16,6 +16,8 @@
 //
 // ============================================================================
 
+$edn--figure-width: 150px;
+
 
 
 
@@ -29,10 +31,10 @@
 // ----------------------------------------------------------------------------
 
 .EDN__article.is-list { // 1
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 
   @include media-breakpoint-up(md) {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
   &:last-child {
@@ -49,11 +51,25 @@
 // ADD A DESCRIPTION...
 // ----------------------------------------------------------------------------
 
-.EDN__article__title {}
+.EDN__article__title {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.375rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.5rem;
+  }
+}
 
 .EDN__article__subtitle {}
 
-.EDN__article__summary {}
+.EDN__article__summary {
+  margin-top: .25rem;
+  font-size: 1rem;
+}
 
 
 
@@ -65,7 +81,17 @@
 // ADD A DESCRIPTION...
 // ----------------------------------------------------------------------------
 
-.EDN__article__header {}
+.EDN__article__header {
+
+  @include media-breakpoint-up(md) {
+    flex: 1 1 auto;
+    padding-right: 1rem;
+  }
+
+  &.has-no-media {
+    margin-right: $edn--figure-width;
+  }
+}
 
 .EDN__article__body {}
 
@@ -80,7 +106,13 @@
 // Media
 // =====
 
-.EDN__media {}
+.EDN__media {
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 auto;
+    width: $edn--figure-width;
+  }
+}
 
 figure.EDN__media {
   margin-bottom: 0;
@@ -98,7 +130,6 @@ figure.EDN__media {
 
 .EDN__meta {
   margin-top: 1rem;
-  color: $gray-600;
 }
 
 

@@ -29,6 +29,18 @@
   width: 100%;
 }
 
+.EDN__media__bgCoverImage {
+  display: block;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: opacity $transition-speed $transition-easing;
+
+  @include hover-focus {
+    opacity: .75;
+  }
+}
+
 
 
 

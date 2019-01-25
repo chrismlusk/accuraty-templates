@@ -21,11 +21,20 @@
 // Base styles
 // ===========
 
+// .article_pager {
+//   display: flex;
+//   margin-top: 1rem;
+//   @include list-unstyled();
+//   @include border-radius();
+// }
+
 .article_pager {
   display: flex;
-  margin-top: 1rem;
-  @include list-unstyled();
-  @include border-radius();
+  margin-top: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 4rem;
+  }
 }
 
 

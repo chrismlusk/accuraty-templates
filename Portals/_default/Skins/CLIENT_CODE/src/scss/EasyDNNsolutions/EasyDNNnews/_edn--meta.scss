@@ -8,10 +8,24 @@
 .EDN__meta {
   display: flex;
   font-size: $font-size-sm;
+  color: $gray-600;
 
   & > span + span::before {
-    margin: 0 .5rem;
-    color: $gray-600;
-    content: "|";
+    margin: 0 .375rem;
+    color: inherit;
+    // content: "|";
+    content: "\00B7";
+  }
+
+  a {
+    font-weight: inherit !important;
+    color: inherit !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    @include hover-focus {
+      color: $link-color !important;
+      background-color: inherit !important;
+    }
   }
 }
