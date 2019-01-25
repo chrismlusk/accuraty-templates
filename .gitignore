@@ -26,17 +26,15 @@ Thumbs.db
 prepros-6.config
 
 # Folders to ignore
-node_modules/
-.tmp/
-public/
+**/node_modules/
+**/.tmp/
+**/public/
 
 # SFTP config from Sublime Text 3
 sftp-config.json
 
-# Sass, maps, and compiled CSS
+# Bundles, maps, and compiled code
 .sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-/**/*.css
-!TEST.css
+**/*.map
+**/*.css
+**/*.bundle.js
