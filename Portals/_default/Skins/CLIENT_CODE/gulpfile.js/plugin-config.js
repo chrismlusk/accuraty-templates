@@ -3,61 +3,64 @@ const imageminPlugin = require('gulp-imagemin');
 const imagemin = {
   plugins: [
     imageminPlugin.gifsicle({
-      interlaced: true
+      interlaced: true,
     }),
     imageminPlugin.jpegtran({
-      progressive: true
+      progressive: true,
     }),
     imageminPlugin.optipng({
-      optimizationLevel: 5
+      optimizationLevel: 5,
     }),
     imageminPlugin.svgo({
       plugins: [
         {
-          cleanupAttrs: true
+          removeTitle: false,
         },
         {
-          removeComments: true
+          cleanupAttrs: true,
         },
         {
-          removeViewBox: true
+          removeComments: true,
         },
         {
-          cleanupIDs: false
-        }
-      ]
-    })
+          removeViewBox: true,
+        },
+        {
+          cleanupIDs: false,
+        },
+      ],
+    }),
   ],
   options: {
-    verbose: true
-  }
+    verbose: true,
+  },
 };
 
 const gulpSass = {
   options: {
     precision: 6,
-    outputStyle: 'nested'
-  }
+    outputStyle: 'nested',
+  },
 };
 
 const autoprefixer = {
   options: {
-    cascade: false
-  }
+    cascade: false,
+  },
 };
 
 const cleanCss = {
   options: {
     level: 1,
     format: {
-      breaksWith: 'lf'
-    }
-  }
+      breaksWith: 'lf',
+    },
+  },
 };
 
 module.exports = {
   imagemin,
   gulpSass,
   autoprefixer,
-  cleanCss
+  cleanCss,
 };

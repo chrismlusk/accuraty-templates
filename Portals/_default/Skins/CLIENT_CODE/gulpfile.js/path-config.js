@@ -19,7 +19,7 @@ module.exports = {
     dest: './public/fonts/',
   },
   images: {
-    src: './src/images/**/*.{jpg,jpeg,png,gif}',
+    src: './src/images/**/*.{jpg,jpeg,png,gif,svg}',
     dest: './public/images/',
   },
   styles: {
