@@ -4,7 +4,7 @@ const DEFAULT_OPTIONS = {
   autoPlay: false,
   cellAlign: 'left',
   cellSelector: '.carousel-cell',
-  wrapAround: true
+  wrapAround: true,
 };
 
 function buildFlickity(element = '.carousel', options = DEFAULT_OPTIONS) {

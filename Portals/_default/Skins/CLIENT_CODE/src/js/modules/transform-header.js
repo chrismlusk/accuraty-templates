@@ -15,8 +15,8 @@ function transformHeader() {
   let scrolling = false;
 
   function hideOnScroll() {
-    const triggerPosition = 300;
-    const className = 'is-hidden';
+    const triggerPosition = 300; // 1
+    const className = 'is-hidden'; // 2
     const scroll =
       document.documentElement.scrollTop ||
       document.body.scrollTop ||

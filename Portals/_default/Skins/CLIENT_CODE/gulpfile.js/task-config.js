@@ -7,14 +7,14 @@ module.exports = {
     // set as `true` if you want to get compiled asset from `node_modules`
     bootstrap: true,
     flickity: false,
-    fontAwesome: false
+    fontAwesome: false,
   },
   fonts: true,
   images: true,
   styles: {
     skinLayouts: true,
     containers: true,
-    edn: true
+    edn: true,
   },
   scripts: true,
 
@@ -23,7 +23,7 @@ module.exports = {
     // Each entry will be turned into its own bundle via Webpack
     entries: {
       main: './src/js/main.js',
-      home: './src/js/home.js'
-    }
-  }
+      home: './src/js/home.js',
+    },
+  },
 };

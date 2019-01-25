@@ -15,11 +15,11 @@ const cleanTask = () => {
     `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/*.css`,
     `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/*.css.map`,
     'public/*',
-    '!public/.git'
+    '!public/.git',
   ];
 
   return del(TASK_CONFIG.production ? ['.tmp/'] : allCompiledFiles, {
-    force: true
+    force: true,
   });
 };
 

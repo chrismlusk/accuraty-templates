@@ -30,8 +30,8 @@ const WEBPACK_CONFIG = {
   entry: TASK_CONFIG.webpack.entries,
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(process.env.INIT_CWD, 'public/js')
-  }
+    path: path.resolve(process.env.INIT_CWD, 'public/js'),
+  },
   // optimization: {
   //   splitChunks: {
   //     chunks: 'all'
@@ -53,7 +53,6 @@ function compileScriptsWithWebpack() {
 
 function compileScriptsPlain() {
   if (!TASK_CONFIG.scripts || TASK_CONFIG.webpack) return Promise.resolve();
-  console.log('HEY THE PLAIN SCRIPTS COMPILER IS RUNNING');
 
   return gulp
     .src(PATH_CONFIG.scripts.src)
@@ -66,13 +65,13 @@ function compileScriptsPlain() {
       gulpif(
         ['*.js', '!*.min.js'],
         rename({
-          suffix: '.min'
+          suffix: '.min',
         })
       )
     )
     .pipe(
       size({
-        title: 'public/js'
+        title: 'public/js',
       })
     )
     .pipe(sourcemaps.write('.'))

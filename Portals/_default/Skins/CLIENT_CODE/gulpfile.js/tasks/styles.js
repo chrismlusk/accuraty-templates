@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const newer = require('gulp-newer');
 const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
+const stylelint = require('gulp-stylelint');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -17,6 +18,18 @@ const PLUGIN_CONFIG = require('../plugin-config');
 
 // explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
 sass.compiler = require('node-sass');
+
+function lintStyles() {
+  if (!TASK_CONFIG.styles) return Promise.resolve();
+
+  return gulp.src(PATH_CONFIG.styles.src).pipe(
+    stylelint({
+      failAfterError: true,
+      fix: true,
+      reporters: [{ formatter: 'verbose', console: true }],
+    })
+  );
+}
 
 function compileSkinLayoutStyles() {
   if (!TASK_CONFIG.styles.skinLayouts) return Promise.resolve();
@@ -32,7 +45,7 @@ function compileSkinLayoutStyles() {
     )
     .pipe(
       size({
-        title: 'Skin layout css'
+        title: 'Skin layout css',
       })
     )
     .pipe(sourcemaps.write('.'))
@@ -54,7 +67,7 @@ function compileContainerStyles() {
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(
       size({
-        title: 'Container css'
+        title: 'Container css',
       })
     )
     .pipe(sourcemaps.write('.'))
@@ -76,12 +89,12 @@ function compileEDNStyles() {
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(
       size({
-        title: 'EasyDNNnews css'
+        title: 'EasyDNNnews css',
       })
     )
     .pipe(
       rename({
-        basename: `${project}`
+        basename: `${project}`,
       })
     )
     .pipe(sourcemaps.write('.'))
@@ -90,6 +103,7 @@ function compileEDNStyles() {
 }
 
 const stylesTask = gulp.parallel(
+  lintStyles,
   compileSkinLayoutStyles,
   compileContainerStyles,
   compileEDNStyles

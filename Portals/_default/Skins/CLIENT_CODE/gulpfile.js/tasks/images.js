@@ -19,7 +19,7 @@ const imagesTask = () => {
     .pipe(gulp.dest(PATH_CONFIG.images.dest))
     .pipe(
       size({
-        title: 'public/images'
+        title: 'public/images',
       })
     );
 };
