@@ -36,6 +36,7 @@
     "**/.DS_Store": true,
     "**/.tmp": true,
     "**/*.cache": true,
+    "**/*.sublime*": true,
     "**/node_modules": true
   },
   "files.insertFinalNewline": true,
