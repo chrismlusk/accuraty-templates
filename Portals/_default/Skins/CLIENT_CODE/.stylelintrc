@@ -1,0 +1,20 @@
+{
+  "extends": ["stylelint-config-twbs-bootstrap/scss"],
+  "defaultSeverity": "warning",
+  "rules": {
+    "block-no-empty": null,
+    "declaration-no-important": null,
+    "indentation": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "selector-class-pattern": null,
+    "selector-max-id": 1,
+    "selector-max-type": [4, {}],
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute", "class"]
+      }
+    ],
+    "scss/dollar-variable-default": null
+  }
+}

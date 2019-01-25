@@ -8,6 +8,9 @@
 //
 // ============================================================================
 
+
+
+
 //
 // Mandatory imports
 // =================
@@ -17,11 +20,14 @@
 // 3. Default Bootstrap variables.
 // ----------------------------------------------------------------------------
 
-@import '../../node_modules/bootstrap/scss/functions'; // 1
-@import '../../node_modules/bootstrap/scss/mixins'; // 1
-@import '_abstracts/variables'; // 2
-@import '_abstracts/mixins'; // 2
-@import '../../node_modules/bootstrap/scss/variables'; // 3
+@import "../../node_modules/bootstrap/scss/functions"; // 1
+@import "../../node_modules/bootstrap/scss/mixins"; // 1
+@import "_abstracts/variables"; // 2
+@import "_abstracts/mixins"; // 2
+@import "../../node_modules/bootstrap/scss/variables"; // 3
+
+
+
 
 //
 // Theme overrides
@@ -34,11 +40,9 @@
 //    Do not add a closing brace or move the selector.
 // ----------------------------------------------------------------------------
 
-#home {
-  // 1
+#home { // 1
 
-  &.main {
-  }
+  &.main {}
 } // Important! This closes `#home` and must come *after* overrides.
 
 // Begin adding page-specific components or new styles here ...
