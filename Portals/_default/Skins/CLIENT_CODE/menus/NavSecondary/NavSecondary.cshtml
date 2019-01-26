@@ -17,28 +17,30 @@
           <a
             href='@(node.Enabled ? node.Url : "#")'
             class='nav-link@(node.HasChildren() ? " dropdown-toggle" : "")'
-            id="tab-@node.TabId-dropdown"
             @{
               if (node.HasChildren()) {
+                <text>id="tab-@node.TabId-dropdown"</text>
                 <text>data-toggle="dropdown"</text>
                 <text>aria-haspopup="true"</text>
                 <text>aria-expanded="false"</text>
               }
             }
           >@node.Text</a>
-          @RenderChildren(node.Children)
+          @RenderChildren(node)
         </li>
       }
     </ul>
   }
 }
 
-@helper RenderChildren(IList<MenuNode> children) {
+@helper RenderChildren(MenuNode node) {
+  var children = node.Children;
   if (children.Count > 0) {
-    <div class="dropdown-menu" aria-labelledby="">
+    <div class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown">
       @foreach (var child in children) {
         var dropdownItemClasses = new List<string>();
         dropdownItemClasses.Add("dropdown-item");
+        dropdownItemClasses.Add("tab-" + child.TabId);
         if (child.Breadcrumb) { dropdownItemClasses.Add("active"); }
         var dropdownItemCss = new HtmlString((dropdownItemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dropdownItemClasses.ToArray()) + "\""));
         <a
