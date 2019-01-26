@@ -1,5 +1,5 @@
-<footer class="footer">
-  <section class="footer-upper">
+<footer class="footer" role="contentinfo">
+  <div class="footer-upper">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
@@ -27,16 +27,22 @@
           </div>
         </div>
         <div class="col-md-6">
-          <nav class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
-            <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Facebook</a>
-            <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Twitter</a>
-            <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">YouTube</a>
-          </nav>
+          <ul class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Facebook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Twitter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">YouTube</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
-  <section class="footer-lower">
+  </div>
+  <div class="footer-lower">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
@@ -53,7 +59,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </footer>
 
 <%--  <!--#include file="__debug.ascx"-->  --%>

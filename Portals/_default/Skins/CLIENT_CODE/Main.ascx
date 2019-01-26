@@ -1,7 +1,7 @@
 <!--#include file="includes/_preheader.ascx"-->
 <!--#include file="includes/_header.ascx"-->
 
-<main class="main">
+<main class="main" role="main">
   <div class="container-fluid">
     <!--#include file="includes/_breadcrumb.ascx"-->
     <div class="row">

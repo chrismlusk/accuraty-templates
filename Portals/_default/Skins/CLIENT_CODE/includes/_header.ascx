@@ -1,5 +1,5 @@
-<header class="header  fixed-to-top">
-  <nav class="navbar navbar-expand-md navbar-light">
+<header class="header  fixed-to-top" role="banner">
+  <nav class="navbar navbar-expand-md navbar-light" role="navigation">
     <a
       class="navbar-brand"
       href="<%= DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId) %>"
