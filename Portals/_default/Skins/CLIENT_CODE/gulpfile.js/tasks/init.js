@@ -1,6 +1,18 @@
 const gulp = require('gulp');
+const replace = require('gulp-replace');
+
 const { paths, project } = require('../config');
 const { fonts, bootstrapJs, flickityCss, flickityJs } = paths;
+
+function setClientCode() {
+  const pattern = /\$asl--client-code:\\?.*/g;
+  const updated = `$asl--client-code: "${project.name}";`;
+
+  return gulp
+    .src('./src/scss/_abstracts/_variables.scss')
+    .pipe(replace(pattern, updated))
+    .pipe(gulp.dest('./src/scss/_abstracts/'));
+}
 
 function getFonts() {
   if (!project.fonts) return Promise.resolve();
@@ -23,6 +35,7 @@ function getFlickityJs() {
 }
 
 const initTask = gulp.series(
+  setClientCode,
   getFonts,
   getBootstrapJs,
   getFlickityCss,
