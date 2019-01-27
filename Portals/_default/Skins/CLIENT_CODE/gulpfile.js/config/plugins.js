@@ -1,5 +1,42 @@
-const imageminPlugin = require('gulp-imagemin');
+/**
+ * GULP SASS
+ * https://github.com/sass/node-sass#options
+ */
+const gulpSass = {
+  options: {
+    precision: 6,
+    outputStyle: 'nested',
+  },
+};
 
+/**
+ * AUTOPREFIXER
+ * https://github.com/postcss/autoprefixer#options
+ */
+const autoprefixer = {
+  options: {
+    cascade: false,
+  },
+};
+
+/**
+ * CLEAN CSS
+ * https://github.com/jakubpawlowicz/clean-css#constructor-options
+ */
+const cleanCss = {
+  options: {
+    level: 1,
+    format: {
+      breaksWith: 'lf',
+    },
+  },
+};
+
+/**
+ * IMAGEMIN
+ * https://github.com/sindresorhus/gulp-imagemin
+ */
+const imageminPlugin = require('gulp-imagemin');
 const imagemin = {
   plugins: [
     imageminPlugin.gifsicle({
@@ -36,31 +73,12 @@ const imagemin = {
   },
 };
 
-const gulpSass = {
-  options: {
-    precision: 6,
-    outputStyle: 'nested',
-  },
-};
-
-const autoprefixer = {
-  options: {
-    cascade: false,
-  },
-};
-
-const cleanCss = {
-  options: {
-    level: 1,
-    format: {
-      breaksWith: 'lf',
-    },
-  },
-};
-
+/**
+ * EXPORTS
+ */
 module.exports = {
-  imagemin,
   gulpSass,
   autoprefixer,
   cleanCss,
+  imagemin,
 };

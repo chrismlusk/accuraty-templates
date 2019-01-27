@@ -8,9 +8,6 @@
 // 1. Require all tasks in gulpfile.js/tasks, including any subfolders
 // ----------------------------------------------------------------------------
 
-// const gulp = require('gulp');
 const requireDir = require('require-dir');
 
-requireDir('./tasks', {
-  recurse: true
-}); // 1
+requireDir('./tasks', { recurse: true }); // 1

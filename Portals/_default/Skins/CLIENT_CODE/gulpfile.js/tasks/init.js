@@ -1,34 +1,25 @@
 const gulp = require('gulp');
-
-const PATH_CONFIG = require('../path-config');
-const TASK_CONFIG = require('../task-config');
+const { paths, project } = require('../config');
+const { fonts, bootstrapJs, flickityCss, flickityJs } = paths;
 
 function getFonts() {
-  if (!TASK_CONFIG.fonts) return Promise.resolve();
-  return gulp
-    .src(PATH_CONFIG.fonts.src)
-    .pipe(gulp.dest(PATH_CONFIG.fonts.dest));
+  if (!project.fonts) return Promise.resolve();
+  return gulp.src(fonts.src).pipe(gulp.dest(fonts.dest));
 }
 
 function getBootstrapJs() {
-  if (!TASK_CONFIG.vendors.bootstrap) return Promise.resolve();
-  return gulp
-    .src(PATH_CONFIG.bootstrapJs.src)
-    .pipe(gulp.dest(PATH_CONFIG.bootstrapJs.dest));
+  if (!project.vendors.bootstrap) return Promise.resolve();
+  return gulp.src(bootstrapJs.src).pipe(gulp.dest(bootstrapJs.dest));
 }
 
 function getFlickityCss() {
-  if (!TASK_CONFIG.vendors.flickity) return Promise.resolve();
-  return gulp
-    .src(PATH_CONFIG.flickityCss.src)
-    .pipe(gulp.dest(PATH_CONFIG.flickityCss.dest));
+  if (!project.vendors.flickity) return Promise.resolve();
+  return gulp.src(flickityCss.src).pipe(gulp.dest(flickityCss.dest));
 }
 
 function getFlickityJs() {
-  if (!TASK_CONFIG.vendors.flickity) return Promise.resolve();
-  return gulp
-    .src(PATH_CONFIG.flickityJs.src)
-    .pipe(gulp.dest(PATH_CONFIG.flickityJs.dest));
+  if (!project.vendors.flickity) return Promise.resolve();
+  return gulp.src(flickityJs.src).pipe(gulp.dest(flickityJs.dest));
 }
 
 const initTask = gulp.series(

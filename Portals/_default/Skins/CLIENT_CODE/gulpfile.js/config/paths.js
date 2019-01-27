@@ -1,5 +1,4 @@
-const pkg = require('../package.json');
-const project = pkg.name;
+const { name } = require('./project');
 
 module.exports = {
   bootstrapJs: {
@@ -32,11 +31,11 @@ module.exports = {
   },
   containerStyles: {
     src: `./src/scss/Containers/*.scss`,
-    dest: `../../Containers/${project}/`,
+    dest: `../../Containers/${name}/`,
   },
   ednStyles: {
     src: './src/scss/EasyDNNsolutions/EasyDNNnews.scss',
-    dest: `../../../../DesktopModules/EasyDNNnews/Templates/_default/${project}/`,
+    dest: `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/`,
   },
   scripts: {
     src: './src/js/**/*.js',

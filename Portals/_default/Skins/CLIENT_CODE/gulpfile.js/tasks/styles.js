@@ -1,5 +1,3 @@
-const project = require('../../package.json').name;
-
 const gulp = require('gulp');
 const newer = require('gulp-newer');
 const gulpif = require('gulp-if');
@@ -12,17 +10,16 @@ const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const size = require('gulp-size');
 
-const PATH_CONFIG = require('../path-config');
-const TASK_CONFIG = require('../task-config');
-const PLUGIN_CONFIG = require('../plugin-config');
+const { paths, plugins, project } = require('../config');
+const { styles, skinLayoutStyles, containerStyles, ednStyles } = paths;
 
 // explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
 sass.compiler = require('node-sass');
 
 function lintStyles() {
-  if (!TASK_CONFIG.styles) return Promise.resolve();
+  if (!project.styles) return Promise.resolve();
 
-  return gulp.src(PATH_CONFIG.styles.src).pipe(
+  return gulp.src(styles.src).pipe(
     stylelint({
       failAfterError: true,
       fix: true,
@@ -32,73 +29,51 @@ function lintStyles() {
 }
 
 function compileSkinLayoutStyles() {
-  if (!TASK_CONFIG.styles.skinLayouts) return Promise.resolve();
+  if (!project.styles.skinLayouts) return Promise.resolve();
   return gulp
-    .src(PATH_CONFIG.skinLayoutStyles.src)
+    .src(skinLayoutStyles.src)
     .pipe(newer('.tmp/styles'))
     .pipe(sourcemaps.init())
-    .pipe(sass(PLUGIN_CONFIG.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss([autoprefixer(PLUGIN_CONFIG.autoprefixer.options)]))
+    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+    .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(
-      gulpif(TASK_CONFIG.production, cleanCss(PLUGIN_CONFIG.cleanCss.options))
-    )
-    .pipe(
-      size({
-        title: 'Skin layout css',
-      })
-    )
+    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
+    .pipe(size({ title: 'Skin layout CSS' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(PATH_CONFIG.skinLayoutStyles.dest))
+    .pipe(gulp.dest(skinLayoutStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
 
 function compileContainerStyles() {
-  if (!TASK_CONFIG.styles.containers) return Promise.resolve();
+  if (!project.styles.containers) return Promise.resolve();
   return gulp
-    .src(PATH_CONFIG.containerStyles.src)
+    .src(containerStyles.src)
     .pipe(newer('.tmp/styles'))
     .pipe(sourcemaps.init())
-    .pipe(sass(PLUGIN_CONFIG.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss([autoprefixer(PLUGIN_CONFIG.autoprefixer.options)]))
-    .pipe(
-      gulpif(TASK_CONFIG.production, cleanCss(PLUGIN_CONFIG.cleanCss.options))
-    )
+    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+    .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
+    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(
-      size({
-        title: 'Container css',
-      })
-    )
+    .pipe(size({ title: 'Container CSS' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(PATH_CONFIG.containerStyles.dest))
+    .pipe(gulp.dest(containerStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
 
 function compileEDNStyles() {
-  if (!TASK_CONFIG.styles.edn) return Promise.resolve();
+  if (!project.styles.edn) return Promise.resolve();
   return gulp
-    .src(PATH_CONFIG.ednStyles.src)
+    .src(ednStyles.src)
     .pipe(newer('.tmp/styles'))
     .pipe(sourcemaps.init())
-    .pipe(sass(PLUGIN_CONFIG.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss([autoprefixer(PLUGIN_CONFIG.autoprefixer.options)]))
-    .pipe(
-      gulpif(TASK_CONFIG.production, cleanCss(PLUGIN_CONFIG.cleanCss.options))
-    )
+    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+    .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
+    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(
-      size({
-        title: 'EasyDNNnews css',
-      })
-    )
-    .pipe(
-      rename({
-        basename: `${project}`,
-      })
-    )
+    .pipe(size({ title: 'EasyDNNnews CSS' }))
+    .pipe(rename({ basename: `${project.name}` }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(PATH_CONFIG.ednStyles.dest))
+    .pipe(gulp.dest(ednStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
 

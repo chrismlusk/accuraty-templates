@@ -1,4 +1,11 @@
+const pkg = require('../../package.json');
+// NPM rules require the `package.json` name to be lowercase.
+// By convention, Accuraty's client codes are uppercase.
+const projectName = pkg.name.toUpperCase();
+
 module.exports = {
+  name: projectName,
+
   // Be sure to update this when you're ready for production!
   production: false,
 
