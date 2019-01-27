@@ -8,7 +8,12 @@
     "font-family-no-missing-generic-family-keyword": null,
     "selector-class-pattern": null,
     "selector-max-id": 1,
-    "selector-max-type": [4, {}],
+    "selector-max-type": [
+      4,
+      {
+        "ignore": ["next-sibling"]
+      }
+    ],
     "selector-no-qualifying-type": [
       true,
       {
