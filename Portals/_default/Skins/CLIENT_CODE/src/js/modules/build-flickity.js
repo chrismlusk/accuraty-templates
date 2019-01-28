@@ -7,10 +7,15 @@ const DEFAULT_OPTIONS = {
   wrapAround: true,
 };
 
-function buildFlickity(element = '.carousel', options = DEFAULT_OPTIONS) {
+function buildFlickity(element = '.carousel', providedOptions) {
   if (typeof element !== 'string') {
     throw new Error('Flickity element must be a string');
   }
+
+  const options = {
+    ...DEFAULT_OPTIONS,
+    ...providedOptions,
+  };
 
   return new Flickity(element, options);
 }
