@@ -51,6 +51,9 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "less.validate": false,
   "prettier.disableLanguages": ["css", "html", "scss", "sass"],
+  "search.exclude": {
+    "**/EasyDNNnews/**/assets": true
+  },
   "scss.lint.emptyRules": "ignore",
   "scss.lint.universalSelector": "warning",
   "scss.validate": false,
