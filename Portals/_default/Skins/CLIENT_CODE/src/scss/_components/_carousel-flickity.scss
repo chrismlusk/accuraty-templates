@@ -35,7 +35,14 @@
 // Wrapper and base class
 // ======================
 
-.carousel {}
+.carousel {
+  opacity: 0;
+  transition: opacity $transition-speed $transition-easing;
+
+  &.flickity-enabled {
+    opacity: 1;
+  }
+}
 
 
 
@@ -45,8 +52,8 @@
 // ========================
 //
 // These classes and the markup are only added when Flickity is initialized.
-//   * Controls (http://flickity.metafizzy.co/style.html#previous-next-buttons)
-//   * Indicators (http://flickity.metafizzy.co/style.html#page-dots)
+//   - Controls (http://flickity.metafizzy.co/style.html#previous-next-buttons)
+//   - Indicators (http://flickity.metafizzy.co/style.html#page-dots)
 // ----------------------------------------------------------------------------
 
 // Controls
