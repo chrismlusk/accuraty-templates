@@ -4,11 +4,27 @@ This is an attempt to create a set of standards and best practices for Accuraty 
 
 ## Getting Started
 
+At the root of your new project folder, run the following commands:
+
 ```
 git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
 git fetch accuraty
 git merge accuraty/master
 ```
+
+Then, navigate to the project's skin folder (e.g., `Portals/_default/Skins/CLIENT_CODE`) and run the following command:
+
+```
+npm install
+```
+
+Once the project dependencies are installed, run the following command:
+
+```
+npm start
+```
+
+This will kick off the Gulp tasks to initialize the project and begin watching for changes to source files.
 
 ## Overview
 
