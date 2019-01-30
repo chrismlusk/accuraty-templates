@@ -5,7 +5,7 @@
 
 @helper RenderNodes(IList<MenuNode> nodes) {
   if (nodes.Count > 0) {
-    <ul class='@(nodes[0].Depth == 0 ? "navbar-nav ml-auto" : "")'>
+    <ul class="navbar-nav ml-auto">
       @foreach (var node in nodes) {
         var navItemClasses = new List<string>();
         navItemClasses.Add("nav-item");
@@ -36,20 +36,36 @@
 @helper RenderChildren(MenuNode node) {
   var children = node.Children;
   if (children.Count > 0) {
-    <div class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown">
+    <ul class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown">
       @foreach (var child in children) {
-        var dropdownItemClasses = new List<string>();
-        dropdownItemClasses.Add("dropdown-item");
-        dropdownItemClasses.Add("tab-" + child.TabId);
-        if (child.Breadcrumb) { dropdownItemClasses.Add("active"); }
-        var dropdownItemCss = new HtmlString((dropdownItemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dropdownItemClasses.ToArray()) + "\""));
-        <a
-          @dropdownItemCss
-          href="@child.Url"
-          target="@(child.Target)"
-        >@child.Text</a>
+        var dItemClasses = new List<string>();
+        dItemClasses.Add("tab-" + child.TabId);
+        if (child.HasChildren()) { dItemClasses.Add("dropdown"); }
+        var dItemCss = new HtmlString((dItemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dItemClasses.ToArray()) + "\""));
+
+        var dLinkClasses = new List<string>();
+        dLinkClasses.Add("dropdown-item");
+        if (child.Breadcrumb) { dLinkClasses.Add("active"); }
+        if (child.HasChildren()) { dLinkClasses.Add("dropdown-toggle"); }
+        var dLinkCss = new HtmlString((dLinkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dLinkClasses.ToArray()) + "\""));
+        <li @dItemCss>
+          <a
+            @dLinkCss
+            href='@(child.Enabled ? child.Url : "#")'
+            target="@(child.Target)"
+            @{
+              if (child.HasChildren()) {
+                <text>id="tab-@child.TabId-dropdown"</text>
+                <text>data-toggle="dropdown"</text>
+                <text>aria-haspopup="true"</text>
+                <text>aria-expanded="false"</text>
+              }
+            }
+          >@child.Text</a>
+          @RenderChildren(child)
+        </li>
       }
-    </div>
+    </ul>
   }
 }
 

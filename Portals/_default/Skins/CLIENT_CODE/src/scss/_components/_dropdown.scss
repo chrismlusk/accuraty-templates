@@ -25,7 +25,18 @@
 // Dropdown toggle
 // ===============
 
-// .dropdown-toggle {}
+.dropdown-toggle {
+
+  // Nested dropdown
+  .dropdown-menu & {
+    @include caret(right);
+
+    &::after {
+      margin-left: .325em;
+      vertical-align: 0;
+    }
+  }
+}
 
 
 
@@ -34,7 +45,16 @@
 // Dropdown menu
 // =============
 
-// .dropdown-menu {}
+.dropdown-menu {
+
+  // Nested dropdown
+  .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -.55rem;
+    margin-left: -.5rem;
+  }
+}
 
 
 
@@ -56,5 +76,10 @@
   &.active,
   &:active {
     color: $dropdown-link-active-color;
+  }
+
+  // Nested dropdown
+  .dropdown.show > & {
+    background-color: $dropdown-link-hover-bg;
   }
 }
