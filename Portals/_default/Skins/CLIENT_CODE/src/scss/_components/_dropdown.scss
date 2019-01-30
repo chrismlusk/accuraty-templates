@@ -81,5 +81,9 @@
   // Nested dropdown
   .dropdown.show > & {
     background-color: $dropdown-link-hover-bg;
+
+    &.active,
+    &:active {
+      background-color: $dropdown-link-active-bg;
+    }
   }
-}
