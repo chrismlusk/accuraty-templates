@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.2.1",
-    "flickity": "^2.1.2",
+    "flickity": "^2.2.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6"
   },
@@ -50,7 +50,7 @@
     "gulp-uglify": "^3.0.1",
     "gulp-zip": "^4.2.0",
     "node-sass": "^4.11.0",
-    "prettier": "^1.16.1",
+    "prettier": "^1.16.3",
     "require-dir": "^1.2.0",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.3.0",
