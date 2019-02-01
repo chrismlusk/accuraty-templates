@@ -85,7 +85,7 @@ $edn--figure-width: 150px;
 
   @include media-breakpoint-up(md) {
     flex: 1 1 auto;
-    padding-right: 1rem;
+    padding-right: 2rem;
   }
 
   &.has-no-media {

@@ -44,7 +44,10 @@
 // Page link
 // =========
 
-.article_pager .page {
+.article_pager .page,
+.article_pager .prev,
+.article_pager .next,
+.article_pager .last {
   position: relative;
   display: block;
   padding: $pagination-padding-y $pagination-padding-x;
