@@ -46,12 +46,12 @@
   display: block;
   width: 100%;
   padding: 0;
-	margin-bottom: 1em;
 	overflow: hidden;
 	background-color: $black;
   cursor: pointer;
 
   &::before {
+    padding-top: 56.25%; // 16x9 aspect ratio
     display: block;
     content: "";
   }
