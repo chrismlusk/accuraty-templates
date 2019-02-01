@@ -1,8 +1,8 @@
 <!--TemplateGroup:listArticleDefault-->
 <!--ArticleRepeat:Before:-->
 <div class="[EasyDNNnews:ArticleListWrapperClass]">
-  <!--RepeatEnd:Before:-->
-  <!--ArticleTemplate-->
+<!--RepeatEnd:Before:-->
+<!--ArticleTemplate-->
   <article class="EDN__article is-list">
 
     <header class="EDN__article__header[EasyDNNnews:IfNotExists:Image] has-no-media[EasyDNNnews:EndIf:Image]">
@@ -15,7 +15,7 @@
       </div>
       [EasyDNNnews:HasArticlePermissionsEnd]
 
-      <h2 class="EDN__article__title"><a href="[EasyDNNnews:Title:Link]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnews:Title]</a></h2>
+      <h1 class="EDN__article__title"><a href="[EasyDNNnews:Title:Link]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnews:Title]</a></h1>
 
       <div class="EDN__article__summary">
         [EasyDNNnews:IfNotExists:Summary]
@@ -31,7 +31,7 @@
 
       <div class="EDN__meta">
         <span class="EDN__meta__author">[EasyDNNnews:Author:Link]</span>
-        <span class="EDN__meta__date"><time>[EasyDNNnews:IfNotExists:Event][EasyDNNnews:FormatedDate:MMM dd,
+        <span class="EDN__meta__date"><time pubdate="pubdate">[EasyDNNnews:IfNotExists:Event][EasyDNNnews:FormatedDate:MMM dd,
             yyyy][EasyDNNnews:EndIf:Event][EasyDNNnews:IfExists:Event][EasyDNNnews:EventDate][EasyDNNnews:EndIf:Event]</time></span>
       </div>
     </header>
@@ -43,8 +43,7 @@
     [EasyDNNnews:EndIf:Image]
 
   </article>
-  <!--ArticleEnd-->
-
-  <!--ArticleRepeat:After:-->
+<!--ArticleEnd-->
+<!--ArticleRepeat:After:-->
 </div>
 <!--RepeatEnd:After:-->
