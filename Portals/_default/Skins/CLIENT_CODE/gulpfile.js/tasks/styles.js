@@ -11,7 +11,13 @@ const rename = require('gulp-rename');
 const size = require('gulp-size');
 
 const { paths, plugins, project } = require('../config');
-const { styles, skinLayoutStyles, containerStyles, ednStyles } = paths;
+const {
+  styles,
+  skinLayoutStyles,
+  containerStyles,
+  ednStyles,
+  accuratyContainerStyles,
+} = paths;
 
 // explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
 sass.compiler = require('node-sass');
@@ -77,11 +83,28 @@ function compileEDNStyles() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
+function compileAccuratyContainerStyles() {
+  if (!project.styles.accuratyContainers) return Promise.resolve();
+  return gulp
+    .src(accuratyContainerStyles.src)
+    .pipe(newer('.tmp/styles'))
+    .pipe(sourcemaps.init())
+    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+    .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
+    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
+    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(size({ title: 'Accuraty Container CSS' }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(accuratyContainerStyles.dest))
+    .pipe(gulp.dest('.tmp/styles'));
+}
+
 const stylesTask = gulp.parallel(
   lintStyles,
   compileSkinLayoutStyles,
   compileContainerStyles,
-  compileEDNStyles
+  compileEDNStyles,
+  compileAccuratyContainerStyles
 );
 
 gulp.task('styles', stylesTask);

@@ -8,8 +8,8 @@ const cleanTask = () => {
     '.tmp/',
     './*.css',
     './*.css.map',
-    `../../Containers/${project.name}/*.css`,
-    `../../Containers/${project.name}/*.css.map`,
+    `../../Containers/**/*.css`,
+    `../../Containers/**/*.css.map`,
     `../../../../DesktopModules/EasyDNNnews/Templates/_default/${
       project.name
     }/*.css`,
