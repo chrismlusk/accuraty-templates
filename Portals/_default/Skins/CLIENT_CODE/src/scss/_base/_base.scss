@@ -65,6 +65,30 @@ a {
       color: $link-inverse-hover-color;
     }
   }
+
+  &.is-facebook {
+    @include hover-focus {
+      color: $facebook-primary !important;
+    }
+  }
+
+  &.is-twitter {
+    @include hover-focus {
+      color: $twitter-primary !important;
+    }
+  }
+
+  &.is-youtube {
+    @include hover-focus {
+      color: $youtube-primary !important;
+    }
+  }
+
+  &.is-linkedin {
+    @include hover-focus {
+      color: $linkedin-primary !important;
+    }
+  }
 }
 
 
