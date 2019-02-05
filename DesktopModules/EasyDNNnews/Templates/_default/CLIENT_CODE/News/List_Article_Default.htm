@@ -15,19 +15,13 @@
       </div>
       [EasyDNNnews:HasArticlePermissionsEnd]
 
-      <h1 class="EDN__article__title"><a href="[EasyDNNnews:Title:Link]" target="[EasyDNNnews:DetailTarget]">[EasyDNNnews:Title]</a></h1>
+      <a href="[EasyDNNnews:Title:Link]" target="[EasyDNNnews:DetailTarget]">
+        <h1 class="EDN__article__title">[EasyDNNnews:Title]</h1>
 
-      <div class="EDN__article__summary">
-        [EasyDNNnews:IfNotExists:Summary]
-        [EasyDNNnews:IfExists:SubTitle]
-        <p>[EasyDNNnews:SubTitle]</p>
-        [EasyDNNnews:EndIf:SubTitle]
-        [EasyDNNnews:EndIf:Summary]
-
-        [EasyDNNnews:IfExists:Summary]
-        [EasyDNNnews:Summary:Limit:140]
-        [EasyDNNnews:EndIf:Summary]
-      </div>
+        <div class="EDN__article__summary">
+          [EasyDNNnews:IfNotExists:SubTitle][EasyDNNnews:IfExists:Summary][EasyDNNnews:Summary:Limit:140][EasyDNNnews:EndIf:Summary][EasyDNNnews:EndIf:SubTitle][EasyDNNnews:IfExists:SubTitle]<p>[EasyDNNnews:SubTitle]</p>[EasyDNNnews:EndIf:SubTitle]
+        </div>
+      </a>
 
       <div class="EDN__meta">
         <span class="EDN__meta__author">[EasyDNNnews:Author:Link]</span>
