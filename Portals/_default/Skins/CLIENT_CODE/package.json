@@ -21,7 +21,7 @@
     "bootstrap": "^4.2.1",
     "flickity": "^2.2.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.6"
+    "popper.js": "^1.14.7"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -50,10 +50,10 @@
     "gulp-uglify": "^3.0.1",
     "gulp-zip": "^4.2.0",
     "node-sass": "^4.11.0",
-    "prettier": "^1.16.3",
+    "prettier": "^1.16.4",
     "require-dir": "^1.2.0",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.3.0",
-    "webpack": "^4.29.0"
+    "webpack": "^4.29.1"
   }
 }
