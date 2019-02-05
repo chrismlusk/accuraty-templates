@@ -16,7 +16,8 @@
 //
 // ============================================================================
 
-$edn--figure-width: 150px;
+$edn--figure-width-sm: 80px;
+$edn--figure-width-md: 150px;
 
 
 
@@ -31,11 +32,7 @@ $edn--figure-width: 150px;
 // ----------------------------------------------------------------------------
 
 .EDN__article.is-list { // 1
-  margin-bottom: 2rem;
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: 4rem;
-  }
+  margin-bottom: 4rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -53,22 +50,35 @@ $edn--figure-width: 150px;
 
 .EDN__article__title {
   margin-bottom: 0;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 
   @include media-breakpoint-up(lg) {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 
   @include media-breakpoint-up(xl) {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
+}
+
+a > .EDN__article__title {
+  color: $body-color;
+}
+
+a:hover > .EDN__article__title {
+  color: $link-color;
 }
 
 .EDN__article__subtitle {}
 
 .EDN__article__summary {
   margin-top: .25rem;
-  font-size: 1rem;
+  font-size: .875rem;
+  color: $gray-600;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1rem;
+  }
 }
 
 
@@ -82,14 +92,15 @@ $edn--figure-width: 150px;
 // ----------------------------------------------------------------------------
 
 .EDN__article__header {
-
-  @include media-breakpoint-up(md) {
-    flex: 1 1 auto;
-    padding-right: 2rem;
-  }
+  flex: 1 1 auto;
+  padding-right: 1.5rem;
 
   &.has-no-media {
-    margin-right: $edn--figure-width;
+    margin-right: $edn--figure-width-sm;
+
+    @include media-breakpoint-up(md) {
+      margin-right: $edn--figure-width-md;
+    }
   }
 }
 
@@ -107,10 +118,15 @@ $edn--figure-width: 150px;
 // =====
 
 .EDN__media {
+  flex: 0 0 auto;
+  width: $edn--figure-width-sm;
+
+  @include media-breakpoint-down(sm) {
+    height: ($edn--figure-width-sm * .9);
+  }
 
   @include media-breakpoint-up(md) {
-    flex: 0 0 auto;
-    width: $edn--figure-width;
+    width: $edn--figure-width-md;
   }
 }
 
