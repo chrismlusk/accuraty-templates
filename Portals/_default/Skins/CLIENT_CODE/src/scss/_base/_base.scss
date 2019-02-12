@@ -47,7 +47,9 @@ a {
 
   @include plain-visited {
     color: $link-color;
-    transition: $transition-base;
+    transition-property: color;
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing-function;
   }
 
   @include hover-focus {

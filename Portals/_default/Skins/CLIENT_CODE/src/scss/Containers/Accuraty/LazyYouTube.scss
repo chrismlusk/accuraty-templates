@@ -108,7 +108,9 @@
 	opacity: .8;
 	text-align: center;
 	text-indent: .1em;
-  transition: all $transition-speed $transition-easing;
+  transition-property: background-color, opacity;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
   transform: translate3d( -50%, -50%, 0);
   cursor: pointer;
 

@@ -43,8 +43,10 @@
   p,
   ol,
   ul {
-    &:not(:last-child) {
-      margin-bottom: $paragraph-margin-bottom; // 1
+    margin-bottom: $paragraph-margin-bottom; // 1
+
+    &:last-child {
+      margin-bottom: 0; // 1
     }
   }
 
