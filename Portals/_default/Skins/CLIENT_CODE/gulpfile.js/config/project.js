@@ -18,6 +18,7 @@ module.exports = {
   },
   fonts: true,
   images: true,
+  icons: true,
   styles: {
     skinLayouts: true,
     containers: true,
