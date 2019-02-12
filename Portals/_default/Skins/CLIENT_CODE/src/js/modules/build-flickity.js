@@ -17,7 +17,17 @@ function buildFlickity(element = '.carousel', providedOptions) {
     ...providedOptions,
   };
 
-  return new Flickity(element, options);
+  const flkty = new Flickity(element, options);
+
+  flkty.on('dragStart', () => {
+    document.ontouchmove = e => e.preventDefault();
+  });
+
+  flkty.on('dragEnd', () => {
+    document.ontouchmove = () => true;
+  });
+
+  return flkty;
 }
 
 export default buildFlickity;
