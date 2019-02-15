@@ -7,9 +7,9 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 
 // custom variable/mixin overrides
-@import "_abstracts/variables";
+@import "_abstracts/functions";
 @import "_abstracts/mixins";
-@import "_abstracts/animations";
+@import "_abstracts/variables";
 
 // use just what you need from Bootstrap
 @import "../../node_modules/bootstrap/scss/variables";
@@ -55,6 +55,7 @@
 // Add custom code base
 // ====================
 
+@import "_base/animations";
 @import "_base/dnn-reset";
 @import "_base/base";
 @import "_base/type";
