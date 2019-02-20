@@ -9,7 +9,7 @@ module.exports = {
   // Be sure to update this when you're ready for production!
   production: false,
 
-  // Configuration options. Are you using these items?
+  // Configuration options. Are you using these libraries?
   vendors: {
     // Set as `true` if you want to get compiled asset from `node_modules`.
     bootstrap: true,
