@@ -42,9 +42,8 @@
         <span class="EDN__article__categories">[EasyDNNnewsLocalizedText:Categories]: [EasyDNNnews:Categories]</span>
       </div>
     </header>
-
 </EDNHeader>
-<!--Gallery TOP position-->
+
 <EDNContentTop>
 
   [EasyDNNnews:IfMediaType:Image]
@@ -55,23 +54,29 @@
     [EasyDNNnews:EndIf:GalleryBackLink]
   </figure>
   [EasyDNNnews:EndIfMediaType]
+
   [EasyDNNnews:IfMediaType:EmbedMedia]
+  <!-- EMBED MEDIA HASN'T BEEN STYLED -->
   <figure class="EDN__media" style="width:[EasyDNNnews:MainArticleImageWidth]">
     [EasyDNNnews:MainMedia]
     [EasyDNNnews:IfExists:GalleryBackLink]
     <a href="[EasyDNNnews:GalleryBackLink]" class="EDN__gallery__link"><span>ViewInGallery</span></a>
     [EasyDNNnews:EndIf:GalleryBackLink]
   </figure>
+  <!-- EMBED MEDIA HASN'T BEEN STYLED -->
   [EasyDNNnews:EndIfMediaType]
-
 </EDNContentTop>
+
 <EDNContent>
   <div class="EDN__article__body">
     [EasyDNNnews:Article]
   </div>
 </EDNContent>
+
 <EDNContentBottom>
+
   [EasyDNNnews:IfExists:ArticlePreviousNext]
+  <!-- ARTICLE PREV NEXT HASN'T BEEN STYLED -->
   <div class="article_pager edn_articleScrolling">
     [EasyDNNnews:IfExists:PreviousArticleLink]
     <div class="EDN__tooltip EDN__tooltip--left">
@@ -86,37 +91,36 @@
     </div>
     [EasyDNNnews:EndIf:NextArticleLink]
   </div>
+  <!-- ARTICLE PREV NEXT HASN'T BEEN STYLED -->
   [EasyDNNnews:EndIf:ArticlePreviousNext]
+
   <div class="edn_socialPrintWrapper">
     [EasyDNNnews:SocialButtons:FBLike]
     [EasyDNNnews:SocialButtons:AddThis]
     [EasyDNNnews:Print:ArticleDetails]
   </div>
-  <div class="EDN__meta">
-    <span class="EDN__meta__views">[EasyDNNnews:NumberOfViews]</span>
-    [EasyDNNnews:ArticleRating]
-    [EasyDNNnews:IfExists:ArticleVoting]
-    <div class="edn_ArticleVoting">
-      <span class="edn__voteArticleUp"><i class="fa fa-thumbs-o-up"></i><span class="eds__voteCount">[EasyDNNnews:ArticleGoodVotesCount]</span><span
-          class="edn_voteTooltip">[EasyDNNnewsLocalizedText:Upvote]</span></span>
-      <span class="edn__voteArticleDown"><i class="fa fa-thumbs-o-down"></i><span class="eds__voteCount">[EasyDNNnews:ArticleBadVotesCount]</span><span
-          class="edn_voteTooltip">[EasyDNNnewsLocalizedText:Downvote]</span></span>
-    </div>
-    [EasyDNNnews:EndIf:ArticleVoting]
-  </div>
+
   [EasyDNNnews:IfExists:Tags]
   <div class="EDN__article__tags">[EasyDNNnewsLocalizedText:Tags]: [EasyDNNnews:Tags separator=""]</div>
   [EasyDNNnews:EndIf:Tags]
+
   [EDNcf:ShowAll]
+
   [EasyDNNnews:ArticleMaps]
+
   [EasyDNNnews:EventRegistration:ListOfAttendants]
+
   [EasyDNNnews:DocumentList]
+
   [EasyDNNnews:Links]
+
 </EDNContentBottom>
 <!--Gallery BOTTOM position-->
 <EDNFooter>
   [EasyDNNnews:GravityGallery]
+
   [EasyDNNnews:IfExists:AuthorProfile]
+  <!-- AUTHOR PROFILE HASN'T BEEN STYLED -->
   <div class="edn_authorGroupDetails">
     [EasyDNNnews:Author:Image:Width:85:Height:120:Resize:Crop]
     <h4>[EasyDNNnews:Author:DisplayName][EasyDNNnews:Author:RSSURL]</h4>
@@ -134,8 +138,11 @@
       [EasyDNNnews:Author:Website]
     </div>
   </div>
+  <!-- AUTHOR PROFILE HASN'T BEEN STYLED -->
   [EasyDNNnews:EndIf:AuthorProfile]
+
   [EasyDNNnews:IfExists:AuthorGroup]
+  <!-- AUTHOR GROUP HASN'T BEEN STYLED -->
   <div class="edn_authorGroupDetails edn_groupDetails">
     [EasyDNNnews:Author:GroupImage:Width:85:Height:120:Resize:Crop]
     <h4>[EasyDNNnews:Author:GroupName][EasyDNNnews:Author:GroupRSSURL]</h4>
@@ -151,10 +158,12 @@
       [EasyDNNnews:Author:GroupWebsite]
     </div>
   </div>
+  <!-- AUTHOR GROUP HASN'T BEEN STYLED -->
   [EasyDNNnews:EndIf:AuthorGroup]
+
   [EasyDNNnews:RelatedArticles]
 </EDNFooter>
-<!--Comments position-->
+
 <EDNBottom>
   </article>
 </EDNBottom>
