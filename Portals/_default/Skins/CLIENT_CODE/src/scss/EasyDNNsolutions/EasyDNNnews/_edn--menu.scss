@@ -3,8 +3,10 @@
 //  [Table of Contents]
 //
 //  - Base styles
-//  - Title
-//  - Nav
+//  - Label
+//  - List
+//  - Item
+//  - Link
 //
 // ============================================================================
 
@@ -21,21 +23,43 @@
 
 
 //
-// Title
+// Label
 // =====
 
-.EDN__menu__title {}
+.EDN__menu__label {
+  font-size: .875em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: $gray-500;
+
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
 
 
 
 
 //
-// Nav
+// List
 // ===
 
-.EDN__menu .nav {}
+.EDN__menu__list {
+  line-height: 1.25;
+}
 
-.EDN__menu .nav-item {
+
+
+
+//
+// Item
+// ====
+
+.EDN__menu__item {
 
   &.active {
 
@@ -43,10 +67,36 @@
       background-color: darken($primary, 10%) !important;
     }
   }
+
+  ul {
+    margin: .75em;
+    padding-left: .75em;
+    border-left: 1px solid $border-color;
+  }
 }
 
-.EDN__menu .nav-link {
+
+
+
+//
+// Link
+// ====
+
+.EDN__menu__link {
+  padding: .5em .75em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: $font-weight-medium;
+  color: $gray-700;
+  border-radius: $border-radius-sm;
+
+  @include hover-focus {
+    color: $link-color;
+  }
+}
+
+.EDN__menu__item.active > .EDN__menu__link {
+  color: $component-active-color;
+  background-color: $component-active-bg;
 }
