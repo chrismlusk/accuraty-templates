@@ -1,43 +1,43 @@
-# Sass
+# SCSS
 
-Sass extends CSS with syntax advancements and features like variables, nesting, math operations, and more. Learn about the basics [here](http://sass-lang.com/guide).
+The `scss/` folder includes skin stylesheets, module stylesheets, and sets of partials that are separated into a system of folders.
 
-There are two Sass syntaxes available: SCSS (Sassy CSS), which uses the `.scss` extension, and SASS, which uses `.sass` as its extension. **The default syntax in this template is SCSS**. Learn more about the difference [here](http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better).
+## Architecture
 
-The `scss/` folder includes the skin file, page-specific files, and sets of partials that are separated into a system of folders. (More information about this folder architecture below.)
+Our pattern is to split the codebase into meaningful, separated folders so you can easily find what you need.
 
-## Main files
+- `_abstracts/`
+- `_base/`
+- `_components/`
+- `_layout/`
+- `_utilities/`
+- `Containers/`
+- `EasyDNNsolutions/`
+- `*.scss` (skin stylesheets)
 
-The primary files (e.g., `Skin.scss`, `Home.scss`, `Manage.scss`) should be the only Sass files from the whole code base not to begin with an underscore. These files should generally not contain anything but `@import` directives and comments. The exception is page-specific files (e.g., `Home.scss`), since these will compile into CSS files that are only loaded for specific pages.
+## Skin stylesheets
 
-_Note: Before the code is deployed to the server, these files are compiled into the CSS files that are used for this project's skin._
+The skin's primary stylesheets must be at the root of the `scss/` directory and must not begin with a leading underscore. `Skin.scss` must not be renamed. The others must match the name of their skin template file. For example, if you have an `Events.ascx` file, then the stylesheet must be `Events.scss`.
 
-### Import
-
-Unlike the `@import` directive in CSS, which creates an HTTP request for each use, the Sass statement does not impact performance.
+These files are mostly just `@import` directives, however page-specific files (e.g., `Home.scss`) will often have overrides or page-specific components.
 
 ## Partials
 
-These are partial Sass files that contain snippets of code that are imported into the main file. This is a good way to modularize CSS in order to write code that adheres to the [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself) principle and is easier to maintain.
-
-Partials are named with a preceding underscore, which lets Sass know that the file is a partial and should not be generated into a CSS file. For example: `_partial.scss`.
-
-## Folder architecture
-
-Our pattern is to split the codebase into partials that are organized into meaningful, separated folders so you can easily find what you need. The main Sass file imports all partials according to the folder they live in, one after the other in the following order:
+Although not necessary, we prefix these directory names with an underscore just like partial files. This helps keep these folders distinct. Sass stylesheets then import whichever partials are needed according to the folder they live in, one after the other in the following order:
 
 1. `_abstracts/`
 2. `_base/`
 3. `_components/`
 4. `_layout/`
+5. `_utilities/`
 
-To preserve readability in `Skin.scss`, file extensions are not necessary and are therefore omitted.
+Generally, the only stylesheet that imports partials from each of these directories will be `Skin.scss`, since that is what compiles into the global stylesheet (`Skin.css`).
 
-_Note: If you add any partials to a folder, you will need to add it to the import statement in this file._
+_Note: If you add any new partials, you will need to add an import statement to whichever stylesheet you need it to belong._
 
 ### Other folders
 
-In addition to the folders for Sass partials, we also include DNN-specific folders that contain styles exclusive to DNN modules: containers, EasyDNNsolutions, etc. These are differentiated from the partials folders by not having a leading underscore and also being in Title case. The default folder are:
+These are DNN-specific folders that contain styles exclusive to DNN modules: containers, EasyDNNsolutions, etc. These do not have a leading underscore and are in Title case. The default folders are:
 
 - `Containers/`
 - `EasyDNNsolutions/`
@@ -50,7 +50,7 @@ Bootstrap is the default framework for our projects, so be sure to run `npm inst
 
 ### Modifying Bootstrap
 
-Since our projects are built on Bootstrap, modifying these styles is something you will do on every project. In the past, this has been handled with overrides in our main stylesheet.
+Since our projects are built on Bootstrap, modifying these styles is something you will do on every project. One approach is to accept the Bootstrap code as is and then add overrides in our own stylesheets.
 
 For example, if the design calls for all buttons to have no rounded corners, you could override Bootstrap's `.btn` class in the `_buttons.scss` file inside the `_components/` folder like so:
 
@@ -60,22 +60,38 @@ For example, if the design calls for all buttons to have no rounded corners, you
 }
 ```
 
-If your `@import` statements in the main file are ordered properly, this new code will override the vendor-provided styles. This method is valid and can be done with files in the `_base/`, `_components/`, or `_layout/` folders.
-
-**However, this method introduces more code and increases file size.**
+This new code will override the vendor-provided styles and is certainly valid. **However, this method introduces more code and increases file size.**
 
 ### A Better Way
 
-By using Bootstrap's source Sass files, we can take advantage of its variables and the `!default` flag that is applied. From the [Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_default):
+Because we import Bootstrap's source Sass files, we can take advantage of its variables and the `!default` flag that is applied. From the [Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_default):
 
 > You can assign to variables if they aren't already assigned by adding the `!default` flag to the end of the value. This means that if the variable has already been assigned to, it won't be re-assigned, but if it doesn't have a value yet, it will be given one.
 
-Our custom `_variables.scss` uses the same variables as Bootstrap — except we drop the `!default` flag. Then, in `Skin.scss`, we import our custom file before importing the Bootstrap code. This means when the codebase compiles, the first occurance of a Bootstrap variable actually comes from our own `_variables.scss` file, so the assigned value is what we set it as. Then, when the Bootstrap variable is reached, that value is ignored because of the `!default` flag.
+Our custom `_variables.scss` includes the same variables as Bootstrap — except we drop the `!default` flag. Then, in `Skin.scss`, we import our custom file before importing the Bootstrap code. This means when the codebase compiles, the first occurance of a Bootstrap variable actually comes from our own `_variables.scss` file, so the assigned value is what we set it as. Then, when the Bootstrap variable is reached, that value is ignored because of the `!default` flag.
 
 This approach lets us easily set Bootstrap's components without introducing any more code, and it keeps our styles and Bootstrap's styles consistent.
 
 **For this reason, it is critical we use Boostrap's variable names as our own.**
 
+## Sass at a glance
+
+Sass extends CSS with syntax advancements and features like variables, nesting, math operations, and more. Learn about the basics [here](http://sass-lang.com/guide).
+
+### Sass vs. SCSS
+
+There are two Sass syntaxes available: SCSS (Sassy CSS), which uses the `.scss` extension, and SASS, which uses `.sass` as its extension. **The default syntax in this template is SCSS**. Learn more about the difference [here](http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better).
+
+### Import
+
+Unlike the `@import` directive in CSS, which creates an HTTP request for each use, the Sass statement does not impact performance. To preserve readability, file extensions are not necessary in an `@import` and are therefore omitted.
+
+### Partials
+
+These are partial Sass files that contain snippets of code that are imported into the main file. This is a good way to modularize CSS in order to write code that adheres to the [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself) principle and is easier to maintain.
+
+Partials are named with a preceding underscore, which lets Sass know that the file is a partial and should not be generated into a CSS file. For example: `_partial.scss`.
+
 ---
 
-Reference: [Bootstrap's Sass variables on GitHub](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss)
+Reference: [Sass documentation](http://sass-lang.com/documentation), [Bootstrap's Sass variables on GitHub](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss)

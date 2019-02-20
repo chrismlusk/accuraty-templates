@@ -1,6 +1,6 @@
 # Layout
 
-The `layout/` folder contains everything needed when laying out templates. This folder will have stylesheets for the main parts of the site (e.g., header, footer, navigation, sidebar).
+The `_layout/` folder contains everything needed when laying out templates. This folder will have stylesheets for the main parts of the site. What makes something suited for `layout/` vs. `components/`? A good rule of thumb is if there is a native HTML5 tag, then it is a layout element (e.g., `<header>`, `<footer>`, `<aside>`).
 
 Layout styles are meant for the macro-level items that are _generally_ global — but they don't have to be.
 
