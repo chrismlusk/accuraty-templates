@@ -155,14 +155,12 @@
   }
 
   ol {
-    margin-top: $paragraph-margin-bottom;
     margin-right: ($paragraph-margin-bottom * 2);
     margin-left: ($paragraph-margin-bottom * 2);
     list-style: decimal outside;
   }
 
   ul:not(.nav):not(.list-unstyled):not(.pagination) {
-    margin-top: $paragraph-margin-bottom;
     margin-right: ($paragraph-margin-bottom * 2);
     margin-left: ($paragraph-margin-bottom * 2);
     list-style: disc outside;
@@ -174,11 +172,16 @@
     }
   }
 
+  ol:not(:first-child),
+  ul:not(:first-child) {
+    margin-top: $paragraph-margin-bottom;
+  }
+
   ul:not(.list-group):not(.nav):not(.pagination),
   ol:not(.list-group) {
 
     li + li {
-      margin-top: ($paragraph-margin-bottom / 4); // 2
+      margin-top: ($paragraph-margin-bottom / 2); // 2
     }
   }
 
