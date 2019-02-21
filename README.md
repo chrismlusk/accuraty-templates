@@ -1,30 +1,38 @@
-# Accuraty Templates
+# Accuraty templates
 
-This is a set of standards and best practices for projects in a way that is easy to deploy using modern web technologies and up-to-date frameworks. Accuraty primarily works with the DNN content management system. The files included are designed to be a starting point for this platform.
+This is a set of standards, common components, and best practices for projects in a way that is easy to deploy using modern web technologies and up-to-date frameworks. Accuraty primarily works with the DNN content management system. The files included are a starting point for this platform.
 
-## Getting Started
+## Project requirements
 
-At the root of your new project folder, run the following commands:
+...
+
+## Getting started
+
+At the root of your new project folder, run the following commands in your terminal:
 
 ```
 git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
 git fetch accuraty
 git merge accuraty/master
+cd Portals/_default/Skins/CLIENT_CODE
 ```
 
-Then, navigate to the project's skin folder (e.g., `Portals/_default/Skins/CLIENT_CODE`) and run the following command:
+Then, open `package.json` and change the `name` property from "CLIENT_CODE" to whatever the project's name should be. This name will be used in multiple places (e.g., the Skin and Container directories, as a Sass variable, the EasyDNNnews template name), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
+
+_Note: Although the placeholder name is in all caps, NPM rules require the name to be lowercase._
+
+Next, run the following commands:
 
 ```
 npm install
-```
-
-Once the project dependencies are installed, run the following command:
-
-```
 npm start
 ```
 
-This will kick off the Gulp tasks to initialize the project and begin watching for changes to source files.
+This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
+
+### Ongoing development
+
+`npm run dev`
 
 ## About Accuraty
 
@@ -32,4 +40,4 @@ This will kick off the Gulp tasks to initialize the project and begin watching f
 
 ---
 
-Reference: [Accuraty Solutions](http://www.accuraty.com/)
+Reference: [Accuraty Solutions](http://www.accuraty.com)
