@@ -7,7 +7,8 @@
     "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
-    "start": "gulp init && gulp watch",
+    "dev": "gulp watch",
+    "start": "gulp init && gulp build && gulp watch",
     "clean": "gulp clean"
   },
   "private": true,
