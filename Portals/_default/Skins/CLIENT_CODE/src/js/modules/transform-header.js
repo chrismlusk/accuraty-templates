@@ -31,9 +31,7 @@ function transformHeader() {
     lastScroll = scroll <= 0 ? 0 : scroll; // 3
   }
 
-  window.addEventListener('scroll', () => {
-    scrolling = true;
-  });
+  window.addEventListener('scroll', () => (scrolling = true));
 
   setInterval(() => {
     if (scrolling) {

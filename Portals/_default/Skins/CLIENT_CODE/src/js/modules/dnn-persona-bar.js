@@ -1,8 +1,8 @@
 //
-// Is DNN Persona Bar active?
-// ==========================
+// DNN Persona Bar
+// ===============
 //
-// As of now, DNN 9 does not apply any classes to the `<body>` when the
+// As of version 9.2, DNN does not apply any classes to the `<body>` when the
 // Persona Bar is active (it did previously with the Control Bar). The
 // `.dnnEditState` class is added when you enter Edit mode, but that's it.
 //

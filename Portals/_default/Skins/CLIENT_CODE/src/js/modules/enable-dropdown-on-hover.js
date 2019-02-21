@@ -2,7 +2,10 @@
 // Enable Bootstrap dropdowns on hover
 // ===================================
 //
-// ...
+// Bootstrap's dropdowns are only activated via click. This is an intentional
+// design decision — and it is a good one. However, some clients want hover
+// menus, so this function adds event listeners to each `.dropdown` to trigger
+// dropdown menus the same way Bootstrap does on a click event.
 // ------------------------------------------------------------------------
 
 function enableDropdownOnHover() {
@@ -29,13 +32,26 @@ function enableDropdownOnHover() {
   }
 
   function navigateToUrl(event) {
-    window.location.assign(event.target.href);
+    const link = event.target.href;
+    if (link && link !== '#') {
+      window.location.assign(link);
+    }
   }
 
   dropdowns.forEach(d => {
     d.addEventListener('mouseenter', showDropdownMenu);
     d.addEventListener('mouseleave', hideDropdownMenu);
-    d.addEventListener('click', navigateToUrl, false);
+
+    d.addEventListener(
+      'click',
+      event => {
+        // Don't execute the function if the user is opening the link
+        // in a new tab by pressing Control or Command while clicking.
+        if (event.metaKey || event.ctrlKey) return;
+        navigateToUrl(event);
+      },
+      false
+    );
   });
 }
 

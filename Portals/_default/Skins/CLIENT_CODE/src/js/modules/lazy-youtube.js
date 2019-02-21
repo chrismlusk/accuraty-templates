@@ -3,18 +3,21 @@ function lazyLoadYouTube() {
   if (!videos) return;
 
   videos.forEach(video => {
-    // build play button
+    // Skip if there is no `data-id` attribute.
+    if (!video.dataset.id) return;
+
+    // Build the play button.
     const btn = document.createElement('div');
     btn.className = 'lazy-yt-btn';
     video.appendChild(btn);
 
-    // build thumbnail
+    // Grab the thumbnail from YouTube.
     const img = document.createElement('img');
     img.className = 'lazy-yt-thumbnail';
     img.src = `https://img.youtube.com/vi/${video.dataset.id}/hqdefault.jpg`;
     video.appendChild(img);
 
-    // build iframe
+    // Once a user clicks on the video, then build the iframe.
     video.addEventListener('click', () => {
       const iframe = document.createElement('iframe');
       iframe.className = 'lazy-yt-item';
