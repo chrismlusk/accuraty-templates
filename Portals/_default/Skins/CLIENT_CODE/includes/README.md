@@ -2,21 +2,37 @@
 
 The `includes/` folder contains code/markup that should be included in multiple layout template files. This avoids duplicating work when you have elements that need to appear consistently throughout the site.
 
-Included files should be named with a preceding underscore (which is a helpful way to mark a file as a partial, similar to our Sass naming convention) and have the file name extension `.inc`. For example: `_header.inc`.
+Included files should be named with a preceding underscore (which is a helpful way to mark a file as a partial, similar to the Sass naming convention) and have the file name extension `.ascx`. For example: `_header.ascx`.
 
 ## How to use includes
 
 The `#include` directive instructs the server to insert the contents of a file into a page. You must surround a directive with HTML comment delimiters:
 
 ```
-<!--#include file="includes/_header.inc"-->
+<!--#include file="includes/_header.ascx"-->
 ```
 
 ## Standard and common includes
 
+- `__debug.ascx`
+- `_breadcrumb.ascx`
+- `_footer.ascx`
+- `_header.ascx`
+- `_logo.ascx`
+- `_preheader.ascx`
+- `_registers.ascx`
+
+### Debug
+
+Outputs debug info that is only visible to users at specified IP addresses.
+
+### Breadcrumb
+
+`_breadcrumb.ascx` is for the breadcrumb section.
+
 ### Preheader
 
-`_preheader.inc` starts off with the control and register directives.
+`_preheader.ascx` starts off with the control and register directives.
 
 The **control directive** defines attributes that tell ASP.NET how to handle the file. The attributes we commonly use are:
 
@@ -38,25 +54,21 @@ The **register directives** inform ASP.NET which user controls will be active, a
 <dnn:Breadcrumb runat="server" />
 ```
 
-The `_preheader.inc` files is also where we add stylesheets and scripts using the [Client Resource Manager](http://www.dnnsoftware.com/wiki/client-resource-management-api).
+The `_preheader.ascx` files is also where we add stylesheets and scripts using the [Client Resource Manager](http://www.dnnsoftware.com/wiki/client-resource-management-api).
 
-*Note: Everything in this file should be code that is included inside the `<head>` tag, except for script files that are explicitly added to the bottom of the `<body>` tag via the ForceProvided property.*
+_Note: Everything in this file should be code that is included inside the `<head>` tag, except for script files that are explicitly added to the bottom of the `<body>` tag via the ForceProvided property._
 
 ### Header
 
-`_header.inc` contains the global header. This should generally be limited to code that appears inside the `<header>` tag.
+`_header.ascx` contains the global header. This should generally be limited to code that appears inside the `<header>` tag.
 
 ### Footer
 
-`_footer.inc` contains the global footer. This should generally be limited to code that appears inside the `<footer>` tag.
-
-### Breadcrumb
-
-`_breadcrumb.inc` is for the breadcrumb section.
+`_footer.ascx` contains the global footer. This should generally be limited to code that appears inside the `<footer>` tag.
 
 ### Logo
 
-`_logo.inc` is useful when you need to implement SVG logos inline.
+`_logo.ascx` is useful when you need to implement SVG logos inline.
 
 #### Why inline?
 

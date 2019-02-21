@@ -1,6 +1,6 @@
 # Skin
 
-This folder is where we save starter files to build a custom DNN skin.
+This folder contains starter files needed to build a custom DNN skin.
 
 ## Architecture
 
@@ -23,7 +23,7 @@ All Gulp tasks and configuration.
 
 ### includes/
 
-Files that contain code/markup that should be included in multiple layout template files.
+Files that contain code/markup that are shared between layout template files.
 
 ### menus/
 
@@ -31,21 +31,15 @@ Code necessary to build custom menus using DDRMenu.
 
 ### public/
 
-All skin assets that need to be available for production are put here. This typically includes: fonts, images, scripts, stylesheets. You shouldn't need to touch any of these assets, however, because Gulp will process these assets at the source level — that way everything is optimized, compressed, etc.
+All skin assets that need to be available for production are put here. This typically includes: fonts, images, scripts, stylesheets. You shouldn't touch any of these assets, however, because Gulp will process them from the `src/` directory so that everything is optimized, compressed, etc.
 
 ### src/
 
-The bulk of your development work will be within this directory. This starter kit includes:
-
-- `fonts/`
-- `icons/`
-- `images/`
-- `js/`
-- `scss/`
+The bulk of your development work will be within this directory. This starter kit comes with fonts, icons, images, JavaScript, and SCSS.
 
 ### Layout templates
 
-Start with `Main.ascx` as the default template, and add more as needed. These files should contain the core markup necessary to create pages. The ASP.NET control and register directives are included via `_preheader.ascx`, and global elements like the site header and footer are also included via an include directive.
+Start with `Main.ascx` as the default template, then add more as needed. These files should contain the core markup necessary to create pages. The ASP.NET control and register directives are included via `_preheader.ascx`, and global elements like the site header and footer are added via include directives.
 
 ### Config files
 
@@ -53,7 +47,7 @@ What you'll find and what they are:
 
 #### .babelrc
 
-Babel
+Babel is ...
 
 #### .browserslistrc
 
@@ -65,13 +59,13 @@ ESLint is our JavaScript linter.
 
 #### .prettierrc / .prettierignore
 
-Consistently formatted code is great.
+Consistently formatted code is great; manual formatting is not.
 
-## DNN information
+## About DNN skins
 
 A skin defines the look and feel of the website. Skinning provides a separation of presentation and content. At their most basic, skins are comprised of layouts (ASCX) and stylesheets (CSS).
 
-### Layouts and Panes
+### Layouts and panes
 
 A **pane** is a section of a webpage that displays static content, dynamic content, or a standard theme object.
 
