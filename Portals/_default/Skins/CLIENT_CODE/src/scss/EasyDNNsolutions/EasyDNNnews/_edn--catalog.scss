@@ -1,0 +1,63 @@
+// ============================================================================
+//
+//  The catalog is typically used for products. The list and details templates
+//  are intentionally built with different classes than the article ones.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Base styles
+//  - Typography
+//  - Sections
+//     - Header
+//     - Body
+//     - Aside
+//     - Footer
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles
+// ===========
+
+.EDN__product {
+  display: flex;
+}
+
+
+
+
+//
+// Typography
+// ==========
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__product__title {}
+
+.EDN__product__subtitle {
+  margin-top: -.25rem !important;
+}
+
+
+
+
+//
+// Sections
+// ========
+//
+// ADD A DESCRIPTION...
+// ----------------------------------------------------------------------------
+
+.EDN__product__header {}
+
+.EDN__product__body {}
+
+.EDN__product__aside {}
+
+.EDN__product__footer {}
