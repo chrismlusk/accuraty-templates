@@ -1,10 +1,64 @@
 const gulp = require('gulp');
+const fs = require('fs');
 const replace = require('gulp-replace');
 
 const { paths, project } = require('../config');
 const { fonts, icons, bootstrapJs, flickityCss, flickityJs } = paths;
 
-function setClientCode() {
+function renameDirectories() {
+  const skinOld = `../CLIENT_CODE`;
+  const skinNew = `../${project.name}`;
+
+  fs.access(skinOld, err => {
+    if (!err) {
+      fs.renameSync(skinOld, skinNew, err => {
+        if (err) throw err;
+        console.log(`Skin directory renamed to ${project.name}`);
+      });
+    }
+
+    if (err && err.code === 'ENOENT') {
+      console.log(`Directory "${skinOld}" not found`);
+    }
+  });
+
+  const containersOld = `../../Containers/CLIENT_CODE`;
+  const containersNew = `../../Containers/${project.name}`;
+
+  fs.access(containersOld, err => {
+    if (!err) {
+      fs.renameSync(containersOld, containersNew, err => {
+        if (err) throw err;
+        console.log(`Containers directory renamed to ${project.name}`);
+      });
+    }
+
+    if (err && err.code === 'ENOENT') {
+      console.log(`Directory "${containersOld}" not found`);
+    }
+  });
+
+  const ednPath = `../../../../DesktopModules/EasyDNNnews/Templates/_default`;
+  const ednOld = `${ednPath}/CLIENT_CODE`;
+  const ednNew = `${ednPath}/${project.name}`;
+
+  fs.access(ednOld, err => {
+    if (!err) {
+      fs.renameSync(ednOld, ednNew, err => {
+        if (err) throw err;
+        console.log(`EDN template directory renamed to ${project.name}`);
+      });
+    }
+
+    if (err && err.code === 'ENOENT') {
+      console.log(`Directory "${ednOld}" not found`);
+    }
+  });
+
+  return Promise.resolve();
+}
+
+function setSassClientCode() {
   const pattern = /\$asl--client-code:\\?.*/g;
   const updated = `$asl--client-code: "${project.name}";`;
 
@@ -40,12 +94,13 @@ function getFlickityJs() {
 }
 
 const initTask = gulp.series(
-  setClientCode,
-  getFonts,
-  getIcons,
-  getBootstrapJs,
-  getFlickityCss,
-  getFlickityJs
+  renameDirectories
+  // setSassClientCode,
+  // getFonts,
+  // getIcons,
+  // getBootstrapJs,
+  // getFlickityCss,
+  // getFlickityJs
 );
 
 gulp.task('init', initTask);
