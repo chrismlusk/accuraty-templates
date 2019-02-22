@@ -7,7 +7,7 @@ This folder begins with the default name of "CLIENT_CODE", but it will be update
 The number in the file name corresponds with the heading tag, from `<h1>` to `<h4>`.
 
 <details>
-  <summary>What's included</summary>
+  <summary><strong>What's included</strong></summary>
   <ul>
     <li><code>_content.scss</code> styles</li>
     <li>HTML heading tag</li>
@@ -20,7 +20,7 @@ The number in the file name corresponds with the heading tag, from `<h1>` to `<h
 Containers that inherit content styles from `_content.scss` but do not include any HTML heading tag.
 
 <details>
-  <summary>What's included</summary>
+  <summary><strong>What's included</strong></summary>
   <ul>
     <li><code>_content.scss</code> styles</li>
   </ul>
