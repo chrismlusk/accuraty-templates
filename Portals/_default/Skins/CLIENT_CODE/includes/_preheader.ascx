@@ -78,27 +78,19 @@ Other vendor scripts and custom JS come next.
 />
 
 <dnn:DnnJsInclude
-  FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+  FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   ForceProvider="DnnFormBottomProvider"
   Priority="101"
   runat="server"
 />
 
 <dnn:DnnJsInclude
-  FilePath="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-  ForceProvider="DnnFormBottomProvider"
-  Priority="102"
-  runat="server"
-/>
-
-<%-- DON'T USE LOCAL BUNDLE UNTIL BOOTSTRAP RELEASES v4.3
-<dnn:DnnJsInclude
   FilePath="public/js/bootstrap.bundle.min.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="102"
   runat="server"
-/> --%>
+/>
 
 <dnn:DnnJsInclude
   FilePath="public/js/main.bundle.js"
