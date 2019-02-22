@@ -8,12 +8,11 @@ The number in the file name corresponds with the heading tag, from `<h1>` to `<h
 
 <details>
   <summary>What's included</summary>
-  <p>
-    - [x] HTML heading tag
-    - [x] `_content.scss` styles
-    - [x] TITLE theme object
-    - [ ] ICON theme object
-  </p>
+  <ul>
+    <li><code>_content.scss</code> styles</li>
+    <li>HTML heading tag</li>
+    <li>TITLE theme object</li>
+  </ul>
 </details>
 
 ## NoTitle
@@ -22,12 +21,9 @@ Containers that inherit content styles from `_content.scss` but do not include a
 
 <details>
   <summary>What's included</summary>
-  <p>
-    - [ ] HTML heading tag
-    - [x] `_content.scss` styles
-    - [ ] TITLE theme object
-    - [ ] ICON theme object
-  </p>
+  <ul>
+    <li><code>_content.scss</code> styles</li>
+  </ul>
 </details>
 
 ## None
@@ -37,13 +33,3 @@ Containers that inherit content styles from `_content.scss` but do not include a
 ## Aside
 
 `Aside.ascx` is a simple container that wraps the module in an `.aside` CSS class. Our skin template includes an `Aside.scss` file that will compile into a CSS file in this directory, and it serves as either a helpful starter for an aside component or as a useful example for creating other container components (e.g., Staff List).
-
-<details>
-  <summary>What's included</summary>
-  <p>
-    - [ ] HTML heading tag
-    - [ ] `_content.scss` styles
-    - [ ] TITLE theme object
-    - [ ] ICON theme object
-  </p>
-</details>
