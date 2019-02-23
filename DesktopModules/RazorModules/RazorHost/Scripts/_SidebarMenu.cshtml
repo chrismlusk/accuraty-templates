@@ -23,8 +23,7 @@
 
   string menuTitle = activeTab.TabName;
 
-  switch(activeTabLevel)
-  {
+  switch(activeTabLevel) {
     case 0:
       // `activeTabId` is properly assigned
       break;
@@ -53,60 +52,45 @@
       break;
   }
 
-  List<TabInfo> myTabs = TabController.GetTabsByParent(activeTabId, Dnn.Portal.PortalId);
-
-  bool isEmpty = !myTabs.Any();
+  List<TabInfo> tabs = TabController.GetTabsByParent(activeTabId, Dnn.Portal.PortalId);
 }
 
 
-@if (isEmpty)
-{
-  <p>THERE ARE NO TABS</p>
+@if (tabs.Any()) {
+  <div class="menu__label">@menuTitle</div>
+  @RenderTabs(tabs)
 }
-else
-{
-  <div class="nav-heading">@menuTitle</div>
-  <nav class="nav nav-pills  flex-column">
-    @foreach (TabInfo myTabInfo in myTabs)
-    {
 
-      // Convert user roles and tab permissions to lists for comparison.
-      List<string> userRoles = Dnn.User.Roles.ToList();
-      IEnumerable<string> tabRoles = myTabInfo.TabPermissions.ToList().Select(p => p.RoleName);
 
-      // Only include tabs in the menu if they meet these conditions.
-      if ( !myTabInfo.IsDeleted && myTabInfo.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser) )
-      {
-        <li class="nav-item">
-          <a href='@myTabInfo.FullUrl' class='nav-link  @(myTabInfo.TabID == Dnn.Tab.TabID ? "active" : "")' data-value='@myTabInfo.TabName'>
-            <i class="fas fa-caret-right"></i>
-            <span>@myTabInfo.TabName</span>
-          </a>
-        </li>
+@helper RenderTabs(List<TabInfo> tabs) {
+  if (tabs.Count > 0) {
+    <ul class="menu__list">
+      @foreach (var tab in tabs) {
+        List<string> userRoles = Dnn.User.Roles.ToList();
+        IEnumerable<string> tabRoles = tab.TabPermissions.ToList().Select(p => p.RoleName);
 
-        // If the tab is a parent, create a list of children and include them.
-        if ( myTabInfo.TabID == Dnn.Tab.TabID || myTabInfo.TabID == Dnn.Tab.ParentId || myTabInfo.TabID == activeTabParent.ParentId )
-        {
-          List<TabInfo> myChildTabs = TabController.GetTabsByParent(myTabInfo.TabID, Dnn.Portal.PortalId);
+        // Only include tabs in the menu if they meet these conditions.
+        if (!tab.IsDeleted && tab.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser)) {
 
-          foreach ( TabInfo myChildTabInfo in myChildTabs )
-          {
-            // Convert tab permissions to a list for comparison.
-            IEnumerable<string> childTabRoles = myChildTabInfo.TabPermissions.ToList().Select(p => p.RoleName);
+          var itemClasses = new List<string>();
+          itemClasses.Add("menu__item");
+          itemClasses.Add("tab-" + tab.TabID);
+          if (tab.TabID == Dnn.Tab.TabID) { itemClasses.Add("active"); }
+          var itemCss = new HtmlString((itemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", itemClasses.ToArray()) + "\""));
 
-            // Only include tabs in the menu if they meet these conditions.
-            if ( !myChildTabInfo.IsDeleted && myChildTabInfo.IsVisible && (userRoles.Any(r => childTabRoles.Contains(r)) || childTabRoles.Contains("All Users") || Dnn.User.IsSuperUser) )
-            {
-              <li class="nav-item">
-                <a href='@myChildTabInfo.FullUrl' class='nav-link  is-child  @(myChildTabInfo.TabID == Dnn.Tab.TabID ? "active" : "")' data-value='@myChildTabInfo.TabName'>
-                  <i class="fas fa-caret-right"></i>
-                  <span>@myChildTabInfo.TabName</span>
-                </a>
-              </li>
-            }
-          }
+          <li @itemCss>
+            <a href="@tab.FullUrl" class="menu__link">@tab.TabName</a>
+            @RenderChildren(tab)
+          </li>
         }
       }
-    }
-  </nav>
+    </ul>
+  }
+}
+
+
+@helper RenderChildren(TabInfo tab) {
+  List<TabInfo> children = TabController.GetTabsByParent(tab.TabID, Dnn.Portal.PortalId);
+
+  @RenderTabs(children);
 }
