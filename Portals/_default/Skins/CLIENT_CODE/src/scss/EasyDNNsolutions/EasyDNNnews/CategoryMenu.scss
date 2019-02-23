@@ -8,5 +8,6 @@
 // ============================================================================
 
 #{$EDN_SUB}_categoryMenu {
+  @import "../../_components/menu";
   @import "edn--menu";
 }
