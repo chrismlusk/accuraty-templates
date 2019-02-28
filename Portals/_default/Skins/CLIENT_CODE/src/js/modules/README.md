@@ -8,6 +8,7 @@
 - `dnn-persona-bar.js`
 - `enable-dropdowns-on-hover.js`
 - `lazy-youtube.js`
+- `on-ready.js`
 - `transform-header.js`
 
 ### Build Flickity
@@ -29,6 +30,10 @@ Bootstrap's dropdowns are only activated via click. This is an intentional desig
 ### Lazy YouTube
 
 Custom script to lazy load YouTube videos. This function searches for elements with the class `.lazy-yt` and a `data-id` attribute that contains the YouTube video ID, and then it builds a play button and a thumbnail from the video. Once a user clicks, it will replace the thumbnail with an iframe.
+
+### On ready
+
+Vanilla JavaScript `onReady` function.
 
 ### Transform header
 
