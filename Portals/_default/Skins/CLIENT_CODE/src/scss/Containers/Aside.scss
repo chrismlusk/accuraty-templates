@@ -25,12 +25,12 @@
 // 2. Custom abstracts.
 // ----------------------------------------------------------------------------
 
-@import "../../node_modules/bootstrap/scss/functions"; // 1
-@import "../../node_modules/bootstrap/scss/mixins"; // 1
-@import "../../node_modules/bootstrap/scss/variables"; // 1
-@import "_abstracts/functions"; // 2
-@import "_abstracts/mixins"; // 2
-@import "_abstracts/variables"; // 2
+@import "../../../node_modules/bootstrap/scss/functions"; // 1
+@import "../../../node_modules/bootstrap/scss/mixins"; // 1
+@import "../../../node_modules/bootstrap/scss/variables"; // 1
+@import "../_abstracts/functions"; // 2
+@import "../_abstracts/mixins"; // 2
+@import "../_abstracts/variables"; // 2
 
 
 
