@@ -52,12 +52,30 @@
 // Variables
 // =========
 
-$docs-primary: #0767b1; // Accuraty blue
+$docs-primary:  #0767b1; // Accuraty blue
 
-$docs-danger: #d4231d;
-$docs-info: #09addf;
-$docs-success: #008b2f;
-$docs-warning: #fa9602;
+$docs-danger:   #d4231d;
+$docs-info:     #09addf;
+$docs-success:  #008b2f;
+$docs-warning:  #fa9602;
+
+
+
+
+//
+// Theme overrides
+// ===============
+//
+// Quick modifications for existing elements or styles.
+//
+// 1. This id is added to the `<main>` tag in the page template, so the
+//    selector wraps around all other styles in the theme overrides section.
+//    Do not add a closing brace or move the selector.
+// ----------------------------------------------------------------------------
+
+#manage { // 1
+
+&.main {}
 
 
 
@@ -67,21 +85,21 @@ $docs-warning: #fa9602;
 // =======
 
 a {
-  .pane-content & {
-    @include plain-visited {
-      color: $docs-primary;
-    }
+  @include plain-visited {
+    color: $docs-primary;
+  }
+
+  @include hover-focus {
+    color: darken($docs-primary, 12%);
+  }
+}
+
+.DnnModule__content {
+  a:not(.alert-link):not(.btn):not(.badge):not(.page-link) {
+    border-bottom-color: transparent;
 
     @include hover-focus {
-      color: darken($docs-primary, 16%);
-    }
-
-    &:not(.btn) {
-      border-bottom-color: lighten($docs-primary, 47.5%);
-
-      @include hover-focus-active {
-        border-bottom-color: transparent;
-      }
+      border-bottom-color: darken($docs-primary, 12%);
     }
   }
 }
@@ -244,3 +262,8 @@ a {
     }
   }
 }
+
+
+
+
+} // Important! This closes `#manage` and must come *after* overrides.
