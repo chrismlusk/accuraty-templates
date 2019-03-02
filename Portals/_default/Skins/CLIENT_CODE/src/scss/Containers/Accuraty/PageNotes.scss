@@ -3,6 +3,7 @@
 //  Separate stylesheet for the `PageNotes.ascx` container.
 //
 //  This compiles to `/Containers/Accuraty/PageNotes.csss`.
+//
 // ============================================================================
 
 
@@ -33,6 +34,23 @@
 .asl__notes {
   position: relative;
   margin: 1rem 0;
+}
 
-  .alert-heading {}
+
+
+
+.asl__notes__label {
+  margin-bottom: 1rem;
+  font-size: 1.075rem;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+
+
+
+.asl__notes__title {
+  font-size: 1.25rem;
+  font-weight: $font-weight-bold;
 }
