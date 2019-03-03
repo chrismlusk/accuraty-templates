@@ -157,13 +157,15 @@
   ol {
     margin-right: ($paragraph-margin-bottom * 2);
     margin-left: ($paragraph-margin-bottom * 2);
-    list-style: decimal outside;
+    list-style-position: outside;
+    list-style-type: decimal;
   }
 
   ul:not(.nav):not(.list-unstyled):not(.pagination) {
     margin-right: ($paragraph-margin-bottom * 2);
     margin-left: ($paragraph-margin-bottom * 2);
-    list-style: disc outside;
+    list-style-position: outside;
+    list-style-type: disc;
 
     ul {
       margin-top: ($paragraph-margin-bottom / 2);

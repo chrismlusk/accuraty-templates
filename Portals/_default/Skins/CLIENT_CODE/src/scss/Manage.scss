@@ -218,9 +218,9 @@ a {
   .nav-link {
     color: $gray-600;
     border-radius: .25rem;
-    transition-property: color;
-    transition-duration: $transition-duration;
     transition-timing-function: $transition-timing-function;
+    transition-duration: $transition-duration;
+    transition-property: color;
 
     @include hover-focus {
       color: $docs-primary;

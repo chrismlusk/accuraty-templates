@@ -28,9 +28,9 @@
 
 .menu__label {
   font-size: .875em;
+  color: $gray-500;
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: $gray-500;
 
   &:not(:first-child) {
     margin-top: 1em;
@@ -69,8 +69,8 @@
   }
 
   ul {
-    margin: .75em;
     padding-left: .75em;
+    margin: .75em;
     border-left: 1px solid $border-color;
   }
 }
@@ -83,10 +83,10 @@
 // ====
 
 .menu__link {
-  padding: .5em .75em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: .5em .75em;
   font-weight: $font-weight-medium;
   color: $gray-700;
   @include border-radius($border-radius-sm);
