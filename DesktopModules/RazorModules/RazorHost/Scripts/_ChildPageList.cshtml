@@ -3,10 +3,6 @@
   // Child Page List
   // ===============
   //
-  // Version: {BE KIND TO OTHERS. UPDATE THIS.}
-  // Author: {BE KIND TO OTHERS. UPDATE THIS.}
-  // Updated: {BE KIND TO OTHERS. UPDATE THIS.}
-  //
   // Get the children of the current tab and display them in a list.
   // Including code to mark each item as odd or even, if needed.
   // --------------------------------------------------------------------------
@@ -19,15 +15,11 @@
 
 @{
 
-  //
   // Get children of the current tab.
   // Note: The "d" in the `TabID` and `PortalId` shortcuts are not consistent.
-  //
   List<TabInfo> myTabList = TabController.GetTabsByParent(Dnn.Tab.TabID, Dnn.Portal.PortalId);
 
-  //
   // Use `counter` variable to determine odd and even children.
-  //
   int counter = 1;
 }
 
@@ -40,15 +32,12 @@
 
   @foreach (TabInfo myTab in myTabList)
   {
-    //
+
     // Convert tab permissions and user roles into lists for comparison.
-    //
     List<string> userRoles = Dnn.User.Roles.ToList();
     IEnumerable<string> tabRoles = myTab.TabPermissions.ToList().Select(p => p.RoleName);
 
-    //
     // Only show if tab is not deleted, is visible, and has proper user roles.
-    //
     if (!myTab.IsDeleted && myTab.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser))
     {
       <article class='child-page  row  @(counter % 2 != 0 ? "is-odd" : "is-even")'>
