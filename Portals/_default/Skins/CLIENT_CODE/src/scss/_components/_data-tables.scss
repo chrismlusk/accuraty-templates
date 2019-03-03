@@ -158,9 +158,9 @@
         right: .3em;
       font-size: 1em;
       color: $gray-300;
-      transition-property: color;
-      transition-duration: $transition-duration;
       transition-timing-function: $transition-timing-function;
+      transition-duration: $transition-duration;
+      transition-property: color;
       transform: translateY(-50%);
     }
   }

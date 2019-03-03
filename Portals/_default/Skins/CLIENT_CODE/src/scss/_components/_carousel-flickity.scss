@@ -37,9 +37,9 @@
 
 .carousel {
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: $transition-duration;
   transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
 
   &.flickity-enabled {
     opacity: 1;
@@ -63,9 +63,9 @@
 .flickity-button {
   color: $body-color;
   background-color: rgba($white, .75);
-  transition-property: background-color;
-  transition-duration: $transition-duration;
   transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+  transition-property: background-color;
 
   @include hover-focus {
     background-color: $white;

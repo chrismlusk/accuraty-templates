@@ -19,11 +19,11 @@
 // Form control
 // ============
 
-// .custom-control {}
+.custom-control {}
 
-// .custom-control-inline {}
+.custom-control-inline {}
 
-// .custom-control-input {}
+.custom-control-input {}
 
 
 
@@ -32,12 +32,12 @@
 // Labels
 // ======
 
-// .custom-control-label {
+.custom-control-label {
 
-//   // &::before {}
+  &::before {}
 
-//   // &::after {}
-// }
+  &::after {}
+}
 
 
 
@@ -46,7 +46,7 @@
 // Checkbox
 // ========
 
-// .custom-checkbox {}
+.custom-checkbox {}
 
 
 
@@ -55,7 +55,7 @@
 // Radio
 // =====
 
-// .custom-radio {}
+.custom-radio {}
 
 
 
@@ -64,7 +64,7 @@
 // Select
 // ======
 
-// .custom-select {}
+.custom-select {}
 
 
 
@@ -73,11 +73,11 @@
 // File
 // ====
 
-// .custom-file {}
+.custom-file {}
 
-// .custom-file-input {}
+.custom-file-input {}
 
-// .custom-file-label {}
+.custom-file-label {}
 
 
 
@@ -86,4 +86,4 @@
 // Range
 // =====
 
-// .custom-range {}
+.custom-range {}

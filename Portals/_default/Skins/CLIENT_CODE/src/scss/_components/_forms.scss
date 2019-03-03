@@ -19,7 +19,7 @@
 // Form control
 // ============
 
-// .form-control {}
+.form-control {}
 
 
 
@@ -31,11 +31,11 @@
 // For horizontal and inline forms, when label and form controls need to align.
 // ----------------------------------------------------------------------------
 
-// .col-form-label {}
+.col-form-label {}
 
-// .col-form-label-lg {}
+.col-form-label-lg {}
 
-// .col-form-label-sm {}
+.col-form-label-sm {}
 
 
 
@@ -48,7 +48,7 @@
 // be the same size as regular labels — and to align with form controls.
 // ----------------------------------------------------------------------------
 
-// .col-form-legend {}
+.col-form-legend {}
 
 
 
@@ -60,7 +60,7 @@
 // Apply class to a readonly input to make it appear like regular plain text.
 // ----------------------------------------------------------------------------
 
-// .form-control-plaintext {}
+.form-control-plaintext {}
 
 
 
@@ -73,9 +73,9 @@
 // horizontal forms, use the predefined grid classes.
 // ----------------------------------------------------------------------------
 
-// .form-group {}
+.form-group {}
 
-// .form-text {}
+.form-text {}
 
 
 
@@ -89,16 +89,16 @@
 // 1. Radios and checkboxes on the same line.
 // ----------------------------------------------------------------------------
 
-// .form-check {}
+.form-check {}
 
-// .form-check-label {}
+.form-check-label {}
 
-// .form-check-input {}
+.form-check-input {}
 
-// .form-check-inline { // 1
+.form-check-inline { // 1
 
-//   .form-check-label {}
-// }
+  .form-check-label {}
+}
 
 
 
@@ -107,4 +107,4 @@
 // Inline forms
 // ============
 
-// .form-inline {}
+.form-inline {}

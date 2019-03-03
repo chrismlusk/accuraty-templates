@@ -5,8 +5,6 @@
 //  For consistency, all skin and theme objects created by DNN use the same
 //  pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
 //
-//  Reference: `Containers/{Client}/README.md`
-//
 //  --
 //
 //  [Table of Contents]
@@ -51,11 +49,8 @@
   }
 
   h2,
-  .h2,
   h3,
-  .h3,
-  h4,
-  .h4 {
+  h4 {
     margin-top: ($spacer * 2); // 2
 
     &:first-child {
