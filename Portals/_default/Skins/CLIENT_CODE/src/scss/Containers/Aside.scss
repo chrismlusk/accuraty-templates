@@ -9,8 +9,6 @@
 //  [Table of Contents]
 //
 //  - Mandatory imports
-//  - Wrapper and base class
-//  -
 //
 // ============================================================================
 
@@ -32,13 +30,4 @@
 @import "../_abstracts/mixins"; // 2
 @import "../_abstracts/variables"; // 2
 
-
-
-
-//
-// Wrapper and base class
-// ======================
-
-.aside {
-  position: relative;
-}
+@import "../_layout/aside";
