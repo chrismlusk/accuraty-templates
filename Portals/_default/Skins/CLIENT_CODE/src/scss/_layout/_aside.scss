@@ -1,0 +1,9 @@
+.aside {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 3rem;
+    font-size: $font-size-sm;
+  }
+}
