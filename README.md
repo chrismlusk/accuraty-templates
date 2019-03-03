@@ -11,7 +11,7 @@ This is a set of standards, common components, and best practices for projects i
 
 ### Initial setup
 
-_This assumes the project skin has not been set up at all. If the project already exists on GitHub and you are trying to get set up on your own machine, skip to the "Ongoing development" section below._
+_This assumes the project skin has not been set up at all. If the project already exists on GitHub and you are trying to get set up on your own machine, skip to [Ongoing development](https://github.com/chrismlusk/accuraty-templates#ongoing-development)._
 
 #### 1. Get the code
 
