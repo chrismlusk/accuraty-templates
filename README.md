@@ -56,7 +56,7 @@ To start watching again, run `npm run dev`.
 
 ### Ongoing development
 
-_This assumes the project has already been set up and added as a repository to the Accuraty GitHub account._
+_This assumes the project has already been set up and added as a repository to the [Accuraty GitHub account](https://github.com/Accuraty)._
 
 #### 1. Get the code
 
@@ -72,7 +72,7 @@ If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy 
 
 #### 3. Install packages
 
-Next, `cd` into the skin (e.g., `Portals/_default/Skins/[ABBV]`) and run `npm install`.
+Next, `cd` into the skin (`Portals/_default/Skins/[ABBV]`) and run `npm install`.
 
 #### 4. Build the assets
 
