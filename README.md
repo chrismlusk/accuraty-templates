@@ -4,16 +4,35 @@ This is a set of standards, common components, and best practices for projects i
 
 ## Project requirements
 
-...
+- DNN site already deployed
+- [Node v10.15.2](https://nodejs.org/en)
 
 ## Getting started
 
-At the root of your new project folder, run the following commands in your terminal:
+### Initial setup
+
+_This assumes the project skin has not been set up at all. If the project already exists on GitHub and you are trying to get set up on your own machine, skip to the "Ongoing development" section below._
+
+#### 1. Get the code
+
+Create a new project folder on your local machine, `cd` into that directory, and run the following commands in your terminal:
 
 ```
+git init
 git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
 git fetch accuraty
 git merge accuraty/master
+```
+
+#### 2. Set your FTP config
+
+If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy `sftp.json.example`, configure it with your credentials, and save it as `sftp.json`.
+
+#### 3. Set the project name
+
+Next, navigate to the Skin folder:
+
+```
 cd Portals/_default/Skins/CLIENT_CODE
 ```
 
@@ -21,18 +40,49 @@ Then, open `package.json` and change the `name` property from "CLIENT_CODE" to w
 
 _Note: Although the placeholder name is in all caps, NPM rules require the name to be lowercase._
 
-Next, run the following commands:
+#### 4. Install packages
 
-```
-npm install
-npm start
-```
+Run `npm install` from inside the Skin folder.
+
+#### 5. Build the assets
+
+Then run `npm start`.
 
 This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
 
+To exit this "watch" mode, press `Control-C` in your terminal.
+
+To start watching again, run `npm run dev`.
+
 ### Ongoing development
 
-`npm run dev`
+_This assumes the project has already been set up and added as a repository to the Accuraty GitHub account._
+
+#### 1. Get the code
+
+Navigate to the directory where you want to store the project, copy the GitHub URL, and then run the following commands in your terminal:
+
+```
+git clone [PASTE_THE_GITHUB_URL_HERE]
+```
+
+#### 2. Set your FTP config
+
+If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy `sftp.json.example`, configure it with your credentials, and save it as `sftp.json`.
+
+#### 3. Install packages
+
+Next, `cd` into the skin (e.g., `Portals/_default/Skins/[ABBV]`) and run `npm install`.
+
+#### 4. Build the assets
+
+Then run `npm start`.
+
+This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
+
+To exit this "watch" mode, press `Control-C` in your terminal.
+
+To start watching again, run `npm run dev`.
 
 ## About Accuraty
 
