@@ -75,34 +75,29 @@ $docs-warning:  #fa9602;
 
 #manage { // 1
 
-&.main {}
+  &.main {}
 
+  // a {
+  //   @include plain-visited {
+  //     color: $docs-primary;
+  //   }
 
+  //   @include hover-focus {
+  //     color: darken($docs-primary, 12%);
+  //   }
+  // }
 
+  // .DnnModule__content {
+  //   a:not(.alert-link):not(.btn):not(.badge):not(.page-link) {
+  //     border-bottom-color: transparent;
 
-//
-// General
-// =======
+  //     @include hover-focus {
+  //       border-bottom-color: darken($docs-primary, 12%);
+  //     }
+  //   }
+  // }
 
-// a {
-//   @include plain-visited {
-//     color: $docs-primary;
-//   }
-
-//   @include hover-focus {
-//     color: darken($docs-primary, 12%);
-//   }
-// }
-
-// .DnnModule__content {
-//   a:not(.alert-link):not(.btn):not(.badge):not(.page-link) {
-//     border-bottom-color: transparent;
-
-//     @include hover-focus {
-//       border-bottom-color: darken($docs-primary, 12%);
-//     }
-//   }
-// }
+} // Important! This closes `#manage` and must come *after* overrides.
 
 
 
@@ -263,8 +258,3 @@ $docs-warning:  #fa9602;
     }
   }
 }
-
-
-
-
-} // Important! This closes `#manage` and must come *after* overrides.

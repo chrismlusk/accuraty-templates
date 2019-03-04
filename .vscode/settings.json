@@ -37,5 +37,9 @@
   },
   "scss.lint.emptyRules": "ignore",
   "scss.lint.universalSelector": "warning",
-  "scss.validate": false
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.config": {
+    "ignoreFiles": "*.css"
+  }
 }

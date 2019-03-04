@@ -29,12 +29,12 @@ function lintStyles() {
     stylelint({
       failAfterError: true,
       fix: true,
-      reporters: [{ formatter: 'verbose', console: true }],
+      // reporters: [{ formatter: 'verbose', console: true }],
     })
   );
 }
 
-function compileSkinLayoutStyles() {
+function skinLayoutStylesTask() {
   if (!project.styles.skinLayouts) return Promise.resolve();
   return gulp
     .src(skinLayoutStyles.src)
@@ -50,7 +50,7 @@ function compileSkinLayoutStyles() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-function compileContainerStyles() {
+function containerStylesTask() {
   if (!project.styles.containers) return Promise.resolve();
   return gulp
     .src(containerStyles.src)
@@ -66,7 +66,7 @@ function compileContainerStyles() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-function compileEDNStyles() {
+function ednStylesTask() {
   if (!project.styles.edn) return Promise.resolve();
   return gulp
     .src(ednStyles.src)
@@ -83,7 +83,7 @@ function compileEDNStyles() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-function compileAccuratyContainerStyles() {
+function accuratyContainerStylesTask() {
   if (!project.styles.accuratyContainers) return Promise.resolve();
   return gulp
     .src(accuratyContainerStyles.src)
@@ -99,13 +99,19 @@ function compileAccuratyContainerStyles() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-const stylesTask = gulp.parallel(
+const allStylesTask = gulp.parallel(
   lintStyles,
-  compileSkinLayoutStyles,
-  compileContainerStyles,
-  compileEDNStyles,
-  compileAccuratyContainerStyles
+  skinLayoutStylesTask,
+  containerStylesTask,
+  ednStylesTask,
+  accuratyContainerStylesTask
 );
 
-gulp.task('styles', stylesTask);
-module.exports = stylesTask;
+gulp.task('styles-skin', skinLayoutStylesTask);
+gulp.task('styles-container', containerStylesTask);
+gulp.task('styles-edn', ednStylesTask);
+gulp.task('styles-asl', accuratyContainerStylesTask);
+
+gulp.task('styles', allStylesTask);
+
+module.exports = allStylesTask;
