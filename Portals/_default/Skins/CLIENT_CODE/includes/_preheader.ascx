@@ -30,7 +30,7 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
-<%-- DON'T USE THIS YET
+<%-- YOU CAN DELETE THIS FROM A NEW PROJECT
 
   I'd love to remove the `default.css` stylesheet, but many of the styles are
   used for DNN edit controls. Probably going to leave it as is (and continue
@@ -40,7 +40,15 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
   <dnn:DnnCssExclude Name="dnndefault" runat="server" />
 --%>
 
-<%--
+<%-- STYLESHEET FROM A CDN
+<dnn:DnnCssInclude
+  FilePath="URL_TO_YOUR_FILE_HERE"
+  Priority="1"
+  runat="server"
+/>
+--%>
+
+<%-- STYLESHEET FROM THE SKIN DIRECTORY
 <dnn:DnnCssInclude
   FilePath="public/css/YOUR_FILE_HERE"
   PathNameAlias="SkinPath"
