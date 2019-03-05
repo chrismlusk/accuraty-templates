@@ -1,0 +1,139 @@
+// ============================================================================
+//
+//
+//  Styling for a DDR Mega Menu.
+//
+//  Template is at `Portals/_default/Skins/CLIENT_CODE/menus/NavMegaMenu`.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Top-level item
+//  - Dropdown
+//  - Submenu
+//     - Link
+//     - Icon
+//     - List
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+//
+// Added to `<ul class="navbar-nav>`.
+//
+// --
+//
+// 1. Ensure there is no relative positioning so the dropdowns are full width.
+// ----------------------------------------------------------------------------
+
+.mega-menu {
+  position: static; // 1
+}
+
+
+
+
+//
+// Top-level item
+// ==============
+//
+// Added to `<li class="nav-item dropdown">`.
+//
+// --
+//
+// 1. Override the relative position applied to `.dropdown`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__item {
+  position: static; // 1
+}
+
+
+
+
+//
+// Dropdown
+// ========
+//
+// Added to `<ul class="dropdown-menu">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  min-width: auto;
+  padding: 1rem;
+  margin: 0;
+  backface-visibility: hidden;
+}
+
+
+
+
+//
+// Submenu
+// =======
+//
+// Each `<li>` in `<ul class="mega-menu__dropdown">` is a menu of links.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu {}
+
+
+
+
+//
+// Submenu link
+// ============
+//
+// Any `<a>` tag at any level within `<li class="mega-menu__submenu">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__link {}
+
+
+
+
+//
+// Submenu icon
+// ============
+//
+// Uses the DNN tab icon field.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__icon {}
+
+
+
+
+//
+// Submenu list
+// ============
+//
+// The `<ul>` nested within `<li class="mega-menu__submenu">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__list {}
+
+
+
+
+//
+// Submenu item
+// ============
+//
+// The `<li>` nested within `<ul class="mega-menu__submenu__list">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__item {}
