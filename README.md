@@ -46,13 +46,13 @@ Run `npm install` from inside the Skin folder.
 
 #### 5. Build the assets
 
-Then run `npm start`.
+Then run `npm start` in your terminal.
 
 This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
 
 To exit this "watch" mode, press `Control-C` in your terminal.
 
-To start watching again, run `npm run dev`.
+To start watching again, run `npm run dev` in your terminal.
 
 ### Ongoing development
 
@@ -68,21 +68,21 @@ git clone [PASTE_THE_GITHUB_URL_HERE]
 
 #### 2. Set your FTP config
 
-If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy `sftp.json.example`, configure it with your credentials, and save it as `sftp.json`.
+If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy `sftp.json.example`, configure it with your credentials, and save it as `sftp.json` to continue.
 
 #### 3. Install packages
 
-Next, `cd` into the skin (`Portals/_default/Skins/[ABBV]`) and run `npm install`.
+Next, `cd` into the skin (`Portals/_default/Skins/[ABBV]`) and run `npm install` to get the required packages.
 
 #### 4. Build the assets
 
-Then run `npm start`.
+Then run `npm start` in your terminal.
 
 This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
 
 To exit this "watch" mode, press `Control-C` in your terminal.
 
-To start watching again, run `npm run dev`.
+To start watching again, run `npm run dev` in your terminal.
 
 ## About Accuraty
 
