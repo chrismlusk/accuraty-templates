@@ -8,7 +8,7 @@ function fixFormClasses() {
   ];
 
   inputs.forEach(input => {
-    input.className = 'form-control form-control-lg';
+    input.className = 'form-control';
   });
 
   const primaryBtns = [...document.querySelectorAll('.dnnPrimaryAction')];
