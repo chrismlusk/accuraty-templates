@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+
 // ============================================================================
 //
 //  Reset
@@ -350,76 +352,21 @@ li {
 .dnnFormItem select,
 .dnnFormItem textarea,
 .dnnFormItem input[type="email"],
+.dnnFormItem input[type="tel"],
 .dnnFormItem input[type="search"],
 .dnnFormItem input[type="password"] {
-  width: 100%;
-  padding: $input-btn-padding-y $input-btn-padding-x;
-  font-size: $font-size-base;
-  line-height: $input-btn-line-height;
-  color: $input-color;
-  background-color: $input-bg;
-  background-image: none;
-  background-clip: padding-box;
-  border: $input-btn-border-width solid $input-border-color;
-
-  // Note: This has no effect on <select>s in some browsers,
-  // due to the limited stylability of `<select>`s in CSS.
-  @if $enable-rounded {
-    // Use if/else instead of the mixin to account for iOS override.
-    border-radius: $input-border-radius;
-  } @else {
-    // Otherwise undo the iOS default
-    border-radius: 0;
-  }
+  margin: 0;
+  box-shadow: initial;
+  @extend .form-control;
 }
 
-// .dnnFormItem input.aspNetDisabled,
-// .dnnFormItem textarea.aspNetDisabled {
-//   background: #ebebeb;
-//   box-shadow: none;
-//   border-color: #a7a7a7;
-//   border-width: 1px;
-// }
+.dnnFormItem select {
+  @extend select.form-control;
 
-// .aspNetDisabled, a.aspNetDisabled,
-// .dnnDisabled, a.dnnDisabled {
-//   color: $gray-400;
-//   cursor: not-allowed;
-//   text-decoration: none;
-// }
-
-// //## Active and focus states
-// .dnnFormItem input[type="text"]:active, .dnnFormItem input[type="text"]:focus,
-// .dnnFormItem input[type="password"]:focus, .dnnFormItem input[type="password"]:active,
-// .dnnFormItem input[type="email"]:active, .dnnFormItem input[type="email"]:focus,
-// .dnnFormItem select:active, .dnnFormItem select:focus,
-// .dnnFormItem textarea:active, .dnnFormItem textarea:focus,
-// .dnnFormItem input[type="search"]:active, .dnnFormItem input[type="search"]:focus {
-//     background: #fff;
-//     border: 1px solid rgba(2,139,255,.5); /* blue */
-//     -webkit-box-shadow: 0 0 3px 0 rgba(2, 139, 255, .4);
-//     box-shadow: 0 0 3px 0 rgba(2, 139, 255, .4);
-//     color: #333;
-// }
-
-// //## Required fields
-// .required label:after,
-// legend.required:after {
-//     display: inline-block;
-//     margin-top: -2px;
-//     margin-left: 9px;
-//     padding: 1px 9px;
-//     border: 1px solid rgba(0,0,0,.1);
-//     border-radius: 3px;
-//     -webkit-border-radius: 3px;
-//     background: rgba(0,0,0,.03);
-//     content: 'Required';
-//     font-weight: $font-weight-normal;
-//     font-family: $font-family-base;
-//     font-size: 11px;
-//     font-style: italic;
-//     color: #777;
-// }
+  option {
+    color: $gray-800;
+  }
+}
 
 //## Error styles
 .error label,
@@ -436,6 +383,40 @@ legend.error {
     border: 1px solid rgba(theme-color("danger"), .6);
 }
 
+
+
+
+//
+// Password Strength
+// =================
+
+.password-strength-container {
+  width: inherit;
+  max-width: inherit;
+
+  input[type="password"] {
+    padding-right: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .meter {
+
+    &::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    &.visible {
+      height: auto;
+      margin-top: 1rem;
+    }
+
+    label {
+      display: none;
+    }
+  }
+}
 
 
 
@@ -580,58 +561,6 @@ a.dnnTertiaryAction {
   border: 1px solid color("blue");
 }
 
-// /* Re-set default cursor for disabled elements */
-// .dnnFormItem button[disabled],
-// .dnnFormItem input[disabled] {
-//     cursor: default;
-//     opacity: .5;
-// }
-
-// /* Consistent box sizing and appearance */
-// .dnnFormItem input[type="checkbox"],
-// .dnnFormItem input[type="radio"] {
-//     *width: 13px;
-//     *height: 13px; /*why are we using hacks here*/
-//     padding: 0;
-//     box-sizing: border-box;
-// }
-
-// .dnnFormItem input[type="search"] {
-//     -webkit-appearance: textfield;
-//     box-sizing: content-box;
-// }
-
-//     .dnnFormItem input[type="search"]::-webkit-search-decoration,
-//     .dnnFormItem input[type="search"]::-webkit-search-cancel-button {
-//         -webkit-appearance: none;
-//     }
-
-// .dnnFormItem textarea {
-//     overflow: auto;
-//     vertical-align: top;
-//     resize: vertical;
-// }
-
-//     /* Colors for form validity */
-//     .dnnFormItem input:valid,
-//     .dnnFormItem textarea:valid {
-//     }
-
-//     .dnnFormItem input:invalid, .dnnFormItem textarea:invalid {
-//         background-color: #f0dddd;
-//     }
-
-
-//
-// Taxonomy
-// ========
-//
-// DNN uses `.horizontal` and `.vertical` as parent classes before it uses
-// `ul.categories` and `ul.tags` for taxonomy. Skipping this.
-//
-// Reference: _default.css:651 (DNN 8) / _default.css:915 (DNN 7)
-// ----------------------------------------------------------------------------
-
 
 
 
@@ -676,8 +605,6 @@ a.dnnTertiaryAction {
 // ==========
 //
 // Reference: _default.css:854 (DNN 8)
-//
-// 1.
 // ----------------------------------------------------------------------------
 
 .dnnForm {
@@ -727,30 +654,14 @@ a.dnnFormHelp,
 
 a.dnnFormHelp {}
 
-.dnnLabel {
-  // display: initial;
-  // float: initial;
-  // margin: 0;
-  // overflow: initial;
-  // padding: 0;
-  // position: initial;
-  // text-align: initial;
-  // width: initial;
-}
+.dnnFormItem > .dnnLabel {}
 
-.dnnFormItem > .dnnLabel {
-  // margin-top: 0;
-}
-
-.dnnLabel > span {
-  // text-align: initial;
-}
+.dnnLabel > span {}
 
 .dnnForm .dnnFormItem a.dnnFormHelp span {}
 
 .dnnForm .dnnFormItem a.dnnFormHelp img {}
 
-// stylelint-disable-next-line no-duplicate-selectors
 .dnnLabel + span {
   display: inline-block;
   margin: 0;
@@ -783,25 +694,6 @@ a.pinHelp {}
     border-top-color: theme-color("danger");
   }
 }
-
-
-//## Input types
-
-.dnnFormItem input[type="text"],
-.dnnFormItem input[type="password"],
-.dnnFormItem input[type="email"],
-.dnnFormItem input[type="tel"],
-.dnnFormItem select,
-.dnnFormItem textarea {}
-
-.dnnFormItem select {
-  // width: initial;
-
-  option {
-    color: $gray-800;
-  }
-}
-
 
 //## Input customized checkbox
 
@@ -859,4 +751,77 @@ div.dnnTagsInput {}
 
 .dnnPlaceholder{
   color: $gray-600;
+}
+
+
+//## DNN login, registration, etc. (Account modules)
+
+.dnnLogin,
+.dnnSendPassword,
+.dnnRegistrationForm {
+
+  .dnnFormItem {
+    .dnnLeft {
+      float: none;
+    }
+  }
+
+  .dnnLabel {
+    float: none;
+    width: initial;
+    margin: 0;
+    text-align: left;
+  }
+
+  ul.dnnActions {
+    padding: 0 !important;
+    margin: 0 !important;
+
+    li {
+      display: inline-block;
+      float: none;
+      margin: 0 .25rem 0 0 !important;
+    }
+  }
+
+  // hide the empty label beside the form buttons
+  .dnnFormItem > span.dnnFormLabel {
+    display: none;
+  }
+}
+
+.LoginPanel {
+  float: none;
+  width: auto;
+  padding: 0;
+
+  .dnnLoginActions {
+    display: block;
+    margin-top: 3rem;
+  }
+
+  .dnnLoginRememberMe {
+    .dnnCheckbox {
+      margin: 0 .5rem 0 0;
+    }
+  }
+}
+
+.dnnSendPassword {
+  .dnnSendPasswordContent {
+    width: initial;
+  }
+}
+
+.dnnRegistrationForm {
+
+  .dnnCaptcha {
+    width: auto !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.dnnSocialRegistration {
+  display: none;
 }
