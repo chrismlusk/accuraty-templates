@@ -622,6 +622,10 @@ a.dnnTertiaryAction {
 
   .dnnFormItem {
     margin-bottom: $form-group-margin-bottom;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -774,6 +778,7 @@ div.dnnTagsInput {}
   }
 
   ul.dnnActions {
+    display: block;
     padding: 0 !important;
     margin: 0 !important;
 
@@ -786,7 +791,7 @@ div.dnnTagsInput {}
 
   // hide the empty label beside the form buttons
   .dnnFormItem > span.dnnFormLabel {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -808,6 +813,11 @@ div.dnnTagsInput {}
 }
 
 .dnnSendPassword {
+
+  & > div:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
   .dnnSendPasswordContent {
     width: initial;
   }
@@ -817,8 +827,8 @@ div.dnnTagsInput {}
 
   .dnnCaptcha {
     width: auto !important;
-    margin: 0;
     padding: 0;
+    margin: 0;
   }
 }
 
