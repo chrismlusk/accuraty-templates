@@ -9,6 +9,7 @@
         id="ContentPane"
         data-name="ContentPane"
         class="col-12  pane pane-content"
+        visible="false"
         runat="server"
       ></div>
     </div>
