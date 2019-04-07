@@ -2,6 +2,7 @@
   <div class="alert alert-warning  m-0" role="alert">
     <p>DNN <%=DotNetNuke.Application.DotNetNukeContext.Current.Application.Version.ToString(3) %> / <%=System.Environment.Version.ToString() %> / <%=System.Net.Dns.GetHostName() %></p>
     <p>Tab ID = <%=PortalSettings.ActiveTab.TabID %></p>
+    <p>QueryString Params = <%=Request.QueryString.ToJson() %></p>
     <p>Now = <%=DateTime.Now.ToString("F") %></p>
     <p>WAN IP = <%=GetIpAddress() %></p>
     <hr />
@@ -25,7 +26,7 @@
   {
     var list = new List<string> {
       "192.241.63.162",
-      "76.29.39.150"
+      "67.167.3.4"
     };
     return list.Contains(GetIpAddress());
   }
