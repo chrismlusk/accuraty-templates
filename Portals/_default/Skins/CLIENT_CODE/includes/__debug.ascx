@@ -25,8 +25,9 @@
   public bool UserCanViewDebug()
   {
     var list = new List<string> {
-      "192.241.63.162",
-      "67.167.3.4"
+      "192.241.63.162",   // 309SN
+      "108.220.164.129",  // 712WV (JRF)
+      "67.167.3.4",       // CML
     };
     return list.Contains(GetIpAddress());
   }
