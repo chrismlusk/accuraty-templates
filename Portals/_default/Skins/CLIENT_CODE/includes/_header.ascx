@@ -1,4 +1,4 @@
-<header class="header  fixed-to-top" role="banner">
+<header class="header" role="banner">
   <nav class="navbar navbar-expand-md navbar-light" role="navigation">
     <a
       class="navbar-brand"
