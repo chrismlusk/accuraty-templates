@@ -1,15 +1,15 @@
 {
   "name": "___CLIENT_CODE___",
+  "host": "___HOST_NAME___",
+  "username": "___USER_NAME___",
+  "password": "___PASSWORD___",
   "protocol": "ftp",
+  "port": 21,
   "secure": true,
   "secureOptions": {
     "rejectUnauthorized": false
   },
   "passive": false,
-  "host": "___HOST_NAME___",
-  "username": "___USER_NAME___",
-  "password": "___PASSWORD___",
-  "port": 21,
   "uploadOnSave": true,
   "watcher": {
     "files": "**/{*.css,*.js,*.map}",
