@@ -7,7 +7,7 @@
       <!--#include file="includes/_breadcrumb.ascx"-->
 
       <%-- Don't render any HTML unless at least one pane has content. --%>
-      <% if (ContentPane.Visible == true || Aside.Pane == true) { %>
+      <% if (ContentPane.Visible == true || SidebarPane == true) { %>
         <div class="row">
           <div
             id="ContentPane"
@@ -17,8 +17,8 @@
             runat="server"
           ></div>
           <div
-            id="AsidePane"
-            data-name="AsidePane"
+            id="SidebarPane"
+            data-name="SidebarPane"
             class="col-md-4 col-xl-3 offset-xl-1  pane pane-sidebar"
             visible="false"
             runat="server"

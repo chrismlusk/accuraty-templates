@@ -20,18 +20,18 @@
       <% } %>
 
       <%-- Don't render any HTML unless at least one pane has content. --%>
-      <% if (LeftPane.Visible == true || RightPane.Visible == true) { %>
+      <% if (MainPane.Visible == true || SidebarPane.Visible == true) { %>
         <div class="row">
           <div
-            id="LeftPane"
-            data-name="LeftPane"
+            id="MainPane"
+            data-name="MainPane"
             class="col-md-8  mb-5 mb-md-0  pane pane-content"
             visible="false"
             runat="server"
           ></div>
           <div
-            id="RightPane"
-            data-name="RightPane"
+            id="SidebarPane"
+            data-name="SidebarPane"
             class="col-md-4 col-xl-3 offset-xl-1  pane pane-sidebar"
             visible="false"
             runat="server"
