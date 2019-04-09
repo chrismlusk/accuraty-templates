@@ -19,7 +19,8 @@
     "**/.tmp": true,
     "**/*.cache": true,
     "**/*.sublime*": true,
-    "**/node_modules": true
+    "**/node_modules": true,
+    "**/Portals/0/2sxc/Content/*.png": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
