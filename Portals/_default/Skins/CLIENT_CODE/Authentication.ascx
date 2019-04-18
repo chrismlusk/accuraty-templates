@@ -20,12 +20,14 @@
                 id="HeaderPane"
                 data-name="HeaderPane"
                 class="auth-form-header"
+                visible="false"
                 runat="server"
               ></div>
               <div
                 id="ContentPane"
                 data-name="ContentPane"
                 class="auth-form-body"
+                visible="false"
                 runat="server"
               ></div>
             </div>

@@ -6,12 +6,25 @@
     <div class="container">
       <!--#include file="includes/_breadcrumb.ascx"-->
 
-      <%-- Don't render any HTML unless at least one pane has content. --%>
-      <% if (ContentPane.Visible == true || SidebarPane == true) { %>
+      <%-- Don't render any HTML unless the pane has content. --%>
+      <% if (ContentPane.Visible == true) { %>
         <div class="row">
           <div
             id="ContentPane"
             data-name="ContentPane"
+            class="col-12  pane pane-content"
+            visible="false"
+            runat="server"
+          ></div>
+        </div>
+      <% } %>
+
+      <%-- Don't render any HTML unless at least one pane has content. --%>
+      <% if (MainPane.Visible == true || SidebarPane.Visible == true) { %>
+        <div class="row">
+          <div
+            id="MainPane"
+            data-name="MainPane"
             class="col-md-8  mb-5 mb-md-0  pane pane-content"
             visible="false"
             runat="server"
@@ -25,22 +38,8 @@
           ></div>
         </div>
       <% } %>
-    </div>
 
-    <%-- Don't render any HTML unless the pane has content. --%>
-    <% if (FullWidthPane.Visible == true) { %>
-      <div class="container">
-        <div class="row">
-          <div
-            id="FullWidthPane"
-            data-name="FullWidthPane"
-            class="col-12  pane pane-full-width"
-            visible="false"
-            runat="server"
-          ></div>
-        </div>
-      </div>
-    <% } %>
+    </div>
   </section>
 </main>
 
