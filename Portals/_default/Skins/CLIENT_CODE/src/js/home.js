@@ -1,3 +1,5 @@
-import buildFlickity from './modules/build-flickity';
+// import buildFlickity from './modules/build-flickity';
 
-buildFlickity('.carousel-main');
+// buildFlickity('.carousel-main');
+
+console.log('Hello, from `home.js`'); // eslint-disable-line
