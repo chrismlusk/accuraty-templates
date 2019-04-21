@@ -53,7 +53,7 @@
     "node-sass": "^4.11.0",
     "prettier": "^1.17.0",
     "require-dir": "^1.2.0",
-    "stylelint": "^10.0.0",
+    "stylelint": "^10.0.1",
     "stylelint-config-twbs-bootstrap": "^0.3.0",
     "webpack": "^4.30.0"
   }
