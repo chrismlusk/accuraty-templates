@@ -88,7 +88,11 @@
   justify-content: space-between;
   padding: .5em .75em;
   font-weight: $font-weight-medium;
-  color: $gray-700;
+
+  @include plain-visited {
+    color: $gray-700;
+  }
+
   @include border-radius($border-radius-sm);
 
   @include hover-focus {
