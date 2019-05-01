@@ -3,23 +3,25 @@
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 @{ var root = Model.Source.root; }
 
-@helper RenderNodes(IList<MenuNode> nodes) {
+@helper RenderMegaMenu(IList<MenuNode> nodes) {
   if (nodes.Count > 0) {
-    <ul class="navbar-nav mr-auto  mega-menu">
+    <ul class="navbar-nav ml-auto  mega-menu">
       @foreach (var node in nodes) {
+        var HasChildren = node.HasChildren();
+
         var navItemClasses = new List<string>();
         navItemClasses.Add("nav-item");
-        navItemClasses.Add("mega-menu__item");
+        if (HasChildren) { navItemClasses.Add("mega-menu__item"); }
         navItemClasses.Add("tab-" + node.TabId);
         if (node.Breadcrumb) { navItemClasses.Add("active"); }
-        if (node.HasChildren()) { navItemClasses.Add("dropdown"); }
+
         var navItemCss = new HtmlString((navItemClasses.Count == 0) ? "" : ("class=\"" + String.Join(" ", navItemClasses.ToArray()) + "\""));
         <li @navItemCss>
           <a
             href='@(node.Enabled ? node.Url : "#")'
-            class='nav-link@(node.HasChildren() ? " dropdown-toggle" : "")'
+            class='nav-link'
             @{
-              if (node.HasChildren()) {
+              if (HasChildren) {
                 <text>id="tab-@node.TabId-dropdown"</text>
                 <text>data-toggle="dropdown"</text>
                 <text>aria-haspopup="true"</text>
@@ -27,70 +29,66 @@
               }
             }
           >@node.Text</a>
-          @RenderChildren(node)
+          @RenderSubmenu(node)
         </li>
       }
     </ul>
   }
 }
 
-@helper RenderChildren(MenuNode node) {
+@helper RenderSubmenu(MenuNode node) {
   var children = node.Children;
   if (children.Count > 0) {
-    <ul class="dropdown-menu mega-menu__dropdown" aria-labelledby="tab-@node.TabId-dropdown">
+    <ul class="mega-menu__dropdown" aria-labelledby="tab-@node.TabId-dropdown">
       @foreach (var child in children) {
-        var dItemClasses = new List<string>();
-        dItemClasses.Add("tab-" + child.TabId);
-        dItemClasses.Add("mega-menu__submenu");
-        if (child.HasChildren()) { dItemClasses.Add("dropdown"); }
-        var dItemCss = new HtmlString((dItemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dItemClasses.ToArray()) + "\""));
+        var HasChildren = child.HasChildren();
+        var HasIcon = !String.IsNullOrEmpty(child.Icon);
 
-        var dLinkClasses = new List<string>();
-        dLinkClasses.Add("dropdown-item");
-        if (child.Breadcrumb) { dLinkClasses.Add("active"); }
-        if (child.HasChildren()) { dLinkClasses.Add("dropdown-toggle"); }
-        var dLinkCss = new HtmlString((dLinkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dLinkClasses.ToArray()) + "\""));
-        <li @dItemCss>
-          <a
-            @dLinkCss
-            href='@(child.Enabled ? child.Url : "#")'
-            target="@(child.Target)"
-            @{
-              if (child.HasChildren()) {
-                <text>id="tab-@child.TabId-dropdown"</text>
-                <text>data-toggle="dropdown"</text>
-                <text>aria-haspopup="true"</text>
-                <text>aria-expanded="false"</text>
-              }
-            }
-          >
-            if (child.Icon) {
-              <img src="@(child.Icon)" alt="" class="mega-menu__submenu__icon" />
-            }
-            @child.Text
+        var itemClasses = new List<string>();
+        itemClasses.Add("tab-" + child.TabId);
+        itemClasses.Add("mega-menu__submenu");
+
+        var itemCss = new HtmlString((itemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", itemClasses.ToArray()) + "\""));
+
+        var linkClasses = new List<string>();
+        linkClasses.Add("mega-menu__link");
+        linkClasses.Add("mega-menu__submenu__header");
+        if (child.Breadcrumb) { linkClasses.Add("active"); }
+
+        var linkCss = new HtmlString((linkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", linkClasses.ToArray()) + "\""));
+        <li @itemCss>
+          <a @linkCss href='@(child.Enabled ? child.Url : "#")' target="@(child.Target)">
+            <img src='@(HasIcon ? child.Icon : "https://placehold.it/60x60")' alt="@(child.Text)" class="mega-menu__submenu__icon" />
+            <span>@child.Text</span>
           </a>
-          @if () {
-            RenderGrandchildren(child);
-          } else {
-            <p>@child.Description</p>
-          }
+          @RenderSubmenuList(child)
         </li>
       }
     </ul>
   }
 }
 
-@helper RenderGrandchildren(MenuNode node) {
+@helper RenderSubmenuList(MenuNode node) {
   var grandchildren = node.Children;
   if (grandchildren.Count > 0) {
-    <ul class="mega-menu__submenu__list" aria-labelledby="tab-@node.TabId-dropdown">
+    <ul class="mega-menu__submenu__list">
       @foreach (var grandchild in grandchildren) {
-        <li class="mega-menu__submenu__item">
-          <a href='@(grandchild.Enabled ? grandchild.Url : "#")' class="mega-menu__submenu__link" target="@(grandchild.Target)">@grandchild.Text</a>
+        var linkClasses = new List<string>();
+        linkClasses.Add("mega-menu__link");
+        if (grandchild.Breadcrumb) { linkClasses.Add("active"); }
+
+        var linkCss = new HtmlString((linkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", linkClasses.ToArray()) + "\""));
+        <li>
+          <a @linkCss href='@(grandchild.Enabled ? grandchild.Url : "#")' target="@(grandchild.Target)">@grandchild.Text</a>
         </li>
       }
     </ul>
+  } else {
+    var HasDescription = !String.IsNullOrEmpty(node.Description);
+
+    <p class="mega-menu__submenu__description">@(HasDescription ? node.Description : "This is the tab description...")</p>
+
   }
 }
 
-@RenderNodes(root.Children)
+@RenderMegaMenu(root.Children)
