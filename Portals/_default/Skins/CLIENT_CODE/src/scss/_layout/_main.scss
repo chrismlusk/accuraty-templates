@@ -3,10 +3,10 @@
 // ======================
 
 .main {
-  margin-top: $navbar-height-sm;
+  margin-top: 1rem;
 
   @include media-breakpoint-up(md) {
-    margin-top: $navbar-height-md;
+    margin-top: 3rem;
   }
 
   //

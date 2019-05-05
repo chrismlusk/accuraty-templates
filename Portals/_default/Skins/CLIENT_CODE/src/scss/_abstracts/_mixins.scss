@@ -2,11 +2,30 @@
 //
 //  [Table of Contents]
 //
+//  - full-bleed
 //  - plain-visited
 //  - button-variant
 //  - button-outline-variant
 //
 // ============================================================================
+
+
+
+
+//
+// Full-Bleed utility
+// ==================
+//
+// Used to break the component out of its parent wrapper.
+//
+// Resource: https://andy-bell.design/wrote/creating-a-full-bleed-css-utility
+// ----------------------------------------------------------------------------
+
+@mixin full-bleed {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 
 
 

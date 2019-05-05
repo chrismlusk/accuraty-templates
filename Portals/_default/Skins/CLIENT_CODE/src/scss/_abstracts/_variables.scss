@@ -697,7 +697,7 @@ $h5-font-size:                $asl--font-size-5;
 $h6-font-size:                $asl--font-size-6;
 
 $headings-margin-bottom:      $spacer / 2;
-$headings-font-family:        null;
+$headings-font-family:        inherit;
 $headings-font-weight:        $asl--font-weight-medium;
 $headings-line-height:        $asl--line-height-tightest;
 $headings-color:              null;
