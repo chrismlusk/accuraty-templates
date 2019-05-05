@@ -42,6 +42,7 @@ $m--link-padding-x:                   .5rem;
 $m--link-font-weight:                 $font-weight-normal;
 $m--link-color:                       $body-color;
 $m--link-hover-color:                 $link-color;
+$m--link-hover-bg:                    $gray-100;
 
 $m--submenu-header-padding:           $m--link-padding-x;
 $m--submenu-header-font-weight:       $font-weight-bold;
@@ -151,6 +152,7 @@ $m--submenu-description-color:        $gray-700;
 
   @include hover-focus {
     color: $m--link-hover-color;
+    background-color: $m--link-hover-bg;
   }
 }
 
