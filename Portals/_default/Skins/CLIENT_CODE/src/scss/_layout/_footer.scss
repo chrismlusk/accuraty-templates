@@ -21,6 +21,7 @@
 
 .footer {
   font-size: $font-size-sm;
+  background-color: $gray-700;
 }
 
 
@@ -30,8 +31,8 @@
 // Footer link
 // ===========
 
-.footer a {
-  border-bottom: $border-width solid rgba($white, .075);
+.footer a:not(.footer-brand) {
+  border-bottom: $link-border-width solid rgba($white, .075);
 
   @include plain-visited {
     color: inherit;
@@ -82,9 +83,9 @@
 
   .nav-link {
 
-      @include plain-visited {}
+    @include plain-visited {}
 
-      @include hover-focus {}
+    @include hover-focus {}
   }
 }
 
@@ -128,7 +129,7 @@
   color: rgba($white, .6);
 
   a {
-    border-bottom: $border-width solid rgba($white, .075);
+    border-bottom-color: rgba($white, .075);
 
     @include plain-visited {
       color: inherit;
