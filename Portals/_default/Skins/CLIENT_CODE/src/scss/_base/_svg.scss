@@ -1,0 +1,17 @@
+.svg {
+  fill: currentColor;
+  stroke-width: 0;
+  stroke: currentColor;
+
+  &.is-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    pointer-events: none;
+  }
+
+  &.is-logo {
+    vertical-align: text-bottom;
+  }
+}
