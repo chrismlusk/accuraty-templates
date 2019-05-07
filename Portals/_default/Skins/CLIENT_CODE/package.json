@@ -33,7 +33,7 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0-beta.2",
     "gulp-cache": "^1.1.1",
     "gulp-clean-css": "^4.2.0",
