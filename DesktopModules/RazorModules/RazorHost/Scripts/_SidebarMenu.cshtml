@@ -12,7 +12,6 @@
 @using DotNetNuke.Entities.Tabs
 @using DotNetNuke.Security.Permissions
 
-
 @{
   TabInfo activeTab = Dnn.Tab;
   TabInfo activeTabParent = new TabInfo();
@@ -76,10 +75,27 @@
           itemClasses.Add("menu__item");
           itemClasses.Add("tab-" + tab.TabID);
           if (tab.TabID == Dnn.Tab.TabID) { itemClasses.Add("active"); }
+
           var itemCss = new HtmlString((itemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", itemClasses.ToArray()) + "\""));
 
+          var linkClasses = new List<string>();
+          linkClasses.Add("menu__link");
+          if (tab.TabID == Dnn.Tab.TabID) { linkClasses.Add("active"); }
+          var linkCss = new HtmlString((linkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", linkClasses.ToArray()) + "\""));
+
           <li @itemCss>
-            <a href="@tab.FullUrl" class="menu__link">@tab.TabName</a>
+            <div class="menu__item__header">
+              @if (tab.HasChildren) {
+                <a class="menu__toggle  d-flex align-items-center justify-content-end">
+                  <span class="menu__toggle__icon  d-flex align-items-center">
+                    <svg class="svg is-icon">
+                      <use xlink:href="#icon-chevron-down" />
+                    </svg>
+                  </span>
+                </a>
+              }
+              <a href="@tab.FullUrl" @linkCss>@tab.TabName</a>
+            </div>
             @RenderChildren(tab)
           </li>
         }

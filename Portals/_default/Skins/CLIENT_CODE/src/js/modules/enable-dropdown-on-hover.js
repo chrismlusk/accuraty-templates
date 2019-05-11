@@ -38,21 +38,23 @@ function enableDropdownOnHover() {
     }
   }
 
-  dropdowns.forEach(d => {
-    d.addEventListener('mouseenter', showDropdownMenu);
-    d.addEventListener('mouseleave', hideDropdownMenu);
+  if (dropdowns.length) {
+    dropdowns.forEach(d => {
+      d.addEventListener('mouseenter', showDropdownMenu);
+      d.addEventListener('mouseleave', hideDropdownMenu);
 
-    d.addEventListener(
-      'click',
-      event => {
-        // Don't execute the function if the user is opening the link
-        // in a new tab by pressing Control or Command while clicking.
-        if (event.metaKey || event.ctrlKey) return;
-        navigateToUrl(event);
-      },
-      false
-    );
-  });
+      d.addEventListener(
+        'click',
+        event => {
+          // Don't execute the function if the user is opening the link
+          // in a new tab by pressing Control or Command while clicking.
+          if (event.metaKey || event.ctrlKey) return;
+          navigateToUrl(event);
+        },
+        false
+      );
+    });
+  }
 }
 
 export default enableDropdownOnHover;
