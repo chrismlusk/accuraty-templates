@@ -11,6 +11,8 @@
 
 function transformHeader() {
   const header = document.querySelector('.header');
+  if (!header) return;
+
   let lastScroll = 0;
   let scrolling = false;
 

@@ -16,7 +16,7 @@
 @{
 
   // Get children of the current tab.
-  // Note: The "d" in the `TabID` and `PortalId` shortcuts are not consistent.
+  // Note: The "d" in the `TabID` and `PortalId` are not consistent.
   List<TabInfo> myTabList = TabController.GetTabsByParent(Dnn.Tab.TabID, Dnn.Portal.PortalId);
 
   // Use `counter` variable to determine odd and even children.
@@ -25,21 +25,20 @@
 
 
 @**
- * Note: Use single quotes with HTML attributes to avoid later conflict with
- *       C# requirement for double quotes with string literals.
+ * Note: Use single quotes with HTML attributes
+ *       to avoid later conflict with C# requirement
+ *       for double quotes with string literals.
  *@
 <div class=''>
 
-  @foreach (TabInfo myTab in myTabList)
-  {
+  @foreach (TabInfo myTab in myTabList) {
 
     // Convert tab permissions and user roles into lists for comparison.
     List<string> userRoles = Dnn.User.Roles.ToList();
     IEnumerable<string> tabRoles = myTab.TabPermissions.ToList().Select(p => p.RoleName);
 
     // Only show if tab is not deleted, is visible, and has proper user roles.
-    if (!myTab.IsDeleted && myTab.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser))
-    {
+    if (!myTab.IsDeleted && myTab.IsVisible && (userRoles.Any(r => tabRoles.Contains(r)) || tabRoles.Contains("All Users") || Dnn.User.IsSuperUser)) {
       <article class='child-page  row  @(counter % 2 != 0 ? "is-odd" : "is-even")'>
         <figure class='child-page__figure  col-md-4'>
           <a href='@myTab.FullUrl'>
