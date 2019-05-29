@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const newer = require('gulp-newer');
 const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
-const stylelint = require('gulp-stylelint');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -10,9 +9,10 @@ const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const size = require('gulp-size');
 
+const stylelintTask = require('./stylelint');
+
 const { paths, plugins, project } = require('../config');
 const {
-  styles,
   skinLayoutStyles,
   containerStyles,
   ednStyles,
@@ -24,21 +24,6 @@ const regex = /(\.\.\/)/g;
 
 // explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
 sass.compiler = require('node-sass');
-
-function lintStyles() {
-  if (!project.styles) return Promise.resolve();
-
-  return gulp
-    .src(styles.src)
-    .pipe(
-      stylelint({
-        failAfterError: true,
-        fix: true,
-        // reporters: [{ formatter: 'verbose', console: true }],
-      })
-    )
-    .pipe(gulp.dest('./src/scss'));
-}
 
 function skinLayoutStylesTask() {
   if (!project.styles.skinLayouts) return Promise.resolve();
@@ -140,22 +125,20 @@ function accuratyContainerStylesTask() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-const allStylesTask = gulp.series(
-  lintStyles,
-  gulp.parallel(
-    skinLayoutStylesTask,
-    containerStylesTask,
-    ednStylesTask,
-    accuratyContainerStylesTask
-  )
+const allStylesTask = gulp.parallel(
+  skinLayoutStylesTask,
+  containerStylesTask,
+  ednStylesTask,
+  accuratyContainerStylesTask
 );
 
-gulp.task('lint-styles', lintStyles);
-gulp.task('styles-skin', gulp.series(lintStyles, skinLayoutStylesTask));
-gulp.task('styles-container', gulp.series(lintStyles, containerStylesTask));
-gulp.task('styles-edn', gulp.series(lintStyles, ednStylesTask));
-gulp.task('styles-asl', gulp.series(lintStyles, accuratyContainerStylesTask));
+gulp.task('styles-skin', gulp.series(stylelintTask, skinLayoutStylesTask));
+gulp.task('styles-container', gulp.series(stylelintTask, containerStylesTask));
+gulp.task('styles-edn', gulp.series(stylelintTask, ednStylesTask));
+gulp.task(
+  'styles-asl',
+  gulp.series(stylelintTask, accuratyContainerStylesTask)
+);
 
-gulp.task('styles', allStylesTask);
-
+gulp.task('styles', gulp.series(stylelintTask, allStylesTask));
 module.exports = allStylesTask;
