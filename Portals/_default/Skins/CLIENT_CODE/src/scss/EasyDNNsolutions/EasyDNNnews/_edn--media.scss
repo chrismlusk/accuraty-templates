@@ -34,9 +34,9 @@
   height: 100%;
   background-position: 50% 50%;
   background-size: cover;
-  transition-property: opacity;
-  transition-duration: $transition-duration;
   transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
 
   @include hover-focus {
     opacity: .75;
