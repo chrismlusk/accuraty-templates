@@ -19,6 +19,9 @@ const {
   accuratyContainerStyles,
 } = paths;
 
+const nm = 'node_modules';
+const regex = /(\.\.\/)/g;
+
 // explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
 sass.compiler = require('node-sass');
 
@@ -36,22 +39,39 @@ function lintStyles() {
 
 function skinLayoutStylesTask() {
   if (!project.styles.skinLayouts) return Promise.resolve();
+
+  const fixMapPath = path => {
+    if (path.includes(nm)) {
+      return `./${path.slice(path.indexOf(nm), -1)}`;
+    }
+    return `./src/scss/${path}`;
+  };
+
   return gulp
     .src(skinLayoutStyles.src)
     .pipe(newer('.tmp/styles'))
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulp.dest('.tmp/styles'))
     .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
-    .pipe(size({ title: 'Skin layout CSS' }))
+    .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
+    .pipe(size({ title: 'Skin layout CSS' }))
     .pipe(gulp.dest(skinLayoutStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
 
 function containerStylesTask() {
   if (!project.styles.containers) return Promise.resolve();
+
+  const fixMapPath = path => {
+    const prefix = `../../Skins/${project.name}`;
+    if (path.includes(nm)) {
+      return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
+    }
+    return `${prefix}/src/scss/${path.replace(regex, '')}`;
+  };
+
   return gulp
     .src(containerStyles.src)
     .pipe(newer('.tmp/styles'))
@@ -59,15 +79,24 @@ function containerStylesTask() {
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
-    .pipe(gulp.dest('.tmp/styles'))
-    .pipe(size({ title: 'Container CSS' }))
+    .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
+    .pipe(size({ title: 'Container CSS' }))
     .pipe(gulp.dest(containerStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
 
 function ednStylesTask() {
   if (!project.styles.edn) return Promise.resolve();
+
+  const fixMapPath = path => {
+    const prefix = `../../../../../Portals/_default/Skins/${project.name}`;
+    if (path.includes(nm)) {
+      return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
+    }
+    return `${prefix}/src/scss/${path.replace(regex, '')}`;
+  };
+
   return gulp
     .src(ednStyles.src)
     .pipe(newer('.tmp/styles'))
@@ -75,16 +104,25 @@ function ednStylesTask() {
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
-    .pipe(gulp.dest('.tmp/styles'))
-    .pipe(size({ title: 'EasyDNNnews CSS' }))
     .pipe(rename({ basename: `${project.name}` }))
+    .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
+    .pipe(size({ title: 'EasyDNNnews CSS' }))
     .pipe(gulp.dest(ednStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
 
 function accuratyContainerStylesTask() {
   if (!project.styles.accuratyContainers) return Promise.resolve();
+
+  const fixMapPath = path => {
+    const prefix = `../../Skins/${project.name}`;
+    if (path.includes(nm)) {
+      return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
+    }
+    return `${prefix}/src/scss/${path.replace(regex, '')}`;
+  };
+
   return gulp
     .src(accuratyContainerStyles.src)
     .pipe(newer('.tmp/styles'))
@@ -92,9 +130,9 @@ function accuratyContainerStylesTask() {
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
-    .pipe(gulp.dest('.tmp/styles'))
-    .pipe(size({ title: 'Accuraty Container CSS' }))
+    .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
+    .pipe(size({ title: 'Accuraty Container CSS' }))
     .pipe(gulp.dest(accuratyContainerStyles.dest))
     .pipe(gulp.dest('.tmp/styles'));
 }
