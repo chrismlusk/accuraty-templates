@@ -28,13 +28,16 @@ sass.compiler = require('node-sass');
 function lintStyles() {
   if (!project.styles) return Promise.resolve();
 
-  return gulp.src(styles.src).pipe(
-    stylelint({
-      failAfterError: true,
-      fix: true,
-      // reporters: [{ formatter: 'verbose', console: true }],
-    })
-  );
+  return gulp
+    .src(styles.src)
+    .pipe(
+      stylelint({
+        failAfterError: true,
+        fix: true,
+        // reporters: [{ formatter: 'verbose', console: true }],
+      })
+    )
+    .pipe(gulp.dest('./src/scss'));
 }
 
 function skinLayoutStylesTask() {
@@ -137,18 +140,21 @@ function accuratyContainerStylesTask() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-const allStylesTask = gulp.parallel(
+const allStylesTask = gulp.series(
   lintStyles,
-  skinLayoutStylesTask,
-  containerStylesTask,
-  ednStylesTask,
-  accuratyContainerStylesTask
+  gulp.parallel(
+    skinLayoutStylesTask,
+    containerStylesTask,
+    ednStylesTask,
+    accuratyContainerStylesTask
+  )
 );
 
-gulp.task('styles-skin', skinLayoutStylesTask);
-gulp.task('styles-container', containerStylesTask);
-gulp.task('styles-edn', ednStylesTask);
-gulp.task('styles-asl', accuratyContainerStylesTask);
+gulp.task('lint-styles', lintStyles);
+gulp.task('styles-skin', gulp.series(lintStyles, skinLayoutStylesTask));
+gulp.task('styles-container', gulp.series(lintStyles, containerStylesTask));
+gulp.task('styles-edn', gulp.series(lintStyles, ednStylesTask));
+gulp.task('styles-asl', gulp.series(lintStyles, accuratyContainerStylesTask));
 
 gulp.task('styles', allStylesTask);
 
