@@ -1,4 +1,4 @@
-<style scoped>
+<style>
   h3:not(:first-of-type) {
     margin-top: 3rem !important;
   }
@@ -13,7 +13,7 @@
 <h2>Components</h2>
 <p class="lead">An overview of how components look with this theme. This intro paragraph is given the `.lead` class from Bootstrap so we can see how it looks, too. Thanks for reading!</p>
 
-<h3>Accordion</h3>
+<h3 id="accordion">Accordion</h3>
 <div class="docs-example">
   <div class="accordion" id="accordionExample">
     <div class="card">
@@ -63,7 +63,7 @@
 </div>
 
 
-<h3>Alerts</h3>
+<h3 id="alerts">Alerts</h3>
 <div class="docs-example">
   <div class="alert alert-primary" role="alert">
     A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
@@ -91,8 +91,58 @@
   </div>
 </div>
 
+<h3 id="badge">Badge</h3>
+<h4>In headings</h4>
+<div class="docs-example">
+  <h3>Heading 3 <span class="badge badge-secondary">New</span></h3>
+  <h4>Heading 4 <span class="badge badge-secondary">New</span></h4>
+  <h5>Heading 5 <span class="badge badge-secondary">New</span></h5>
+</div>
 
-<h3>Buttons</h3>
+<h4>As labels</h4>
+<div class="docs-example">
+  <button type="button" class="btn btn-primary">
+    Notifications <span class="badge badge-light">4</span>
+  </button>
+</div>
+
+<h4>Contextual variations</h4>
+<div class="docs-example">
+  <span class="badge badge-primary">Primary</span>
+  <span class="badge badge-secondary">Secondary</span>
+  <span class="badge badge-success">Success</span>
+  <span class="badge badge-danger">Danger</span>
+  <span class="badge badge-warning">Warning</span>
+  <span class="badge badge-info">Info</span>
+  <span class="badge badge-light">Light</span>
+  <span class="badge badge-dark">Dark</span>
+</div>
+
+<h4>Pill badges</h4>
+<div class="docs-example">
+  <span class="badge badge-pill badge-primary">Primary</span>
+  <span class="badge badge-pill badge-secondary">Secondary</span>
+  <span class="badge badge-pill badge-success">Success</span>
+  <span class="badge badge-pill badge-danger">Danger</span>
+  <span class="badge badge-pill badge-warning">Warning</span>
+  <span class="badge badge-pill badge-info">Info</span>
+  <span class="badge badge-pill badge-light">Light</span>
+  <span class="badge badge-pill badge-dark">Dark</span>
+</div>
+
+<h4>Links</h4>
+<div class="docs-example">
+  <a href="#" class="badge badge-primary">Primary</a>
+  <a href="#" class="badge badge-secondary">Secondary</a>
+  <a href="#" class="badge badge-success">Success</a>
+  <a href="#" class="badge badge-danger">Danger</a>
+  <a href="#" class="badge badge-warning">Warning</a>
+  <a href="#" class="badge badge-info">Info</a>
+  <a href="#" class="badge badge-light">Light</a>
+  <a href="#" class="badge badge-dark">Dark</a>
+</div>
+
+<h3 id="buttons">Buttons</h3>
 <h4>Solid</h4>
 <div class="docs-example">
   <button type="button" class="btn btn-primary">Primary</button>
@@ -118,7 +168,7 @@
 </div>
 
 
-<h3>Cards</h3>
+<h3 id="cards">Cards</h3>
 <h4>Basic</h4>
 <div class="docs-example">
   <div class="card" style="width: 18rem;">
@@ -149,7 +199,7 @@
 </div>
 
 
-<h3>Carousel</h3>
+<h3 id="carousel">Carousel</h3>
 <div class="docs-example">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -180,7 +230,7 @@
 </div>
 
 
-<h3>Dropdown</h3>
+<h3 id="dropdown">Dropdown</h3>
 <div class="docs-example">
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -195,7 +245,7 @@
 </div>
 
 
-<h3>Forms</h3>
+<h3 id="forms">Forms</h3>
 <h4>Default</h4>
 <h5>Basic</h5>
 <div class="docs-example">
@@ -253,7 +303,7 @@
 </div>
 
 
-<h3>Modal</h3>
+<h3 id="modal">Modal</h3>
 <div class="docs-example">
   <div class="modal" tabindex="-1" role="dialog" style="position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: 1; display: block;">
     <div class="modal-dialog" role="document" style="margin: 0;">
@@ -277,7 +327,7 @@
 </div>
 
 
-<h3>Pagination</h3>
+<h3 id="pagination">Pagination</h3>
 <div class="docs-example">
   <nav aria-label="Page navigation example">
     <ul class="pagination">

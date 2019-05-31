@@ -92,22 +92,19 @@ body:not(.dnnEditState) .DNNEmptyPane {
 .dnnEditState .dnnModuleManager {
   width: 100%;
 
-  // THIS IS A HACK!
-  // After DNN 9.3, this will no longer be necessary.
-  // This makes Pane names visible in Edit mode.
-  // https://github.com/dnnsoftware/Dnn.EditBar/issues/25
   &::before {
     position: absolute;
-      top: .5rem;
-      left: .5rem;
+    top: .5rem;
+    left: .5rem;
     z-index: 1;
-    display: inline-block;
+    height: auto;
     padding: $badge-pill-padding-x $badge-pill-padding-x;
     font-size: $badge-font-size;
     font-weight: $badge-font-weight;
     line-height: 1;
     color: $white;
     text-align: center;
+    text-transform: none;
     white-space: nowrap;
     vertical-align: baseline;
     content: attr(data-name);
@@ -379,8 +376,8 @@ legend.error {
 .error input[type="text"],
 .error input[type="email"],
 .error input[type="search"] {
-    color: rgba(theme-color("danger"), .7);
-    border: 1px solid rgba(theme-color("danger"), .6);
+  color: rgba(theme-color("danger"), .7);
+  border: 1px solid rgba(theme-color("danger"), .6);
 }
 
 
@@ -434,16 +431,16 @@ legend.error {
 .dnnPrimaryAction,
 .dnnSecondaryAction,
 .dnnTertiaryAction {
-    padding: $input-btn-padding-y $input-btn-padding-x;
-    margin-bottom: 9px;
-    font-weight: $font-weight-bold;
-    background-color: $gray-200;
-    border: 1px solid $gray-400;
-    border-radius: $border-radius;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  margin-bottom: 9px;
+  font-weight: $font-weight-bold;
+  background-color: $gray-200;
+  border: 1px solid $gray-400;
+  border-radius: $border-radius;
 
-    @include plain-visited {
-      color: $gray-800;
-    }
+  @include plain-visited {
+    color: $gray-800;
+  }
 }
 
 

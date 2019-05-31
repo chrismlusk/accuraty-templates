@@ -35,6 +35,7 @@ module.exports = {
       main: './src/js/main.js',
       home: './src/js/home.js',
       authentication: './src/js/authentication.js',
+      Aside_Menu: './src/js/Aside_Menu.js',
       LazyYouTube: './src/js/LazyYouTube.js',
     },
   },
