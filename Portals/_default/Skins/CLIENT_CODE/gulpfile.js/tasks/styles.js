@@ -21,6 +21,7 @@ const {
 
 const nm = 'node_modules';
 const regex = /(\.\.\/)/g;
+const isProduction = process.env.PROJECT_MODE === 'production';
 
 // explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
 sass.compiler = require('node-sass');
@@ -41,7 +42,7 @@ function skinLayoutStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
+    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
     .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'Skin layout CSS' }))
@@ -66,7 +67,7 @@ function containerStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
+    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
     .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'Container CSS' }))
@@ -91,7 +92,7 @@ function ednStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
+    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
     .pipe(rename({ basename: `${project.name}` }))
     .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
@@ -117,7 +118,7 @@ function accuratyContainerStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulpif(project.production, cleanCss(plugins.cleanCss.options)))
+    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
     .pipe(sourcemaps.mapSources(fixMapPath))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'Accuraty Container CSS' }))

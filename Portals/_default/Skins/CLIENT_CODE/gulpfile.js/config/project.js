@@ -1,31 +1,43 @@
-const pkg = require('../../package.json');
-// NPM rules require the `package.json` name to be lowercase.
-// By convention, Accuraty's client codes are uppercase.
-const projectName = pkg.name.toUpperCase();
+const {
+  CLIENT_CODE,
+  PROJECT_MODE,
+  VENDOR_BOOTSTRAP,
+  VENDOR_FLICKITY,
+  VENDOR_FONT_AWESOME,
+  LOCAL_FONTS,
+  LOCAL_ICONS,
+  LOCAL_IMAGES,
+  SKIN_LAYOUT_STYLES,
+  CONTAINER_STYLES,
+  ACCURATY_CONTAINER_STYLES,
+  EDN_STYLES,
+  CUSTOM_SCRIPTS,
+} = process.env;
+
+// Properties on `process.env` are implicitly converted to a string,
+// so we're using this utility function to convert values to boolean.
+const has = data => data === 'true';
 
 module.exports = {
-  name: projectName,
-
-  // Be sure to update this when you're ready for production!
-  production: false,
-
-  // Configuration options. Are you using these libraries?
+  name: CLIENT_CODE.toUpperCase() || 'CLIENT_CODE',
+  // Only use "production" mode if env variable is explicitly set.
+  // Otherwise, fallback to "development" mode just to be safe.
+  mode: PROJECT_MODE === 'production' ? 'production' : 'development',
   vendors: {
-    // Set as `true` if you want to get compiled asset from `node_modules`.
-    bootstrap: true,
-    flickity: false,
-    fontAwesome: false,
+    bootstrap: has(VENDOR_BOOTSTRAP),
+    flickity: has(VENDOR_FLICKITY),
+    fontAwesome: has(VENDOR_FONT_AWESOME),
   },
-  fonts: true,
-  images: true,
-  icons: true,
+  fonts: has(LOCAL_FONTS),
+  icons: has(LOCAL_ICONS),
+  images: has(LOCAL_IMAGES),
   styles: {
-    skinLayouts: true,
-    containers: true,
-    edn: true,
-    accuratyContainers: true, // ASL-specific containers
+    skinLayouts: has(SKIN_LAYOUT_STYLES),
+    containers: has(CONTAINER_STYLES),
+    accuratyContainers: has(ACCURATY_CONTAINER_STYLES),
+    edn: has(EDN_STYLES),
   },
-  scripts: true,
+  scripts: has(CUSTOM_SCRIPTS),
 
   // Webpack settings
   webpack: {

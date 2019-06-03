@@ -4,11 +4,11 @@ const gulp = require('gulp');
 const fs = require('fs');
 const replace = require('gulp-replace');
 
-const { project } = require('../config');
+const { name } = require('../config').project;
 
 function setSassClientCode() {
   const pattern = /\$asl--client-code:\\?.*/g;
-  const updated = `$asl--client-code: "${project.name}";`;
+  const updated = `$asl--client-code: "${name}";`;
 
   return gulp
     .src('./src/scss/_abstracts/_variables.scss')
@@ -32,9 +32,9 @@ function setDirectoryNames() {
   const ednPath = `../../../../DesktopModules/EasyDNNnews/Templates/_default`;
 
   // Run the function for the Skin, Containers, and EDN directories.
-  renameDir(`../CLIENT_CODE`, `../${project.name}`);
-  renameDir(`../../Containers/CLIENT_CODE`, `../../Containers/${project.name}`);
-  renameDir(`${ednPath}/CLIENT_CODE`, `${ednPath}/${project.name}`);
+  renameDir(`../CLIENT_CODE`, `../${name}`);
+  renameDir(`../../Containers/CLIENT_CODE`, `../../Containers/${name}`);
+  renameDir(`${ednPath}/CLIENT_CODE`, `${ednPath}/${name}`);
 
   // Return a resolved Promise to continue the Gulp build.
   return Promise.resolve();
