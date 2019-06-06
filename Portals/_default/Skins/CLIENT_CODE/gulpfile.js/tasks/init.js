@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 const gulp = require('gulp');
 const fs = require('fs');
 const replace = require('gulp-replace');

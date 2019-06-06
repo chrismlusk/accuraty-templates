@@ -18,23 +18,15 @@ const {
   ednStyles,
   accuratyContainerStyles,
 } = paths;
+const { fixMapPath } = require('../utils');
 
-const nm = 'node_modules';
-const regex = /(\.\.\/)/g;
 const isProduction = process.env.PROJECT_MODE === 'production';
 
-// explicitly set compiler per https://github.com/dlmanning/gulp-sass#basic-usage
+// explicitly set compiler (https://github.com/dlmanning/gulp-sass#basic-usage)
 sass.compiler = require('node-sass');
 
 function skinLayoutStylesTask() {
   if (!project.styles.skinLayouts) return Promise.resolve();
-
-  const fixMapPath = path => {
-    if (path.includes(nm)) {
-      return `./${path.slice(path.indexOf(nm), -1)}`;
-    }
-    return `./src/scss/${path}`;
-  };
 
   return gulp
     .src(skinLayoutStyles.src)
@@ -43,7 +35,7 @@ function skinLayoutStylesTask() {
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(fixMapPath))
+    .pipe(sourcemaps.mapSources(path => fixMapPath(path)))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'Skin layout CSS' }))
     .pipe(gulp.dest(skinLayoutStyles.dest))
@@ -53,13 +45,7 @@ function skinLayoutStylesTask() {
 function containerStylesTask() {
   if (!project.styles.containers) return Promise.resolve();
 
-  const fixMapPath = path => {
-    const prefix = `../../Skins/${project.name}`;
-    if (path.includes(nm)) {
-      return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
-    }
-    return `${prefix}/src/scss/${path.replace(regex, '')}`;
-  };
+  const mapPrefix = `../../Skins/${project.name}`;
 
   return gulp
     .src(containerStyles.src)
@@ -68,7 +54,7 @@ function containerStylesTask() {
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(fixMapPath))
+    .pipe(sourcemaps.mapSources(path => fixMapPath(path, mapPrefix)))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'Container CSS' }))
     .pipe(gulp.dest(containerStyles.dest))
@@ -78,13 +64,7 @@ function containerStylesTask() {
 function ednStylesTask() {
   if (!project.styles.edn) return Promise.resolve();
 
-  const fixMapPath = path => {
-    const prefix = `../../../../../Portals/_default/Skins/${project.name}`;
-    if (path.includes(nm)) {
-      return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
-    }
-    return `${prefix}/src/scss/${path.replace(regex, '')}`;
-  };
+  const mapPrefix = `../../../../../Portals/_default/Skins/${project.name}`;
 
   return gulp
     .src(ednStyles.src)
@@ -94,7 +74,7 @@ function ednStylesTask() {
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
     .pipe(rename({ basename: `${project.name}` }))
-    .pipe(sourcemaps.mapSources(fixMapPath))
+    .pipe(sourcemaps.mapSources(path => fixMapPath(path, mapPrefix)))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'EasyDNNnews CSS' }))
     .pipe(gulp.dest(ednStyles.dest))
@@ -104,13 +84,7 @@ function ednStylesTask() {
 function accuratyContainerStylesTask() {
   if (!project.styles.accuratyContainers) return Promise.resolve();
 
-  const fixMapPath = path => {
-    const prefix = `../../Skins/${project.name}`;
-    if (path.includes(nm)) {
-      return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
-    }
-    return `${prefix}/src/scss/${path.replace(regex, '')}`;
-  };
+  const mapPrefix = `../../Skins/${project.name}`;
 
   return gulp
     .src(accuratyContainerStyles.src)
@@ -119,7 +93,7 @@ function accuratyContainerStylesTask() {
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
     .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(fixMapPath))
+    .pipe(sourcemaps.mapSources(path => fixMapPath(path, mapPrefix)))
     .pipe(sourcemaps.write('.'))
     .pipe(size({ title: 'Accuraty Container CSS' }))
     .pipe(gulp.dest(accuratyContainerStyles.dest))

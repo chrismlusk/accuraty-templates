@@ -1,6 +1,6 @@
 # Gulpfile.js
 
-Contains all files related to the Gulp build process. This is how we compile stylesheets, optimize images, bundle scripts. We also extract vendor resources from the `node_modules/` folder and add them to the Skin's `public/` folder. Basically, anything that is automated is run through this directory.
+Contains all files related to the Gulp build process. This is how we compile stylesheets, optimize images, bundle scripts. We also extract vendor resources from the `node_modules/` folder and add them to the skin's `public/` folder. Basically, anything that is automated is run through this directory.
 
 ## Overview
 
@@ -12,7 +12,7 @@ The `gulpfile.js/` folder includes:
 
 ### config/
 
-All project settings and configurations are stored here. This is where you will set what libraries and assets are needed for this project's Skin, Containers, Modules, etc.
+All project settings and configurations needed for Gulp to run properly. This information is imported from the `.env` file at the root of the project's skin directory.
 
 ### tasks/
 
@@ -20,7 +20,7 @@ Each Gulp task is split into its own file inside this directory. That includes i
 
 ### index.js
 
-A mandatory file. All this does is import each task so when Gulp is run, each task is available.
+A mandatory file. All this does is include the environment variables and import each task so when Gulp is run, each task is available.
 
 ## Gulp information
 
@@ -28,4 +28,4 @@ A mandatory file. All this does is import each task so when Gulp is run, each ta
 
 ---
 
-Reference: Gulp?????
+Reference: [Gulp docs](https://gulpjs.com/docs/en/api/concepts)
