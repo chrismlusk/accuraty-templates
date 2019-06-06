@@ -5,7 +5,7 @@ This is a set of standards, common components, and best practices for projects i
 ## Project requirements
 
 - DNN site already deployed
-- [Node v10.15](https://nodejs.org/en)
+- [Node >= v10.16](https://nodejs.org/en)
 
 ## Getting started
 
@@ -36,9 +36,7 @@ Next, navigate to the Skin folder:
 cd Portals/_default/Skins/CLIENT_CODE
 ```
 
-Then, open `package.json` and change the `name` property from "CLIENT_CODE" to whatever the project's name should be. This name will be used in multiple places (e.g., the Skin and Container directories, as a Sass variable, the EasyDNNnews template name), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
-
-_Note: Although the placeholder name is in all caps, NPM rules require the name to be lowercase._
+Then, open `.env` and update your environment variables. At a minimum, change the `CLIENT_CODE` variable to whatever the project's name should be. This name will be used in multiple places (e.g., the Skin and Container directories, as a Sass variable, the EasyDNNnews template name), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
 
 #### 4. Install packages
 
@@ -90,4 +88,4 @@ To start watching again, run `npm run dev` in your terminal.
 
 ---
 
-Reference: [Accuraty Solutions](http://www.accuraty.com)
+Reference: [Accuraty Solutions](https://www.accuraty.com)

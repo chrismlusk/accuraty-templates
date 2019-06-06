@@ -47,11 +47,15 @@ What you'll find and what they are:
 
 #### .babelrc
 
-Babel is ...
+Babel is the JavaScript compiler used if you elect to not use Webpack.
 
 #### .browserslistrc
 
 Browsers we are supporting.
+
+#### .env
+
+Environment variables used to configure how the project is compiled. This is where you will update the client code, set the project mode, and define which libraries and assets are needed for this project's Skin, Containers, Modules, etc.
 
 #### .eslint / .eslintignore
 

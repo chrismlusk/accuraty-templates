@@ -1,12 +1,13 @@
 {
-  "name": "CLIENT_CODE",
+  "name": "accuraty-templates",
   "version": "1.0.0",
   "description": "Skin scaffolding for Accuraty projects",
   "main": "gulpfile.js",
   "scripts": {
     "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
+    "init": "gulp init",
+    "build": "gulp init && gulp build",
     "dev": "gulp watch",
     "start": "gulp init && gulp build && gulp watch",
     "clean": "gulp clean"
@@ -27,12 +28,14 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.1",
     "del": "^4.1.1",
+    "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0-beta.2",
     "gulp-cache": "^1.1.1",
@@ -51,10 +54,10 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.0",
     "node-sass": "^4.12.0",
-    "prettier": "^1.17.1",
+    "prettier": "^1.18.0",
     "require-dir": "^1.2.0",
     "stylelint": "^10.0.1",
     "stylelint-config-twbs-bootstrap": "^0.3.1",
-    "webpack": "^4.32.2"
+    "webpack": "^4.33.0"
   }
 }

@@ -1,42 +1,42 @@
-const pkg = require('../../package.json');
-// NPM rules require the `package.json` name to be lowercase.
-// By convention, Accuraty's client codes are uppercase.
-const projectName = pkg.name.toUpperCase();
+const { getWebpackEntries, isTrue } = require('../utils');
+
+const {
+  CLIENT_CODE,
+  PROJECT_MODE,
+  VENDOR_BOOTSTRAP,
+  VENDOR_FLICKITY,
+  VENDOR_FONT_AWESOME,
+  LOCAL_FONTS,
+  LOCAL_ICONS,
+  LOCAL_IMAGES,
+  SKIN_LAYOUT_STYLES,
+  CONTAINER_STYLES,
+  ACCURATY_CONTAINER_STYLES,
+  EDN_STYLES,
+  CUSTOM_SCRIPTS,
+} = process.env;
 
 module.exports = {
-  name: projectName,
-
-  // Be sure to update this when you're ready for production!
-  production: false,
-
-  // Configuration options. Are you using these libraries?
+  name: CLIENT_CODE.toUpperCase() || 'CLIENT_CODE',
+  // Only use "production" mode if env variable is explicitly set.
+  // Otherwise, fallback to "development" mode just to be safe.
+  mode: PROJECT_MODE === 'production' ? 'production' : 'development',
   vendors: {
-    // Set as `true` if you want to get compiled asset from `node_modules`.
-    bootstrap: true,
-    flickity: false,
-    fontAwesome: false,
+    bootstrap: isTrue(VENDOR_BOOTSTRAP),
+    flickity: isTrue(VENDOR_FLICKITY),
+    fontAwesome: isTrue(VENDOR_FONT_AWESOME),
   },
-  fonts: true,
-  images: true,
-  icons: true,
+  fonts: isTrue(LOCAL_FONTS),
+  icons: isTrue(LOCAL_ICONS),
+  images: isTrue(LOCAL_IMAGES),
   styles: {
-    skinLayouts: true,
-    containers: true,
-    edn: true,
-    accuratyContainers: true, // ASL-specific containers
+    skinLayouts: isTrue(SKIN_LAYOUT_STYLES),
+    containers: isTrue(CONTAINER_STYLES),
+    accuratyContainers: isTrue(ACCURATY_CONTAINER_STYLES),
+    edn: isTrue(EDN_STYLES),
   },
-  scripts: true,
-
-  // Webpack settings
+  scripts: isTrue(CUSTOM_SCRIPTS),
   webpack: {
-    // Each entry will be turned into its own bundle via Webpack.
-    // Add a new property for every new bundle you want to generate.
-    entries: {
-      main: './src/js/main.js',
-      home: './src/js/home.js',
-      authentication: './src/js/authentication.js',
-      Aside_Menu: './src/js/Aside_Menu.js',
-      LazyYouTube: './src/js/LazyYouTube.js',
-    },
+    entries: getWebpackEntries(),
   },
 };
