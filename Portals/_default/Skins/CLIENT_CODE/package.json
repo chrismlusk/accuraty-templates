@@ -38,7 +38,7 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0-beta.2",
-    "gulp-cache": "^1.1.1",
+    "gulp-cache": "^1.1.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-eslint": "^5.0.0",
     "gulp-if": "^2.0.2",
