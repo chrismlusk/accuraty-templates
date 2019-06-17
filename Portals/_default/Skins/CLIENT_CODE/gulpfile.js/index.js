@@ -8,6 +8,7 @@
 // 1. Require all tasks in gulpfile.js/tasks, including any subfolders
 // ----------------------------------------------------------------------------
 
+require('dotenv').config();
 const requireDir = require('require-dir');
 
 requireDir('./tasks', { recurse: true }); // 1

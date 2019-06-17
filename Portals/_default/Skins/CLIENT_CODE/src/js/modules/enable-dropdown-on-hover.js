@@ -1,3 +1,5 @@
+import isTouchDevice from './is-touch-device';
+
 //
 // Enable Bootstrap dropdowns on hover
 // ===================================
@@ -10,6 +12,7 @@
 
 function enableDropdownOnHover() {
   const dropdowns = [...document.querySelectorAll('.dropdown')];
+  if (!dropdowns.length) return;
 
   function showDropdownMenu(event) {
     const navItem = event.target;
@@ -33,26 +36,22 @@ function enableDropdownOnHover() {
 
   function navigateToUrl(event) {
     const link = event.target.href;
-    if (link && link !== '#') {
+    if (!link || link === '#') return;
+
+    if (event.metaKey || event.ctrlKey) {
+      // Open in a new tab if the user is pressing
+      // Control or Command while clicking the link.
+      window.open(link, '_blank');
+    } else {
       window.location.assign(link);
     }
   }
 
-  if (dropdowns.length) {
+  if (!isTouchDevice()) {
     dropdowns.forEach(d => {
       d.addEventListener('mouseenter', showDropdownMenu);
       d.addEventListener('mouseleave', hideDropdownMenu);
-
-      d.addEventListener(
-        'click',
-        event => {
-          // Don't execute the function if the user is opening the link
-          // in a new tab by pressing Control or Command while clicking.
-          if (event.metaKey || event.ctrlKey) return;
-          navigateToUrl(event);
-        },
-        false
-      );
+      d.addEventListener('click', navigateToUrl, false);
     });
   }
 }

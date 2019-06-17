@@ -1,9 +1,13 @@
 //
+// Enable menu toggles
+// ===================
 //
+// ...
 // ----------------------------------------------------------------------------
 
-function toggleSidebarMenus() {
+function enableMenuToggles() {
   const toggles = [...document.querySelectorAll('.menu__toggle')];
+  if (!toggles.length) return;
 
   function toggleMenuList(event) {
     const menuToggle = event.target;
@@ -16,11 +20,9 @@ function toggleSidebarMenus() {
     menuList.classList.toggle('show');
   }
 
-  if (toggles.length) {
-    toggles.forEach(t => {
-      t.addEventListener('click', toggleMenuList);
-    });
-  }
+  toggles.forEach(t => {
+    t.addEventListener('click', toggleMenuList);
+  });
 }
 
-export default toggleSidebarMenus;
+export default enableMenuToggles;

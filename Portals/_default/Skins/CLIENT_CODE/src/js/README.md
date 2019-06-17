@@ -9,9 +9,9 @@ The `js/` folder contains all custom scripts used in the project.
 
 ### Individual files
 
-Any file at the root of the `js/` directory will be compiled into separate JavaScript files. Scripts needed for the entire site are in `main.js`. Add new files for page- and component-specific scripts. To use a module, import the function and envoke it.
+Any file at the root of the `js/` directory will be compiled into separate JavaScript files. Scripts needed for the entire site are in `main.js`. Add new files for page- and component-specific scripts. To use a module, import the function and invoke it.
 
-_Note: When you add new individual files, you will need to modify the Gulp config to account for these new assets. You must also include them in the skin or container template they belong with._
+_Note: When you add new individual files at the root of this directory, the Gulp config will automatically include them into the build process. However, you must manually include them in the skin or container template they belong with._
 
 ### modules/
 

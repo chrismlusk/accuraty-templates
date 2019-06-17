@@ -15,7 +15,7 @@
           <div class="footer-contact-info" itemscope itemtype="http://schema.org/Organization">
             <link itemprop="url" href="<%=PortalSettings.PortalAlias.HTTPAlias%>">
             <span itemprop="name" class="sr-only">_xx__CLIENT_NAME__xx_</span>
-            <address itemscope itemtype="http://schema.org/PostalAddress">
+            <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
               <span itemprop="streetAddress">_xx___STREET_ADDRESS___xx_</span><br>
               <span itemprop="addressLocality">_xx___CITY___xx_</span>,
               <span itemprop="addressRegion">_xx___STATE___xx_</span>

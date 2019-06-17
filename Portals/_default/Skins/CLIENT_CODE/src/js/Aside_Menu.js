@@ -1,3 +1,3 @@
-import toggleSidebarMenus from './modules/toggle-sidebar-menus';
+import enableMenuToggles from './modules/enable-menu-toggles';
 
-toggleSidebarMenus();
+enableMenuToggles();

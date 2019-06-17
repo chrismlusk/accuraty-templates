@@ -1,6 +1,13 @@
+//
+// Lazy Load YouTube
+// =================
+//
+// Resource: https://developers.google.com/youtube/player_parameters
+// ----------------------------------------------------------------------------
+
 function lazyLoadYouTube() {
-  const videos = document.querySelectorAll('.lazy-yt');
-  if (!videos) return;
+  const videos = [...document.querySelectorAll('.lazy-yt')];
+  if (!videos.length) return;
 
   videos.forEach(video => {
     // Skip if there is no `data-id` attribute.
@@ -25,7 +32,7 @@ function lazyLoadYouTube() {
         'src',
         `https://www.youtube.com/embed/${
           video.dataset.id
-        }?rel=0&showinfo=0&autoplay=1`
+        }?rel=0&autoplay=1&modestbranding=1`
       );
       iframe.setAttribute('allowfullscreen', '');
       while (video.firstChild) {

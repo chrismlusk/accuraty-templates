@@ -8,11 +8,18 @@
 
 <!--CategoriesTemplate-->
 <!--TemplateLevel:0:-->
-    <a href="[EasyDNNcategories:Link]" class="menu__link">
-      [EasyDNNcategories:Title]
-      <span class="badge badge-primary badge-pill">[EasyDNNcategories:ArticleCount]</span>
-    </a>
-
+    <div class="menu__item__header">
+      <a class="menu__toggle">
+        <span class="menu__toggle__icon">
+          <svg class="svg is-icon">
+            <use xlink:href="#icon-chevron-down" />
+          </svg>
+        </span>
+      </a>
+      <a href="[EasyDNNcategories:Link]" class="menu__link">
+        [EasyDNNcategories:Title]
+      </a>
+    </div>
 <!--TemplateEnd-->
 <!--CategoriesEnd-->
 
@@ -21,9 +28,13 @@
   </ul>
 </div>
 <script>
-  jQuery(function ($) {
-    var $listNodes = $('.EDN__menu li');
-    $listNodes.addClass('menu__item').removeClass('node');
+  jQuery(function($) {
+    $('.EDN__menu li').each(function() {
+      $(this).addClass('menu__item').removeClass('node');
+      if (!$(this).hasClass('hasChild')) {
+        $(this).find('.menu__toggle').remove();
+      }
+    });
   });
 </script>
 <!--FooterEnd-->

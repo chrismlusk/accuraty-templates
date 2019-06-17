@@ -166,9 +166,9 @@ $youtube-primary:       #cd201f;
 // ----------------------------------------------------------------------------
 
 // stylelint-disable value-keyword-case
-$asl--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$asl--font-family-serif: Georgia, "Times New Roman", Times, serif;
-$asl--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$asl--font-family-sans-serif: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$asl--font-family-serif: "Georgia", "Times New Roman", "Times", serif;
+$asl--font-family-monospace: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 // stylelint-enable value-keyword-case
 
 // Assumes the browser default, which is typically `16px`
