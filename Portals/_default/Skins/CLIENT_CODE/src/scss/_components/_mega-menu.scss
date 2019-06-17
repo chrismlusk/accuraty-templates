@@ -1,0 +1,252 @@
+// ============================================================================
+//
+//
+//  Styling for a DDR Mega Menu.
+//
+//  Template is at `Portals/_default/Skins/CLIENT_CODE/menus/NavMegaMenu`.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Local variables
+//  - Wrapper and base class
+//  - Top-level item
+//  - Dropdown
+//  - Link
+//  - Submenu
+//     - Icon
+//     - Header
+//     - List
+//     - Description
+//
+// ============================================================================
+
+
+
+
+//
+// Local variables
+// ===============
+
+$m--font-size:                        $font-size-base;
+$m--color:                            $body-color;
+$m--bg:                               $white;
+$m--border-color:                     rgba($black, .15);
+$m--box-shadow:                       0 .5rem 1rem rgba($black, .175);
+
+$m--item-active-color:                $link-color;
+
+$m--link-padding-y:                   .25rem;
+$m--link-padding-x:                   .5rem;
+$m--link-font-weight:                 $font-weight-normal;
+$m--link-color:                       $body-color;
+$m--link-hover-color:                 $link-color;
+$m--link-hover-bg:                    $gray-100;
+
+$m--submenu-header-padding:           $m--link-padding-x;
+$m--submenu-header-font-weight:       $font-weight-bold;
+
+$m--submenu-list-font-size:           $font-size-sm;
+
+$m--submenu-list-link-border-radius:  $border-radius;
+$m--submenu-list-link-hover-bg:       $gray-100;
+$m--submenu-list-link-hover-bg:       $gray-100;
+$m--submenu-list-link-active-color:   $component-active-color;
+$m--submenu-list-link-active-bg:      $component-active-bg;
+
+$m--submenu-description-padding:      $m--link-padding-y $m--link-padding-x;
+$m--submenu-description-color:        $gray-700;
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+//
+// Added to `<ul class="navbar-nav>`.
+//
+// --
+//
+// 1. Ensure there is no relative positioning so the dropdowns are full width.
+// ----------------------------------------------------------------------------
+
+.mega-menu {
+  position: static; // 1
+}
+
+
+
+
+//
+// Top-level item
+// ==============
+//
+// Added to `<li class="nav-item">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__item {
+  position: static;
+
+  &.show {
+
+    & > a {
+      color: $m--item-active-color !important;
+    }
+  }
+}
+
+
+
+
+//
+// Dropdown
+// ========
+//
+// A `<ul>` added as an immediate child of `<li class="mega-menu__item">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+  z-index: $zindex-dropdown;
+  @include font-size($m--font-size);
+  color: $m--color;
+  list-style: none;
+  backface-visibility: hidden;
+  background-color: $m--bg;
+  background-clip: padding-box;
+  visibility: hidden;
+  border-bottom: 1px solid $m--border-color;
+  @include box-shadow($m--box-shadow);
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+
+
+
+//
+// Link
+// ====
+//
+// Any `<a>` tag at any level within `<ul class="mega-menu__dropdown">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__link {
+  display: inline-flex;
+  padding: $m--link-padding-y $m--link-padding-x;
+  font-weight: $m--link-font-weight;
+  transition-property: background-color, color;
+
+  @include plain-visited {
+    color: $m--link-color;
+  }
+
+  @include hover-focus {
+    color: $m--link-hover-color;
+    background-color: $m--link-hover-bg;
+  }
+}
+
+
+
+
+//
+// Submenu
+// =======
+//
+// Each `<li>` in `<ul class="mega-menu__dropdown">` is a menu of links.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu {
+  flex: 1 1 0;
+  padding: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 3rem;
+  }
+}
+
+
+
+
+//
+// Submenu icon
+// ============
+//
+// Uses the DNN tab icon field.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__icon {
+  margin-bottom: .5rem;
+}
+
+
+
+
+//
+// Submenu header
+// ==============
+//
+// The heading for each submenu, and a sibling class to `.mega-menu__link`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__header {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $m--submenu-header-padding;
+  font-weight: $m--submenu-header-font-weight;
+}
+
+
+
+
+//
+// Submenu list
+// ============
+//
+// The `<ul>` nested within `<li class="mega-menu__submenu">`.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__list {
+  margin-top: .25rem;
+  font-size: $m--submenu-list-font-size;
+
+  .mega-menu__link {
+    @include border-radius($m--submenu-list-link-border-radius);
+
+    @include hover-focus {
+      @include gradient-bg($m--submenu-list-link-hover-bg);
+    }
+
+    &.active,
+    &:active {
+      color: $m--submenu-list-link-active-color;
+      @include gradient-bg($m--submenu-list-link-active-bg);
+    }
+  }
+}
+
+
+
+
+//
+// Submenu description
+// ===================
+//
+// The `<p>` nested within `<li class="mega-menu__submenu">` when there
+// is no `<ul class="mega-menu__submenu__list">` to show.
+// ----------------------------------------------------------------------------
+
+.mega-menu__submenu__description {
+  padding: $m--submenu-description-padding;
+  color: $m--submenu-description-color;
+}
