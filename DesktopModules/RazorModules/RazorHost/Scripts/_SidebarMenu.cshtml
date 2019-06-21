@@ -84,18 +84,20 @@
           var linkCss = new HtmlString((linkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", linkClasses.ToArray()) + "\""));
 
           <li @itemCss>
-            <div class="menu__item__header">
-              @if (tab.HasChildren) {
-                <a class="menu__toggle">
-                  <span class="menu__toggle__icon">
+            @if (tab.HasChildren) {
+              <div class="menu__item__header">
+                <a class="menu__toggle  d-flex align-items-center justify-content-end">
+                  <span class="menu__toggle__icon  d-flex align-items-center">
                     <svg class="svg is-icon">
                       <use xlink:href="#icon-chevron-down" />
                     </svg>
                   </span>
                 </a>
-              }
+                <a href="@tab.FullUrl" @linkCss>@tab.TabName</a>
+              </div>
+            } else {
               <a href="@tab.FullUrl" @linkCss>@tab.TabName</a>
-            </div>
+            }
             @RenderChildren(tab)
           </li>
         }
