@@ -6,7 +6,7 @@ const scriptsTask = require('./scripts');
 const { paths, project } = require('../config');
 const { skinLayouts, containers, edn } = project.styles;
 
-const watchTask = () => {
+function watchTask() {
   if (skinLayouts || containers || edn) {
     gulp.watch(paths.styles.src, stylesTask);
   }
@@ -18,7 +18,7 @@ const watchTask = () => {
   if (project.fonts || project.icons) {
     gulp.watch(paths.icons.src, assetsTask);
   }
-};
+}
 
 gulp.task('watch', watchTask);
 module.exports = watchTask;

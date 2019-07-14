@@ -4,8 +4,9 @@
 <script runat="server">
   protected override void OnLoad(EventArgs e)
   {
-    base.OnLoad(e);
-    AddMetaTags();
+      base.OnLoad(e);
+      AddMetaTags();
+      AddFavicons();
   }
 
   private void AddMetaTags()
@@ -23,6 +24,13 @@
       Viewport.Attributes.Add("name", "viewport");
       Viewport.Content = "width=device-width,initial-scale=1,shrink-to-fit=no";
       Page.Header.Controls.Add(Viewport);
+  }
+
+  private void AddFavicons()
+  {
+      string Favicons = "";
+      LiteralControl FaviconsMarkup = new LiteralControl(Favicons);
+      Page.Header.Controls.Add(FaviconsMarkup);
   }
 
   private void AddOpenGraph()
