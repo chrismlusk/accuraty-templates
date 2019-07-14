@@ -21,16 +21,16 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "flickity": "^2.2.0",
+    "flickity": "^2.2.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "autoprefixer": "^9.6.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
-    "del": "^4.1.1",
+    "del": "^5.0.0",
     "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
@@ -40,11 +40,12 @@
     "gulp-babel": "^8.0.0-beta.2",
     "gulp-cache": "^1.1.2",
     "gulp-clean-css": "^4.2.0",
-    "gulp-eslint": "^5.0.0",
+    "gulp-eslint": "^6.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^6.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^8.0.0",
+    "gulp-real-favicon": "^0.3.2",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
@@ -58,6 +59,6 @@
     "require-dir": "^1.2.0",
     "stylelint": "^10.1.0",
     "stylelint-config-twbs-bootstrap": "^0.3.1",
-    "webpack": "^4.35.0"
+    "webpack": "^4.35.3"
   }
 }
