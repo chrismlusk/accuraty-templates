@@ -20,6 +20,7 @@ Thumbs.db
 /logs/
 /tmp/
 **/.tmp/
+real-favicon-generator.json
 
 # MISC FILES
 *~
