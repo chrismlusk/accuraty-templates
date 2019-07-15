@@ -3,7 +3,7 @@ const del = require('del');
 
 const { name, mode } = require('../config').project;
 
-const cleanTask = () => {
+function cleanTask() {
   const allCompiledFiles = [
     `.tmp/`,
     `./*.css`,
@@ -16,12 +16,13 @@ const cleanTask = () => {
     `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/*.css.map`,
     `public/*`,
     `!public/.git`,
+    `real-favicon-generator.json`,
   ];
 
   return del(mode === 'production' ? ['.tmp/'] : allCompiledFiles, {
     force: true,
   });
-};
+}
 
 gulp.task('clean', cleanTask);
 module.exports = cleanTask;

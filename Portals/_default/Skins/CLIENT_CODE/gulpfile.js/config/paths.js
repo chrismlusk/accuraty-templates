@@ -1,4 +1,4 @@
-const { name } = require('./project');
+const { name, faviconFile } = require('./project');
 
 module.exports = {
   bootstrapJs: {
@@ -24,6 +24,12 @@ module.exports = {
   images: {
     src: `./src/images/**/*.{jpg,jpeg,png,gif,svg}`,
     dest: `./public/images/`,
+  },
+  favicons: {
+    src: `./src/images/${faviconFile}`,
+    dest: `./public/favicons`,
+    markupOutput: `./controls/meta.ascx`,
+    markupOutputDirectory: `./controls`,
   },
   styles: {
     src: `./src/scss/**/*.scss`,

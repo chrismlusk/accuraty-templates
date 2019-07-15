@@ -9,6 +9,7 @@ const {
   LOCAL_FONTS,
   LOCAL_ICONS,
   LOCAL_IMAGES,
+  FAVICON_FILENAME,
   SKIN_LAYOUT_STYLES,
   CONTAINER_STYLES,
   ACCURATY_CONTAINER_STYLES,
@@ -29,6 +30,7 @@ module.exports = {
   fonts: isTrue(LOCAL_FONTS),
   icons: isTrue(LOCAL_ICONS),
   images: isTrue(LOCAL_IMAGES),
+  faviconFile: FAVICON_FILENAME,
   styles: {
     skinLayouts: isTrue(SKIN_LAYOUT_STYLES),
     containers: isTrue(CONTAINER_STYLES),
