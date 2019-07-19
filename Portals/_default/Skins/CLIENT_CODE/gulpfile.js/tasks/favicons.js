@@ -16,7 +16,12 @@ const FAVICON_DATA = 'real-favicon-generator.json';
 // click on the "Gulp" tab. Find the `design` property in the `generateFavicon`
 // method. Copy the values from that object into the custom object below. Any
 // values added here will override the default option found in `plugins.js`.
-const CUSTOM_DESIGN_OPTIONS = {};
+const CUSTOM_DESIGN_OPTIONS = {
+  ios: {},
+  windows: {},
+  androidChrome: {},
+  safariPinnedTab: {},
+};
 
 // Same thing applies the the settings. If you want to update these options,
 // add the values from the `settings` property in the `generateFavicon` method.
@@ -29,7 +34,7 @@ function generateFaviconsTask(done) {
     {
       masterPicture: paths.favicons.src,
       dest: paths.favicons.dest,
-      iconsPath: `/Portals/_default/${project.name}/public/favicons/`,
+      iconsPath: `/Portals/_default/Skins/${project.name}/public/favicons/`,
       design: {
         ...$.DEFAULT_DESIGN_OPTIONS,
         ...CUSTOM_DESIGN_OPTIONS,
