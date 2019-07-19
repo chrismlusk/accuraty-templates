@@ -37,35 +37,39 @@ const cleanCss = {
  * https://github.com/sindresorhus/gulp-imagemin
  */
 const imageminPlugin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+const zopfli = require('imagemin-zopfli');
+const mozjpeg = require('imagemin-mozjpeg'); // need to run `brew install libpng`
+const giflossy = require('imagemin-giflossy');
+
 const imagemin = {
   plugins: [
-    imageminPlugin.gifsicle({
-      interlaced: true,
+    pngquant({
+      speed: 1,
+      quality: [0.95, 1], // lossy settings
+    }),
+    zopfli({
+      more: true,
+    }),
+    giflossy({
+      optimizationLevel: 3,
+      optimize: 3, // keep-empty: Preserve empty transparent frames
+      lossy: 2,
+    }),
+    imageminPlugin.svgo({
+      plugins: [
+        { removeTitle: false },
+        { cleanupAttrs: true },
+        { removeComments: true },
+        { removeViewBox: false },
+        { cleanupIDs: true },
+      ],
     }),
     imageminPlugin.jpegtran({
       progressive: true,
     }),
-    imageminPlugin.optipng({
-      optimizationLevel: 5,
-    }),
-    imageminPlugin.svgo({
-      plugins: [
-        {
-          removeTitle: false,
-        },
-        {
-          cleanupAttrs: true,
-        },
-        {
-          removeComments: true,
-        },
-        {
-          removeViewBox: false,
-        },
-        {
-          cleanupIDs: false,
-        },
-      ],
+    mozjpeg({
+      quality: 80,
     }),
   ],
   options: {
