@@ -1,0 +1,16 @@
+#skip-to-content {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  z-index: $zindex-tooltip;
+
+  &:focus {
+    clip: auto !important;
+    top: 1rem;
+    left: 1rem;
+    height: auto;
+    width: auto;
+  }
+}
