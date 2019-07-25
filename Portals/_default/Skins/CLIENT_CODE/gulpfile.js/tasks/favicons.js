@@ -17,10 +17,10 @@ const FAVICON_DATA = 'real-favicon-generator.json';
 // method. Copy the values from that object into the custom object below. Any
 // values added here will override the default option found in `plugins.js`.
 const CUSTOM_DESIGN_OPTIONS = {
-  ios: {},
-  windows: {},
-  androidChrome: {},
-  safariPinnedTab: {},
+  // ios: {},
+  // windows: {},
+  // androidChrome: {},
+  // safariPinnedTab: {},
 };
 
 // Same thing applies the the settings. If you want to update these options,
