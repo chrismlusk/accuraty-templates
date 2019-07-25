@@ -1,0 +1,19 @@
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  &:not(:focus) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+  }
+
+  &:focus {
+    z-index: $zindex-tooltip;
+  }
+}
