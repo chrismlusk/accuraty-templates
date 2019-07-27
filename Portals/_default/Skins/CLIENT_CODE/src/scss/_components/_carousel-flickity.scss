@@ -10,11 +10,9 @@
 //  so be sure to update the `@import` statement in `Skin.scss`.
 //
 //  Library: Flickity
-//  Version: 2.1.2
+//  Version: 2.2.1
 //  Author: Metafizzy
 //  Author URI: https://flickity.metafizzy.co
-//
-//  This stylesheet was updated on 10/23/2018 by Chris Lusk
 //
 //  --
 //
@@ -40,6 +38,10 @@
   transition-timing-function: $transition-timing-function;
   transition-duration: $transition-duration;
   transition-property: opacity;
+
+  &:not(.flickity-enabled) {
+    pointer-events: none;
+  }
 
   &.flickity-enabled {
     opacity: 1;
@@ -67,14 +69,12 @@
   transition-duration: $transition-duration;
   transition-property: background-color;
 
-  @include hover-focus {
+  @include hover-focus() {
     background-color: $white;
   }
 }
 
-.flickity-button-icon {
-  fill: currentColor;
-}
+.flickity-button-icon {}
 
 .flickity-prev-next-button {
   width: 2.75rem;
