@@ -38,7 +38,7 @@
   transition-duration: $transition-duration;
   transition-property: opacity;
 
-  @include hover-focus {
+  @include hover-focus() {
     opacity: .75;
   }
 }

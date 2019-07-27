@@ -22,11 +22,11 @@
   &.is-inverse {
     border-color: $white;
 
-    @include plain-visited {
+    @include plain-visited() {
       color: $white;
     }
 
-    @include hover-focus {
+    @include hover-focus() {
       color: rgba($white, .5);
       border-color: rgba($white, .5);
     }

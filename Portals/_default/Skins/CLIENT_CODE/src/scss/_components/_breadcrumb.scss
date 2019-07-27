@@ -61,7 +61,7 @@
 //
 // 4. Before each tag, we add a custom separator using the `content` property.
 //
-//    * Note: The commented-out code below uses Font Awesome's right angle
+//    - Note: The commented-out code below uses Font Awesome's right angle
 //      icon, so don't use this unless Font Awesome is in this project.
 //
 // 5. Font Awesome v5 searches for pseudo-elements that use Font Awesome and
@@ -116,7 +116,7 @@
 
 .DnnBreadcrumb__item {
 
-  @include plain-visited { // 1
+  @include plain-visited() { // 1
     color: inherit;
   }
 
@@ -130,7 +130,7 @@
 }
 
 a.DnnBreadcrumb__item {
-  @include hover-focus-active {
+  @include hover-focus-active() {
     color: $breadcrumb-hover-color;
   }
 }

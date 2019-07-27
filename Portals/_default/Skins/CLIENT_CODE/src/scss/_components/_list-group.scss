@@ -26,11 +26,11 @@
 
 .list-group-item-action {
 
-  @include plain-visited {
+  @include plain-visited() {
     color: $list-group-action-color;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $list-group-action-hover-color;
   }
 }

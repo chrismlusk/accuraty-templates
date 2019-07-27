@@ -45,14 +45,14 @@ body {
 
 a {
 
-  @include plain-visited {
+  @include plain-visited() {
     color: $link-color;
     transition-timing-function: $transition-timing-function;
     transition-duration: $transition-duration;
     transition-property: color;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $link-hover-color;
   }
 
@@ -63,31 +63,31 @@ a {
   &.is-inverse {
     color: $link-inverse-color;
 
-    @include hover-focus {
+    @include hover-focus() {
       color: $link-inverse-hover-color;
     }
   }
 
   &.is-facebook {
-    @include hover-focus {
+    @include hover-focus() {
       color: $facebook-primary !important;
     }
   }
 
   &.is-twitter {
-    @include hover-focus {
+    @include hover-focus() {
       color: $twitter-primary !important;
     }
   }
 
   &.is-youtube {
-    @include hover-focus {
+    @include hover-focus() {
       color: $youtube-primary !important;
     }
   }
 
   &.is-linkedin {
-    @include hover-focus {
+    @include hover-focus() {
       color: $linkedin-primary !important;
     }
   }

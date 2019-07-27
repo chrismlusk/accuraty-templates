@@ -111,7 +111,7 @@ $docs-warning:  #fa9602;
   background-color: transparent !important;
   border-color: $docs-primary !important;
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $white !important;
     background-color: $docs-primary !important;
     border-color: $docs-primary !important;
@@ -218,7 +218,7 @@ $docs-warning:  #fa9602;
     transition-duration: $transition-duration;
     transition-property: color;
 
-    @include hover-focus {
+    @include hover-focus() {
       color: $docs-primary;
     }
 

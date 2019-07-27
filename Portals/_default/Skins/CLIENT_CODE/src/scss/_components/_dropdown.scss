@@ -65,11 +65,11 @@
 
 .dropdown-item {
 
-  @include plain-visited {
+  @include plain-visited() {
     color: $dropdown-link-color;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $dropdown-link-hover-color;
   }
 

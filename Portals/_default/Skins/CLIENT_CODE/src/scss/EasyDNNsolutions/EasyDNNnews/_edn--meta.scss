@@ -23,7 +23,7 @@
     border: 0 !important;
     box-shadow: none !important;
 
-    @include hover-focus {
+    @include hover-focus() {
       color: $link-color !important;
       background-color: inherit !important;
     }

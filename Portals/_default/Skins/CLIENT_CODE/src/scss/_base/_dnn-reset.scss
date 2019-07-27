@@ -86,7 +86,7 @@ body:not(.dnnEditState) .DNNEmptyPane {
   height: auto !important;
   min-height: auto !important;
   padding: .375rem .5rem !important;
-  @include clearfix;
+  @include clearfix ();
 }
 
 .dnnEditState .dnnModuleManager {
@@ -202,7 +202,7 @@ blockquote {
     }
 
     a {
-      @include plain-visited {
+      @include plain-visited() {
         color: inherit;
       }
     }
@@ -220,13 +220,13 @@ blockquote {
 
 a {
 
-  @include plain-visited {
+  @include plain-visited() {
     color: inherit;
     text-decoration: inherit;
     outline: inherit;
   }
 
-  @include hover-focus-active {
+  @include hover-focus-active() {
     color: inherit;
     outline: inherit;
   }
@@ -438,7 +438,7 @@ legend.error {
   border: 1px solid $gray-400;
   border-radius: $border-radius;
 
-  @include plain-visited {
+  @include plain-visited() {
     color: $gray-800;
   }
 }
@@ -455,11 +455,11 @@ a.dnnPrimaryAction {
   border-color: #0d569e; /* dark blue */
   box-shadow: 0 1px 0 0 rgba($black, .6), inset 0 1px 0 0 rgba($white, .4);
 
-  @include plain-visited {
+  @include plain-visited() {
     color: #efefef;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $white;
     background: #6cb6f3;
     background: linear-gradient(to bottom, #6cb6f3 0%, #4387d2 100%);
@@ -496,11 +496,11 @@ a.dnnSecondaryAction {
   background: linear-gradient(to bottom, #f5f5f5 0%, #dfdfdf 100%);
   box-shadow: 0 1px 0 0 rgba($black, .4), inset 0 1px 0 0 rgba($white, 1);
 
-  @include plain-visited {
+  @include plain-visited() {
     color: $gray-800;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     color: #555;
     background: #fefefe;
     background: linear-gradient(to bottom, #fefefe 0%, #e8e8e8 100%);
@@ -521,11 +521,11 @@ a.dnnTertiaryAction {
   background-color: $gray-200;
   border: none;
 
-  @include plain-visited {
+  @include plain-visited() {
     color: $gray-800;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     background-color: $gray-100;
   }
 

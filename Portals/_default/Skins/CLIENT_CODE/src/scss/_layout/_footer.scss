@@ -34,11 +34,11 @@
 .footer a:not(.footer-brand) {
   border-bottom: $link-border-width solid rgba($white, .075);
 
-  @include plain-visited {
+  @include plain-visited() {
     color: inherit;
   }
 
-  @include hover-focus {
+  @include hover-focus() {
     color: $white;
     border-color: transparent;
   }
@@ -83,9 +83,9 @@
 
   .nav-link {
 
-    @include plain-visited {}
+    @include plain-visited() {}
 
-    @include hover-focus {}
+    @include hover-focus() {}
   }
 }
 
@@ -131,11 +131,11 @@
   a {
     border-bottom-color: rgba($white, .075);
 
-    @include plain-visited {
+    @include plain-visited() {
       color: inherit;
     }
 
-    @include hover-focus {
+    @include hover-focus() {
       color: rgba($white, .85);
       border-color: transparent;
     }

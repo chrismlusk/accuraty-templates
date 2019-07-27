@@ -72,10 +72,9 @@
 // ============
 //
 // 1. Yes, `!important` is generally a bad idea, but we want to override the
-//    specificity introduced by the `:not(:first-child)` pseudo class used on
-//    headings inside the base class for this one title class. This is helpful
-//    because modules can use various heading tags as their titles, not just
-//    `<h2>` tags, so we need to account for this.
+//    style applied to headings inside the base `.DnnModule` class for this
+//    specific class. This is helpful because modules can use various heading
+//    tags as a title, not just `<h2>` tags, so we need to account for this.
 // ----------------------------------------------------------------------------
 
 .DnnModule__title {
@@ -137,11 +136,11 @@
 
       a {
 
-        @include plain-visited {
+        @include plain-visited() {
           color: $blockquote-small-color;
         }
 
-        @include hover-focus {
+        @include hover-focus() {
           color: $link-hover-color;
           border-bottom-color: $link-hover-border-color;
         }
@@ -186,7 +185,7 @@
     font-weight: $font-weight-bold;
     border-bottom: $link-border-width solid $link-border-color; // 3
 
-    @include hover-focus {
+    @include hover-focus() {
       background-color: $link-hover-bg;
       border-bottom-color: $link-hover-border-color;
     }
@@ -195,24 +194,6 @@
       color: $link-active-color;
       background-color: $link-active-bg; // 4
       border-bottom-color: $link-active-border-color;
-    }
-
-    &.is-inverse { // 5
-      color: $link-inverse-color;
-      background-color: $link-inverse-bg;
-      border-bottom: $link-inverse-border-width solid $link-inverse-border-color;
-
-      @include hover-focus {
-        color: $link-inverse-hover-color;
-        background-color: $link-inverse-hover-bg;
-        border-bottom-color: $link-inverse-hover-border-color;
-      }
-
-      &:active {
-        color: $link-inverse-active-color;
-        background-color: $link-inverse-active-bg;
-        border-bottom-color: $link-inverse-active-border-color;
-      }
     }
   }
 }
