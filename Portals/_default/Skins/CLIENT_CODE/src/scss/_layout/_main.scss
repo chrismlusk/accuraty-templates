@@ -8,16 +8,4 @@
   @include media-breakpoint-up(md) {
     margin-top: 3rem;
   }
-
-  //
-  // [if DNN <= v8]
-  //
-  // Move `.main` below `.header` and the DNN Control Bar when it's visible
-  #Form.showControlBar & {
-    margin-top: $dnn-control-bar-height + $navbar-height-sm;
-
-    @include media-breakpoint-up(md) {
-      margin-top: $dnn-control-bar-height + $navbar-height-md;
-    }
-  }
 }

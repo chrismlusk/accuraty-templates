@@ -25,10 +25,7 @@
 .asl__admin {
   display: none !important;
 
-  // [if DNN = v9]
-  .hasDnnPersonaBar &,
-  // [if DNN <= v8]
-  #Form.showControlBar & {
+  .hasDnnPersonaBar & {
     display: block !important;
   }
 }

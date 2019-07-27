@@ -22,17 +22,6 @@
     left: 0;
     z-index: $zindex-fixed;
 
-    //
-    // [if DNN <= v8]
-    //
-    // Move `.header` down below the DNN Control Bar when it's visible
-    #Form.showControlBar & {
-      top: $dnn-control-bar-height;
-    }
-
-    //
-    // [if DNN = v9]
-    //
     // Reposition fixed `.header` so DNN Persona Bar doesn't overlap it
     .hasDnnPersonaBar & {
       left: $dnn-persona-bar-width;
