@@ -1,6 +1,6 @@
 # Accuraty templates
 
-This is a set of standards, common components, and best practices for projects in a way that is easy to deploy using modern web technologies and up-to-date frameworks. Accuraty primarily works with the DNN content management system. The files included are a starting point for this platform.
+This is a set of standards, common components, and best practices for projects in a way that is easy to deploy using modern web technologies and up-to-date frameworks.
 
 ## Project requirements
 
@@ -9,9 +9,13 @@ This is a set of standards, common components, and best practices for projects i
 
 ## Getting started
 
+- [Initial setup](https://github.com/chrismlusk/accuraty-templates#initial-setup) (you are starting from scratch)
+- [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally) (first time adding this project to your machine)
+- [Ongoing development](https://github.com/chrismlusk/accuraty-templates#ongoing-development) (project is already on remote and local)
+
 ### Initial setup
 
-_This assumes the project skin has not been set up at all. If the project already exists on GitHub and you are trying to get set up on your own machine, skip to [Ongoing development](https://github.com/chrismlusk/accuraty-templates#ongoing-development)._
+_This assumes the project skin has not been set up at all. If the project already exists on GitHub and you are trying to get set up on your own machine, skip to [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally)._
 
 #### 1. Get the code
 
@@ -44,17 +48,41 @@ Run `npm install` from inside the Skin folder.
 
 #### 5. Build the assets
 
-Then run `npm start` in your terminal.
+Then run `npm run build` in your terminal.
 
-This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
+This will trigger the Gulp tasks to initialize the project, rename directories, and compile starting assets (stylesheets, scripts, etc.). This `build` command, however, will not keep Gulp in "watch" mode. Since we are getting started, it's best to just build the assets and keep going with the setup.
 
-To exit this "watch" mode, press `Control-C` in your terminal.
+Next, add and commit everything to Git. Reminder: This is all local-only at this point, as we have not set up the remote repository yet.
 
-To start watching again, run `npm run dev` in your terminal.
+#### 6. Create GitHub repo
 
-### Ongoing development
+Go to the [Accuraty GitHub account](https://github.com/Accuraty) and add a new repository.
 
-_This assumes the project has already been set up and added as a repository to the [Accuraty GitHub account](https://github.com/Accuraty)._
+Name the repository using the client code, add a description, make the repo private, and then **do not initialize with a README**. Skip that step since you will import the existing local repository you just made.
+
+Back in your terminal, run `git remote add origin [PASTE_THE_GITHUB_URL_HERE]`.
+
+Then, run `git push -u origin master`.
+
+##### Repository not found?
+
+If you get an error message saying the repository was not found, it is because you do not have permission to write to the private repo you just created. Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
+
+#### 7. GitHub branches
+
+Go back to GitHub and to the page for your new repository, and then create a new branch called `dev`.
+
+Then, go to "Settings > Branches" and change the default branch from `master` to `dev`. This will make it so all pushes and pull requests go into `dev`, which will keep `master` somewhat "protected" during ongoing development.
+
+#### 8. Getting code to the server
+
+While our default SFTP extension settings in VS Code automatically push most files, you will need to manually upload certain directories — especially when you first set up a project. 
+
+Go ahead and right-click on the skin folder and upload the entire thing.
+
+### Cloning locally
+
+_This assumes the project has already been set up and added as a repository to the [Accuraty GitHub account](https://github.com/Accuraty), but you have not added it to your local machine._
 
 #### 1. Get the code
 
@@ -81,6 +109,20 @@ This will kick off the Gulp tasks to initialize the project, compile starting as
 To exit this "watch" mode, press `Control-C` in your terminal.
 
 To start watching again, run `npm run dev` in your terminal.
+
+#### 5. Push changes to GitHub
+
+Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it is because you do not have permission to write to the private repo. 
+
+Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
+
+### Ongoing development
+
+_This assumes the project has already been set up locally and is in its own remote repository._
+
+#### 1. Compile assets
+
+Run `npm run dev` to kick off the Gulp watch process.
 
 ## About Accuraty
 
