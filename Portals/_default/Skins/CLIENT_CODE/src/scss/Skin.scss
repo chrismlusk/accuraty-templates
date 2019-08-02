@@ -58,6 +58,7 @@
 @import "_base/fonts";
 @import "_base/animations";
 @import "_base/dnn-reset";
+@import "_base/dnn-module";
 @import "_base/base";
 @import "_base/type";
 @import "_base/images";
@@ -65,7 +66,6 @@
 @import "_base/grid";
 @import "_base/tables";
 @import "_base/svg";
-@import "_base/content";
 
 // overrides for core Bootstrap components first ...
 @import "_components/forms";
@@ -91,6 +91,7 @@
 @import "_components/spinners";
 
 // ... then add custom components ...
+@import "_components/rich-text";
 @import "_components/skip-link";
 @import "_components/child-page";
 @import "_components/panes";

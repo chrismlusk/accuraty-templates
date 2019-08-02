@@ -18,15 +18,6 @@
 //
 // ----------------------------------------------------------------------------
 
-.DnnModule {
-  position: relative;
-  clear: both;
-
-  & + .DnnModule {
-    margin-top: ($spacer * 2);
-  }
-}
-
 body:not(.dnnEditState) .DNNEmptyPane {
   display: none;
 }
