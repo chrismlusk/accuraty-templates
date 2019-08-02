@@ -1,12 +1,13 @@
 // ============================================================================
 //
-//  Standardize base HTML elements
+//  Standardize base elements
 //
 //  [Table of Contents]
 //
 //  - Body
 //  - Inline
 //  - Block
+//  - Other
 //
 // ============================================================================
 
@@ -110,4 +111,16 @@ ul {
 ol,
 ul {
   list-style: none;
+}
+
+
+
+
+//
+// Other
+// =====
+
+::selection {
+  color: $body-color;
+  background-color: $gray-300;
 }
