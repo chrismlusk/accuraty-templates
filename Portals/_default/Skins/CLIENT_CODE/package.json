@@ -63,6 +63,6 @@
     "require-dir": "^1.2.0",
     "stylelint": "^10.1.0",
     "stylelint-config-twbs-bootstrap": "^0.4.0",
-    "webpack": "^4.38.0"
+    "webpack": "^4.39.1"
   }
 }
