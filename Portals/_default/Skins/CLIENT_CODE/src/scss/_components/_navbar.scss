@@ -17,7 +17,13 @@
 // Wrapper and base class
 // ======================
 
-.navbar {}
+.navbar {
+
+  @include media-breakpoint-down(sm) {
+    padding-right: $spacer;
+    padding-left: $spacer;
+  }
+}
 
 
 
