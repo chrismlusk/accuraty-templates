@@ -9,12 +9,13 @@
 // 3. For mobile or negative scrolling.
 // ------------------------------------------------------------------------
 
+import throttle from '../utils/throttle';
+
 function transformHeader() {
   const header = document.querySelector('.header');
   if (!header) return;
 
   let lastScroll = 0;
-  let scrolling = false;
 
   function hideOnScroll() {
     const triggerPosition = 300; // 1
@@ -33,14 +34,7 @@ function transformHeader() {
     lastScroll = scroll <= 0 ? 0 : scroll; // 3
   }
 
-  window.addEventListener('scroll', () => (scrolling = true));
-
-  setInterval(() => {
-    if (scrolling) {
-      scrolling = false;
-      hideOnScroll();
-    }
-  }, 250);
+  window.addEventListener('scroll', throttle(hideOnScroll, 250));
 }
 
 export default transformHeader;

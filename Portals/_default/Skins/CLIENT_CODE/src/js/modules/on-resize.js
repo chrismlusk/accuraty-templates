@@ -1,11 +1,7 @@
-function onResize(fn, delay = 250) {
-  let resizeTimer;
-  // window.resize event listener
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    // start timer to wait for event "completion"
-    resizeTimer = setTimeout(fn, delay);
-  });
+import debounce from '../utils/debounce';
+
+function onResize(callback, wait = 250) {
+  window.addEventListener('resize', debounce(callback, wait));
 }
 
 export default onResize;
