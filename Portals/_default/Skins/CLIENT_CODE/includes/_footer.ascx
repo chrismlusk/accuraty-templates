@@ -1,6 +1,6 @@
 <footer class="footer" role="contentinfo">
   <div class="footer-upper">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-md-6">
 
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="footer-lower">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-md-6">
           <p class="footer-credits  text-center text-md-left">
@@ -54,7 +54,7 @@
         </div>
         <div class="col-md-6">
           <p class="footer-credits  text-center text-md-right">
-            Design, development, and hosting by <a href="http://accuraty.com" target="_blank" rel="nofollow noopener noreferrer">Accuraty Solutions</a>.
+            Design, development, and hosting by <a href="https://accuraty.com" target="_blank" rel="nofollow noopener noreferrer">Accuraty Solutions</a>.
           </p>
         </div>
       </div>

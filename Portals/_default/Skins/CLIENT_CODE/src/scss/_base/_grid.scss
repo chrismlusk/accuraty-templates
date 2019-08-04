@@ -1,44 +1,19 @@
-// ============================================================================
-//
-//  [Table of Contents]
-//
-//  - Container
-//  - Fluid container
-//  - Row
-//  - Columns
-//
-// ============================================================================
-
-
-
-
 //
 // Container
 // =========
 
-.container {}
+.container,
+.container-fluid {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 
+  @include media-breakpoint-up(md) {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+}
 
-
-
-//
-// Fluid container
-// ===============
-
-.container-fluid {}
-
-
-
-
-//
-// Row
-// ===
-
-.row {}
-
-
-
-
-//
-// Columns
-// =======
+.container {
+  width: 100%;
+  max-width: 100rem;
+}
