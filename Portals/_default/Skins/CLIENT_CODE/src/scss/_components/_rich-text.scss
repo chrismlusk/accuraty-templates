@@ -52,8 +52,13 @@
     font-size: 1.225rem;
   }
 
-  & > * + * {
-    margin-top: $paragraph-margin-bottom; // 2
+  p,
+  ol,
+  ul,
+  blockquote {
+    & + * {
+      margin-top: $paragraph-margin-bottom; // 2
+    }
   }
 
   h2,
