@@ -23,7 +23,8 @@
     "bootstrap": "^4.3.1",
     "flickity": "^2.2.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "srraf": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

@@ -20,17 +20,6 @@
 
 body {
 
-  //
-  // [if DNN = v8]
-  //
-  // Increase z-index so Control Bar dropdown menus remain above fixed items
-  & > form #ControlBar_ControlPanel {
-    z-index: ($zindex-fixed * 2) !important;
-  }
-
-  //
-  // [if DNN = v9]
-  //
   // Reposition to avoid screwy animation when Persona Bar slides on screen
   &.hasDnnPersonaBar {
     margin-left: $dnn-persona-bar-width;
