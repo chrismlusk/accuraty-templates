@@ -1,4 +1,4 @@
-import onReady from './modules/on-ready';
+import onReady from './utils/on-ready';
 
 function fixFormClasses() {
   const inputs = [
