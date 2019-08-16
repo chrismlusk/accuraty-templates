@@ -3,7 +3,7 @@
     <div class="container">
       <a
         class="navbar-brand"
-        href="<%= DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId) %>"
+        href="/"
         aria-label="_xx___CLIENT_NAME___xx_"
       >
         <!--#include file="_logo.ascx"-->
