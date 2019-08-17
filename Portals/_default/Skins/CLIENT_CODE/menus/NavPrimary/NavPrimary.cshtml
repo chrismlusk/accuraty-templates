@@ -23,7 +23,7 @@
   }
 
   private HtmlString buildDropdownAttributes(MenuNode node) {
-    var attributeString = node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
+    var attributeString = INCLUDE_DROPDOWN_MENUS && node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
 
     return new HtmlString(attributeString);
   }
@@ -60,7 +60,7 @@
         <li class="@itemCss">
           <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>
             @node.Text
-            @if (node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
+            @if (INCLUDE_DROPDOWN_MENUS && node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
               <svg class="svg is-icon"><use xlink:href="#icon-chevron-down" /></svg>
             }
           </a>
@@ -91,7 +91,7 @@
           linkClasses.Add("active");
         }
 
-        if (child.HasChildren()) {
+        if (INCLUDE_NESTED_DROPDOWNS && child.HasChildren()) {
           itemClasses.Add("dropdown");
           linkClasses.Add("dropdown-toggle");
         }
@@ -100,7 +100,7 @@
         var linkCss = String.Join(" ", linkClasses);
         var linkHref = child.Enabled ? child.Url : "#";
         var targetAttributes = buildTargetAttribute(child);
-        var dropdownAttributes = buildDropdownAttributes(child);
+        var dropdownAttributes = INCLUDE_NESTED_DROPDOWNS ? buildDropdownAttributes(child) : null;
 
         <li class="@itemCss">
           <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>@child.Text</a>
