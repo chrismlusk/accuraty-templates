@@ -6,7 +6,7 @@
 
           <a
             class="footer-brand"
-            href="<%= DotNetNuke.Common.Globals.NavigateURL(PortalSettings.HomeTabId) %>"
+            href="/"
             aria-label="_xx___WEBSITE_NAME___xx_"
           >
             <!--#include file="_logo.ascx"-->
