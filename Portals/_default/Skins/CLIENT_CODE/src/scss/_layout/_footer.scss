@@ -32,7 +32,6 @@
 // ===========
 
 .footer a:not(.footer-brand) {
-  border-bottom: $link-border-width solid rgba($white, .075);
 
   @include plain-visited() {
     color: inherit;
@@ -40,7 +39,6 @@
 
   @include hover-focus() {
     color: $white;
-    border-color: transparent;
   }
 }
 
@@ -55,7 +53,7 @@
 // ----------------------------------------------------------------------------
 
 .footer-brand {
-  display: block;
+  display: inline-block;
 }
 
 
@@ -129,11 +127,7 @@
   color: rgba($white, .6);
 
   a {
-    border-bottom-color: rgba($white, .075);
-
-    @include plain-visited() {
-      color: inherit;
-    }
+    border-bottom: $link-border-width solid rgba($white, .1);
 
     @include hover-focus() {
       color: rgba($white, .85);

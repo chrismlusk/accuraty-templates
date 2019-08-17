@@ -1,3 +1,5 @@
+<!--#include file="../public/icons/all.svg"-->
+
 <header class="header" role="banner">
   <nav class="navbar navbar-expand-md navbar-light" role="navigation">
     <div class="container">

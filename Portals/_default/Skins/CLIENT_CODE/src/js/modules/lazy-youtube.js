@@ -30,9 +30,7 @@ function lazyLoadYouTube() {
       iframe.className = 'lazy-yt-item';
       iframe.setAttribute(
         'src',
-        `https://www.youtube.com/embed/${
-          video.dataset.id
-        }?rel=0&autoplay=1&modestbranding=1`
+        `https://www.youtube.com/embed/${video.dataset.id}?rel=0&autoplay=1&modestbranding=1&iv_load_policy=3`
       );
       iframe.setAttribute('allowfullscreen', '');
       while (video.firstChild) {
