@@ -21,6 +21,7 @@
 
 .footer {
   font-size: $font-size-sm;
+  color: rgba($white, .8);
   background-color: $gray-700;
 }
 
@@ -54,6 +55,10 @@
 
 .footer-brand {
   display: inline-block;
+
+  & + * {
+    margin-bottom: 1rem;
+  }
 }
 
 
@@ -130,7 +135,6 @@
     border-bottom: $link-border-width solid rgba($white, .1);
 
     @include hover-focus() {
-      color: rgba($white, .85);
       border-color: transparent;
     }
   }
