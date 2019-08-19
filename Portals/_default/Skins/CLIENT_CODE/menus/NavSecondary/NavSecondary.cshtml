@@ -1,37 +1,72 @@
 @using DotNetNuke.Web.DDRMenu;
 @using System.Dynamic;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
-@{ var root = Model.Source.root; }
+
+@functions {
+  // Menu config
+  // Placed in `@functions` so `@helper` methods have access to these variables
+  private bool NAV_IS_ALIGNED_RIGHT = true;
+  private bool INCLUDE_DROPDOWN_MENUS = true;
+  private bool INCLUDE_NESTED_DROPDOWNS = true;
+  private bool USE_CUSTOM_DROPDOWN_ICON = true;
+
+  // Utility functions
+  private HtmlString buildTargetAttribute(MenuNode node) {
+    var targetString = !String.IsNullOrEmpty(node.Target) ? ("target=\"" + node.Target + "\"") : "";
+
+    if (node.Target == "_blank") {
+      // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Security_and_privacy_concerns
+      targetString += " rel=\"noopener noreferrer\"";
+    }
+
+    return new HtmlString(targetString);
+  }
+
+  private HtmlString buildDropdownAttributes(MenuNode node) {
+    var attributeString = INCLUDE_DROPDOWN_MENUS && node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
+
+    return new HtmlString(attributeString);
+  }
+}
 
 @helper RenderNodes(IList<MenuNode> nodes) {
   if (nodes.Count > 0) {
-    <ul class="navbar-nav ml-auto">
+    var navClasses = new List<string> { "navbar-nav" };
+    if (NAV_IS_ALIGNED_RIGHT) {
+      navClasses.Add("ml-auto");
+    }
+    var navCss = String.Join(" ", navClasses);
+
+    <ul class="@navCss">
       @foreach (var node in nodes) {
-        var HasChildren = node.HasChildren();
+        var itemClasses = new List<string> { "nav-item", "tab-" + node.TabId };
+        var linkClasses = new List<string> { "nav-link" };
 
-        var navItemClasses = new List<string>();
-        navItemClasses.Add("nav-item");
-        navItemClasses.Add("tab-" + node.TabId);
-        if (node.Breadcrumb) { navItemClasses.Add("active"); }
-        if (HasChildren) { navItemClasses.Add("dropdown"); }
-        var navItemCss = new HtmlString((navItemClasses.Count == 0) ? "" : ("class=\"" + String.Join(" ", navItemClasses.ToArray()) + "\""));
+        if (node.Breadcrumb) {
+          itemClasses.Add("active");
+        }
 
-        var navLinkTarget = new HtmlString((string.IsNullOrEmpty(node.Target)) ? "" : ("target=\"" + node.Target + "\""));
-        <li @navItemCss>
-          <a
-            class='nav-link@(HasChildren ? " dropdown-toggle" : "")'
-            href='@(node.Enabled ? node.Url : "#")'
-            @navLinkTarget
-            @{
-              if (HasChildren) {
-                <text>id="tab-@node.TabId-dropdown"</text>
-                <text>data-toggle="dropdown"</text>
-                <text>aria-haspopup="true"</text>
-                <text>aria-expanded="false"</text>
-              }
+        if (node.HasChildren()) {
+          itemClasses.Add("dropdown");
+          linkClasses.Add("dropdown-toggle");
+        }
+
+        var itemCss = String.Join(" ", itemClasses);
+        var linkCss = String.Join(" ", linkClasses);
+        var linkHref = node.Enabled ? node.Url : "#";
+        var targetAttributes = buildTargetAttribute(node);
+        var dropdownAttributes = buildDropdownAttributes(node);
+
+        <li class="@itemCss">
+          <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>
+            @node.Text
+            @if (INCLUDE_DROPDOWN_MENUS && node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
+              <svg class="svg is-icon"><use xlink:href="#icon-chevron-down" /></svg>
             }
-          >@node.Text</a>
-          @RenderChildren(node)
+          </a>
+          @if (INCLUDE_DROPDOWN_MENUS) {
+            @RenderChildren(node)
+          }
         </li>
       }
     </ul>
@@ -41,41 +76,41 @@
 @helper RenderChildren(MenuNode node) {
   var children = node.Children;
   if (children.Count > 0) {
-    <ul class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown">
+    var menuClasses = new List<string> { "dropdown-menu" };
+    if (NAV_IS_ALIGNED_RIGHT && node.Last) {
+      menuClasses.Add("dropdown-menu-right");
+    }
+    var menuCss = String.Join(" ", menuClasses);
+
+    <ul class="@menuCss" aria-labelledby="tab-@node.TabId-dropdown">
       @foreach (var child in children) {
-        var HasChildren = child.HasChildren();
+        var itemClasses = new List<string> { "tab-" + child.TabId };
+        var linkClasses = new List<string> { "dropdown-item" };
 
-        var dItemClasses = new List<string>();
-        dItemClasses.Add("tab-" + child.TabId);
-        if (HasChildren) { dItemClasses.Add("dropdown"); }
-        var dItemCss = new HtmlString((dItemClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dItemClasses.ToArray()) + "\""));
+        if (child.Breadcrumb) {
+          linkClasses.Add("active");
+        }
 
-        var dLinkClasses = new List<string>();
-        dLinkClasses.Add("dropdown-item");
-        if (child.Breadcrumb) { dLinkClasses.Add("active"); }
-        if (HasChildren) { dLinkClasses.Add("dropdown-toggle"); }
-        var dLinkCss = new HtmlString((dLinkClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", dLinkClasses.ToArray()) + "\""));
+        if (INCLUDE_NESTED_DROPDOWNS && child.HasChildren()) {
+          itemClasses.Add("dropdown");
+          linkClasses.Add("dropdown-toggle");
+        }
 
-        var dLinkTarget = new HtmlString((string.IsNullOrEmpty(child.Target)) ? "" : ("target=\"" + child.Target + "\""));
-        <li @dItemCss>
-          <a
-            @dLinkCss
-            href='@(child.Enabled ? child.Url : "#")'
-            @dLinkTarget
-            @{
-              if (HasChildren) {
-                <text>id="tab-@child.TabId-dropdown"</text>
-                <text>data-toggle="dropdown"</text>
-                <text>aria-haspopup="true"</text>
-                <text>aria-expanded="false"</text>
-              }
-            }
-          >@child.Text</a>
-          @RenderChildren(child)
+        var itemCss = String.Join(" ", itemClasses);
+        var linkCss = String.Join(" ", linkClasses);
+        var linkHref = child.Enabled ? child.Url : "#";
+        var targetAttributes = buildTargetAttribute(child);
+        var dropdownAttributes = INCLUDE_NESTED_DROPDOWNS ? buildDropdownAttributes(child) : null;
+
+        <li class="@itemCss">
+          <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>@child.Text</a>
+          @if (INCLUDE_NESTED_DROPDOWNS) {
+            @RenderChildren(child)
+          }
         </li>
       }
     </ul>
   }
 }
 
-@RenderNodes(root.Children)
+@RenderNodes(Model.Source.root.Children)

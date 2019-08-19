@@ -21,6 +21,7 @@
 
 .footer {
   font-size: $font-size-sm;
+  color: rgba($white, .8);
   background-color: $gray-700;
 }
 
@@ -32,7 +33,6 @@
 // ===========
 
 .footer a:not(.footer-brand) {
-  border-bottom: $link-border-width solid rgba($white, .075);
 
   @include plain-visited() {
     color: inherit;
@@ -40,7 +40,6 @@
 
   @include hover-focus() {
     color: $white;
-    border-color: transparent;
   }
 }
 
@@ -55,7 +54,11 @@
 // ----------------------------------------------------------------------------
 
 .footer-brand {
-  display: block;
+  display: inline-block;
+
+  & + * {
+    margin-top: 1rem;
+  }
 }
 
 
@@ -129,14 +132,9 @@
   color: rgba($white, .6);
 
   a {
-    border-bottom-color: rgba($white, .075);
-
-    @include plain-visited() {
-      color: inherit;
-    }
+    border-bottom: $link-border-width solid rgba($white, .1);
 
     @include hover-focus() {
-      color: rgba($white, .85);
       border-color: transparent;
     }
   }

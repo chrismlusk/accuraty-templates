@@ -1,10 +1,11 @@
 <% if (UserCanViewDebug()) { %>
-  <div class="alert alert-warning  m-0" role="alert">
+  <div class="alert alert-warning m-0" role="alert">
     <p>DNN <%=DotNetNuke.Application.DotNetNukeContext.Current.Application.Version.ToString(3) %> / <%=System.Environment.Version.ToString() %> / <%=System.Net.Dns.GetHostName() %></p>
-    <p>Tab ID = <%=PortalSettings.ActiveTab.TabID %></p>
+    <p>Page: TabID=<%=PortalSettings.ActiveTab.TabID %>, Name=<%=PortalSettings.ActiveTab.TabName %>,Title=<%=PortalSettings.ActiveTab.Title %></p>
+    <p>Nav: Level=<%=PortalSettings.ActiveTab.Level %>, Path=<%=PortalSettings.ActiveTab.TabPath %></p>
     <p>QueryString Params = <%=Request.QueryString.ToJson() %></p>
-    <p>Now = <%=DateTime.Now.ToString("F") %></p>
     <p>WAN IP = <%=GetIpAddress() %></p>
+    <p>Datetime = <%=DateTime.Now.ToString("F") %></p>
     <hr />
     <p class="small font-weight-bold">Debug info only visible from ASL WAN IP address and being output from <code>includes/_footer.ascx</code> in Skin.</p>
   </div>
