@@ -20,7 +20,7 @@ Variables that dictate the menu ouput:
 | Align nav to the right?   |    true |
 | Include dropdown menus?   |    true |
 | Include nested dropdowns? |    true |
-| Use custom dropdown icon? |    true |
+| Use custom dropdown icon? |   false |
 
 ### Functions
 
@@ -47,6 +47,7 @@ These are the menu items. Each node has access to a variety of properties.
 - `Enabled` — If enabled, use URL as the `href`. If not, use `#`.
 - `Breadcrumb` — If in breadcrumb, give node an `.active` class.
 - `Children` — How we get dropdown menus.
+- `Last` — Used once to change dropdown menu alignment.
 
 #### Properties not being used
 
@@ -56,7 +57,6 @@ These are the menu items. Each node has access to a variety of properties.
 - `Icon` — The URL of the page icon. **Not being used.**
 - `LargeImage` — The URL of the large page icon. **Not being used.**
 - `First` — If the page is the first in the list. **Not being used.**
-- `Last` — If the page is the last in the list. **Not being used.**
 - `Depth` — The depth of the current page. **Not being used.**
 - `Keywords` — Page keywords. **Not being used.**
 - `Description` — Page description. **Not being used.**
