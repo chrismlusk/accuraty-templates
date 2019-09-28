@@ -12,7 +12,9 @@ import isReducedMotion from '../utils/is-reduced-motion';
 import getElementStyle from '../utils/get-element-style';
 
 function enableSmoothScroll(providedOffset = 50) {
-  const links = document.querySelectorAll('a[href^="#"]');
+  const links = document.querySelectorAll(
+    'a[href^="#"]:not([href="#"]):not([class*="skip-link])'
+  );
   if (!links.length) return;
 
   // https://developers.google.com/web/updates/2019/03/prefers-reduced-motion
@@ -32,11 +34,12 @@ function enableSmoothScroll(providedOffset = 50) {
   }
 
   function handleAnchorLink(event) {
-    event.preventDefault();
-
     const id = event.target.getAttribute('href');
     const anchor = document.querySelector(id);
     if (!anchor) return;
+
+    // Only prevent default if animation is going to happen.
+    event.preventDefault();
 
     // https://developer.mozilla.org/Web/API/ScrollToOptions
     const scrollOptions = {
