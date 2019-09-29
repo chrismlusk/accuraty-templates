@@ -4,6 +4,7 @@ const fs = require('fs');
 const replace = require('gulp-replace');
 
 const { paths, plugins, project } = require('../config');
+const isProduction = process.env.PROJECT_MODE === 'production';
 const $ = plugins.realFavicon;
 
 // File where the favicon HTML markup is stored
@@ -30,6 +31,8 @@ const CUSTOM_SETTINGS_OPTIONS = {};
 // Generate the icons. This task takes a few seconds to complete because
 // it makes a request to RealFaviconGenerator.net to build all the assets.
 function generateFaviconsTask(done) {
+  if (!isProduction) done();
+
   realFavicon.generateFavicon(
     {
       masterPicture: paths.favicons.src,
@@ -52,7 +55,7 @@ function generateFaviconsTask(done) {
 // Get the generated markup from the response and inject it into the
 // function in `controls/meta.ascx` so that it is added to the `<head>` tag.
 function injectFaviconsMarkupTask() {
-  if (!project.faviconFile) return Promise.resolve();
+  if (!isProduction || !project.faviconFile) return Promise.resolve();
 
   // We have to parse the JSON so we can grab only the `html_code` value.
   const htmlCode = JSON.parse(fs.readFileSync(FAVICON_DATA)).favicon.html_code;
