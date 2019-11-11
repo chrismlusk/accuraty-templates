@@ -1,4 +1,4 @@
-import isTouchDevice from './is-touch-device';
+import isTouchDevice from '../utils/is-touch-device';
 
 //
 // Enable Bootstrap dropdowns on hover

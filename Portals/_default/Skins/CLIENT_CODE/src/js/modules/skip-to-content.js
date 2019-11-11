@@ -4,8 +4,12 @@ function skipToContent() {
 
   main.setAttribute('tabindex', '-1');
 
+  if (!main.id) {
+    main.setAttribute('id', 'content');
+  }
+
   link.setAttribute('class', 'skip-link btn btn-light');
-  link.setAttribute('href', `#${main.id ? main.id : 'content'}`);
+  link.setAttribute('href', `#${main.id}`);
   link.innerText = 'Skip to content';
 
   link.addEventListener('click', event => {
