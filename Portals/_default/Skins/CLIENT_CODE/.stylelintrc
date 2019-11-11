@@ -5,6 +5,7 @@
     "block-no-empty": null,
     "declaration-no-important": null,
     "font-family-no-missing-generic-family-keyword": null,
+    "max-empty-lines": 4,
     "selector-class-pattern": null,
     "selector-max-id": 1,
     "selector-max-type": [
