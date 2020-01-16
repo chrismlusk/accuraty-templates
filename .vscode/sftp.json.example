@@ -67,7 +67,6 @@
       "/Licenses",
       "/obj",
       "/Portals/*/Cache",
-      "/Portals/*/Templates",
       "/Portals/*/Users",
       "/Portals/*/Images",
       "/Portals/_default/EventQueue",
