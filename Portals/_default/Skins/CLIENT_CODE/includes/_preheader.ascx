@@ -86,7 +86,7 @@ Other vendor scripts and custom JS come next.
 />
 
 <dnn:DnnJsInclude
-  FilePath="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  FilePath="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
   ForceProvider="DnnFormBottomProvider"
   Priority="101"
   runat="server"

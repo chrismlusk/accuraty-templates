@@ -39,7 +39,6 @@ const cleanCss = {
 const imageminPlugin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const zopfli = require('imagemin-zopfli');
-const mozjpeg = require('imagemin-mozjpeg'); // need to run `brew install libpng`
 const giflossy = require('imagemin-giflossy');
 
 const imagemin = {
@@ -65,11 +64,9 @@ const imagemin = {
         { cleanupIDs: true },
       ],
     }),
-    imageminPlugin.jpegtran({
+    imageminPlugin.mozjpeg({
       progressive: true,
-    }),
-    mozjpeg({
-      quality: 80,
+      quality: 75,
     }),
   ],
   options: {

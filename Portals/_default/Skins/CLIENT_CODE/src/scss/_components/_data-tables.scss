@@ -505,8 +505,6 @@
       border: 0;
     }
 
-    @include form-control-focus();
-
     &::placeholder {
       color: $input-placeholder-color;
       opacity: 1;
