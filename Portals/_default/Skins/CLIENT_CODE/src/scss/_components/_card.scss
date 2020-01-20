@@ -80,27 +80,27 @@
 //
 // Card layouts
 // ============
-//
-// Each class is wrapped in a media query since the styles only apply > 768px.
-// ----------------------------------------------------------------------------
 
-@include media-breakpoint-up(sm) {
+// Deck
+.card-deck {
 
-  // Deck
-  .card-deck {
+  .card {}
+}
 
-    .card {}
-  }
+// Groups
+.card-group {
 
-  // Groups
-  .card-group {
+  & > .card {}
+}
 
-    .card {}
-  }
+// Columns
+.card-columns {
 
-  // Columns
-  .card-columns {
+  .card {}
+}
 
-    .card {}
-  }
+// Accordion
+.accordion {
+
+  & > .card {}
 }

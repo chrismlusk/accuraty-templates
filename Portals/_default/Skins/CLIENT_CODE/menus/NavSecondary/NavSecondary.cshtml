@@ -4,7 +4,7 @@
 
 @functions {
 
-  @*
+  /*
     Menu config
     ===
     Placed in `@functions` so `@helper` methods can access to these variables.
@@ -20,14 +20,14 @@
        you'll need to modify the `.dropdown-toggle` styles in `_dropdown.scss`
        to prevent the default caret from appearing. This setting just controls
        whether you render the SVG (which is located in `src/icons/all.svg).
-    **************************************************************************@
+    **************************************************************************/
   private bool NAV_IS_ALIGNED_RIGHT = true; // 1
   private bool INCLUDE_DROPDOWN_MENUS = true; // 2
   private bool INCLUDE_NESTED_DROPDOWNS = true; // 3
   private bool USE_CUSTOM_DROPDOWN_ICON = false; // 4
 
 
-  @*
+  /*
     Target attributes
     ===
     If needed, creates the `target` and `rel` attributes for the `<a>` tag.
@@ -36,7 +36,7 @@
 
     2. Add `rel` with proper values if the link opens in a new window.
        http://developer.mozilla.org/HTML/Element/a#Security_and_privacy_concerns
-    **************************************************************************@
+    **************************************************************************/
   private HtmlString buildTargetAttribute(MenuNode node) {
     var target = node.Target;
     var targetString = !String.IsNullOrEmpty(target) ? ("target=\"" + target + "\"") : ""; // 1
@@ -49,11 +49,11 @@
   }
 
 
-  @*
+  /*
     Dropdown attributes
     ===
     If needed, builds the attributes Bootstrap's dropdown plugin requires.
-    **************************************************************************@
+    **************************************************************************/
   private HtmlString buildDropdownAttributes(MenuNode node) {
     var attributeString = INCLUDE_DROPDOWN_MENUS && node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
 
