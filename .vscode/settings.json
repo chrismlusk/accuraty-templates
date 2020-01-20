@@ -1,5 +1,8 @@
 {
   "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "[html]": {
@@ -8,7 +11,6 @@
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   "editor.useTabStops": true,
-  "eslint.autoFixOnSave": true,
   "files.associations": {
     ".stylelintrc": "json"
   },
