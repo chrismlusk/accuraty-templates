@@ -1,18 +1,11 @@
 const { resolve } = require('path');
 const gulp = require('gulp');
 const webpack = require('webpack');
-const FriendlyErrors = require('friendly-errors-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const eslint = require('gulp-eslint');
-const newer = require('gulp-newer');
-const sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const gulpif = require('gulp-if');
-const rename = require('gulp-rename');
-const size = require('gulp-size');
 
 const { paths, project } = require('../config');
-const isProduction = process.env.PROJECT_MODE === 'production';
 
 function lintScripts() {
   if (!project.scripts) return Promise.resolve();
@@ -31,19 +24,39 @@ const WEBPACK_CONFIG = {
     filename: '[name].bundle.js',
     path: resolve(process.env.INIT_CWD, 'public/js'),
   },
+  devtool: 'source-map',
   stats: {
     all: false,
     assets: true,
   },
-  plugins: [new FriendlyErrors()],
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // }
+  plugins: [new FriendlyErrorsPlugin()],
+  optimization: {
+    minimizer: [new TerserPlugin({})],
+    splitChunks: {
+      chunks: 'all',
+      name: false
+    },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          },
+        },
+      },
+    ]
+  },
+  watchOptions: {
+    ignored: ['../../node_modules'],
+  },
 };
 
-function compileScriptsWithWebpack() {
+function compileScripts() {
   if (!project.scripts || !project.webpack) return Promise.resolve();
 
   return new Promise(resolve =>
@@ -55,27 +68,9 @@ function compileScriptsWithWebpack() {
   );
 }
 
-function compileScriptsPlain() {
-  if (!project.scripts || project.webpack) return Promise.resolve();
-
-  return gulp
-    .src(paths.scripts.src)
-    .pipe(newer('.tmp/scripts'))
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(gulpif(isProduction, uglify()))
-    .pipe(gulpif(['*.js', '!*.min.js'], rename({ suffix: '.min' })))
-    .pipe(size({ title: 'public/js' }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(gulp.dest('.tmp/scripts'));
-}
-
 const scriptsTask = gulp.series(
   lintScripts,
-  compileScriptsWithWebpack,
-  compileScriptsPlain
+  compileScripts
 );
 
 gulp.task('scripts', scriptsTask);

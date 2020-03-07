@@ -25,7 +25,7 @@ const autoprefixer = {
  */
 const cleanCss = {
   options: {
-    level: 1,
+    level: 2,
     format: {
       breaksWith: 'lf',
     },
@@ -38,23 +38,14 @@ const cleanCss = {
  */
 const imageminPlugin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
-const zopfli = require('imagemin-zopfli');
-const giflossy = require('imagemin-giflossy');
 
 const imagemin = {
   plugins: [
     pngquant({
-      speed: 1,
-      quality: [0.95, 1], // lossy settings
+      speed: 6,
+      quality: [0.75, 1], // lossy settings
     }),
-    zopfli({
-      more: true,
-    }),
-    giflossy({
-      optimizationLevel: 3,
-      optimize: 3, // keep-empty: Preserve empty transparent frames
-      lossy: 2,
-    }),
+    imageminPlugin.gifsicle({ interlaced: true }),
     imageminPlugin.svgo({
       plugins: [
         { removeTitle: false },
