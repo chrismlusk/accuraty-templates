@@ -1,6 +1,9 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
   "env": {
     "browser": true,
     "es6": true,
@@ -18,7 +21,10 @@
   "rules": {
     "accessor-pairs": "error",
     "array-callback-return": "warn",
-    "arrow-body-style": ["warn", "as-needed"],
+    "arrow-body-style": [
+      "warn",
+      "as-needed"
+    ],
     "arrow-parens": "off",
     "block-scoped-var": "error",
     "callback-return": "off",
@@ -27,9 +33,15 @@
     "consistent-return": "error",
     "curly": "off",
     "default-case": "error",
-    "dot-location": ["warn", "property"],
+    "dot-location": [
+      "warn",
+      "property"
+    ],
     "dot-notation": "warn",
-    "eqeqeq": ["warn", "smart"],
+    "eqeqeq": [
+      "warn",
+      "smart"
+    ],
     "global-require": "warn",
     "guard-for-in": "error",
     "handle-callback-err": "warn",
@@ -40,12 +52,18 @@
     "no-await-in-loop": "warn",
     "no-caller": "warn",
     "no-catch-shadow": "warn",
-    "no-cond-assign": ["warn", "except-parens"],
+    "no-cond-assign": [
+      "warn",
+      "except-parens"
+    ],
     "no-confusing-arrow": "warn",
     "no-console": [
       "warn",
       {
-        "allow": ["info", "error"]
+        "allow": [
+          "info",
+          "error"
+        ]
       }
     ],
     "no-delete-var": "warn",
@@ -65,7 +83,13 @@
     "no-invalid-regexp": "warn",
     "no-iterator": "warn",
     "no-label-var": "warn",
-    "no-labels": ["warn", { "allowLoop": true, "allowSwitch": false }],
+    "no-labels": [
+      "warn",
+      {
+        "allowLoop": true,
+        "allowSwitch": false
+      }
+    ],
     "no-lone-blocks": "warn",
     "no-loop-func": "warn",
     "no-mixed-requires": "warn",
@@ -90,12 +114,20 @@
     "no-obj-calls": "warn",
     "no-octal": "warn",
     "no-octal-escape": "warn",
-    "no-param-reassign": ["warn", { "props": false }],
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
     "no-proto": "warn",
     "no-prototype-builtins": "warn",
     "no-restricted-globals": "warn",
     "no-restricted-properties": "warn",
-    "no-return-assign": ["warn", "except-parens"],
+    "no-return-assign": [
+      "warn",
+      "except-parens"
+    ],
     "no-return-await": "warn",
     "no-script-url": "warn",
     "no-self-compare": "warn",
@@ -106,7 +138,12 @@
     "no-throw-literal": "warn",
     "no-undef-init": "error",
     "no-undefined": "error",
-    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
     "no-unused-vars": [
       "warn",
       {
@@ -138,9 +175,15 @@
     ],
     "prefer-spread": "warn",
     "prefer-template": "warn",
-    "rest-spread-spacing": ["warn", "never"],
+    "rest-spread-spacing": [
+      "warn",
+      "never"
+    ],
     "require-await": "warn",
-    "strict": ["warn", "never"],
+    "strict": [
+      "warn",
+      "never"
+    ],
     "valid-typeof": "warn",
     "vars-on-top": "warn",
     "wrap-iife": "warn",
