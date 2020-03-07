@@ -5,7 +5,7 @@ This is a set of standards, common components, and best practices for projects i
 ## Project requirements
 
 - DNN site already deployed
-- [Node >= v10.16](https://nodejs.org/en)
+- [Node >= v12.16.1](https://nodejs.org/en)
 
 ## Getting started
 
