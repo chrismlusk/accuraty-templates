@@ -3,7 +3,7 @@
 <pre>
 DNN <%=DotNetNuke.Application.DotNetNukeContext.Current.Application.Version.ToString(3) %> / <%=System.Environment.Version.ToString() %> / <%=System.Net.Dns.GetHostName() %>
 Page: TabID=<%=PortalSettings.ActiveTab.TabID %>, Name=<%=PortalSettings.ActiveTab.TabName %>, Title=<%=PortalSettings.ActiveTab.Title %>
-Theme = <strong><%=PortalSettings.DefaultPortalSkin.Split('/')[1].ToUpper() %>, Skin / Container = </strong>/<span title="<%=PortalSettings.ActiveTab.SkinSrc %>"><%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.SkinSrc) %></span> / <span title="<%=PortalSettings.ActiveTab.ContainerSrc %>"><%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.ContainerSrc) %></span>
+Theme = <strong><%=PortalSettings.DefaultPortalSkin.Split('/')[1].ToUpper() %></strong>, Skin / Container = <span title="<%=PortalSettings.ActiveTab.SkinSrc %>"><%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.SkinSrc) %></span> / <span title="<%=PortalSettings.ActiveTab.ContainerSrc %>"><%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.ContainerSrc) %></span>
 Published=<%=PortalSettings.ActiveTab.HasBeenPublished %>, IsVisible=<%=PortalSettings.ActiveTab.IsVisible %>
 Nav: DisableLink=<%=PortalSettings.ActiveTab.DisableLink %>, Level=<%=PortalSettings.ActiveTab.Level %>, Path=<%=PortalSettings.ActiveTab.TabPath %>
 QueryString Params = <%=Request.QueryString.ToJson() %>
