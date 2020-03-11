@@ -3,14 +3,16 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
-  "[html]": {
-    "editor.formatOnSave": false
-  },
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   "editor.useTabStops": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   "files.associations": {
     ".stylelintrc": "json"
   },
@@ -27,14 +29,10 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "[markdown]": {
-    "files.trimTrailingWhitespace": false
-  },
   "html.format.enable": true,
   "html.format.preserveNewLines": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "less.validate": false,
-  "prettier.disableLanguages": ["css", "html", "scss", "sass"],
   "search.exclude": {
     "**/EasyDNNnews/**/assets": true
   },
@@ -42,7 +40,15 @@
   "scss.lint.universalSelector": "warning",
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.config": {
-    "ignoreFiles": "*.css"
-  }
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.suggest.showKeywords": false
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
 }
