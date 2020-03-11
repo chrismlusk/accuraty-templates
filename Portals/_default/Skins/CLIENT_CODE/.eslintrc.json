@@ -2,7 +2,7 @@
   "root": true,
   "extends": [
     "eslint:recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "env": {
     "browser": true,
@@ -19,8 +19,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "accessor-pairs": "error",
-    "array-callback-return": "warn",
+    "array-callback-return": "error",
     "arrow-body-style": [
       "warn",
       "as-needed"
@@ -28,7 +27,6 @@
     "arrow-parens": "off",
     "block-scoped-var": "error",
     "callback-return": "off",
-    "class-methods-use-this": "off",
     "complexity": "error",
     "consistent-return": "error",
     "curly": "off",
@@ -45,7 +43,6 @@
     "global-require": "warn",
     "guard-for-in": "error",
     "handle-callback-err": "warn",
-    "init-declarations": "off",
     "new-parens": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
@@ -132,7 +129,6 @@
     "no-script-url": "warn",
     "no-self-compare": "warn",
     "no-sequences": "warn",
-    "no-shadow": "off",
     "no-shadow-restricted-names": "error",
     "no-template-curly-in-string": "warn",
     "no-throw-literal": "warn",
