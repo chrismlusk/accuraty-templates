@@ -34,7 +34,7 @@ const WEBPACK_CONFIG = {
     minimizer: [new TerserPlugin({})],
     splitChunks: {
       chunks: 'all',
-      name: false
+      name: false,
     },
   },
   module: {
@@ -45,11 +45,11 @@ const WEBPACK_CONFIG = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
           },
         },
       },
-    ]
+    ],
   },
   watchOptions: {
     ignored: ['../../node_modules'],
@@ -68,10 +68,7 @@ function compileScripts() {
   );
 }
 
-const scriptsTask = gulp.series(
-  lintScripts,
-  compileScripts
-);
+const scriptsTask = gulp.series(lintScripts, compileScripts);
 
 gulp.task('scripts', scriptsTask);
 module.exports = scriptsTask;
