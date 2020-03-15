@@ -2,7 +2,10 @@ const gulp = require('gulp');
 const fs = require('fs');
 const replace = require('gulp-replace');
 
+const { isTrue } = require('../utils');
 const { name } = require('../config').project;
+
+const isInitialized = isTrue(process.env.PROJECT_INITIALIZED);
 
 function setSassClientCode() {
   const pattern = /\$asl--client-code:\\?.*/g;
@@ -38,7 +41,23 @@ function setDirectoryNames() {
   return Promise.resolve();
 }
 
-const initTask = gulp.series(setSassClientCode, setDirectoryNames);
+function initializeProject() {
+  const pattern = /PROJECT_INITIALIZED\s*=\s*"*false"*/g;
+  const updated = 'PROJECT_INITIALIZED = true';
 
-gulp.task('init', initTask);
+  return gulp
+    .src('.env')
+    .pipe(replace(pattern, updated))
+    .pipe(gulp.dest('./'));
+}
+
+const initTask = gulp.series(
+  setSassClientCode,
+  setDirectoryNames,
+  initializeProject
+);
+
+const skipTask = () => Promise.resolve();
+
+gulp.task('init', !isInitialized ? initTask : skipTask);
 module.exports = initTask;
