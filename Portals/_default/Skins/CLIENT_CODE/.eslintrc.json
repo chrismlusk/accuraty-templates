@@ -137,6 +137,7 @@
     "no-unused-expressions": [
       "error",
       {
+        "allowShortCircuit": true,
         "allowTaggedTemplates": true
       }
     ],
