@@ -18,7 +18,7 @@
   }
 
   // Reposition fixed `.header` so DNN Persona Bar doesn't overlap it
-  .hasDnnPersonaBar & {
+  .personabar-visible & {
     left: calc(1rem + #{$dnn-persona-bar-width});
   }
 }

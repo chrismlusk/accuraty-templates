@@ -21,7 +21,7 @@
 body {
 
   // Reposition to avoid screwy animation when Persona Bar slides on screen
-  &.hasDnnPersonaBar {
+  &.personabar-visible {
     margin-left: $dnn-persona-bar-width;
   }
 }

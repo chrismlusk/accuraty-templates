@@ -25,7 +25,7 @@
 .asl__admin {
   display: none !important;
 
-  .hasDnnPersonaBar & {
+  .personabar-visible & {
     display: block !important;
   }
 }

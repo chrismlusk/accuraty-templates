@@ -19,9 +19,9 @@ Resource: [Flickity docs](https://flickity.metafizzy.co)
 
 ### DNN Persona Bar
 
-As of version 9.2, DNN does not apply any classes to the `<body>` when the Persona Bar is active. It _does_ give the `<body>` margin, but having a class is useful for tweaking other styles when the Persona Bar is active.
+Before version 9.3, DNN did not apply any classes to the `<body>` when the Persona Bar is active. It _does_ give the `<body>` margin, but having a class is useful for tweaking other styles when the Persona Bar is active.
 
-This function adds the class `.hasDnnPersonaBar` if it is active.
+This function adds the class `.personabar-visible` if it is active.
 
 ### Enable dropdowns on hover
 
