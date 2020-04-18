@@ -1,6 +1,6 @@
-# Containers
+# DNN Containers
 
-The `scss/Containers/` folder is for container-specific stylesheets.
+The `scss/DNN Containers/` folder is for container-specific stylesheets.
 
 ## Container stylesheets
 
@@ -12,4 +12,4 @@ In order for DNN to automatically load the file, though, it **must be named the 
 
 Naming the file the same is up to you, but getting the compiled `.css` into the `Portals/Containers/` directory should not require you to move files around. Fortunately, that's what Gulp is for.
 
-Because the Gulp build process treats all `.scss` files at the root of `src/scss/` as a skin stylesheet, creating a separate folder for container stylesheets allows us to direct Gulp to move the compiled output to the correct place.
+Because the build process treats all `.scss` files at the root of `src/scss/` as a skin stylesheet, creating a separate folder for container stylesheets allows us to direct Gulp to move the compiled output to the correct place.

@@ -39,6 +39,7 @@ _Note: If you add any new partials, you will need to add an import statement to 
 These are DNN-specific folders that contain styles specific to DNN: Containers, 2sxc modules, etc. These do not have a leading underscore and are in Title case. The default folders are:
 
 - `Containers/`
+- `Modules/`
 
 Separating these files in this way gives us a simple way to target Sass files during the Gulp build process. Why? Because the compiled code needs to be stored in a different location than the main files.
 
