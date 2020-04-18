@@ -90,18 +90,16 @@
 @import "_components/carousel";
 @import "_components/spinners";
 
-// ... then add custom components ...
+// ... then import custom components ...
 @import "_components/rich-text";
 @import "_components/skip-link";
 @import "_components/child-page";
 @import "_components/panes";
 
-// ... and then add third-party vendor overrides
-@import "_components/carousel-flickity";
-@import "_components/data-tables";
+// ... and then import third-party vendor overrides
+// @import "_components/carousel-flickity";
+// @import "_components/data-tables";
 
 @import "_layout/header";
 @import "_layout/main";
 @import "_layout/footer";
-
-@import "_utilities/asl";
