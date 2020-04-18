@@ -86,13 +86,6 @@ Other vendor scripts and custom JS come next.
 />
 
 <dnn:DnnJsInclude
-  FilePath="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  ForceProvider="DnnFormBottomProvider"
-  Priority="101"
-  runat="server"
-/>
-
-<dnn:DnnJsInclude
   FilePath="public/js/bootstrap.bundle.min.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
