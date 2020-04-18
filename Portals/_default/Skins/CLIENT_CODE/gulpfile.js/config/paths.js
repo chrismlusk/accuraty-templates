@@ -47,10 +47,6 @@ module.exports = {
     src: `./src/scss/EasyDNNsolutions/EasyDNNnews.scss`,
     dest: `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/`,
   },
-  accuratyContainerStyles: {
-    src: `./src/scss/Containers/Accuraty/*.scss`,
-    dest: `../../Containers/Accuraty/`,
-  },
   scripts: {
     src: `./src/js/**/*.js`,
     dest: `./public/js/`,
