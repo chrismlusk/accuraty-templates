@@ -40,7 +40,7 @@ Next, navigate to the Skin folder:
 cd Portals/_default/Skins/CLIENT_CODE
 ```
 
-Then, open `.env` and update your environment variables. At a minimum, change the `CLIENT_CODE` variable to whatever the project's name should be. This name will be used in multiple places (e.g., the Skin and Container directories, as a Sass variable, the EasyDNNnews template name), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
+Then, open `.env` and update your environment variables. At a minimum, change the `CLIENT_CODE` variable to whatever the project's name should be. This name will be used in multiple places (e.g., the Skin and Container directories), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
 
 #### 4. Install packages
 

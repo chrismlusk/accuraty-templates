@@ -10,8 +10,6 @@ function cleanTask() {
     `./*.css.map`,
     `../../Containers/${name}/*.css`,
     `../../Containers/${name}/*.css.map`,
-    `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/*.css`,
-    `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/*.css.map`,
     `public/*`,
     `!public/.git`,
     `real-favicon-generator.json`,

@@ -45,10 +45,6 @@ Start with `Main.ascx` as the default template, then add more as needed. These f
 
 What you'll find and what they are:
 
-#### .babelrc
-
-Babel is the JavaScript compiler used if you elect to not use Webpack.
-
 #### .browserslistrc
 
 Browsers we are supporting.

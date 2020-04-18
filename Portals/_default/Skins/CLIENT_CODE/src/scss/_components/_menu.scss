@@ -47,11 +47,6 @@
 //
 // List
 // ===
-//
-// 1. When using this component with EasyDNNnews, EDN inserts `display: none`
-//    inline on nested `<ul>` groups. Because we are customizing the default
-//    EDN behavior, use `!important` to override their inline style.
-// ----------------------------------------------------------------------------
 
 .menu__list {
   line-height: 1.25;
@@ -60,7 +55,7 @@
     display: none;
 
     &.show {
-      display: block !important; // 1
+      display: block;
     }
   }
 }

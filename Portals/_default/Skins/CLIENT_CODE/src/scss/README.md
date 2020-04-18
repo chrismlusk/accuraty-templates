@@ -12,7 +12,6 @@ Our pattern is to split the codebase into meaningful, separated folders so you c
 - `_layout/`
 - `_utilities/`
 - `Containers/`
-- `EasyDNNsolutions/`
 - `*.scss` (skin stylesheets)
 
 ## Skin stylesheets
@@ -37,16 +36,15 @@ _Note: If you add any new partials, you will need to add an import statement to 
 
 ### Other folders
 
-These are DNN-specific folders that contain styles exclusive to DNN modules: containers, EasyDNNsolutions, etc. These do not have a leading underscore and are in Title case. The default folders are:
+These are DNN-specific folders that contain styles specific to DNN: Containers, 2sxc modules, etc. These do not have a leading underscore and are in Title case. The default folders are:
 
 - `Containers/`
-- `EasyDNNsolutions/`
 
 Separating these files in this way gives us a simple way to target Sass files during the Gulp build process. Why? Because the compiled code needs to be stored in a different location than the main files.
 
 ## Bootstrap
 
-Bootstrap is the default framework for our projects, so be sure to run `npm install` from the command line to include Bootstrap in your local `node_modules/` folder. The `Skin.scss` file has an import statement to include the Sass files from Bootstrap.
+Bootstrap is the default framework for Accuraty projects and is a requirement for this starter kit, so run `npm install` from the command line to include Bootstrap in your local `node_modules/` folder. The `Skin.scss` file has an import statement to include the Sass files from Bootstrap.
 
 ### Modifying Bootstrap
 
@@ -54,13 +52,13 @@ Since our projects are built on Bootstrap, modifying these styles is something y
 
 For example, if the design calls for all buttons to have no rounded corners, you could override Bootstrap's `.btn` class in the `_buttons.scss` file inside the `_components/` folder like so:
 
-```css3
+```css
 .btn {
   border-radius: 0;
 }
 ```
 
-This new code will override the vendor-provided styles and is certainly valid. **However, this method introduces more code and increases file size.**
+This new code will override the vendor-provided styles and is certainly valid. **However, this method introduces more code and increases file size. It is not recommended.**
 
 ### A Better Way
 

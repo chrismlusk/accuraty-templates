@@ -43,10 +43,6 @@ module.exports = {
     src: `./src/scss/Containers/*.scss`,
     dest: `../../Containers/${name}/`,
   },
-  ednStyles: {
-    src: `./src/scss/EasyDNNsolutions/EasyDNNnews.scss`,
-    dest: `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/`,
-  },
   scripts: {
     src: `./src/js/**/*.js`,
     dest: `./public/js/`,

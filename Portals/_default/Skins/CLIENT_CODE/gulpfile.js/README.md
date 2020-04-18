@@ -22,10 +22,6 @@ Each Gulp task is split into its own file inside this directory. That includes i
 
 A mandatory file. All this does is include the environment variables and import each task so when Gulp is run, each task is available.
 
-## Gulp information
-
-...
-
 ---
 
 Reference: [Gulp docs](https://gulpjs.com/docs/en/api/concepts)

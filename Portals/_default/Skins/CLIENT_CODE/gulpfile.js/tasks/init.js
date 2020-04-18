@@ -30,12 +30,9 @@ function setDirectoryNames() {
     });
   }
 
-  const ednPath = `../../../../DesktopModules/EasyDNNnews/Templates/_default`;
-
-  // Run the function for the Skin, Containers, and EDN directories.
+  // Run the function for the Skin and Containers directories.
   renameDir(`../CLIENT_CODE`, `../${name}`);
   renameDir(`../../Containers/CLIENT_CODE`, `../../Containers/${name}`);
-  renameDir(`${ednPath}/CLIENT_CODE`, `${ednPath}/${name}`);
 
   // Return a resolved Promise to continue the Gulp build.
   return Promise.resolve();

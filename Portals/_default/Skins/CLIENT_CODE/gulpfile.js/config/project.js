@@ -12,7 +12,6 @@ const {
   FAVICON_FILENAME,
   SKIN_LAYOUT_STYLES,
   CONTAINER_STYLES,
-  EDN_STYLES,
   CUSTOM_SCRIPTS,
 } = process.env;
 
@@ -33,7 +32,6 @@ module.exports = {
   styles: {
     skinLayouts: isTrue(SKIN_LAYOUT_STYLES),
     containers: isTrue(CONTAINER_STYLES),
-    edn: isTrue(EDN_STYLES),
   },
   scripts: isTrue(CUSTOM_SCRIPTS),
   webpack: {
