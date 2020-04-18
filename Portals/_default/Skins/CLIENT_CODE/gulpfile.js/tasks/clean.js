@@ -10,8 +10,6 @@ function cleanTask() {
     `./*.css.map`,
     `../../Containers/${name}/*.css`,
     `../../Containers/${name}/*.css.map`,
-    `../../Containers/Accuraty/*.css`,
-    `../../Containers/Accuraty/*.css.map`,
     `public/*`,
     `!public/.git`,
     `real-favicon-generator.json`,

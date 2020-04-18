@@ -11,7 +11,7 @@ const size = require('gulp-size');
 const stylelintTask = require('./stylelint');
 
 const { paths, plugins, project } = require('../config');
-const { skinLayoutStyles, containerStyles, accuratyContainerStyles } = paths;
+const { skinLayoutStyles, containerStyles } = paths;
 const { fixMapPath } = require('../utils');
 
 const isProduction = process.env.PROJECT_MODE === 'production';
@@ -55,37 +55,13 @@ function containerStylesTask() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-function accuratyContainerStylesTask() {
-  if (!project.styles.accuratyContainers) return Promise.resolve();
-
-  const mapPrefix = `../../Skins/${project.name}`;
-
-  return gulp
-    .src(accuratyContainerStyles.src)
-    .pipe(newer('.tmp/styles'))
-    .pipe(sourcemaps.init())
-    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(path => fixMapPath(path, mapPrefix)))
-    .pipe(sourcemaps.write('.'))
-    .pipe(size({ title: 'Accuraty Container CSS' }))
-    .pipe(gulp.dest(accuratyContainerStyles.dest))
-    .pipe(gulp.dest('.tmp/styles'));
-}
-
 const allStylesTask = gulp.parallel(
   skinLayoutStylesTask,
-  containerStylesTask,
-  accuratyContainerStylesTask
+  containerStylesTask
 );
 
 gulp.task('styles-skin', gulp.series(stylelintTask, skinLayoutStylesTask));
 gulp.task('styles-container', gulp.series(stylelintTask, containerStylesTask));
-gulp.task(
-  'styles-asl',
-  gulp.series(stylelintTask, accuratyContainerStylesTask)
-);
 
 gulp.task('styles', gulp.series(stylelintTask, allStylesTask));
 module.exports = allStylesTask;

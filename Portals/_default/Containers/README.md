@@ -1,6 +1,6 @@
 # Containers
 
-This folder is where we save containers used in our project. We split these into two directories: `Accuraty/` and a folder that shares the same name as the project.
+This folder is where we save containers used in our project.
 
 ## What is a Container?
 

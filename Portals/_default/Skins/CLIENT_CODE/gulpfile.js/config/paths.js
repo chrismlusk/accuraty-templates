@@ -43,10 +43,6 @@ module.exports = {
     src: `./src/scss/Containers/*.scss`,
     dest: `../../Containers/${name}/`,
   },
-  accuratyContainerStyles: {
-    src: `./src/scss/Containers/Accuraty/*.scss`,
-    dest: `../../Containers/Accuraty/`,
-  },
   scripts: {
     src: `./src/js/**/*.js`,
     dest: `./public/js/`,
