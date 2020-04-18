@@ -165,11 +165,11 @@ $youtube-primary:       #cd201f;
 // easy recognition (e.g., `<h1>` is largest and `$asl--font-size-1` is too).
 // ----------------------------------------------------------------------------
 
-// stylelint-disable value-keyword-case
-$asl--font-family-sans-serif: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* stylelint-disable */
+$asl--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $asl--font-family-serif: "Georgia", "Times New Roman", "Times", serif;
-$asl--font-family-monospace: sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
-// stylelint-enable value-keyword-case
+$asl--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+/* stylelint-enable */
 
 // Assumes the browser default, which is typically `16px`
 $asl--font-size-base:       1rem;
