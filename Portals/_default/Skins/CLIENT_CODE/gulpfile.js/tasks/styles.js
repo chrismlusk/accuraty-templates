@@ -6,18 +6,12 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCss = require('gulp-clean-css');
-const rename = require('gulp-rename');
 const size = require('gulp-size');
 
 const stylelintTask = require('./stylelint');
 
 const { paths, plugins, project } = require('../config');
-const {
-  skinLayoutStyles,
-  containerStyles,
-  ednStyles,
-  accuratyContainerStyles,
-} = paths;
+const { skinLayoutStyles, containerStyles, accuratyContainerStyles } = paths;
 const { fixMapPath } = require('../utils');
 
 const isProduction = process.env.PROJECT_MODE === 'production';
@@ -61,26 +55,6 @@ function containerStylesTask() {
     .pipe(gulp.dest('.tmp/styles'));
 }
 
-function ednStylesTask() {
-  if (!project.styles.edn) return Promise.resolve();
-
-  const mapPrefix = `../../../../../Portals/_default/Skins/${project.name}`;
-
-  return gulp
-    .src(ednStyles.src)
-    .pipe(newer('.tmp/styles'))
-    .pipe(sourcemaps.init())
-    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss([autoprefixer(plugins.autoprefixer.options)]))
-    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(rename({ basename: `${project.name}` }))
-    .pipe(sourcemaps.mapSources(path => fixMapPath(path, mapPrefix)))
-    .pipe(sourcemaps.write('.'))
-    .pipe(size({ title: 'EasyDNNnews CSS' }))
-    .pipe(gulp.dest(ednStyles.dest))
-    .pipe(gulp.dest('.tmp/styles'));
-}
-
 function accuratyContainerStylesTask() {
   if (!project.styles.accuratyContainers) return Promise.resolve();
 
@@ -103,13 +77,11 @@ function accuratyContainerStylesTask() {
 const allStylesTask = gulp.parallel(
   skinLayoutStylesTask,
   containerStylesTask,
-  ednStylesTask,
   accuratyContainerStylesTask
 );
 
 gulp.task('styles-skin', gulp.series(stylelintTask, skinLayoutStylesTask));
 gulp.task('styles-container', gulp.series(stylelintTask, containerStylesTask));
-gulp.task('styles-edn', gulp.series(stylelintTask, ednStylesTask));
 gulp.task(
   'styles-asl',
   gulp.series(stylelintTask, accuratyContainerStylesTask)

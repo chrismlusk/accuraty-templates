@@ -22,7 +22,7 @@ Icons (SVGs, PNGs, etc.). Are icons images? Sure. But in our experience, it's ea
 
 ### images/
 
-Images that are used in the skin itself (e.g., backgrounds, design resources, logos).
+Images that are used in the skin itself (e.g., backgrounds, design resources, logos, favicon).
 
 _Note: Images that are used as content and could be managed by the client should be stored in `Portals/0/SiteContent`._
 
