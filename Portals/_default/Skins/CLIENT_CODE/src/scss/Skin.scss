@@ -56,7 +56,6 @@
 // ==========================
 
 @import "theme/base/fonts";
-@import "theme/base/animations";
 @import "theme/base/dnn-reset";
 @import "theme/base/dnn-module";
 @import "theme/base/base";
@@ -92,8 +91,6 @@
 // ... then import custom components ...
 @import "theme/components/rich-text";
 @import "theme/components/skip-link";
-@import "theme/components/child-page";
-@import "theme/components/panes";
 
 @import "theme/layout/header";
 @import "theme/layout/main";
