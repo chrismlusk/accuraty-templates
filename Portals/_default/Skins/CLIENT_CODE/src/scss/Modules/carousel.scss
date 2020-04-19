@@ -2,7 +2,7 @@
 //
 //  HEADS UP!
 //
-//  This partial uses Flickity as the carousel instead of Boostrap's component,
+//  This module uses Flickity as the carousel instead of Boostrap's component,
 //  so the classes and styles are independent from what you'll see in the
 //  `_carousel.scss` partial. The one exception is the base class: `.carousel`.
 //
@@ -15,6 +15,7 @@
 //
 //  [Table of Contents]
 //
+//  - Mandatory imports
 //  - Wrapper and base class
 //  - Flickity-specific
 //     - Controls
@@ -22,6 +23,26 @@
 //  - Carousel cell
 //
 // ============================================================================
+
+
+
+
+//
+// Mandatory imports
+// =================
+
+// Core Bootstrap abstracts
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// Custom theme overrides
+@import "../theme/functions";
+@import "../theme/variables";
+@import "../theme/mixins";
+
+// Core Flickity styles
+@import "../../../node_modules/flickity/dist/flickity.min";
 
 
 
