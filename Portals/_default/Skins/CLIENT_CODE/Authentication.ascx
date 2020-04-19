@@ -9,7 +9,7 @@
   runat="server"
 />
 
-<div id="authentication" class="is-loading">
+<div id="authentication" class="is-loading" data-component="Authentication">
   <main class="main" role="main">
     <section class="section">
       <div class="container-fluid">
