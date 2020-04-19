@@ -55,6 +55,6 @@ export default class Demo {
   }
 
   sayHello = () => {
-    console.log(this.message);
+    console.log(this.message); // eslint-disable-line
   };
 }

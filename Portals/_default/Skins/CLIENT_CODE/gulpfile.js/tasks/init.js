@@ -12,9 +12,9 @@ function setSassClientCode() {
   const updated = `$asl--client-code: "${name}";`;
 
   return gulp
-    .src('./src/scss/_abstracts/_variables.scss')
+    .src('./src/scss/theme/_variables.scss')
     .pipe(replace(pattern, updated))
-    .pipe(gulp.dest('./src/scss/_abstracts/'));
+    .pipe(gulp.dest('./src/scss/theme/'));
 }
 
 function setDirectoryNames() {

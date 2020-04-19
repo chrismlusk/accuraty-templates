@@ -12,7 +12,6 @@ export default class Lightbox {
   }
 
   init() {
-    console.log('hello Lightbox');
     this.createChildRefs().enable();
     return this;
   }

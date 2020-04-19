@@ -12,7 +12,7 @@
           <div
             id="ContentPane"
             data-name="ContentPane"
-            class="col-12  pane pane-content"
+            class="col-12"
             visible="false"
             runat="server"
           ></div>
@@ -25,14 +25,14 @@
           <div
             id="MainPane"
             data-name="MainPane"
-            class="col-md-8  mb-5 mb-md-0  pane pane-content"
+            class="col-md-8  mb-5 mb-md-0"
             visible="false"
             runat="server"
           ></div>
           <div
             id="SidebarPane"
             data-name="SidebarPane"
-            class="col-md-4 col-xl-3 offset-xl-1  pane pane-sidebar"
+            class="col-md-4 col-xl-3 offset-xl-1"
             visible="false"
             runat="server"
           ></div>

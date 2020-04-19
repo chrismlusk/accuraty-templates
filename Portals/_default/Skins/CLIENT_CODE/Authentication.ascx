@@ -2,7 +2,7 @@
 <!--#include file="includes/_header.ascx"-->
 
 <dnn:DnnJsInclude
-  FilePath="public/js/authentication.bundle.js"
+  FilePath="public/js/Authentication.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="106"
