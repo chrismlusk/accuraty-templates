@@ -1,17 +1,7 @@
-//
-// Enable smooth scroll
-// ====================
-//
-// How to use this module:
-//
-//   `import enableSmoothScroll from './modules/enable-smooth-scroll';`
-//   `enableSmoothScroll();`
-// ----------------------------------------------------------------------------
+import isReducedMotion from './is-reduced-motion';
+import getElementStyle from './get-element-style';
 
-import isReducedMotion from '../utils/is-reduced-motion';
-import getElementStyle from '../utils/get-element-style';
-
-function enableSmoothScroll(providedOffset = 50) {
+export default function enableSmoothScroll(providedOffset = 50) {
   const links = document.querySelectorAll(
     'a[href^="#"]:not([href="#"]):not([class*="skip-link])'
   );
@@ -73,5 +63,3 @@ function enableSmoothScroll(providedOffset = 50) {
     link.addEventListener('click', handleAnchorLink);
   });
 }
-
-export default enableSmoothScroll;

@@ -1,4 +1,4 @@
-function skipToContent() {
+export default function skipToContent() {
   const main = document.querySelector('main');
   const link = document.createElement('a');
 
@@ -17,7 +17,5 @@ function skipToContent() {
     main.focus();
   });
 
-  document.querySelector('body').insertAdjacentElement('afterbegin', link);
+  document.body.insertAdjacentElement('afterbegin', link);
 }
-
-export default skipToContent;

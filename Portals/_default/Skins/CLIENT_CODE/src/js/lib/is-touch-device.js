@@ -1,4 +1,4 @@
-function isTouchDevice() {
+export default function isTouchDevice() {
   if (typeof window !== 'undefined') {
     return Boolean(
       'ontouchstart' in window || 'ontouchstart' in document.documentElement
@@ -7,5 +7,3 @@ function isTouchDevice() {
 
   return false;
 }
-
-export default isTouchDevice;

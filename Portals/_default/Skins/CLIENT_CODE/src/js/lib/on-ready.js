@@ -1,4 +1,4 @@
-function onReady(fn) {
+export default function onReady(fn) {
   const readyState = document.attachEvent
     ? document.readyState === 'complete'
     : document.readyState !== 'loading';
@@ -9,5 +9,3 @@ function onReady(fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
-
-export default onReady;

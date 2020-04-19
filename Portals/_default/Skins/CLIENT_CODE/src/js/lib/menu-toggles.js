@@ -1,12 +1,9 @@
-//
-// Enable menu toggles
-// ===================
-//
-// ...
-// ----------------------------------------------------------------------------
+export default function enableMenuToggles(selector = '.menu__toggle') {
+  if (typeof selector !== 'string') {
+    throw new Error('Menu toggle selector must be a string');
+  }
 
-function enableMenuToggles() {
-  const toggles = [...document.querySelectorAll('.menu__toggle')];
+  const toggles = [...document.querySelectorAll(selector)];
   if (!toggles.length) return;
 
   function toggleMenuList(event) {
@@ -24,5 +21,3 @@ function enableMenuToggles() {
     t.addEventListener('click', toggleMenuList);
   });
 }
-
-export default enableMenuToggles;

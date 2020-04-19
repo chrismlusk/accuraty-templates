@@ -1,4 +1,4 @@
-function getElementStyle(element, property) {
+export default function getElementStyle(element, property) {
   if (!element || !property) {
     throw new Error(
       'getElementStyle requires two parameters: (1) the element and (2) the style property'
@@ -16,5 +16,3 @@ function getElementStyle(element, property) {
 
   return window.getComputedStyle(element).getPropertyValue(property);
 }
-
-export default getElementStyle;

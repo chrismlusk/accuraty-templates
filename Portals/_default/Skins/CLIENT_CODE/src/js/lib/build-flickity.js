@@ -1,6 +1,7 @@
 import Flickity from 'flickity';
 
 // Most common Flickity settings used in our projects.
+// Available options: https://flickity.metafizzy.co/options.html
 const DEFAULT_OPTIONS = {
   autoPlay: false,
   cellAlign: 'left',
@@ -8,9 +9,9 @@ const DEFAULT_OPTIONS = {
   wrapAround: true,
 };
 
-function buildFlickity(element = '.carousel', providedOptions) {
-  if (typeof element !== 'string') {
-    throw new Error('Flickity element must be a string');
+export default function buildFlickity(element, providedOptions) {
+  if (typeof element === 'undefined') {
+    throw new Error('You forgot to pass Flickity an element');
   }
 
   // Create a new options object. Default properties must be first so
@@ -36,5 +37,3 @@ function buildFlickity(element = '.carousel', providedOptions) {
   // Return a new Flickity carousel ready to go.
   return flkty;
 }
-
-export default buildFlickity;

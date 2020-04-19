@@ -5,7 +5,7 @@
 // Resource: https://developers.google.com/youtube/player_parameters
 // ----------------------------------------------------------------------------
 
-function lazyLoadYouTube() {
+export default function lazyLoadYouTube() {
   const videos = [...document.querySelectorAll('.lazy-yt')];
   if (!videos.length) return;
 
@@ -40,5 +40,3 @@ function lazyLoadYouTube() {
     });
   });
 }
-
-export default lazyLoadYouTube;
