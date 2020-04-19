@@ -1,18 +1,6 @@
 const { name, faviconFile } = require('./project');
 
 module.exports = {
-  bootstrapJs: {
-    src: `./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js`,
-    dest: `./public/js/`,
-  },
-  flickityCss: {
-    src: `./node_modules/flickity/dist/flickity.min.css`,
-    dest: `./public/css/`,
-  },
-  flickityJs: {
-    src: `./node_modules/flickity/dist/flickity.pkgd.min.js`,
-    dest: `./public/js/`,
-  },
   fonts: {
     src: `./src/fonts/*`,
     dest: `./public/fonts/`,
@@ -42,6 +30,10 @@ module.exports = {
   containerStyles: {
     src: `./src/scss/Containers/*.scss`,
     dest: `../../Containers/${name}/`,
+  },
+  moduleStyles: {
+    src: `./src/scss/Modules/*.scss`,
+    dest: `./public/css`,
   },
   scripts: {
     src: `./src/js/**/*.js`,

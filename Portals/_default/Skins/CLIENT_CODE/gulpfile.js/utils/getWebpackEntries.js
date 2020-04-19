@@ -9,10 +9,9 @@ function getWebpackEntries() {
   const entries = {};
 
   fs.readdirSync(baseDir).forEach(file => {
-    const name = path.basename(file, ext);
-    const filepath = `${baseDir}/${name}`;
-
     if (path.extname(file) === ext) {
+      const name = path.basename(file, ext);
+      const filepath = `${baseDir}/${name}`;
       entries[name] = filepath;
     }
   });

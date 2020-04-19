@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
 const { paths, project } = require('../config');
-const { fonts, icons, bootstrapJs, flickityCss, flickityJs } = paths;
+const { fonts, icons } = paths;
 
 function getFonts() {
   if (!project.fonts) return Promise.resolve();
@@ -13,28 +13,7 @@ function getIcons() {
   return gulp.src(icons.src).pipe(gulp.dest(icons.dest));
 }
 
-function getBootstrapJs() {
-  if (!project.vendors.bootstrap) return Promise.resolve();
-  return gulp.src(bootstrapJs.src).pipe(gulp.dest(bootstrapJs.dest));
-}
-
-function getFlickityCss() {
-  if (!project.vendors.flickity) return Promise.resolve();
-  return gulp.src(flickityCss.src).pipe(gulp.dest(flickityCss.dest));
-}
-
-function getFlickityJs() {
-  if (!project.vendors.flickity) return Promise.resolve();
-  return gulp.src(flickityJs.src).pipe(gulp.dest(flickityJs.dest));
-}
-
-const assetsTask = gulp.series(
-  getFonts,
-  getIcons,
-  getBootstrapJs,
-  getFlickityCss,
-  getFlickityJs
-);
+const assetsTask = gulp.series(getFonts, getIcons);
 
 gulp.task('assets', assetsTask);
 module.exports = assetsTask;

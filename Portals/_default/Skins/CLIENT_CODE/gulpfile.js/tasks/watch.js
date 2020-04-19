@@ -4,10 +4,10 @@ const stylesTask = require('./styles');
 const scriptsTask = require('./scripts');
 
 const { paths, project } = require('../config');
-const { skinLayouts, containers } = project.styles;
+const { skinLayouts, modules, containers } = project.styles;
 
 function watchTask() {
-  if (skinLayouts || containers) {
+  if (skinLayouts || modules || containers) {
     gulp.watch(paths.styles.src, stylesTask);
   }
 

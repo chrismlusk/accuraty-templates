@@ -12,7 +12,7 @@ function stylelintTask() {
       stylelint({
         failAfterError: true,
         fix: true,
-        // reporters: [{ formatter: 'verbose', console: true }],
+        reporters: [{ formatter: 'verbose', console: true }],
       })
     )
     .pipe(gulp.dest('./src/scss'));
