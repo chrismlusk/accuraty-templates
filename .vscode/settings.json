@@ -1,7 +1,8 @@
 {
   "css.validate": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,

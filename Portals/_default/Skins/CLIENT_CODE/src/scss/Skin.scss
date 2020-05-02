@@ -1,17 +1,17 @@
 //
-// Integrate Bootstrap and custom code
-// ===================================
+// Integrate Bootstrap and custom theme
+// ====================================
 
-// core Bootstrap functions
+// Core Bootstrap functions
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/mixins";
 
-// custom variable/mixin overrides
-@import "_abstracts/functions";
-@import "_abstracts/variables";
-@import "_abstracts/mixins";
+// Custom theme overrides
+@import "theme/functions";
+@import "theme/variables";
+@import "theme/mixins";
 
-// use just what you need from Bootstrap
+// Use just what you need from Bootstrap
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/root";
 @import "../../node_modules/bootstrap/scss/reboot";
@@ -52,54 +52,48 @@
 
 
 //
-// Add custom code base
-// ====================
+// Add custom theme code base
+// ==========================
 
-@import "_base/fonts";
-@import "_base/animations";
-@import "_base/dnn-reset";
-@import "_base/dnn-module";
-@import "_base/base";
-@import "_base/type";
-@import "_base/images";
-@import "_base/code";
-@import "_base/grid";
-@import "_base/tables";
-@import "_base/svg";
+@import "theme/base/fonts";
+@import "theme/base/dnn-reset";
+@import "theme/base/dnn-module";
+@import "theme/base/base";
+@import "theme/base/type";
+@import "theme/base/images";
+@import "theme/base/grid";
+@import "theme/base/tables";
+@import "theme/base/svg";
 
 // overrides for core Bootstrap components first ...
-@import "_components/forms";
-@import "_components/custom-forms";
-@import "_components/buttons";
-@import "_components/dropdown";
-@import "_components/nav";
-@import "_components/navbar";
-@import "_components/card";
-@import "_components/breadcrumb";
-@import "_components/pagination";
-@import "_components/badge";
-@import "_components/jumbotron";
-@import "_components/alert";
-@import "_components/progress";
-@import "_components/list-group";
-@import "_components/close";
-@import "_components/toasts";
-@import "_components/modal";
-@import "_components/tooltip";
-@import "_components/popover";
-@import "_components/carousel";
-@import "_components/spinners";
+@import "theme/components/forms";
+@import "theme/components/custom-forms";
+@import "theme/components/buttons";
+@import "theme/components/dropdown";
+@import "theme/components/nav";
+@import "theme/components/navbar";
+@import "theme/components/card";
+@import "theme/components/breadcrumb";
+@import "theme/components/pagination";
+@import "theme/components/badge";
+@import "theme/components/jumbotron";
+@import "theme/components/alert";
+@import "theme/components/progress";
+@import "theme/components/list-group";
+@import "theme/components/close";
+@import "theme/components/toasts";
+@import "theme/components/modal";
+@import "theme/components/tooltip";
+@import "theme/components/popover";
+@import "theme/components/carousel";
+@import "theme/components/spinners";
 
 // ... then import custom components ...
-@import "_components/rich-text";
-@import "_components/skip-link";
-@import "_components/child-page";
-@import "_components/panes";
+@import "theme/components/rich-text";
+@import "theme/components/skip-link";
 
-// ... and then import third-party vendor overrides
-// @import "_components/carousel-flickity";
-// @import "_components/data-tables";
+@import "theme/layout/header";
+@import "theme/layout/main";
+@import "theme/layout/footer";
 
-@import "_layout/header";
-@import "_layout/main";
-@import "_layout/footer";
+// @import "theme/utilities/FILE_NAME_HERE";

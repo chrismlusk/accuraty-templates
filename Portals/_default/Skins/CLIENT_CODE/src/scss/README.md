@@ -1,34 +1,33 @@
 # SCSS
 
-The `scss/` folder includes skin stylesheets, module stylesheets, and sets of partials that are separated into a system of folders.
+The `scss/` folder includes theme styles and standalone modules.
 
 ## Architecture
 
 Our pattern is to split the codebase into meaningful, separated folders so you can easily find what you need.
 
-- `_abstracts/`
-- `_base/`
-- `_components/`
-- `_layout/`
-- `_utilities/`
-- `Containers/`
+- `theme/`
+  - `base/`
+  - `components/`
+  - `layout/`
+  - `utilities/`
+- `Modules/`
 - `*.scss` (skin stylesheets)
 
 ## Skin stylesheets
 
 The skin's primary stylesheets must be at the root of the `scss/` directory and must not begin with a leading underscore. `Skin.scss` must not be renamed. The others must match the name of their skin template file. For example, if you have an `Events.ascx` file, then the stylesheet must be `Events.scss`.
 
-These files are mostly just `@import` directives, however page-specific files (e.g., `Home.scss`) will often have overrides or page-specific components.
+These files are primarily `@import` directives, however page-specific files (e.g., `Home.scss`) will often have overrides or page-specific components.
 
 ## Partials
 
-Although not necessary, we prefix these directory names with an underscore just like partial files. This helps keep these folders distinct. Sass stylesheets then import whichever partials are needed according to the folder they live in, one after the other in the following order:
+Sass stylesheets import whichever partials are needed according to the folder they live in, one after the other in the following order:
 
-1. `_abstracts/`
-2. `_base/`
-3. `_components/`
-4. `_layout/`
-5. `_utilities/`
+1. `base/`
+2. `components/`
+3. `layout/`
+4. `utilities/`
 
 Generally, the only stylesheet that imports partials from each of these directories will be `Skin.scss`, since that is what compiles into the global stylesheet (`Skin.css`).
 
@@ -51,7 +50,7 @@ Bootstrap is the default framework for Accuraty projects and is a requirement fo
 
 Since our projects are built on Bootstrap, modifying these styles is something you will do on every project. One approach is to accept the Bootstrap code as is and then add overrides in our own stylesheets.
 
-For example, if the design calls for all buttons to have no rounded corners, you could override Bootstrap's `.btn` class in the `_buttons.scss` file inside the `_components/` folder like so:
+For example, if the design calls for all buttons to have no rounded corners, you could override Bootstrap's `.btn` class in the `_buttons.scss` file inside the `components/` folder like so:
 
 ```css
 .btn {

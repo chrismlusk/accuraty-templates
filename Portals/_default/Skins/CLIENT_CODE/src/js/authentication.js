@@ -1,32 +1,74 @@
-import onReady from './utils/on-ready';
+import { Module } from './app';
 
-function fixFormClasses() {
-  const inputs = [
-    ...document.querySelectorAll(
-      '.dnnFormItem input:not([type=checkbox]):not([type=radio])'
-    ),
-  ];
+class Authentication {
+  static defaults = {
+    dnnInput: '.dnnFormItem input:not([type=checkbox]):not([type=radio])',
+    inputClass: 'form-control',
+    dnnPrimaryButton: '.dnnPrimaryAction',
+    dnnSecondaryButton: '.dnnSecondaryAction',
+    buttonPrimaryClass: 'btn btn-primary',
+    buttonSecondaryClass: 'btn btn-outline-primary',
+    loadingClass: 'is-loading',
+  };
 
-  inputs.forEach(input => {
-    input.className = 'form-control';
-  });
+  constructor(element, options) {
+    this.element = element;
+    this.options = { ...Authentication.defaults, ...options };
+    this.init();
+  }
 
-  const primaryBtns = [...document.querySelectorAll('.dnnPrimaryAction')];
-  primaryBtns.forEach(btn => {
-    btn.className = 'btn btn-primary';
-  });
+  init() {
+    this.createChildRefs()
+      .layout()
+      .enable();
 
-  const secondaryBtns = [...document.querySelectorAll('.dnnSecondaryAction')];
-  secondaryBtns.forEach(btn => {
-    btn.className = 'btn btn-outline-primary';
-  });
+    return this;
+  }
+
+  createChildRefs() {
+    this.inputs = [
+      ...this.element.querySelectorAll(Authentication.defaults.dnnInput),
+    ];
+
+    this.primaryButtons = [
+      ...this.element.querySelectorAll(
+        Authentication.defaults.dnnPrimaryButton
+      ),
+    ];
+
+    this.secondaryButtons = [
+      ...this.element.querySelectorAll(
+        Authentication.defaults.dnnSecondaryButton
+      ),
+    ];
+
+    return this;
+  }
+
+  layout() {
+    this.inputs.forEach(input => {
+      input.className = Authentication.defaults.inputClass;
+    });
+
+    this.primaryButtons.forEach(btn => {
+      btn.className = Authentication.defaults.buttonPrimaryClass;
+    });
+
+    this.secondaryButtons.forEach(btn => {
+      btn.className = Authentication.defaults.buttonSecondaryClass;
+    });
+
+    return this;
+  }
+
+  enable() {
+    setTimeout(() => {
+      this.element.classList.remove(Authentication.defaults.loadingClass);
+    }, 250);
+
+    return this;
+  }
 }
 
-fixFormClasses();
-
-onReady(() => {
-  const wrapper = document.getElementById('authentication');
-  setTimeout(() => {
-    wrapper.classList.remove('is-loading');
-  }, 250);
-});
+const auth = new Module(Authentication);
+auth.init();

@@ -67,26 +67,24 @@ JS priorities and suggested order (note that * denotes a core DNN file):
   5.    jQuery*
   10.   jQuery UI*
   100.  Default*
-  101.  Vendor JS: Popper.js (for Bootstrap v4)
-  102.  Vendor JS: Bootstrap
-  105.  Custom JS: `scripts.js`
+  101.  Runtime: Code needed for Webpack to execute
+  102.  Vendors: Node modules (bundled by Webpack)
+  103.  Common: Code shared by multiple files (bundled by Webpack)
+  104.  Skin: Global scripts (bundle by Webpack)
 
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
-
---
-
-For Bootstrap v4: jQuery first, then Popper.js, then Bootstrap.
-
-Other vendor scripts and custom JS come next.
 ========================================================================== --%>
 
-<dnn:JQUERY
+<dnn:DnnJsInclude
+  FilePath="public/js/runtime.bundle.js"
+  PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
+  Priority="101"
   runat="server"
 />
 
 <dnn:DnnJsInclude
-  FilePath="public/js/bootstrap.bundle.min.js"
+  FilePath="public/js/vendors.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="102"
@@ -94,9 +92,17 @@ Other vendor scripts and custom JS come next.
 />
 
 <dnn:DnnJsInclude
-  FilePath="public/js/main.bundle.js"
+  FilePath="public/js/common.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
-  Priority="105"
+  Priority="103"
+  runat="server"
+/>
+
+<dnn:DnnJsInclude
+  FilePath="public/js/Skin.bundle.js"
+  PathNameAlias="SkinPath"
+  ForceProvider="DnnFormBottomProvider"
+  Priority="104"
   runat="server"
 />

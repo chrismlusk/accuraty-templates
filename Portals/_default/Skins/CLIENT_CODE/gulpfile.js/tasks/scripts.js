@@ -24,17 +24,35 @@ const WEBPACK_CONFIG = {
     filename: '[name].bundle.js',
     path: resolve(process.env.INIT_CWD, 'public/js'),
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   stats: {
     all: false,
     assets: true,
   },
   plugins: [new FriendlyErrorsPlugin()],
   optimization: {
-    minimizer: [new TerserPlugin({})],
+    minimizer: [
+      new TerserPlugin({
+        // chunkFilter: chunk => !chunk.name.includes('vendors'),
+        // exclude: /vendors/,
+      }),
+    ],
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
-      name: false,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'initial',
+          enforce: true,
+        },
+        // common: {
+        //   name: 'common',
+        //   chunks: 'initial',
+        //   minChunks: 2,
+        //   reuseExistingChunk: true,
+        // },
+      },
     },
   },
   module: {
@@ -46,6 +64,10 @@ const WEBPACK_CONFIG = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
+            plugins: [
+              '@babel/plugin-transform-runtime',
+              '@babel/plugin-proposal-class-properties',
+            ],
           },
         },
       },

@@ -1,13 +1,13 @@
 <!--#include file="includes/_preheader.ascx"-->
 <!--#include file="includes/_header.ascx"-->
 
-<dnn:DnnJsInclude
-  FilePath="public/js/home.bundle.js"
+<%-- <dnn:DnnJsInclude
+  FilePath="public/js/Home.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="106"
   runat="server"
-/>
+/> --%>
 
 <main class="main" role="main" id="home">
 
@@ -19,7 +19,7 @@
           <div
             id="ContentPane"
             data-name="ContentPane"
-            class="col-12  pane pane-content"
+            class="col-12"
             visible="false"
             runat="server"
           ></div>
