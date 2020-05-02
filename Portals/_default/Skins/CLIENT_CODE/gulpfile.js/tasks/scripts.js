@@ -33,7 +33,8 @@ const WEBPACK_CONFIG = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        chunkFilter: chunk => !chunk.name.includes('vendors'),
+        // chunkFilter: chunk => !chunk.name.includes('vendors'),
+        // exclude: /vendors/,
       }),
     ],
     runtimeChunk: 'single',
@@ -45,12 +46,12 @@ const WEBPACK_CONFIG = {
           chunks: 'initial',
           enforce: true,
         },
-        common: {
-          name: 'common',
-          chunks: 'initial',
-          minChunks: 2,
-          reuseExistingChunk: true,
-        },
+        // common: {
+        //   name: 'common',
+        //   chunks: 'initial',
+        //   minChunks: 2,
+        //   reuseExistingChunk: true,
+        // },
       },
     },
   },
