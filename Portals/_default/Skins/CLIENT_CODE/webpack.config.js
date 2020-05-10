@@ -15,8 +15,7 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        // chunkFilter: chunk => !chunk.name.includes('vendors'),
-        // exclude: /vendors/,
+        exclude: /vendors/,
       }),
     ],
     runtimeChunk: 'single',
@@ -55,18 +54,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    // new BrowserSyncPlugin({
-    //   host: 'localhost',
-    //   port: 3000,
-    //   proxy: 'http://rrma.accuraty.ws/',
-    //   open: false,
-    // }),
-    new FriendlyErrorsPlugin(),
-    // new CleanWebpackPlugin({
-    //   cleanAfterEveryBuildPatterns: ['!media/**/*'],
-    // }),
-  ],
+  plugins: [new FriendlyErrorsPlugin()],
   watchOptions: {
     ignored: ['./node_modules/'],
   },
