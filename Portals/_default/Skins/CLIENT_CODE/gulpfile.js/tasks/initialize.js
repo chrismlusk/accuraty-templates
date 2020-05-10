@@ -56,5 +56,4 @@ const initTask = gulp.series(
 
 const skipTask = () => Promise.resolve();
 
-gulp.task('init', !isInitialized ? initTask : skipTask);
-module.exports = initTask;
+exports.initialize = !isInitialized ? initTask : skipTask;

@@ -3,9 +3,9 @@
 // =================
 
 // Core Bootstrap abstracts
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
 
 // Custom theme overrides
 @import "theme/functions";
@@ -30,5 +30,8 @@
 
   &.main {}
 } // Important! This closes `#home` and must come *after* overrides.
+
+
+
 
 // Begin adding page-specific components or new styles here ...

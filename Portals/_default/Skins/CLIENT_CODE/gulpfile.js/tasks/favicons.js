@@ -10,7 +10,7 @@ const $ = plugins.realFavicon;
 // File where the favicon HTML markup is stored
 const FAVICON_DATA = 'real-favicon-generator.json';
 
-// The settings in `generateFaviconsTask` below should be fine for most icons.
+// The settings in `generateFavicons` below should be fine for most icons.
 // But if you want to customize them, go to https://RealFaviconGenerator.net,
 // upload your favicon image (the file should be 512x512 for optimal results),
 // and adjust the settings. When you are finished, generate your code and then
@@ -30,7 +30,7 @@ const CUSTOM_SETTINGS_OPTIONS = {};
 
 // Generate the icons. This task takes a few seconds to complete because
 // it makes a request to RealFaviconGenerator.net to build all the assets.
-function generateFaviconsTask(done) {
+function generateFavicons(done) {
   if (!isProduction) done();
 
   realFavicon.generateFavicon(
@@ -54,7 +54,7 @@ function generateFaviconsTask(done) {
 
 // Get the generated markup from the response and inject it into the
 // function in `controls/meta.ascx` so that it is added to the `<head>` tag.
-function injectFaviconsMarkupTask() {
+function injectFaviconsMarkup() {
   if (!isProduction || !project.faviconFile) return Promise.resolve();
 
   // We have to parse the JSON so we can grab only the `html_code` value.
@@ -74,13 +74,4 @@ function injectFaviconsMarkupTask() {
     .pipe(gulp.dest(paths.favicons.markupOutputDirectory));
 }
 
-const allFaviconsTask = gulp.series(
-  generateFaviconsTask,
-  injectFaviconsMarkupTask
-);
-
-gulp.task('generate-favicons', generateFaviconsTask);
-gulp.task('inject-favicons-markup', injectFaviconsMarkupTask);
-
-gulp.task('favicons', allFaviconsTask);
-module.exports = allFaviconsTask;
+exports.favicons = gulp.series(generateFavicons, injectFaviconsMarkup);

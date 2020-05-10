@@ -5,7 +5,9 @@
 const gulpSass = {
   options: {
     precision: 6,
-    outputStyle: 'nested',
+    outputStyle:
+      process.env.PROJECT_MODE === 'production' ? 'compressed' : 'nested',
+    includePaths: ['./node_modules', './src/scss'],
   },
 };
 

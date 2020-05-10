@@ -1,9 +1,10 @@
 const gulp = require('gulp');
 const stylelint = require('gulp-stylelint');
+const eslint = require('gulp-eslint');
 
 const { paths, project } = require('../config');
 
-function stylelintTask() {
+function lintStyles() {
   if (!project.styles) return Promise.resolve();
 
   return gulp
@@ -18,5 +19,15 @@ function stylelintTask() {
     .pipe(gulp.dest('./src/scss'));
 }
 
-gulp.task('stylelint', stylelintTask);
-module.exports = stylelintTask;
+function lintScripts() {
+  if (!project.scripts) return Promise.resolve();
+
+  return gulp
+    .src(paths.scripts.src)
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+}
+
+exports.lintStyles = lintStyles;
+exports.lintScripts = lintScripts;

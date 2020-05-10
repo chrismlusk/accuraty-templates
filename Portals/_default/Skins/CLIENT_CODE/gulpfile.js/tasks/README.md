@@ -4,16 +4,12 @@
 
 ## Included tasks
 
-- init
-- assets
-- images
-- styles
-- scripts
-- build
-- watch
 - clean
-- default
-
-### Init
-
-...
+- favicons
+- images
+- initialize
+- lint
+- media
+- scripts
+- styles
+- watch
