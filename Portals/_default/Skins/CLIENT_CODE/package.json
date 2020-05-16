@@ -17,9 +17,9 @@
   "author": "Chris Lusk",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "flickity": "^2.2.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "srraf": "^3.2.0"
   },
@@ -51,7 +51,7 @@
     "gulp-stylelint": "^13.0.0",
     "imagemin-pngquant": "^8.0.0",
     "node-sass": "^4.14.1",
-    "postcss": "^7.0.29",
+    "postcss": "^7.0.30",
     "prettier": "^1.19.1",
     "stylelint": "^13.3.3",
     "stylelint-config-twbs-bootstrap": "^2.0.2",

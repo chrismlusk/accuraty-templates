@@ -50,14 +50,6 @@ a {
     outline: $link-focus-outline-width $link-focus-outline-style $link-focus-outline-color;
   }
 
-  &.is-inverse {
-    color: $link-inverse-color;
-
-    @include hover-focus() {
-      color: $link-inverse-hover-color;
-    }
-  }
-
   &.is-facebook {
     @include hover-focus() {
       color: $facebook-primary !important;
