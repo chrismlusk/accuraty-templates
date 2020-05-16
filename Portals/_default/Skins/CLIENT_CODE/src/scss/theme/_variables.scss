@@ -396,6 +396,8 @@ $escaped-characters: (
   ("<","%3c"),
   (">","%3e"),
   ("#","%23"),
+  ("(","%28"),
+  (")","%29"),
 );
 
 
@@ -407,7 +409,7 @@ $escaped-characters: (
 //
 // Quickly modify global styling by enabling or disabling optional features.
 //
-// Reference: bootstrap/_variables.scss:112
+// Reference: bootstrap/_variables.scss:114
 // ----------------------------------------------------------------------------
 
 $enable-caret:                              true;
@@ -433,7 +435,7 @@ $enable-deprecation-messages:               true;
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Add more entries to the `$spacers` map for more variation.
 //
-// Reference: bootstrap/_variables.scss:131
+// Reference: bootstrap/_variables.scss:133
 // ----------------------------------------------------------------------------
 
 $spacer: 1rem;
@@ -472,7 +474,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 //
-// Reference: bootstrap/_variables.scss:167
+// Reference: bootstrap/_variables.scss:169
 // ----------------------------------------------------------------------------
 
 $body-bg:                         $white;
@@ -487,7 +489,7 @@ $body-color:                      $gray-900;
 //
 // Style anchor elements.
 //
-// Reference: bootstrap/_variables.scss:175
+// Reference: bootstrap/_variables.scss:177
 // ----------------------------------------------------------------------------
 
 $link-color:                      theme-color("primary");
@@ -507,18 +509,6 @@ $link-active-bg:                  rgba($gray-800, .075);
 $link-active-border-color:        transparent;
 
 // Custom variables added by Accuraty
-$link-inverse-color:              $white;
-$link-inverse-bg:                 transparent;
-$link-inverse-border-width:       $link-border-width;
-$link-inverse-border-color:       rgba($white, .5);
-$link-inverse-hover-color:        rgba($white, .6);
-$link-inverse-hover-bg:           transparent;
-$link-inverse-hover-border-color: transparent;
-$link-inverse-active-color:       $link-inverse-hover-color;
-$link-inverse-active-bg:          transparent;
-$link-inverse-active-border-color: transparent;
-
-// Custom variables added by Accuraty
 $link-focus-outline-width:        5px;
 $link-focus-outline-style:        auto;
 $link-focus-outline-color:        -webkit-focus-ring-color;
@@ -532,7 +522,7 @@ $link-focus-outline-color:        -webkit-focus-ring-color;
 //
 // Style `<p>` element.
 //
-// Reference: bootstrap/_variables.scss:186
+// Reference: bootstrap/_variables.scss:188
 // ----------------------------------------------------------------------------
 
 $paragraph-margin-bottom:         1em; // ASL uses `em` instead of `rem`
@@ -547,7 +537,7 @@ $paragraph-margin-bottom:         1em; // ASL uses `em` instead of `rem`
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 //
-// Reference: bootstrap/_variables.scss:193
+// Reference: bootstrap/_variables.scss:195
 // ----------------------------------------------------------------------------
 
 $grid-breakpoints: (
@@ -556,7 +546,7 @@ $grid-breakpoints: (
   md:  768px,
   lg:  992px,
   xl:  1200px,
-  xxl: 1536px // custom size added by Accuraty
+  xxl: 1440px // custom size added by Accuraty
 );
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -571,7 +561,7 @@ $grid-breakpoints: (
 //
 // Define the maximum width of `.container` for different screen sizes.
 //
-// Reference: bootstrap/_variables.scss:210
+// Reference: bootstrap/_variables.scss:212
 // ----------------------------------------------------------------------------
 
 $container-max-widths: (
@@ -593,7 +583,7 @@ $container-max-widths: (
 //
 // Set the number of columns and specifiy the width of the gutters.
 //
-// Reference: bootstrap/_variables.scss:224
+// Reference: bootstrap/_variables.scss:226
 // ----------------------------------------------------------------------------
 
 $grid-columns:                $asl--grid-columns;
@@ -609,7 +599,7 @@ $grid-row-columns:            $asl--grid-row-columns;
 //
 // Define common padding and border radius sizes and more.
 //
-// Reference: bootstrap/_variables.scss:233
+// Reference: bootstrap/_variables.scss:235
 // ----------------------------------------------------------------------------
 
 $line-height-lg:              $asl--line-height-normal;
@@ -632,7 +622,7 @@ $box-shadow-lg:               $asl--box-shadow-lg;
 $box-shadow-hover:            $asl--box-shadow-hover;
 
 $component-active-color:      $white;
-$component-active-bg:         $primary;
+$component-active-bg:         theme-color("primary");
 
 $caret-width:                 .3em;
 $caret-vertical-align:        ($caret-width * .85);
@@ -666,7 +656,7 @@ $embed-responsive-aspect-ratios: join(
 //
 // Font, line-height, and color for body text, headings, and more.
 //
-// Reference: bootstrap/_variables.scss:276
+// Reference: bootstrap/_variables.scss:278
 // ----------------------------------------------------------------------------
 
 $font-family-sans-serif:      $asl--font-family-sans-serif;
@@ -764,7 +754,7 @@ $hr-margin-y:                 $spacer;
 //
 // Customizes `.table` component with basic values used with all variations.
 //
-// Reference: bootstrap/_variables.scss:351
+// Reference: bootstrap/_variables.scss:353
 // ----------------------------------------------------------------------------
 
 $table-cell-padding:          .75rem;
@@ -778,7 +768,7 @@ $table-hover-bg:              rgba($black, .075);
 $table-active-bg:             $table-hover-bg;
 
 $table-border-width:          $border-width;
-$table-border-color:          $gray-300;
+$table-border-color:          $border-color;
 
 $table-head-bg:               $gray-200;
 $table-head-color:            $gray-700;
@@ -806,7 +796,7 @@ $table-border-level:          -6;
 //
 // Shared variables reassigned to `$input-` and `$btn-` specific variables.
 //
-// Reference: bootstrap/_variables.scss:386
+// Reference: bootstrap/_variables.scss:388
 // ----------------------------------------------------------------------------
 
 $input-btn-padding-y:         .375rem;
@@ -840,7 +830,7 @@ $input-btn-border-width:      $border-width;
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 //
-// Reference: bootstrap/_variables.scss:413
+// Reference: bootstrap/_variables.scss:415
 // ----------------------------------------------------------------------------
 
 $btn-padding-y:               $input-btn-padding-y;
@@ -887,7 +877,7 @@ $btn-transition:              color $transition-duration $transition-timing-func
 // # Forms
 // =======
 //
-// Reference: bootstrap/_variables.scss:455
+// Reference: bootstrap/_variables.scss:457
 // ----------------------------------------------------------------------------
 
 $label-margin-bottom:                   .5rem;
@@ -965,7 +955,7 @@ $input-group-addon-border-color:        $input-border-color;
 // # Custom forms
 // ==============
 //
-// Reference: bootstrap/_variables.scss:525
+// Reference: bootstrap/_variables.scss:529
 // ----------------------------------------------------------------------------
 
 $custom-forms-transition:               background-color $transition-duration $transition-timing-function, border-color $transition-duration $transition-timing-function, box-shadow $transition-duration $transition-timing-function;
@@ -1105,7 +1095,7 @@ $custom-file-text: (
 // # Form validation
 // =================
 //
-// Reference: bootstrap/_variables.scss:656
+// Reference: bootstrap/_variables.scss:658
 // ----------------------------------------------------------------------------
 
 $form-feedback-margin-top:          $form-text-margin-top;
@@ -1142,7 +1132,7 @@ $form-validation-states: map-merge(
 //
 // Warning! Avoid customizing these values. They are designed to work together.
 //
-// Reference: bootstrap/_variables.scss:684
+// Reference: bootstrap/_variables.scss:686
 // ----------------------------------------------------------------------------
 
 // $zindex-dropdown:                   1000;
@@ -1160,7 +1150,7 @@ $form-validation-states: map-merge(
 // # Navs
 // ======
 //
-// Reference: bootstrap/_variables.scss:698
+// Reference: bootstrap/_variables.scss:700
 // ----------------------------------------------------------------------------
 
 $nav-link-padding-y:                .5rem;
@@ -1189,7 +1179,7 @@ $nav-divider-margin-y:              $spacer / 2;
 // # Navbar
 // ========
 //
-// Reference: bootstrap/_variables.scss:720
+// Reference: bootstrap/_variables.scss:722
 // ----------------------------------------------------------------------------
 
 $navbar-padding-y:                  $spacer / 2;
@@ -1240,7 +1230,7 @@ $navbar-height-md:                  $asl--navbar-height-md;
 //
 // Dropdown menu container and contents.
 //
-// Reference: bootstrap/_variables.scss:758
+// Reference: bootstrap/_variables.scss:760
 // ----------------------------------------------------------------------------
 
 $dropdown-min-width:                10rem;
@@ -1270,6 +1260,7 @@ $dropdown-item-padding-y:           .25rem;
 $dropdown-item-padding-x:           1.5rem;
 
 $dropdown-header-color:             $gray-600;
+$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x;
 
 
 
@@ -1278,7 +1269,7 @@ $dropdown-header-color:             $gray-600;
 // # Pagination
 // ============
 //
-// Reference: bootstrap/_variables.scss:791
+// Reference: bootstrap/_variables.scss:794
 // ----------------------------------------------------------------------------
 
 $pagination-padding-y:              .5rem;
@@ -1316,7 +1307,7 @@ $pagination-disabled-border-color:  $gray-300;
 // # Jumbotron
 // ===========
 //
-// Reference: bootstrap/_variables.scss:822
+// Reference: bootstrap/_variables.scss:825
 // ----------------------------------------------------------------------------
 
 $jumbotron-padding:                 2rem;
@@ -1330,7 +1321,7 @@ $jumbotron-bg:                      $gray-200;
 // # Cards
 // =======
 //
-// Reference: bootstrap/_variables.scss:829
+// Reference: bootstrap/_variables.scss:832
 // ----------------------------------------------------------------------------
 
 $card-spacer-y:                     .75rem;
@@ -1361,7 +1352,7 @@ $card-columns-margin:               $card-spacer-y;
 // # Tooltips
 // ==========
 //
-// Reference: bootstrap/_variables.scss:853
+// Reference: bootstrap/_variables.scss:856
 // ----------------------------------------------------------------------------
 
 $tooltip-font-size:                 $font-size-sm;
@@ -1393,7 +1384,7 @@ $form-feedback-tooltip-border-radius: $tooltip-border-radius;
 // # Popovers
 // ==========
 //
-// Reference: bootstrap/_variables.scss:878
+// Reference: bootstrap/_variables.scss:881
 // ----------------------------------------------------------------------------
 
 $popover-font-size:                 $font-size-sm;
@@ -1427,7 +1418,7 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05);
 // # Toasts
 // ========
 //
-// Reference: bootstrap/_variables.scss:905
+// Reference: bootstrap/_variables.scss:908
 // ----------------------------------------------------------------------------
 
 $toast-max-width:                   350px;
@@ -1452,7 +1443,7 @@ $toast-header-border-color:         rgba(0, 0, 0, .05);
 // # Badges
 // ========
 //
-// Reference: bootstrap/_variables.scss:923
+// Reference: bootstrap/_variables.scss:926
 // ----------------------------------------------------------------------------
 
 $badge-font-size:                   75%;
@@ -1476,7 +1467,7 @@ $badge-pill-border-radius:          10rem;
 // # Modals
 // ========
 //
-// Reference: bootstrap/_variables.scss:940
+// Reference: bootstrap/_variables.scss:943
 // ----------------------------------------------------------------------------
 
 $modal-inner-padding:               1rem; // applied to modal body
@@ -1526,7 +1517,7 @@ $modal-scale-transform:             scale(1.02);
 //
 // Define alert colors, border radius, and padding.
 //
-// Reference: bootstrap/_variables.scss:983
+// Reference: bootstrap/_variables.scss:986
 // ----------------------------------------------------------------------------
 
 $alert-padding-y:                   .75rem;
@@ -1547,7 +1538,7 @@ $alert-color-level:                 6;
 // # Progress bars
 // ===============
 //
-// Reference: bootstrap/_variables.scss:999
+// Reference: bootstrap/_variables.scss:1002
 // ----------------------------------------------------------------------------
 
 $progress-height:                   1rem;
@@ -1567,7 +1558,7 @@ $progress-bar-transition:           width 580ms ease;
 // # List group
 // ============
 //
-// Reference: bootstrap/_variables.scss:1012
+// Reference: bootstrap/_variables.scss:1015
 // ----------------------------------------------------------------------------
 
 $list-group-color:                  null;
@@ -1600,7 +1591,7 @@ $list-group-action-active-bg:       $gray-200;
 // # Image thumbnails
 // ==================
 //
-// Reference: bootstrap/_variables.scss:1038
+// Reference: bootstrap/_variables.scss:1041
 // ----------------------------------------------------------------------------
 
 $thumbnail-padding:                 .25rem;
@@ -1617,7 +1608,7 @@ $thumbnail-box-shadow:              0 1px 2px rgba($black, .075);
 // # Figures
 // =========
 //
-// Reference: bootstrap/_variables.scss:1048
+// Reference: bootstrap/_variables.scss:1051
 // ----------------------------------------------------------------------------
 
 $figure-caption-font-size:          90%;
@@ -1630,7 +1621,7 @@ $figure-caption-color:              $gray-600;
 // # Breadcrumbs
 // =============
 //
-// Reference: bootstrap/_variables.scss:1054
+// Reference: bootstrap/_variables.scss:1057
 // ----------------------------------------------------------------------------
 
 $breadcrumb-font-size:              null;
@@ -1659,7 +1650,7 @@ $breadcrumb-hover-color:            $body-color;
 // # Carousel
 // ==========
 //
-// Reference: bootstrap/_variables.scss:1072
+// Reference: bootstrap/_variables.scss:1075
 // ----------------------------------------------------------------------------
 
 $carousel-control-color:             $white;
@@ -1693,7 +1684,7 @@ $carousel-transition:                transform $carousel-transition-duration eas
 // # Spinners
 // ==========
 //
-// Reference: bootstrap/_variables.scss:1099
+// Reference: bootstrap/_variables.scss:1102
 // ----------------------------------------------------------------------------
 
 $spinner-width:                     2rem;
@@ -1711,7 +1702,7 @@ $spinner-border-width-sm:           .2em;
 // # Close
 // =======
 //
-// Reference: bootstrap/_variables.scss:1110
+// Reference: bootstrap/_variables.scss:1113
 // ----------------------------------------------------------------------------
 
 $close-font-size:                   $font-size-base * 1.5;
@@ -1726,7 +1717,7 @@ $close-text-shadow:                 0 1px 0 $white;
 // # Code
 // ======
 //
-// Reference: bootstrap/_variables.scss:1118
+// Reference: bootstrap/_variables.scss:1121
 // ----------------------------------------------------------------------------
 
 $code-font-size:                    87.5%;
@@ -1748,12 +1739,13 @@ $pre-scrollable-max-height:         340px;
 // # Utilities
 // ===========
 //
-// Reference: bootstrap/_variables.scss:1133
+// Reference: bootstrap/_variables.scss:1136
 // ----------------------------------------------------------------------------
 
 $displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex;
 $overflows: auto, hidden;
 $positions: static, relative, absolute, fixed, sticky;
+$user-selects: all, auto, none;
 
 
 
@@ -1762,7 +1754,7 @@ $positions: static, relative, absolute, fixed, sticky;
 // # Printing
 // ==========
 //
-// Reference: bootstrap/_variables.scss:1140
+// Reference: bootstrap/_variables.scss:1143
 // ----------------------------------------------------------------------------
 
 $print-page-size:                   a3;
