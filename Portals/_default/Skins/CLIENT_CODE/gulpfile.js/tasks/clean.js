@@ -1,24 +1,18 @@
-const gulp = require('gulp');
 const del = require('del');
-
-const { name, mode } = require('../config').project;
+const { project } = require('../config');
 
 function cleanTask() {
   const allCompiledFiles = [
-    `.tmp/`,
     `./*.css`,
     `./*.css.map`,
-    `../../Containers/${name}/*.css`,
-    `../../Containers/${name}/*.css.map`,
+    `../../Containers/${project.name}/*.css`,
+    `../../Containers/${project.name}/*.css.map`,
     `public/*`,
     `!public/.git`,
     `real-favicon-generator.json`,
   ];
 
-  return del(mode === 'production' ? ['.tmp/'] : allCompiledFiles, {
-    force: true,
-  });
+  return del(allCompiledFiles, { force: true });
 }
 
-gulp.task('clean', cleanTask);
-module.exports = cleanTask;
+exports.clean = cleanTask;

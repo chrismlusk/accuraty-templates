@@ -1,24 +1,23 @@
 const gulp = require('gulp');
-const assetsTask = require('./assets');
-const stylesTask = require('./styles');
-const scriptsTask = require('./scripts');
+const { media } = require('./media');
+const { styles } = require('./styles');
+const { scripts } = require('./scripts');
 
 const { paths, project } = require('../config');
 const { skinLayouts, modules, containers } = project.styles;
 
-function watchTask() {
+function watch() {
   if (skinLayouts || modules || containers) {
-    gulp.watch(paths.styles.src, stylesTask);
+    gulp.watch(paths.styles.src, styles);
   }
 
   if (project.scripts) {
-    gulp.watch(paths.scripts.src, scriptsTask);
+    gulp.watch(paths.scripts.src, scripts);
   }
 
-  if (project.fonts || project.icons) {
-    gulp.watch(paths.icons.src, assetsTask);
+  if (project.fonts || project.icons || project.images) {
+    gulp.watch([paths.fonts.src, paths.icons.src, paths.images.src], media);
   }
 }
 
-gulp.task('watch', watchTask);
-module.exports = watchTask;
+exports.watch = watch;
