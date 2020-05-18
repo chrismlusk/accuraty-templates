@@ -1,11 +1,15 @@
+// stylelint-disable selector-list-comma-newline-after
+
 // ============================================================================
 //
 //  [Table of Contents]
 //
 //  - Headings
+//  - Lead paragraph
 //  - Display type
 //  - Horizontal rules
 //  - Emphasis
+//  - Lists
 //  - Blockquote
 //
 // ============================================================================
@@ -22,12 +26,8 @@
 //    inline text or buttons for links is generally a better approach.
 // ----------------------------------------------------------------------------
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
 
   a {
     font-weight: inherit !important; // 1
@@ -42,17 +42,26 @@ h6 {
   }
 }
 
-// h1 {}
+// h1, .h1 {}
 
-// h2 {}
+// h2, .h2 {}
 
-// h3 {}
+// h3, .h3 {}
 
-// h4 {}
+// h4, .h4 {}
 
-// h5 {}
+// h5, .h5 {}
 
-// h6 {}
+// h6, .h6 {}
+
+
+
+
+//
+// Lead paragraph
+// ==============
+
+// .lead {}
 
 
 
@@ -87,6 +96,19 @@ h6 {
 
 // mark,
 // .mark {}
+
+
+
+
+//
+// Lists
+// =====
+
+// .list-unstyled {}
+
+// .list-inline {}
+
+// .list-inline-item {}
 
 
 

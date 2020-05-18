@@ -19,10 +19,6 @@
   position: relative;
   clear: both;
   color: $body-color;
-
-  & + & {
-    margin-top: ($spacer * 2);
-  }
 }
 
 
