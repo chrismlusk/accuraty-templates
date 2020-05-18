@@ -11,7 +11,7 @@ const { paths, plugins, project } = require('../config');
 const { skinLayoutStyles, containerStyles, moduleStyles } = paths;
 const { fixMapPath } = require('../utils');
 
-const isProduction = process.env.PROJECT_MODE === 'production';
+const isProduction = project.mode === 'production';
 
 // explicitly set compiler (https://github.com/dlmanning/gulp-sass#basic-usage)
 sass.compiler = require('node-sass');

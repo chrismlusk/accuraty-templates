@@ -4,7 +4,7 @@ const fs = require('fs');
 const replace = require('gulp-replace');
 
 const { paths, plugins, project } = require('../config');
-const isProduction = process.env.PROJECT_MODE === 'production';
+const isProduction = project.mode === 'production';
 const $ = plugins.realFavicon;
 
 // File where the favicon HTML markup is stored
@@ -37,7 +37,7 @@ function generateFavicons(done) {
     {
       masterPicture: paths.favicons.src,
       dest: paths.favicons.dest,
-      iconsPath: `/Portals/_default/Skins/${project.name}/public/favicons/`,
+      iconsPath: `/Portals/_default/Skins/${project.name}/public/images/`,
       design: {
         ...$.DEFAULT_DESIGN_OPTIONS,
         ...CUSTOM_DESIGN_OPTIONS,

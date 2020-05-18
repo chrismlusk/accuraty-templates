@@ -18,7 +18,7 @@ module.exports = {
   },
   favicons: {
     src: `${src}/images/${faviconFile}`,
-    dest: `${dist}/favicons`,
+    dest: `${dist}/images`,
     markupOutput: `./controls/meta.ascx`,
     markupOutputDirectory: `./controls`,
   },

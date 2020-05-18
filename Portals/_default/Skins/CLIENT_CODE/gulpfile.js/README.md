@@ -1,6 +1,6 @@
 # Gulpfile.js
 
-Contains all files related to the Gulp build process. This is how we compile stylesheets, optimize images, bundle scripts. We also extract vendor resources from the `node_modules/` folder and add them to the skin's `public/` folder. Basically, anything that is automated is run through this directory.
+Contains all files related to the Gulp build process. This is how we compile stylesheets, optimize images, bundle scripts. Basically, anything that is automated is run through this directory.
 
 ## Overview
 

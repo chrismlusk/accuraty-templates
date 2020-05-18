@@ -2,14 +2,11 @@ const gulp = require('gulp');
 const fs = require('fs');
 const replace = require('gulp-replace');
 
-const { isTrue } = require('../utils');
-const { name } = require('../config').project;
-
-const isInitialized = isTrue(process.env.PROJECT_INITIALIZED);
+const { project } = require('../config');
 
 function setSassClientCode() {
   const pattern = /\$asl--client-code:\\?.*/g;
-  const updated = `$asl--client-code: "${name}";`;
+  const updated = `$asl--client-code: "${project.name}";`;
 
   return gulp
     .src('./src/scss/theme/_variables.scss')
@@ -31,8 +28,8 @@ function setDirectoryNames() {
   }
 
   // Run the function for the Skin and Containers directories.
-  renameDir(`../CLIENT_CODE`, `../${name}`);
-  renameDir(`../../Containers/CLIENT_CODE`, `../../Containers/${name}`);
+  renameDir(`../CLIENT_CODE`, `../${project.name}`);
+  renameDir(`../../Containers/CLIENT_CODE`, `../../Containers/${project.name}`);
 
   // Return a resolved Promise to continue the Gulp build.
   return Promise.resolve();
@@ -56,4 +53,4 @@ const initTask = gulp.series(
 
 const skipTask = () => Promise.resolve();
 
-exports.initialize = !isInitialized ? initTask : skipTask;
+exports.initialize = !project.initialized ? initTask : skipTask;
