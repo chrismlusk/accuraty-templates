@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 
 const { paths, plugins, project } = require('../config');
@@ -20,7 +19,7 @@ function imagesTask() {
   if (!project.images) return Promise.resolve();
   return gulp
     .src(paths.images.src)
-    .pipe(cache(imagemin($.plugins, $.options)))
+    .pipe(imagemin($.plugins, $.options))
     .pipe(gulp.dest(paths.images.dest));
 }
 

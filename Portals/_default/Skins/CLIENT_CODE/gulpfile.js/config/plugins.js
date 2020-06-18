@@ -50,11 +50,12 @@ const imagemin = {
     imageminPlugin.gifsicle({ interlaced: true }),
     imageminPlugin.svgo({
       plugins: [
-        { removeTitle: false },
         { cleanupAttrs: true },
-        { removeComments: true },
-        { removeViewBox: false },
         { cleanupIDs: true },
+        { removeComments: true },
+        { removeStyleElement: true },
+        { removeTitle: false },
+        { removeViewBox: false },
       ],
     }),
     imageminPlugin.mozjpeg({
