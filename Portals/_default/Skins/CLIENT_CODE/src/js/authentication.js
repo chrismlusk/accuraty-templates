@@ -18,9 +18,7 @@ class Authentication {
   }
 
   init() {
-    this.createChildRefs()
-      .layout()
-      .enable();
+    this.createChildRefs().layout().enable();
 
     return this;
   }
