@@ -27,12 +27,6 @@ module.exports = {
           chunks: 'initial',
           enforce: true,
         },
-        // common: {
-        //   name: 'common',
-        //   chunks: 'initial',
-        //   minChunks: 2,
-        //   reuseExistingChunk: true,
-        // },
       },
     },
   },
