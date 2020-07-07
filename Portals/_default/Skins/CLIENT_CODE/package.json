@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp",
-    "clean": "gulp clean"
+    "clean": "gulp clean",
+    "favicons": "gulp favicons"
   },
   "private": true,
   "repository": {
