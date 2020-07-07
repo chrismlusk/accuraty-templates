@@ -8,7 +8,6 @@ function cleanTask() {
     `../../Containers/${project.name}/*.css`,
     `../../Containers/${project.name}/*.css.map`,
     `public/*`,
-    `!public/.git`,
     `real-favicon-generator.json`,
   ];
 

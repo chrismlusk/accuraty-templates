@@ -1,9 +1,16 @@
 const { name, faviconFile } = require('./project');
 
-const src = `./src`;
-const dist = `./public`;
+const SRC_NAME = 'src';
+const DIST_NAME = 'public';
+
+const src = `./${SRC_NAME}`;
+const dist = `./${DIST_NAME}`;
 
 module.exports = {
+  base: {
+    src: src,
+    dest: dist,
+  },
   fonts: {
     src: `${src}/fonts/*`,
     dest: `${dist}/fonts/`,
@@ -18,7 +25,8 @@ module.exports = {
   },
   favicons: {
     src: `${src}/images/${faviconFile}`,
-    dest: `${dist}/images`,
+    // Note: Absolute path is needed for Real Favicon Generator.
+    dest: `/Portals/_default/Skins/${name}/${DIST_NAME}/images`,
     markupOutput: `./controls/meta.ascx`,
     markupOutputDirectory: `./controls`,
   },

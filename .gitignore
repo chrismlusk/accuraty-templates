@@ -35,7 +35,6 @@ real-favicon-generator.json
 *.tmproj
 *.tmproject
 nbproject
-.vscode
 config.codekit3
 prepros-6.config
 sftp-config.json

@@ -1,11 +1,11 @@
-const gulp = require('gulp');
-const gulpif = require('gulp-if');
-const sourcemaps = require('gulp-sourcemaps');
-const sass = require('gulp-sass');
-const postImport = require('postcss');
-const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCss = require('gulp-clean-css');
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const postcss = require('gulp-postcss');
+const postImport = require('postcss');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 
 const { paths, plugins, project } = require('../config');
 const { skinLayoutStyles, containerStyles, moduleStyles } = paths;
