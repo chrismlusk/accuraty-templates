@@ -1,17 +1,17 @@
-const gulp = require('gulp');
 const fs = require('fs');
+const gulp = require('gulp');
 const replace = require('gulp-replace');
 
-const { project } = require('../config');
+const { paths, project } = require('../config');
 
 function setSassClientCode() {
   const pattern = /\$asl--client-code:\\?.*/g;
   const updated = `$asl--client-code: "${project.name}";`;
 
   return gulp
-    .src('./src/scss/theme/_variables.scss')
+    .src(`${paths.base.src}/scss/theme/_variables.scss`)
     .pipe(replace(pattern, updated))
-    .pipe(gulp.dest('./src/scss/theme/'));
+    .pipe(gulp.dest(`${paths.base.src}/scss/theme/`));
 }
 
 function setDirectoryNames() {
@@ -39,10 +39,7 @@ function initializeProject() {
   const pattern = /PROJECT_INITIALIZED\s*=\s*"*false"*/g;
   const updated = 'PROJECT_INITIALIZED = true';
 
-  return gulp
-    .src('.env')
-    .pipe(replace(pattern, updated))
-    .pipe(gulp.dest('./'));
+  return gulp.src('.env').pipe(replace(pattern, updated)).pipe(gulp.dest('./'));
 }
 
 const initTask = gulp.series(

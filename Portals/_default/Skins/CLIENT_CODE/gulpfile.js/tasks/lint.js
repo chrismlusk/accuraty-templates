@@ -1,6 +1,6 @@
+const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const stylelint = require('gulp-stylelint');
-const eslint = require('gulp-eslint');
 
 const { paths, project } = require('../config');
 
@@ -16,7 +16,7 @@ function lintStyles() {
         reporters: [{ formatter: 'verbose', console: true }],
       })
     )
-    .pipe(gulp.dest('./src/scss'));
+    .pipe(gulp.dest(`${paths.base.src}/scss`));
 }
 
 function lintScripts() {
