@@ -11,7 +11,7 @@ export default class Module {
     return this;
   }
 
-  createComponents(scope = document.body) {
+  createComponents(scope) {
     const components = [
       ...scope.querySelectorAll(
         `[${DataAttribute.COMPONENT}="${this.component.name}"]`

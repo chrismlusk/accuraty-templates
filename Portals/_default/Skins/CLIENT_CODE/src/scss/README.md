@@ -12,7 +12,7 @@ Our pattern is to split the codebase into meaningful, separated folders so you c
   - `layout/`
   - `utilities/`
 - `Modules/`
-- `*.scss` (skin stylesheets)
+- `*.scss` (Skin stylesheets)
 
 ## Skin stylesheets
 

@@ -4,19 +4,29 @@ The `js/` folder contains all custom scripts used in the project.
 
 ## Architecture
 
-- `modules/`
+- `app/`
+- `components/`
+- `lib/`
 - individual files
+
+### App
+
+The building blocks of our JavaScript component framework. This is how custom functions are loaded and executed.
+
+### Components
+
+Each component is an encapsulated piece of functionality.
+
+### Lib
+
+Utility functions and helpers.
 
 ### Individual files
 
-Any file at the root of the `js/` directory will be compiled into separate JavaScript files. Scripts needed for the entire site are in `main.js`. Add new files for page- and component-specific scripts. To use a module, import the function and invoke it.
+Any file at the root of the `js/` directory will be compiled into separate JavaScript bundles. Scripts needed for the entire site are in `Skin.js`. Add new files for page- and component-specific scripts.
 
-_Note: When you add new individual files at the root of this directory, the Gulp config will automatically include them into the build process. However, you must manually include them in the skin or container template they belong with._
-
-### modules/
-
-Each module is one piece of functionality that can be shared across multiple individual files. To aid readability, each function is split into its own module and imported into the individual file it belongs with.
+_Note: When you add new individual files at the root of this directory, they will automatically be included in the build process. However, you must manually add them to the template they belong with._
 
 ## What about vendor files?
 
-Vendor files (e.g., Bootstrap, Flickity) will usually not need to be included here because they don't need to be run through the Gulp build process for scripts. You should instead install the package (via NPM) and update the Gulp configuration so that the files needed in production are copied from the `node_modules/` directory and added to the `public/js` directory.
+Vendor files (e.g., Bootstrap, Flickity) won't usually be included here because they do not need to be processed through the Gulp build. Instead, you should install the package (via NPM) and import the vendor script into whichever component or file needed.

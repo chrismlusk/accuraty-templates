@@ -5,7 +5,7 @@ export default class Global {
     this.createComponents(document.documentElement);
   }
 
-  createComponents(scope = document.body) {
+  createComponents(scope) {
     const components = [
       ...scope.querySelectorAll(`[${DataAttribute.COMPONENT}]`),
     ];
