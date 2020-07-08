@@ -1,4 +1,4 @@
-<!--#include file="../public/icons/all.svg"-->
+<!--#include file="../public/media/icons/all.svg"-->
 
 <header class="header" role="banner" data-component="Header">
   <nav class="navbar navbar-expand-md navbar-light" role="navigation">
