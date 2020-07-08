@@ -9,7 +9,7 @@ module.exports = {
   entry: project.webpack.entries,
   output: {
     filename: '[name].bundle.js',
-    path: resolve(process.env.INIT_CWD, 'public/js'),
+    path: resolve(process.env.INIT_CWD, 'public'),
   },
   devtool: project.mode === 'development' ? 'inline-source-map' : 'source-map',
   optimization: {

@@ -4,11 +4,12 @@ The `src/` folder includes all stylesheets, fonts, images, and scripts needed to
 
 ## Architecture
 
-- `fonts/`
-- `icons/`
-- `images/`
-- `js/`
-- `scss/`
+- `media/`
+  - `fonts/`
+  - `icons/`
+  - `images/`
+- `scripts/`
+- `styles/`
 
 _Note: If new directories are needed, you will need to modify the Gulp config to account for these new assets._
 
@@ -26,10 +27,10 @@ Images that are used in the skin itself (e.g., backgrounds, design resources, lo
 
 _Note: Images that are used as content and could be managed by the client should be stored in `Portals/0/SiteContent`._
 
-### js/
+### scripts/
 
 JavaScript modules, global scripts, and page-specific resources.
 
-### scss/
+### styles/
 
 This is the heart of the project's styles. All custom Sass files used to create the CSS for the skin, containers, and modules are here.

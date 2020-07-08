@@ -1,6 +1,6 @@
-# JavaScript
+# Scripts
 
-The `js/` folder contains all custom scripts used in the project.
+This folder contains all custom JavaScript used in the project.
 
 ## Architecture
 
@@ -23,7 +23,7 @@ Utility functions and helpers.
 
 ### Individual files
 
-Any file at the root of the `js/` directory will be compiled into separate JavaScript bundles. Scripts needed for the entire site are in `Skin.js`. Add new files for page- and component-specific scripts.
+Any file at the root of the `scripts/` directory will be compiled into separate JavaScript bundles. Scripts needed for the entire site are in `Skin.js`. Add new files for page- and component-specific scripts.
 
 _Note: When you add new individual files at the root of this directory, they will automatically be included in the build process. However, you must manually add them to the template they belong with._
 

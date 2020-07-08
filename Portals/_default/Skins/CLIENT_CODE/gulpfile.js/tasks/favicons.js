@@ -34,7 +34,7 @@ function generateFavicons(done) {
     {
       masterPicture: paths.favicons.src,
       dest: paths.favicons.dest,
-      iconsPath: `${paths.favicons.dest}/`,
+      iconsPath: paths.favicons.iconsPath,
       design: {
         ...$.DEFAULT_DESIGN_OPTIONS,
         ...CUSTOM_DESIGN_OPTIONS,

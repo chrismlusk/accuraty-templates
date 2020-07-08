@@ -16,7 +16,7 @@ function lintStyles() {
         reporters: [{ formatter: 'verbose', console: true }],
       })
     )
-    .pipe(gulp.dest(`${paths.base.src}/scss`));
+    .pipe(gulp.dest(`${paths.base.src}/styles`));
 }
 
 function lintScripts() {

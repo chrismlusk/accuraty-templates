@@ -4,14 +4,16 @@ const replace = require('gulp-replace');
 
 const { paths, project } = require('../config');
 
+const themePath = `${paths.base.src}/styles/theme`;
+
 function setSassClientCode() {
   const pattern = /\$asl--client-code:\\?.*/g;
   const updated = `$asl--client-code: "${project.name}";`;
 
   return gulp
-    .src(`${paths.base.src}/scss/theme/_variables.scss`)
+    .src(`${themePath}/_variables.scss`)
     .pipe(replace(pattern, updated))
-    .pipe(gulp.dest(`${paths.base.src}/scss/theme/`));
+    .pipe(gulp.dest(`${themePath}/`));
 }
 
 function setDirectoryNames() {

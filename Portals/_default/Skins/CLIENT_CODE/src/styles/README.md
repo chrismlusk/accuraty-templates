@@ -1,6 +1,6 @@
-# SCSS
+# Styles
 
-The `scss/` folder includes theme styles and standalone modules.
+Theme styles and standalone modules.
 
 ## Architecture
 
@@ -16,7 +16,7 @@ Our pattern is to split the codebase into meaningful, separated folders so you c
 
 ## Skin stylesheets
 
-The skin's primary stylesheets must be at the root of the `scss/` directory and must not begin with a leading underscore. `Skin.scss` must not be renamed. The others must match the name of their skin template file. For example, if you have an `Events.ascx` file, then the stylesheet must be `Events.scss`.
+The skin's primary stylesheets must be at the root of the `styles/` directory and must not begin with a leading underscore. `Skin.scss` must not be renamed. The others must match the name of their skin template file. For example, if you have an `Events.ascx` file, then the stylesheet must be `Events.scss`.
 
 These files are primarily `@import` directives, however page-specific files (e.g., `Home.scss`) will often have overrides or page-specific components.
 

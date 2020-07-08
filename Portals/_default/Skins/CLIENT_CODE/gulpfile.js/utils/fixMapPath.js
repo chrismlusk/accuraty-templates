@@ -1,4 +1,4 @@
-function fixMapPath(path, prefix = '.', directory = 'src/scss') {
+function fixMapPath(path, prefix = '.', directory = 'src/styles') {
   const nm = 'node_modules';
   const regex = /(\.\.\/)/g;
 

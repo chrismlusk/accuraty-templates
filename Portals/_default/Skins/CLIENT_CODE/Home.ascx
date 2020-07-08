@@ -2,7 +2,7 @@
 <!--#include file="includes/_header.ascx"-->
 
 <%-- <dnn:DnnJsInclude
-  FilePath="public/js/Home.bundle.js"
+  FilePath="public/Home.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="106"

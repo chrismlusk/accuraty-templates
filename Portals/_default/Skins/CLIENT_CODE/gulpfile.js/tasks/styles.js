@@ -39,7 +39,7 @@ function containerStylesTask() {
   if (!project.styles.containers) return Promise.resolve();
 
   const prefix = `../../Skins/${project.name}`;
-  const directory = `src/scss/Container`;
+  const directory = `src/styles/Container`;
 
   return gulp
     .src(containerStyles.src)
@@ -56,7 +56,7 @@ function moduleStylesTask() {
   if (!project.styles.modules) return Promise.resolve();
 
   const prefix = `../../`;
-  const directory = `src/scss/Module`;
+  const directory = `src/styles/Module`;
 
   return gulp
     .src(moduleStyles.src)

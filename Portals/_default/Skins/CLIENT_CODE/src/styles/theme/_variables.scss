@@ -262,13 +262,13 @@ $dnn-persona-bar-width:   80px;
 $skin-path: "/Portals/_default/Skins/#{$asl--client-code}";
 
 // The path to the `public/fonts/` folder for this skin.
-$skin-font-path: "/Portals/_default/Skins/#{$asl--client-code}/public/fonts";
+$skin-font-path: "#{$skin-path}/public/media/fonts";
 
 // The path to the `public/icons/` folder for this skin.
-$skin-icon-path: "/Portals/_default/Skins/#{$asl--client-code}/public/icons";
+$skin-icon-path: "#{$skin-path}/public/media/icons";
 
 // The path to the `public/images/` folder for this skin.
-$skin-image-path: "/Portals/_default/Skins/#{$asl--client-code}/public/images";
+$skin-image-path: "#{$skin-path}/public/media/images";
 
 
 

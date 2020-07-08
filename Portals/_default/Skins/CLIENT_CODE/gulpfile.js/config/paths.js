@@ -12,42 +12,43 @@ module.exports = {
     dest: dist,
   },
   fonts: {
-    src: `${src}/fonts/*`,
-    dest: `${dist}/fonts/`,
+    src: `${src}/media/fonts/*.{woff,woff2}`,
+    dest: `${dist}/media/fonts/`,
   },
   icons: {
-    src: `${src}/icons/*`,
-    dest: `${dist}/icons/`,
+    src: `${src}/media/icons/*.svg`,
+    dest: `${dist}/media/icons/`,
   },
   images: {
-    src: `${src}/images/**/*.{jpg,jpeg,png,gif,svg}`,
-    dest: `${dist}/images/`,
+    src: `${src}/media/images/**/*.{jpg,jpeg,png,gif,svg}`,
+    dest: `${dist}/media/images/`,
   },
   favicons: {
-    src: `${src}/images/${faviconFile}`,
+    src: `${src}/media/images/${faviconFile}`,
+    dest: `${dist}/media/images/`,
     // Note: Absolute path is needed for Real Favicon Generator.
-    dest: `/Portals/_default/Skins/${name}/${DIST_NAME}/images`,
+    iconsPath: `/Portals/_default/Skins/${name}/${DIST_NAME}/media/images/`,
     markupOutput: `./controls/meta.ascx`,
     markupOutputDirectory: `./controls`,
   },
   styles: {
-    src: `${src}/scss/**/*.scss`,
-    dest: `${dist}/css`,
+    src: `${src}/styles/**/*.scss`,
+    dest: `${dist}/`,
   },
   skinLayoutStyles: {
-    src: `${src}/scss/*.scss`,
+    src: `${src}/styles/*.scss`,
     dest: `./`,
   },
   containerStyles: {
-    src: `${src}/scss/Containers/*.scss`,
+    src: `${src}/styles/Containers/*.scss`,
     dest: `../../Containers/${name}/`,
   },
   moduleStyles: {
-    src: `${src}/scss/Modules/*.scss`,
-    dest: `${dist}/css`,
+    src: `${src}/styles/Modules/*.scss`,
+    dest: `${dist}/`,
   },
   scripts: {
-    src: `${src}/js/**/*.js`,
-    dest: `${dist}/js/`,
+    src: `${src}/scripts/**/*.js`,
+    dest: `${dist}/`,
   },
 };
