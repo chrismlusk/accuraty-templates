@@ -19,7 +19,6 @@ Thumbs.db
 *.log
 /logs/
 /tmp/
-**/.tmp/
 real-favicon-generator.json
 
 # MISC FILES
@@ -35,7 +34,5 @@ real-favicon-generator.json
 *.tmproj
 *.tmproject
 nbproject
-config.codekit3
-prepros-6.config
 sftp-config.json
 .vscode/sftp.json

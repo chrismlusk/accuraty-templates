@@ -12,19 +12,24 @@
   "passive": false,
   "uploadOnSave": true,
   "watcher": {
-    "files": "**/public/**/*",
+    "files": "**/Skins/**/*",
     "autoUpload": true,
     "autoDelete": false
   },
   "ignore": [
-    "**/src/",
-    "**/node_modules/",
-    "**/.tmp/",
     "**/.git/",
     "**/.vscode/",
+    "**/gulpfile.js/",
+    "**/node_modules/",
+    "**/src/",
+    "**/README.md",
+    ".*",
+    "package.json",
+    "package-lock.json",
+    "real-favicon-generator.json",
+    "webpack.config.js",
     "Thumbs.db",
-    ".DS_Store",
-    "*.sublime*",
+    ".DS_Store"
   ],
   "remotePath": "/",
   "remoteExplorer": {
