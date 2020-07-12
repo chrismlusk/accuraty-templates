@@ -17,15 +17,17 @@ export default class NavMenu {
   }
 
   createChildRefs() {
-    this.dropdownTriggers = [
-      ...this.element.querySelectorAll(NavMenu.defaults.dropdownTrigger),
-    ];
+    if (this.options.enableDropdownOnHover) {
+      this.dropdownTriggers = [
+        ...this.element.querySelectorAll(NavMenu.defaults.dropdownTrigger),
+      ];
 
-    this.dropdownTriggerLinks = [
-      ...this.element.querySelectorAll(
-        `${NavMenu.defaults.dropdownTrigger} > a`
-      ),
-    ];
+      this.dropdownTriggerLinks = [
+        ...this.element.querySelectorAll(
+          `${NavMenu.defaults.dropdownTrigger} > a`
+        ),
+      ];
+    }
 
     return this;
   }
@@ -39,13 +41,6 @@ export default class NavMenu {
 
       this.dropdownTriggerLinks.forEach(link => {
         link.addEventListener('click', this.handleTriggerLinkClick);
-        link.addEventListener('focus', this.handleTriggerLinkFocus);
-
-        const dropdownLinks = link.closest('li').querySelectorAll('a');
-        const lastDropdownLink = dropdownLinks[dropdownLinks.length - 1];
-        lastDropdownLink.addEventListener('blur', () => {
-          this.handleLastLinkBlur(link);
-        });
       });
     }
 
@@ -53,12 +48,18 @@ export default class NavMenu {
   }
 
   handleTriggerLinkClick = event => {
-    event.preventDefault();
-    this.dropdownTriggers.forEach(trigger => {
-      if (trigger.classList.contains(NavMenu.defaults.activeClass)) {
-        this.hideDropdownMenu(trigger);
+    const parentTrigger = event.target.parentElement;
+
+    if (parentTrigger.classList.contains(NavMenu.defaults.activeClass)) {
+      const href = event.target.getAttribute('href');
+
+      if (href && href !== '#') {
+        location.href = href;
+        return;
       }
-    });
+    }
+
+    event.preventDefault();
   };
 
   handleTriggerMouseEvent = event => {
@@ -67,18 +68,6 @@ export default class NavMenu {
     } else {
       this.hideDropdownMenu(event.target);
     }
-  };
-
-  handleTriggerLinkFocus = event => {
-    const parentTrigger = event.currentTarget.closest(
-      NavMenu.defaults.dropdownTrigger
-    );
-
-    this.showDropdownMenu(parentTrigger);
-  };
-
-  handleLastLinkBlur = link => {
-    this.hideDropdownMenu(link.parentElement);
   };
 
   showDropdownMenu(trigger) {
