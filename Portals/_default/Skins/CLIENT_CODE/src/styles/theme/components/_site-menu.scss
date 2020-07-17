@@ -1,0 +1,18 @@
+//
+// Site menu
+// =========
+//
+// Used to add an admin menu independent of the primary nav.
+// ----------------------------------------------------------------------------
+
+#SiteMenu {
+  position: fixed;
+  top: 1rem;
+  left: calc(#{$dnn-persona-bar-width} + 1rem);
+  z-index: $zindex-fixed;
+
+  // Nested dropdown
+  .dropdown-menu.show .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
