@@ -21,8 +21,8 @@ Create a new project folder on your local machine, `cd` into that directory, and
 
 ```
 git init
-git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git	
-git fetch accuraty	
+git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
+git fetch --depth=1 accuraty master
 git merge accuraty/master
 ```
 

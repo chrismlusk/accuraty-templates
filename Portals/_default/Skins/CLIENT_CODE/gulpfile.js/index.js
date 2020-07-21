@@ -11,11 +11,12 @@ const { scripts } = require('./tasks/scripts');
 const { styles } = require('./tasks/styles');
 const { watch } = require('./tasks/watch');
 
-const base = series(initialize, clean, media);
+const base = series(clean, media);
 const compile = parallel(styles, scripts);
 
 exports.clean = clean;
 exports.favicons = favicons;
+exports.initialize = initialize;
 exports.scripts = scripts;
 exports.styles = styles;
 

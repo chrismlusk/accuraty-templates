@@ -4,10 +4,11 @@
   "description": "Skin scaffolding for Accuraty projects",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp build",
-    "start": "gulp",
+    "build": "gulp initialize && gulp build",
     "clean": "gulp clean",
-    "favicons": "gulp favicons"
+    "favicons": "gulp favicons",
+    "init": "gulp initialize",
+    "start": "gulp"
   },
   "private": true,
   "repository": {
