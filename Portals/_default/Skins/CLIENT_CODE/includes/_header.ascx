@@ -23,3 +23,10 @@
     </div>
   </nav>
 </header>
+
+<%-- Site Menu --%>
+<dnn:MENU
+  MenuStyle="menus/SiteMenu"
+  IncludeNodes=""
+  runat="server"
+></dnn:MENU>
