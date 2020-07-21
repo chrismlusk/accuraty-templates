@@ -1,4 +1,6 @@
-# Accuraty templates
+# AccuTheme
+
+The Accuraty Solutions starter kit for projects using the DNN content management system.
 
 ## Project requirements
 
@@ -9,11 +11,10 @@
 
 - [Initial setup](https://github.com/chrismlusk/accuraty-templates#initial-setup) (you are starting from scratch)
 - [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally) (first time adding this project to your machine)
-- [Ongoing development](https://github.com/chrismlusk/accuraty-templates#ongoing-development) (project is already on remote and local)
 
 ### Initial setup
 
-_This assumes the project skin has not been set up at all. If the project already exists on GitHub and you are trying to get set up on your own machine, skip to [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally)._
+_This assumes the project has not been set up at all. If it already exists on GitHub and you need to get set up on your own machine, skip to [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally)._
 
 #### 1. Get the code
 
@@ -21,15 +22,27 @@ Create a new project folder on your local machine, `cd` into that directory, and
 
 ```
 git init
-git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
-git fetch --depth=1 accuraty master
-git merge accuraty/master
-git remote rm accuraty
+git remote add accu https://github.com/chrismlusk/accuraty-templates.git
+git fetch --depth=1 accu master
+git merge accu/master
+git remote rm accu
 ```
+
+<details>
+<summary>What do these Git commands do?</summary>
+<p></p>
+<ul>
+  <li>Initialize Git locally.</li>
+  <li>Establish a connection between the local repo and this remote.</li>
+  <li>Fetch the remote code, but without the Git history.</li>
+  <li>Merge that code into your local `master` branch.</li>
+  <li>Remove the connection to the remote.</li>
+</ul>
+</details>
 
 #### 2. Set your FTP config
 
-If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy `sftp.json.example`, configure it with your credentials, and save it as `sftp.json`.
+If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `sftp.json.example`, save it as `sftp.json`, and update the first four lines with your credentials.
 
 #### 3. Set the project name
 
@@ -39,17 +52,19 @@ Next, navigate to the Skin folder:
 cd Portals/_default/Skins/CLIENT_CODE
 ```
 
-Then, open `.env` and update your environment variables. At a minimum, change the `CLIENT_CODE` variable to whatever the project's name should be. This name will be used in multiple places (e.g., the Skin and Container directories), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
+Open the `.env` file and change the `CLIENT_CODE` variable to the client abbreviation or whatever the project's name should be.
+
+This name will be used in multiple places (e.g., the Skin and Container directories, Sass variables), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
 
 #### 4. Install packages
 
-Run `npm install` from inside the Skin folder.
+From your terminal, run `npm install` from inside the Skin folder.
 
 #### 5. Build the assets
 
-Then run `npm run build` in your terminal.
+Then run `npm run build`.
 
-This will trigger the Gulp tasks to initialize the project, rename directories, and compile starting assets (stylesheets, scripts, etc.). This `build` command, however, will not keep Gulp in "watch" mode. Since we are getting started, it's best to just build the assets and keep going with the setup.
+This will trigger Gulp to initialize the project, rename directories, and compile assets (stylesheets, scripts, etc.). The `build` command will not keep Gulp in "watch" mode, however. Since we are getting started, just build the assets and keep going with the setup.
 
 Next, add and commit everything to Git. Reminder: This is all local-only at this point, as we have not set up the remote repository yet.
 
@@ -57,9 +72,9 @@ Next, add and commit everything to Git. Reminder: This is all local-only at this
 
 Go to the [Accuraty GitHub account](https://github.com/Accuraty) and add a new repository.
 
-Name the repository using the client code, add a description, make the repo private, and then **do not initialize with a README**. Skip that step since you will import the existing local repository you just made.
+Name the repository using the client code and project year, make the repo private, and then **do not initialize with a README**. Skip that step since you will import the existing local repository you just created.
 
-Back in your terminal, run `git remote add origin [PASTE_THE_GITHUB_URL_HERE]`.
+Back in your terminal, run `git remote add origin _PASTE_THE_GITHUB_URL_HERE_`.
 
 Then, run `git push -u origin master`.
 
@@ -67,17 +82,13 @@ Then, run `git push -u origin master`.
 
 If you get an error message saying the repository was not found, it is because you do not have permission to write to the private repo you just created. Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
 
-#### 7. GitHub branches
-
-Go back to GitHub and to the page for your new repository, and then create a new branch called `dev`.
-
-Then, go to "Settings > Branches" and change the default branch from `master` to `dev`. This will make it so all pushes and pull requests go into `dev`, which will keep `master` somewhat "protected" during ongoing development.
-
-#### 8. Getting code to the server
+#### 7. Getting code to the server
 
 While our default SFTP extension settings in VS Code automatically push most files, you will need to manually upload certain directories — especially when you first set up a project. 
 
-Go ahead and right-click on the skin folder and upload the entire thing.
+Right-click on the skin folder (`Portals/_default/Skins/[PROJECT_NAME]`) and choose "Upload Folder" from the menu. Repeat the same for the client's container folder (`Portals/_default/Containers/[PROJECT_NAME]`).
+
+The `sftp.json` configuration will prevent unnecessary files from being uploaded to the server.
 
 ### Cloning locally
 
@@ -88,7 +99,7 @@ _This assumes the project has already been set up and added as a repository to t
 Navigate to the directory where you want to store the project, copy the GitHub URL, and then run the following commands in your terminal:
 
 ```
-git clone [PASTE_THE_GITHUB_URL_HERE]
+git clone _PASTE_THE_GITHUB_URL_HERE_
 ```
 
 #### 2. Set your FTP config
@@ -107,21 +118,13 @@ This will kick off the Gulp tasks to initialize the project, compile starting as
 
 To exit this "watch" mode, press `Control-C` in your terminal.
 
-To start watching again, run `npm run dev` in your terminal.
+To start watching again, run `npm start` in your terminal.
 
 #### 5. Push changes to GitHub
 
 Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it is because you do not have permission to write to the private repo. 
 
 Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
-
-### Ongoing development
-
-_This assumes the project has already been set up locally and is in its own remote repository._
-
-#### 1. Compile assets
-
-Run `npm run dev` to kick off the Gulp watch process.
 
 ## About Accuraty
 
