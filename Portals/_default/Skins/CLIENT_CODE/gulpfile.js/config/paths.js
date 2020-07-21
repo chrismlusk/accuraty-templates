@@ -1,58 +1,54 @@
 const { name, faviconFile } = require('./project');
 
+const SRC_NAME = 'src';
+const DIST_NAME = 'public';
+
+const src = `./${SRC_NAME}`;
+const dist = `./${DIST_NAME}`;
+
 module.exports = {
-  bootstrapJs: {
-    src: `./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js`,
-    dest: `./public/js/`,
-  },
-  flickityCss: {
-    src: `./node_modules/flickity/dist/flickity.min.css`,
-    dest: `./public/css/`,
-  },
-  flickityJs: {
-    src: `./node_modules/flickity/dist/flickity.pkgd.min.js`,
-    dest: `./public/js/`,
+  base: {
+    src: src,
+    dest: dist,
   },
   fonts: {
-    src: `./src/fonts/*`,
-    dest: `./public/fonts/`,
+    src: `${src}/media/fonts/*.{woff,woff2}`,
+    dest: `${dist}/media/fonts/`,
   },
   icons: {
-    src: `./src/icons/*`,
-    dest: `./public/icons/`,
+    src: `${src}/media/icons/*.svg`,
+    dest: `${dist}/media/icons/`,
   },
   images: {
-    src: `./src/images/**/*.{jpg,jpeg,png,gif,svg}`,
-    dest: `./public/images/`,
+    src: `${src}/media/images/**/*.{jpg,jpeg,png,gif,svg}`,
+    dest: `${dist}/media/images/`,
   },
   favicons: {
-    src: `./src/images/${faviconFile}`,
-    dest: `./public/favicons`,
+    src: `${src}/media/images/${faviconFile}`,
+    dest: `${dist}/media/images/`,
+    // Note: Absolute path is needed for Real Favicon Generator.
+    iconsPath: `/Portals/_default/Skins/${name}/${DIST_NAME}/media/images/`,
     markupOutput: `./controls/meta.ascx`,
     markupOutputDirectory: `./controls`,
   },
   styles: {
-    src: `./src/scss/**/*.scss`,
-    dest: `./public/css`,
+    src: `${src}/styles/**/*.scss`,
+    dest: `${dist}/`,
   },
   skinLayoutStyles: {
-    src: `./src/scss/*.scss`,
+    src: `${src}/styles/*.scss`,
     dest: `./`,
   },
   containerStyles: {
-    src: `./src/scss/Containers/*.scss`,
+    src: `${src}/styles/Containers/*.scss`,
     dest: `../../Containers/${name}/`,
   },
-  ednStyles: {
-    src: `./src/scss/EasyDNNsolutions/EasyDNNnews.scss`,
-    dest: `../../../../DesktopModules/EasyDNNnews/Templates/_default/${name}/`,
-  },
-  accuratyContainerStyles: {
-    src: `./src/scss/Containers/Accuraty/*.scss`,
-    dest: `../../Containers/Accuraty/`,
+  moduleStyles: {
+    src: `${src}/styles/Modules/*.scss`,
+    dest: `${dist}/`,
   },
   scripts: {
-    src: `./src/js/**/*.js`,
-    dest: `./public/js/`,
+    src: `${src}/scripts/**/*.js`,
+    dest: `${dist}/`,
   },
 };

@@ -21,7 +21,7 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
   6-9.  Vendor CSS (e.g., Bootstrap)
   10.   Module CSS*
   15.   Skin CSS*
-  16.   Custom CSS: `public/css/YOUR_FILE_HERE`
+  16.   Custom CSS: `public/YOUR_FILE_HERE`
   20.   Specific Skin CSS
   25.   Container CSS*
   30.   Specific Container CSS*
@@ -50,7 +50,7 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 
 <%-- STYLESHEET FROM THE SKIN DIRECTORY
 <dnn:DnnCssInclude
-  FilePath="public/css/YOUR_FILE_HERE"
+  FilePath="public/YOUR_FILE_HERE"
   PathNameAlias="SkinPath"
   Priority="16"
   runat="server"
@@ -67,33 +67,23 @@ JS priorities and suggested order (note that * denotes a core DNN file):
   5.    jQuery*
   10.   jQuery UI*
   100.  Default*
-  101.  Vendor JS: Popper.js (for Bootstrap v4)
-  102.  Vendor JS: Bootstrap
-  105.  Custom JS: `scripts.js`
+  101.  Runtime: Code needed for Webpack to execute
+  102.  Vendors: Node modules (bundled by Webpack)
+  103.  Skin: Global scripts (bundle by Webpack)
 
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
-
---
-
-For Bootstrap v4: jQuery first, then Popper.js, then Bootstrap.
-
-Other vendor scripts and custom JS come next.
 ========================================================================== --%>
 
-<dnn:JQUERY
-  ForceProvider="DnnFormBottomProvider"
-  runat="server"
-/>
-
 <dnn:DnnJsInclude
-  FilePath="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  FilePath="public/runtime.bundle.js"
+  PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="101"
   runat="server"
 />
 
 <dnn:DnnJsInclude
-  FilePath="public/js/bootstrap.bundle.min.js"
+  FilePath="public/vendors.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="102"
@@ -101,9 +91,9 @@ Other vendor scripts and custom JS come next.
 />
 
 <dnn:DnnJsInclude
-  FilePath="public/js/main.bundle.js"
+  FilePath="public/Skin.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
-  Priority="105"
+  Priority="103"
   runat="server"
 />

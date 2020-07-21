@@ -1,4 +1,4 @@
-function fixMapPath(path, prefix = '.') {
+function fixMapPath(path, prefix = '.', directory = 'src/styles') {
   const nm = 'node_modules';
   const regex = /(\.\.\/)/g;
 
@@ -6,7 +6,7 @@ function fixMapPath(path, prefix = '.') {
     return `${prefix}/${path.slice(path.indexOf(nm), -1)}`;
   }
 
-  return `${prefix}/src/scss/${path.replace(regex, '')}`;
+  return `${prefix}/${directory}/${path.replace(regex, '')}`;
 }
 
 module.exports = fixMapPath;

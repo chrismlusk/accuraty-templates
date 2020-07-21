@@ -1,0 +1,107 @@
+// ============================================================================
+//
+//  Standardize base elements
+//
+//  [Table of Contents]
+//
+//  - Body
+//  - Inline
+//  - Block
+//  - Selection
+//
+// ============================================================================
+
+
+
+
+//
+// Body
+// ====
+
+body {
+
+  // Reposition to avoid screwy animation when Persona Bar slides on screen
+  &.personabar-visible {
+    margin-left: $dnn-persona-bar-width;
+  }
+}
+
+
+
+
+//
+// Inline
+// ======
+
+a {
+
+  @include plain-visited() {
+    color: $link-color;
+    transition-timing-function: $transition-timing-function;
+    transition-duration: $transition-duration;
+    transition-property: color;
+  }
+
+  @include hover-focus() {
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    outline: $link-focus-outline-width $link-focus-outline-style $link-focus-outline-color;
+  }
+
+  &.is-facebook {
+    @include hover-focus() {
+      color: $facebook-primary !important;
+    }
+  }
+
+  &.is-twitter {
+    @include hover-focus() {
+      color: $twitter-primary !important;
+    }
+  }
+
+  &.is-youtube {
+    @include hover-focus() {
+      color: $youtube-primary !important;
+    }
+  }
+
+  &.is-linkedin {
+    @include hover-focus() {
+      color: $linkedin-primary !important;
+    }
+  }
+}
+
+
+
+
+//
+// Block
+// =====
+
+blockquote,
+p,
+ol,
+ul {
+  margin-bottom: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+
+
+
+//
+// Selection
+// =========
+
+::selection {
+  color: $body-color;
+  background-color: $gray-300;
+}

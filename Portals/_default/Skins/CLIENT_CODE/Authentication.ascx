@@ -2,14 +2,14 @@
 <!--#include file="includes/_header.ascx"-->
 
 <dnn:DnnJsInclude
-  FilePath="public/js/authentication.bundle.js"
+  FilePath="public/Authentication.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="106"
   runat="server"
 />
 
-<div id="authentication" class="is-loading">
+<div id="authentication" class="is-loading" data-component="Authentication">
   <main class="main" role="main">
     <section class="section">
       <div class="container-fluid">

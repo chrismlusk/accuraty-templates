@@ -8,6 +8,7 @@
     "declaration-no-important": null,
     "font-family-no-missing-generic-family-keyword": null,
     "max-empty-lines": 4,
+    "order/properties-order": null,
     "selector-class-pattern": null,
     "selector-max-id": 1,
     "selector-max-type": [
@@ -27,6 +28,8 @@
           "class"
         ]
       }
-    ]
+    ],
+    "value-list-comma-newline-after": "always-multi-line",
+    "value-list-comma-space-after": "always-single-line"
   }
 }

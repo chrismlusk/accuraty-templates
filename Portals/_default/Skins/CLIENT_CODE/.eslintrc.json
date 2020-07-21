@@ -145,7 +145,6 @@
       "warn",
       {
         "ignoreRestSiblings": true,
-        "ignoreSiblings": true,
         "argsIgnorePattern": "res|next|^err"
       }
     ],
