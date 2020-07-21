@@ -24,6 +24,7 @@ git init
 git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git
 git fetch --depth=1 accuraty master
 git merge accuraty/master
+git remote rm accuraty
 ```
 
 #### 2. Set your FTP config
