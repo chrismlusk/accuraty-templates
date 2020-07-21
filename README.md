@@ -17,10 +17,13 @@ _This assumes the project skin has not been set up at all. If the project alread
 
 #### 1. Get the code
 
-Create a new project folder on your local machine, `cd` into that directory, and run the following command in your terminal:
+Create a new project folder on your local machine, `cd` into that directory, and run the following commands in your terminal:
 
 ```
-git clone --depth=1 --branch master https://github.com/chrismlusk/accuraty-templates.git .
+git init
+git remote add accuraty https://github.com/chrismlusk/accuraty-templates.git	
+git fetch accuraty	
+git merge accuraty/master
 ```
 
 #### 2. Set your FTP config
