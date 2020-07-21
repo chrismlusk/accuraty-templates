@@ -21,24 +21,12 @@ _This assumes the project has not been set up at all. If it already exists on Gi
 Create a new project folder on your local machine, `cd` into that directory, and run the following commands in your terminal:
 
 ```
+git clone https://github.com/chrismlusk/accuraty-templates.git .
+rm -rf .git
 git init
-git remote add accu https://github.com/chrismlusk/accuraty-templates.git
-git fetch --depth=1 accu master
-git merge accu/master
-git remote rm accu
 ```
 
-<details>
-<summary>What do these Git commands do?</summary>
-<p></p>
-<ul>
-  <li>Initialize Git locally.</li>
-  <li>Establish a connection between the local repo and this remote.</li>
-  <li>Fetch the remote code, but without the Git history.</li>
-  <li>Merge that code into your local `master` branch.</li>
-  <li>Remove the connection to the remote.</li>
-</ul>
-</details>
+That will clone this repo into your current directory, delete the Git history, and start fresh.
 
 #### 2. Set your FTP config
 
@@ -74,13 +62,19 @@ Go to the [Accuraty GitHub account](https://github.com/Accuraty) and add a new r
 
 Name the repository using the client code and project year, make the repo private, and then **do not initialize with a README**. Skip that step since you will import the existing local repository you just created.
 
-Back in your terminal, run `git remote add origin _PASTE_THE_GITHUB_URL_HERE_`.
+Back in your terminal, run the following commands:
 
-Then, run `git push -u origin master`.
+```
+git add -A
+git commit -m "Initial commit"
+```
 
-##### Repository not found?
+Then, follow the **"…or push an existing repository from the command line"** instructions in the new GitHub repo, which is to run these commands (be sure to update the code below with your repo URL):
 
-If you get an error message saying the repository was not found, it is because you do not have permission to write to the private repo you just created. Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
+```
+git remote add origin _PASTE_THE_GITHUB_URL_HERE_
+git push -u origin master
+```
 
 #### 7. Getting code to the server
 
