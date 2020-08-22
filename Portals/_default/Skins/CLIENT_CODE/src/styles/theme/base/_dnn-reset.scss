@@ -31,16 +31,6 @@ body:not(.dnnEditState) .DNNEmptyPane {
   white-space: normal;
 }
 
-#ControlBar_ControlPanel *,
-#ControlBar,
-#ControlBar::before,
-#ControlBar::after,
-#ControlBar li,
-#ControlBar li::before,
-#ControlBar li::after,
-#ControlBar a,
-#ControlBar a::before,
-#ControlBar a::after,
 .actionMenu *,
 .dnn_mact,
 .dnn_mact::before,
@@ -49,11 +39,6 @@ body:not(.dnnEditState) .DNNEmptyPane {
 .dnn_mact li::before,
 .dnn_mact li::after {
   box-sizing: content-box !important;
-}
-
-#ControlBar_ControlPanel .mark {
-  padding: 0;
-  background-color: transparent;
 }
 
 .ui-dialog {
