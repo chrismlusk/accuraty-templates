@@ -15,11 +15,6 @@
       Charset.Attributes.Add("charset", "utf-8");
       Page.Header.Controls.Add(Charset);
 
-      HtmlMeta HttpEquiv = new HtmlMeta();
-      HttpEquiv.Attributes.Add("http-equiv", "x-ua-compatible");
-      HttpEquiv.Content = "ie=edge";
-      Page.Header.Controls.Add(HttpEquiv);
-
       HtmlMeta Viewport = new HtmlMeta();
       Viewport.Attributes.Add("name", "viewport");
       Viewport.Content = "width=device-width,initial-scale=1,shrink-to-fit=no";
