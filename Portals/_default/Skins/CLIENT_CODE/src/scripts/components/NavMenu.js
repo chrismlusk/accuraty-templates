@@ -1,3 +1,5 @@
+import $ from 'jquery';
+import isTouchDevice from '../lib/is-touch-device';
 export default class NavMenu {
   static defaults = {
     activeClass: 'show',
@@ -8,6 +10,7 @@ export default class NavMenu {
   constructor(element, options) {
     this.element = element;
     this.options = { ...NavMenu.defaults, ...options };
+    this.isTouchDevice = isTouchDevice();
     this.init();
   }
 
@@ -19,13 +22,11 @@ export default class NavMenu {
   createChildRefs() {
     if (this.options.enableDropdownOnHover) {
       this.dropdownTriggers = [
-        ...this.element.querySelectorAll(NavMenu.defaults.dropdownTrigger),
+        ...this.element.querySelectorAll(this.options.dropdownTrigger),
       ];
 
       this.dropdownTriggerLinks = [
-        ...this.element.querySelectorAll(
-          `${NavMenu.defaults.dropdownTrigger} > a`
-        ),
+        ...this.element.querySelectorAll(`${this.options.dropdownTrigger} > a`),
       ];
     }
 
@@ -33,7 +34,7 @@ export default class NavMenu {
   }
 
   enable() {
-    if (this.options.enableDropdownOnHover) {
+    if (!this.isTouchDevice && this.options.enableDropdownOnHover) {
       this.dropdownTriggers.forEach(trigger => {
         trigger.addEventListener('mouseenter', this.handleTriggerMouseEvent);
         trigger.addEventListener('mouseleave', this.handleTriggerMouseEvent);
@@ -48,9 +49,13 @@ export default class NavMenu {
   }
 
   handleTriggerLinkClick = event => {
+    if (this.element.classList.contains(this.options.activeClass)) {
+      return;
+    }
+
     const parentTrigger = event.target.parentElement;
 
-    if (parentTrigger.classList.contains(NavMenu.defaults.activeClass)) {
+    if (parentTrigger.classList.contains(this.options.activeClass)) {
       const href = event.target.getAttribute('href');
 
       if (href && href !== '#') {
@@ -63,30 +68,13 @@ export default class NavMenu {
   };
 
   handleTriggerMouseEvent = event => {
+    const $navLink = $(`#${event.target.firstElementChild.id}`);
+
     if (event.type === 'mouseenter') {
-      this.showDropdownMenu(event.target);
+      $navLink.dropdown('show');
     } else {
-      this.hideDropdownMenu(event.target);
+      $navLink.dropdown('hide');
+      $navLink.blur();
     }
   };
-
-  showDropdownMenu(trigger) {
-    const navItem = trigger;
-    const navLink = navItem.firstElementChild;
-    const dropdownMenu = navLink.nextElementSibling;
-
-    navItem.classList.add(NavMenu.defaults.activeClass);
-    dropdownMenu.classList.add(NavMenu.defaults.activeClass);
-    navLink.setAttribute('aria-expanded', 'true');
-  }
-
-  hideDropdownMenu(trigger) {
-    const navItem = trigger;
-    const navLink = navItem.firstElementChild;
-    const dropdownMenu = navLink.nextElementSibling;
-
-    navItem.classList.remove(NavMenu.defaults.activeClass);
-    dropdownMenu.classList.remove(NavMenu.defaults.activeClass);
-    navLink.setAttribute('aria-expanded', 'false');
-  }
 }
