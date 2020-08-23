@@ -1,19 +1,3 @@
-// ============================================================================
-//
-//  Standardize base elements
-//
-//  [Table of Contents]
-//
-//  - Body
-//  - Inline
-//  - Block
-//  - Selection
-//
-// ============================================================================
-
-
-
-
 //
 // Body
 // ====
@@ -30,48 +14,22 @@ body {
 
 
 //
-// Inline
-// ======
+// Links
+// =====
 
 a {
 
-  @include plain-visited() {
-    color: $link-color;
-    transition-timing-function: $transition-timing-function;
-    transition-duration: $transition-duration;
-    transition-property: color;
-  }
-
-  @include hover-focus() {
-    color: $link-hover-color;
-  }
-
   &:focus {
-    outline: $link-focus-outline-width $link-focus-outline-style $link-focus-outline-color;
+    @include focus-style();
   }
 
-  &.is-facebook {
-    @include hover-focus() {
-      color: $facebook-primary !important;
-    }
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+    cursor: pointer;
   }
 
-  &.is-twitter {
-    @include hover-focus() {
-      color: $twitter-primary !important;
-    }
-  }
-
-  &.is-youtube {
-    @include hover-focus() {
-      color: $youtube-primary !important;
-    }
-  }
-
-  &.is-linkedin {
-    @include hover-focus() {
-      color: $linkedin-primary !important;
-    }
+  &[class]:hover {
+    outline: none;
   }
 }
 
@@ -79,19 +37,21 @@ a {
 
 
 //
-// Block
-// =====
+// Block elements
+// ==============
+//
+// 1. Modify Bootstrap's reboot.
+// ----------------------------------------------------------------------------
 
-blockquote,
 p,
 ol,
-ul {
-  margin-bottom: 0;
-}
+ul,
+dl,
+address {
 
-ol,
-ul {
-  list-style: none;
+  &:last-child {
+    margin-bottom: 0; // 1
+  }
 }
 
 

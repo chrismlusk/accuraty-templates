@@ -18,7 +18,6 @@
         <div class="row">
           <div
             id="ContentPane"
-            data-name="ContentPane"
             class="col-12"
             visible="false"
             runat="server"

@@ -18,10 +18,15 @@
 // ======================
 
 .navbar {
+  min-height: $navbar-height-sm;
 
-  @include media-breakpoint-down(sm) {
-    padding-right: $spacer;
-    padding-left: $spacer;
+  @include media-breakpoint-up(md) {
+    min-height: $navbar-height-md;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
