@@ -16,19 +16,13 @@
 
 
 //
-// Theme overrides
-// ===============
-//
-// Quick modifications for existing elements or styles.
-//
-// 1. This id is added above the `<main>` tag in the page template, so the
-//    selector wraps around all other styles in the theme overrides section.
-// ----------------------------------------------------------------------------
+// Wrapper and base ID
+// ===================
 
 #authentication { // 1
   min-height: 100vh;
   background-color: $gray-200;
-} // Important! This closes `#authentication` and comes *after* overrides.
+}
 
 
 
@@ -38,40 +32,42 @@
 // =========
 
 .auth-form {
-  max-width: 420px;
-  padding: 1rem;
-  margin: 1rem auto;
-  pointer-events: auto;
-  background-color: $white;
-  opacity: 1;
+  max-width: 480px;
   transition-timing-function: $transition-timing-function;
   transition-duration: $transition-duration * 2;
   transition-property: transform, opacity;
-  transform: translate3d(0, 0, 0) scale(1);
-  will-change: transform;
 
-  @include media-breakpoint-up(md) {
-    padding: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .is-loading & {
+  &:not(.is-visible) {
     pointer-events: none;
     opacity: 0;
-    transform: translate3d(0, .125rem, 0) scale(.99999);
+    transform: translateY(.25rem) scale(.999);
   }
 }
 
-.auth-form-header {
-  margin-bottom: 2rem;
+
+
+
+//
+// Header
+// ======
+
+.auth-form__header {
 
   h2 {
     @include font-size(1.75rem);
   }
 
   p {
-    @include font-size(.875rem);
     color: $gray-600;
+    font-size: $font-size-sm;
   }
 }
+
+
+
+
+//
+// Content
+// =======
+
+.auth-form__content {}
