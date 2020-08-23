@@ -21,18 +21,18 @@
 
 .footer {
   font-size: $font-size-sm;
-  color: rgba($white, .8);
-  background-color: $gray-700;
+  color: $white;
+  background-color: $gray-900;
 }
 
 
 
 
 //
-// Footer link
-// ===========
+// Footer links
+// ============
 
-.footer a:not(.footer-brand) {
+.footer a {
 
   @include plain-visited() {
     color: inherit;
@@ -53,11 +53,10 @@
 // Used for brand, project, or site name.
 // ----------------------------------------------------------------------------
 
-.footer-brand {
-  display: inline-block;
+a.footer-brand {
 
-  & + * {
-    margin-top: 1rem;
+  @include plain-visited() {
+    color: $white;
   }
 }
 
@@ -128,14 +127,15 @@
 .footer-upper {}
 
 .footer-lower {
+  color: rgba($white, .75);
   font-size: $font-size-xs;
-  color: rgba($white, .6);
 
   a {
-    border-bottom: $link-border-width solid rgba($white, .1);
+    text-decoration-skip-ink: auto;
+    cursor: pointer;
 
-    @include hover-focus() {
-      border-color: transparent;
+    &:hover {
+      text-decoration-color: rgba($white, .4);
     }
   }
 }

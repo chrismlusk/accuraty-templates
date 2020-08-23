@@ -1,7 +1,7 @@
 <!--#include file="../public/media/icons/all.svg"-->
 
 <header class="header" role="banner" data-component="Header">
-  <nav class="navbar navbar-expand-md navbar-light" role="navigation">
+  <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
     <div class="container">
       <a class="navbar-brand" href="/" aria-label="_xx___CLIENT_NAME___xx_">
         <!--#include file="_logo.ascx"-->

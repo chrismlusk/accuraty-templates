@@ -176,11 +176,11 @@ $asl--font-size-base:       1rem;
 
 // The px values shown below are based on a 16px root.
 // It's best not to change the root or `$asl--font-size-base`.
-$asl--font-size-1:          $asl--font-size-base * 2.5;   // 40px
-$asl--font-size-2:          $asl--font-size-base * 2;     // 32px
-$asl--font-size-3:          $asl--font-size-base * 1.75;  // 28px
-$asl--font-size-4:          $asl--font-size-base * 1.5;   // 24px
-$asl--font-size-5:          $asl--font-size-base * 1.25;  // 20px
+$asl--font-size-1:          $asl--font-size-base * 3.25;  // 52px
+$asl--font-size-2:          $asl--font-size-base * 2.875; // 46px
+$asl--font-size-3:          $asl--font-size-base * 2.375; // 38px
+$asl--font-size-4:          $asl--font-size-base * 1.875; // 30px
+$asl--font-size-5:          $asl--font-size-base * 1.5;   // 24px
 $asl--font-size-6:          $asl--font-size-base;         // 16px
 $asl--font-size-7:          $asl--font-size-base * .875;  // 14px
 $asl--font-size-8:          $asl--font-size-base * .75;   // 12px
@@ -188,7 +188,7 @@ $asl--font-size-8:          $asl--font-size-base * .75;   // 12px
 $asl--font-size-xl-1:       6rem;     // 96px
 $asl--font-size-xl-2:       5.5rem;   // 88px
 $asl--font-size-xl-3:       4.5rem;   // 72px
-$asl--font-size-xl-4:       3.5rem;   // 56px
+$asl--font-size-xl-4:       3.75rem;  // 60px
 
 $asl--font-weight-lighter:  lighter;
 $asl--font-weight-light:    300;
@@ -214,7 +214,7 @@ $asl--line-height-loose:    1.8;
 // ----------------------------------------------------------------------------
 
 $asl--border-width-normal:  1px;
-$asl--border-width-thick:   3px;
+$asl--border-width-thick:   4px;
 
 $asl--border-color:         $asl--gray-300;
 
@@ -450,7 +450,7 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3 )
+    5: ($spacer * 3)
   ),
   $spacers
 );
@@ -501,20 +501,6 @@ $link-hover-color:                darken($link-color, 15%);
 $link-hover-decoration:           none;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15%;
-
-// Custom variables added by Accuraty
-$link-border-width:               1px;
-$link-border-color:               lighten($link-color, 42.5%);
-$link-hover-bg:                   transparent;
-$link-hover-border-color:         transparent;
-$link-active-color:               $link-hover-color;
-$link-active-bg:                  rgba($gray-800, .075);
-$link-active-border-color:        transparent;
-
-// Custom variables added by Accuraty
-$link-focus-outline-width:        5px;
-$link-focus-outline-style:        auto;
-$link-focus-outline-color:        -webkit-focus-ring-color;
 
 
 
@@ -715,7 +701,7 @@ $display3-weight:             $asl--font-weight-light;
 $display4-weight:             $asl--font-weight-light;
 $display-line-height:         $headings-line-height;
 
-$lead-font-size:              $asl--font-size-5;
+$lead-font-size:              1.25em; // use `em` for scaling
 $lead-font-weight:            $asl--font-weight-light;
 
 $small-font-size:             80%;
@@ -1186,7 +1172,7 @@ $nav-divider-margin-y:              $spacer / 2;
 // ----------------------------------------------------------------------------
 
 $navbar-padding-y:                  $spacer / 2;
-$navbar-padding-x:                  0;
+$navbar-padding-x:                  $spacer;
 
 $navbar-nav-link-padding-x:         .5rem;
 
