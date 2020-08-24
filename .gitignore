@@ -8,6 +8,7 @@ Thumbs.db
 **/npm-debug.log
 
 # ASSETS
+**/dist/
 **/public/
 **/*.map
 **/*.css

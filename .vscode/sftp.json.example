@@ -3,6 +3,7 @@
   "host": "___HOST_NAME___",
   "username": "___USER_NAME___",
   "password": "___PASSWORD___",
+  "context": "DNN/",
   "protocol": "ftp",
   "port": 21,
   "secure": true,
