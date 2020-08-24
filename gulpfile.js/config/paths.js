@@ -3,7 +3,7 @@ const { name, faviconFile } = require('./project');
 const SRC_NAME = 'src';
 const DIST_NAME = 'dist';
 
-const appPath = `./DNN`;
+const appPath = `./app`;
 const portalPath = `${appPath}/Portals/_default`;
 const skinPath = `${portalPath}/Skins/${name}`;
 const containerPath = `${portalPath}/Containers/${name}`;
