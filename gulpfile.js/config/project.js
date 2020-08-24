@@ -2,7 +2,6 @@ const { getWebpackEntries, isTrue } = require('../utils');
 
 const {
   PROJECT_MODE,
-  PROJECT_INITIALIZED,
   LOCAL_FONTS,
   LOCAL_ICONS,
   LOCAL_IMAGES,
@@ -16,7 +15,6 @@ const {
 module.exports = {
   name: 'AccuTheme',
   mode: PROJECT_MODE || 'development',
-  initialized: isTrue(PROJECT_INITIALIZED),
   fonts: isTrue(LOCAL_FONTS),
   icons: isTrue(LOCAL_ICONS),
   images: isTrue(LOCAL_IMAGES),
