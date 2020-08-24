@@ -1,8 +1,8 @@
 <style>
-  #docs h3 {
-    margin-top: 3rem !important;
+  #AccuDocs h3[id] {
+    margin-top: 4rem !important;
   }
-  #docs .docs-example {
+  #AccuDocs .docs-example {
     position: relative;
     padding: 1.5rem;
     margin: 1rem 0;
@@ -10,7 +10,7 @@
   }
 </style>
 
-<div id="docs">
+<div id="AccuDocs">
   <h2>Components</h2>
   <div class="rich-text">
     <p class="lead">An overview of how components look with this theme. This intro paragraph is wrapped in our custom <code>.rich-text</code> class and is given Bootstrap's <code>.lead</code> class so we can see how it looks, too.</p>
@@ -19,7 +19,6 @@
     <ul>
       <li><a href="#accordion">Accordion</a></li>
       <li><a href="#alerts">Alerts</a></li>
-      <li><a href="#badges">Badges</a></li>
       <li><a href="#buttons">Buttons</a></li>
       <li><a href="#cards">Cards</a></li>
       <li><a href="#carousel">Carousel</a></li>
@@ -108,44 +107,6 @@
     </div>
   </div>
 
-  <h3 id="badges">Badges</h3>
-  <h4>In headings</h4>
-  <div class="docs-example">
-    <h3>Heading 3 <span class="badge badge-secondary">New</span></h3>
-    <h4>Heading 4 <span class="badge badge-secondary">New</span></h4>
-    <h5>Heading 5 <span class="badge badge-secondary">New</span></h5>
-  </div>
-
-  <h4>As labels</h4>
-  <div class="docs-example">
-    <button type="button" class="btn btn-primary">
-      Notifications <span class="badge badge-light">4</span>
-    </button>
-  </div>
-
-  <h4>Contextual variations</h4>
-  <div class="docs-example">
-    <span class="badge badge-primary">Primary</span>
-    <span class="badge badge-secondary">Secondary</span>
-    <span class="badge badge-success">Success</span>
-    <span class="badge badge-danger">Danger</span>
-    <span class="badge badge-warning">Warning</span>
-    <span class="badge badge-info">Info</span>
-    <span class="badge badge-light">Light</span>
-    <span class="badge badge-dark">Dark</span>
-  </div>
-
-  <h4>Links</h4>
-  <div class="docs-example">
-    <a href="#" class="badge badge-primary">Primary</a>
-    <a href="#" class="badge badge-secondary">Secondary</a>
-    <a href="#" class="badge badge-success">Success</a>
-    <a href="#" class="badge badge-danger">Danger</a>
-    <a href="#" class="badge badge-warning">Warning</a>
-    <a href="#" class="badge badge-info">Info</a>
-    <a href="#" class="badge badge-light">Light</a>
-    <a href="#" class="badge badge-dark">Dark</a>
-  </div>
 
   <h3 id="buttons">Buttons</h3>
   <h4>Solid</h4>
@@ -174,31 +135,13 @@
 
 
   <h3 id="cards">Cards</h3>
-  <h4>Basic</h4>
   <div class="docs-example">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title font-weight-bold">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-  <h4>Header &amp; Footer</h4>
-  <div class="docs-example">
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
+        <a href="#" class="btn btn-outline-primary btn-sm">Read more</a>
       </div>
     </div>
   </div>
@@ -301,12 +244,6 @@
     </select>
   </div>
 
-  <h5>Range</h5>
-  <div class="docs-example">
-    <label for="customRange1">Example range</label>
-    <input type="range" class="custom-range" id="customRange1">
-  </div>
-
 
   <h3 id="modal">Modal</h3>
   <div class="docs-example">
@@ -323,7 +260,7 @@
             <p>Modal body text goes here.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
