@@ -2,14 +2,14 @@ const { resolve } = require('path');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const { project } = require('./gulpfile.js/config');
+const { project, paths } = require('./gulpfile.js/config');
 
 module.exports = {
   mode: project.mode,
   entry: project.webpack.entries,
   output: {
     filename: '[name].bundle.js',
-    path: resolve(__dirname, 'DNN/Portals/_default/Skins/AccuTheme/dist'),
+    path: resolve(__dirname, `${paths.dist}`),
   },
   devtool: project.mode === 'development' ? 'inline-source-map' : 'source-map',
   optimization: {
