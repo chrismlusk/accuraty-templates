@@ -12,6 +12,10 @@
   },
   "passive": false,
   "uploadOnSave": true,
+  "syncOption": {
+    "update": true,
+    "delete": true
+  },
   "watcher": {
     "files": "**/AccuTheme/**/*",
     "autoUpload": true,
@@ -24,6 +28,7 @@
     "**/node_modules/",
     "**/src/",
     "**/README.md",
+    "**/*.LICENSE.txt",
     ".*",
     "package.json",
     "package-lock.json",
