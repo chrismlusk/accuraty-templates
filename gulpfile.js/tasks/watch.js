@@ -1,8 +1,8 @@
 const gulp = require('gulp');
-const mediaTask = require('./media');
+const { media: mediaTask } = require('./media');
 
 const stylesTask = require('./styles');
-const scriptsTask = require('./scripts');
+const { scripts: scriptsTask } = require('./scripts');
 
 const { paths, project } = require('../config');
 
