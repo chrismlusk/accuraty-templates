@@ -1,9 +1,13 @@
-<!--#include file="../public/media/icons/all.svg"-->
+<%-- <!--#include file="../dist/media/svg/all.svg"--> --%>
 
-<header class="header" role="banner" data-component="Header">
+<header class="header bg-light" role="banner" data-component="Header">
   <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
     <div class="container">
-      <a class="navbar-brand" href="/" aria-label="_xx___CLIENT_NAME___xx_">
+      <a
+        class="navbar-brand"
+        href="/"
+        aria-label="_xx___CLIENT_NAME___xx_"
+      >
         <!--#include file="_logo.ascx"-->
       </a>
 
@@ -25,8 +29,8 @@
 </header>
 
 <%-- Site Menu --%>
-<dnn:MENU
+<%-- <dnn:MENU
   MenuStyle="menus/SiteMenu"
   IncludeNodes=""
   runat="server"
-></dnn:MENU>
+></dnn:MENU> --%>

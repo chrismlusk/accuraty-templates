@@ -4,8 +4,13 @@
 
 .main {
   margin-top: 1rem;
+  min-height: 60vh;
 
   @include media-breakpoint-up(md) {
     margin-top: 3rem;
+  }
+
+  &:focus {
+    outline: none;
   }
 }

@@ -51,7 +51,7 @@ const imagemin = {
     imageminPlugin.svgo({
       plugins: [
         { cleanupAttrs: true },
-        { cleanupIDs: true },
+        { cleanupIDs: false },
         { removeComments: true },
         { removeStyleElement: true },
         { removeTitle: false },

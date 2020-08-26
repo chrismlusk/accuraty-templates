@@ -6,8 +6,8 @@
 <%-- Meta tags
 ================================================== --%>
 
-<%@ Register TagPrefix="asl" TagName="MetaTags" src="../controls/meta.ascx" %>
-<asl:MetaTags runat="server" />
+<%@ Register TagPrefix="accu" TagName="MetaTags" src="../controls/meta.ascx" %>
+<accu:MetaTags runat="server" />
 
 
 

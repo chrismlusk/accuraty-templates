@@ -8,7 +8,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
 const { paths, plugins, project } = require('../config');
-const { skinLayoutStyles, containerStyles, moduleStyles } = paths;
+const { skinStyles, moduleStyles, containerStyles } = paths;
 const { fixMapPath } = require('../utils');
 
 const isProduction = project.mode === 'production';
@@ -21,18 +21,20 @@ const postcssProcessors = [
   autoprefixer(plugins.autoprefixer.options),
 ];
 
-function skinLayoutStylesTask() {
-  if (!project.styles.skinLayouts) return Promise.resolve();
+function skinStylesTask() {
+  if (!project.styles.skin) return Promise.resolve();
 
-  return gulp
-    .src(skinLayoutStyles.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss(postcssProcessors))
-    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(path => fixMapPath(path)))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(skinLayoutStyles.dist));
+  return (
+    gulp
+      .src(skinStyles.src)
+      .pipe(sourcemaps.init())
+      .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+      .pipe(postcss(postcssProcessors))
+      .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
+      // .pipe(sourcemaps.mapSources(path => fixMapPath(path)))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(skinStyles.dist))
+  );
 }
 
 function moduleStylesTask() {
@@ -41,15 +43,17 @@ function moduleStylesTask() {
   const prefix = `../../`;
   const directory = `src/styles/Module`;
 
-  return gulp
-    .src(moduleStyles.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss(postcssProcessors))
-    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(path => fixMapPath(path, prefix, directory)))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(moduleStyles.dist));
+  return (
+    gulp
+      .src(moduleStyles.src)
+      .pipe(sourcemaps.init())
+      .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+      .pipe(postcss(postcssProcessors))
+      .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
+      // .pipe(sourcemaps.mapSources(path => fixMapPath(path, prefix, directory)))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(moduleStyles.dist))
+  );
 }
 
 function containerStylesTask() {
@@ -58,19 +62,25 @@ function containerStylesTask() {
   const prefix = `../../Skins/${project.name}`;
   const directory = `src/styles/Container`;
 
-  return gulp
-    .src(containerStyles.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
-    .pipe(postcss(postcssProcessors))
-    .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
-    .pipe(sourcemaps.mapSources(path => fixMapPath(path, prefix, directory)))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(containerStyles.dist));
+  return (
+    gulp
+      .src(containerStyles.src)
+      .pipe(sourcemaps.init())
+      .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
+      .pipe(postcss(postcssProcessors))
+      .pipe(gulpif(isProduction, cleanCss(plugins.cleanCss.options)))
+      // .pipe(sourcemaps.mapSources(path => fixMapPath(path, prefix, directory)))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(containerStyles.dist))
+  );
 }
 
+exports.skinStyles = skinStylesTask;
+exports.moduleStyles = moduleStylesTask;
+exports.containerStyles = containerStylesTask;
+
 exports.styles = gulp.parallel(
-  skinLayoutStylesTask,
+  skinStylesTask,
   moduleStylesTask,
   containerStylesTask
 );

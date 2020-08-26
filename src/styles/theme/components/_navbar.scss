@@ -18,7 +18,7 @@
 // ======================
 
 .navbar {
-  min-height: $navbar-height-sm;
+  min-height: $navbar-height-xs;
 
   @include media-breakpoint-up(md) {
     min-height: $navbar-height-md;
@@ -40,7 +40,13 @@
 // Used for brand, project, or site name.
 // ----------------------------------------------------------------------------
 
-.navbar-brand {}
+.navbar-brand {
+  width: 80px;
+
+  @include media-breakpoint-up(md) {
+    width: 160px;
+  }
+}
 
 
 

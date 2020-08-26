@@ -21,40 +21,30 @@ _This assumes the project has not been set up at all. If it already exists on Gi
 Create a new project folder on your local machine, `cd` into that directory, and run the following commands in your terminal:
 
 ```
-git clone https://github.com/chrismlusk/accuraty-templates.git .
+git clone -b master --single-branch https://github.com/chrismlusk/accuraty-templates.git .
 rm -rf .git
 git init
 ```
 
-That will clone this repo into your current directory, delete the Git history, and start fresh.
+That will clone the `master` branch of this repo into your current directory, delete the Git history, and start fresh.
 
 #### 2. Set your FTP config
 
-If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `sftp.json.example`, save it as `sftp.json`, and update the first four lines with your credentials.
+If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `sftp.json.example`, save it as `sftp.json`, and update the first three lines with your credentials.
 
-#### 3. Set the project name
+#### 3. Getting code to the server
 
-Next, navigate to the Skin folder:
-
-```
-cd Portals/_default/Skins/CLIENT_CODE
-```
-
-Open the `.env` file and change the `CLIENT_CODE` variable to the client abbreviation or whatever the project's name should be.
-
-This name will be used in multiple places (e.g., the Skin and Container directories, Sass variables), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
+Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project. Right-click on the `app/` folder and choose "Upload Folder" from the menu.
 
 #### 4. Install packages
 
-From your terminal, run `npm install` from inside the Skin folder.
+From your terminal, run `npm install`.
 
 #### 5. Build the assets
 
-Then run `npm run build`.
+Run `npm run build`.
 
-This will trigger Gulp to initialize the project, rename directories, and compile assets (stylesheets, scripts, etc.). The `build` command will not keep Gulp in "watch" mode, however. Since we are getting started, just build the assets and keep going with the setup.
-
-Next, add and commit everything to Git. Reminder: This is all local-only at this point, as we have not set up the remote repository yet.
+This will optimize and compile assets (images, styles, scripts, etc.), but it won't keep Gulp in "watch" mode. However, since we are just getting started, run this one time and then continue with the setup.
 
 #### 6. Create GitHub repo
 
@@ -76,14 +66,6 @@ git remote add origin _PASTE_THE_GITHUB_URL_HERE_
 git push -u origin master
 ```
 
-#### 7. Getting code to the server
-
-While our default SFTP extension settings in VS Code automatically push most files, you will need to manually upload certain directories — especially when you first set up a project. 
-
-Right-click on the skin folder (`Portals/_default/Skins/[PROJECT_NAME]`) and choose "Upload Folder" from the menu. Repeat the same for the client's container folder (`Portals/_default/Containers/[PROJECT_NAME]`).
-
-The `sftp.json` configuration will prevent unnecessary files from being uploaded to the server.
-
 ### Cloning locally
 
 _This assumes the project has already been set up and added as a repository to the [Accuraty GitHub account](https://github.com/Accuraty), but you have not added it to your local machine._
@@ -102,23 +84,23 @@ If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy 
 
 #### 3. Install packages
 
-Next, `cd` into the skin (`Portals/_default/Skins/[ABBV]`) and run `npm install` to get the required packages.
+Next, run `npm install`.
 
 #### 4. Build the assets
 
-Then run `npm start` in your terminal.
+Run `npm start`.
 
-This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
+This will kick off the Gulp tasks to optimize and compile assets (images, styles, scripts, etc.). It will also continue watching for changes to source files.
 
-To exit this "watch" mode, press `Control-C` in your terminal.
+To exit "watch" mode, press `Control-C` in your terminal.
 
-To start watching again, run `npm start` in your terminal.
+To start watching again, run `npm start`.
 
 #### 5. Push changes to GitHub
 
-Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it is because you do not have permission to write to the private repo. 
+Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it's because you do not have permission to write to the private repo.
 
-Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
+Make sure (1) [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
 
 ## About Accuraty
 

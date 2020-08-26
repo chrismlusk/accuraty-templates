@@ -11,16 +11,17 @@ const containerPath = `${portalPath}/Containers/${name}`;
 const srcPath = `./${SRC_NAME}`;
 const distPath = `${skinPath}/${DIST_NAME}`;
 
-const fontsDir = `media/fonts`;
-const iconsDir = `media/icons`;
-const imagesDir = `media/images`;
-
+// These directories are only available at `src`.
+const scriptsDir = `scripts`;
 const stylesDir = `styles`;
-const skinLayoutStylesDir = `${stylesDir}`;
-const modulesStylesDir = `${stylesDir}/Modules`;
+const skinStylesDir = `${stylesDir}`;
+const moduleStylesDir = `${stylesDir}/Modules`;
 const containerStylesDir = `${stylesDir}/Containers`;
 
-const scriptsDir = `scripts`;
+// Available both at `src` and `dist`.
+const fontsDir = `media/fonts`;
+const svgDir = `media/svg`;
+const imagesDir = `media/images`;
 
 module.exports = {
   app: appPath,
@@ -31,17 +32,14 @@ module.exports = {
   dist: distPath,
 
   fonts: {
-    dir: fontsDir,
     src: `${srcPath}/${fontsDir}/*.{woff,woff2}`,
     dist: `${distPath}/${fontsDir}`,
   },
-  icons: {
-    dir: iconsDir,
-    src: `${srcPath}/${iconsDir}/*.svg`,
-    dist: `${distPath}/${iconsDir}`,
+  svg: {
+    src: `${srcPath}/${svgDir}/**/*.svg`,
+    dist: `${distPath}/${svgDir}`,
   },
   images: {
-    dir: imagesDir,
     src: `${srcPath}/${imagesDir}/**/*.{jpg,jpeg,png,gif,svg}`,
     dist: `${distPath}/${imagesDir}`,
   },
@@ -56,16 +54,16 @@ module.exports = {
   styles: {
     dir: stylesDir,
     src: `${srcPath}/${stylesDir}/**/*.scss`,
-    dist: `${distPath}/`,
+    dist: distPath,
   },
-  skinLayoutStyles: {
-    dir: skinLayoutStylesDir,
-    src: `${srcPath}/${skinLayoutStylesDir}/*.scss`,
+  skinStyles: {
+    dir: skinStylesDir,
+    src: `${srcPath}/${skinStylesDir}/*.scss`,
     dist: skinPath,
   },
   moduleStyles: {
-    dir: modulesStylesDir,
-    src: `${srcPath}/${modulesStylesDir}/*.scss`,
+    dir: moduleStylesDir,
+    src: `${srcPath}/${moduleStylesDir}/*.scss`,
     dist: distPath,
   },
   containerStyles: {

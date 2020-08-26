@@ -6,7 +6,7 @@ The `src/` folder includes all stylesheets, fonts, images, and scripts needed to
 
 - `media/`
   - `fonts/`
-  - `icons/`
+  - `svg/`
   - `images/`
 - `scripts/`
 - `styles/`
@@ -17,9 +17,9 @@ _Note: If new directories are needed, you will need to modify the Gulp config to
 
 Source files for fonts included with the project are saved here.
 
-### icons/
+### svg/
 
-Icons (SVGs, PNGs, etc.). Are icons images? Sure. But in our experience, it's easier to separate them into a dedicated place.
+SVG files for icons, logos, etc.
 
 ### images/
 

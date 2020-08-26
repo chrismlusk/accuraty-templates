@@ -1,4 +1,4 @@
-<footer class="footer" role="contentinfo">
+<footer class="footer [ bg-dark text-white ]" role="contentinfo">
   <div class="footer-upper">
     <div class="container">
       <div class="row">
@@ -29,13 +29,13 @@
         <div class="col-md-6">
           <ul class="nav flex-column" itemscope itemtype="http://schema.org/Organization">
             <li class="nav-item">
-              <a class="nav-link is-facebook" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Facebook</a>
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Facebook</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link is-twitter" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Twitter</a>
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">Twitter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link is-youtube" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">YouTube</a>
+              <a class="nav-link" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">YouTube</a>
             </li>
           </ul>
         </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="col-md-6">
           <p class="footer-credits  text-center text-md-right">
-            Design, development, and hosting by <a href="https://accuraty.com" target="_blank" rel="nofollow noopener noreferrer">Accuraty Solutions</a>.
+            Development and hosting by <a href="https://accuraty.com" target="_blank" rel="nofollow noopener noreferrer">Accuraty Solutions</a>.
           </p>
         </div>
       </div>
@@ -62,4 +62,4 @@
   </div>
 </footer>
 
-<%--  <!--#include file="__debug.ascx"-->  --%>
+ <!--#include file="__debug.ascx"-->

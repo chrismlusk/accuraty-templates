@@ -22,7 +22,6 @@
 .footer {
   font-size: $font-size-sm;
   color: $white;
-  background-color: $gray-900;
 }
 
 
@@ -54,6 +53,11 @@
 // ----------------------------------------------------------------------------
 
 a.footer-brand {
+  width: 120px;
+
+  @include media-breakpoint-up(md) {
+    width: 200px;
+  }
 
   @include plain-visited() {
     color: $white;
