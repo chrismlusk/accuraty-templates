@@ -13,7 +13,7 @@
 
 
 .section--navbarOffset {
-  padding-top: calc(#{$navbar-height-sm} + 1.5rem);
+  padding-top: calc(#{$navbar-height-xs} + 1.5rem);
 
   @include media-breakpoint-up(md) {
     padding-top: calc(#{$navbar-height-md} + 3rem);

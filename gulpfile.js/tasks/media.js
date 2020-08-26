@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 
 const { paths, plugins, project } = require('../config');
-const { fonts, icons } = paths;
+const { fonts, svg } = paths;
 const $ = plugins.imagemin;
 
 function fontsTask() {
@@ -10,9 +10,12 @@ function fontsTask() {
   return gulp.src(fonts.src).pipe(gulp.dest(fonts.dist));
 }
 
-function iconsTask() {
-  if (!project.icons) return Promise.resolve();
-  return gulp.src(icons.src).pipe(gulp.dest(icons.dist));
+function svgTask() {
+  if (!project.svg) return Promise.resolve();
+  return gulp
+    .src(svg.src)
+    .pipe(imagemin($.plugins, $.options))
+    .pipe(gulp.dest(svg.dist));
 }
 
 function imagesTask() {
@@ -23,4 +26,4 @@ function imagesTask() {
     .pipe(gulp.dest(paths.images.dist));
 }
 
-exports.media = gulp.parallel(fontsTask, iconsTask, imagesTask);
+exports.media = gulp.parallel(fontsTask, svgTask, imagesTask);

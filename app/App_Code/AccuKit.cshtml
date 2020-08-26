@@ -1,7 +1,7 @@
 @using System.Text.RegularExpressions
 @using System.Net
 @using System.Net.Sockets
-@using ToSic.Razor.Blade
+@* @using ToSic.Razor.Blade *@
 @using DotNetNuke.Entities.Portals
 @using DotNetNuke.Entities.Users
 
@@ -77,12 +77,12 @@
 
   // does the URL contain the expected secret?
   // do {something} only if URL has "/demo/on" or "&demo=on" added
-  public static bool isUrlSpecial(
-    string paramName = "demo",
-    string paramValue = "on"
-  ) {
-    return urlQSParam(paramName) == paramValue;
-  }
+  // public static bool isUrlSpecial(
+  //   string paramName = "demo",
+  //   string paramValue = "on"
+  // ) {
+  //   return urlQSParam(paramName) == paramValue;
+  // }
 
 
 
@@ -95,10 +95,10 @@
   // --------------------------------------------------------------------------
 
   // safely fetch our URL Param
-  public static string urlQSParam(string paramName = "demo") {
-    bool hasParam = Text.Has(Request.QueryString[paramName], false);
-    return hasParam ? Request.QueryString[paramName] : "";
-  }
+  // public static string urlQSParam(string paramName = "demo") {
+  //   bool hasParam = Text.Has(Request.QueryString[paramName], false);
+  //   return hasParam ? Request.QueryString[paramName] : "";
+  // }
 
   // by IP, is the remote IP address a known Accuraty WAN IP?
   public static bool isAccuratyIP() {

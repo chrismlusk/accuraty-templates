@@ -4,7 +4,9 @@
   for logos not only because vectors are better, but also because that allows
   us to target them via CSS to change attributes like size and color.
   --%>
-<img
+<%-- <img
   src="<%=PortalSettings.HomeDirectory %><%=PortalSettings.LogoFile %>"
   alt="_xx___CLIENT_NAME___xx_"
-/>
+/> --%>
+
+<!--#include file="../dist/media/svg/AccuLogo.svg"-->

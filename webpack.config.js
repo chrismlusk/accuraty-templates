@@ -11,11 +11,19 @@ module.exports = {
     filename: '[name].bundle.js',
     path: resolve(__dirname, `${paths.dist}`),
   },
-  devtool: project.mode === 'development' ? 'inline-source-map' : 'source-map',
+  devtool:
+    project.mode === 'development' ? 'eval-cheap-source-map' : 'source-map',
   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         exclude: /vendors/,
+        sourceMap: true,
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          },
+        },
       }),
     ],
     runtimeChunk: 'single',
@@ -38,7 +46,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: [
+              ['@babel/preset-env', { useBuiltIns: 'entry', corejs: 3 }],
+            ],
             plugins: [
               '@babel/plugin-transform-runtime',
               '@babel/plugin-proposal-class-properties',

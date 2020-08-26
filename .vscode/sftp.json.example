@@ -1,9 +1,9 @@
 {
-  "name": "___CLIENT_CODE___",
   "host": "___HOST_NAME___",
   "username": "___USER_NAME___",
   "password": "___PASSWORD___",
-  "context": "app/",
+  "name": "AccuTheme",
+  "context": "./app",
   "protocol": "ftp",
   "port": 21,
   "secure": true,
@@ -13,7 +13,7 @@
   "passive": false,
   "uploadOnSave": true,
   "watcher": {
-    "files": "**/Skins/**/*",
+    "files": "**/AccuTheme/**/*",
     "autoUpload": true,
     "autoDelete": false
   },

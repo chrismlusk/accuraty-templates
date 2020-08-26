@@ -30,29 +30,21 @@ That will clone the `master` branch of this repo into your current directory, de
 
 #### 2. Set your FTP config
 
-If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `sftp.json.example`, save it as `sftp.json`, and update the first four lines with your credentials.
+If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `sftp.json.example`, save it as `sftp.json`, and update the first three lines with your credentials.
 
-#### 3. Set the project name
+#### 3. Getting code to the server
 
-Next, navigate to the Skin folder:
-
-```
-cd Portals/_default/Skins/CLIENT_CODE
-```
-
-Open the `.env` file and change the `CLIENT_CODE` variable to the client abbreviation or whatever the project's name should be.
-
-This name will be used in multiple places (e.g., the Skin and Container directories, Sass variables), but **you only need to set it here**. The Gulp build process takes care of setting the name everywhere else.
+Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project. Right-click on the `app/` folder and choose "Upload Folder" from the menu.
 
 #### 4. Install packages
 
-From your terminal, run `npm install` from inside the Skin folder.
+From your terminal, run `npm install`.
 
 #### 5. Build the assets
 
-Then run `npm run build`.
+Run `npm run build`.
 
-This will trigger Gulp to initialize the project, rename directories, and compile assets (styles, scripts, etc.), but Gulp won't stay in "watch" mode.
+This will optimize and compile assets (images, styles, scripts, etc.), but it won't keep Gulp in "watch" mode. However, since we are just getting started, run this one time and then continue with the setup.
 
 #### 6. Create GitHub repo
 
@@ -74,17 +66,7 @@ git remote add origin _GITHUB_URL_HERE_
 git push -u origin master
 ```
 
-#### 7. Getting code to the server
-
-Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project.
-
-Right-click on the skin folder (`Portals/_default/Skins/[PROJECT_NAME]`) and choose "Upload Folder" from the menu. Repeat the same for the client's container folder (`Portals/_default/Containers/[PROJECT_NAME]`).
-
-The `sftp.json` configuration will prevent unnecessary files from being uploaded to the server.
-
-#### 8. Update this README
-
-Be kind to others. Make these changes:
+### Cloning locally
 
 - Update the title and description to match the project.
 - Delete everything but the "Cloning locally" steps from "Getting started."
@@ -106,7 +88,7 @@ If you are using Visual Studio Code, navigate to the `.vscode/` directory. Dupli
 
 #### 3. Install packages
 
-Next, `cd` into the skin (`Portals/_default/Skins/[ABBV]`) and run `npm install` to get the required packages.
+Next, run `npm install`.
 
 #### 4. Build the assets
 
@@ -120,9 +102,9 @@ To start watching again, run `npm start`.
 
 #### 5. Push changes to GitHub
 
-Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it is because you do not have permission to write to the private repo. 
+Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it's because you do not have permission to write to the private repo.
 
-Make sure you are either (1) Jeremy Farrance and [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
+Make sure (1) [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
 
 ## About Accuraty
 

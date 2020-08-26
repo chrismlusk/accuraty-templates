@@ -33,7 +33,7 @@ All skin assets that need to be available for production are put here. This typi
 
 ### src/
 
-The bulk of your development work will be within this directory. This starter kit comes with fonts, icons, images, JavaScript, and SCSS.
+The bulk of your development work will be within this directory. This starter kit comes with fonts, svg, images, JavaScript, and SCSS.
 
 ### Layout templates
 
