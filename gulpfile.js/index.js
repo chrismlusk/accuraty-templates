@@ -17,6 +17,7 @@ exports.clean = clean;
 exports.favicons = favicons;
 exports.scripts = scripts;
 exports.styles = styles;
+exports.watch = watch;
 
 exports.default = series(base, compile, [watch]);
 exports.build = series(base, parallel(lintStyles, lintScripts), compile);
