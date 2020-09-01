@@ -2,13 +2,14 @@ import { Module } from './app';
 
 class Authentication {
   static defaults = {
+    authForm: '[data-authentication-form]',
+    buttonPrimaryClassName: 'btn btn-primary',
+    buttonSecondaryClassName: 'btn btn-outline-primary',
     dnnInput: '.dnnFormItem input:not([type=checkbox]):not([type=radio])',
-    inputClass: 'form-control',
     dnnPrimaryButton: '.dnnPrimaryAction',
     dnnSecondaryButton: '.dnnSecondaryAction',
-    buttonPrimaryClass: 'btn btn-primary',
-    buttonSecondaryClass: 'btn btn-outline-primary',
-    loadingClass: 'is-loading',
+    inputClass: 'form-control',
+    visibleClass: 'is-visible',
   };
 
   constructor(element, options) {
@@ -24,20 +25,16 @@ class Authentication {
   }
 
   createChildRefs() {
-    this.inputs = [
-      ...this.element.querySelectorAll(Authentication.defaults.dnnInput),
-    ];
+    this.authForm = this.element.querySelector(this.options.authForm);
+
+    this.inputs = [...this.element.querySelectorAll(this.options.dnnInput)];
 
     this.primaryButtons = [
-      ...this.element.querySelectorAll(
-        Authentication.defaults.dnnPrimaryButton
-      ),
+      ...this.element.querySelectorAll(this.options.dnnPrimaryButton),
     ];
 
     this.secondaryButtons = [
-      ...this.element.querySelectorAll(
-        Authentication.defaults.dnnSecondaryButton
-      ),
+      ...this.element.querySelectorAll(this.options.dnnSecondaryButton),
     ];
 
     return this;
@@ -45,15 +42,15 @@ class Authentication {
 
   layout() {
     this.inputs.forEach(input => {
-      input.className = Authentication.defaults.inputClass;
+      input.className = this.options.inputClass;
     });
 
     this.primaryButtons.forEach(btn => {
-      btn.className = Authentication.defaults.buttonPrimaryClass;
+      btn.className = this.options.buttonPrimaryClassName;
     });
 
     this.secondaryButtons.forEach(btn => {
-      btn.className = Authentication.defaults.buttonSecondaryClass;
+      btn.className = this.options.buttonSecondaryClassName;
     });
 
     return this;
@@ -61,8 +58,8 @@ class Authentication {
 
   enable() {
     setTimeout(() => {
-      this.element.classList.remove(Authentication.defaults.loadingClass);
-    }, 250);
+      this.authForm.classList.add(this.options.visibleClass);
+    }, 350);
 
     return this;
   }

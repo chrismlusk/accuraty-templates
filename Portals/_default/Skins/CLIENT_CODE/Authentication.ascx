@@ -9,33 +9,34 @@
   runat="server"
 />
 
-<div id="authentication" class="is-loading" data-component="Authentication">
-  <main class="main" role="main">
-    <section class="section">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <div class="auth-form">
-              <div
-                id="HeaderPane"
-                data-name="HeaderPane"
-                class="auth-form-header"
-                visible="false"
-                runat="server"
-              ></div>
-              <div
-                id="ContentPane"
-                data-name="ContentPane"
-                class="auth-form-body"
-                visible="false"
-                runat="server"
-              ></div>
-            </div>
+<main
+  class="main"
+  role="main"
+  id="authentication"
+  data-component="Authentication"
+>
+  <section class="section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="auth-form p-3 my-3 mx-auto bg-white p-md-4 my-md-5" data-authentication-form>
+            <div
+              id="HeaderPane"
+              class="auth-form__header mb-4"
+              visible="false"
+              runat="server"
+            ></div>
+            <div
+              id="ContentPane"
+              class="auth-form__content"
+              visible="false"
+              runat="server"
+            ></div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-</div>
+    </div>
+  </section>
+</main>
 
 <!--#include file="includes/_footer.ascx"-->

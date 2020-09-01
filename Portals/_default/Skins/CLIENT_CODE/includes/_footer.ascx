@@ -5,7 +5,7 @@
         <div class="col-md-6">
 
           <a
-            class="footer-brand"
+            class="footer-brand d-inline-block mb-3"
             href="/"
             aria-label="_xx___WEBSITE_NAME___xx_"
           >

@@ -11,6 +11,9 @@
 @import "theme/variables";
 @import "theme/mixins";
 
+// Reset DNN styles
+@import "theme/base/dnn-reset";
+
 // Use just what you need from Bootstrap
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/root";
@@ -56,8 +59,6 @@
 // ==========================
 
 @import "theme/base/fonts";
-@import "theme/base/dnn-reset";
-@import "theme/base/dnn-module";
 @import "theme/base/base";
 @import "theme/base/type";
 @import "theme/base/images";
@@ -89,12 +90,14 @@
 @import "theme/components/spinners";
 
 // ... then import custom components ...
+@import "theme/components/accordion";
 @import "theme/components/rich-text";
 @import "theme/components/skip-link";
 @import "theme/components/site-menu";
 
+@import "theme/layout/footer";
 @import "theme/layout/header";
 @import "theme/layout/main";
-@import "theme/layout/footer";
+@import "theme/layout/section";
 
 // @import "theme/utilities/FILE_NAME_HERE";

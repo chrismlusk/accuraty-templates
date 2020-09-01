@@ -2,12 +2,54 @@
 //
 //  [Table of Contents]
 //
+//  - aspect-ratio
 //  - full-bleed
 //  - plain-visited
 //  - button-variant
 //  - button-outline-variant
 //
 // ============================================================================
+
+
+
+
+//
+// Aspect Ratio
+// ============
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+
+
+
+//
+// Focus
+// =====
+//
+// Pass "inside" as the mixin parameter for buttons and button-like elements.
+// ----------------------------------------------------------------------------
+
+@mixin focus-style($position: "outside") {
+  $offset: null;
+  @if ($position == "inside") {
+    $offset: -.375em;
+  }
+  @else {
+    $offset: .25em;
+  }
+
+  outline: 1px dotted;
+  outline-offset: $offset;
+}
 
 
 
@@ -69,17 +111,20 @@
   @include box-shadow($btn-box-shadow);
 
   @include hover() {
-    @include plain-visited() { color: color-yiq($hover-background); } // 1
+    @include plain-visited() { color: color-yiq($background); } // 1
     @include gradient-bg($hover-background);
     border-color: $hover-border;
   }
 
   &:focus,
   &.focus {
-    // Avoid using mixin so we can pass custom focus shadow properly
+    @include plain-visited() { color: color-yiq($hover-background); } // 1
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
     @if $enable-shadows {
-      box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+      @include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
     } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
       box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
     }
   }
@@ -107,10 +152,10 @@
     border-color: $active-border;
 
     &:focus {
-      // Avoid using mixin so we can pass custom focus shadow properly
       @if $enable-shadows and $btn-active-box-shadow != none {
-        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+        @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
       } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
         box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
       }
     }
@@ -146,10 +191,10 @@
     border-color: $active-border;
 
     &:focus {
-      // Avoid using mixin so we can pass custom focus shadow properly
       @if $enable-shadows and $btn-active-box-shadow != none {
-        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
+        @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5));
       } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
         box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
       }
     }

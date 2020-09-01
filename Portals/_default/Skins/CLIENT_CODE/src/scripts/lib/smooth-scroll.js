@@ -25,15 +25,15 @@ export default function enableSmoothScroll(providedOffset = 50) {
 
   function handleAnchorLink(event) {
     const id = event.target.getAttribute('href');
-    const anchor = document.querySelector(id);
-    if (!anchor) return;
+    const target = document.querySelector(id);
+    if (!target) return;
 
     // Only prevent default if animation is going to happen.
     event.preventDefault();
 
     // https://developer.mozilla.org/Web/API/ScrollToOptions
     const scrollOptions = {
-      top: distanceToTop(anchor),
+      top: distanceToTop(target),
       left: 0,
       behavior: prefersReducedMotion ? 'auto' : 'smooth',
     };
@@ -50,9 +50,19 @@ export default function enableSmoothScroll(providedOffset = 50) {
       const atBottom =
         window.innerHeight + window.pageYOffset >=
         document.body.offsetHeight - 2;
-      if (distanceToTop(anchor) === 0 || atBottom) {
-        anchor.tabIndex = '-1';
-        anchor.focus();
+      if (distanceToTop(target) === 0 || atBottom) {
+        target.style.outline = 'none';
+        target.tabIndex = '-1';
+        target.focus();
+        target.addEventListener(
+          'blur',
+          event => {
+            const el = event.target;
+            el.removeAttribute('tabindex');
+            el.style.outline = null;
+          },
+          { once: true }
+        );
         window.history.pushState('', '', id);
         clearInterval(checkIfDone);
       }
