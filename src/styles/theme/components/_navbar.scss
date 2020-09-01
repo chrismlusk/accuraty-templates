@@ -23,11 +23,6 @@
   @include media-breakpoint-up(md) {
     min-height: $navbar-height-md;
   }
-
-  @include media-breakpoint-up(lg) {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
 
@@ -41,7 +36,7 @@
 // ----------------------------------------------------------------------------
 
 .navbar-brand {
-  width: 80px;
+  width: 114px;
 
   @include media-breakpoint-up(md) {
     width: 160px;
@@ -59,6 +54,10 @@
 // ----------------------------------------------------------------------------
 
 .navbar-nav {
+
+  .nav-item {
+    z-index: 1; // Don't remove. Needed for default theme customizations.
+  }
 
   .nav-link {}
 }

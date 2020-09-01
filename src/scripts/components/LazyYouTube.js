@@ -6,10 +6,10 @@ export default class LazyYouTube {
     buttonClass: 'lazy-yt-btn',
   };
 
-  constructor(element, options) {
+  constructor(element, config = {}) {
     this.element = element;
-    this.options = { ...LazyYouTube.defaults, ...options };
-    this.video_id = this.options.video_id;
+    this.config = { ...LazyYouTube.defaults, ...config };
+    this.video_id = this.config.video_id;
     this.init();
   }
 

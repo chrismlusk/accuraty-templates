@@ -88,3 +88,59 @@
     }
   }
 }
+
+
+
+
+//
+// Modifier: Hoverable
+// ===================
+//
+// Works in tandem with JS component to toggle dropdowns on hover.
+//
+// Extend the hoverable area behind the dropdown menu so it
+// doesn't close as soon as your cursor leaves the the element.
+// ----------------------------------------------------------------------------
+
+.dropdown--hoverable {
+
+  &.show {
+    z-index: 1;
+
+    &:hover .dropdown-toggle:focus {
+      outline: none;
+    }
+  }
+
+  .dropdown-toggle {
+    position: relative;
+    z-index: 1;
+  }
+
+  .dropdown-menu {
+    z-index: 0;
+
+    &::after {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      bottom: -1rem;
+      left: -1rem;
+      z-index: -1;
+      content: "";
+    }
+
+    .dropdown-toggle {
+      z-index: 0;
+    }
+
+    // Nested dropdown
+    .dropdown-menu {
+      z-index: 1;
+
+      &::after {
+        // left: 0;
+      }
+    }
+  }
+}

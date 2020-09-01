@@ -33,12 +33,23 @@
   // PortalSettings.Current gets the instance
   // https://dnndocs.com/api/DotNetNuke.Entities.Portals.PortalSettings.html
   public static string SkinPath = PortalSettings.Current.ActiveTab.SkinPath;
-  public static string SkinCssPath = SkinPath + "public";
-  public static string SkinJsPath = SkinPath + "public";
-  public static string SkinImagesPath = SkinPath + "public/media/images";
+  public static string SkinCssPath = SkinPath + "dist";
+  public static string SkinJsPath = SkinPath + "dist";
+  public static string SkinMediaPath = SkinPath + "dist/media";
+  public static string SkinImagesPath = SkinMediaPath + "/images";
+  public static string SkinSvgPath = SkinMediaPath + "/svg";
 
   public static bool isHomePage() {
     return PortalSettings.Current.ActiveTab.TabID == PortalSettings.Current.HomeTabId;
+  }
+
+  public static HtmlString BootstrapIcon(string iconName) {
+    string name = ToSlug(iconName);
+    string svgSprite = SkinSvgPath + "/bootstrap-icons.svg";
+
+    string output = "<svg class=\"bi\" width=\"1em\" height=\"1em\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><use xlink:href=\"" + svgSprite + "#" + name + "\"></use></svg>";
+
+    return new HtmlString(output);
   }
 
 

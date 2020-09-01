@@ -13,7 +13,7 @@
   class="main"
   role="main"
   id="authentication"
-  data-component="Authentication"
+  data-component="DnnAuthForm"
 >
   <section class="section">
     <div class="container-fluid">

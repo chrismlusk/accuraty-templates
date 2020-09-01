@@ -209,9 +209,10 @@ a {
 
 ul,
 ol {
+  list-style: initial;
   margin-bottom: 0;
   margin-left: 0;
-  list-style: initial;
+  padding-left: 1.25rem;
 
   ul,
   ol {

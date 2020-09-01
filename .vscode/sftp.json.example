@@ -19,7 +19,7 @@
   "watcher": {
     "files": "**/AccuTheme/**/*",
     "autoUpload": true,
-    "autoDelete": false
+    "autoDelete": true
   },
   "ignore": [
     "**/.git/",

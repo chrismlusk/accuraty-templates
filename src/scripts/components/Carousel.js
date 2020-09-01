@@ -3,9 +3,9 @@ import buildFlickity from '../lib/build-flickity';
 export default class Carousel {
   static defaults = {};
 
-  constructor(element, options) {
+  constructor(element, config = {}) {
     this.element = element;
-    this.options = { ...Carousel.defaults, ...options };
+    this.config = { ...Carousel.defaults, ...config };
     this.init();
   }
 

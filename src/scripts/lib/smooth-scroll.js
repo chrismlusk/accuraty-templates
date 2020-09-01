@@ -52,7 +52,7 @@ export default function enableSmoothScroll(providedOffset = 50) {
         document.body.offsetHeight - 2;
       if (distanceToTop(target) === 0 || atBottom) {
         target.style.outline = 'none';
-        target.tabIndex = '-1';
+        target.setAttribute('tabindex', '-1');
         target.focus();
         target.addEventListener(
           'blur',

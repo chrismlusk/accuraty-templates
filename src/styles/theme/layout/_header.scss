@@ -4,24 +4,31 @@
 
 .header {
 
-  &.fixed-to-top {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: $zindex-fixed;
-    transition-timing-function: $transition-timing-function;
-    transition-duration: $transition-duration;
-    transition-property: transform;
-    will-change: transform;
-
-    &.is-hidden {
-      transform: translateY(-100%);
-    }
-
-    // Reposition fixed `.header` so DNN Persona Bar doesn't overlap it
-    .personabar-visible & {
+  // Reposition fixed `.header` so DNN Persona Bar doesn't overlap it
+  .personabar-visible & {
+    &.fixed-top {
       left: $dnn-persona-bar-width;
     }
+  }
+}
+
+
+
+
+//
+// Modifier: Transform header on scroll
+// ====================================
+//
+// Designed to work with the `Header` JavaScript component.
+// ----------------------------------------------------------------------------
+
+.header.transform-on-scroll {
+  transition-timing-function: $transition-timing-function;
+  transition-duration: .25s;
+  transition-property: transform;
+  will-change: transform;
+
+  &.has-scrolled {
+    transform: translateY(-100%);
   }
 }

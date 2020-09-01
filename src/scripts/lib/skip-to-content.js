@@ -3,6 +3,7 @@ export default function skipToContent() {
   const link = document.createElement('a');
 
   main.setAttribute('tabindex', '-1');
+  main.style.outline = 'none';
 
   if (!main.id) {
     main.setAttribute('id', 'content');
