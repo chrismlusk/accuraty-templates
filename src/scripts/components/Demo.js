@@ -1,12 +1,14 @@
 /* eslint-disable */
 const text = `
 
- █████╗  ██████╗ ██████╗██╗   ██╗██████╗  █████╗ ████████╗██╗   ██╗
-██╔══██╗██╔════╝██╔════╝██║   ██║██╔══██╗██╔══██╗╚══██╔══╝╚██╗ ██╔╝
-███████║██║     ██║     ██║   ██║██████╔╝███████║   ██║    ╚████╔╝
-██╔══██║██║     ██║     ██║   ██║██╔══██╗██╔══██║   ██║     ╚██╔╝
-██║  ██║╚██████╗╚██████╗╚██████╔╝██║  ██║██║  ██║   ██║      ██║
-╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝
+
+ █████╗  ██████╗ ██████╗██╗   ██╗
+██╔══██╗██╔════╝██╔════╝██║   ██║
+███████║██║     ██║     ██║   ██║
+██╔══██║██║     ██║     ██║   ██║
+██║  ██║╚██████╗╚██████╗╚██████╔╝
+╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═════╝
+
 
 `
 /* eslint-enable */
@@ -14,16 +16,15 @@ const text = `
 export default class Demo {
   static defaults = {};
 
-  constructor(element, options) {
+  constructor(element, config = {}) {
     this.element = element;
-    this.options = { ...Demo.defaults, ...options };
+    this.config = { ...Demo.defaults, ...config };
     this.message = text;
     this.init();
   }
 
   init() {
     this.createChildRefs().layout().enable();
-
     return this;
   }
 

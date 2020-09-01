@@ -1,10 +1,15 @@
-<%-- <!--#include file="../dist/media/svg/all.svg"--> --%>
+<%-- <%=AccuKit.BootstrapIcon("Star Fill") %> --%>
 
-<header class="header bg-light" role="banner" data-component="Header">
+<header
+  class="header bg-light sticky-top"
+  role="banner"
+  data-component="Header"
+  data-component-config='{ "transformOnScroll": true }'
+>
   <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
     <div class="container">
       <a
-        class="navbar-brand"
+        class="navbar-brand d-flex"
         href="/"
         aria-label="_xx___CLIENT_NAME___xx_"
       >
@@ -23,6 +28,10 @@
           ExcludeNodes=""
           runat="server"
         ></dnn:MENU>
+
+        <div class="ml-auto my-2 my-lg-0">
+          <a class="btn btn-primary" href="#">Contact Us</a>
+        </div>
       </div>
     </div>
   </nav>

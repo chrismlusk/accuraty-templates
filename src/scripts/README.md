@@ -4,14 +4,14 @@ This folder contains all custom JavaScript used in the project.
 
 ## Architecture
 
-- `app/`
+- `App/`
 - `components/`
 - `lib/`
 - individual files
 
 ### App
 
-The building blocks of our JavaScript component framework. This is how custom functions are loaded and executed.
+This is how components are loaded and executed.
 
 ### Components
 

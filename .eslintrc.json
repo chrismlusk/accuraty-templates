@@ -103,7 +103,7 @@
       }
     ],
     "no-multi-str": "warn",
-    "no-new": "warn",
+    "no-new": "off",
     "no-new-func": "warn",
     "no-new-object": "warn",
     "no-new-symbol": "warn",
@@ -182,7 +182,7 @@
     ],
     "valid-typeof": "warn",
     "vars-on-top": "warn",
-    "wrap-iife": "warn",
+    "wrap-iife": "off",
     "yoda": "warn"
   }
 }

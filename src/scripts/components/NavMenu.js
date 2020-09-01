@@ -1,15 +1,19 @@
 import $ from 'jquery';
 import isTouchDevice from '../lib/is-touch-device';
+
 export default class NavMenu {
   static defaults = {
     activeClass: 'show',
-    dropdownTrigger: '.dropdown',
-    enableDropdownOnHover: true,
+    dropdown: '.dropdown',
+    dropdownMenu: '.dropdown-menu',
+    dropdownOnHover: true,
+    dropdownOnHoverClass: 'dropdown--hoverable',
+    toggle: '.dropdown-toggle',
   };
 
-  constructor(element, options) {
+  constructor(element, config = {}) {
     this.element = element;
-    this.options = { ...NavMenu.defaults, ...options };
+    this.config = { ...NavMenu.defaults, ...config };
     this.isTouchDevice = isTouchDevice();
     this.init();
   }
@@ -20,61 +24,57 @@ export default class NavMenu {
   }
 
   createChildRefs() {
-    if (this.options.enableDropdownOnHover) {
-      this.dropdownTriggers = [
-        ...this.element.querySelectorAll(this.options.dropdownTrigger),
-      ];
-
-      this.dropdownTriggerLinks = [
-        ...this.element.querySelectorAll(`${this.options.dropdownTrigger} > a`),
-      ];
+    if (this.config.dropdownOnHover) {
+      this.dropdowns = [...this.element.querySelectorAll(this.config.dropdown)];
     }
 
     return this;
   }
 
   enable() {
-    if (!this.isTouchDevice && this.options.enableDropdownOnHover) {
-      this.dropdownTriggers.forEach(trigger => {
-        trigger.addEventListener('mouseenter', this.handleTriggerMouseEvent);
-        trigger.addEventListener('mouseleave', this.handleTriggerMouseEvent);
-      });
+    if (!this.isTouchDevice && this.config.dropdownOnHover) {
+      this.dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', this.handleDropdownMouseEvent);
+        dropdown.addEventListener('mouseleave', this.handleDropdownMouseEvent);
 
-      this.dropdownTriggerLinks.forEach(link => {
-        link.addEventListener('click', this.handleTriggerLinkClick);
+        // Extend the hoverable area behind the dropdown menu so it
+        // doesn't close as soon as your cursor leaves the the element.
+        dropdown.classList.add(this.config.dropdownOnHoverClass);
+
+        const toggle = dropdown.querySelector(this.config.toggle);
+        toggle.addEventListener('click', this.handletoggleClick);
       });
     }
 
     return this;
   }
 
-  handleTriggerLinkClick = event => {
-    if (this.element.classList.contains(this.options.activeClass)) {
+  handletoggleClick = event => {
+    if (this.element.classList.contains(this.config.activeClass)) {
       return;
     }
 
-    const parentTrigger = event.target.parentElement;
+    const toggle = event.target;
 
-    if (parentTrigger.classList.contains(this.options.activeClass)) {
-      const href = event.target.getAttribute('href');
+    if (toggle.getAttribute('aria-expanded') === 'true') {
+      const href = toggle.getAttribute('href');
 
       if (href && href !== '#') {
         location.href = href;
-        return;
       }
     }
 
     event.preventDefault();
   };
 
-  handleTriggerMouseEvent = event => {
-    const $navLink = $(`#${event.target.firstElementChild.id}`);
+  handleDropdownMouseEvent = event => {
+    const $toggle = $(`#${event.target.firstElementChild.id}`);
 
     if (event.type === 'mouseenter') {
-      $navLink.dropdown('show');
+      $toggle.dropdown('show');
     } else {
-      $navLink.dropdown('hide');
-      $navLink.blur();
+      $toggle.dropdown('hide');
+      $toggle.blur();
     }
   };
 }

@@ -5,9 +5,9 @@ export default class Lightbox {
     isGallery: false,
   };
 
-  constructor(element, options) {
+  constructor(element, config = {}) {
     this.element = element;
-    this.options = { ...Lightbox.defaults, ...options };
+    this.config = { ...Lightbox.defaults, ...config };
     this.init();
   }
 
@@ -21,7 +21,7 @@ export default class Lightbox {
   }
 
   enable() {
-    const build = this.options.isGallery ? buildLuminousGallery : buildLuminous;
+    const build = this.config.isGallery ? buildLuminousGallery : buildLuminous;
     build(this.element, {});
   }
 }
