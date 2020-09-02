@@ -7,7 +7,9 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "favicons": "gulp favicons",
-    "start": "gulp"
+    "start": "gulp",
+    "lint:scripts": "eslint --fix",
+    "lint:styles": "stylelint --syntax scss"
   },
   "private": true,
   "repository": {
@@ -49,7 +51,9 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylelint": "^13.0.0",
+    "husky": "^4.2.5",
     "imagemin-pngquant": "^9.0.0",
+    "lint-staged": "^10.2.13",
     "node-sass": "^4.14.1",
     "postcss": "^7.0.32",
     "prettier": "^2.1.1",
@@ -57,5 +61,19 @@
     "stylelint-config-twbs-bootstrap": "^2.0.3",
     "terser-webpack-plugin": "^4.1.0",
     "webpack": "^4.44.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:scripts"
+    ],
+    "*.scss": [
+      "npm run lint:styles"
+    ]
   }
 }
