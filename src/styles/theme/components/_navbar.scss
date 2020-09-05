@@ -98,13 +98,14 @@
 
 
 //
-// Admin menu
-// ==========
+// Site menu
+// =========
 //
-// Used to add a Manage menu to the navbar independent of the primary nav.
+// Site management menu in the navbar. Independent of the primary nav.
 // ----------------------------------------------------------------------------
 
-#admin-menu {
+#site-menu {
+
   .nav-link {
     color: $white;
     background-color: $link-color;
