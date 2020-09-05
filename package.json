@@ -28,7 +28,7 @@
     "srraf": "^3.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.5",
+    "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
@@ -54,7 +54,7 @@
     "gulp-stylelint": "^13.0.0",
     "husky": "^4.2.5",
     "imagemin-pngquant": "^9.0.0",
-    "lint-staged": "^10.2.13",
+    "lint-staged": "^10.3.0",
     "node-sass": "^4.14.1",
     "postcss": "^7.0.32",
     "prettier": "^2.1.1",
