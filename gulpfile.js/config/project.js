@@ -6,6 +6,7 @@ const {
   LOCAL_FONTS,
   LOCAL_SVG,
   LOCAL_IMAGES,
+  LOCAL_VIDEOS,
   SKIN_STYLES,
   MODULE_STYLES,
   CONTAINER_STYLES,
@@ -18,6 +19,7 @@ module.exports = {
   fonts: isTrue(LOCAL_FONTS),
   svg: isTrue(LOCAL_SVG),
   images: isTrue(LOCAL_IMAGES),
+  videos: isTrue(LOCAL_VIDEOS),
   faviconFile: FAVICON_FILENAME,
   styles: {
     skin: isTrue(SKIN_STYLES),

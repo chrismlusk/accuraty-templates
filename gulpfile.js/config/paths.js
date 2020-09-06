@@ -22,6 +22,7 @@ const containerStylesDir = `${stylesDir}/Containers`;
 const fontsDir = `media/fonts`;
 const svgDir = `media/svg`;
 const imagesDir = `media/images`;
+const videosDir = `media/videos`;
 
 module.exports = {
   app: appPath,
@@ -42,6 +43,10 @@ module.exports = {
   images: {
     src: `${srcPath}/${imagesDir}/**/*.{jpg,jpeg,png,gif,svg}`,
     dist: `${distPath}/${imagesDir}`,
+  },
+  videos: {
+    src: `${srcPath}/${videosDir}/**/*.mp4`,
+    dist: `${distPath}/${videosDir}`,
   },
   favicons: {
     src: `${srcPath}/${imagesDir}/${faviconFile}`,
