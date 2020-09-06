@@ -42,14 +42,25 @@ export default class NavMenu {
         dropdown.classList.add(this.config.dropdownOnHoverClass);
 
         const toggle = dropdown.querySelector(this.config.toggle);
-        toggle.addEventListener('click', this.handletoggleClick);
+        toggle.addEventListener('click', this.handleToggleClick);
       });
     }
 
     return this;
   }
 
-  handletoggleClick = event => {
+  handleDropdownMouseEvent = event => {
+    const $toggle = $(`#${event.target.firstElementChild.id}`);
+
+    if (event.type === 'mouseenter') {
+      $toggle.dropdown('show');
+    } else {
+      $toggle.dropdown('hide');
+      $toggle.blur();
+    }
+  };
+
+  handleToggleClick = event => {
     if (this.element.classList.contains(this.config.activeClass)) {
       return;
     }
@@ -65,16 +76,5 @@ export default class NavMenu {
     }
 
     event.preventDefault();
-  };
-
-  handleDropdownMouseEvent = event => {
-    const $toggle = $(`#${event.target.firstElementChild.id}`);
-
-    if (event.type === 'mouseenter') {
-      $toggle.dropdown('show');
-    } else {
-      $toggle.dropdown('hide');
-      $toggle.blur();
-    }
   };
 }
