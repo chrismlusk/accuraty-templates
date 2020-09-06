@@ -43,11 +43,18 @@
     return PortalSettings.Current.ActiveTab.TabID == PortalSettings.Current.HomeTabId;
   }
 
+  public static HtmlString AccuIcon(string iconName) {
+    string name = ToSlug(iconName);
+    string svgSprite = SkinSvgPath + "/AccuTheme-icons.svg";
+    string output = "<svg class=\"svg svg--icon\" width=\"1em\" height=\"1em\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><use xlink:href=\"" + svgSprite + "#" + name + "\"></use></svg>";
+
+    return new HtmlString(output);
+  }
+
   public static HtmlString BootstrapIcon(string iconName) {
     string name = ToSlug(iconName);
     string svgSprite = SkinSvgPath + "/bootstrap-icons.svg";
-
-    string output = "<svg class=\"bi\" width=\"1em\" height=\"1em\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><use xlink:href=\"" + svgSprite + "#" + name + "\"></use></svg>";
+    string output = "<svg class=\"svg svg--icon bi\" width=\"1em\" height=\"1em\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><use xlink:href=\"" + svgSprite + "#" + name + "\"></use></svg>";
 
     return new HtmlString(output);
   }
