@@ -106,9 +106,11 @@
 
         <li class="@itemCss">
           <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>
-            @node.Text
+            <span>@node.Text</span>
             @if (INCLUDE_DROPDOWN_MENUS && node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
-              <svg class="svg is-icon"><use xlink:href="#icon-chevron-down" /></svg>
+              <span class="ml-1">
+                @AccuKit.BootstrapIcon("Chevron Down")
+              </span>
             }
           </a>
           @if (INCLUDE_DROPDOWN_MENUS) {

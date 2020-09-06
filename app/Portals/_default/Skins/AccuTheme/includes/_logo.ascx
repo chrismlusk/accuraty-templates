@@ -9,4 +9,4 @@
   alt="_xx___CLIENT_NAME___xx_"
 /> --%>
 
-<!--#include file="../dist/media/svg/AccuLogo.svg"-->
+<!--#include file="../dist/media/svg/AccuTheme-logo.svg"-->
