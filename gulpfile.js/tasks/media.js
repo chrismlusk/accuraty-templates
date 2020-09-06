@@ -26,4 +26,9 @@ function imagesTask() {
     .pipe(gulp.dest(paths.images.dist));
 }
 
-exports.media = gulp.parallel(fontsTask, svgTask, imagesTask);
+function videosTask() {
+  if (!project.videos) return Promise.resolve();
+  return gulp.src(paths.videos.src).pipe(gulp.dest(paths.videos.dist));
+}
+
+exports.media = gulp.parallel(fontsTask, svgTask, imagesTask, videosTask);
