@@ -53,8 +53,10 @@ const imagemin = {
         { cleanupAttrs: true },
         { cleanupIDs: false },
         { removeComments: true },
+        { removeDesc: false },
         { removeStyleElement: true },
         { removeTitle: false },
+        { removeUnknownsAndDefaults: false }, // keeps `role="image"`
         { removeViewBox: false },
       ],
     }),
