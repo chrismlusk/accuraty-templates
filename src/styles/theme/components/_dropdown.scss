@@ -38,6 +38,20 @@
   }
 }
 
+// Used if DDR menu has `USE_CUSTOM_DROPDOWN_ICON` set to true.
+.dropdown-toggle--custom {
+
+  &::after {
+    display: none;
+  }
+
+  .svg {
+    width: .875em;
+    height: .875em;
+    margin-bottom: .175em;
+  }
+}
+
 
 
 

@@ -8,7 +8,7 @@ export default class NavMenu {
     dropdownMenu: '.dropdown-menu',
     dropdownOnHover: true,
     dropdownOnHoverClass: 'dropdown--hoverable',
-    toggle: '.dropdown-toggle',
+    dropdownToggle: '.dropdown-toggle',
   };
 
   constructor(element, config = {}) {
@@ -41,7 +41,7 @@ export default class NavMenu {
         // doesn't close as soon as your cursor leaves the the element.
         dropdown.classList.add(this.config.dropdownOnHoverClass);
 
-        const toggle = dropdown.querySelector(this.config.toggle);
+        const toggle = dropdown.querySelector(this.config.dropdownToggle);
         toggle.addEventListener('click', this.handleToggleClick);
       });
     }
@@ -61,10 +61,6 @@ export default class NavMenu {
   };
 
   handleToggleClick = event => {
-    if (this.element.classList.contains(this.config.activeClass)) {
-      return;
-    }
-
     const toggle = event.target;
 
     if (toggle.getAttribute('aria-expanded') === 'true') {
