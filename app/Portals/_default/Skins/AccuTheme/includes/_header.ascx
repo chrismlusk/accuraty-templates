@@ -1,15 +1,16 @@
-<%-- <%=AccuKit.BootstrapIcon("Star Fill") %> --%>
+<%-- <%=AccuKit.BootstrapIcon("Star fill") %> --%>
+<%-- <%=AccuKit.AccuIcon("Facebook") %> --%>
 
 <header
-  class="header bg-light sticky-top"
+  class="header bg-light fixed-top"
   role="banner"
   data-component="Header"
   data-component-config='{ "transformOnScroll": true }'
 >
-  <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
-    <div class="container">
+  <div class="navbar navbar-expand-lg navbar-light">
+    <div class="container px-0">
       <a
-        class="navbar-brand d-flex"
+        class="navbar-brand position-relative d-flex"
         href="/"
         aria-label="_xx___CLIENT_NAME___xx_"
       >
@@ -20,7 +21,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarContent" data-component="NavMenu">
+      <nav class="collapse navbar-collapse" id="navbarContent" aria-label="Primary navigation" data-component="NavMenu">
+        <%-- Site Menu --%>
+        <%-- <dnn:MENU
+          MenuStyle="menus/SiteMenu"
+          IncludeNodes=""
+          runat="server"
+        ></dnn:MENU> --%>
+
+        <%-- Primary Nav --%>
         <dnn:MENU
           MenuStyle="menus/NavPrimary"
           NodeSelector=""
@@ -32,14 +41,7 @@
         <div class="ml-auto my-2 my-lg-0">
           <a class="btn btn-primary" href="#">Contact Us</a>
         </div>
-      </div>
+      </nav>
     </div>
-  </nav>
+  </div>
 </header>
-
-<%-- Site Menu --%>
-<%-- <dnn:MENU
-  MenuStyle="menus/SiteMenu"
-  IncludeNodes=""
-  runat="server"
-></dnn:MENU> --%>

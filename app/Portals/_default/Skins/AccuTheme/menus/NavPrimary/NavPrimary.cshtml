@@ -93,9 +93,13 @@
           itemClasses.Add("active");
         }
 
-        if (node.HasChildren()) {
+        if (INCLUDE_DROPDOWN_MENUS && node.HasChildren()) {
           itemClasses.Add("dropdown");
           linkClasses.Add("dropdown-toggle");
+
+          if (USE_CUSTOM_DROPDOWN_ICON) {
+            linkClasses.Add("dropdown-toggle--custom");
+          }
         }
 
         var itemCss = String.Join(" ", itemClasses);
@@ -108,7 +112,7 @@
           <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>
             <span>@node.Text</span>
             @if (INCLUDE_DROPDOWN_MENUS && node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
-              <span class="ml-1">
+              <span class="ml-2 ml-lg-1">
                 @AccuKit.BootstrapIcon("Chevron Down")
               </span>
             }
