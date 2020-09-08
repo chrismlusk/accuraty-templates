@@ -144,10 +144,10 @@ $accu--h4-font-size:        $accu--font-size-base * 1.875;  // 30px
 $accu--h5-font-size:        $accu--font-size-base * 1.5;    // 24px
 $accu--h6-font-size:        $accu--font-size-base * 1.125;  // 18px
 
-$accu--font-size-xl-1:       6rem;     // 96px
-$accu--font-size-xl-2:       5.5rem;   // 88px
-$accu--font-size-xl-3:       4.5rem;   // 72px
-$accu--font-size-xl-4:       3.75rem;  // 60px
+$accu--font-size-jumbo-1:   6rem;     // 96px
+$accu--font-size-jumbo-2:   5.5rem;   // 88px
+$accu--font-size-jumbo-3:   4.5rem;   // 72px
+$accu--font-size-jumbo-4:   3.75rem;  // 60px
 
 $accu--font-weight-lighter:  lighter;
 $accu--font-weight-light:    300;
@@ -629,23 +629,23 @@ $h6-font-size:                $accu--h6-font-size;
 
 $headings-margin-bottom:      $spacer / 2;
 $headings-font-family:        null;
-$headings-font-weight:        $accu--font-weight-medium;
-$headings-line-height:        $accu--line-height-tight;
+$headings-font-weight:        $font-weight-medium;
+$headings-line-height:        $line-height-tight;
 $headings-color:              null;
 
-$display1-size:               $accu--font-size-xl-1;
-$display2-size:               $accu--font-size-xl-2;
-$display3-size:               $accu--font-size-xl-3;
-$display4-size:               $accu--font-size-xl-4;
+$display1-size:               $accu--font-size-jumbo-1;
+$display2-size:               $accu--font-size-jumbo-2;
+$display3-size:               $accu--font-size-jumbo-3;
+$display4-size:               $accu--font-size-jumbo-4;
 
-$display1-weight:             $accu--font-weight-light;
-$display2-weight:             $accu--font-weight-light;
-$display3-weight:             $accu--font-weight-light;
-$display4-weight:             $accu--font-weight-light;
+$display1-weight:             $font-weight-light;
+$display2-weight:             $font-weight-light;
+$display3-weight:             $font-weight-light;
+$display4-weight:             $font-weight-light;
 $display-line-height:         $headings-line-height;
 
 $lead-font-size:              1.25em; // use `em` for scaling
-$lead-font-weight:            $accu--font-weight-light;
+$lead-font-weight:            $font-weight-light;
 
 $small-font-size:             80%;
 
