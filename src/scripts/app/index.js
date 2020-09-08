@@ -27,11 +27,10 @@ export default class App {
 
     components.forEach(component => {
       const name = component.getAttribute(this.config.componentAttr);
-      const options = this.getComponentConfig(component);
-
       const Constructor = this.ComponentManifest[name];
 
       if (Constructor) {
+        const options = this.getComponentConfig(component);
         new Constructor(component, options);
       }
     });
@@ -59,7 +58,7 @@ export default class App {
         const name = component.getAttribute(this.config.componentAttr);
         console.error(`Invalid JSON in "${name}" component options`, {
           name,
-          component,
+          optionString,
         });
       }
     }
