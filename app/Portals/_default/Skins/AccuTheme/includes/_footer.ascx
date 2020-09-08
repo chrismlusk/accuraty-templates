@@ -72,15 +72,25 @@
               </dd>
             </dl>
 
-            <dl class="mb-4">
+            <dl class="mb-4" itemscope itemtype="http://schema.org/Organization">
               <dt>
                 <span class="d-inline-block py-1">Social</span>
               </dt>
               <dd class="mb-0">
-                <a class="d-inline-block py-1" href="#">Facebook</a>
+                <a class="d-inline-flex align-items-center py-1" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">
+                  <span class="d-flex mr-2">
+                    <%=AccuKit.AccuIcon("Facebook") %>
+                  </span>
+                  <span>Facebook</span>
+                </a>
               </dd>
               <dd class="mb-0">
-                <a class="d-inline-block py-1" href="#">LinkedIn</a>
+                <a class="d-inline-flex align-items-center py-1" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">
+                  <span class="d-flex mr-2">
+                    <%=AccuKit.AccuIcon("LinkedIn") %>
+                  </span>
+                  <span>LinkedIn</span>
+                </a>
               </dd>
             </dl>
           </div>
