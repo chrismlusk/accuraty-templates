@@ -1,11 +1,11 @@
 # Accuraty Templates
 
-The Accuraty Solutions starter kit for projects using the DNN content management system.
+The Accuraty Solutions starter kit for DNN projects.
 
 ## Project requirements
 
 - DNN site already deployed
-- [Node >= v12.16.1](https://nodejs.org/en)
+- [Node >= v12.18.0](https://nodejs.org/en)
 
 ## Getting started
 
@@ -14,7 +14,7 @@ The Accuraty Solutions starter kit for projects using the DNN content management
 
 ### Initial setup
 
-_This assumes the project has not been set up at all. If it already exists on GitHub and you need to get set up on your own machine, skip to [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally)._
+_This assumes the project has not been started. If it already exists on GitHub and you need to get set up on your own machine, skip to [Cloning locally](https://github.com/chrismlusk/accuraty-templates#cloning-locally)._
 
 #### 1. Get the code
 
@@ -36,17 +36,13 @@ If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `
 
 Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project. Right-click on the `app/` folder and choose "Upload Folder" from the menu.
 
-#### 4. Install packages
+#### 4. Install and build packages
 
 From your terminal, run `npm install`.
 
-#### 5. Build the assets
+After the install is finished, `npm run build` will automatically run. This compiles assets (styles, scripts, etc.), but Gulp won't stay in "watch" mode.
 
-Run `npm run build`.
-
-This will optimize and compile assets (images, styles, scripts, etc.), but it won't keep Gulp in "watch" mode. However, since we are just getting started, run this one time and then continue with the setup.
-
-#### 6. Create GitHub repo
+#### 5. Create GitHub repo
 
 Go to the [Accuraty GitHub account](https://github.com/Accuraty) and add a new repository.
 
@@ -66,7 +62,9 @@ git remote add origin _GITHUB_URL_HERE_
 git push -u origin master
 ```
 
-### Cloning locally
+#### 6. Update this README
+
+Be kind to others. Make these changes:
 
 - Update the title and description to match the project.
 - Delete everything but the "Cloning locally" steps from "Getting started."
@@ -86,9 +84,11 @@ git clone _GITHUB_URL_HERE_
 
 If you are using Visual Studio Code, navigate to the `.vscode/` directory. Duplicate `sftp.json.example`, configure it with your credentials, and save it as `sftp.json` to continue.
 
-#### 3. Install packages
+#### 3. Install and build packages
 
 Next, run `npm install`.
+
+After the install is finished, `npm run build` will automatically run. This compiles assets (styles, scripts, etc.), but Gulp won't stay in "watch" mode.
 
 #### 4. Build the assets
 
