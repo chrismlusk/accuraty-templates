@@ -21,12 +21,12 @@ _This assumes the project has not been set up at all. If it already exists on Gi
 Create a new project folder on your local machine, `cd` into that directory, and run the following commands in your terminal:
 
 ```
-git clone -b master --single-branch https://github.com/chrismlusk/accuraty-templates.git .
+git clone -b AccuTheme --single-branch https://github.com/chrismlusk/accuraty-templates.git .
 rm -rf .git
 git init
 ```
 
-That will clone the `master` branch of this repo into your current directory, delete the Git history, and start fresh.
+That will clone the `AccuTheme` branch of this repo into your current directory, delete the Git history, and start fresh.
 
 #### 2. Set your FTP config
 
