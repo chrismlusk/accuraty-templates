@@ -6,6 +6,7 @@
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   "editor.useTabStops": true,
@@ -15,6 +16,8 @@
     }
   ],
   "files.associations": {
+    ".eslintrc": "json",
+    ".prettierrc": "json",
     ".stylelintrc": "json"
   },
   "files.exclude": {
@@ -25,7 +28,7 @@
     "**/*.cache": true,
     "**/*.sublime*": true,
     "**/node_modules": true,
-    "**/Portals/0/2sxc/Content/*.png": true
+    "**/Portals/0/2sxc/**/*.png": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
