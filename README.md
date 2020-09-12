@@ -1,4 +1,4 @@
-# AccuTheme
+# Accuraty Templates
 
 The Accuraty Solutions starter kit for projects using the DNN content management system.
 
@@ -21,12 +21,12 @@ _This assumes the project has not been set up at all. If it already exists on Gi
 Create a new project folder on your local machine, `cd` into that directory, and run the following commands in your terminal:
 
 ```
-git clone https://github.com/chrismlusk/accuraty-templates.git .
+git clone -b master --single-branch https://github.com/chrismlusk/accuraty-templates.git .
 rm -rf .git
 git init
 ```
 
-That will clone this repo into your current directory, delete the Git history, and start fresh.
+That will clone the `master` branch of this repo into your current directory, delete the Git history, and start fresh.
 
 #### 2. Set your FTP config
 
@@ -52,9 +52,7 @@ From your terminal, run `npm install` from inside the Skin folder.
 
 Then run `npm run build`.
 
-This will trigger Gulp to initialize the project, rename directories, and compile assets (stylesheets, scripts, etc.). The `build` command will not keep Gulp in "watch" mode, however. Since we are getting started, just build the assets and keep going with the setup.
-
-Next, add and commit everything to Git. Reminder: This is all local-only at this point, as we have not set up the remote repository yet.
+This will trigger Gulp to initialize the project, rename directories, and compile assets (styles, scripts, etc.), but Gulp won't stay in "watch" mode.
 
 #### 6. Create GitHub repo
 
@@ -72,33 +70,39 @@ git commit -m "Initial commit"
 Then, follow the **"…or push an existing repository from the command line"** instructions in the new GitHub repo, which is to run these commands (be sure to update the code below with your repo URL):
 
 ```
-git remote add origin _PASTE_THE_GITHUB_URL_HERE_
+git remote add origin _GITHUB_URL_HERE_
 git push -u origin master
 ```
 
 #### 7. Getting code to the server
 
-While our default SFTP extension settings in VS Code automatically push most files, you will need to manually upload certain directories — especially when you first set up a project. 
+Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project.
 
 Right-click on the skin folder (`Portals/_default/Skins/[PROJECT_NAME]`) and choose "Upload Folder" from the menu. Repeat the same for the client's container folder (`Portals/_default/Containers/[PROJECT_NAME]`).
 
 The `sftp.json` configuration will prevent unnecessary files from being uploaded to the server.
 
-### Cloning locally
+#### 8. Update this README
 
-_This assumes the project has already been set up and added as a repository to the [Accuraty GitHub account](https://github.com/Accuraty), but you have not added it to your local machine._
+Be kind to others. Make these changes:
+
+- Update the title and description to match the project.
+- Delete everything but the "Cloning locally" steps from "Getting started."
+- Replace **\_GITHUB_URL_HERE\_** with the URL of the repo you created.
+
+### Cloning locally
 
 #### 1. Get the code
 
 Navigate to the directory where you want to store the project, copy the GitHub URL, and then run the following commands in your terminal:
 
 ```
-git clone _PASTE_THE_GITHUB_URL_HERE_
+git clone _GITHUB_URL_HERE_
 ```
 
 #### 2. Set your FTP config
 
-If you are using Visual Studio Code, navigate to the `.vscode/` directory. Copy `sftp.json.example`, configure it with your credentials, and save it as `sftp.json` to continue.
+If you are using Visual Studio Code, navigate to the `.vscode/` directory. Duplicate `sftp.json.example`, configure it with your credentials, and save it as `sftp.json` to continue.
 
 #### 3. Install packages
 
@@ -106,13 +110,13 @@ Next, `cd` into the skin (`Portals/_default/Skins/[ABBV]`) and run `npm install`
 
 #### 4. Build the assets
 
-Then run `npm start` in your terminal.
+Run `npm start`.
 
-This will kick off the Gulp tasks to initialize the project, compile starting assets, and begin watching for changes to source files.
+This will kick off the Gulp tasks to optimize and compile assets (images, styles, scripts, etc.). It will also continue watching for changes to source files.
 
-To exit this "watch" mode, press `Control-C` in your terminal.
+To exit "watch" mode, press `Control-C` in your terminal.
 
-To start watching again, run `npm start` in your terminal.
+To start watching again, run `npm start`.
 
 #### 5. Push changes to GitHub
 
