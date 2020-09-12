@@ -1,6 +1,7 @@
 const { getWebpackEntries, isTrue } = require('../utils');
 
 const {
+  NODE_ENV,
   PROJECT_MODE,
   FAVICON_FILENAME,
   LOCAL_FONTS,
@@ -15,7 +16,7 @@ const {
 
 module.exports = {
   name: 'AccuTheme',
-  mode: PROJECT_MODE || 'development',
+  mode: NODE_ENV || PROJECT_MODE || 'development',
   fonts: isTrue(LOCAL_FONTS),
   svg: isTrue(LOCAL_SVG),
   images: isTrue(LOCAL_IMAGES),
