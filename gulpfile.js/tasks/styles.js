@@ -1,8 +1,8 @@
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+const cleanCss = require('postcss-clean');
+const cssImport = require('postcss-import');
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const postcssImport = require('postcss-import');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -12,15 +12,15 @@ const { skinStyles, moduleStyles, containerStyles } = paths;
 // explicitly set compiler (https://github.com/dlmanning/gulp-sass#basic-usage)
 sass.compiler = require('node-sass');
 
-const isProduction = project.mode === 'production';
+const devMode = project.mode !== 'production';
 
 const postcssProcessors = [
-  postcssImport(),
+  cssImport(),
   autoprefixer(plugins.autoprefixer.options),
 ];
 
-if (isProduction) {
-  postcssProcessors.push(cssnano());
+if (!devMode) {
+  postcssProcessors.push(cleanCss(plugins.cleanCss.options));
 }
 
 function skinStylesTask() {
@@ -31,7 +31,7 @@ function skinStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss(postcssProcessors))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write(devMode ? null : '.'))
     .pipe(gulp.dest(skinStyles.dist));
 }
 
@@ -43,7 +43,7 @@ function moduleStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss(postcssProcessors))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write(devMode ? null : '.'))
     .pipe(gulp.dest(moduleStyles.dist));
 }
 
@@ -55,7 +55,7 @@ function containerStylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(plugins.gulpSass.options).on('error', sass.logError))
     .pipe(postcss(postcssProcessors))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write(devMode ? null : '.'))
     .pipe(gulp.dest(containerStyles.dist));
 }
 

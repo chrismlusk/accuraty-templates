@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import isTouchDevice from '../lib/is-touch-device';
 
 export default class NavMenu {

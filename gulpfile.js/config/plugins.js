@@ -1,3 +1,5 @@
+const { mode } = require('./project');
+
 /**
  * GULP SASS
  * https://github.com/sass/node-sass#options
@@ -5,8 +7,7 @@
 const gulpSass = {
   options: {
     precision: 6,
-    outputStyle:
-      process.env.PROJECT_MODE === 'production' ? 'compressed' : 'nested',
+    outputStyle: mode === 'production' ? 'compressed' : 'nested',
     includePaths: ['./node_modules', `./src/styles`],
   },
 };
@@ -45,7 +46,7 @@ const imagemin = {
   plugins: [
     pngquant({
       speed: 6,
-      quality: [0.75, 1], // lossy settings
+      quality: [0.7, 1], // lossy settings
     }),
     imageminPlugin.gifsicle({ interlaced: true }),
     imageminPlugin.svgo({
