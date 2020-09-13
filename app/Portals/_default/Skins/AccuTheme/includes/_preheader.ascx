@@ -91,9 +91,17 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 />
 
 <dnn:DnnJsInclude
-  FilePath="dist/Skin.bundle.js"
+  FilePath="dist/common.bundle.js"
   PathNameAlias="SkinPath"
   ForceProvider="DnnFormBottomProvider"
   Priority="103"
+  runat="server"
+/>
+
+<dnn:DnnJsInclude
+  FilePath="dist/Skin.bundle.js"
+  PathNameAlias="SkinPath"
+  ForceProvider="DnnFormBottomProvider"
+  Priority="104"
   runat="server"
 />

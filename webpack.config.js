@@ -1,24 +1,33 @@
-const { resolve } = require('path');
+const path = require('path');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { ProvidePlugin } = require('webpack');
 
 const { project, paths } = require('./gulpfile.js/config');
+const { getWebpackEntries } = require('./gulpfile.js/utils');
+
+const devMode = project.mode !== 'production';
+
+const publicDistPath = paths.dist.replace(paths.app, '');
 
 module.exports = {
   mode: project.mode,
-  entry: project.webpack.entries,
+  entry: getWebpackEntries(),
   output: {
     filename: '[name].bundle.js',
-    path: resolve(__dirname, `${paths.dist}`),
+    path: path.resolve(__dirname, paths.dist),
+    pathinfo: devMode,
+    publicPath: publicDistPath,
   },
-  devtool:
-    project.mode === 'development' ? 'eval-cheap-source-map' : 'source-map',
+  devtool: devMode ? 'eval-cheap-source-map' : false,
   optimization: {
-    minimize: true,
+    minimize: !devMode,
     minimizer: [
       new TerserPlugin({
         exclude: /vendors/,
-        sourceMap: true,
+        cache: true,
+        parallel: true,
+        sourceMap: false,
         terserOptions: {
           compress: {
             drop_console: true,
@@ -26,6 +35,7 @@ module.exports = {
         },
       }),
     ],
+    removeEmptyChunks: !devMode,
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
@@ -33,7 +43,15 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'initial',
-          enforce: true,
+          minChunks: 2,
+          minSize: 0,
+        },
+        common: {
+          test: /[\\/]scripts\/(App|config)[\\/]/,
+          name: 'common',
+          chunks: 'initial',
+          minChunks: 2,
+          minSize: 0,
         },
       },
     },
@@ -58,7 +76,13 @@ module.exports = {
       },
     ],
   },
-  plugins: [new FriendlyErrorsPlugin()],
+  plugins: [
+    new FriendlyErrorsPlugin(),
+    new ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+  ],
   watchOptions: {
     ignored: ['./node_modules/'],
   },

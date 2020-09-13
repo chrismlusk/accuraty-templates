@@ -1,4 +1,4 @@
-const { getWebpackEntries, isTrue } = require('../utils');
+const { isTrue } = require('../utils');
 
 const {
   NODE_ENV,
@@ -28,7 +28,4 @@ module.exports = {
     containers: isTrue(CONTAINER_STYLES),
   },
   scripts: isTrue(CUSTOM_SCRIPTS),
-  webpack: {
-    entries: getWebpackEntries(),
-  },
 };

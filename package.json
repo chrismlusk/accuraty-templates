@@ -8,9 +8,9 @@
     "clean": "gulp clean",
     "favicons": "gulp favicons",
     "start": "gulp",
-    "lint:scripts": "eslint --fix",
+    "lint:scripts": "eslint --format=pretty --fix",
     "lint:styles": "stylelint --syntax scss",
-    "postinstall": "npm run build"
+    "postinstall": "gulp build"
   },
   "private": true,
   "repository": {
@@ -35,11 +35,11 @@
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-formatter-pretty": "^4.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gulp": "^4.0.2",
@@ -55,10 +55,12 @@
     "imagemin-pngquant": "^9.0.1",
     "lint-staged": "^10.3.0",
     "node-sass": "^4.14.1",
+    "postcss-clean": "^1.1.0",
     "postcss-import": "^12.0.1",
     "prettier": "^2.1.1",
     "stylelint": "^13.7.1",
     "stylelint-config-twbs-bootstrap": "^2.0.3",
+    "stylelint-formatter-pretty": "^2.1.0",
     "terser-webpack-plugin": "^4.2.0",
     "webpack": "^4.44.1"
   },
