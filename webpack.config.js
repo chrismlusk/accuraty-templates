@@ -49,8 +49,7 @@ module.exports = {
         common: {
           test: /[\\/]scripts\/(App|config)[\\/]/,
           name: 'common',
-          chunks: 'initial',
-          minChunks: 2,
+          chunks: 'all',
           minSize: 0,
         },
       },
@@ -65,7 +64,14 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { useBuiltIns: 'entry', corejs: 3 }],
+              [
+                '@babel/preset-env',
+                {
+                  bugfixes: true,
+                  corejs: 3,
+                  useBuiltIns: 'entry',
+                },
+              ],
             ],
             plugins: [
               '@babel/plugin-transform-runtime',
