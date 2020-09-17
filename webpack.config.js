@@ -8,8 +8,6 @@ const { getWebpackEntries } = require('./gulpfile.js/utils');
 
 const devMode = project.mode !== 'production';
 
-const publicDistPath = paths.dist.replace(paths.app, '');
-
 module.exports = {
   mode: project.mode,
   entry: getWebpackEntries(),
@@ -17,7 +15,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, paths.dist),
     pathinfo: devMode,
-    publicPath: publicDistPath,
+    publicPath: paths.dist.replace(paths.app, ''),
   },
   devtool: devMode ? 'eval-cheap-source-map' : false,
   optimization: {
@@ -47,7 +45,7 @@ module.exports = {
           minSize: 0,
         },
         common: {
-          test: /[\\/]scripts\/(App|config)[\\/]/,
+          test: /[\\/]scripts\/(App|config)[\\/]/i,
           name: 'common',
           chunks: 'all',
           minSize: 0,
