@@ -5,6 +5,7 @@
   us to target them via CSS to change attributes like size and color.
   --%>
 <%-- <img
+  class="img-fluid"
   src="<%=PortalSettings.HomeDirectory %><%=PortalSettings.LogoFile %>"
   alt="_xx___CLIENT_NAME___xx_"
 /> --%>
