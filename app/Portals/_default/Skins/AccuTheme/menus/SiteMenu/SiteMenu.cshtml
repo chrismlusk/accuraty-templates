@@ -10,7 +10,7 @@
     If needed, builds the attributes Bootstrap's dropdown plugin requires.
     **************************************************************************/
   private HtmlString buildDropdownAttributes(MenuNode node) {
-    var attributeString = node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
+    var attributeString = node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
 
     return new HtmlString(attributeString);
   }
@@ -44,7 +44,7 @@
 @helper RenderChildren(MenuNode node) {
   var children = node.Children;
   if (children.Count > 0) {
-    <ul class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown">
+    <ul class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown-toggle">
       @foreach (var child in children) {
         var itemClasses = new List<string> { "tab-" + child.TabId };
         var linkClasses = new List<string> { "dropdown-item" };
@@ -63,7 +63,7 @@
         var linkHref = child.Enabled ? child.Url : "#";
         var dropdownAttributes = buildDropdownAttributes(child);
 
-        <li class="@itemCss">
+        <li id="tab-@child.TabId" class="@itemCss">
           <a class="@linkCss" href="@linkHref" @dropdownAttributes>@child.Text</a>
           @RenderChildren(child)
         </li>
