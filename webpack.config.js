@@ -22,13 +22,17 @@ module.exports = {
     minimize: !devMode,
     minimizer: [
       new TerserPlugin({
-        exclude: /vendors/,
         cache: true,
+        exclude: /vendors/,
+        extractComments: false,
         parallel: true,
         sourceMap: false,
         terserOptions: {
           compress: {
             drop_console: true,
+          },
+          output: {
+            comments: false,
           },
         },
       }),
