@@ -79,18 +79,20 @@ export default class NavMenu {
     if (event.type === 'mouseenter') {
       dropdown.$toggle.dropdown('show');
     } else {
-      dropdown.$toggle.dropdown('toggle');
+      dropdown.$toggle.dropdown('hide');
       dropdown.$toggle.blur();
     }
   };
 
   handleBootstrapShowEvent = event => {
+    event.stopPropagation();
     const dropdown = this.MAP.get(event.target.id);
     if (!dropdown) return;
     dropdown.$menuItems.removeAttr('tabindex');
   };
 
   handleBootstrapHideEvent = event => {
+    event.stopPropagation();
     const dropdown = this.MAP.get(event.target.id);
     if (!dropdown) return;
     dropdown.$menuItems.attr('tabindex', '-1');
