@@ -284,6 +284,7 @@ li {
   margin-bottom: 0;
   max-width: initial;
   @extend .form-control;
+  display: initial;
 }
 
 .dnnFormItem select {
