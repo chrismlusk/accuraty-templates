@@ -1,8 +1,9 @@
 {
-  "name": "___CLIENT_CODE___",
   "host": "___HOST_NAME___",
   "username": "___USER_NAME___",
   "password": "___PASSWORD___",
+  "name": "AccuTheme",
+  "context": "./app",
   "protocol": "ftp",
   "port": 21,
   "secure": true,
@@ -11,10 +12,14 @@
   },
   "passive": false,
   "uploadOnSave": true,
+  "syncOption": {
+    "update": true,
+    "delete": true
+  },
   "watcher": {
-    "files": "**/Skins/**/*",
+    "files": "**/AccuTheme/**/*",
     "autoUpload": true,
-    "autoDelete": false
+    "autoDelete": true
   },
   "ignore": [
     "**/.git/",
@@ -23,6 +28,7 @@
     "**/node_modules/",
     "**/src/",
     "**/README.md",
+    "**/*.LICENSE.txt",
     ".*",
     "package.json",
     "package-lock.json",
