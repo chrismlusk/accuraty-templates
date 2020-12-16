@@ -9,8 +9,8 @@
     <%-- PAGE --%>
     <p class="mb-1">Page: TabID=<%=PortalSettings.ActiveTab.TabID %>, Name=<%=PortalSettings.ActiveTab.TabName %>, Title=<%=PortalSettings.ActiveTab.Title %></p>
     <div class="px-3">
-      <p class="mb-1">Status: Published=<%=PortalSettings.ActiveTab.HasBeenPublished %>, <span title="Display in Menu">InMenu=<%=PortalSettings.ActiveTab.IsVisible %></span></p>
-      <p class="mb-1">Nav: Level=<%=PortalSettings.ActiveTab.Level %>, Path=<%=PortalSettings.ActiveTab.TabPath %>, <span title="Disabled Page (i.e. not a link)">DisableLink=<%=PortalSettings.ActiveTab.DisableLink %></span></p>
+      <p class="mb-1">Status: <span title="Display in Menu/Nav">IsVisible=<%=PortalSettings.ActiveTab.IsVisible %></span>, Published=<%=PortalSettings.ActiveTab.HasBeenPublished %></p>
+      <p class="mb-1">Nav: Level=<%=PortalSettings.ActiveTab.Level %>, Path=<%=PortalSettings.ActiveTab.TabPath %>, <span title="Disabled in Menu/Nav (e.g. not a link)">DisableLink=<%=PortalSettings.ActiveTab.DisableLink %></span></p>
       <p class="mb-1">QueryString: Params=<%=Request.QueryString.ToJson() %></p>
     </div>
     <hr />
