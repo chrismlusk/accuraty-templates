@@ -1,3 +1,9 @@
+# Retired, see AccuTheme
+
+[AccuTheme](https://github.com/Accuraty/AccuTheme)
+
+<hr>
+
 # Accuraty Templates
 
 The Accuraty Solutions starter kit for DNN projects.
